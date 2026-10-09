@@ -1,0 +1,653 @@
+{
+  "mode": "plan",
+  "database": "koinonia_demo",
+  "before": 254,
+  "input": 65,
+  "counts": {
+    "update": 54,
+    "insert": 9,
+    "review": 2
+  },
+  "actions": [
+    {
+      "row": 4,
+      "externalKey": "google_maps:ChIJE-_UTwDFYpYRPelo0aJDTqo",
+      "name": "Iglesia Misión Evangélica Mundial Nueva Vida",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afe7",
+      "conflicts": []
+    },
+    {
+      "row": 6,
+      "externalKey": "google_maps:ChIJJ6uWz6zFYpYRkDW5PMzAt-I",
+      "name": "Corp Iglesia De Los Adventistas Del Septimo Dia",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530aff1",
+      "conflicts": []
+    },
+    {
+      "row": 12,
+      "externalKey": "google_maps:ChIJZ4Nof6jFYpYRlp650NvH15g",
+      "name": "Corp Iglesia Evangelica Presbiteriana",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b024",
+      "conflicts": []
+    },
+    {
+      "row": 14,
+      "externalKey": "google_maps:ChIJ_eGEEq7FYpYR7ha2D4Fyzgg",
+      "name": "Congregacion De Religiosas Adoratrices",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b021",
+      "conflicts": []
+    },
+    {
+      "row": 15,
+      "externalKey": "google_maps:ChIJTcCnkOjFYpYRj4rB-QF1FQ8",
+      "name": "SANTISIMA TRINIDAD",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afe9",
+      "conflicts": []
+    },
+    {
+      "row": 16,
+      "externalKey": "google_maps:ChIJD2m5wLrFYpYRmByyKJbJOf4",
+      "name": "Capilla de Ánimas",
+      "reason": "new_identity",
+      "action": "insert",
+      "id": "6abd6dacb0733f68fd7446a0",
+      "postalCandidates": []
+    },
+    {
+      "row": 17,
+      "externalKey": "google_maps:ChIJHR9TBI3FYpYRRKVcTqfgN1g",
+      "name": "Sede Iglesia Presbiteriana Nacional (IPNA)",
+      "reason": "shared_address_requires_review",
+      "action": "review",
+      "candidates": [
+        {
+          "id": "6ab879f4a919e5b9f530afe9",
+          "name": "SANTISIMA TRINIDAD",
+          "address": "Av. Brasil 153, 8340497 Santiago, Región Metropolitana, Chile"
+        }
+      ]
+    },
+    {
+      "row": 19,
+      "externalKey": "google_maps:ChIJtXyFLpzFYpYRNaTIR8-BzX4",
+      "name": "Iglesia Las Buenas Nuevas Santiago",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af54",
+      "conflicts": []
+    },
+    {
+      "row": 20,
+      "externalKey": "google_maps:ChIJCTtBka_FYpYRkcXYztnAX5I",
+      "name": "Arzobispado de Santiago Parroquia de San",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b01e",
+      "conflicts": []
+    },
+    {
+      "row": 21,
+      "externalKey": "google_maps:ChIJYS3FxHDFYpYR2yOwI6HCGwE",
+      "name": "Iglesia Evangélica Bautista Argomedo",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af9a",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 22,
+      "externalKey": "google_maps:ChIJr5eT967FYpYRFk6kboxxLCc",
+      "name": "Culto Unidos Primera IGLESIA Bautista",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afcc",
+      "conflicts": []
+    },
+    {
+      "row": 23,
+      "externalKey": "google_maps:ChIJlVrDz6zFYpYRQ73N-SVicKs",
+      "name": "Iglesia Adventista del séptimo día \"Fe y Esperanza\"",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afde",
+      "conflicts": []
+    },
+    {
+      "row": 24,
+      "externalKey": "google_maps:ChIJTTIX1a3FYpYRInmQXrowYxE",
+      "name": "La Iglesia de Jesucristo de los Santos de los Últimos Días",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afc8",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 25,
+      "externalKey": "google_maps:ChIJq6q6rVLEYpYRsTzIxQ1mclQ",
+      "name": "Iglesias Patrimoniales",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afca",
+      "conflicts": []
+    },
+    {
+      "row": 26,
+      "externalKey": "google_maps:ChIJH-5jzazFYpYRV1GUYjuy0dE",
+      "name": "Iglesia Primer Monasterio de la Visitación",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afce",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 27,
+      "externalKey": "google_maps:ChIJ9XCaHK3FYpYRnSe4Am7fbxM",
+      "name": "Iglesia de la Preciosa Sangre",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afc6",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 28,
+      "externalKey": "google_maps:ChIJfVolvq7FYpYRsMRveptV7Iw",
+      "name": "Basílica del Salvador",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b01d",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 29,
+      "externalKey": "google_maps:ChIJj6KtdbLFYpYRgYTkfg9z3XY",
+      "name": "Iglesia Corpus Domini",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afbf",
+      "conflicts": []
+    },
+    {
+      "row": 30,
+      "externalKey": "google_maps:ChIJ2T4dlq_FYpYRCF1mo-PqfIA",
+      "name": "Iglesia Santa Ana",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afc0",
+      "conflicts": [
+        "identification.name",
+        "location.address",
+        "location.coordinates"
+      ]
+    },
+    {
+      "row": 32,
+      "externalKey": "google_maps:ChIJaw2r6xHFYpYRfI0dmv-3X_4",
+      "name": "La Iglesia Evangélica de Carabineros (IGECAR)",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af8d",
+      "conflicts": []
+    },
+    {
+      "row": 34,
+      "externalKey": "google_maps:ChIJZdUoOBbFYpYRv-ZN78EA-Ks",
+      "name": "Iglesia Central del Ejército Evangélico de Chile",
+      "reason": "new_identity",
+      "action": "insert",
+      "id": "6abd6dacb0733f68fd7446a1",
+      "postalCandidates": []
+    },
+    {
+      "row": 35,
+      "externalKey": "google_maps:ChIJ3ZK5sarFYpYRLS084s978tI",
+      "name": "Santuario Nacional de María Auxiliadora",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af65",
+      "conflicts": [
+        "identification.name",
+        "contact.phone"
+      ]
+    },
+    {
+      "row": 36,
+      "externalKey": "google_maps:ChIJETNG4fzEYpYRgSyPMjytxFE",
+      "name": "Iglesia de Dios Tierra Nueva",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af60",
+      "conflicts": []
+    },
+    {
+      "row": 39,
+      "externalKey": "google_maps:ChIJIS7GtFLEYpYRfh23c1cTQ1g",
+      "name": "Iglesia de San Antonio de Padua (Capuchinos)",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afbd",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 40,
+      "externalKey": "google_maps:ChIJ_UeOpUnFYpYRdT4DTvMef4s",
+      "name": "Iglesia Evangelica Pentecostal Toesca",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af64",
+      "conflicts": []
+    },
+    {
+      "row": 42,
+      "externalKey": "google_maps:ChIJ_1vSGwDFYpYRSrhRUWznCCI",
+      "name": "Clase Los Clarines, PRIMP CATEDRAL EVANGELICA",
+      "reason": "new_identity",
+      "action": "insert",
+      "id": "6abd6dacb0733f68fd7446a2",
+      "postalCandidates": []
+    },
+    {
+      "row": 43,
+      "externalKey": "google_maps:ChIJkfNRGgDFYpYRXtFknWEmE5o",
+      "name": "Clase Martinez de Rosas, PRIMP CATEDRAL EVANGELICA",
+      "reason": "new_identity",
+      "action": "insert",
+      "id": "6abd6dacb0733f68fd7446a3",
+      "postalCandidates": [
+        "6abd6dacb0733f68fd7446a2"
+      ]
+    },
+    {
+      "row": 44,
+      "externalKey": "google_maps:ChIJp_h8I7DFYpYRUoi0Q727GpI",
+      "name": "Iglesia Evangelica",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afcf",
+      "conflicts": []
+    },
+    {
+      "row": 45,
+      "externalKey": "google_maps:ChIJC7qyxVTEYpYR9CRi5Xw86IQ",
+      "name": "Iglesia Cristo Plenitud de Vida (CPV)",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afda",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 46,
+      "externalKey": "google_maps:ChIJxwFFNaHFYpYR6xHoit_x42c",
+      "name": "Iglesia de las Agustinas",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af53",
+      "conflicts": [
+        "identification.name",
+        "identification.description"
+      ]
+    },
+    {
+      "row": 49,
+      "externalKey": "google_maps:ChIJwaRZ0ubEYpYR7vL9mfp6Ufg",
+      "name": "Templo Evangelico Bautista \"La Roca\"",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af5e",
+      "conflicts": []
+    },
+    {
+      "row": 51,
+      "externalKey": "google_maps:ChIJX8pOEADFYpYRuyGoCiNvl3E",
+      "name": "Iglesia Bautista Vida Nueva",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afdf",
+      "conflicts": []
+    },
+    {
+      "row": 52,
+      "externalKey": "google_maps:ChIJi0ivegDFYpYRHPs8qPIkgqg",
+      "name": "Iglesia LIGS",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afaa",
+      "conflicts": []
+    },
+    {
+      "row": 53,
+      "externalKey": "google_maps:ChIJcxeCezzFYpYREGiLzjne_OI",
+      "name": "MIP - Santiago Centro",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afd0",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 54,
+      "externalKey": "google_maps:ChIJv4YEeuDEYpYRX4COkWXr5Ac",
+      "name": "Parroquia San Gerardo",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b045",
+      "conflicts": []
+    },
+    {
+      "row": 55,
+      "externalKey": "google_maps:ChIJrbdmIgDFYpYRea9gI9NVBLA",
+      "name": "Iglesia San Pablo",
+      "reason": "new_identity",
+      "action": "insert",
+      "id": "6abd6dacb0733f68fd7446a4",
+      "postalCandidates": []
+    },
+    {
+      "row": 56,
+      "externalKey": "google_maps:ChIJKw0VsEPFYpYR0hS1_SJ0vcc",
+      "name": "Clase Arauco, PRIMP CATEDRAL EVANGELICA",
+      "reason": "new_identity",
+      "action": "insert",
+      "id": "6abd6dacb0733f68fd7446a5",
+      "postalCandidates": []
+    },
+    {
+      "row": 57,
+      "externalKey": "google_maps:ChIJdQfc967FYpYR_0oUkJq7mfk",
+      "name": "Primera Iglesia Evangélica Bautista de Santiago",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afc1",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 58,
+      "externalKey": "google_maps:ChIJz0IKO6jFYpYR7LtNBNheqKw",
+      "name": "Iglesia San Vicente de Paúl",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af4f",
+      "conflicts": []
+    },
+    {
+      "row": 61,
+      "externalKey": "google_maps:ChIJ9QPuNQDFYpYRKYwoMk238x0",
+      "name": "Iglesia evangelica",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afd4",
+      "conflicts": []
+    },
+    {
+      "row": 63,
+      "externalKey": "google_maps:ChIJZ9G2RgDFYpYRX_ZVxH-5k4E",
+      "name": "Iglesia Gracia y Adoración",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b004",
+      "conflicts": [
+        "location.address",
+        "location.postalCode"
+      ]
+    },
+    {
+      "row": 64,
+      "externalKey": "google_maps:ChIJqQmxPUzEYpYRvTVZprcFmYA",
+      "name": "Ministerio Iglesia Latina Principe De Paz",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b005",
+      "conflicts": []
+    },
+    {
+      "row": 65,
+      "externalKey": "google_maps:ChIJSaiFfwDFYpYR-f2f-45K24c",
+      "name": "Iglesia de San Saturnino (Santiago de Chile)",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afd7",
+      "conflicts": []
+    },
+    {
+      "row": 66,
+      "externalKey": "google_maps:ChIJPZdpTkvEYpYRxHsu8SjqqQA",
+      "name": "Iglesia de Nuestra Señora del Rosario de Andacollo",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afc4",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 67,
+      "externalKey": "google_maps:ChIJ06nS703EYpYRq0_DXc1CLn0",
+      "name": "Parroquia San Saturnino",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afd5",
+      "conflicts": []
+    },
+    {
+      "row": 68,
+      "externalKey": "google_maps:ChIJsXFiImrFYpYRh3ko4U55J9A",
+      "name": "Segunda Iglesia Bautista de Santiago (SIBSA)",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af7c",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 71,
+      "externalKey": "google_maps:ChIJO1b9j1HEYpYRku2Sbx-Ze64",
+      "name": "Las Asambleas de Dios",
+      "reason": "new_identity",
+      "action": "insert",
+      "id": "6abd6dacb0733f68fd7446a6",
+      "postalCandidates": []
+    },
+    {
+      "row": 72,
+      "externalKey": "google_maps:ChIJdeyH5FPEYpYRqNwt_QiXY1o",
+      "name": "Congregacion Hijas de San Jose Pro Tectoras de la Infancia",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afd8",
+      "conflicts": []
+    },
+    {
+      "row": 73,
+      "externalKey": "google_maps:ChIJpwKdnVPEYpYRAeLj1H6E-pw",
+      "name": "Primera Iglesia Metodista",
+      "reason": "new_identity",
+      "action": "insert",
+      "id": "6abd6dacb0733f68fd7446a7",
+      "postalCandidates": []
+    },
+    {
+      "row": 74,
+      "externalKey": "google_maps:ChIJyy8lNq3FYpYRIK9hK03H_4U",
+      "name": "Templo San Jose",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afdd",
+      "conflicts": []
+    },
+    {
+      "row": 75,
+      "externalKey": "google_maps:ChIJDRQBMQDFYpYRqqAhSuTFkZk",
+      "name": "Iglesia Adventista del Séptimo Día - LIBERTAD",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afef",
+      "conflicts": []
+    },
+    {
+      "row": 76,
+      "externalKey": "google_maps:ChIJqWbAfkPFYpYRhJBbVhi781c",
+      "name": "Profetas Danilo y Carla Oneto-Ministerio Internacional Sion la Casa del Rey",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b016",
+      "conflicts": [
+        "contact.website"
+      ]
+    },
+    {
+      "row": 77,
+      "externalKey": "google_maps:ChIJpf8RDarFYpYRjMSyuN1BZKU",
+      "name": "Iglesia Sagrados Corazones Alameda",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af6a",
+      "conflicts": []
+    },
+    {
+      "row": 78,
+      "externalKey": "google_maps:ChIJHSGFt03EYpYR7v22ZKHX3XE",
+      "name": "Iglesia pentecostal Dios es Amor Chile",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afdb",
+      "conflicts": []
+    },
+    {
+      "row": 79,
+      "externalKey": "google_maps:ChIJowW0ZQDFYpYRzizSVfB8ooI",
+      "name": "Iglesia Cristiana La Roca",
+      "reason": "same_name_different_or_missing_address",
+      "action": "review",
+      "candidates": [
+        {
+          "id": "6ab879f4a919e5b9f530afbe",
+          "name": "Iglesia Cristiana La Roca",
+          "address": "Libertad 98 C, 8320000 Santiago, Región Metropolitana, Chile"
+        }
+      ]
+    },
+    {
+      "row": 80,
+      "externalKey": "google_maps:ChIJF7yZCE3EYpYRewE8b9UnBU0",
+      "name": "Iglesia Evangelica Nuevo Amanecer",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b003",
+      "conflicts": []
+    },
+    {
+      "row": 81,
+      "externalKey": "google_maps:ChIJK7OBbwDFYpYREuQ0mkQpulQ",
+      "name": "IGLESIA(dia del patrimonio)",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af6e",
+      "conflicts": []
+    },
+    {
+      "row": 82,
+      "externalKey": "google_maps:ChIJz5vzVQDFYpYRPWml-6ngG7M",
+      "name": "Clase Coquimbo, PRIMP CATEDRAL EVANGELICA",
+      "reason": "new_identity",
+      "action": "insert",
+      "id": "6abd6dacb0733f68fd7446a8",
+      "postalCandidates": [
+        "6ab879f4a919e5b9f530af91",
+        "6ab879f4a919e5b9f530af93"
+      ]
+    },
+    {
+      "row": 87,
+      "externalKey": "google_maps:ChIJV2hfVQPFYpYRTdOGdq1YUX8",
+      "name": "Centro Cristiano Esperanza y Vida",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af6c",
+      "conflicts": []
+    },
+    {
+      "row": 88,
+      "externalKey": "google_maps:ChIJkaaVBQvFYpYRwEd49r7lGk0",
+      "name": "Iglesia",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af6f",
+      "conflicts": []
+    },
+    {
+      "row": 90,
+      "externalKey": "google_maps:ChIJ3QZjElTEYpYRItYxBnjNQNc",
+      "name": "Iglesia Cristiana La Roca",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afbe",
+      "conflicts": [
+        "location.address",
+        "location.coordinates"
+      ]
+    },
+    {
+      "row": 91,
+      "externalKey": "google_maps:ChIJMfqiiq_FYpYRV5wQ9tlh9LI",
+      "name": "Iglesia Cristiana AR chile",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b025",
+      "conflicts": []
+    },
+    {
+      "row": 92,
+      "externalKey": "google_maps:ChIJS7jGz-PFYpYR2lFCjaFkxqA",
+      "name": "Iglesia de la Santísima Agonía de las Hermanas de la Caridad del Buen Pastor",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af84",
+      "conflicts": []
+    },
+    {
+      "row": 95,
+      "externalKey": "google_maps:ChIJozgRbwDFYpYRV41G_WOkT7E",
+      "name": "Centro Evangelistico Familiar",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afeb",
+      "conflicts": []
+    },
+    {
+      "row": 102,
+      "externalKey": "google_maps:ChIJN9s08dDFYpYR5G_nGsPtPkA",
+      "name": "Iglesia Bíblica Bautista Bet-El",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af5c",
+      "conflicts": []
+    }
+  ]
+}

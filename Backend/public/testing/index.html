@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Koinonía · Test de servicios</title><link rel="stylesheet" href="/testing/styles.css"><script src="/testing/app.js" defer></script></head>
+<body>
+<aside class="sidebar">
+  <a class="brand" href="/testing/">Koinonía<span>Test de servicios</span></a>
+  <div class="connection"><span id="health-dot" class="dot"></span><span id="health">Comprobando API…</span></div>
+  <section id="session"><h2>Tu sesión</h2><p id="identity">Exploración pública</p><button id="logout" class="ghost" hidden>Cerrar sesión</button></section>
+  <form id="login-form">
+    <label>Correo<input id="email" type="email" autocomplete="username" required placeholder="Correo de tu administrador"></label>
+    <label>Contraseña<input id="password" type="password" autocomplete="current-password" required></label>
+    <button type="submit">Iniciar sesión</button>
+  </form>
+</aside>
+<main>
+  <header class="page-header"><div><p class="eyebrow">GESTIÓN Y CONSULTA</p><h2>Comunidades</h2></div><button id="new-church" disabled>+ Nueva comunidad</button></header>
+  <div id="notice" role="status" aria-live="polite" hidden></div>
+  <div class="tabs" role="group" aria-label="Modo de consulta"><button id="public-mode" aria-pressed="true">Catálogo público</button><button id="manage-mode" aria-pressed="false" disabled>Gestión privada</button></div>
+  <form id="search-form" class="filters">
+    <label class="wide">Nombre<input name="q" placeholder="Buscar una comunidad…" maxlength="200"></label>
+    <label>Comuna<input name="commune" placeholder="Todas las comunas"></label>
+    <label>Denominación<input name="denomination" placeholder="Todas"></label>
+    <label class="management-only" hidden>Estado<select name="status"><option value="">Todos</option><option value="draft">Borrador</option><option value="published">Publicada</option><option value="verified">Verificada</option></select></label>
+    <label class="management-only" hidden>Disponibilidad<select name="active"><option value="active">Activas</option><option value="inactive">Desactivadas</option><option value="all">Todas</option></select></label>
+    <button type="submit" class="secondary">Buscar</button><button type="button" id="reset-search" class="text-button">Limpiar</button>
+    <details class="public-only geo"><summary>Búsqueda por distancia</summary><div class="geo-fields"><label>Latitud<input name="lat" type="number" step="any" min="-90" max="90" placeholder="-33.45"></label><label>Longitud<input name="lng" type="number" step="any" min="-180" max="180" placeholder="-70.65"></label><label>Radio (km)<input name="radius" type="number" step="any" min="0.01" max="200" placeholder="5"></label></div></details>
+  </form>
+  <section class="results" aria-label="Resultados"><div class="results-header"><span id="result-count">Cargando comunidades…</span><span id="mode-description">Fichas activas y publicadas</span></div>
+    <div class="table-scroll"><table><thead><tr><th>Comunidad</th><th>Comuna</th><th>Estado</th><th>Origen</th><th>Acción</th></tr></thead><tbody id="church-rows"></tbody></table></div>
+    <div class="pagination"><button id="previous" class="secondary" disabled>Anterior</button><span id="page-label">Página 1</span><button id="next" class="secondary" disabled>Siguiente</button></div>
+  </section>
+  <details class="trace"><summary>Registro de servicios <span id="trace-count">0 solicitudes</span></summary><ol id="request-log"></ol></details>
+</main>
+<dialog id="editor">
+  <header class="editor-heading"><div><p class="eyebrow" id="editor-mode">FICHA</p><h2 id="editor-title">Nueva comunidad</h2><p id="editor-state"></p></div><button type="button" id="close-editor" class="secondary" aria-label="Cerrar ficha">Cerrar</button></header>
+  <div id="editor-notice" role="status" aria-live="polite" hidden></div>
+  <p id="readonly-hint" class="small" hidden>Ficha pública de solo lectura. Para editar, abre la comunidad desde Gestión privada con una cuenta autorizada.</p>
+  <form id="church-form">
+    <fieldset id="editable-fields">
+      <section class="form-section"><h3>01 · Identificación y ubicación</h3><div class="form-grid">
+        <label class="span-two">Nombre *<input data-path="identification.name" required maxlength="200"></label>
+        <label>Abreviación<input data-path="identification.abbreviation" maxlength="200"></label>
+        <label>Año de fundación<input data-path="identification.yearFounded" type="number" min="1" step="1"></label>
+        <label class="span-two">Descripción<textarea data-path="identification.description" rows="3" maxlength="10000"></textarea></label>
+        <label class="span-two">Dirección<input data-path="location.address" maxlength="200"></label>
+        <label>Comuna *<input data-path="location.commune" required maxlength="200"></label>
+        <label>Ciudad<input data-path="location.city" maxlength="200"></label>
+        <label>Región<input data-path="location.region" maxlength="200"></label>
+        <label>Código postal<input data-path="location.postalCode" pattern="[0-9]{7}" inputmode="numeric" maxlength="7"></label>
+        <label>Latitud *<input id="church-lat" type="number" required min="-90" max="90" step="any"></label>
+        <label>Longitud *<input id="church-lng" type="number" required min="-180" max="180" step="any"></label>
+      </div></section>
+      <section class="form-section"><h3>02 · Identidad y comunidad</h3><div class="form-grid">
+        <label>Rama<input data-path="christianIdentity.branch" maxlength="200"></label><label>Denominación<input data-path="christianIdentity.denomination" maxlength="200"></label>
+        <label>Idiomas (separados por ;)<input data-path="christianIdentity.languages" data-kind="list"></label><label>Actividades (separadas por ;)<input data-path="community.activities" data-kind="list"></label>
+        <label class="span-two">Declaración doctrinal<textarea data-path="doctrine.officialStatement" rows="3" maxlength="10000"></textarea></label>
+        <label>Nombre del líder principal<input data-path="leadership.mainLeader.name" maxlength="200"></label><label>Cargo<input data-path="leadership.mainLeader.role" maxlength="200"></label>
+      </div>
+      <label>Reuniones y horarios (JSON)<textarea id="meetings" class="code" rows="5" spellcheck="false">[]</textarea></label><button type="button" id="sample-meeting" class="text-button">Añadir reunión de ejemplo</button>
+      </section>
+      <section class="form-section"><h3>03 · Contacto y procedencia</h3><div class="form-grid">
+        <label>Web<input data-path="contact.website" type="url" placeholder="https://…"></label><label>Correo institucional<input data-path="contact.email" type="email"></label>
+        <label>Teléfono<input data-path="contact.phone" maxlength="40"></label><label>Fuente de la información<input data-path="verification.source" maxlength="200"></label>
+        <label>Representante informante<input data-path="verification.representativeName" maxlength="200"></label><label>Cargo del informante<input data-path="verification.representativeRole" maxlength="200"></label>
+      </div><label class="checkbox"><input id="authorized" type="checkbox">La comunidad autorizó el uso de esta información.</label></section>
+      <details class="advanced"><summary>Otros campos del modelo · editor JSON</summary><textarea id="advanced-json" class="code" rows="14" spellcheck="false"></textarea><button type="button" id="apply-json" class="secondary">Aplicar JSON al formulario</button><p id="advanced-status" class="small"></p></details>
+    </fieldset>
+    <footer class="save-bar"><span id="save-hint"></span><button id="save-church" type="submit">Guardar borrador</button></footer>
+  </form>
+  <section id="record-actions" class="form-section" hidden><h3>Operaciones sobre la ficha</h3><div class="action-row">
+    <button id="reload-church" class="secondary">Recargar ficha</button>
+    <button id="draft-church" class="secondary admin-only">Pasar a borrador</button><button id="publish-church" class="secondary admin-only">Publicar</button><button id="verify-church" class="secondary admin-only">Verificar</button>
+    <button id="deactivate-church" class="danger">Desactivar</button><button id="restore-church" class="secondary" hidden>Restaurar como borrador</button>
+  </div><p class="small">Desactivar retira la ficha del catálogo y conserva sus datos. Restaurar requiere revisarla antes de volver a publicar.</p>
+  <details class="admin-only"><summary>Asignar representantes</summary><label>IDs de usuarios autorizados, separados por coma<textarea id="representatives" rows="2"></textarea></label><button id="assign-representatives" class="secondary">Guardar representantes</button></details></section>
+  <details class="form-section"><summary>Documento recibido y datos de Maps (solo lectura)</summary><pre id="raw-document"></pre></details>
+</dialog>
+<dialog id="confirm-dialog"><h2 id="confirm-title">Confirmar acción</h2><p id="confirm-message"></p><form method="dialog" class="action-row"><button value="cancel" class="secondary">Cancelar</button><button value="confirm" id="confirm-action" class="danger">Confirmar</button></form></dialog>
+</body></html>

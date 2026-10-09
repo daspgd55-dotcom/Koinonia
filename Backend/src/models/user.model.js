@@ -1,0 +1,27 @@
+const { Schema, model } = require('mongoose');
+const { fields } = require('../validation/profile');
+const modes = Object.fromEntries(fields.map(k => [k, { type: String, enum: ['preferred', 'required', 'disabled'] }]));
+const states = Object.fromEntries([...fields, 'location', 'address', 'spiritualIdentity', 'goal', 'firstVisitPreference'].map(k => [k, { type: String, enum: ['answered', 'no_preference', 'unknown', 'omitted'] }]));
+
+// Modelo de usuario
+const UserSchema = new Schema({
+  name: { type: String, trim: true, maxlength: 100 },
+  email: { type: String, required: true, unique: true, lowercase: true, trim: true },
+  password: { type: String, required: true, select: false },
+  role: { type: String, enum: ['user', 'representative', 'admin'], default: 'user' },
+  position: { type: String, trim: true, maxlength: 200 },
+  active: { type: Boolean, default: true },
+  preferences: {
+    commune: String, denominations: [String], branches: [String], doctrinalTags: [String],
+    activities: [String], ministries: [String], targetGroups: [String], languages: [String], meetingDay: String, meetingDays: [String],
+    radiusKm: Number, location: { lat: Number, lng: Number }
+  },
+  searchContext: { spiritualIdentity: { type: String, enum: ['christian','believer','no_religion','other_religion','nonbeliever','other'] }, address: { type: String, trim: true, maxlength: 200 }, goal: { type: String, enum: ['join', 'explore', 'change', 'connect'] },
+    firstVisitPreference: { type: String, enum: ['information', 'welcome', 'contact', 'not_planned'] } },
+  criterionModes: modes,
+  answerStates: states,
+  onboarding: { status: { type: String, enum: ['pending', 'completed', 'skipped'], default: 'pending' },
+    version: { type: Number, default: 1 }, lastStep: { type: Number, default: 0 }, updatedAt: Date, completedAt: Date },
+  profileRevision: { type: Number, default: 0 }
+}, { timestamps: true, strict: 'throw' });
+module.exports = model('User', UserSchema);

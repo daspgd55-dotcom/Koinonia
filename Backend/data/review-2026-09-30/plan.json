@@ -1,0 +1,9 @@
+{
+  "mode": "plan",
+  "database": "koinonia_demo",
+  "before": 343,
+  "alreadyProcessed": 105,
+  "counts": {},
+  "consolidatedExisting": 0,
+  "actions": []
+}

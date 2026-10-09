@@ -1,0 +1,398 @@
+{
+  "sourceFile": "dataset_crawler-google-places_2026-09-30_20-15-46-268.xlsx",
+  "sourceSha256": "fee1b6528d91b8bfba3e837a4a37d1d73f1dc1f6eea5d9e52b71f082a1f5e372",
+  "inputRows": 64,
+  "columns": 74,
+  "dispositions": {
+    "accepted": 50,
+    "review": 11,
+    "excluded": 3
+  },
+  "images": 116,
+  "records": [
+    {
+      "row": 2,
+      "name": "IGLESIA PRESBITERIANA EL ENCUENTRO SANTIAGO CENTRO",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 3,
+      "name": "Iglesia La Unión Cristiana",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 4,
+      "name": "Culto Unidos Primera IGLESIA Bautista",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 5,
+      "name": "Cuarta Iglesia Presbiteriana de Chile",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 6,
+      "name": "Corp Iglesia Evangelica Presbiteriana",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 7,
+      "name": "Iglesia Presbiteriana Coreana",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 8,
+      "name": "Sede Iglesia Presbiteriana Nacional (IPNA)",
+      "status": "accepted",
+      "reason": "named_christian_worship_place"
+    },
+    {
+      "row": 9,
+      "name": "Primera Iglesia Presbiteriana de Santiago",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 10,
+      "name": "Iglesia de San Pedro",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 11,
+      "name": "Iglesia Unida Metodista Pentecostal Santiago Centro Poniente",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 12,
+      "name": "Iglesia Vision San Pablo - Pentecostal",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 13,
+      "name": "Iglesia pentecostal Dios es Amor Chile",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 14,
+      "name": "Iglesia Evangelica Pentecostal Toesca",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 15,
+      "name": "IGLESIA PENTECOSTAL DEL PODER DE DIOS",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 16,
+      "name": "Alvaro iglesia pacos",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 17,
+      "name": "Iglesia Pentecostal Unida Santiago Centro Chile",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 18,
+      "name": "Iglesia UNO",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 19,
+      "name": "Iglesia Presbiteriana Chile",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 20,
+      "name": "Iglesia quemada",
+      "status": "review",
+      "reason": "activity_or_site_not_confirmed_as_community"
+    },
+    {
+      "row": 21,
+      "name": "Capilla de la Casa Central de la Universidad Católica",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 22,
+      "name": "Iglesia del Dulce Nombre de María",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 23,
+      "name": "Ermita del cerro Santa Lucía",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 24,
+      "name": "Ministerio Evangelístico Pentecostal El Fin Se Acerca",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 25,
+      "name": "OFICINAS GENERALES IGLESIA METODISTA PENTECOSTAL DE CHILE",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 26,
+      "name": "Iglesia de San Francisco de Borja",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 27,
+      "name": "Iglesia San Miguel Arcángel",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 28,
+      "name": "Corp Anglicana de Chile",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 29,
+      "name": "Iglesia Nueva Apostólica",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 30,
+      "name": "Iglesia pentecostal unida",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 31,
+      "name": "MIP - Santiago Centro",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 32,
+      "name": "Clase Arauco, PRIMP CATEDRAL EVANGELICA",
+      "status": "accepted",
+      "reason": "named_christian_worship_place"
+    },
+    {
+      "row": 33,
+      "name": "Iglesia Metodista Pentecostal De Chile",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 34,
+      "name": "Ministerio Evangelistico Pentecostal",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 35,
+      "name": "Iglesia metodista Pentecostal pomaire",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 36,
+      "name": "Corp Iglesia Presbiteriana Chile",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 37,
+      "name": "Iglesia Adventista del Séptimo Día - CENTRAL",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 38,
+      "name": "Santa Elena",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 39,
+      "name": "Iglesia Vega Poniente",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 40,
+      "name": "Tierra Latina",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 41,
+      "name": "Asociacion Cristiana Femenina",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 42,
+      "name": "Iglesia de Dios Tierra Nueva",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 43,
+      "name": "Soldados de la Cruz de Cristo",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 44,
+      "name": "Templo Iglesia Universal del Reino de Dios",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 45,
+      "name": "Iglesia Centro Cristiano Para Las Naciones, CCN Santiago",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 46,
+      "name": "Congregacion Santisimo Redentor",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 47,
+      "name": "Iglesia de San Francisco",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 48,
+      "name": "Parroquia San Juan Evangelista",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 49,
+      "name": "Iglesia Asunción",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 50,
+      "name": "Basílica de Nuestra Señora del Perpetuo Socorro",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 51,
+      "name": "Basílica de la Merced",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 52,
+      "name": "Iglesia Asamblea Cristiana Echaurren 80",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 53,
+      "name": "SANTISIMA TRINIDAD",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 54,
+      "name": "Capilla de Ánimas",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 55,
+      "name": "Iglesia Sagrados Corazones Alameda",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 56,
+      "name": "Sociedad Pesquera Holando Chilena Limita",
+      "status": "excluded",
+      "reason": "non_church_entity"
+    },
+    {
+      "row": 57,
+      "name": "Corp Iglesia De Los Adventistas Del Septimo Dia",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 58,
+      "name": "Hostal P Gustavo",
+      "status": "excluded",
+      "reason": "non_church_entity"
+    },
+    {
+      "row": 59,
+      "name": "Antonio Juan Bautista Salamero Baldrich",
+      "status": "excluded",
+      "reason": "non_church_entity"
+    },
+    {
+      "row": 60,
+      "name": "Templo Evangelico Bautista \"La Roca\"",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 61,
+      "name": "Asociacion Bautista Para el Evangelismo",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 62,
+      "name": "Iglesia Bautista Vida Nueva",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 63,
+      "name": "Cuaresma de Fraternidad",
+      "status": "review",
+      "reason": "activity_or_site_not_confirmed_as_community"
+    },
+    {
+      "row": 64,
+      "name": "Comunidad San Jose",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 65,
+      "name": "Espinoza Bautista Eugenia",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    }
+  ]
+}

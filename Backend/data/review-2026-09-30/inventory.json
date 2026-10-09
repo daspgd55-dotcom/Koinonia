@@ -1,0 +1,1832 @@
+{
+  "occurrences": 298,
+  "uniquePlaceIds": 260,
+  "decisions": {
+    "candidate": 100,
+    "excluded": 145,
+    "identity_unresolved": 15
+  },
+  "policy": "Actividad no verificada permitida solo como datos de prueba. Personas, entidades ajenas y cierres explícitos excluidos.",
+  "items": [
+    {
+      "externalKey": "google_maps:ChIJSxw_xgnFYpYRK7oYSeHfVeY",
+      "name": "Santa Marta",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJmUq90jHFYpYRVD7KI9CqTG4",
+      "name": "Comisión de Ministerios Jesuitas Chile",
+      "decision": "excluded",
+      "reason": "religious_administration_or_association_not_local_church",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJNwNEnfzEYpYRLkwgxuZN_2E",
+      "name": "Basílica de Nuestra Señora del Perpetuo Socorro",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJ-_t-BgDFYpYRjTGtJtyY3uY",
+      "name": "Marquitos",
+      "decision": "identity_unresolved",
+      "reason": "insufficient_evidence_of_church_identity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJZdUoOBbFYpYRv-ZN78EA-Ks",
+      "name": "Iglesia Ejercito De Chile",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJxbSRYwjFYpYRXK9-v2-YjMw",
+      "name": "Ministerio Abriendo Las Escrituras",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJvdpfDAjFYpYRyqUQiVG6DuY",
+      "name": "Orden Religiosa Compañía de Jesús",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJr-djuAnFYpYRoZMivAv9oro",
+      "name": "CCM Moneda ISA",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJP09tugjFYpYRi0guTQECTsk",
+      "name": "Chiesa Escobar Margarita",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ4TNPtS7FYpYRK3LC16cZmBc",
+      "name": "Iglesia Cristiana ENTHEOS",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJB7WjegrFYpYRZzQjtTMBBkM",
+      "name": "Santa Gemita",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ9WudvafFYpYRxtfCcjvL0mU",
+      "name": "Munoz Lizama Clarisa De Dios",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJE0ESSADFYpYRMkwFUUpHe-8",
+      "name": "refugio",
+      "decision": "identity_unresolved",
+      "reason": "insufficient_evidence_of_church_identity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJW5HE3QfFYpYR5APThAs0Q1w",
+      "name": "Albergue Dieciocho164, Iglesia Evangélica Pentecostés",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJ8ZsDQqjFYpYRIgZ32qilCAg",
+      "name": "S V V",
+      "decision": "identity_unresolved",
+      "reason": "insufficient_evidence_of_church_identity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ23FC3AfFYpYR6MhS1gt1DJQ",
+      "name": "Arzobispado de Santiago Casa de Ejercicios San Francisco Javier",
+      "decision": "excluded",
+      "reason": "religious_administration_or_association_not_local_church",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJG9pfDAjFYpYRB5mVqi0AhDA",
+      "name": "Orden Religiosa Compania De Jesos",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJk0Jw2AvFYpYRDcoK5ENdKv0",
+      "name": "Comunidad De Musicos Orfeon Santa Cecilia Limitada",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJxfT-5wnFYpYRXnBkqDWUy50",
+      "name": "Red De Radiodifusion Biblica",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ6XpDTwrFYpYR_WE_qEWJ8ww",
+      "name": "Illanes Momtano Fatima C",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJbydm9AbFYpYRi8_MuR5XRWE",
+      "name": "Comunidad Copropietarios Aguas Claras de Rapel",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJqWvL6QrFYpYRKvJFokx7yww",
+      "name": "Teresa De Jesos Villegas Lagos",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJB3kcLljFYpYRB_nksRBxPuA",
+      "name": "Casa barbas",
+      "decision": "identity_unresolved",
+      "reason": "insufficient_evidence_of_church_identity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJFTOmWQDFYpYRqx6z2vg6eG4",
+      "name": "Los Canelos 850",
+      "decision": "identity_unresolved",
+      "reason": "insufficient_evidence_of_church_identity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ9dAFtgnFYpYRn49o7diiD3E",
+      "name": "CEDIN Coquimbo",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJu0OFPqjFYpYRt1ilIacIFcc",
+      "name": "SAN PABLO Chile",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ62nrtwLFYpYRheRIf2XG9fU",
+      "name": "Plaza Bernardo Leighton",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJI41bVwrFYpYRbZ3Phq96naE",
+      "name": "Circulo de Suboficiales En Retiro de las Fuerzas Armadas Luis A Soto",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJAQDw9qfFYpYRev8AC5TRd9E",
+      "name": "Coronas de caridad",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJKw0VsEPFYpYR0hS1_SJ0vcc",
+      "name": "Methodist Pentecostal Church of Chile",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ5-Pw5VzFYpYR-jNqQh7FLFE",
+      "name": "Iglesia Filadelfia",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJgWrqR_jFYpYRV_w32p-_fcs",
+      "name": "Iglesia Cristiana Avivamiento",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJN_IOtRDFYpYRKVwZbYxRxPE",
+      "name": "Iglesia La casa del Hijo del Carpintero",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJQWAAy0HFYpYR3OW_BoWSN7k",
+      "name": "Santa Maria",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ6XOA71zFYpYR9HwosZEo8f4",
+      "name": "Las Asambleas de Dios",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJNY78X0DFYpYReJGamzX0v7g",
+      "name": "Fund las Rosas de Ayuda Fraterna",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJR4E0kr_FYpYRMep0GOefF54",
+      "name": "Fundacion Gente de la Calle",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJlc0NBADFYpYRg4j_VktI7fk",
+      "name": "Colegio swin",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJQXCGykDFYpYRF2jhyQxp2Bo",
+      "name": "IGLESIA EVANGELICA Jehová es mi Pastor",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJNWM3fUHFYpYRT0e_EujXkoQ",
+      "name": "Castro Bustos William Robert",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJkf6-tRLFYpYRWxlxJIJHqbg",
+      "name": "desarmahonda.cl",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJV_p9KBPFYpYRtWsVWMZdIg8",
+      "name": "Santa Maria",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJSWULK3PFYpYRHumWGcqhY40",
+      "name": "Santa Ana",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJFWoGtRLFYpYRWlm8RCrSdVU",
+      "name": "AUDITORIO",
+      "decision": "identity_unresolved",
+      "reason": "insufficient_evidence_of_church_identity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJQ43E7o_FYpYR45G4IOplNHw",
+      "name": "Monasterio de la Santísima Trinidad (MM Clarisas Cap.)",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJg4UR3g3FYpYRkIaLrwc5AXE",
+      "name": "Santuario De San Judas Tadeo Santiago",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJscUqTGzFYpYRIWiAEEUH47c",
+      "name": "Sinagoga Bicur Joilim",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJLa56vnLFYpYRbHv8-8rnGbY",
+      "name": "Erices Aburto Christian E",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJwaM74GzFYpYRXPNjqxvuJ1w",
+      "name": "Tu Universal",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJq_XPXXLFYpYRWnBgC3AzsjA",
+      "name": "Sociedad de San Vicente de Paul",
+      "decision": "excluded",
+      "reason": "religious_administration_or_association_not_local_church",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJU834k23FYpYRxybGYu_-zAU",
+      "name": "Papa Rock",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJmQ7S2A3FYpYRlY4crquL8Jg",
+      "name": "Congregacion De Misioneros Hijos Del Inmaculado Corazon De Maria",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJVW6yD2XFYpYRg2FgkTmApi4",
+      "name": "Centro Protestante De Chile",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJWe6VfADFYpYRNrLpJh33IQk",
+      "name": "MINFA SANTIAGO",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJd4-QVgDFYpYR69JPB2YRB5w",
+      "name": "Sebastiano segundo",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJZzlCF7TFYpYRizAP56Sp_10",
+      "name": "Epicentro de Vida",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJi2pvXQDFYpYRgERP2AhppW4",
+      "name": "parroquia san patricio, las condes",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJN6EhcgDFYpYReZWNSk8P68A",
+      "name": "Porvenir",
+      "decision": "identity_unresolved",
+      "reason": "insufficient_evidence_of_church_identity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJxzq2cm_FYpYRCFK0vPvpJGQ",
+      "name": "comunidad cultural rogelia",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJm8qbIADFYpYRT4xvwfPkjdQ",
+      "name": "after klo",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ_dtoF2XFYpYRkSEFg2ZEOlw",
+      "name": "Libreria Cristiana Aces Chile",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJlTEM653FYpYRCbtGsUK-ZLQ",
+      "name": "Impacto de Dios",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ19G3SQ7FYpYRE-IJLy6TlpQ",
+      "name": "Maestra Lord Cochrane",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ2Q5aywXFYpYR2cZOmeIywd0",
+      "name": "Aranguiz Gallardo Christian Ariel",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJn1iOLBDFYpYRshJc-DlxxDQ",
+      "name": "IGLESIA EVANGELICA UN NUEVO PACTO",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJrYxX0NjEYpYRRfPXvD8NW0I",
+      "name": "Grace",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJpSvH0FXFYpYR9THvQ8p2kgc",
+      "name": "Local Yarur IEP Sargento Aldea",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ6dUgGj7FYpYRX56KzO0cG3s",
+      "name": "Betel",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJi-bLEBbFYpYRy3750xGbVX8",
+      "name": "Sociedad Policlinico Nuestra Senora De Lourdes Limitada",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJHbNGHADFYpYRfdFk2SWZ2G0",
+      "name": "CASA DE JAIRO",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJy9G2CwDFYpYRKBhrYJc6-oU",
+      "name": "ARM Santiago",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJfZuzRV3FYpYRzOhIxKVkPs8",
+      "name": "Santa Gemita",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJfRGWrmfFYpYRA7VoqivMIOU",
+      "name": "Sanson King Robert Daniel George",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJVTHAcj_FYpYRaNfxalSK19c",
+      "name": "Iglesia Cristiana Avivamiento Para Chile",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJY2Sdtz_FYpYRAgxa2xqfSGs",
+      "name": "Methodist College Santiago",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJaZxVDBTFYpYRsU7LGb6BUG4",
+      "name": "Vida Nueva",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJb24sjxTFYpYRAR65u27CijU",
+      "name": "Valle De Vida",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ03zwyhXFYpYRo-UYQfSU84M",
+      "name": "Juan de Dios Arellano Gutierrez",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJxyTRX3TdYpYR3OKgsOBg_HY",
+      "name": "IMC-Renacer",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ6YaIDhTFYpYRouJAtu1GyM4",
+      "name": "Rey De Reyes",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJLaRrjWnFYpYRaRz_JhJCJDg",
+      "name": "Ejercito de Salvacion",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJuW_T4WvFYpYRH4PLobmU9ww",
+      "name": "Ejercito de Salvacion",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJe3V56RTFYpYRNKg4qKITZRI",
+      "name": "Bossay Salinas Christian A",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJxxQuomzFYpYRhQEtZJCYyv8",
+      "name": "Fund Tierra De Esperanza",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJW7NaLgDFYpYRgyjGoNqOCxk",
+      "name": "Trafi",
+      "decision": "identity_unresolved",
+      "reason": "insufficient_evidence_of_church_identity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ605TlhTFYpYRVGanF-BdQSg",
+      "name": "Hnas Terciarias Misioneras Franciscanas",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJB_7usxDFYpYRUdMRZ2qC_MQ",
+      "name": "Centro De Ayuda Catolico",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJB_7usxDFYpYRIg7sPfi9dw0",
+      "name": "Willmore Edward Nelson",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJGcCzERHFYpYR1x-_x4tifQw",
+      "name": "Jesucristo",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJE_2WR7LFYpYRab0X_r9uPH8",
+      "name": "San Jose",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJGc5trbLFYpYRxH2quW_VLVA",
+      "name": "IMC Santiago",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJQYA-j7DFYpYREAMKRJvW4yc",
+      "name": "Comunidad Real",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ7dHwmLHFYpYRkU6YhhA518k",
+      "name": "Roman Godoy Carlos Segundo",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJvSVeNqXFYpYRWee5iDL05ZM",
+      "name": "Gajardo Martinez Luz Victoria",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJkSRnMbPFYpYRhwUwfxNZHDc",
+      "name": "Riveros L Samuel",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJB-HupLTFYpYRy2Gv_7cfY8E",
+      "name": "Selman Reyes Juan Jacob",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJu6C-bLTFYpYRSpuk26F2A-Y",
+      "name": "Comunidad Ctro Comerc.Balmaced",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJpwKdnVPEYpYRAeLj1H6E-pw",
+      "name": "Primera Iglesia Metodista",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJO1b9j1HEYpYRku2Sbx-Ze64",
+      "name": "Las Asambleas de Dios",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJtTlmCgDFYpYREHt9M1m2Ge4",
+      "name": "Santiago de chile",
+      "decision": "identity_unresolved",
+      "reason": "insufficient_evidence_of_church_identity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJW0RgLP7EYpYRwNF4vXdiGZ4",
+      "name": "Comunidad Catolica Shalom",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJpRK6ElXEYpYRdlEv7jwVI5A",
+      "name": "Iglesia Comunidad Cristiana",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ2zv8plHEYpYR1v3wt-XLNHI",
+      "name": "San Juan De Dios Casa Corame",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJUTJxbazFYpYRrzqgao-5WiQ",
+      "name": "iglesia voz en el desierto",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJmwUDyKvFYpYR2uUL6gXovK0",
+      "name": "Ejercito de Salvacion",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ7VavP7PFYpYRZttkHAE51bQ",
+      "name": "Plaza Panamá",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ15GZNUvEYpYRkf49Sjoomuw",
+      "name": "Colegio de Nuestra Senora de Andacollo",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJI1Ydc1HEYpYRLeZ-5bo1GQY",
+      "name": "Anderson",
+      "decision": "identity_unresolved",
+      "reason": "insufficient_evidence_of_church_identity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJk8hCclLEYpYRCadCOJoisDQ",
+      "name": "Chamache Pastor Janeth Balvina",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJo60Di4DOYpYRWNzmhIdeDCg",
+      "name": "Maristas Chile",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJS-Y1rK3FYpYR8B7P3Tu07_8",
+      "name": "Nueces Para el Amor",
+      "decision": "identity_unresolved",
+      "reason": "insufficient_evidence_of_church_identity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJHR9TBI3FYpYRRKVcTqfgN1g",
+      "name": "Sede Iglesia Presbiteriana Nacional (IPNA)",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 3
+    },
+    {
+      "externalKey": "google_maps:ChIJkdMkXKvFYpYR7DcpdS34BE4",
+      "name": "Hostal P Gustavo",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 3
+    },
+    {
+      "externalKey": "google_maps:ChIJRXpKulPEYpYRBcY-dQjDQ44",
+      "name": "Jehhova Es Mi Pastor",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJxQAO0FPEYpYRHDI9D8RoGCA",
+      "name": "Corporacion Nuestra Casa",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJfUSPW6vFYpYROqR0ofyiJgo",
+      "name": "Sepulveda Faine Christian Fernando",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJKyi-AADFYpYRxHmSy26MbLs",
+      "name": "Gratitud nacional",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ7bMzY6rFYpYRTwNSj6JhkHw",
+      "name": "Caritas Chile",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJHZ24IQDFYpYRiZbmUoIn3mk",
+      "name": "Iglesia ni Cristo [South America] - Santiago, Chile",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJu4ytaCHFYpYRHsP-6j8h3P4",
+      "name": "Santa Lucia",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ4_Ogm_jEYpYRqGG9bsyYW-U",
+      "name": "Juana De Dios Gonzalez Ramos",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJw7QQc1XEYpYR-xCFpB9gRa0",
+      "name": "Las Asambleas de Dios",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ9WiffarFYpYRU8odcjFUnNg",
+      "name": "Instituto Pastoral De La Familia",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJSWDsyqrFYpYR07QOGvauD0k",
+      "name": "Congregacion Salesiana Inspectoria Salesiana",
+      "decision": "excluded",
+      "reason": "religious_administration_or_association_not_local_church",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJH4-3WlXEYpYRlXgrlLkNBAM",
+      "name": "IGLESIA CRISTIANA EVANGELICA FUENTE DE SALVACION",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJE2t5BlbEYpYRYkmwfpHykMw",
+      "name": "Blamey Acevedo John C",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJA24CNQDFYpYR8ZDZzZy66No",
+      "name": "IPD Ñuñoa",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJzzMh0qPFYpYR32N9V9tiOsA",
+      "name": "IBN",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJkUv9barFYpYRfdfbUfvUI4A",
+      "name": "Cristian Gonzalo Vidal Iglesias",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJAwdWQgDFYpYRfwHXvBcl6cM",
+      "name": "Futbol me1",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJIa5M5lXEYpYRrI9mfFCYlAc",
+      "name": "Iglesia Metodista Pentecostal De Chile Santiago Centro",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJc1-scmnFYpYRRebe7lbBm0I",
+      "name": "Santa Elisa",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJYQWOt059jL0Rd8MZPoBEeYE",
+      "name": "OFICINAS GENERALES IGLESIA METODISTA PENTECOSTAL DE CHILE",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJz7CgFgDFYpYR7YsToa5r9oQ",
+      "name": "Local Iep Martínez de Rozas",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ_ZbWkEvEYpYRwv2IjHMfB00",
+      "name": "Fundacion Esperanza De Vida",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJ690Pxk3EYpYRjLiC9vGTP7E",
+      "name": "Intergral Vida",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJA9SR-fjEYpYRL3pRfvU8P-U",
+      "name": "Tierra Latina",
+      "decision": "identity_unresolved",
+      "reason": "insufficient_evidence_of_church_identity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJJd4mVvjEYpYR73mU-woNdsU",
+      "name": "Sepulveda Salgado Luz E",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJkbvz6E7EYpYRWegRt4jCHn4",
+      "name": "Naranjo Galvez Christian A",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJN6-umUnEYpYRNqXDBgBMfxo",
+      "name": "Iglesia Evangelica Metodista Pentecostal Temple Esperanza",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJdRwI603EYpYRmoAuiPcFwNQ",
+      "name": "Plaza Yungay",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJeekFWHfFYpYRYalASdHM3G0",
+      "name": "Iglesia de Dios Misiones Mundiales",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJhySQoXfFYpYRW2X_3fo82pQ",
+      "name": "Santa Rita",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJFz-2YnDFYpYRhNEQ5L7V_gg",
+      "name": "Cruceiro",
+      "decision": "identity_unresolved",
+      "reason": "insufficient_evidence_of_church_identity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJYUY7eXDFYpYRTi4_UWbgUzk",
+      "name": "Santa Julia",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJo1Y_dHPFYpYR0coTuC0-69Y",
+      "name": "Arzobispado de Santiago Casa de Ejercicios San Francisco Javier",
+      "decision": "excluded",
+      "reason": "religious_administration_or_association_not_local_church",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJC4pIfHPFYpYRJh7eRWo8RA0",
+      "name": "Arzobispado de Santiago",
+      "decision": "excluded",
+      "reason": "religious_administration_or_association_not_local_church",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJsRwUt3nFYpYRuEdhMQbcnOU",
+      "name": "Augustinians Monastery",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ5TTLfZ3FYpYRqBqdtn7hEQ8",
+      "name": "Fund Cultural Amigos de las Iglesias de Chiloe",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJuwDQZgDFYpYRiRl26TyN2_o",
+      "name": "Plaza san francisco",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJUwGxcP7EYpYR0rv2pI5pfZ0",
+      "name": "Santa Elena",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJh6oYsv3EYpYRbV_7xutp22g",
+      "name": "Salinas Carvajal Carlos",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJVeNGJP7EYpYRLVkIVdNM_to",
+      "name": "Fabiano De Andrade Batista",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJj4b0x5jFYpYRS2_NJaiPllc",
+      "name": "Rios De Marimon Hernan Aquiles",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJJ3PVdW_FYpYRRkhRncf8upA",
+      "name": "Movimiento de Jóvenes Palestinos",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJVZGT657FYpYRMV6QdolGLMw",
+      "name": "Farias Villacura Christian Mauricio",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJmQ_tL5zFYpYR_dVIfXn2Kcc",
+      "name": "Caraballo Guillen Ceferino De Jesus",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJPYHiYwDFYpYR1m8U4QN5KQk",
+      "name": "Casa de la Misericordia",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJFXVWbp7FYpYRGq8p9koHh9w",
+      "name": "Pontif.Universidad Catolica de Chile",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJr0mUEgDFYpYRA3tuZXtWZcw",
+      "name": "Alvaro iglesia pacos",
+      "decision": "identity_unresolved",
+      "reason": "insufficient_evidence_of_church_identity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJ5Rnzlq_FYpYRuXJBazUtqmw",
+      "name": "Carmen Mariana Barra Rivera",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJmZaJIgnDYpYRWGmt0QtQxvE",
+      "name": "Fund las Rosas de Ayuda Fraterna",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJC-J_7qXFYpYRpTSDut35BC4",
+      "name": "Arteaga Fuentes Christian E",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ_8XAOqnFYpYRmQtPoLyNXOE",
+      "name": "Comunidad San Jose",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 3
+    },
+    {
+      "externalKey": "google_maps:ChIJI-wJCabFYpYRDvOzPgUo76o",
+      "name": "Dulanto Galilea Jose Pablo",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJpR4tT6bFYpYRH6WI7A2ArL0",
+      "name": "Grupo Bíblico Universitario de Chile",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJe5KNOKbFYpYRt5b0kc-bF6o",
+      "name": "Sociedad Pesquera Holando Chilena Limita",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 3
+    },
+    {
+      "externalKey": "google_maps:ChIJBzqdfKnFYpYRscB8E53ein8",
+      "name": "Arzobispado de Santiago Vicaria Para la Educacion",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJU8qbQaLFYpYRZmRElXhlTDM",
+      "name": "Palacio La Alhambra",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJFTDaukjEYpYRHVpogMd9qWI",
+      "name": "Arzobispado De Santiago",
+      "decision": "excluded",
+      "reason": "religious_administration_or_association_not_local_church",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJpw1GFE_EYpYRMOgBb67OyKI",
+      "name": "Encuentro",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ01PkGwTFYpYRcvNoKVARtJw",
+      "name": "Comunidad Papa Juan Xxiii",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJARtFGQTFYpYRGdMdb_L0dMA",
+      "name": "Fund las Rosas de Ayuda Fraterna",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJy2E-haTFYpYRKxlaznVbGTs",
+      "name": "Archbishopric of Santiago Vicariate of Social Pastoral",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ_6PWARzFYpYR13Zom7LN1QQ",
+      "name": "deerecho canónico",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ7yFgIgnDYpYRNcNpv4kpDww",
+      "name": "Provincia San Lorenzo Martir Padres Domi Nicos",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJG47WT6PFYpYRiOyqXAUxajw",
+      "name": "Convento Santo Domingo",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJhzBuBKPFYpYRfa4AOzskQdg",
+      "name": "Soc Biblica Chilena",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJM5CTNKPFYpYRGRa34dIitf8",
+      "name": "Cia de las Hijas de la Caridad de San Vicente de Paul",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJKYPp-6LFYpYRioOPq4xCok8",
+      "name": "Liberia Cristiana Peniel",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJJxERfaPFYpYRvFV_1v-d29I",
+      "name": "Soc de Inversiones Camino la Fuente",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJ89CxmqTFYpYR5VheifQJRlM",
+      "name": "Parroquia Santa Cruz de Mayo",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJ-bRILLvFYpYR6WocysAOZto",
+      "name": "Palma Galaz Jaime De Jesus Y Otros",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJJxERfaPFYpYRFQKdq0q5z5E",
+      "name": "Sociedad de Asesorias E Inversiones Santa Ana",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJNY1pzKLFYpYR0_rCbta1GZM",
+      "name": "PA160-Parada 2 / Iglesia San Pedro",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJy1sAPaPFYpYR5M-5YOnwJIs",
+      "name": "Ynquilla Maldonado John E.",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJvc0Iv5vFYpYR_xKT27Pr4HM",
+      "name": "Tomic Valdes Gracia",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJEYNv2ZvFYpYRP-u8x5XUHxU",
+      "name": "Palacio Bruna",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJwb_VfaTFYpYRE02Uhfq3DII",
+      "name": "Sanctuary of Our Lady of Mount Carmel",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJRZVrZADFYpYRGrwaHHp7yjY",
+      "name": "Monumento a las víctimas del incendio de la Iglesia de la Compañía de Jesús",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJTcwYSq_FYpYRbx0Yc5NadIs",
+      "name": "Christ of May",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJB4ajzaPFYpYR4JZvwH8gvDo",
+      "name": "El Camino S A",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ65Usk6DFYpYRtdNiGsNpcfE",
+      "name": "Soc Biblica Chilena",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJX81zBgDFYpYRVUQF5se0K1Y",
+      "name": "Convento de San Francisco (Franciscanos)",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJufqPoKbFYpYREILzVST4sVw",
+      "name": "Davis Lecaros Nicholas",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJXcFLmV7FYpYRLeH2kaBJvvA",
+      "name": "Paula Iglesias Otarola",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJAU5Af6HFYpYRVu15KS9rWSs",
+      "name": "Saint Tropez",
+      "decision": "identity_unresolved",
+      "reason": "insufficient_evidence_of_church_identity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ-1fGUqLFYpYRZvfLidlcEiI",
+      "name": "Christian Marcelo Estay Lagos",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJZ1RgXKDFYpYRam6TJkfjf1Y",
+      "name": "Museo de Arte Colonial de San Francisco",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJg45Y7KDFYpYRRI4OkF_6Po4",
+      "name": "Iglesias Ringeling Y Compania Limitada",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJLyoZ0KPFYpYRKv8rUuTPqtg",
+      "name": "Zambrano Cornejo Christian Gabriel",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJtfnGUqLFYpYREoWfI_qdZf0",
+      "name": "Inversiones Principe de Gales",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJFxv816PFYpYRuGqGvWCh-x8",
+      "name": "Curia Y Martinez Asoc",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJnVs-_qDFYpYR2MQm5mLs6JI",
+      "name": "Santa Maria Zanartu Jose Luis Pedro",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJpW1yQqHFYpYR2Kq7mjH8t5U",
+      "name": "Guajardo Espinoza Christian Leonardo",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ0xyk6brFYpYRLodDdPpuXTA",
+      "name": "Eben Ezer",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJs9tLPKTFYpYRA1IO7QLXpVI",
+      "name": "Misión y Visión – Formación Biblica",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ87I75KDFYpYREFvBHsvmsxk",
+      "name": "Dios Carrasco Cesar Enrique",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJqxBuZ6DFYpYRTNjq2f91b1Q",
+      "name": "Trigo Chandia Nicolas Samuel",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJU7rlEaDFYpYRZP5eDKGMXVo",
+      "name": "Rebolledo Rioseco Christian Ivan",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJmYvMMaLFYpYRye2B2BU-AV4",
+      "name": "Fund Proyecto de Paz Mundial",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJJRj3TaHFYpYRKoLmP1-W4RU",
+      "name": "Santa Rafaela",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJC-G5RaLFYpYR68HmC5kRVa0",
+      "name": "Corales Trivino Christian Gustavo",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJKXaHGqLFYpYRn4ZRWE3-Am4",
+      "name": "Congregación Provincia Mercedaria de Chile",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJDfWR0aDFYpYRPmHRcN8HAX8",
+      "name": "Dewers Sotomayor Christian Bernardo",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJB2FSLqHFYpYRwKeHEfda6XY",
+      "name": "Zabala P Karmel",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJYXBwBKXFYpYR2d8AZsE20EI",
+      "name": "Idec S.A.",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ2SJ9u6HFYpYRl9a7kph3VUk",
+      "name": "Ministerios R B C",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJjbno86PFYpYRIIvfadSmeZE",
+      "name": "Alonso Christian Vergara Fuentes",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJXebv-6PFYpYRVuivcoHeOew",
+      "name": "Celedon Pardo Christian Andres",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJK63jFKTFYpYR6rfqaTUnxgU",
+      "name": "Retamal Contreras Christian A",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJS1SDPqTFYpYRqKNqDAfGVtg",
+      "name": "Emilio Bonifacio de San Jose Eva Araya",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJwRDlrqPFYpYRa-MgJBizDk0",
+      "name": "Pena Ricart Jesus",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJeS6JPaHFYpYRYthHsSPbiDQ",
+      "name": "Ayuda Deudas",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJoYqkHQDFYpYRQx64L-x15D0",
+      "name": "Franciscanos de Chile - Curia Provincial",
+      "decision": "excluded",
+      "reason": "religious_administration_or_association_not_local_church",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJQ65aZ6DFYpYR7mc8PBMMlKk",
+      "name": "Plásticos Londres",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJLyoZ0KPFYpYRa5L8FK1zKSg",
+      "name": "Hudson Hope Kenneth C",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJxwdm0aDFYpYRB2mG2_6Rw88",
+      "name": "Camus Astorquiza Daniela E.",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJZaOomKHFYpYRMRJqARGD5wY",
+      "name": "Moore Pastor Roger",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJjbno86PFYpYRlH5czV370rY",
+      "name": "Corp Educ y Promocion Juvenil Juan Diego",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJIbesFeLFYpYRT9mKStUlW1o",
+      "name": "Jardín del Convento San Francisco",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJAzCHIwDFYpYRJkEdDifSV_A",
+      "name": "Barrio París Londres",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ_yIPLafFYpYRX4feJRcs5A8",
+      "name": "Club de la Unión de Santiago",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ3ymDPqTFYpYRI-z7HFVUgWc",
+      "name": "Comunidad Humberto P Escudero y Otros",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJQ0gaMKLFYpYRBL7qwAeGxiQ",
+      "name": "Neyra Aviles Barbara",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJnw30gKTFYpYR_qEqWk56SXg",
+      "name": "Museo de Arte Sagrado",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJk0Qjh6PFYpYR0SF1afc_Pyw",
+      "name": "Archiepiscopal Palace of Santiago de Chile",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJnWgdxaPFYpYRUtQcDsOHUIA",
+      "name": "Coleman Mariqueo Luz",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJk_zgeKTFYpYR4FeWp96y-Fo",
+      "name": "Articulos Religiosos",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJW221OqLFYpYRySjfQOS3VyM",
+      "name": "Sentra Software House Limitada",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJkVRI23HFYpYRJnE3sWNu3yY",
+      "name": "Ccb Electronica Limitada",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJyzH9LwfFYpYRovsOjs3l1s8",
+      "name": "Oratorio Mariano Central",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ_2OpDwHFYpYR57UYiKPTea4",
+      "name": "Congregacion de los Hermanos Maristas",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJtfJ-VajFYpYRfx6tz836FGU",
+      "name": "FASIC",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ6R2hY6nFYpYR2YdbpuUxAVQ",
+      "name": "Capellanía Evangélica de la Fuerza Aérea de Chile",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJXXKSQK7FYpYRG47wyjP9-tc",
+      "name": "Espinoza Bautista Eugenia",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJuyKUWf7EYpYR7Ofp3Gw1Cjk",
+      "name": "Soldados de la Cruz de Cristo",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJ34VlhwbFYpYR82i-4_PX_8c",
+      "name": "Instituto Biblico Nacional De Chile",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJIdXyY7fFYpYR1uEH03esbhc",
+      "name": "Comité Nacional de Educación Evangélica - CONAEV",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJL8QwjwrFYpYR4sfpxfSx_fc",
+      "name": "TNE TV Televisión Nacional Evangélica",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ5d_n90zEYpYRlgQZ5WuCYM0",
+      "name": "Ramirez Juan Bautista",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJi2zv86PFYpYR9TJkWSSG2zs",
+      "name": "Antonio Juan Bautista Salamero Baldrich",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJm-1lMKvFYpYRduIs8wnh05Q",
+      "name": "Asociacion Bautista Para el Evangelismo",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 2
+    },
+    {
+      "externalKey": "google_maps:ChIJl8-H10rEYpYRGzRY-yyqlfo",
+      "name": "Juan Bautista Cornejo Amestica",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJlW3JxXDFYpYRwJoYPQWJKj0",
+      "name": "Convencion Evangelica Bautista de Chile",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ8ahr0rzFYpYR9EZArbjPYIU",
+      "name": "Corporacion Metodista Libre De Chile",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJowW0ZQDFYpYRzizSVfB8ooI",
+      "name": "Iglesia Cristiana La Roca",
+      "decision": "candidate",
+      "reason": "plausible_community_activity_unverified",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJwbwYW33FYpYR4c9hnTAur38",
+      "name": "Iglesia quemada",
+      "decision": "excluded",
+      "reason": "damaged_site_without_community_identity",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJQ9xc-wHFYpYRbtgOHMyc0Ac",
+      "name": "Asociacion Cristiana Femenina",
+      "decision": "excluded",
+      "reason": "religious_administration_or_association_not_local_church",
+      "observations": 1
+    },
+    {
+      "externalKey": "google_maps:ChIJ9WiffarFYpYRHxT0ZfR5acw",
+      "name": "Cuaresma de Fraternidad",
+      "decision": "excluded",
+      "reason": "person_or_non_church_entity",
+      "observations": 1
+    }
+  ]
+}

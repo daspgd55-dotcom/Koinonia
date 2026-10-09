@@ -1,0 +1,717 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "koinonia.church-import.v1"
+    },
+    "externalKey": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 250
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "batchId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "sourceFile": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "sourceRow": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 9007199254740991
+        },
+        "issues": {
+          "maxItems": 50,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        }
+      },
+      "required": [
+        "batchId",
+        "sourceFile",
+        "sourceRow",
+        "issues"
+      ],
+      "additionalProperties": false
+    },
+    "church": {
+      "type": "object",
+      "properties": {
+        "identification": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "abbreviation": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000
+            },
+            "yearFounded": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 2026
+            },
+            "distinctiveFeatures": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        "verification": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string",
+              "const": "google_maps"
+            },
+            "authorized": {
+              "type": "boolean",
+              "const": false
+            }
+          },
+          "required": [
+            "source",
+            "authorized"
+          ],
+          "additionalProperties": false
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "address": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "commune": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "city": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "region": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "postalCode": {
+              "type": "string",
+              "pattern": "^\\d{7}$"
+            },
+            "countryCode": {
+              "type": "string",
+              "const": "CL"
+            },
+            "coordinates": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "Point"
+                },
+                "coordinates": {
+                  "type": "array",
+                  "prefixItems": [
+                    {
+                      "type": "number",
+                      "minimum": -180,
+                      "maximum": 180
+                    },
+                    {
+                      "type": "number",
+                      "minimum": -90,
+                      "maximum": 90
+                    }
+                  ],
+                  "items": false,
+                  "minItems": 2,
+                  "maxItems": 2
+                }
+              },
+              "required": [
+                "type",
+                "coordinates"
+              ],
+              "additionalProperties": false
+            },
+            "parking": {
+              "type": "boolean"
+            },
+            "accessibility": {
+              "type": "boolean"
+            },
+            "accessNotes": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000
+            }
+          },
+          "required": [
+            "commune",
+            "coordinates"
+          ],
+          "additionalProperties": false
+        },
+        "christianIdentity": {
+          "type": "object",
+          "properties": {
+            "branch": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "denomination": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "associatedTradition": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "network": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "languages": {
+              "maxItems": 50,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "doctrine": {
+          "type": "object",
+          "properties": {
+            "officialStatement": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000
+            },
+            "characteristics": {
+              "maxItems": 50,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              }
+            },
+            "soteriology": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "eschatology": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          },
+          "additionalProperties": false
+        },
+        "meetings": {
+          "maxItems": 50,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "audience": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "modality": {
+                "type": "string",
+                "enum": [
+                  "Presencial",
+                  "Online",
+                  "Híbrida"
+                ]
+              },
+              "addressOrUrl": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "schedule": {
+                "minItems": 1,
+                "maxItems": 14,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "day": {
+                      "type": "string",
+                      "enum": [
+                        "Lunes",
+                        "Martes",
+                        "Miércoles",
+                        "Jueves",
+                        "Viernes",
+                        "Sábado",
+                        "Domingo"
+                      ]
+                    },
+                    "startTime": {
+                      "type": "string",
+                      "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+                    },
+                    "durationMinutes": {
+                      "type": "integer",
+                      "exclusiveMinimum": 0,
+                      "maximum": 1440
+                    }
+                  },
+                  "required": [
+                    "day",
+                    "startTime",
+                    "durationMinutes"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "type",
+              "modality",
+              "schedule"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "community": {
+          "type": "object",
+          "properties": {
+            "targetGroups": {
+              "maxItems": 50,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              }
+            },
+            "ministries": {
+              "maxItems": 50,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              }
+            },
+            "activities": {
+              "maxItems": 50,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              }
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000
+            },
+            "memberRange": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          },
+          "additionalProperties": false
+        },
+        "leadership": {
+          "type": "object",
+          "properties": {
+            "mainLeader": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "role": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                }
+              },
+              "required": [
+                "name",
+                "role"
+              ],
+              "additionalProperties": false
+            },
+            "otherLeaders": {
+              "maxItems": 50,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200
+                  },
+                  "role": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200
+                  }
+                },
+                "required": [
+                  "name",
+                  "role"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "contact": {
+          "type": "object",
+          "properties": {
+            "website": {
+              "type": "string",
+              "maxLength": 2000,
+              "format": "uri"
+            },
+            "instagram": {
+              "type": "string",
+              "maxLength": 2000,
+              "format": "uri"
+            },
+            "facebook": {
+              "type": "string",
+              "maxLength": 2000,
+              "format": "uri"
+            },
+            "youtube": {
+              "type": "string",
+              "maxLength": 2000,
+              "format": "uri"
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+            },
+            "phone": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            }
+          },
+          "additionalProperties": false
+        },
+        "firstVisit": {
+          "type": "object",
+          "properties": {
+            "instructions": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000
+            },
+            "newVisitorSupport": {
+              "type": "boolean"
+            },
+            "welcomeProcess": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000
+            }
+          },
+          "additionalProperties": false
+        },
+        "media": {
+          "maxItems": 30,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "image",
+                  "video"
+                ]
+              },
+              "url": {
+                "type": "string",
+                "maxLength": 2000,
+                "format": "uri"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              }
+            },
+            "required": [
+              "type",
+              "url",
+              "source"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "externalProfile": {
+          "type": "object",
+          "properties": {
+            "provider": {
+              "type": "string",
+              "const": "google_maps"
+            },
+            "placeId": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{5,200}$"
+            },
+            "mapsUrl": {
+              "type": "string",
+              "maxLength": 4000,
+              "format": "uri"
+            },
+            "sourceTitle": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000
+            },
+            "subtitle": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000
+            },
+            "categories": {
+              "maxItems": 50,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 10000
+              }
+            },
+            "sourceAddress": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000
+            },
+            "sourceCity": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000
+            },
+            "capturedAt": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+            },
+            "openingHours": {
+              "maxItems": 7,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "day": {
+                    "type": "string",
+                    "enum": [
+                      "Lunes",
+                      "Martes",
+                      "Miércoles",
+                      "Jueves",
+                      "Viernes",
+                      "Sábado",
+                      "Domingo"
+                    ]
+                  },
+                  "raw": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 10000
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "closed",
+                      "open24h",
+                      "intervals",
+                      "unparsed"
+                    ]
+                  },
+                  "intervals": {
+                    "maxItems": 20,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "startTime": {
+                          "type": "string",
+                          "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+                        },
+                        "endTime": {
+                          "type": "string",
+                          "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+                        },
+                        "endDayOffset": {
+                          "anyOf": [
+                            {
+                              "type": "number",
+                              "const": 0
+                            },
+                            {
+                              "type": "number",
+                              "const": 1
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "startTime",
+                        "endTime",
+                        "endDayOffset"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "day",
+                  "raw",
+                  "status",
+                  "intervals"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "links": {
+              "maxItems": 100,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 10000
+                  },
+                  "url": {
+                    "type": "string",
+                    "maxLength": 4000,
+                    "format": "uri"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "url"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "phones": {
+              "maxItems": 30,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^\\+56\\d{9}$"
+              }
+            },
+            "emails": {
+              "maxItems": 30,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "email",
+                "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+              }
+            },
+            "capturedAtBasis": {
+              "type": "string",
+              "enum": [
+                "scrapedAt",
+                "export_filename_timezone_unknown"
+              ]
+            }
+          },
+          "required": [
+            "provider",
+            "placeId",
+            "mapsUrl",
+            "sourceTitle",
+            "categories",
+            "sourceAddress",
+            "sourceCity",
+            "capturedAt",
+            "openingHours"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "identification",
+        "verification",
+        "location",
+        "externalProfile"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "externalKey",
+    "provenance",
+    "church"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,500 @@
+{
+  "mode": "apply",
+  "database": "koinonia_demo",
+  "before": 263,
+  "input": 50,
+  "counts": {
+    "update": 43,
+    "unchanged": 4,
+    "review": 2,
+    "insert": 1
+  },
+  "actions": [
+    {
+      "row": 2,
+      "externalKey": "google_maps:ChIJJ4dt39fFYpYRy9xMz9YId3w",
+      "name": "IGLESIA PRESBITERIANA EL ENCUENTRO SANTIAGO CENTRO",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b00c",
+      "conflicts": []
+    },
+    {
+      "row": 3,
+      "externalKey": "google_maps:ChIJiXPlmgPFYpYRtVA1qvnHFH0",
+      "name": "Iglesia La Unión Cristiana",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af63",
+      "conflicts": []
+    },
+    {
+      "row": 4,
+      "externalKey": "google_maps:ChIJr5eT967FYpYRFk6kboxxLCc",
+      "name": "Culto Unidos Primera IGLESIA Bautista",
+      "reason": "place_id",
+      "action": "unchanged",
+      "id": "6ab879f4a919e5b9f530afcc",
+      "conflicts": []
+    },
+    {
+      "row": 5,
+      "externalKey": "google_maps:ChIJJ20bxULFYpYRA_WHNPgh-Vk",
+      "name": "Cuarta Iglesia Presbiteriana de Chile",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af76",
+      "conflicts": []
+    },
+    {
+      "row": 6,
+      "externalKey": "google_maps:ChIJZ4Nof6jFYpYRlp650NvH15g",
+      "name": "Corp Iglesia Evangelica Presbiteriana",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b024",
+      "conflicts": []
+    },
+    {
+      "row": 7,
+      "externalKey": "google_maps:ChIJV1LFlGrFYpYRRFnALVemoNc",
+      "name": "Iglesia Presbiteriana Coreana",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af7d",
+      "conflicts": []
+    },
+    {
+      "row": 8,
+      "externalKey": "google_maps:ChIJHR9TBI3FYpYRRKVcTqfgN1g",
+      "name": "Sede Iglesia Presbiteriana Nacional (IPNA)",
+      "reason": "shared_address_requires_review",
+      "action": "review",
+      "candidates": [
+        {
+          "id": "6ab879f4a919e5b9f530afe9",
+          "name": "SANTISIMA TRINIDAD",
+          "address": "Av. Brasil 153, 8340497 Santiago, Región Metropolitana, Chile"
+        }
+      ]
+    },
+    {
+      "row": 9,
+      "externalKey": "google_maps:ChIJCWUpvKLFYpYRIL3ZmspYG-s",
+      "name": "Primera Iglesia Presbiteriana de Santiago",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b015",
+      "conflicts": []
+    },
+    {
+      "row": 10,
+      "externalKey": "google_maps:ChIJv9OMz6LFYpYRbcKtdAhDvy8",
+      "name": "Iglesia de San Pedro",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b02a",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 11,
+      "externalKey": "google_maps:ChIJUbpAoeTEYpYRjWUrxbXvHFc",
+      "name": "Iglesia Unida Metodista Pentecostal Santiago Centro Poniente",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af62",
+      "conflicts": []
+    },
+    {
+      "row": 12,
+      "externalKey": "google_maps:ChIJNfwcNh3FYpYRh9lpurlfwCM",
+      "name": "Iglesia Vision San Pablo - Pentecostal",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afd3",
+      "conflicts": []
+    },
+    {
+      "row": 13,
+      "externalKey": "google_maps:ChIJHSGFt03EYpYR7v22ZKHX3XE",
+      "name": "Iglesia pentecostal Dios es Amor Chile",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afdb",
+      "conflicts": []
+    },
+    {
+      "row": 14,
+      "externalKey": "google_maps:ChIJ_UeOpUnFYpYRdT4DTvMef4s",
+      "name": "Iglesia Evangelica Pentecostal Toesca",
+      "reason": "place_id",
+      "action": "unchanged",
+      "id": "6ab879f4a919e5b9f530af64",
+      "conflicts": []
+    },
+    {
+      "row": 15,
+      "externalKey": "google_maps:ChIJaeIT2lfFYpYRQ9ftAf8Bhpk",
+      "name": "IGLESIA PENTECOSTAL DEL PODER DE DIOS",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530aff8",
+      "conflicts": []
+    },
+    {
+      "row": 17,
+      "externalKey": "google_maps:ChIJCXgVw2XFYpYRQ2UTEJFdwK0",
+      "name": "Iglesia Pentecostal Unida Santiago Centro Chile",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af96",
+      "conflicts": []
+    },
+    {
+      "row": 18,
+      "externalKey": "google_maps:ChIJMyk7GpnFYpYR_HisH7TMic4",
+      "name": "Iglesia UNO",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b042",
+      "conflicts": []
+    },
+    {
+      "row": 19,
+      "externalKey": "google_maps:ChIJczcaYmrFYpYRsH9Di5pep6s",
+      "name": "Iglesia Presbiteriana Chile",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af79",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 21,
+      "externalKey": "google_maps:ChIJFRReGQDFYpYRbnHPOb2wwXY",
+      "name": "Capilla de la Casa Central de la Universidad Católica",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b012",
+      "conflicts": []
+    },
+    {
+      "row": 22,
+      "externalKey": "google_maps:ChIJ_T0lC3XFYpYRWY3ON_4rfY8",
+      "name": "Iglesia del Dulce Nombre de María",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b00a",
+      "conflicts": []
+    },
+    {
+      "row": 23,
+      "externalKey": "google_maps:ChIJM-tOPp_FYpYRwQoXZUNc7uQ",
+      "name": "Ermita del cerro Santa Lucía",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b01a",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 24,
+      "externalKey": "google_maps:ChIJ3WJComnFYpYRn3nDfVlUVNk",
+      "name": "Ministerio Evangelístico Pentecostal El Fin Se Acerca",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afbc",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 26,
+      "externalKey": "google_maps:ChIJwYwhb5zFYpYRxLJk4tlSBiI",
+      "name": "Iglesia de San Francisco de Borja",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b010",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 27,
+      "externalKey": "google_maps:ChIJoeLy9XXFYpYRNapGqX8W6iY",
+      "name": "Iglesia San Miguel Arcángel",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b008",
+      "conflicts": []
+    },
+    {
+      "row": 28,
+      "externalKey": "google_maps:ChIJkYej4J7FYpYRcWI7Jxrr3kY",
+      "name": "Corp Anglicana de Chile",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b01b",
+      "conflicts": []
+    },
+    {
+      "row": 29,
+      "externalKey": "google_maps:ChIJBZn-gnfFYpYRWp12FWELK8k",
+      "name": "Iglesia Nueva Apostólica",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b009",
+      "conflicts": []
+    },
+    {
+      "row": 30,
+      "externalKey": "google_maps:ChIJkR1ixIjbYpYRDvfuerqq69c",
+      "name": "Iglesia pentecostal unida",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afbb",
+      "conflicts": []
+    },
+    {
+      "row": 31,
+      "externalKey": "google_maps:ChIJcxeCezzFYpYREGiLzjne_OI",
+      "name": "MIP - Santiago Centro",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afd0",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 32,
+      "externalKey": "google_maps:ChIJKw0VsEPFYpYR0hS1_SJ0vcc",
+      "name": "Clase Arauco, PRIMP CATEDRAL EVANGELICA",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6abd6e8eec3bbffe95258b0f",
+      "conflicts": []
+    },
+    {
+      "row": 33,
+      "externalKey": "google_maps:ChIJPddeqxLFYpYR8YBETvO-UNQ",
+      "name": "Iglesia Metodista Pentecostal De Chile",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af91",
+      "conflicts": []
+    },
+    {
+      "row": 34,
+      "externalKey": "google_maps:ChIJuWPeHP3FYpYRSgkxQ3xniHw",
+      "name": "Ministerio Evangelistico Pentecostal",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b03f",
+      "conflicts": []
+    },
+    {
+      "row": 35,
+      "externalKey": "google_maps:ChIJN-wBlSDFYpYRsZZOG0h6eYU",
+      "name": "Iglesia metodista Pentecostal pomaire",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b03c",
+      "conflicts": []
+    },
+    {
+      "row": 36,
+      "externalKey": "google_maps:ChIJAe-kmKLFYpYRsfDudGlka7M",
+      "name": "Corp Iglesia Presbiteriana Chile",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b043",
+      "conflicts": []
+    },
+    {
+      "row": 37,
+      "externalKey": "google_maps:ChIJW2LE5Z_FYpYRHpRpWx1OJ1E",
+      "name": "Iglesia Adventista del Séptimo Día - CENTRAL",
+      "reason": "new_identity",
+      "action": "insert",
+      "id": "6abd719571aaa71fd8fabdc8",
+      "postalCandidates": []
+    },
+    {
+      "row": 39,
+      "externalKey": "google_maps:ChIJE90SRMnFYpYRCy2KuA71nQ0",
+      "name": "Iglesia Vega Poniente",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af61",
+      "conflicts": []
+    },
+    {
+      "row": 42,
+      "externalKey": "google_maps:ChIJETNG4fzEYpYRgSyPMjytxFE",
+      "name": "Iglesia de Dios Tierra Nueva",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af60",
+      "conflicts": []
+    },
+    {
+      "row": 44,
+      "externalKey": "google_maps:ChIJcSxxf1XEYpYRmzp-uLWQ_qM",
+      "name": "Templo Iglesia Universal del Reino de Dios",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af67",
+      "conflicts": []
+    },
+    {
+      "row": 45,
+      "externalKey": "google_maps:ChIJEYJ-NwPFYpYRtlNX0Qhc2Jo",
+      "name": "Iglesia Centro Cristiano Para Las Naciones, CCN Santiago",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af5f",
+      "conflicts": []
+    },
+    {
+      "row": 46,
+      "externalKey": "google_maps:ChIJG3mWXPvEYpYRHtk2HBWBBhM",
+      "name": "Congregacion Santisimo Redentor",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b006",
+      "conflicts": []
+    },
+    {
+      "row": 47,
+      "externalKey": "google_maps:ChIJjbNHop7FYpYRaKz86_5-i18",
+      "name": "Iglesia de San Francisco",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af50",
+      "conflicts": [
+        "identification.name",
+        "identification.description"
+      ]
+    },
+    {
+      "row": 48,
+      "externalKey": "google_maps:ChIJnWcxoXbFYpYRxUKT30VsIK8",
+      "name": "Parroquia San Juan Evangelista",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af8c",
+      "conflicts": []
+    },
+    {
+      "row": 49,
+      "externalKey": "google_maps:ChIJ44DK2ZzFYpYRgC7h3WyS-bU",
+      "name": "Iglesia Asunción",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b011",
+      "conflicts": [
+        "identification.name",
+        "contact.phone"
+      ]
+    },
+    {
+      "row": 50,
+      "externalKey": "google_maps:ChIJNwNEnfzEYpYRLkwgxuZN_2E",
+      "name": "Basílica de Nuestra Señora del Perpetuo Socorro",
+      "reason": "shared_address_requires_review",
+      "action": "review",
+      "candidates": [
+        {
+          "id": "6ab879f4a919e5b9f530b006",
+          "name": "Congregacion Santisimo Redentor",
+          "address": "Av. Almte. Blanco Encalada 2950, 8370489 Santiago, Región Metropolitana, Chile"
+        }
+      ]
+    },
+    {
+      "row": 51,
+      "externalKey": "google_maps:ChIJ-R7pFaLFYpYRXKCBpK1ffgE",
+      "name": "Basílica de la Merced",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530b038",
+      "conflicts": [
+        "identification.name"
+      ]
+    },
+    {
+      "row": 52,
+      "externalKey": "google_maps:ChIJ7cNmYgDFYpYRSoo6HSaAKtM",
+      "name": "Iglesia Asamblea Cristiana Echaurren 80",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afe3",
+      "conflicts": []
+    },
+    {
+      "row": 53,
+      "externalKey": "google_maps:ChIJTcCnkOjFYpYRj4rB-QF1FQ8",
+      "name": "SANTISIMA TRINIDAD",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530afe9",
+      "conflicts": []
+    },
+    {
+      "row": 54,
+      "externalKey": "google_maps:ChIJD2m5wLrFYpYRmByyKJbJOf4",
+      "name": "Capilla de Ánimas",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6abd6e8eec3bbffe95258b0a",
+      "conflicts": []
+    },
+    {
+      "row": 55,
+      "externalKey": "google_maps:ChIJpf8RDarFYpYRjMSyuN1BZKU",
+      "name": "Iglesia Sagrados Corazones Alameda",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530af6a",
+      "conflicts": []
+    },
+    {
+      "row": 57,
+      "externalKey": "google_maps:ChIJJ6uWz6zFYpYRkDW5PMzAt-I",
+      "name": "Corp Iglesia De Los Adventistas Del Septimo Dia",
+      "reason": "place_id",
+      "action": "update",
+      "id": "6ab879f4a919e5b9f530aff1",
+      "conflicts": []
+    },
+    {
+      "row": 60,
+      "externalKey": "google_maps:ChIJwaRZ0ubEYpYR7vL9mfp6Ufg",
+      "name": "Templo Evangelico Bautista \"La Roca\"",
+      "reason": "place_id",
+      "action": "unchanged",
+      "id": "6ab879f4a919e5b9f530af5e",
+      "conflicts": []
+    },
+    {
+      "row": 62,
+      "externalKey": "google_maps:ChIJX8pOEADFYpYRuyGoCiNvl3E",
+      "name": "Iglesia Bautista Vida Nueva",
+      "reason": "place_id",
+      "action": "unchanged",
+      "id": "6ab879f4a919e5b9f530afdf",
+      "conflicts": []
+    }
+  ],
+  "backup": "C:\\Users\\david\\Documents\\python\\Koinonia\\Backend\\.cache\\import-backups\\1790800277655-churches.json",
+  "applied": {
+    "insert": 1,
+    "update": 43
+  },
+  "after": 264
+}

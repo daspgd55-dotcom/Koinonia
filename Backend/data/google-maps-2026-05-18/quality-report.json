@@ -1,0 +1,5104 @@
+{
+  "schemaVersion": "koinonia.church-import.v1",
+  "batchId": "google_maps_b0a02584e0dd6e6b",
+  "sourceFile": "dataset_crawler-google-places_2026-05-18_18-10-12-993.xlsx",
+  "sourceSha256": "b0a02584e0dd6e6babe42f4de6d047f051ea9c39df18dfe47c8009cc6c79e16f",
+  "sheet": "Data",
+  "inputRows": 495,
+  "dispositions": {
+    "accepted": 251,
+    "review": 231,
+    "excluded": 13
+  },
+  "acceptedCoverage": {
+    "phone": 127,
+    "website": 72,
+    "facebook": 6,
+    "instagram": 6,
+    "youtube": 1,
+    "openingHours": 109
+  },
+  "issues": {
+    "commune_from_source_not_geographically_verified": 495,
+    "description_from_maps_not_institutional": 7,
+    "shared_coordinates_review_duplicate": 41,
+    "specific_commune_review_coordinates": 17,
+    "repeated_name_review_duplicate": 49,
+    "invalid_phone_omitted": 2
+  },
+  "reasons": {
+    "explicit_church_category": 251,
+    "generic_category_ambiguous_name": 169,
+    "community_type_requires_review": 54,
+    "conflicting_category_and_name": 8,
+    "not_a_community_category": 13
+  },
+  "records": [
+    {
+      "row": 2,
+      "externalKey": "google_maps:ChIJqVpsdAzFYpYRhFIz7iEWfY8",
+      "name": "Church of the Blessed Sacrament",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "description_from_maps_not_institutional"
+      ]
+    },
+    {
+      "row": 3,
+      "externalKey": "google_maps:ChIJv0NhBQjFYpYRWRMkpT7HAzk",
+      "name": "Iglesia San Ignacio",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 4,
+      "externalKey": "google_maps:ChIJ_ZAA6AvFYpYRh5sC2Vc4cU8",
+      "name": "Tiempo de Dios",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 5,
+      "externalKey": "google_maps:ChIJz0IKO6jFYpYR7LtNBNheqKw",
+      "name": "Iglesia San Vicente de Paúl",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 6,
+      "externalKey": "google_maps:ChIJjbNHop7FYpYRaKz86_5-i18",
+      "name": "Church of San Francisco",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "description_from_maps_not_institutional"
+      ]
+    },
+    {
+      "row": 7,
+      "externalKey": "google_maps:ChIJX5NciAbFYpYRkzsccqEOozI",
+      "name": "Parroquia San Lázaro",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 8,
+      "externalKey": "google_maps:ChIJ56Rph97FYpYRPFnNbVoRxP4",
+      "name": "Vineyard church dowtown",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 9,
+      "externalKey": "google_maps:ChIJxwFFNaHFYpYR6xHoit_x42c",
+      "name": "Church of the Augustinian Nuns",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "description_from_maps_not_institutional"
+      ]
+    },
+    {
+      "row": 10,
+      "externalKey": "google_maps:ChIJtXyFLpzFYpYRNaTIR8-BzX4",
+      "name": "Iglesia Las Buenas Nuevas Santiago",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 11,
+      "externalKey": "google_maps:ChIJG4jAjxbFYpYRdHZtXWTJUQo",
+      "name": "Iglesia Nueva Generación",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 12,
+      "externalKey": "google_maps:ChIJfcRuSaPFYpYRD1NF5S81K8w",
+      "name": "Cripta Iglesia Santísimo Sacramento",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 13,
+      "externalKey": "google_maps:ChIJT7-lcaHFYpYRs2DbgkOywcU",
+      "name": "Church of St. Augustine, Augustinians",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 14,
+      "externalKey": "google_maps:ChIJ-4pjaAjFYpYRusq45-yzOlo",
+      "name": "Iglesia Internacional de Cristo Santiago",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 15,
+      "externalKey": "google_maps:ChIJaxwWFanFYpYRfkIojb0cuwM",
+      "name": "Centro de Espiritualidad Ignaciana - CEI Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 16,
+      "externalKey": "google_maps:ChIJOWNpmQ3FYpYR3RO9p0Q0C1Y",
+      "name": "Iglesia Vida Eterna",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 17,
+      "externalKey": "google_maps:ChIJSxw_xgnFYpYRK7oYSeHfVeY",
+      "name": "Santa Marta",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 18,
+      "externalKey": "google_maps:ChIJmUq90jHFYpYRVD7KI9CqTG4",
+      "name": "Comisión de Ministerios Jesuitas Chile",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 19,
+      "externalKey": "google_maps:ChIJkzOmNgDFYpYRLSEhUTRo24U",
+      "name": "Capilla María Inmaculada",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 20,
+      "externalKey": "google_maps:ChIJN9s08dDFYpYR5G_nGsPtPkA",
+      "name": "Iglesia Bíblica Bautista Bet-El",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 21,
+      "externalKey": "google_maps:ChIJfQI7cwzFYpYR41haA4YX2wA",
+      "name": "Casa Parroquial",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 22,
+      "externalKey": "google_maps:ChIJNwNEnfzEYpYRLkwgxuZN_2E",
+      "name": "Parish of Our Lady of Perpetual Help",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 23,
+      "externalKey": "google_maps:ChIJwaRZ0ubEYpYR7vL9mfp6Ufg",
+      "name": "Templo Evangelico Bautista \"La Roca\"",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 24,
+      "externalKey": "google_maps:ChIJEYJ-NwPFYpYRtlNX0Qhc2Jo",
+      "name": "Iglesia Centro Cristiano Para Las Naciones, CCN Santiago",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 25,
+      "externalKey": "google_maps:ChIJ-_t-BgDFYpYRjTGtJtyY3uY",
+      "name": "Marquitos",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates"
+      ]
+    },
+    {
+      "row": 26,
+      "externalKey": "google_maps:ChIJETNG4fzEYpYRgSyPMjytxFE",
+      "name": "Iglesia de Dios Tierra Nueva",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 27,
+      "externalKey": "google_maps:ChIJE90SRMnFYpYRCy2KuA71nQ0",
+      "name": "Iglesia Vega Poniente",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 28,
+      "externalKey": "google_maps:ChIJUbpAoeTEYpYRjWUrxbXvHFc",
+      "name": "Iglesia Unida Metodista Pentecostal Santiago Centro Poniente",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 29,
+      "externalKey": "google_maps:ChIJiXPlmgPFYpYRtVA1qvnHFH0",
+      "name": "Iglesia La Unión Cristiana",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 30,
+      "externalKey": "google_maps:ChIJ_UeOpUnFYpYRdT4DTvMef4s",
+      "name": "Iglesia Evangelica Pentecostal Toesca",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 31,
+      "externalKey": "google_maps:ChIJ3ZK5sarFYpYRLS084s978tI",
+      "name": "Iglesia de la Gratitud Nacional",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 32,
+      "externalKey": "google_maps:ChIJ5YF2jgHFYpYR918L35Cj9ok",
+      "name": "La Iglesia de Jesucristo de los Santos de los Últimos Días",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 33,
+      "externalKey": "google_maps:ChIJcSxxf1XEYpYRmzp-uLWQ_qM",
+      "name": "Templo Iglesia Universal del Reino de Dios",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 34,
+      "externalKey": "google_maps:ChIJZdUoOBbFYpYRv-ZN78EA-Ks",
+      "name": "Iglesia Ejercito De Chile",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 35,
+      "externalKey": "google_maps:ChIJVY7k-fHFYpYR5PoXblMEzi8",
+      "name": "The Church of Jesus Christ of Latter-day Saints",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 36,
+      "externalKey": "google_maps:ChIJBYWvorjFYpYRD9S2P7futMU",
+      "name": "Iglesia Maranatha Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 37,
+      "externalKey": "google_maps:ChIJpf8RDarFYpYRjMSyuN1BZKU",
+      "name": "Iglesia Sagrados Corazones Alameda",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 38,
+      "externalKey": "google_maps:ChIJp5o6VgrFYpYRuqJPOLTd67M",
+      "name": "Centro Evangelistico Asambleas de Dios",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 39,
+      "externalKey": "google_maps:ChIJxbSRYwjFYpYRXK9-v2-YjMw",
+      "name": "Ministerio Abriendo Las Escrituras",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 40,
+      "externalKey": "google_maps:ChIJV2hfVQPFYpYRTdOGdq1YUX8",
+      "name": "Centro Cristiano Esperanza y Vida",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 41,
+      "externalKey": "google_maps:ChIJ75FFcajFYpYRJFlQPDnRUvo",
+      "name": "CAPILLA CRISTO DE LA BENDICION",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 42,
+      "externalKey": "google_maps:ChIJvdpfDAjFYpYRyqUQiVG6DuY",
+      "name": "Orden Religiosa Compañía de Jesús",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 43,
+      "externalKey": "google_maps:ChIJr-djuAnFYpYRoZMivAv9oro",
+      "name": "CCM Moneda ISA",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 44,
+      "externalKey": "google_maps:ChIJP09tugjFYpYRi0guTQECTsk",
+      "name": "Chiesa Escobar Margarita",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 45,
+      "externalKey": "google_maps:ChIJ4TNPtS7FYpYRK3LC16cZmBc",
+      "name": "Iglesia Cristiana ENTHEOS",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 46,
+      "externalKey": "google_maps:ChIJK7OBbwDFYpYREuQ0mkQpulQ",
+      "name": "IGLESIA(dia del patrimonio)",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 47,
+      "externalKey": "google_maps:ChIJB7WjegrFYpYRZzQjtTMBBkM",
+      "name": "Santa Gemita",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 48,
+      "externalKey": "google_maps:ChIJ9WudvafFYpYRxtfCcjvL0mU",
+      "name": "Munoz Lizama Clarisa De Dios",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 49,
+      "externalKey": "google_maps:ChIJE0ESSADFYpYRMkwFUUpHe-8",
+      "name": "refugio",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 50,
+      "externalKey": "google_maps:ChIJW5HE3QfFYpYR5APThAs0Q1w",
+      "name": "Albergue Dieciocho164, Iglesia Evangélica Pentecostés",
+      "disposition": "review",
+      "reason": "conflicting_category_and_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 51,
+      "externalKey": "google_maps:ChIJ8ZsDQqjFYpYRIgZ32qilCAg",
+      "name": "S V V",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 52,
+      "externalKey": "google_maps:ChIJkaaVBQvFYpYRwEd49r7lGk0",
+      "name": "Iglesia",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 53,
+      "externalKey": "google_maps:ChIJJfTVSAjFYpYRPyr6Mtr2tqA",
+      "name": "Congregacion de los Sagrados Corazones",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 54,
+      "externalKey": "google_maps:ChIJ23FC3AfFYpYR6MhS1gt1DJQ",
+      "name": "Arzobispado de Santiago Casa de Ejercicios San Francisco Javier",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 55,
+      "externalKey": "google_maps:ChIJG9pfDAjFYpYRB5mVqi0AhDA",
+      "name": "Orden Religiosa Compania De Jesos",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 56,
+      "externalKey": "google_maps:ChIJk0Jw2AvFYpYRDcoK5ENdKv0",
+      "name": "Comunidad De Musicos Orfeon Santa Cecilia Limitada",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 57,
+      "externalKey": "google_maps:ChIJZ-o_cajFYpYRbGs3lsS2HsU",
+      "name": "Asoc Benefica Cristiana Promotora De Desarrollo Integral",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 58,
+      "externalKey": "google_maps:ChIJxfT-5wnFYpYRXnBkqDWUy50",
+      "name": "Red De Radiodifusion Biblica",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 59,
+      "externalKey": "google_maps:ChIJ6XpDTwrFYpYR_WE_qEWJ8ww",
+      "name": "Illanes Momtano Fatima C",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 60,
+      "externalKey": "google_maps:ChIJ70uqVgjFYpYR5Xd8wUkkUvU",
+      "name": "Iglesia de la Unificacion",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 61,
+      "externalKey": "google_maps:ChIJbydm9AbFYpYRi8_MuR5XRWE",
+      "name": "Comunidad Copropietarios Aguas Claras de Rapel",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 62,
+      "externalKey": "google_maps:ChIJqWvL6QrFYpYRKvJFokx7yww",
+      "name": "Teresa De Jesos Villegas Lagos",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 63,
+      "externalKey": "google_maps:ChIJYTKjZAjFYpYRUHWKAS_qihQ",
+      "name": "Organizacion No Gubernamental de Desarrollo Ninos Para Cristo",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 64,
+      "externalKey": "google_maps:ChIJ632SpxzFYpYRqnNLPXyPMv4",
+      "name": "Edificio Corporativo Las Asambleas de Dios - Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 65,
+      "externalKey": "google_maps:ChIJB3kcLljFYpYRB_nksRBxPuA",
+      "name": "Casa barbas",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 66,
+      "externalKey": "google_maps:ChIJFTOmWQDFYpYRqx6z2vg6eG4",
+      "name": "Los Canelos 850",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 67,
+      "externalKey": "google_maps:ChIJ9dAFtgnFYpYRn49o7diiD3E",
+      "name": "CEDIN Coquimbo",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 68,
+      "externalKey": "google_maps:ChIJu0OFPqjFYpYRt1ilIacIFcc",
+      "name": "SAN PABLO Chile",
+      "disposition": "excluded",
+      "reason": "not_a_community_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 69,
+      "externalKey": "google_maps:ChIJ62nrtwLFYpYRheRIf2XG9fU",
+      "name": "Plaza Bernardo Leighton",
+      "disposition": "excluded",
+      "reason": "not_a_community_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 70,
+      "externalKey": "google_maps:ChIJI41bVwrFYpYRbZ3Phq96naE",
+      "name": "Circulo de Suboficiales En Retiro de las Fuerzas Armadas Luis A Soto",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 71,
+      "externalKey": "google_maps:ChIJAQDw9qfFYpYRev8AC5TRd9E",
+      "name": "Coronas de caridad",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 72,
+      "externalKey": "google_maps:ChIJTw4l_wjFYpYR-sBAj7_cTW8",
+      "name": "Iglesia Metodista Independiente",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 73,
+      "externalKey": "google_maps:ChIJJ20bxULFYpYRA_WHNPgh-Vk",
+      "name": "Cuarta Iglesia Presbiteriana de Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 74,
+      "externalKey": "google_maps:ChIJ8aMneELFYpYRkzP7OTntI5E",
+      "name": "Parroquia San Antonio de Padua Board",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 75,
+      "externalKey": "google_maps:ChIJT1PQMGPFYpYR_05Swl7LK2Q",
+      "name": "Ministerio Voz De Dios y no de Hombre",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 76,
+      "externalKey": "google_maps:ChIJKw0VsEPFYpYR0hS1_SJ0vcc",
+      "name": "Methodist Pentecostal Church of Chile",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 77,
+      "externalKey": "google_maps:ChIJ5-Pw5VzFYpYR-jNqQh7FLFE",
+      "name": "Iglesia Filadelfia",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 78,
+      "externalKey": "google_maps:ChIJczcaYmrFYpYRsH9Di5pep6s",
+      "name": "Presbyterian Church in Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 79,
+      "externalKey": "google_maps:ChIJA36jsmvFYpYRJQFsldZPl54",
+      "name": "Iglesia de Dios Ministerial de Jesucristo Internacional - IDMJI - CGMJI -- CL SANTIAGO DE CHILE",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "invalid_phone_omitted"
+      ]
+    },
+    {
+      "row": 80,
+      "externalKey": "google_maps:ChIJMex9bwDFYpYRjEv7EBP9Rn0",
+      "name": "Iglesia el Altar de su Presencia",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 81,
+      "externalKey": "google_maps:ChIJsXFiImrFYpYRh3ko4U55J9A",
+      "name": "Segunda Iglesia Bautista de Santiago",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 82,
+      "externalKey": "google_maps:ChIJgWrqR_jFYpYRV_w32p-_fcs",
+      "name": "Iglesia Cristiana Avivamiento",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 83,
+      "externalKey": "google_maps:ChIJV1LFlGrFYpYRRFnALVemoNc",
+      "name": "Iglesia Presbiteriana Coreana",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 84,
+      "externalKey": "google_maps:ChIJ3ZMI9j_FYpYRnURdgWJd7vo",
+      "name": "The Church of Jesus Christ of Latter-day Saints",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 85,
+      "externalKey": "google_maps:ChIJrXdRO0PFYpYR9fg3WQWHLNg",
+      "name": "Cristo de Ama",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 86,
+      "externalKey": "google_maps:ChIJN_IOtRDFYpYRKVwZbYxRxPE",
+      "name": "Iglesia La casa del Hijo del Carpintero",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 87,
+      "externalKey": "google_maps:ChIJkaQBYEDFYpYRz15pG4FXQPA",
+      "name": "Parroquia Santísima Trinidad",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 88,
+      "externalKey": "google_maps:ChIJQWAAy0HFYpYR3OW_BoWSN7k",
+      "name": "Santa Maria",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 89,
+      "externalKey": "google_maps:ChIJ6XOA71zFYpYR9HwosZEo8f4",
+      "name": "Las Asambleas de Dios",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 90,
+      "externalKey": "google_maps:ChIJNY78X0DFYpYReJGamzX0v7g",
+      "name": "Fund las Rosas de Ayuda Fraterna",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 91,
+      "externalKey": "google_maps:ChIJR4E0kr_FYpYRMep0GOefF54",
+      "name": "Fundacion Gente de la Calle",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 92,
+      "externalKey": "google_maps:ChIJlc0NBADFYpYRg4j_VktI7fk",
+      "name": "Colegio swin",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 93,
+      "externalKey": "google_maps:ChIJB4MZq0LFYpYR8FKCdgIfnQ0",
+      "name": "ALEJANDRO UNAP",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 94,
+      "externalKey": "google_maps:ChIJQXCGykDFYpYRF2jhyQxp2Bo",
+      "name": "IGLESIA EVANGELICA Jehová es mi Pastor",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 95,
+      "externalKey": "google_maps:ChIJNWM3fUHFYpYRT0e_EujXkoQ",
+      "name": "Castro Bustos William Robert",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 96,
+      "externalKey": "google_maps:ChIJk7lZHRPFYpYR5ADX9PK6l4A",
+      "name": "Parroquia San Rafael Arcángel",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 97,
+      "externalKey": "google_maps:ChIJm6XQ3g3FYpYRJHc2c4cD4Tc",
+      "name": "Immaculate Heart of Mary Basilica and Parish",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 98,
+      "externalKey": "google_maps:ChIJkf6-tRLFYpYRWxlxJIJHqbg",
+      "name": "desarmahonda.cl",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 99,
+      "externalKey": "google_maps:ChIJS7jGz-PFYpYR2lFCjaFkxqA",
+      "name": "Iglesia de la Santísima Agonía de las Hermanas de la Caridad del Buen Pastor",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 100,
+      "externalKey": "google_maps:ChIJo7SziW7FYpYRmQlmmZpAvxs",
+      "name": "Iglesia del Santísimo Sacramento",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 101,
+      "externalKey": "google_maps:ChIJmX26S2zFYpYROOSVFF_F5KA",
+      "name": "Iglesia Asamblea de Dios Autonoma",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 102,
+      "externalKey": "google_maps:ChIJPanVQfbFYpYRzdi4YeWWtJA",
+      "name": "Iglesia de Cristo",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 103,
+      "externalKey": "google_maps:ChIJqc3rj3TFYpYRpOzZ9NyiW0Q",
+      "name": "Iglesia San Isidro Labrador",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 104,
+      "externalKey": "google_maps:ChIJ1003XwDFYpYRunFBG7fbW6s",
+      "name": "Iglesia Ntra Sra del Pilar",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 105,
+      "externalKey": "google_maps:ChIJmQO1TjnFYpYR2JaognFmyQI",
+      "name": "Basílica Parroquia Santísima Agonía - Colegio Santa María",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 106,
+      "externalKey": "google_maps:ChIJV_p9KBPFYpYRtWsVWMZdIg8",
+      "name": "Santa Maria",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 107,
+      "externalKey": "google_maps:ChIJccAU2qLFYpYRhlBGQFsmHR4",
+      "name": "Clase de música IMC",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 108,
+      "externalKey": "google_maps:ChIJnWcxoXbFYpYRxUKT30VsIK8",
+      "name": "Parroquia San Juan Evangelista",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 109,
+      "externalKey": "google_maps:ChIJSWULK3PFYpYRHumWGcqhY40",
+      "name": "Santa Ana",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 110,
+      "externalKey": "google_maps:ChIJaw2r6xHFYpYRfI0dmv-3X_4",
+      "name": "La Iglesia Evangélica de Carabineros (IGECAR)",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 111,
+      "externalKey": "google_maps:ChIJFWoGtRLFYpYRWlm8RCrSdVU",
+      "name": "AUDITORIO",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 112,
+      "externalKey": "google_maps:ChIJB44bgW3FYpYRq9ol4GodnJM",
+      "name": "Ministerio Evangelistico Cristo El Salvador Del Mundo. Templo Aposento Alto.",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 113,
+      "externalKey": "google_maps:ChIJQ43E7o_FYpYR45G4IOplNHw",
+      "name": "Monasterio de la Santísima Trinidad (MM Clarisas Cap.)",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 114,
+      "externalKey": "google_maps:ChIJg4UR3g3FYpYRkIaLrwc5AXE",
+      "name": "Santuario De San Judas Tadeo Santiago",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 115,
+      "externalKey": "google_maps:ChIJ4xaucHPFYpYR5Tc1xn90yME",
+      "name": "Casa de Gracia - Tsebaoth Chile - Iglesia Cristiana",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 116,
+      "externalKey": "google_maps:ChIJscUqTGzFYpYRIWiAEEUH47c",
+      "name": "Sinagoga Bicur Joilim",
+      "disposition": "excluded",
+      "reason": "not_a_community_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 117,
+      "externalKey": "google_maps:ChIJLa56vnLFYpYRbHv8-8rnGbY",
+      "name": "Erices Aburto Christian E",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 118,
+      "externalKey": "google_maps:ChIJwaM74GzFYpYRXPNjqxvuJ1w",
+      "name": "Tu Universal",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 119,
+      "externalKey": "google_maps:ChIJ2Vicvw7FYpYRxNkT7aTqc3g",
+      "name": "Iglesia Ministerio De La Fe",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 120,
+      "externalKey": "google_maps:ChIJPddeqxLFYpYR8YBETvO-UNQ",
+      "name": "Iglesia Metodista Pentecostal De Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 121,
+      "externalKey": "google_maps:ChIJq_XPXXLFYpYRWnBgC3AzsjA",
+      "name": "Sociedad de San Vicente de Paul",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 122,
+      "externalKey": "google_maps:ChIJWd55d3LFYpYRHy9UI7FyAk8",
+      "name": "Congregacion Salesiana Inspectoria Salesiana",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 123,
+      "externalKey": "google_maps:ChIJu3hNKw3FYpYRUdbxhMFIi2g",
+      "name": "Iglesia",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 124,
+      "externalKey": "google_maps:ChIJU834k23FYpYRxybGYu_-zAU",
+      "name": "Papa Rock",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 125,
+      "externalKey": "google_maps:ChIJmQ7S2A3FYpYRlY4crquL8Jg",
+      "name": "Congregacion De Misioneros Hijos Del Inmaculado Corazon De Maria",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 126,
+      "externalKey": "google_maps:ChIJO83j22zFYpYRSuGynZ0kYP8",
+      "name": "Congregacion Instituto Hijas De Maria Auxiliadora",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 127,
+      "externalKey": "google_maps:ChIJ_XNFdmXFYpYRNb6pbGPJm20",
+      "name": "Parroquia San Andrés",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 128,
+      "externalKey": "google_maps:ChIJVW6yD2XFYpYRg2FgkTmApi4",
+      "name": "Centro Protestante De Chile",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 129,
+      "externalKey": "google_maps:ChIJCXgVw2XFYpYRQ2UTEJFdwK0",
+      "name": "Iglesia Pentecostal Unida Santiago Centro Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 130,
+      "externalKey": "google_maps:ChIJWe6VfADFYpYRNrLpJh33IQk",
+      "name": "MINFA SANTIAGO",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 131,
+      "externalKey": "google_maps:ChIJd4-QVgDFYpYR69JPB2YRB5w",
+      "name": "Sebastiano segundo",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates"
+      ]
+    },
+    {
+      "row": 132,
+      "externalKey": "google_maps:ChIJZzlCF7TFYpYRizAP56Sp_10",
+      "name": "Epicentro de Vida",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 133,
+      "externalKey": "google_maps:ChIJ2Uijjr3FYpYRaBYU0HfjEqk",
+      "name": "Iglesia Cita Con la Verdad - CCV",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 134,
+      "externalKey": "google_maps:ChIJcz7TRUzFYpYRlSgWL63QD7U",
+      "name": "Capilla de adoración perpetua",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 135,
+      "externalKey": "google_maps:ChIJi2pvXQDFYpYRgERP2AhppW4",
+      "name": "parroquia san patricio, las condes",
+      "disposition": "review",
+      "reason": "conflicting_category_and_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 136,
+      "externalKey": "google_maps:ChIJNcELeQDFYpYRp6YdoCus03s",
+      "name": "IGLESIA NUESTRA SEÑORA DE LA PASIÓN (Misioneras Franciscanas de María) - SANTIAGO",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 137,
+      "externalKey": "google_maps:ChIJN6EhcgDFYpYReZWNSk8P68A",
+      "name": "Porvenir",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 138,
+      "externalKey": "google_maps:ChIJYS3FxHDFYpYR2yOwI6HCGwE",
+      "name": "Argomedo Baptist Church",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 139,
+      "externalKey": "google_maps:ChIJ9_icxKbFYpYR85ndWVV5Y7k",
+      "name": "Iglesia de Dios sociedad misionera mundial",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 140,
+      "externalKey": "google_maps:ChIJxzq2cm_FYpYRCFK0vPvpJGQ",
+      "name": "comunidad cultural rogelia",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 141,
+      "externalKey": "google_maps:ChIJkyAIC2_FYpYRCa7upIIBoYA",
+      "name": "Iglesia",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 142,
+      "externalKey": "google_maps:ChIJm8qbIADFYpYRT4xvwfPkjdQ",
+      "name": "after klo",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 143,
+      "externalKey": "google_maps:ChIJO6dQa2_FYpYRFA1IoLQN5Rc",
+      "name": "Salón del Reino de los Testigos de Jehová",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 144,
+      "externalKey": "google_maps:ChIJ_dtoF2XFYpYRkSEFg2ZEOlw",
+      "name": "Libreria Cristiana Aces Chile",
+      "disposition": "review",
+      "reason": "conflicting_category_and_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 145,
+      "externalKey": "google_maps:ChIJlTEM653FYpYRCbtGsUK-ZLQ",
+      "name": "Impacto de Dios",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 146,
+      "externalKey": "google_maps:ChIJUeIutRHFYpYRoY7QXbv-2Bg",
+      "name": "Iglesia Casa De Dios",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 147,
+      "externalKey": "google_maps:ChIJt3kwLw7FYpYRXKbJvEymVko",
+      "name": "Familia de Cristo",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 148,
+      "externalKey": "google_maps:ChIJCVrhtg_FYpYR9MQyCTX-600",
+      "name": "Local La Central IEP Sargento Aldea",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 149,
+      "externalKey": "google_maps:ChIJ19G3SQ7FYpYRE-IJLy6TlpQ",
+      "name": "Maestra Lord Cochrane",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 150,
+      "externalKey": "google_maps:ChIJ34VlhwbFYpYR82i-4_PX_8c",
+      "name": "Instituto Biblico Nacional De Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 151,
+      "externalKey": "google_maps:ChIJ2Q5aywXFYpYR2cZOmeIywd0",
+      "name": "Aranguiz Gallardo Christian Ariel",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 152,
+      "externalKey": "google_maps:ChIJn1iOLBDFYpYRshJc-DlxxDQ",
+      "name": "IGLESIA EVANGELICA UN NUEVO PACTO",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 153,
+      "externalKey": "google_maps:ChIJX8R9DADFYpYRNMFZOXL9dj0",
+      "name": "Iglesia Adventista del Séptimo Día - ALAMEDA",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 154,
+      "externalKey": "google_maps:ChIJjXbqlT_FYpYRZjFKHxcHk3k",
+      "name": "IEP Sargento Aldea",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 155,
+      "externalKey": "google_maps:ChIJ90ArAEHFYpYRJ6v-YGtFXKE",
+      "name": "World Missionary Movement",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 156,
+      "externalKey": "google_maps:ChIJVVEWL0vFYpYR8PolFY0q72w",
+      "name": "IUPT - Iglesia Esperanza",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 157,
+      "externalKey": "google_maps:ChIJxXscBFrFYpYRoxKPxQeEzDE",
+      "name": "Iglesia Remanente de Jesús",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 158,
+      "externalKey": "google_maps:ChIJrTQDuT_FYpYRVgJ-TkdUHT8",
+      "name": "Iglesia Metodista de Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 159,
+      "externalKey": "google_maps:ChIJD_-A1RTFYpYRNVRZ0_xY8S8",
+      "name": "Capilla San Felipe de Jesús",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 160,
+      "externalKey": "google_maps:ChIJYXq5NRTFYpYR0Q6rWKYN8mQ",
+      "name": "Iglesia Tiempo de Gloria",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 161,
+      "externalKey": "google_maps:ChIJrYxX0NjEYpYRRfPXvD8NW0I",
+      "name": "Grace",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 162,
+      "externalKey": "google_maps:ChIJpSvH0FXFYpYR9THvQ8p2kgc",
+      "name": "Local Yarur IEP Sargento Aldea",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 163,
+      "externalKey": "google_maps:ChIJi0ivegDFYpYRHPs8qPIkgqg",
+      "name": "Iglesia LIGS",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 164,
+      "externalKey": "google_maps:ChIJA1utPxbFYpYRjmQ6bWvrJOY",
+      "name": "Parroquia Santa Sofía",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 165,
+      "externalKey": "google_maps:ChIJHZUVChbFYpYRByPgm4zs6wg",
+      "name": "Ministerio Evangelístico Misionero Almas Para Cristo",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 166,
+      "externalKey": "google_maps:ChIJ6dUgGj7FYpYRX56KzO0cG3s",
+      "name": "Betel",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 167,
+      "externalKey": "google_maps:ChIJi-bLEBbFYpYRy3750xGbVX8",
+      "name": "Sociedad Policlinico Nuestra Senora De Lourdes Limitada",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 168,
+      "externalKey": "google_maps:ChIJHbNGHADFYpYRfdFk2SWZ2G0",
+      "name": "CASA DE JAIRO",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 169,
+      "externalKey": "google_maps:ChIJCdZTgPzFYpYRG0X8XxyjZzU",
+      "name": "CSSA",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 170,
+      "externalKey": "google_maps:ChIJy9G2CwDFYpYRKBhrYJc6-oU",
+      "name": "ARM Santiago",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates"
+      ]
+    },
+    {
+      "row": 171,
+      "externalKey": "google_maps:ChIJfZuzRV3FYpYRzOhIxKVkPs8",
+      "name": "Santa Gemita",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 172,
+      "externalKey": "google_maps:ChIJg_wMdmfFYpYRgCvhZIvNukM",
+      "name": "Local San Luis IEP Sargento Aldea",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 173,
+      "externalKey": "google_maps:ChIJWUzNeWfFYpYRPegGUPyyqUE",
+      "name": "Capilla Nuestra Senora Del Carmen",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 174,
+      "externalKey": "google_maps:ChIJfRGWrmfFYpYRA7VoqivMIOU",
+      "name": "Sanson King Robert Daniel George",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 175,
+      "externalKey": "google_maps:ChIJVTHAcj_FYpYRaNfxalSK19c",
+      "name": "Iglesia Cristiana Avivamiento Para Chile",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 176,
+      "externalKey": "google_maps:ChIJY2Sdtz_FYpYRAgxa2xqfSGs",
+      "name": "Methodist College Santiago",
+      "disposition": "excluded",
+      "reason": "not_a_community_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 177,
+      "externalKey": "google_maps:ChIJsfIvLBXFYpYRyyaoz3JYrPA",
+      "name": "IMPCH Chiloé Santiago",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 178,
+      "externalKey": "google_maps:ChIJY9evuTTFYpYRhhwRdLI5Agc",
+      "name": "Renacer tu Casa Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 179,
+      "externalKey": "google_maps:ChIJaZxVDBTFYpYRsU7LGb6BUG4",
+      "name": "Vida Nueva",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 180,
+      "externalKey": "google_maps:ChIJb24sjxTFYpYRAR65u27CijU",
+      "name": "Valle De Vida",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 181,
+      "externalKey": "google_maps:ChIJ03zwyhXFYpYRo-UYQfSU84M",
+      "name": "Juan de Dios Arellano Gutierrez",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 182,
+      "externalKey": "google_maps:ChIJ1Qj2jxTFYpYRh65AR40c2ms",
+      "name": "Iglesia Metodista Epicospal",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 183,
+      "externalKey": "google_maps:ChIJxyTRX3TdYpYR3OKgsOBg_HY",
+      "name": "IMC-Renacer",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 184,
+      "externalKey": "google_maps:ChIJ6YaIDhTFYpYRouJAtu1GyM4",
+      "name": "Rey De Reyes",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 185,
+      "externalKey": "google_maps:ChIJLaRrjWnFYpYRaRz_JhJCJDg",
+      "name": "Ejercito de Salvacion",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 186,
+      "externalKey": "google_maps:ChIJv2Ll9SfFYpYRIfXkqBIJ0-4",
+      "name": "Iglesia Cristiana Expansion de vida",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 187,
+      "externalKey": "google_maps:ChIJ99T5OwDFYpYRI4OSFMo3pWQ",
+      "name": "Ministerio Evangelístico \"La Verdad os Hará Libres\"",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 188,
+      "externalKey": "google_maps:ChIJuW_T4WvFYpYRH4PLobmU9ww",
+      "name": "Ejercito de Salvacion",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 189,
+      "externalKey": "google_maps:ChIJe3V56RTFYpYRNKg4qKITZRI",
+      "name": "Bossay Salinas Christian A",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 190,
+      "externalKey": "google_maps:ChIJxxQuomzFYpYRhQEtZJCYyv8",
+      "name": "Fund Tierra De Esperanza",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 191,
+      "externalKey": "google_maps:ChIJB_7usxDFYpYRNmjp7lffn9Y",
+      "name": "Iglesia",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 192,
+      "externalKey": "google_maps:ChIJW7NaLgDFYpYRgyjGoNqOCxk",
+      "name": "Trafi",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 193,
+      "externalKey": "google_maps:ChIJaQlz8trFYpYRxqTwwxmZ8Vk",
+      "name": "Iglesia cristiana",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 194,
+      "externalKey": "google_maps:ChIJtcCN1hTFYpYRaP1j51K1nI8",
+      "name": "Fund San Jose Para La Adopcion Familiar Cristiana",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 195,
+      "externalKey": "google_maps:ChIJ605TlhTFYpYRVGanF-BdQSg",
+      "name": "Hnas Terciarias Misioneras Franciscanas",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates"
+      ]
+    },
+    {
+      "row": 196,
+      "externalKey": "google_maps:ChIJB_7usxDFYpYRUdMRZ2qC_MQ",
+      "name": "Centro De Ayuda Catolico",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 197,
+      "externalKey": "google_maps:ChIJV9OSsxDFYpYRmP_riqx6siA",
+      "name": "Congregacion Padres Pasionistas",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates"
+      ]
+    },
+    {
+      "row": 198,
+      "externalKey": "google_maps:ChIJB_7usxDFYpYRcF5z0OL-I0Q",
+      "name": "Capilla",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 199,
+      "externalKey": "google_maps:ChIJB_7usxDFYpYRIg7sPfi9dw0",
+      "name": "Willmore Edward Nelson",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 200,
+      "externalKey": "google_maps:ChIJQ6AJURbFYpYRcEixjVm1trk",
+      "name": "America Para Cristo",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 201,
+      "externalKey": "google_maps:ChIJGcCzERHFYpYR1x-_x4tifQw",
+      "name": "Jesucristo",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 202,
+      "externalKey": "google_maps:ChIJkR1ixIjbYpYRDvfuerqq69c",
+      "name": "Iglesia pentecostal unida",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 203,
+      "externalKey": "google_maps:ChIJ3WJComnFYpYRn3nDfVlUVNk",
+      "name": "Iglesia Cruzada De Poder",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 204,
+      "externalKey": "google_maps:ChIJIS7GtFLEYpYRfh23c1cTQ1g",
+      "name": "Provincial House of the Capuchins of Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 205,
+      "externalKey": "google_maps:ChIJ3QZjElTEYpYRItYxBnjNQNc",
+      "name": "Iglesia Cristiana La Roca",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 206,
+      "externalKey": "google_maps:ChIJj6KtdbLFYpYRgYTkfg9z3XY",
+      "name": "Iglesia Corpus Domini",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 207,
+      "externalKey": "google_maps:ChIJ2T4dlq_FYpYRCF1mo-PqfIA",
+      "name": "Church of Santa Ana",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 208,
+      "externalKey": "google_maps:ChIJdQfc967FYpYR_0oUkJq7mfk",
+      "name": "Evangelica Bautista Church",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 209,
+      "externalKey": "google_maps:ChIJB6DUYLHFYpYRnZ0Eo1zRLgc",
+      "name": "Calvary Chapel Bará",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 210,
+      "externalKey": "google_maps:ChIJhYN877LFYpYROyoIrS0a4jo",
+      "name": "Congregacion Misioneras Catequista de la Sagrada Familia",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 211,
+      "externalKey": "google_maps:ChIJPZdpTkvEYpYRxHsu8SjqqQA",
+      "name": "Parroquia Nuestra Señora de Andacollo",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 212,
+      "externalKey": "google_maps:ChIJBxb9h7PFYpYRyPY08F9fvgY",
+      "name": "Cristo Reina",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 213,
+      "externalKey": "google_maps:ChIJ9XCaHK3FYpYRnSe4Am7fbxM",
+      "name": "Precious Blood Church",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 214,
+      "externalKey": "google_maps:ChIJpx7orrzFYpYRfCgry6aF7oI",
+      "name": "Iglesia de Rosas CIEV",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 215,
+      "externalKey": "google_maps:ChIJTTIX1a3FYpYRInmQXrowYxE",
+      "name": "The Church of Jesus Christ of Latter-day Saints",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 216,
+      "externalKey": "google_maps:ChIJE_2WR7LFYpYRab0X_r9uPH8",
+      "name": "San Jose",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 217,
+      "externalKey": "google_maps:ChIJNcGmIADFYpYRm7NylAK4mCI",
+      "name": "Iglesia Inmaculada Concepción",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 218,
+      "externalKey": "google_maps:ChIJq6q6rVLEYpYRsTzIxQ1mclQ",
+      "name": "Iglesias Patrimoniales",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 219,
+      "externalKey": "google_maps:ChIJT3zvOwDFYpYR5Ogv8dRuSSk",
+      "name": "catedral de santiago Plaza de armas",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 220,
+      "externalKey": "google_maps:ChIJr5eT967FYpYRFk6kboxxLCc",
+      "name": "Culto Unidos Primera IGLESIA Bautista",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 221,
+      "externalKey": "google_maps:ChIJhbbOfbLFYpYRqyxmks67VcU",
+      "name": "Congregacion de los Hermanos Maristas",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 222,
+      "externalKey": "google_maps:ChIJH-5jzazFYpYRV1GUYjuy0dE",
+      "name": "Church of the First Monastery of the Visitation",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 223,
+      "externalKey": "google_maps:ChIJp_h8I7DFYpYRUoi0Q727GpI",
+      "name": "Iglesia Evangelica",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 224,
+      "externalKey": "google_maps:ChIJGc5trbLFYpYRxH2quW_VLVA",
+      "name": "IMC Santiago",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 225,
+      "externalKey": "google_maps:ChIJcxeCezzFYpYREGiLzjne_OI",
+      "name": "Church - Mission Pentecostal Church",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 226,
+      "externalKey": "google_maps:ChIJQYA-j7DFYpYREAMKRJvW4yc",
+      "name": "Comunidad Real",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 227,
+      "externalKey": "google_maps:ChIJ-_waTUvEYpYR5YnD2lk3tBA",
+      "name": "Capilla Jesus Resucitado",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 228,
+      "externalKey": "google_maps:ChIJTbbvXgDFYpYRHyaQVKu3xus",
+      "name": "Centro Cristiano Fe Viva",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 229,
+      "externalKey": "google_maps:ChIJ7dHwmLHFYpYRkU6YhhA518k",
+      "name": "Roman Godoy Carlos Segundo",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 230,
+      "externalKey": "google_maps:ChIJNfwcNh3FYpYRh9lpurlfwCM",
+      "name": "Iglesia Vision San Pablo - Pentecostal",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 231,
+      "externalKey": "google_maps:ChIJvSVeNqXFYpYRWee5iDL05ZM",
+      "name": "Gajardo Martinez Luz Victoria",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 232,
+      "externalKey": "google_maps:ChIJkSRnMbPFYpYRhwUwfxNZHDc",
+      "name": "Riveros L Samuel",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 233,
+      "externalKey": "google_maps:ChIJ9QPuNQDFYpYRKYwoMk238x0",
+      "name": "Iglesia evangelica",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 234,
+      "externalKey": "google_maps:ChIJB-HupLTFYpYRy2Gv_7cfY8E",
+      "name": "Selman Reyes Juan Jacob",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 235,
+      "externalKey": "google_maps:ChIJu6C-bLTFYpYRSpuk26F2A-Y",
+      "name": "Comunidad Ctro Comerc.Balmaced",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 236,
+      "externalKey": "google_maps:ChIJ06nS703EYpYRq0_DXc1CLn0",
+      "name": "Parroquia San Saturnino",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 237,
+      "externalKey": "google_maps:ChIJ60W4rVbEYpYRRmMWEMvqiic",
+      "name": "Nuestra Señora el Asilo del Carmen",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 238,
+      "externalKey": "google_maps:ChIJpwKdnVPEYpYRAeLj1H6E-pw",
+      "name": "Primera Iglesia Metodista",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 239,
+      "externalKey": "google_maps:ChIJSaiFfwDFYpYR-f2f-45K24c",
+      "name": "Iglesia de San Saturnino (Santiago de Chile)",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 240,
+      "externalKey": "google_maps:ChIJO1b9j1HEYpYRku2Sbx-Ze64",
+      "name": "Las Asambleas de Dios",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 241,
+      "externalKey": "google_maps:ChIJdeyH5FPEYpYRqNwt_QiXY1o",
+      "name": "Congregacion Hijas de San Jose Pro Tectoras de la Infancia",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 242,
+      "externalKey": "google_maps:ChIJn8kdcgDFYpYRIyJVauy39Yk",
+      "name": "ISA - Iglesia Santiago Apóstol - Iglesia Anglicana Santiago Centro",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 243,
+      "externalKey": "google_maps:ChIJC7qyxVTEYpYR9CRi5Xw86IQ",
+      "name": "Christ Church Fullness of Life (CPV)",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 244,
+      "externalKey": "google_maps:ChIJHSGFt03EYpYR7v22ZKHX3XE",
+      "name": "Iglesia pentecostal Dios es Amor Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 245,
+      "externalKey": "google_maps:ChIJN5DYOE3EYpYRQOlMCTlxjqo",
+      "name": "Salón del Reino de los Testigos de Jehová",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 246,
+      "externalKey": "google_maps:ChIJyy8lNq3FYpYRIK9hK03H_4U",
+      "name": "Templo San Jose",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 247,
+      "externalKey": "google_maps:ChIJlVrDz6zFYpYRQ73N-SVicKs",
+      "name": "Iglesia Adventista del séptimo día \"Fe y Esperanza\"",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 248,
+      "externalKey": "google_maps:ChIJX8pOEADFYpYRuyGoCiNvl3E",
+      "name": "Iglesia Bautista Vida Nueva",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 249,
+      "externalKey": "google_maps:ChIJ59b-j6rFYpYRYtqRobMbc7A",
+      "name": "RCC Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 250,
+      "externalKey": "google_maps:ChIJtTlmCgDFYpYREHt9M1m2Ge4",
+      "name": "Santiago de chile",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 251,
+      "externalKey": "google_maps:ChIJlyH3AmTFYpYRN_kfnp17_1E",
+      "name": "Iglesia Comunidad Gracia",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 252,
+      "externalKey": "google_maps:ChIJWynXWlXEYpYRR8602Zb841k",
+      "name": "Ministerio Evangelistico",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 253,
+      "externalKey": "google_maps:ChIJ7cNmYgDFYpYRSoo6HSaAKtM",
+      "name": "Iglesia Asamblea Cristiana Echaurren 80",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 254,
+      "externalKey": "google_maps:ChIJ3QZjElTEYpYRKRx8dKEJzSg",
+      "name": "Templo Evangelico",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 255,
+      "externalKey": "google_maps:ChIJiU_-YQDFYpYRyD9nr7NagKE",
+      "name": "Iglesia Cristo Tu unicaEsperanza",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 256,
+      "externalKey": "google_maps:ChIJW0RgLP7EYpYRwNF4vXdiGZ4",
+      "name": "Comunidad Catolica Shalom",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 257,
+      "externalKey": "google_maps:ChIJ9-NErlbEYpYReG_XmfHkk5s",
+      "name": "Santuario Del Carmelo",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 258,
+      "externalKey": "google_maps:ChIJpRK6ElXEYpYRdlEv7jwVI5A",
+      "name": "Iglesia Comunidad Cristiana",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 259,
+      "externalKey": "google_maps:ChIJE-_UTwDFYpYRPelo0aJDTqo",
+      "name": "Iglesia Misión Evangélica Mundial Nueva Vida",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 260,
+      "externalKey": "google_maps:ChIJLxasGwDFYpYR9lGRU1wCyXQ",
+      "name": "Iglesia Antioquia",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 261,
+      "externalKey": "google_maps:ChIJTcCnkOjFYpYRj4rB-QF1FQ8",
+      "name": "SANTISIMA TRINIDAD",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 262,
+      "externalKey": "google_maps:ChIJ2zv8plHEYpYR1v3wt-XLNHI",
+      "name": "San Juan De Dios Casa Corame",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 263,
+      "externalKey": "google_maps:ChIJkZpdOVHEYpYRAIIDD_AaAXU",
+      "name": "Salvation Army",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 264,
+      "externalKey": "google_maps:ChIJozgRbwDFYpYRV41G_WOkT7E",
+      "name": "Centro Evangelistico Familiar",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 265,
+      "externalKey": "google_maps:ChIJUTJxbazFYpYRrzqgao-5WiQ",
+      "name": "iglesia voz en el desierto",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 266,
+      "externalKey": "google_maps:ChIJmwUDyKvFYpYR2uUL6gXovK0",
+      "name": "Ejercito de Salvacion",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 267,
+      "externalKey": "google_maps:ChIJO89VXVHEYpYRQ8xMQwmwL9c",
+      "name": "Congregacion Del Verbo Divino",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 268,
+      "externalKey": "google_maps:ChIJA0acwjbFYpYRtWiAQbCxc34",
+      "name": "Iglesia Adventista del Séptimo Día - MARANATHA",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 269,
+      "externalKey": "google_maps:ChIJ7VavP7PFYpYRZttkHAE51bQ",
+      "name": "Plaza Panamá",
+      "disposition": "excluded",
+      "reason": "not_a_community_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 270,
+      "externalKey": "google_maps:ChIJ15GZNUvEYpYRkf49Sjoomuw",
+      "name": "Colegio de Nuestra Senora de Andacollo",
+      "disposition": "excluded",
+      "reason": "not_a_community_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 271,
+      "externalKey": "google_maps:ChIJI1Ydc1HEYpYRLeZ-5bo1GQY",
+      "name": "Anderson",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 272,
+      "externalKey": "google_maps:ChIJk8hCclLEYpYRCadCOJoisDQ",
+      "name": "Chamache Pastor Janeth Balvina",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 273,
+      "externalKey": "google_maps:ChIJo60Di4DOYpYRWNzmhIdeDCg",
+      "name": "Maristas Chile",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 274,
+      "externalKey": "google_maps:ChIJS-Y1rK3FYpYR8B7P3Tu07_8",
+      "name": "Nueces Para el Amor",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 275,
+      "externalKey": "google_maps:ChIJHR9TBI3FYpYRRKVcTqfgN1g",
+      "name": "Sede Iglesia Presbiteriana Nacional (IPNA)",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 276,
+      "externalKey": "google_maps:ChIJW0hCeFPEYpYR-wNumscrqGk",
+      "name": "Corp Metodista",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 277,
+      "externalKey": "google_maps:ChIJDRQBMQDFYpYRqqAhSuTFkZk",
+      "name": "Iglesia Adventista del Séptimo Día - LIBERTAD",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 278,
+      "externalKey": "google_maps:ChIJkdMkXKvFYpYR7DcpdS34BE4",
+      "name": "Hostal P Gustavo",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 279,
+      "externalKey": "google_maps:ChIJ0QJAo1TEYpYRKh1ZUNfQGpE",
+      "name": "Iglesia",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 280,
+      "externalKey": "google_maps:ChIJRXpKulPEYpYRBcY-dQjDQ44",
+      "name": "Jehhova Es Mi Pastor",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 281,
+      "externalKey": "google_maps:ChIJxQAO0FPEYpYRHDI9D8RoGCA",
+      "name": "Corporacion Nuestra Casa",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 282,
+      "externalKey": "google_maps:ChIJfUSPW6vFYpYROqR0ofyiJgo",
+      "name": "Sepulveda Faine Christian Fernando",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 283,
+      "externalKey": "google_maps:ChIJJ6uWz6zFYpYRkDW5PMzAt-I",
+      "name": "Corp Iglesia De Los Adventistas Del Septimo Dia",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 284,
+      "externalKey": "google_maps:ChIJpaFxAADFYpYRID2bDejbk5g",
+      "name": "Parroquia Sagrado Corazón de Jesús",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 285,
+      "externalKey": "google_maps:ChIJnV4zhqrFYpYRmVvffwVCUxc",
+      "name": "Episcopal Conference of Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 286,
+      "externalKey": "google_maps:ChIJKyi-AADFYpYRxHmSy26MbLs",
+      "name": "Gratitud nacional",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates"
+      ]
+    },
+    {
+      "row": 287,
+      "externalKey": "google_maps:ChIJ7bMzY6rFYpYRTwNSj6JhkHw",
+      "name": "Caritas Chile",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 288,
+      "externalKey": "google_maps:ChIJHZ24IQDFYpYRiZbmUoIn3mk",
+      "name": "Iglesia ni Cristo [South America] - Santiago, Chile",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 289,
+      "externalKey": "google_maps:ChIJvY6uKJDFYpYReC2n-ZrdCnM",
+      "name": "Iglesia de Kaito",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 290,
+      "externalKey": "google_maps:ChIJD6g4ZIzFYpYR-sTU6xu6sIw",
+      "name": "Sociedad de la Ciencia Cristiana de Santiago",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 291,
+      "externalKey": "google_maps:ChIJ1TeNcWnFYpYRwf4bCNJlalk",
+      "name": "Ministerío Misionero el Avivamiento y las Misericordias de J",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 292,
+      "externalKey": "google_maps:ChIJcT5zGCDFYpYRPqjtgykFX1Q",
+      "name": "Chapel Barrio Parque O'Higgins",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 293,
+      "externalKey": "google_maps:ChIJu4ytaCHFYpYRHsP-6j8h3P4",
+      "name": "Santa Lucia",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 294,
+      "externalKey": "google_maps:ChIJ4_Ogm_jEYpYRqGG9bsyYW-U",
+      "name": "Juana De Dios Gonzalez Ramos",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates"
+      ]
+    },
+    {
+      "row": 295,
+      "externalKey": "google_maps:ChIJw7QQc1XEYpYR-xCFpB9gRa0",
+      "name": "Las Asambleas de Dios",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 296,
+      "externalKey": "google_maps:ChIJaeIT2lfFYpYRQ9ftAf8Bhpk",
+      "name": "IGLESIA PENTECOSTAL DEL PODER DE DIOS",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 297,
+      "externalKey": "google_maps:ChIJS8wwERWcYpYRmWXV6MdZLJ8",
+      "name": "Primera Iglesia Metodista Pentecostal de Tiltil",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates"
+      ]
+    },
+    {
+      "row": 298,
+      "externalKey": "google_maps:ChIJ9WiffarFYpYRU8odcjFUnNg",
+      "name": "Instituto Pastoral De La Familia",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 299,
+      "externalKey": "google_maps:ChIJK3ASHQDFYpYR-HIqwjJYYjA",
+      "name": "Congregacion Del Verbo Divino",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 300,
+      "externalKey": "google_maps:ChIJSWDsyqrFYpYR07QOGvauD0k",
+      "name": "Congregacion Salesiana Inspectoria Salesiana",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 301,
+      "externalKey": "google_maps:ChIJm-1lMKvFYpYRduIs8wnh05Q",
+      "name": "Asociacion Bautista Para el Evangelismo",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 302,
+      "externalKey": "google_maps:ChIJF7jEvP_EYpYRMN4mDhfPRvI",
+      "name": "Kingdom Hall of Jehovah's Witnesses",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 303,
+      "externalKey": "google_maps:ChIJH4-3WlXEYpYRlXgrlLkNBAM",
+      "name": "IGLESIA CRISTIANA EVANGELICA FUENTE DE SALVACION",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 304,
+      "externalKey": "google_maps:ChIJE2t5BlbEYpYRYkmwfpHykMw",
+      "name": "Blamey Acevedo John C",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates"
+      ]
+    },
+    {
+      "row": 305,
+      "externalKey": "google_maps:ChIJ9dAmJYfFYpYR_oIYlG5IEIc",
+      "name": "Iglesia Adventista del Séptimo Dia el Montijo",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 306,
+      "externalKey": "google_maps:ChIJA24CNQDFYpYR8ZDZzZy66No",
+      "name": "IPD Ñuñoa",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 307,
+      "externalKey": "google_maps:ChIJzzMh0qPFYpYR32N9V9tiOsA",
+      "name": "IBN",
+      "disposition": "excluded",
+      "reason": "not_a_community_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "invalid_phone_omitted"
+      ]
+    },
+    {
+      "row": 308,
+      "externalKey": "google_maps:ChIJkUv9barFYpYRfdfbUfvUI4A",
+      "name": "Cristian Gonzalo Vidal Iglesias",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 309,
+      "externalKey": "google_maps:ChIJAwdWQgDFYpYRfwHXvBcl6cM",
+      "name": "Futbol me1",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 310,
+      "externalKey": "google_maps:ChIJvQwtbQDFYpYRjMDqDFV4Tsc",
+      "name": "Iglesia Adventista del Séptimo Día - MARANATHA",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 311,
+      "externalKey": "google_maps:ChIJIa5M5lXEYpYRrI9mfFCYlAc",
+      "name": "Iglesia Metodista Pentecostal De Chile Santiago Centro",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 312,
+      "externalKey": "google_maps:ChIJc1-scmnFYpYRRebe7lbBm0I",
+      "name": "Santa Elisa",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 313,
+      "externalKey": "google_maps:ChIJxQAiJ2nFYpYRPsqpX95cCmo",
+      "name": "Fund San Jose Para La Adopcion Familiar Cristiana",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 314,
+      "externalKey": "google_maps:ChIJK0VAkXLFYpYRZJhHE6FhcrA",
+      "name": "Iglesia Adventista del Séptimo Día - CONFERENCIA",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 315,
+      "externalKey": "google_maps:ChIJYQWOt059jL0Rd8MZPoBEeYE",
+      "name": "Iglesia Metodista Pentecostal de Chile",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 316,
+      "externalKey": "google_maps:ChIJr2OWGLzFYpYR3qEWlba3A7w",
+      "name": "Santo Domingo Church",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "description_from_maps_not_institutional"
+      ]
+    },
+    {
+      "row": 317,
+      "externalKey": "google_maps:ChIJmcKCbrvFYpYRaGhnw2IvnFA",
+      "name": "Iglesia Sanidad A Las Naciones",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 318,
+      "externalKey": "google_maps:ChIJF7yZCE3EYpYRewE8b9UnBU0",
+      "name": "Iglesia Evangelica Nuevo Amanecer",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 319,
+      "externalKey": "google_maps:ChIJZ9G2RgDFYpYRX_ZVxH-5k4E",
+      "name": "Iglesia Gracia y Adoración",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 320,
+      "externalKey": "google_maps:ChIJqQmxPUzEYpYRvTVZprcFmYA",
+      "name": "Ministerio Iglesia Latina Principe De Paz",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 321,
+      "externalKey": "google_maps:ChIJz7CgFgDFYpYR7YsToa5r9oQ",
+      "name": "Local Iep Martínez de Rozas",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 322,
+      "externalKey": "google_maps:ChIJ_ZbWkEvEYpYRwv2IjHMfB00",
+      "name": "Fundacion Esperanza De Vida",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 323,
+      "externalKey": "google_maps:ChIJ690Pxk3EYpYRjLiC9vGTP7E",
+      "name": "Intergral Vida",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 324,
+      "externalKey": "google_maps:ChIJA9SR-fjEYpYRL3pRfvU8P-U",
+      "name": "Tierra Latina",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 325,
+      "externalKey": "google_maps:ChIJJd4mVvjEYpYR73mU-woNdsU",
+      "name": "Sepulveda Salgado Luz E",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates"
+      ]
+    },
+    {
+      "row": 326,
+      "externalKey": "google_maps:ChIJkbvz6E7EYpYRWegRt4jCHn4",
+      "name": "Naranjo Galvez Christian A",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 327,
+      "externalKey": "google_maps:ChIJN6-umUnEYpYRNqXDBgBMfxo",
+      "name": "Iglesia Evangelica Metodista Pentecostal Temple Esperanza",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 328,
+      "externalKey": "google_maps:ChIJG3mWXPvEYpYRHtk2HBWBBhM",
+      "name": "Congregacion Santisimo Redentor",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 329,
+      "externalKey": "google_maps:ChIJdRwI603EYpYRmoAuiPcFwNQ",
+      "name": "Plaza Yungay",
+      "disposition": "excluded",
+      "reason": "not_a_community_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "description_from_maps_not_institutional"
+      ]
+    },
+    {
+      "row": 330,
+      "externalKey": "google_maps:ChIJI3TB0xfFYpYRjFCufSKN6LQ",
+      "name": "Sin Muros Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 331,
+      "externalKey": "google_maps:ChIJoeLy9XXFYpYRNapGqX8W6iY",
+      "name": "Iglesia San Miguel Arcángel",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 332,
+      "externalKey": "google_maps:ChIJBZn-gnfFYpYRWp12FWELK8k",
+      "name": "Iglesia Nueva Apostólica",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 333,
+      "externalKey": "google_maps:ChIJ_T0lC3XFYpYRWY3ON_4rfY8",
+      "name": "Iglesia del Dulce Nombre de María",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 334,
+      "externalKey": "google_maps:ChIJeekFWHfFYpYRYalASdHM3G0",
+      "name": "Iglesia de Dios Misiones Mundiales",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 335,
+      "externalKey": "google_maps:ChIJVT3nQdvFYpYRoIFVT5olaG0",
+      "name": "Iglesia misión palabra de vida Santiago",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 336,
+      "externalKey": "google_maps:ChIJhySQoXfFYpYRW2X_3fo82pQ",
+      "name": "Santa Rita",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 337,
+      "externalKey": "google_maps:ChIJFz-2YnDFYpYRhNEQ5L7V_gg",
+      "name": "Cruceiro",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 338,
+      "externalKey": "google_maps:ChIJYUY7eXDFYpYRTi4_UWbgUzk",
+      "name": "Santa Julia",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 339,
+      "externalKey": "google_maps:ChIJJ4dt39fFYpYRy9xMz9YId3w",
+      "name": "IGLESIA PRESBITERIANA EL ENCUENTRO SANTIAGO CENTRO",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 340,
+      "externalKey": "google_maps:ChIJPXw20XbFYpYRaK-9K8MnrpA",
+      "name": "Asoc Cristiana De Jovenes De Santiago",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 341,
+      "externalKey": "google_maps:ChIJ8T0QNZnFYpYRsIfx-lvbBz4",
+      "name": "Parroquia de la Veracruz",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "description_from_maps_not_institutional"
+      ]
+    },
+    {
+      "row": 342,
+      "externalKey": "google_maps:ChIJo1Y_dHPFYpYR0coTuC0-69Y",
+      "name": "Arzobispado de Santiago Casa de Ejercicios San Francisco Javier",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 343,
+      "externalKey": "google_maps:ChIJC4pIfHPFYpYRJh7eRWo8RA0",
+      "name": "Arzobispado de Santiago",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 344,
+      "externalKey": "google_maps:ChIJlW3JxXDFYpYRwJoYPQWJKj0",
+      "name": "Convencion Evangelica Bautista de Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 345,
+      "externalKey": "google_maps:ChIJsRwUt3nFYpYRuEdhMQbcnOU",
+      "name": "Augustinians Monastery",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates"
+      ]
+    },
+    {
+      "row": 346,
+      "externalKey": "google_maps:ChIJwYwhb5zFYpYRxLJk4tlSBiI",
+      "name": "Iglesia San Francisco de Borja",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 347,
+      "externalKey": "google_maps:ChIJ44DK2ZzFYpYRgC7h3WyS-bU",
+      "name": "Parroquia de la Asunción",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 348,
+      "externalKey": "google_maps:ChIJFRReGQDFYpYRbnHPOb2wwXY",
+      "name": "Capilla de la Casa Central de la Universidad Católica",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 349,
+      "externalKey": "google_maps:ChIJwbwYW33FYpYR4c9hnTAur38",
+      "name": "Iglesia quemada",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 350,
+      "externalKey": "google_maps:ChIJyczbSz7FYpYRiHczWR918V8",
+      "name": "Capilla San Lucas",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 351,
+      "externalKey": "google_maps:ChIJ5TTLfZ3FYpYRqBqdtn7hEQ8",
+      "name": "Fund Cultural Amigos de las Iglesias de Chiloe",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 352,
+      "externalKey": "google_maps:ChIJuwDQZgDFYpYRiRl26TyN2_o",
+      "name": "Plaza san francisco",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 353,
+      "externalKey": "google_maps:ChIJCWUpvKLFYpYRIL3ZmspYG-s",
+      "name": "Primera Iglesia Presbiteriana de Santiago",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 354,
+      "externalKey": "google_maps:ChIJqWbAfkPFYpYRhJBbVhi781c",
+      "name": "Profetas Danilo y Carla Oneto-Ministerio Internacional Sion la Casa del Rey",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 355,
+      "externalKey": "google_maps:ChIJQ9xc-wHFYpYRbtgOHMyc0Ac",
+      "name": "Asociacion Cristiana Femenina",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 356,
+      "externalKey": "google_maps:ChIJuyKUWf7EYpYR7Ofp3Gw1Cjk",
+      "name": "Soldados de la Cruz de Cristo",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 357,
+      "externalKey": "google_maps:ChIJUwGxcP7EYpYR0rv2pI5pfZ0",
+      "name": "Santa Elena",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 358,
+      "externalKey": "google_maps:ChIJI29qxwHFYpYR54d-FZH0Shk",
+      "name": "Congregacion Hermanas Dominicas De La Pr",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 359,
+      "externalKey": "google_maps:ChIJh6oYsv3EYpYRbV_7xutp22g",
+      "name": "Salinas Carvajal Carlos",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 360,
+      "externalKey": "google_maps:ChIJVeNGJP7EYpYRLVkIVdNM_to",
+      "name": "Fabiano De Andrade Batista",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 361,
+      "externalKey": "google_maps:ChIJM-tOPp_FYpYRwQoXZUNc7uQ",
+      "name": "Ermita del Cerro Santa Lucía",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 362,
+      "externalKey": "google_maps:ChIJkYej4J7FYpYRcWI7Jxrr3kY",
+      "name": "Corp Anglicana de Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 363,
+      "externalKey": "google_maps:ChIJZ_c8557FYpYRIgGh5iaxXiY",
+      "name": "Fundación Por el Renacer de la Pasión",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 364,
+      "externalKey": "google_maps:ChIJj4b0x5jFYpYRS2_NJaiPllc",
+      "name": "Rios De Marimon Hernan Aquiles",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 365,
+      "externalKey": "google_maps:ChIJJ3PVdW_FYpYRRkhRncf8upA",
+      "name": "Movimiento de Jóvenes Palestinos",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 366,
+      "externalKey": "google_maps:ChIJVZGT657FYpYRMV6QdolGLMw",
+      "name": "Farias Villacura Christian Mauricio",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 367,
+      "externalKey": "google_maps:ChIJmQ_tL5zFYpYR_dVIfXn2Kcc",
+      "name": "Caraballo Guillen Ceferino De Jesus",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 368,
+      "externalKey": "google_maps:ChIJfVolvq7FYpYRsMRveptV7Iw",
+      "name": "Basilica del Salvador",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 369,
+      "externalKey": "google_maps:ChIJCTtBka_FYpYRkcXYztnAX5I",
+      "name": "Arzobispado de Santiago Parroquia de San",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 370,
+      "externalKey": "google_maps:ChIJPYHiYwDFYpYR1m8U4QN5KQk",
+      "name": "Casa de la Misericordia",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 371,
+      "externalKey": "google_maps:ChIJFXVWbp7FYpYRGq8p9koHh9w",
+      "name": "Pontif.Universidad Catolica de Chile",
+      "disposition": "review",
+      "reason": "conflicting_category_and_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 372,
+      "externalKey": "google_maps:ChIJr0mUEgDFYpYRA3tuZXtWZcw",
+      "name": "Alvaro iglesia pacos",
+      "disposition": "review",
+      "reason": "conflicting_category_and_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 373,
+      "externalKey": "google_maps:ChIJ9WiffarFYpYRHxT0ZfR5acw",
+      "name": "Cuaresma de Fraternidad",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 374,
+      "externalKey": "google_maps:ChIJ23_xX6_FYpYRDdgs1UAGg1Q",
+      "name": "Congregacion de Santa Cruz",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 375,
+      "externalKey": "google_maps:ChIJ5Rnzlq_FYpYRuXJBazUtqmw",
+      "name": "Carmen Mariana Barra Rivera",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 376,
+      "externalKey": "google_maps:ChIJmZaJIgnDYpYRWGmt0QtQxvE",
+      "name": "Fund las Rosas de Ayuda Fraterna",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 377,
+      "externalKey": "google_maps:ChIJC-J_7qXFYpYRpTSDut35BC4",
+      "name": "Arteaga Fuentes Christian E",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 378,
+      "externalKey": "google_maps:ChIJ_eGEEq7FYpYR7ha2D4Fyzgg",
+      "name": "Congregacion De Religiosas Adoratrices",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 379,
+      "externalKey": "google_maps:ChIJJWLjYqnFYpYRgM55S5zzA4w",
+      "name": "Congregacion Hijas De San Pablo",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 380,
+      "externalKey": "google_maps:ChIJXXKSQK7FYpYRG47wyjP9-tc",
+      "name": "Espinoza Bautista Eugenia",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 381,
+      "externalKey": "google_maps:ChIJ_8XAOqnFYpYRmQtPoLyNXOE",
+      "name": "Comunidad San Jose",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 382,
+      "externalKey": "google_maps:ChIJI-wJCabFYpYRDvOzPgUo76o",
+      "name": "Dulanto Galilea Jose Pablo",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 383,
+      "externalKey": "google_maps:ChIJZ4Nof6jFYpYRlp650NvH15g",
+      "name": "Corp Iglesia Evangelica Presbiteriana",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates"
+      ]
+    },
+    {
+      "row": 384,
+      "externalKey": "google_maps:ChIJpR4tT6bFYpYRH6WI7A2ArL0",
+      "name": "Grupo Bíblico Universitario de Chile",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 385,
+      "externalKey": "google_maps:ChIJe5KNOKbFYpYRt5b0kc-bF6o",
+      "name": "Sociedad Pesquera Holando Chilena Limita",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 386,
+      "externalKey": "google_maps:ChIJBzqdfKnFYpYRscB8E53ein8",
+      "name": "Arzobispado de Santiago Vicaria Para la Educacion",
+      "disposition": "excluded",
+      "reason": "not_a_community_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 387,
+      "externalKey": "google_maps:ChIJU8qbQaLFYpYRZmRElXhlTDM",
+      "name": "Palacio La Alhambra",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 388,
+      "externalKey": "google_maps:ChIJFTDaukjEYpYRHVpogMd9qWI",
+      "name": "Arzobispado De Santiago",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 389,
+      "externalKey": "google_maps:ChIJpw1GFE_EYpYRMOgBb67OyKI",
+      "name": "Encuentro",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 390,
+      "externalKey": "google_maps:ChIJMfqiiq_FYpYRV5wQ9tlh9LI",
+      "name": "Iglesia Cristiana AR chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates"
+      ]
+    },
+    {
+      "row": 391,
+      "externalKey": "google_maps:ChIJOQjWqkHFYpYRp7otpswsxqU",
+      "name": "MCV chile - Ministerio Cristo Viene",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 392,
+      "externalKey": "google_maps:ChIJ_xde9QTFYpYRupWWDQyNKxA",
+      "name": "Corp Comunidad Teologica Evangelica de Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 393,
+      "externalKey": "google_maps:ChIJ01PkGwTFYpYRcvNoKVARtJw",
+      "name": "Comunidad Papa Juan Xxiii",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 394,
+      "externalKey": "google_maps:ChIJ41UqWQHFYpYRmdQcT4tCepA",
+      "name": "Santiago Centro Seventh-day Adventist Church",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 395,
+      "externalKey": "google_maps:ChIJARtFGQTFYpYRGdMdb_L0dMA",
+      "name": "Fund las Rosas de Ayuda Fraterna",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 396,
+      "externalKey": "google_maps:ChIJlwvcLufFYpYRA0LEZSLxJ0g",
+      "name": "VICARÍA ZONA CENTRO",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 397,
+      "externalKey": "google_maps:ChIJv9OMz6LFYpYRbcKtdAhDvy8",
+      "name": "Church of St. Peter in Santiago de Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 398,
+      "externalKey": "google_maps:ChIJy2E-haTFYpYRKxlaznVbGTs",
+      "name": "Archbishopric of Santiago Vicariate of Social Pastoral",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 399,
+      "externalKey": "google_maps:ChIJCX1OhaTFYpYRZXew-71thz0",
+      "name": "Navidad con el Hermano",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 400,
+      "externalKey": "google_maps:ChIJ_6PWARzFYpYR13Zom7LN1QQ",
+      "name": "deerecho canónico",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 401,
+      "externalKey": "google_maps:ChIJ7yFgIgnDYpYRNcNpv4kpDww",
+      "name": "Provincia San Lorenzo Martir Padres Domi Nicos",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 402,
+      "externalKey": "google_maps:ChIJG47WT6PFYpYRiOyqXAUxajw",
+      "name": "Convento Santo Domingo",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 403,
+      "externalKey": "google_maps:ChIJrXiv9aLFYpYRkvKzM2A71vI",
+      "name": "Iglesia de Dios",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 404,
+      "externalKey": "google_maps:ChIJhzBuBKPFYpYRfa4AOzskQdg",
+      "name": "Soc Biblica Chilena",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 405,
+      "externalKey": "google_maps:ChIJM0b9zKLFYpYRN4N-ju3UZTE",
+      "name": "Congregacion del Buen Pastor",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 406,
+      "externalKey": "google_maps:ChIJM5CTNKPFYpYRGRa34dIitf8",
+      "name": "Cia de las Hijas de la Caridad de San Vicente de Paul",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 407,
+      "externalKey": "google_maps:ChIJKYPp-6LFYpYRioOPq4xCok8",
+      "name": "Liberia Cristiana Peniel",
+      "disposition": "review",
+      "reason": "conflicting_category_and_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "description_from_maps_not_institutional"
+      ]
+    },
+    {
+      "row": 408,
+      "externalKey": "google_maps:ChIJy2E-haTFYpYRAlMKKw0l_5M",
+      "name": "Fund Luz del Mundo Para la Evangelizacion y Cultura Catolica",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 409,
+      "externalKey": "google_maps:ChIJJxERfaPFYpYRvFV_1v-d29I",
+      "name": "Soc de Inversiones Camino la Fuente",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 410,
+      "externalKey": "google_maps:ChIJrXiv9aLFYpYRutc2st8z-Kw",
+      "name": "Cruzada Religiosa Estudiantil y Profesional Para Cristo",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 411,
+      "externalKey": "google_maps:ChIJ89CxmqTFYpYR5VheifQJRlM",
+      "name": "Parroquia Santa Cruz de Mayo",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 412,
+      "externalKey": "google_maps:ChIJ-bRILLvFYpYR6WocysAOZto",
+      "name": "Palma Galaz Jaime De Jesus Y Otros",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 413,
+      "externalKey": "google_maps:ChIJJxERfaPFYpYRFQKdq0q5z5E",
+      "name": "Sociedad de Asesorias E Inversiones Santa Ana",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 414,
+      "externalKey": "google_maps:ChIJNY1pzKLFYpYR0_rCbta1GZM",
+      "name": "PA160-Parada 2 / Iglesia San Pedro",
+      "disposition": "review",
+      "reason": "conflicting_category_and_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 415,
+      "externalKey": "google_maps:ChIJ8ahr0rzFYpYR9EZArbjPYIU",
+      "name": "Corporacion Metodista Libre De Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 416,
+      "externalKey": "google_maps:ChIJy1sAPaPFYpYR5M-5YOnwJIs",
+      "name": "Ynquilla Maldonado John E.",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 417,
+      "externalKey": "google_maps:ChIJvc0Iv5vFYpYR_xKT27Pr4HM",
+      "name": "Tomic Valdes Gracia",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 418,
+      "externalKey": "google_maps:ChIJn4Q69pjFYpYRvY5H_f2zQ34",
+      "name": "Corp Anglicana de Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 419,
+      "externalKey": "google_maps:ChIJEYNv2ZvFYpYRP-u8x5XUHxU",
+      "name": "Palacio Bruna",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 420,
+      "externalKey": "google_maps:ChIJlclXgKPFYpYRAHw9Ji6wl94",
+      "name": "El Sagrario Parish",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 421,
+      "externalKey": "google_maps:ChIJwb_VfaTFYpYRE02Uhfq3DII",
+      "name": "Sanctuary of Our Lady of Mount Carmel",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 422,
+      "externalKey": "google_maps:ChIJ57QUeKTFYpYRs12jHQTm3-E",
+      "name": "Congregacion Pias Discipulas del Divino",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 423,
+      "externalKey": "google_maps:ChIJr6H-0bjPYpYRIW6LzyIqJO4",
+      "name": "King's Santiago | Iglesia",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 424,
+      "externalKey": "google_maps:ChIJ92BdfqTFYpYR9u2Ms9MZ9YA",
+      "name": "Catequistas CL",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 425,
+      "externalKey": "google_maps:ChIJRZVrZADFYpYRGrwaHHp7yjY",
+      "name": "Monumento a las víctimas del incendio de la Iglesia de la Compañía de Jesús",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 426,
+      "externalKey": "google_maps:ChIJTcwYSq_FYpYRbx0Yc5NadIs",
+      "name": "Christ of May",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 427,
+      "externalKey": "google_maps:ChIJB4ajzaPFYpYR4JZvwH8gvDo",
+      "name": "El Camino S A",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 428,
+      "externalKey": "google_maps:ChIJ65Usk6DFYpYRtdNiGsNpcfE",
+      "name": "Soc Biblica Chilena",
+      "disposition": "excluded",
+      "reason": "not_a_community_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 429,
+      "externalKey": "google_maps:ChIJQ0K2U6HFYpYRmJb1oBPlUrY",
+      "name": "Corp Iglesia De Dios Voz En El Desie",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 430,
+      "externalKey": "google_maps:ChIJX81zBgDFYpYRVUQF5se0K1Y",
+      "name": "Convento de San Francisco (Franciscanos)",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 431,
+      "externalKey": "google_maps:ChIJufqPoKbFYpYREILzVST4sVw",
+      "name": "Davis Lecaros Nicholas",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 432,
+      "externalKey": "google_maps:ChIJXcFLmV7FYpYRLeH2kaBJvvA",
+      "name": "Paula Iglesias Otarola",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates"
+      ]
+    },
+    {
+      "row": 433,
+      "externalKey": "google_maps:ChIJAU5Af6HFYpYRVu15KS9rWSs",
+      "name": "Saint Tropez",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 434,
+      "externalKey": "google_maps:ChIJ-1fGUqLFYpYRZvfLidlcEiI",
+      "name": "Christian Marcelo Estay Lagos",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 435,
+      "externalKey": "google_maps:ChIJZ1RgXKDFYpYRam6TJkfjf1Y",
+      "name": "Museo de Arte Colonial de San Francisco",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 436,
+      "externalKey": "google_maps:ChIJg45Y7KDFYpYRRI4OkF_6Po4",
+      "name": "Iglesias Ringeling Y Compania Limitada",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 437,
+      "externalKey": "google_maps:ChIJLyoZ0KPFYpYRKv8rUuTPqtg",
+      "name": "Zambrano Cornejo Christian Gabriel",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 438,
+      "externalKey": "google_maps:ChIJtfnGUqLFYpYREoWfI_qdZf0",
+      "name": "Inversiones Principe de Gales",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 439,
+      "externalKey": "google_maps:ChIJFxv816PFYpYRuGqGvWCh-x8",
+      "name": "Curia Y Martinez Asoc",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 440,
+      "externalKey": "google_maps:ChIJnVs-_qDFYpYR2MQm5mLs6JI",
+      "name": "Santa Maria Zanartu Jose Luis Pedro",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 441,
+      "externalKey": "google_maps:ChIJpW1yQqHFYpYR2Kq7mjH8t5U",
+      "name": "Guajardo Espinoza Christian Leonardo",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 442,
+      "externalKey": "google_maps:ChIJ0xyk6brFYpYRLodDdPpuXTA",
+      "name": "Eben Ezer",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 443,
+      "externalKey": "google_maps:ChIJs9tLPKTFYpYRA1IO7QLXpVI",
+      "name": "Misión y Visión – Formación Biblica",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 444,
+      "externalKey": "google_maps:ChIJ87I75KDFYpYREFvBHsvmsxk",
+      "name": "Dios Carrasco Cesar Enrique",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 445,
+      "externalKey": "google_maps:ChIJqxBuZ6DFYpYRTNjq2f91b1Q",
+      "name": "Trigo Chandia Nicolas Samuel",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 446,
+      "externalKey": "google_maps:ChIJPQTYSqLFYpYRI97c6rLEsbg",
+      "name": "Ministerio Evangelico Para La Educacion Teologica",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 447,
+      "externalKey": "google_maps:ChIJU7rlEaDFYpYRZP5eDKGMXVo",
+      "name": "Rebolledo Rioseco Christian Ivan",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 448,
+      "externalKey": "google_maps:ChIJmYvMMaLFYpYRye2B2BU-AV4",
+      "name": "Fund Proyecto de Paz Mundial",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 449,
+      "externalKey": "google_maps:ChIJJRj3TaHFYpYRKoLmP1-W4RU",
+      "name": "Santa Rafaela",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 450,
+      "externalKey": "google_maps:ChIJC-G5RaLFYpYR68HmC5kRVa0",
+      "name": "Corales Trivino Christian Gustavo",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 451,
+      "externalKey": "google_maps:ChIJ-R7pFaLFYpYRXKCBpK1ffgE",
+      "name": "Basilica de la Merced",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 452,
+      "externalKey": "google_maps:ChIJKXaHGqLFYpYRn4ZRWE3-Am4",
+      "name": "Congregación Provincia Mercedaria de Chile",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 453,
+      "externalKey": "google_maps:ChIJUSkYqpjFYpYR4ELfKMFK2FE",
+      "name": "Primera Iglesia de Cristo Cientifico",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 454,
+      "externalKey": "google_maps:ChIJDfWR0aDFYpYRPmHRcN8HAX8",
+      "name": "Dewers Sotomayor Christian Bernardo",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 455,
+      "externalKey": "google_maps:ChIJB2FSLqHFYpYRwKeHEfda6XY",
+      "name": "Zabala P Karmel",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 456,
+      "externalKey": "google_maps:ChIJYXBwBKXFYpYR2d8AZsE20EI",
+      "name": "Idec S.A.",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 457,
+      "externalKey": "google_maps:ChIJ2SJ9u6HFYpYRl9a7kph3VUk",
+      "name": "Ministerios R B C",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 458,
+      "externalKey": "google_maps:ChIJjbno86PFYpYRIIvfadSmeZE",
+      "name": "Alonso Christian Vergara Fuentes",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 459,
+      "externalKey": "google_maps:ChIJfb3Zi6TFYpYRxMceK7OAYl4",
+      "name": "Fundacion Iglesia Educa",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 460,
+      "externalKey": "google_maps:ChIJXebv-6PFYpYRVuivcoHeOew",
+      "name": "Celedon Pardo Christian Andres",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 461,
+      "externalKey": "google_maps:ChIJK63jFKTFYpYR6rfqaTUnxgU",
+      "name": "Retamal Contreras Christian A",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 462,
+      "externalKey": "google_maps:ChIJS1SDPqTFYpYRqKNqDAfGVtg",
+      "name": "Emilio Bonifacio de San Jose Eva Araya",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 463,
+      "externalKey": "google_maps:ChIJwRDlrqPFYpYRa-MgJBizDk0",
+      "name": "Pena Ricart Jesus",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 464,
+      "externalKey": "google_maps:ChIJxxW5uqXFYpYRZfVF53jZ2qM",
+      "name": "Ministerio Religioso Habitat Para La Humanidad Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 465,
+      "externalKey": "google_maps:ChIJeS6JPaHFYpYRYthHsSPbiDQ",
+      "name": "Ayuda Deudas",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 466,
+      "externalKey": "google_maps:ChIJoYqkHQDFYpYRQx64L-x15D0",
+      "name": "Franciscanos de Chile - Curia Provincial",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 467,
+      "externalKey": "google_maps:ChIJQ65aZ6DFYpYR7mc8PBMMlKk",
+      "name": "Plásticos Londres",
+      "disposition": "excluded",
+      "reason": "not_a_community_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 468,
+      "externalKey": "google_maps:ChIJLyoZ0KPFYpYRa5L8FK1zKSg",
+      "name": "Hudson Hope Kenneth C",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 469,
+      "externalKey": "google_maps:ChIJxwdm0aDFYpYRB2mG2_6Rw88",
+      "name": "Camus Astorquiza Daniela E.",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 470,
+      "externalKey": "google_maps:ChIJZaOomKHFYpYRMRJqARGD5wY",
+      "name": "Moore Pastor Roger",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 471,
+      "externalKey": "google_maps:ChIJN-wBlSDFYpYRsZZOG0h6eYU",
+      "name": "Iglesia metodista Pentecostal pomaire",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 472,
+      "externalKey": "google_maps:ChIJ3VEsRwDFYpYRGeKz7CudtKw",
+      "name": "mas que vencedor",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "specific_commune_review_coordinates"
+      ]
+    },
+    {
+      "row": 473,
+      "externalKey": "google_maps:ChIJjbno86PFYpYRlH5czV370rY",
+      "name": "Corp Educ y Promocion Juvenil Juan Diego",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 474,
+      "externalKey": "google_maps:ChIJIbesFeLFYpYRT9mKStUlW1o",
+      "name": "Jardín del Convento San Francisco",
+      "disposition": "review",
+      "reason": "conflicting_category_and_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 475,
+      "externalKey": "google_maps:ChIJAzCHIwDFYpYRJkEdDifSV_A",
+      "name": "Barrio París Londres",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 476,
+      "externalKey": "google_maps:ChIJ_yIPLafFYpYRX4feJRcs5A8",
+      "name": "Club de la Unión de Santiago",
+      "disposition": "excluded",
+      "reason": "not_a_community_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 477,
+      "externalKey": "google_maps:ChIJ3ymDPqTFYpYRI-z7HFVUgWc",
+      "name": "Comunidad Humberto P Escudero y Otros",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 478,
+      "externalKey": "google_maps:ChIJQ0gaMKLFYpYRBL7qwAeGxiQ",
+      "name": "Neyra Aviles Barbara",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 479,
+      "externalKey": "google_maps:ChIJnw30gKTFYpYR_qEqWk56SXg",
+      "name": "Museo de Arte Sagrado",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 480,
+      "externalKey": "google_maps:ChIJk0Qjh6PFYpYR0SF1afc_Pyw",
+      "name": "Archiepiscopal Palace of Santiago de Chile",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 481,
+      "externalKey": "google_maps:ChIJnWgdxaPFYpYRUtQcDsOHUIA",
+      "name": "Coleman Mariqueo Luz",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 482,
+      "externalKey": "google_maps:ChIJk_zgeKTFYpYR4FeWp96y-Fo",
+      "name": "Articulos Religiosos",
+      "disposition": "excluded",
+      "reason": "not_a_community_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 483,
+      "externalKey": "google_maps:ChIJW221OqLFYpYRySjfQOS3VyM",
+      "name": "Sentra Software House Limitada",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "shared_coordinates_review_duplicate"
+      ]
+    },
+    {
+      "row": 484,
+      "externalKey": "google_maps:ChIJQzCBvN7FYpYRY4RFI6nD7kw",
+      "name": "Iglesia de Cristo",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 485,
+      "externalKey": "google_maps:ChIJuWPeHP3FYpYRSgkxQ3xniHw",
+      "name": "Ministerio Evangelistico Pentecostal",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 486,
+      "externalKey": "google_maps:ChIJkVRI23HFYpYRJnE3sWNu3yY",
+      "name": "Ccb Electronica Limitada",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 487,
+      "externalKey": "google_maps:ChIJyzH9LwfFYpYRovsOjs3l1s8",
+      "name": "Oratorio Mariano Central",
+      "disposition": "review",
+      "reason": "generic_category_ambiguous_name",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 488,
+      "externalKey": "google_maps:ChIJUedeL6rFYpYRWXi6H0aSu9E",
+      "name": "Lighthouse Iglesia",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 489,
+      "externalKey": "google_maps:ChIJVwMwlQbFYpYR3vPOo3ysI8o",
+      "name": "Congregacion Orden Madre de Dios el Agor A",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 490,
+      "externalKey": "google_maps:ChIJMyk7GpnFYpYR_HisH7TMic4",
+      "name": "Iglesia UNO",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 491,
+      "externalKey": "google_maps:ChIJAe-kmKLFYpYRsfDudGlka7M",
+      "name": "Corp Iglesia Presbiteriana Chile",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 492,
+      "externalKey": "google_maps:ChIJy53sFgHFYpYRLb1KRp19x4I",
+      "name": "Templo Metropolitano",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 493,
+      "externalKey": "google_maps:ChIJ_2OpDwHFYpYR57UYiKPTea4",
+      "name": "Congregacion de los Hermanos Maristas",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    },
+    {
+      "row": 494,
+      "externalKey": "google_maps:ChIJv4YEeuDEYpYRX4COkWXr5Ac",
+      "name": "Parroquia San Gerardo",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 495,
+      "externalKey": "google_maps:ChIJtfJ-VajFYpYRfx6tz836FGU",
+      "name": "FASIC",
+      "disposition": "review",
+      "reason": "community_type_requires_review",
+      "issues": [
+        "commune_from_source_not_geographically_verified"
+      ]
+    },
+    {
+      "row": 496,
+      "externalKey": "google_maps:ChIJ5yFtWKjFYpYRTn4IMVT3hh8",
+      "name": "Iglesia de la Unificacion",
+      "disposition": "accepted",
+      "reason": "explicit_church_category",
+      "issues": [
+        "commune_from_source_not_geographically_verified",
+        "repeated_name_review_duplicate"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+@startuml
+title Flujo de exploración y selección de comunidades
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+skinparam activity {
+  BackgroundColor White
+  BorderColor Black
+  DiamondBackgroundColor White
+  DiamondBorderColor Black
+}
+start
+:Acceder a Inicio;
+repeat
+  if (Modalidad de búsqueda) then (Filtros)
+    :Definir ubicación y filtros;
+  else (Lenguaje natural)
+    :Escribir o refinar consulta;
+    :Interpretar criterios y recuperar información;
+  endif
+  :Mostrar alternativas y datos disponibles;\nIncluir fundamentos y fuentes en sugerencias;
+  if (¿Consultar una comunidad?) then (Sí)
+    :Abrir ficha de comunidad;
+    :Elegir acciones opcionales:\nguardar, comparar, consultar experiencias\no acceder a contacto;
+    :Validar autenticación y permisos\ncuando la acción lo requiera;
+    :Mostrar vista o ejecutar acción autorizada;
+  else (No)
+    :Revisar resultados o ausencia de coincidencias;
+  endif
+repeat while (¿Continuar explorando?) is (Sí) not (No)
+stop
+@enduml

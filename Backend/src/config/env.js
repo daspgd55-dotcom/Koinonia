@@ -1,0 +1,22 @@
+const path = require('node:path');
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env'), quiet: true });
+function loadConfig() {
+  const { MONGO_URI, JWT_SECRET, RECOMMENDER_URL } = process.env;
+  if (!MONGO_URI) throw new Error('Falta MONGO_URI');
+  if (!JWT_SECRET || JWT_SECRET.length < 32 || JWT_SECRET.includes('cambiar')) throw new Error('JWT_SECRET debe tener al menos 32 caracteres y ser propio');
+  const port = Number(process.env.PORT || 3000);
+  if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('PORT inválido');
+  if (RECOMMENDER_URL && !['http:', 'https:'].includes(new URL(RECOMMENDER_URL).protocol)) throw new Error('RECOMMENDER_URL inválida');
+  const production = process.env.NODE_ENV === 'production';
+  const corsOrigins = (process.env.CORS_ORIGINS || 'http://localhost:5173').split(',').map(x => x.trim());
+  if (production && (!process.env.CORS_ORIGINS || corsOrigins.some(x => { try { const u = new URL(x); return u.protocol !== 'https:' || u.origin !== x; } catch { return true; } }))) throw new Error('Configura CORS_ORIGINS con los orígenes HTTPS del frontend');
+  const { CLOUDINARY_CLOUD_NAME: cloudName, CLOUDINARY_API_KEY: apiKey, CLOUDINARY_API_SECRET: apiSecret } = process.env;
+  if ([cloudName, apiKey, apiSecret].some(Boolean) && (![cloudName, apiKey, apiSecret].every(Boolean) || !/^[a-z0-9_-]+$/i.test(cloudName))) throw new Error('Configuración Cloudinary incompleta o inválida');
+  const trustProxy = Number(process.env.TRUST_PROXY_HOPS || 0);
+  if (!Number.isInteger(trustProxy) || trustProxy < 0 || trustProxy > 5) throw new Error('TRUST_PROXY_HOPS inválido');
+  return { mongoUri: MONGO_URI, jwtSecret: JWT_SECRET, port,
+    enableTestUi: process.env.NODE_ENV !== 'production' && process.env.ENABLE_TEST_UI !== 'false',
+    corsOrigins, trustProxy, cloudinary: cloudName ? { cloudName, apiKey, apiSecret } : null,
+    recommenderUrl: RECOMMENDER_URL || null, recommenderToken: process.env.RECOMMENDER_TOKEN || '', recommenderTimeoutMs: 5000 };
+}
+module.exports = { loadConfig };

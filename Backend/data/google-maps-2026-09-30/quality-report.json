@@ -1,0 +1,620 @@
+{
+  "sourceFile": "dataset_crawler-google-places_2026-09-30_19-48-48-079.xlsx",
+  "sourceSha256": "6aba0c329e1770f9c3f25972d69bb1cbb3742664c6fc7207cd1fe2d65d9bf4be",
+  "inputRows": 101,
+  "columns": 153,
+  "dispositions": {
+    "review": 27,
+    "accepted": 65,
+    "excluded": 9
+  },
+  "images": 110,
+  "records": [
+    {
+      "row": 2,
+      "name": "Capellanía Evangélica de la Fuerza Aérea de Chile",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 3,
+      "name": "IGLESIA CRISTIANA EVANGELICA FUENTE DE SALVACION",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 4,
+      "name": "Iglesia Misión Evangélica Mundial Nueva Vida",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 5,
+      "name": "Sociedad Pesquera Holando Chilena Limita",
+      "status": "excluded",
+      "reason": "non_church_entity"
+    },
+    {
+      "row": 6,
+      "name": "Corp Iglesia De Los Adventistas Del Septimo Dia",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 7,
+      "name": "Hostal P Gustavo",
+      "status": "excluded",
+      "reason": "non_church_entity"
+    },
+    {
+      "row": 8,
+      "name": "Espinoza Bautista Eugenia",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 9,
+      "name": "Comunidad San Jose",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 10,
+      "name": "Dulanto Galilea Jose Pablo",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 11,
+      "name": "Nueces Para el Amor",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 12,
+      "name": "Corp Iglesia Evangelica Presbiteriana",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 13,
+      "name": "Sepulveda Faine Christian Fernando",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 14,
+      "name": "Congregacion De Religiosas Adoratrices",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 15,
+      "name": "SANTISIMA TRINIDAD",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 16,
+      "name": "Capilla de Ánimas",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 17,
+      "name": "Sede Iglesia Presbiteriana Nacional (IPNA)",
+      "status": "accepted",
+      "reason": "named_christian_worship_place"
+    },
+    {
+      "row": 18,
+      "name": "Casa de la Misericordia",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 19,
+      "name": "Iglesia Las Buenas Nuevas Santiago",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 20,
+      "name": "Arzobispado de Santiago Parroquia de San",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 21,
+      "name": "Iglesia Evangélica Bautista Argomedo",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 22,
+      "name": "Culto Unidos Primera IGLESIA Bautista",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 23,
+      "name": "Iglesia Adventista del séptimo día \"Fe y Esperanza\"",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 24,
+      "name": "La Iglesia de Jesucristo de los Santos de los Últimos Días",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 25,
+      "name": "Iglesias Patrimoniales",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 26,
+      "name": "Iglesia Primer Monasterio de la Visitación",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 27,
+      "name": "Iglesia de la Preciosa Sangre",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 28,
+      "name": "Basílica del Salvador",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 29,
+      "name": "Iglesia Corpus Domini",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 30,
+      "name": "Iglesia Santa Ana",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 31,
+      "name": "Albergue Dieciocho164, Iglesia Evangélica Pentecostés",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 32,
+      "name": "La Iglesia Evangélica de Carabineros (IGECAR)",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 33,
+      "name": "Soldados de la Cruz de Cristo",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 34,
+      "name": "Iglesia Central del Ejército Evangélico de Chile",
+      "status": "accepted",
+      "reason": "named_christian_worship_place"
+    },
+    {
+      "row": 35,
+      "name": "Santuario Nacional de María Auxiliadora",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 36,
+      "name": "Iglesia de Dios Tierra Nueva",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 37,
+      "name": "Instituto Biblico Nacional De Chile",
+      "status": "excluded",
+      "reason": "non_church_entity"
+    },
+    {
+      "row": 38,
+      "name": "Comité Nacional de Educación Evangélica - CONAEV",
+      "status": "excluded",
+      "reason": "non_church_entity"
+    },
+    {
+      "row": 39,
+      "name": "Iglesia de San Antonio de Padua (Capuchinos)",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 40,
+      "name": "Iglesia Evangelica Pentecostal Toesca",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 41,
+      "name": "TNE TV Televisión Nacional Evangélica",
+      "status": "excluded",
+      "reason": "non_church_entity"
+    },
+    {
+      "row": 42,
+      "name": "Clase Los Clarines, PRIMP CATEDRAL EVANGELICA",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 43,
+      "name": "Clase Martinez de Rosas, PRIMP CATEDRAL EVANGELICA",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 44,
+      "name": "Iglesia Evangelica",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 45,
+      "name": "Iglesia Cristo Plenitud de Vida (CPV)",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 46,
+      "name": "Iglesia de las Agustinas",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 47,
+      "name": "Ramirez Juan Bautista",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 48,
+      "name": "Antonio Juan Bautista Salamero Baldrich",
+      "status": "excluded",
+      "reason": "non_church_entity"
+    },
+    {
+      "row": 49,
+      "name": "Templo Evangelico Bautista \"La Roca\"",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 50,
+      "name": "Asociacion Bautista Para el Evangelismo",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 51,
+      "name": "Iglesia Bautista Vida Nueva",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 52,
+      "name": "Iglesia LIGS",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 53,
+      "name": "MIP - Santiago Centro",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 54,
+      "name": "Parroquia San Gerardo",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 55,
+      "name": "Iglesia San Pablo",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 56,
+      "name": "Clase Arauco, PRIMP CATEDRAL EVANGELICA",
+      "status": "accepted",
+      "reason": "named_christian_worship_place"
+    },
+    {
+      "row": 57,
+      "name": "Primera Iglesia Evangélica Bautista de Santiago",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 58,
+      "name": "Iglesia San Vicente de Paúl",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 59,
+      "name": "Arzobispado De Santiago",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 60,
+      "name": "Fundacion Esperanza De Vida",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 61,
+      "name": "Iglesia evangelica",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 62,
+      "name": "Iglesia Evangelica Metodista Pentecostal Temple Esperanza",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 63,
+      "name": "Iglesia Gracia y Adoración",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 64,
+      "name": "Ministerio Iglesia Latina Principe De Paz",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 65,
+      "name": "Iglesia de San Saturnino (Santiago de Chile)",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 66,
+      "name": "Iglesia de Nuestra Señora del Rosario de Andacollo",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 67,
+      "name": "Parroquia San Saturnino",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 68,
+      "name": "Segunda Iglesia Bautista de Santiago (SIBSA)",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 69,
+      "name": "Juan Bautista Cornejo Amestica",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 70,
+      "name": "San Juan De Dios Casa Corame",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 71,
+      "name": "Las Asambleas de Dios",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 72,
+      "name": "Congregacion Hijas de San Jose Pro Tectoras de la Infancia",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 73,
+      "name": "Primera Iglesia Metodista",
+      "status": "accepted",
+      "reason": "named_christian_worship_place"
+    },
+    {
+      "row": 74,
+      "name": "Templo San Jose",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 75,
+      "name": "Iglesia Adventista del Séptimo Día - LIBERTAD",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 76,
+      "name": "Profetas Danilo y Carla Oneto-Ministerio Internacional Sion la Casa del Rey",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 77,
+      "name": "Iglesia Sagrados Corazones Alameda",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 78,
+      "name": "Iglesia pentecostal Dios es Amor Chile",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 79,
+      "name": "Iglesia Cristiana La Roca",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 80,
+      "name": "Iglesia Evangelica Nuevo Amanecer",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 81,
+      "name": "IGLESIA(dia del patrimonio)",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 82,
+      "name": "Clase Coquimbo, PRIMP CATEDRAL EVANGELICA",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 83,
+      "name": "Convencion Evangelica Bautista de Chile",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 84,
+      "name": "Casa barbas",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 85,
+      "name": "Teresa De Jesos Villegas Lagos",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 86,
+      "name": "Illanes Momtano Fatima C",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 87,
+      "name": "Centro Cristiano Esperanza y Vida",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 88,
+      "name": "Iglesia",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 89,
+      "name": "Arzobispado de Santiago Casa de Ejercicios San Francisco Javier",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 90,
+      "name": "Iglesia Cristiana La Roca",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 91,
+      "name": "Iglesia Cristiana AR chile",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 92,
+      "name": "Iglesia de la Santísima Agonía de las Hermanas de la Caridad del Buen Pastor",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 93,
+      "name": "PA160-Parada 2 / Iglesia San Pedro",
+      "status": "excluded",
+      "reason": "non_church_entity"
+    },
+    {
+      "row": 94,
+      "name": "Corporacion Metodista Libre De Chile",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 95,
+      "name": "Centro Evangelistico Familiar",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    },
+    {
+      "row": 96,
+      "name": "Sociedad de Asesorias E Inversiones Santa Ana",
+      "status": "excluded",
+      "reason": "non_church_entity"
+    },
+    {
+      "row": 97,
+      "name": "Soc de Inversiones Camino la Fuente",
+      "status": "excluded",
+      "reason": "non_church_entity"
+    },
+    {
+      "row": 98,
+      "name": "Ynquilla Maldonado John E.",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 99,
+      "name": "Parroquia Santa Cruz de Mayo",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 100,
+      "name": "Palma Galaz Jaime De Jesus Y Otros",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 101,
+      "name": "Gajardo Martinez Luz Victoria",
+      "status": "review",
+      "reason": "ambiguous_name_or_category"
+    },
+    {
+      "row": 102,
+      "name": "Iglesia Bíblica Bautista Bet-El",
+      "status": "accepted",
+      "reason": "explicit_church_category"
+    }
+  ]
+}
