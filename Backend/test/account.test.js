@@ -2,13 +2,13 @@ const {test,before,after}=require('node:test'),assert=require('node:assert/stric
 const {MongoMemoryServer}=require('mongodb-memory-server'),{connectDB,disconnectDB}=require('../src/config/db'),{createApp}=require('../src/app'),User=require('../src/models/user.model');
 const cfg={jwtSecret:'account-test-only-secret-longer-than-32-characters',corsOrigins:[],mail:{key:'private-key',from:'test@example.org',appUrl:'https://example.org'}};
 const app=createApp(cfg);let mongo,token,mail;
-const pass='Initial-password-test-123',next='Changed-password-test-456';
-before(async()=>{mongo=await MongoMemoryServer.create({binary:{version:'8.0.12',downloadDir:path.resolve(__dirname,'../.cache/mongodb')}});await connectDB(mongo.getUri('account_tests'));await request(app).post('/api/auth/register').send({email:'account@example.org',password:pass}).expect(201);token=(await request(app).post('/api/auth/login').send({email:'account@example.org',password:pass})).body.token;app.locals.mailFetch=async(url,opts)=>{mail=JSON.parse(opts.body);return{ok:true};};});
+const pass='Start123',next='Next1234';
+before(async()=>{mongo=await MongoMemoryServer.create({binary:{version:'8.0.12',downloadDir:path.resolve(__dirname,'../.cache/mongodb')}});await connectDB(mongo.getUri('account_tests'));await request(app).post('/api/auth/register').send({email:'account@example.org',password:'Short12'}).expect(400);await request(app).post('/api/auth/register').send({email:'account@example.org',password:pass}).expect(201);token=(await request(app).post('/api/auth/login').send({email:'account@example.org',password:pass})).body.token;app.locals.mailFetch=async(url,opts)=>{mail=JSON.parse(opts.body);return{ok:true};};});
 after(async()=>{await disconnectDB();if(mongo)await mongo.stop();});
 test('Cambiar contraseña valida la actual, no acepta claves débiles e invalida sesiones',async()=>{
  const call=body=>request(app).post('/api/auth/change-password').set('Authorization','Bearer '+token).send(body);
  await call({currentPassword:'incorrect',newPassword:next}).expect(400);
- await call({currentPassword:pass,newPassword:'tiny'}).expect(400);
+ await call({currentPassword:pass,newPassword:'Short12'}).expect(400);
  await call({currentPassword:pass,newPassword:next}).expect(200);
  await request(app).get('/api/users/me').set('Authorization','Bearer '+token).expect(401);
  await request(app).post('/api/auth/login').send({email:'account@example.org',password:pass}).expect(401);

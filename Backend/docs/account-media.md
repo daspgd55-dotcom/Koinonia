@@ -2,7 +2,7 @@
 
 ## Contraseñas
 
-- POST `/api/auth/change-password`, Bearer: `{currentPassword,newPassword}`. Solo la cuenta autenticada; verifica la clave actual, exige una diferente y valida 12 caracteres mínimos/72 bytes UTF-8 máximos. Invalida todas las sesiones anteriores y cualquier enlace de recuperación. No devuelve contraseñas.
+- POST `/api/auth/change-password`, Bearer: `{currentPassword,newPassword}`. Solo la cuenta autenticada; verifica la clave actual, exige una diferente y valida 8 caracteres mínimos/72 bytes UTF-8 máximos. Invalida todas las sesiones anteriores y cualquier enlace de recuperación. No devuelve contraseñas.
 - POST `/api/auth/forgot-password`: `{email}`. Mensaje genérico para cuentas existentes e inexistentes. Una solicitud por cuenta/minuto, además del límite general de autenticación por IP (30/15 minutos). Enlace aleatorio de 256 bits, almacenado como hash SHA-256, vence a los 30 minutos.
 - POST `/api/auth/reset-password`: `{token,newPassword}`. Consumo atómico de un solo uso, verifica expiración/cuenta activa e invalida sesiones. El enlace nuevo reemplaza al anterior. Abrir el enlace no lo consume; solo guardar una clave nueva lo hace.
 - Campos internos `sessionVersion` y `passwordReset` no son editables mediante perfil ni se devuelven en sus respuestas. Las cuentas anteriores usan versión de sesión cero y se conservan.

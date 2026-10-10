@@ -51,7 +51,7 @@ Con el servidor todavía ejecutándose en la primera terminal, abre una segunda 
 cd C:\Users\david\Documents\python\Koinonia\Backend
 ```
 
-El registro público siempre crea un `user`. No acepta un campo `role`. La contraseña debe tener al menos 12 caracteres y como máximo 72 bytes UTF-8; se almacena con bcrypt. JWT dura una hora y usa `Authorization: Bearer <token>`.
+El registro público siempre crea un `user`. No acepta un campo `role`. La contraseña debe tener al menos 8 caracteres y como máximo 72 bytes UTF-8; se almacena con bcrypt. JWT dura una hora y usa `Authorization: Bearer <token>`.
 
 ```powershell
 $base = 'http://localhost:3000/api'

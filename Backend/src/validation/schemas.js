@@ -8,7 +8,7 @@ const url = z.string().url().max(2000).refine(v => /^https?:\/\//i.test(v), 'Sol
 const lat = z.number().min(-90).max(90), lng = z.number().min(-180).max(180);
 const coordinates = z.strictObject({ type: z.literal('Point'), coordinates: z.tuple([lng, lat]) });
 const location = z.strictObject({ lat, lng });
-const password = z.string().min(12).refine(v => Buffer.byteLength(v, 'utf8') <= 72, 'Máximo 72 bytes UTF-8');
+const password = z.string().min(8).refine(v => Buffer.byteLength(v, 'utf8') <= 72, 'Máximo 72 bytes UTF-8');
 const register = z.strictObject({ email: z.string().trim().email().max(254).toLowerCase(), name: text.max(100).optional(), password });
 const login = z.strictObject({ email: register.shape.email, password: z.string().min(1).max(200) });
 const preferences = z.strictObject({
