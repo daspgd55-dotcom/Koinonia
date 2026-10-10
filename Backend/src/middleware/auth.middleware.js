@@ -11,8 +11,8 @@ async function auth(req, res, next) {
   try { claims = jwt.verify(match[1], req.app.locals.config.jwtSecret, { algorithms: ['HS256'], issuer: 'koinonia', audience: 'koinonia-api' }); }
   catch { throw new HttpError(401, 'UNAUTHORIZED', 'Sesión inválida o expirada'); }
   if (typeof claims.sub !== 'string' || !/^[a-fA-F0-9]{24}$/.test(claims.sub)) throw new HttpError(401, 'UNAUTHORIZED', 'Sesión inválida');
-  const user = await User.findById(claims.sub);
-  if (!user?.active) throw new HttpError(401, 'UNAUTHORIZED', 'Sesión inválida');
+  const user = await User.findById(claims.sub).select('+sessionVersion');
+  if (!user?.active || (claims.sv || 0) !== (user.sessionVersion || 0)) throw new HttpError(401, 'UNAUTHORIZED', 'Sesión inválida');
   req.user = user; next();
 }
 const roles = (...allowed) => (req, res, next) => {

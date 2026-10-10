@@ -18,7 +18,7 @@ const ChurchSchema = new Schema({
   leadership: { mainLeader: Leader, otherLeaders: [Leader] },
   contact: { website: String, instagram: String, facebook: String, youtube: String, email: String, phone: String },
   firstVisit: { welcomeSupport: { type: String, enum: ['yes', 'no', 'partial', 'unknown'] }, instructions: String, newVisitorSupport: Boolean, welcomeProcess: String },
-  media: [embedded({ type: { type: String, enum: ['image', 'video'] }, url: String, title: String, source: String })],
+  media: [embedded({ type: { type: String, enum: ['image', 'video'] }, url: String, title: String, source: String, focalX: {type:Number,min:0,max:100}, focalY: {type:Number,min:0,max:100} })],
   externalProfile: { type: require('./external-profile.schema'), default: undefined },
   importInfo: { schemaVersion: String, batchId: String, sourceFile: String, sourceRow: Number, importedAt: Date, issues: [String] },
   metadata: { dataStatus: { type: String, enum: ['draft', 'published', 'verified'], default: 'draft' }, version: { type: Number, default: 1 }, testData: { type: Boolean, default: false } },

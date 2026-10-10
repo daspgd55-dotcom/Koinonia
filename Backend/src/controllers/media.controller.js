@@ -25,11 +25,25 @@ exports.upload = async (req, res) => {
     const data = await Church.findOneAndUpdate({ _id: c._id, active: true, 'metadata.version': c.metadata.version, ...(req.user.role === 'admin' ? {} : { representatives: req.user._id }) }, {
       $push: { media: { type: 'image', url: image.secure_url, source: 'Subida por representante autorizado' } },
       $set: { 'metadata.dataStatus': 'draft', updatedBy: req.user._id, 'verification.lastUpdated': new Date() }, $inc: { 'metadata.version': 1 }
-    }, { new: true, runValidators: true });
+    }, { returnDocument: 'after', runValidators: true });
     if (!data) throw new HttpError(409, 'STALE_VERSION', 'La ficha cambió en otra sesión. Recarga antes de guardar.');
     res.status(201).json({ data });
   } catch (error) {
     try { await transport(endpoint + 'destroy', { method: 'POST', headers, body: new URLSearchParams({ public_id: publicId, invalidate: 'true' }), signal: AbortSignal.timeout(10000) }); } catch { console.error('MEDIA_CLEANUP_FAILED'); }
     throw error;
   }
+};
+exports.remove = async (req,res) => {
+  const c=req.church,index=Number(req.params.index);
+  if(!/^\d+$/.test(req.params.index)||!Number.isSafeInteger(index)||!c.media[index])throw new HttpError(400,'INVALID_MEDIA','Selecciona una foto existente.');
+  const item=c.media[index], remaining=c.media.filter((_,i)=>i!==index);
+  const data=await Church.findOneAndUpdate({_id:c._id,active:true,'metadata.version':c.metadata.version,...(req.user.role==='admin'?{}:{representatives:req.user._id})},{$set:{media:remaining,'metadata.dataStatus':'draft',updatedBy:req.user._id,'verification.lastUpdated':new Date()},$inc:{'metadata.version':1}},{returnDocument:'after',runValidators:true});
+  if(!data)throw new HttpError(409,'STALE_VERSION','La ficha cambió en otra sesión. Recarga antes de guardar.');
+  // Solo eliminar recursos subidos por esta aplicación y pertenecientes a esta comunidad.
+  let warning;const cfg=req.app.locals.config.cloudinary;
+  if(cfg){const prefix='https://res.cloudinary.com/'+cfg.cloudName+'/image/upload/';const path=item.url.startsWith(prefix)?item.url.slice(prefix.length):'';
+    const match=/^(?:v\d+\/)?(koinonia\/[a-f0-9]{24}\/[a-f0-9-]{36})\.webp$/.exec(path);
+    if(match&&match[1].startsWith('koinonia/'+c.id+'/'))try{const r=await(req.app.locals.mediaFetch||fetch)('https://api.cloudinary.com/v1_1/'+cfg.cloudName+'/image/destroy',{method:'POST',headers:{Authorization:'Basic '+Buffer.from(cfg.apiKey+':'+cfg.apiSecret).toString('base64')},body:new URLSearchParams({public_id:match[1],invalidate:'true'}),signal:AbortSignal.timeout(10000)});if(!r.ok)throw Error('cleanup');}catch{warning='Foto retirada de la ficha. No se pudo limpiar el archivo remoto; el administrador puede eliminarlo desde Cloudinary.';console.error('MEDIA_CLEANUP_FAILED');}
+  }
+  res.json({data,...(warning?{warning}:{})});
 };

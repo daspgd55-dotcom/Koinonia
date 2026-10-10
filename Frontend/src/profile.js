@@ -6,13 +6,9 @@ export const steps = [
 ];
 export const asksDenomination = branches => branches?.some(v => ['Protestante', 'Rama Independiente'].includes(v));
 export const profileSections = [
-  { title: 'Tu momento', fields: ['spiritualIdentity', 'goal'] },
-  { title: 'Identidad cristiana', fields: ['branches', 'denominations'] },
-  { title: 'Ubicación', fields: ['commune', 'address', 'location', 'radiusKm'] },
-  { title: 'Doctrina y prácticas', fields: ['doctrinalTags'] },
-  { title: 'Comunidad y actividades', fields: ['activities', 'ministries', 'targetGroups'] },
-  { title: 'Disponibilidad', fields: ['meetingDays', 'languages'] },
-  { title: 'Primera visita', fields: ['firstVisitPreference'] }
+  { title: 'Tu identidad', fields: ['spiritualIdentity','goal','activities','ministries','targetGroups','firstVisitPreference'] },
+  { title: 'Tu tradición', fields: ['branches','denominations','doctrinalTags','languages'] },
+  { title: 'Tu ubicación', fields: ['commune','address','location','radiusKm','meetingDays'] }
 ];
 export const fields = {
   spiritualIdentity: {label: '¿Cómo te identificas espiritualmente?', context: true, emptyLabel: 'Prefiero no responder', options: [['christian','Cristiano/a'],['believer','Solo creyente en Dios'],['no_religion','No me identifico con una religión'],['other_religion','Pertenezco a otra religión'],['nonbeliever','No creyente'],['other','Otro']]},

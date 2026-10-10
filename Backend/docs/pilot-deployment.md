@@ -12,6 +12,10 @@ Estado: integración implementada y plantilla de despliegue preparada. No se han
 
 Se recomienda iniciar la base piloto vacía y cargar solo comunidades autorizadas. Una migración de los datos locales necesita respaldo y revisión de qué datos trasladar; esta implementación no migra ni borra datos. Las cuentas existentes continúan en la base indicada por MONGO_URI.
 
+Si Atlas ya contiene una base, usar su nombre con las mismas mayúsculas en MONGO_URI. Por ejemplo, para una base existente `Koinonia_pilot`, la ruta debe ser `/Koinonia_pilot`, no `/koinonia_pilot`. El error `db already exists with different case` se resuelve corrigiendo la conexión y desplegando de nuevo; no requiere borrar la base ni cambiar las IP autorizadas.
+
+Mantener `npm ci --omit=dev` como comando de instalación del backend. Las correcciones de dependencias deben guardarse en `Backend/package-lock.json`, subirse al repositorio y desplegarse. `npm ci` no ejecuta `npm audit fix` automáticamente: el aviso de npm solo sugiere ese comando. La actualización de proxy-addr a 2.0.8 corrige GHSA-jqcg-44mw-7w3h; comprobar producción con `npm audit --omit=dev`.
+
 Render gratuito puede tardar en despertar. El cliente espera hasta 90 segundos para solicitudes normales. Las fotos se alojan en Cloudinary; en MongoDB solo queda su URL y atribución. No se escriben imágenes al disco del servidor.
 
 ## Contrato de subida
@@ -26,7 +30,7 @@ Render gratuito puede tardar en despertar. El cliente espera hasta 90 segundos p
 - Errores: 400 formato/límite, 401 sesión, 403 permisos, 404 comunidad, 409 conflicto, 413 tamaño, 428 versión ausente, 429 frecuencia, 502 proveedor, 503 credenciales no configuradas.
 - Si la persistencia falla después de subir, se intenta eliminar el archivo recién creado. Un fallo de limpieza se registra como MEDIA_CLEANUP_FAILED para revisión en Cloudinary. Una interrupción abrupta o respuesta perdida puede dejar un recurso huérfano; revisar el directorio koinonia periódicamente durante el piloto.
 
-Guardar primero cambios pendientes y asignaciones; la interfaz exige esto antes de subir para preservar el formulario. La subida ya guarda la imagen; no requiere pulsar Guardar ficha después. Tras un error de red ambiguo, recargar la ficha antes de repetir para comprobar si quedó guardada. Quitar un enlace del formulario retira la foto de la ficha al guardar, pero no borra el recurso de Cloudinary; la eliminación remota y la gestión de portada/orden quedan para el siguiente paso.
+Guardar primero cambios pendientes y asignaciones; la interfaz exige esto antes de subir para preservar el formulario. La subida ya guarda la imagen; no requiere pulsar Guardar ficha después. Tras un error de red ambiguo, recargar la ficha antes de repetir para comprobar si quedó guardada. Quitar un enlace del formulario retira la foto de la ficha al guardar, pero no borra el recurso de Cloudinary; el botón Eliminar permite intentar la limpieza remota de las fotos propias. El orden y el encuadre se editan desde multimedia. Consulta account-media.md para el contrato actualizado.
 
 ## Verificación
 

@@ -8,6 +8,8 @@ const UserSchema = new Schema({
   name: { type: String, trim: true, maxlength: 100 },
   email: { type: String, required: true, unique: true, lowercase: true, trim: true },
   password: { type: String, required: true, select: false },
+  sessionVersion: { type: Number, default: 0, select: false },
+  passwordReset: { hash: { type: String, select: false }, expiresAt: { type: Date, select: false }, requestedAt: { type: Date, select: false } },
   role: { type: String, enum: ['user', 'representative', 'admin'], default: 'user' },
   position: { type: String, trim: true, maxlength: 200 },
   active: { type: Boolean, default: true },

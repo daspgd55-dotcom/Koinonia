@@ -1,9 +1,10 @@
+import {imagePosition} from './Photos';
 import React, { useEffect, useRef, useState } from 'react';
 import { api } from './api';
 const labels={commune:'Comuna',denominations:'Denominación',branches:'Rama',doctrinalTags:'Doctrina',activities:'Actividades',ministries:'Ministerios',targetGroups:'Participación',languages:'Idioma',meetingDays:'Días',radiusKm:'Distancia'};
 async function savedInteractions(token){const all=[];let page=1,total=Infinity;while(all.length<total){const r=await api('/users/me/interactions?type=saved&limit=100&page='+page++,{token});all.push(...r.data);total=r.pagination.total;if(!r.data.length)break;}return {data:all};}
 const status={matched:'Coincide',partial:'Coincide parcialmente',not_matched:'No coincide',unknown:'Sin información'};
-function Photo({church}){const [failed,setFailed]=useState(false),url=church.media?.find(m=>m.type==='image'&&/^https?:\/\//i.test(m.url))?.url;return <div className="discovery-photo">{url&&!failed?<img src={url} alt={'Imagen institucional de '+church.identification.name} onError={()=>setFailed(true)}/>:<div className="discovery-illustration" aria-hidden="true"><span>✝</span><i/><small>UN LUGAR PARA ENCONTRARNOS</small></div>}<span className="discovery-badge">{church.metadata?.testData?'Comunidad de prueba':church.metadata?.dataStatus==='verified'?'Ficha verificada':'Ficha publicada'}</span></div>;}
+function Photo({church}){const [failed,setFailed]=useState(false),item=church.media?.find(m=>m.type==='image'&&/^https?:\/\//i.test(m.url)),url=item?.url;return <div className="discovery-photo">{url&&!failed?<img src={url} style={imagePosition(item)} alt={'Imagen institucional de '+church.identification.name} onError={()=>setFailed(true)}/>:<div className="discovery-illustration" aria-hidden="true"><span>✝</span><i/><small>UN LUGAR PARA ENCONTRARNOS</small></div>}<span className="discovery-badge">{church.metadata?.testData?'Comunidad de prueba':church.metadata?.dataStatus==='verified'?'Ficha verificada':'Ficha publicada'}</span></div>;}
 export default function Discover({route,user,token}){
   const [visited,setVisited]=useState(route.startsWith('/descubrir'));
   useEffect(()=>{if(route.startsWith('/descubrir'))setVisited(true);},[route]);

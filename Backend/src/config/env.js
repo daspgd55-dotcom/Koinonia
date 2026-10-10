@@ -13,10 +13,18 @@ function loadConfig() {
   const { CLOUDINARY_CLOUD_NAME: cloudName, CLOUDINARY_API_KEY: apiKey, CLOUDINARY_API_SECRET: apiSecret } = process.env;
   if ([cloudName, apiKey, apiSecret].some(Boolean) && (![cloudName, apiKey, apiSecret].every(Boolean) || !/^[a-z0-9_-]+$/i.test(cloudName))) throw new Error('Configuración Cloudinary incompleta o inválida');
   const trustProxy = Number(process.env.TRUST_PROXY_HOPS || 0);
+  const { RESEND_API_KEY, MAIL_FROM, APP_PUBLIC_URL } = process.env;
+  let mail=null;
+  if ([RESEND_API_KEY,MAIL_FROM,APP_PUBLIC_URL].some(Boolean)) {
+    if (![RESEND_API_KEY,MAIL_FROM,APP_PUBLIC_URL].every(Boolean)) throw new Error('Configuración de correo incompleta');
+    const u=new URL(APP_PUBLIC_URL);
+    if (u.origin!==APP_PUBLIC_URL || (production ? u.protocol!=='https:' : !['http:','https:'].includes(u.protocol))) throw new Error('APP_PUBLIC_URL debe ser el origen del frontend sin barra final');
+    mail={key:RESEND_API_KEY,from:MAIL_FROM,appUrl:APP_PUBLIC_URL};
+  }
   if (!Number.isInteger(trustProxy) || trustProxy < 0 || trustProxy > 5) throw new Error('TRUST_PROXY_HOPS inválido');
   return { mongoUri: MONGO_URI, jwtSecret: JWT_SECRET, port,
     enableTestUi: process.env.NODE_ENV !== 'production' && process.env.ENABLE_TEST_UI !== 'false',
-    corsOrigins, trustProxy, cloudinary: cloudName ? { cloudName, apiKey, apiSecret } : null,
+    corsOrigins, trustProxy, mail, cloudinary: cloudName ? { cloudName, apiKey, apiSecret } : null,
     recommenderUrl: RECOMMENDER_URL || null, recommenderToken: process.env.RECOMMENDER_TOKEN || '', recommenderTimeoutMs: 5000 };
 }
 module.exports = { loadConfig };

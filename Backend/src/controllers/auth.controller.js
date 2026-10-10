@@ -12,12 +12,12 @@ exports.register = async (req, res) => {
 };
 exports.login = async (req, res) => {
   const data = v.parse(v.login, req.body);
-  const user = await User.findOne({ email: data.email }).select('+password');
+  const user = await User.findOne({ email: data.email }).select('+password +sessionVersion');
   // Evita que una cuenta inexistente tome una ruta sin el coste de bcrypt.
   const hash = user?.password || '$2b$12$R9h/cIPz0gi.URNNX3kh2OPST9/PgBkqquzi.Ss7KIUgO2t0jWMUW';
   const valid = await bcrypt.compare(data.password, hash);
   if (!user?.active || !valid) throw new HttpError(401, 'INVALID_CREDENTIALS', 'Correo o contraseña incorrectos');
-  const token = jwt.sign({}, req.app.locals.config.jwtSecret, { algorithm: 'HS256', subject: user.id, expiresIn: '1h', issuer: 'koinonia', audience: 'koinonia-api' });
+  const token = jwt.sign({ sv: user.sessionVersion || 0 }, req.app.locals.config.jwtSecret, { algorithm: 'HS256', subject: user.id, expiresIn: '1h', issuer: 'koinonia', audience: 'koinonia-api' });
   res.json({ token, tokenType: 'Bearer', expiresIn: 3600, data: publicUser(user) });
 };
 exports.publicUser = publicUser;

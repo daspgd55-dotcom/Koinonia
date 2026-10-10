@@ -67,7 +67,7 @@ async function main() {
   await page.getByRole('button',{name:'Ubicación',exact:true}).click();
   await page.getByLabel('Comuna *',{exact:true}).fill('Providencia');
   await page.getByLabel('Dirección',{exact:true}).fill('Dirección institucional de prueba');
-  await page.getByLabel('Accesibilidad',{exact:true}).selectOption('partial');
+  await page.getByLabel('Accesibilidad para personas con movilidad reducida',{exact:true}).selectOption('partial');
   await page.getByLabel('Estacionamiento',{exact:true}).selectOption('nearby');
   await page.getByText('Coordenadas verificadas (opcional)',{exact:true}).click();
   await page.getByLabel('Longitud de la iglesia',{exact:true}).fill('-70.62');
@@ -172,6 +172,18 @@ async function main() {
   assert.equal(await page.getByLabel('Seleccionar foto',{exact:true}).isDisabled(),true);
   await page.getByRole('button',{name:'Guardar ficha',exact:true}).click();
   await page.getByRole('status').filter({hasText:'Ficha guardada'}).waitFor();
+  await page.getByLabel('Posición horizontal',{exact:true}).fill('25');
+  await page.getByRole('button',{name:'Guardar ficha',exact:true}).click();
+  await page.getByRole('status').filter({hasText:'Ficha guardada'}).waitFor();
+  assert.equal((await Church.findById(c._id)).media.find(x=>x.type==='image').focalX,25);
+  await page.getByRole('button',{name:'Vista previa del perfil',exact:true}).click();
+  await page.getByText('Vista previa privada de tus cambios',{exact:false}).waitFor();
+  assert.equal(await page.locator('.preview-panel .community-cover').count(),1);
+  await page.getByRole('button',{name:'Cerrar vista previa',exact:true}).click();
+  page.once('dialog',d=>d.accept());
+  await page.getByRole('button',{name:'Eliminar recurso 1',exact:true}).click();
+  await page.getByRole('status').filter({hasText:'Recurso eliminado'}).waitFor();
+  assert.equal((await Church.findById(c._id)).media.length,0);
   await page.setViewportSize({width:390,height:844});
   await page.screenshot({path:path.join(output,'09-representative-mobile.png'),fullPage:true});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);

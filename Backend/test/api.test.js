@@ -495,3 +495,19 @@ test('Fotos: permisos, validación, proveedor, persistencia y concurrencia', asy
     await send(repToken,3).expect(400);
   } finally {delete config.cloudinary;delete app.locals.mediaFetch;await Church.deleteOne({_id:c.id});}
 });
+
+test('Multimedia: orden, encuadre, eliminación autorizada y limpieza limitada a comunidad', async () => {
+  const imageUrl='https://res.cloudinary.com/test-cloud/image/upload/v1/koinonia/';
+  const c=await Church.create({...fixture('Edición de fotos'),representatives:[rep._id],createdBy:admin._id});
+  const owned=imageUrl+c.id+'/12345678-1234-1234-1234-123456789abc.webp';
+  const media=[{type:'image',url:owned,source:'test',focalX:20,focalY:70},{type:'image',url:'https://example.org/external.jpg',source:'test'}];
+  await request(app).put('/api/churches/'+c.id).set(bearer(repToken)).send({...fixture('Edición de fotos'),media:[{...media[0],focalX:101}]}).expect(400);
+  const saved=await request(app).put('/api/churches/'+c.id).set(bearer(repToken)).set('If-Match','"1"').send({...fixture('Edición de fotos'),media:[media[1],media[0]]}).expect(200);
+  assert.equal(saved.body.data.media[1].focalY,70);assert.equal(saved.body.data.media[0].url,media[1].url);
+  const remove=(token,index,version)=>request(app).delete('/api/churches/'+c.id+'/media/'+index).set(bearer(token)).set('If-Match','"'+version+'"');
+  await remove(otherToken,0,2).expect(403);await remove(repToken,0,1).expect(409);await remove(repToken,99,2).expect(400);
+  let deleted=[];config.cloudinary={cloudName:'test-cloud',apiKey:'key',apiSecret:'secret'};
+  app.locals.mediaFetch=async(url,opts)=>{deleted.push(opts.body.get('public_id'));return{ok:true};};
+  try{await remove(repToken,0,2).expect(200);assert.deepEqual(deleted,[]);await remove(repToken,0,3).expect(200);assert.deepEqual(deleted,['koinonia/'+c.id+'/12345678-1234-1234-1234-123456789abc']);assert.equal((await Church.findById(c.id)).media.length,0);}
+  finally{delete config.cloudinary;delete app.locals.mediaFetch;await Church.deleteOne({_id:c.id});}
+});

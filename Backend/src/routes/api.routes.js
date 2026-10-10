@@ -6,9 +6,14 @@ const interaction = require('../controllers/interaction.controller'), source = r
 const managers = roles('representative', 'admin'), admin = roles('admin');
 const media = require('../controllers/media.controller');
 router.post('/churches/:id/media', auth, managers, media.limit, media.authorize, require('express').raw({ type: ['image/jpeg', 'image/png', 'image/webp'], limit: '5mb' }), media.upload);
+router.delete('/churches/:id/media/:index', auth, managers, media.authorize, media.remove);
 
 router.post('/auth/register', authController.register);
 router.post('/auth/login', authController.login);
+const passwords = require('../controllers/password.controller');
+router.post('/auth/forgot-password', passwords.forgot);
+router.post('/auth/reset-password', passwords.reset);
+router.post('/auth/change-password', auth, passwords.change);
 router.get('/users/me', auth, user.profile);
 router.patch('/users/me', auth, user.updateProfile);
 router.put('/users/me/preferences', auth, user.preferences);
