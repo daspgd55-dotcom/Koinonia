@@ -21,7 +21,7 @@ const ChurchSchema = new Schema({
   media: [embedded({ type: { type: String, enum: ['image', 'video'] }, url: String, title: String, source: String, focalX: {type:Number,min:0,max:100}, focalY: {type:Number,min:0,max:100} })],
   externalProfile: { type: require('./external-profile.schema'), default: undefined },
   importInfo: { schemaVersion: String, batchId: String, sourceFile: String, sourceRow: Number, importedAt: Date, issues: [String] },
-  metadata: { dataStatus: { type: String, enum: ['draft', 'published', 'verified'], default: 'draft' }, version: { type: Number, default: 1 }, testData: { type: Boolean, default: false } },
+  metadata: { firstPublishedByAdminAt: Date, dataStatus: { type: String, enum: ['draft', 'published', 'verified'], default: 'draft' }, version: { type: Number, default: 1 }, testData: { type: Boolean, default: false } },
   representatives: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   createdBy: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   updatedBy: { type: Schema.Types.ObjectId, ref: 'User' },

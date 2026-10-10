@@ -32,7 +32,7 @@ router.get('/churches', church.list);
 router.post('/churches', auth, admin, church.create);
 router.get('/churches/:id/sources', source.list);
 router.post('/churches/:id/sources', auth, managers, source.create);
-router.patch('/churches/:id/status', auth, admin, church.status);
+router.patch('/churches/:id/status', auth, managers, church.status);
 router.put('/churches/:id/representatives', auth, admin, church.representatives);
 router.get('/churches/:id', church.get);
 router.put('/churches/:id', auth, managers, church.update);

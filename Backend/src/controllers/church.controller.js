@@ -46,8 +46,8 @@ exports.update = async (req, res) => {
     church.set(key, data[key]);
   }
   church.verification.lastUpdated = new Date();
-  // Cualquier edición exige revisar/publicar de nuevo: nunca conserva verificación obsoleta.
-  church.metadata.dataStatus = 'draft';
+  // La edición conserva la visibilidad; la verificación se renueva por separado.
+  if (church.metadata.dataStatus === 'verified') church.metadata.dataStatus = 'published';
   church.metadata.version += 1; church.updatedBy = req.user._id;
   await church.save(); res.json({ data: church });
 };
@@ -55,6 +55,8 @@ exports.status = async (req, res) => {
   const church = await svc.managed(req);
   svc.checkVersion(req, church);
   const { status } = v.parse(v.z.strictObject({ status: v.z.enum(['draft', 'published', 'verified']) }), req.body);
+  if (req.user.role !== 'admin' && (status === 'verified' || !church.metadata.firstPublishedByAdminAt)) throw new HttpError(403, 'ADMIN_PUBLICATION_REQUIRED', 'Un administrador debe publicar primero esta comunidad. Solo el administrador puede verificarla.');
+  if (req.user.role === 'admin' && status !== 'draft' && !church.metadata.firstPublishedByAdminAt) church.metadata.firstPublishedByAdminAt = new Date();
   if (status !== 'draft') {
     const missing = [];
     for (const [key, value] of Object.entries({

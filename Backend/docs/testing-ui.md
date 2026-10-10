@@ -33,7 +33,7 @@ El panel usa la API real y la base configurada en `.env`: los cambios que hagas 
 | Desactivar | Pulsa Desactivar y confirma. | Desaparece de la consulta pública y del filtro Activas, pero sus datos se conservan. |
 | Restaurar | En Gestión privada selecciona Desactivadas, abre la ficha y pulsa Restaurar como borrador. | Vuelve a Activas en borrador; requiere publicación de nuevo. |
 
-Editar una ficha publicada o verificada la devuelve a borrador: necesita revisión de nuevo. Las iglesias importadas pueden carecer de información institucional requerida para publicar; no inventes esa información para superar la validación.
+Editar una ficha publicada conserva su visibilidad; una verificada queda publicada hasta nueva verificación. El paso a borrador es explícito. Las iglesias importadas pueden carecer de información institucional requerida para publicar; no inventes esa información para superar la validación.
 
 La eliminación es lógica. Es como sacar una ficha del escaparate y guardarla en el cajón: desaparece para el público, pero puedes recuperarla sin reconstruirla.
 

@@ -24,7 +24,7 @@ exports.upload = async (req, res) => {
   try {
     const data = await Church.findOneAndUpdate({ _id: c._id, active: true, 'metadata.version': c.metadata.version, ...(req.user.role === 'admin' ? {} : { representatives: req.user._id }) }, {
       $push: { media: { type: 'image', url: image.secure_url, source: 'Subida por representante autorizado' } },
-      $set: { 'metadata.dataStatus': 'draft', updatedBy: req.user._id, 'verification.lastUpdated': new Date() }, $inc: { 'metadata.version': 1 }
+      $set: { 'metadata.dataStatus': c.metadata.dataStatus === 'verified' ? 'published' : c.metadata.dataStatus, updatedBy: req.user._id, 'verification.lastUpdated': new Date() }, $inc: { 'metadata.version': 1, __v: 1 }
     }, { returnDocument: 'after', runValidators: true });
     if (!data) throw new HttpError(409, 'STALE_VERSION', 'La ficha cambió en otra sesión. Recarga antes de guardar.');
     res.status(201).json({ data });
@@ -37,7 +37,7 @@ exports.remove = async (req,res) => {
   const c=req.church,index=Number(req.params.index);
   if(!/^\d+$/.test(req.params.index)||!Number.isSafeInteger(index)||!c.media[index])throw new HttpError(400,'INVALID_MEDIA','Selecciona una foto existente.');
   const item=c.media[index], remaining=c.media.filter((_,i)=>i!==index);
-  const data=await Church.findOneAndUpdate({_id:c._id,active:true,'metadata.version':c.metadata.version,...(req.user.role==='admin'?{}:{representatives:req.user._id})},{$set:{media:remaining,'metadata.dataStatus':'draft',updatedBy:req.user._id,'verification.lastUpdated':new Date()},$inc:{'metadata.version':1}},{returnDocument:'after',runValidators:true});
+  const data=await Church.findOneAndUpdate({_id:c._id,active:true,'metadata.version':c.metadata.version,...(req.user.role==='admin'?{}:{representatives:req.user._id})},{$set:{media:remaining,'metadata.dataStatus':c.metadata.dataStatus === 'verified' ? 'published' : c.metadata.dataStatus,updatedBy:req.user._id,'verification.lastUpdated':new Date()},$inc:{'metadata.version':1,__v:1}},{returnDocument:'after',runValidators:true});
   if(!data)throw new HttpError(409,'STALE_VERSION','La ficha cambió en otra sesión. Recarga antes de guardar.');
   // Solo eliminar recursos subidos por esta aplicación y pertenecientes a esta comunidad.
   let warning;const cfg=req.app.locals.config.cloudinary;

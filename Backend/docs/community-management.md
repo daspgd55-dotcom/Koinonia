@@ -9,7 +9,8 @@ Panel React: `http://127.0.0.1:5173/#/administracion`. El enlace Administración
 | Listar y consultar fichas privadas | Solo asignadas, incluidas inactivas | Todas |
 | Editar ficha activa | Solo asignadas | Todas |
 | Crear | No | Sí, inicialmente borrador |
-| Publicar, verificar, asignar representantes | No | Sí |
+| Publicar / pasar a borrador | Solo asignadas con primera publicación previa del admin | Sí |
+| Verificar, asignar representantes | No | Sí |
 | Dar de baja y restaurar | No | Sí |
 
 La eliminación usa `active=false`, conserva relaciones y datos, y exige confirmación en pantalla. Restaurar vuelve a borrador. Una ficha fusionada no se restaura. No hay borrado físico desde este panel. Un usuario común recibe 403 en los endpoints privados aunque invoque la API directamente.
@@ -48,13 +49,13 @@ Cambio de autorización: crear, eliminar y restaurar ahora requieren exclusivame
 
 Nuevo `GET /api/representatives?email=correo@dominio.cl`, solo admin, busca correo exacto de cuentas activas con rol representante/admin. Devuelve `{data:[{_id,name,email,role}]}` o lista vacía, sin perfil, contraseña ni preferencias. La ficha privada devuelve además `assignedAccounts` (nombre, correo, rol e ID) solo al administrador para identificar asignaciones actuales. No cambia roles. La asignación continúa validándose con el endpoint existente y exige al menos una cuenta autorizada.
 
-Cada mutación de una ficha existente envía `If-Match: "<metadata.version>"`. Ante 409 se conservan las ediciones locales y se ofrece recargar explícitamente. Las respuestas 400 muestran detalles de validación. Una edición vuelve a borrador y sale del catálogo público; publicar requiere los datos esenciales que valida el servidor. No hay verificación automática institucional.
+Cada mutación de una ficha existente envía `If-Match: "<metadata.version>"`. Ante 409 se conservan las ediciones locales y se ofrece recargar explícitamente. Las respuestas 400 muestran detalles de validación. Una edición conserva la visibilidad; una ficha verificada queda publicada hasta nueva verificación. Publicar requiere los datos esenciales que valida el servidor. El representante asignado puede alternar publicación/borrador después de la primera publicación del administrador registrada en `metadata.firstPublishedByAdminAt`. No hay verificación automática institucional.
 
 ## Probar
 
 1. Iniciar Backend y Frontend con sus scripts `npm.cmd run dev`. Usar cuentas cuyo rol ya esté autorizado; no se crea ni eleva ningún administrador desde este panel.
 2. Como admin, abrir Administración, crear iglesia, completar nombre, comuna y punto público. Guardar y comprobar borrador.
-3. Completar identidad, declaración doctrinal, reunión, responsable, fuente y autorización. Publicar. Editar y comprobar retorno a borrador.
+3. Completar identidad, declaración doctrinal, reunión, responsable, fuente y autorización. Publicar. Editar y comprobar que permanece publicada; pasar a borrador explícitamente y comprobar que se oculta.
 4. Buscar un representante por correo exacto, añadirlo y guardar asignaciones. Iniciar sesión con esa cuenta: debe ver y editar únicamente sus comunidades, sin botones de creación, baja ni publicación.
 5. Como admin, dar de baja confirmando, filtrar Inactivas y restaurar. Comparar la versión antes/después.
 6. Abrir la ficha en dos sesiones, guardar en una y luego en otra: la segunda debe recibir conflicto sin perder el texto.

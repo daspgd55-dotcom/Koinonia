@@ -162,13 +162,13 @@ test('Fuentes: aprobación explícita y rechazo de candidatos o evidencias inven
     mode = 'slow'; await request(app).post('/api/recommendations').set(bearer(userToken)).send({}).expect(503);
   } finally { config.recommenderUrl = null; server.closeAllConnections(); await new Promise(resolve => server.close(resolve)); }
 });
-test('Publicación: exige ficha completa y una edición invalida publicación previa', async () => {
+test('Publicación: exige ficha completa y editar conserva la visibilidad', async () => {
   const incomplete = await request(app).post('/api/churches').set(bearer(adminToken))
     .send({ identification: { name: 'Incompleta' }, location: fixture('x').location }).expect(201);
   await request(app).patch('/api/churches/' + incomplete.body.data._id + '/status').set(bearer(adminToken)).send({ status: 'published' }).expect(400);
   const edited = await request(app).put('/api/churches/' + nearId).set(bearer(repToken)).send(fixture('Editada')).expect(200);
-  assert.equal(edited.body.data.metadata.dataStatus, 'draft');
-  await request(app).get('/api/churches/' + nearId).expect(404);
+  assert.equal(edited.body.data.metadata.dataStatus, 'published');
+  await request(app).get('/api/churches/' + nearId).expect(200);
   await request(app).patch('/api/churches/' + nearId + '/status').set(bearer(adminToken)).send({ status: 'published' }).expect(200);
 });
 test('Desactivación: oculta comunidad de búsquedas y rechaza nuevas interacciones', async () => {
@@ -465,7 +465,7 @@ test('Descubrimiento: modo tradicional independiente del proveedor y capacidades
 });
 
 test('Fotos: permisos, validación, proveedor, persistencia y concurrencia', async () => {
-  const c = await Church.create({ ...fixture('Fotos aisladas'), representatives: [rep._id], createdBy: admin._id });
+  const c = await Church.create({ ...fixture('Fotos aisladas'), metadata:{dataStatus:'published'}, representatives: [rep._id], createdBy: admin._id });
   const url = '/api/churches/' + c.id + '/media', png = Buffer.from('89504e470d0a1a0a00000000','hex');
   const send = (token, version=1, data=png) => request(app).post(url).set(bearer(token)).set('If-Match','"'+version+'"').set('Content-Type','image/png').send(data);
   await request(app).post(url).expect(401);
@@ -484,7 +484,7 @@ test('Fotos: permisos, validación, proveedor, persistencia y concurrencia', asy
     await send(repToken,1,Buffer.from('not an image')).expect(400);
     await send(repToken,1,Buffer.alloc(5*1024*1024+1)).expect(413);
     assert.equal(uploads,0);
-    const r=await send(repToken).expect(201);assert.equal(r.body.data.media.length,1);assert.equal(r.body.data.metadata.version,2);assert.equal(r.body.data.metadata.dataStatus,'draft');
+    const r=await send(repToken).expect(201);assert.equal(r.body.data.media.length,1);assert.equal(r.body.data.metadata.version,2);assert.equal(r.body.data.metadata.dataStatus,'published');
     assert.ok(!JSON.stringify(r.body).includes('secret-only-on-server'));
     await send(repToken,1).expect(409);assert.equal(uploads,1);
     app.locals.mediaFetch=async()=>{throw Error('provider down');};await send(repToken,2).expect(502);
@@ -498,7 +498,7 @@ test('Fotos: permisos, validación, proveedor, persistencia y concurrencia', asy
 
 test('Multimedia: orden, encuadre, eliminación autorizada y limpieza limitada a comunidad', async () => {
   const imageUrl='https://res.cloudinary.com/test-cloud/image/upload/v1/koinonia/';
-  const c=await Church.create({...fixture('Edición de fotos'),representatives:[rep._id],createdBy:admin._id});
+  const c=await Church.create({...fixture('Edición de fotos'),metadata:{dataStatus:'published'},representatives:[rep._id],createdBy:admin._id});
   const owned=imageUrl+c.id+'/12345678-1234-1234-1234-123456789abc.webp';
   const media=[{type:'image',url:owned,source:'test',focalX:20,focalY:70},{type:'image',url:'https://example.org/external.jpg',source:'test'}];
   await request(app).put('/api/churches/'+c.id).set(bearer(repToken)).send({...fixture('Edición de fotos'),media:[{...media[0],focalX:101}]}).expect(400);
@@ -508,6 +508,22 @@ test('Multimedia: orden, encuadre, eliminación autorizada y limpieza limitada a
   await remove(otherToken,0,2).expect(403);await remove(repToken,0,1).expect(409);await remove(repToken,99,2).expect(400);
   let deleted=[];config.cloudinary={cloudName:'test-cloud',apiKey:'key',apiSecret:'secret'};
   app.locals.mediaFetch=async(url,opts)=>{deleted.push(opts.body.get('public_id'));return{ok:true};};
-  try{await remove(repToken,0,2).expect(200);assert.deepEqual(deleted,[]);await remove(repToken,0,3).expect(200);assert.deepEqual(deleted,['koinonia/'+c.id+'/12345678-1234-1234-1234-123456789abc']);assert.equal((await Church.findById(c.id)).media.length,0);}
+  try{await remove(repToken,0,2).expect(200);assert.deepEqual(deleted,[]);await remove(repToken,0,3).expect(200);assert.deepEqual(deleted,['koinonia/'+c.id+'/12345678-1234-1234-1234-123456789abc']);assert.equal((await Church.findById(c.id)).media.length,0);assert.equal((await Church.findById(c.id)).metadata.dataStatus,'published');}
   finally{delete config.cloudinary;delete app.locals.mediaFetch;await Church.deleteOne({_id:c.id});}
+});
+
+test('Publication history controls representative permissions', async () => {
+  const c = await Church.create({...fixture('Publication delegated'), representatives:[rep.id], createdBy:admin.id});
+  const status = (token,value) => request(app).patch('/api/churches/'+c.id+'/status').set(bearer(token)).send({status:value});
+  await status(repToken,'published').expect(403);
+  await status(repToken,'draft').expect(403);
+  const first = await status(adminToken,'published').expect(200);
+  assert.ok(first.body.data.metadata.firstPublishedByAdminAt);
+  await status(otherToken,'draft').expect(403);
+  await status(repToken,'draft').expect(200);
+  await request(app).get('/api/churches/'+c.id).expect(404);
+  await status(repToken,'published').expect(200);
+  await request(app).get('/api/churches/'+c.id).expect(200);
+  await status(repToken,'verified').expect(403);
+  await request(app).put('/api/churches/'+c.id).set(bearer(repToken)).send({...fixture('Attempt'),metadata:{firstPublishedByAdminAt:new Date()}}).expect(400);
 });

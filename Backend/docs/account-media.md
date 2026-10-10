@@ -19,13 +19,22 @@ Tres tarjetas de resumen coinciden con la encuesta: identidad, tradición y ubic
 
 ## Fotos
 
-Se pueden subir imágenes a comunidades activas guardadas como borrador. No requieren publicación. Guardar previamente nombre, comuna y coordenadas permite crear la ficha. Los cambios pendientes deben guardarse antes de subir o eliminar.
+Se pueden subir imágenes a comunidades activas, incluso borradores. Guardar previamente nombre, comuna y coordenadas permite crear la ficha. Subir o eliminar una foto conserva los demás cambios pendientes. Una foto local se puede descartar antes de subirla; un enlace aún no guardado se elimina localmente.
 
-- DELETE `/api/churches/:id/media/:index`, Bearer admin/representante asignado y `If-Match` obligatorio: retira el recurso, incrementa versión y vuelve a borrador. El índice empieza en cero. Solo intenta borrar en Cloudinary URLs del cloud configurado, generadas por nuestra aplicación para esa misma comunidad. Enlaces externos se retiran sin borrar archivos de terceros. Si Cloudinary falla, devuelve `warning` y registra MEDIA_CLEANUP_FAILED; requiere limpieza manual en Cloudinary. La retirada de la ficha sí queda guardada.
-- “Subir/Bajar recurso” reordena el arreglo media mediante el PUT existente al guardar. La primera imagen es portada.
-- `media[].focalX` y `focalY`: números 0–100, opcionales, centro por defecto. Ajustan object-position en el marco, sin cambiar el archivo. Rechaza valores fuera de rango. La galería pública, descubrimiento y vista previa usan el mismo punto focal. El recorte libre/zoom queda pendiente.
+- DELETE `/api/churches/:id/media/:index`, Bearer admin/representante asignado y `If-Match` obligatorio: retira el recurso e incrementa versión conservando visibilidad. El índice empieza en cero. Solo intenta borrar en Cloudinary URLs del cloud configurado, generadas por nuestra aplicación para esa misma comunidad. Enlaces externos se retiran sin borrar archivos de terceros. Si Cloudinary falla, devuelve `warning` y registra MEDIA_CLEANUP_FAILED; requiere limpieza manual en Cloudinary. La retirada de la ficha sí queda guardada.
+- Arrastrar miniaturas (ratón o pantalla táctil) reordena el arreglo media mediante el PUT existente al guardar. También admite flechas izquierda/derecha con foco en la miniatura. La primera imagen es portada.
+- Antes de subir: zoom de 1 a 4, desplazamiento de la imagen y selección rectangular de proporción libre. Se exporta JPEG de hasta 1600 píxeles desde el original local, sin modificar el archivo del dispositivo. Se puede cancelar o reintentar si falla la subida.
+- `media[].focalX` y `focalY`: números 0–100, opcionales, centro por defecto. Ajustan object-position en el marco, sin cambiar el archivo ya subido. Rechaza valores fuera de rango. La galería pública, descubrimiento y vista previa usan el mismo punto focal.
 - Vista previa usa el formulario actual, incluyendo cambios sin guardar, reutiliza la ficha pública y oculta los cuatro atributos privados. Es local al administrador/representante; no publica borradores ni crea un endpoint público para ellos.
 - “Quitar de la ficha” permite retirar un enlace dentro de una edición pendiente; al guardar no se elimina el archivo remoto. “Eliminar” ejecuta la retirada inmediata y la limpieza remota cuando corresponde.
+
+## Publicación independiente de la edición
+
+PUT de ficha y POST/DELETE de fotos conservan `published` o `draft`. Una ficha `verified` pasa a `published` al editar: permanece visible, pero necesita nueva verificación. PATCH `/api/churches/:id/status` acepta administrador o representante asignado; únicamente el administrador puede verificar o habilitar la primera publicación. Esa primera publicación registra `metadata.firstPublishedByAdminAt`, protegido contra escritura en el formulario. Desde entonces, el representante asignado puede alternar borrador/publicado, sujeto a las validaciones de completitud y versión existentes. Las cuentas sin asignación no pueden hacerlo.
+
+Las fichas antiguas sin este registro conservan su visibilidad. Para habilitar el control del representante, un administrador debe pulsar Publicar una vez, incluso si ya estaban publicadas. No se infiere autorización a partir de datos importados.
+
+Prueba manual: publicar como admin, entrar como representante asignado, editar texto/subir/eliminar foto y comprobar que sigue visible; pasar a borrador y comprobar que desaparece del buscador; volver a publicar. Probar arrastrar dos miniaturas y guardar; seleccionar una foto, ajustar zoom/recorte y descartarla; eliminar otra con cambios pendientes y comprobar que esos cambios siguen en pantalla.
 
 ## Pruebas
 
