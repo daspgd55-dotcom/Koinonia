@@ -9,7 +9,7 @@ const exact = value => new RegExp('^' + escape(value) + '$', 'i');
 function publicChurch(doc) {
   const c = doc.toObject ? doc.toObject() : { ...doc };
   delete c.representatives; delete c.createdBy; delete c.updatedBy; delete c.__v; delete c.importInfo; delete c.reviewImport;
-  c.verification = { source: c.verification?.source, lastUpdated: c.verification?.lastUpdated };
+  c.verification = { lastUpdated: c.verification?.lastUpdated };
   const hidden = c.privateFields || {};
   c.doctrine = { ...c.doctrine }; c.contact = { ...c.contact };
   for (const field of ['soteriology', 'eschatology']) if (hidden[field]) delete c.doctrine[field];

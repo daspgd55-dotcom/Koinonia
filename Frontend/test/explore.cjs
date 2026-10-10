@@ -23,9 +23,10 @@ async function main() {
   page.on('pageerror',e=>errors.push(e.message)); page.setDefaultTimeout(12000);
 
   const Church=backend('./src/models/church.model'), mongoose=backend('mongoose');
-  await Church.create(Array.from({length:14},(_,i)=>({identification:{name:`Comunidad ${String(i+1).padStart(2,'0')}`},location:{commune:i===0?'Providencia':'Santiago',coordinates:{type:'Point',coordinates:[-70.65+i*.001,-33.45]}},christianIdentity:{branch:'Protestante',denomination:i===0?'Metodista':'Bautista'},meetings:[{type:'Culto',schedule:[{day:'Domingo',startTime:'11:00'}]}],community:{activities:['Voluntariado']},metadata:{dataStatus:'published',testData:true},createdBy:new mongoose.Types.ObjectId()})));
+  await Church.create(Array.from({length:14},(_,i)=>({identification:{name:`Comunidad ${String(i+1).padStart(2,'0')}`},verification:{source:'PRIVATE-ORIGIN'},media:[1,2,3,4,5].map(n=>({type:'image',url:'https://images.example.test/'+n+'.png',title:'Imagen '+n})),location:{commune:i===0?'Providencia':'Santiago',coordinates:{type:'Point',coordinates:[-70.65+i*.001,-33.45]}},christianIdentity:{branch:'Protestante',denomination:i===0?'Metodista':'Bautista'},meetings:[{type:'Culto',schedule:[{day:'Domingo',startTime:'11:00'}]}],community:{activities:['Voluntariado']},metadata:{dataStatus:'published',testData:true},createdBy:new mongoose.Types.ObjectId()})));
   await Church.init();
   await page.route('https://tile.openstreetmap.org/**',r=>r.abort());
+  await page.route('https://images.example.test/**',r=>r.fulfill({contentType:'image/svg+xml',body:'<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500"><rect width="800" height="500" fill="teal"/></svg>'}));
   await page.goto(url+'/#/explorar');
   await page.getByRole('status').filter({hasText:'14 comunidades encontradas'}).waitFor();
   assert.equal(await page.locator('.church-card').count(),12);
@@ -38,6 +39,19 @@ async function main() {
   await page.getByRole('link',{name:'Ver comunidad Comunidad 01'}).click();
   await page.getByRole('heading',{name:'Comunidad 01',exact:true}).waitFor();
   await page.getByText('Domingo 11:00',{exact:true}).waitFor();
+  assert.equal(await page.getByText('PRIVATE-ORIGIN').count(),0);
+  await page.mouse.move(0,0);
+  await page.waitForTimeout(5200);
+  assert.equal(await page.getByRole('button',{name:'Ver foto 2',exact:true}).getAttribute('aria-pressed'),'true');
+  await page.getByRole('button',{name:'Ampliar foto',exact:true}).click();
+  await page.getByRole('dialog',{name:'Foto ampliada',exact:true}).waitFor();
+  await page.getByLabel('Zoom de foto',{exact:true}).fill('2');
+  assert.equal(await page.locator('.photo-zoom-scroll').evaluate(el=>el.scrollWidth>el.clientWidth),true);
+  await page.keyboard.press('Escape');
+  await page.getByRole('button',{name:'Ver foto 3',exact:true}).click();
+  assert.equal(await page.getByRole('button',{name:'Ver foto 3',exact:true}).getAttribute('aria-pressed'),'true');
+  await page.screenshot({path:path.join(output,'detail-gallery-desktop.png'),fullPage:true});
+
   await page.getByRole('link',{name:'Volver a resultados'}).click();
   assert.equal(await page.getByLabel('Comuna',{exact:true}).inputValue(),'Providencia');
   assert.equal(await page.locator('.church-card').count(),1);

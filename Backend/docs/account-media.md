@@ -38,4 +38,14 @@ Prueba manual: publicar como admin, entrar como representante asignado, editar t
 
 ## Pruebas
 
+## Ficha pública y galería
+
+La ficha completa, compartida por Explorar, Descubrir y la vista previa, agrupa identidad/doctrina, vida de comunidad, primera visita y contacto en apartados desplegables. Ubicación y reuniones quedan visibles. Incluye idiomas, afiliación, declaración de fe, públicos, duración y lugar de reuniones, liderazgo, acompañamiento y videos cuando hay datos. Los campos institucionales privados siguen excluidos.
+
+`verification.source` es interno: se conserva en administración y base de datos, pero se omite de ficha, búsquedas, guardadas y recomendaciones públicas mediante `publicChurch`. La procedencia técnica ya excluida tampoco se publica. Esto no elimina las fuentes documentales aprobadas del sistema de recomendaciones.
+
+La galería avanza cada cinco segundos con transición; admite pausa, flechas, miniaturas con desplazamiento horizontal y diálogo con zoom 1–4 y desplazamiento de la foto. Elegir manualmente pausa la presentación; puede reanudarse. También pausa al mantener el puntero encima o abrir el diálogo. Respeta movimiento reducido desactivando avance automático y animación. Esc cierra el diálogo y devuelve el foco al botón de apertura. Con una sola foto se desactiva la navegación.
+
+`npm run test:explore` comprueba cambio automático, selección, zoom, cierre y presentación móvil; `npm run test:discover` comprueba acceso/regreso desde recomendaciones; `npm run test:manage` comprueba vista previa.
+
 Backend: `npm test` incluye cambios de contraseña, revocación, expiración/consumo concurrente del enlace, no divulgación, subida y eliminación con autorización/versionado. Frontend: `npm test`, `npm run test:manage` y `npm run build`. Los proveedores externos se simulan para no consumir cuota ni enviar correos. Tras desplegar, validar entrega real de correo y eliminación en la cuenta Cloudinary configurada.

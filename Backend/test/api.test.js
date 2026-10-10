@@ -72,6 +72,7 @@ test('Comunidades: borradores privados, publicación y aislamiento por represent
   const found = await request(app).get('/api/churches/' + nearId).expect(200);
   assert.equal(found.body.data.representatives, undefined);
   assert.equal(found.body.data.verification.representativeName, undefined);
+  assert.equal(found.body.data.verification.source, undefined);
   const mine = await request(app).get('/api/churches/manage').set(bearer(otherToken)).expect(200);
   assert.equal(mine.body.data.length, 0);
 });
