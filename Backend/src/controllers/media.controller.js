@@ -10,6 +10,11 @@ exports.upload = async (req, res) => {
   if (!config) throw new HttpError(503, 'MEDIA_UNAVAILABLE', 'La subida de fotos aún no está configurada.');
   const category = req.query.category || 'facilities';
   if (!['facilities','meetings','activities','representatives','banner'].includes(category)) throw new HttpError(400, 'INVALID_CATEGORY', 'Categoría multimedia inválida.');
+  const frame=req.query.frame||({banner:'wide',representatives:'circle'}[category]||'landscape'),leaderId=req.query.leaderId;
+  if(!['landscape','wide','square','circle','portrait'].includes(frame))throw new HttpError(400,'INVALID_FRAME','Marco inválido.');
+  if((category==='representatives'&&!['circle','square'].includes(frame))||(category==='banner'&&!['wide','landscape'].includes(frame)))throw new HttpError(400,'INVALID_FRAME','El marco no corresponde al tipo de recurso.');
+  if(category==='representatives'&&(!leaderId||![c.leadership?.mainLeader,...(c.leadership?.otherLeaders||[])].some(l=>l?.id===leaderId&&l.name)))throw new HttpError(400,'INVALID_LEADER','Guarda primero el representante en Liderazgo y contacto y selecciona su nombre.');
+  if(leaderId&&category!=='representatives')throw new HttpError(400,'INVALID_LEADER','La asociación solo corresponde a representantes.');
   const b = req.body, type = req.get('Content-Type');
   const valid = Buffer.isBuffer(b) && ((type === 'image/jpeg' && b.subarray(0,3).equals(Buffer.from([255,216,255]))) || (type === 'image/png' && b.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))) || (type === 'image/webp' && b.toString('ascii',0,4)==='RIFF' && b.toString('ascii',8,12)==='WEBP'));
   if (!valid) throw new HttpError(400, 'INVALID_IMAGE', 'Selecciona una imagen JPEG, PNG o WebP válida.');
@@ -25,7 +30,7 @@ exports.upload = async (req, res) => {
   catch { throw new HttpError(502, 'UPLOAD_FAILED', 'No pudimos subir la foto. La ficha conserva sus datos; intenta nuevamente.'); }
   try {
     const data = await Church.findOneAndUpdate({ _id: c._id, active: true, 'metadata.version': c.metadata.version, ...(req.user.role === 'admin' ? {} : { representatives: req.user._id }) }, {
-      $push: { media: { type: 'image', category, url: image.secure_url, source: 'Subida por representante autorizado' } },
+      $push: { media: { type: 'image', category, frame, ...(leaderId?{leaderId}:{}), url: image.secure_url, source: 'Subida por representante autorizado' } },
       $set: { 'metadata.dataStatus': c.metadata.dataStatus === 'verified' ? 'published' : c.metadata.dataStatus, updatedBy: req.user._id, 'verification.lastUpdated': new Date() }, $inc: { 'metadata.version': 1, __v: 1 }
     }, { returnDocument: 'after', runValidators: true });
     if (!data) throw new HttpError(409, 'STALE_VERSION', 'La ficha cambió en otra sesión. Recarga antes de guardar.');

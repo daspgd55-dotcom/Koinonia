@@ -16,7 +16,7 @@ const preferences = z.strictObject({
   activities: list.optional(), ministries: list.optional(), targetGroups: list.optional(), languages: list.optional(), meetingDay: days.optional(), meetingDays: z.array(days).max(7).optional(),
   radiusKm: z.number().positive().max(200).optional(), location: location.optional()
 });
-const leader = z.strictObject({ name: text, role: text });
+const leader = z.strictObject({ id: z.string().uuid().optional(), name: text, role: text });
 const church = z.strictObject({
   identification: z.strictObject({ name: text, abbreviation: text.optional(), description: longText.optional(),
     yearFounded: z.number().int().min(1).max(new Date().getFullYear()).optional(), distinctiveFeatures: longText.optional() }),
@@ -26,7 +26,7 @@ const church = z.strictObject({
     parking: z.boolean().optional(), accessibility: z.boolean().optional(), accessNotes: longText.optional() }),
   christianIdentity: z.strictObject({ branch: text.optional(), denomination: text.optional(), associatedTradition: text.optional(), network: text.optional(), languages: list.optional() }).optional(),
   doctrine: z.strictObject({ officialStatement: longText.optional(), characteristics: list.optional(), soteriology: text.optional(), eschatology: text.optional() }).optional(),
-  privateFields: z.strictObject({ soteriology: z.boolean().optional(), eschatology: z.boolean().optional(), email: z.boolean().optional(), phone: z.boolean().optional() }).optional(),
+  privateFields: z.strictObject({ accessibilityLevel: z.boolean().optional(), soteriology: z.boolean().optional(), eschatology: z.boolean().optional(), email: z.boolean().optional(), phone: z.boolean().optional() }).optional(),
   meetingTypes: list.optional(),
   meetings: z.array(z.strictObject({ type: text, audience: text.optional(), modality: z.enum(['Presencial', 'Online', 'Híbrida']),
     addressOrUrl: text.optional(), frequencyNotes: longText.optional(), schedule: z.array(z.strictObject({ day: days, startTime: z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/),
@@ -36,7 +36,7 @@ const church = z.strictObject({
   contact: z.strictObject({ website: url.optional(), instagram: url.optional(), facebook: url.optional(), youtube: url.optional(),
     email: z.string().email().optional(), phone: text.max(40).optional() }).optional(),
   firstVisit: z.strictObject({ welcomeSupport: z.enum(['yes', 'no', 'partial', 'unknown']).optional(), instructions: longText.optional(), newVisitorSupport: z.boolean().optional(), welcomeProcess: longText.optional() }).optional(),
-  media: z.array(z.strictObject({ type: z.enum(['image', 'video']), category: z.enum(['facilities','meetings','activities','representatives','banner']).optional(), url, title: text.optional(), source: text, focalX: z.number().min(0).max(100).optional(), focalY: z.number().min(0).max(100).optional() })).max(30).optional()
+  media: z.array(z.strictObject({ leaderId: z.string().uuid().optional(), frame: z.enum(['landscape','wide','square','circle','portrait']).optional(), type: z.enum(['image', 'video']), category: z.enum(['facilities','meetings','activities','representatives','banner']).optional(), url, title: text.optional(), source: text, focalX: z.number().min(0).max(100).optional(), focalY: z.number().min(0).max(100).optional() })).max(30).optional()
 });
 const queryNumber = (min, max, fallback) => z.preprocess(v => typeof v === 'string' && v.trim() !== '' ? Number(v) : v,
   z.number().min(min).max(max).optional().default(fallback));

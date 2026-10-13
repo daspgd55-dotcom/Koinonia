@@ -107,6 +107,11 @@ exports.createRepresentative = async (req, res) => {
 };
 
 function normalizeDetails(data) {
+  const leaders=[data.leadership?.mainLeader,...(data.leadership?.otherLeaders||[])].filter(Boolean),ids=leaders.map(l=>l.id).filter(Boolean);
+  if(new Set(ids).size!==ids.length) throw new HttpError(400,'INVALID_LEADER','Los identificadores de representantes deben ser únicos.');
+  for(const m of data.media||[])if(m.frame&&((m.category==='representatives'&&!['circle','square'].includes(m.frame))||(m.category==='banner'&&!['wide','landscape'].includes(m.frame))))throw new HttpError(400,'INVALID_FRAME','El marco no corresponde al tipo de recurso.');
+  for(const m of data.media||[])if(m.leaderId&&(m.category!=='representatives'||!leaders.some(l=>l.id===m.leaderId&&l.name)))throw new HttpError(400,'INVALID_LEADER','La foto debe asociarse a un representante de esta ficha.');
+
   for (const [group, detail, legacy] of [['location', 'parkingAvailability', 'parking'], ['location', 'accessibilityLevel', 'accessibility'], ['firstVisit', 'welcomeSupport', 'newVisitorSupport']]) {
     const value = data[group]?.[detail];
     if (value) { if (['yes', 'no'].includes(value)) data[group][legacy] = value === 'yes'; else delete data[group][legacy]; }

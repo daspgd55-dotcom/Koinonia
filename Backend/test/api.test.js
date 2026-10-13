@@ -543,3 +543,18 @@ test('Representative optional password and categorized media validation', async(
  assert.deepEqual(c.body.data.media.map(m=>m.category),media.map(m=>m.category));
  await request(app).put('/api/churches/'+c.body.data._id).set(bearer(adminToken)).send({...fixture('Categories'),media:[{...media[0],category:'invalid'}]}).expect(400);
 });
+
+test('Leader photo references and accessibility privacy', async()=>{
+ const leaderId='11111111-1111-4111-8111-111111111111',body=fixture('Portrait privacy');
+ body.leadership.mainLeader={id:leaderId,name:'Pastor prueba',role:'Pastor'};
+ body.location.accessibility=true;body.location.accessibilityLevel='yes';body.location.accessNotes='Private access note';body.privateFields={accessibilityLevel:true};
+ body.media=[{type:'image',category:'representatives',frame:'circle',leaderId,url:'https://example.org/portrait.jpg',source:'test'}];
+ const c=(await request(app).post('/api/churches').set(bearer(adminToken)).send(body).expect(201)).body.data;
+ await request(app).patch('/api/churches/'+c._id+'/status').set(bearer(adminToken)).send({status:'published'}).expect(200);
+ const pub=(await request(app).get('/api/churches/'+c._id).expect(200)).body.data;
+ assert.equal(pub.location.accessibility,undefined);assert.equal(pub.location.accessibilityLevel,undefined);assert.equal(pub.location.accessNotes,undefined);assert.equal(pub.media[0].leaderId,leaderId);
+ const priv=(await request(app).get('/api/churches/manage/'+c._id).set(bearer(adminToken)).expect(200)).body.data;assert.equal(priv.location.accessibility,true);
+ body.media[0].leaderId='22222222-2222-4222-8222-222222222222';await request(app).put('/api/churches/'+c._id).set(bearer(adminToken)).send(body).expect(400);
+ body.media[0].leaderId=leaderId;body.media[0].frame='bad';await request(app).put('/api/churches/'+c._id).set(bearer(adminToken)).send(body).expect(400);
+ body.media[0].frame='square';body.leadership.mainLeader.name='Pastor renombrado';await request(app).put('/api/churches/'+c._id).set(bearer(adminToken)).send(body).expect(200);
+});

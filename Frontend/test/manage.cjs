@@ -168,8 +168,6 @@ async function main() {
   await page.route('https://res.cloudinary.com/**',r=>r.fulfill({status:200,contentType:'image/png',body:Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aN6sAAAAASUVORK5CYII=','base64')}));
   await page.getByLabel('Seleccionar foto',{exact:true}).setInputFiles({name:'test.png',mimeType:'image/png',buffer:Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aN6sAAAAASUVORK5CYII=','base64')});
   await page.getByLabel('Zoom',{exact:true}).fill('2');
-  await page.getByLabel('Ancho',{exact:true}).fill('300');
-  await page.getByLabel('Alto',{exact:true}).fill('200');
   await page.screenshot({path:path.join(output,'10-crop-desktop.png'),fullPage:true});
   await page.getByLabel('Presentación de la nueva foto',{exact:true}).selectOption('meetings');
   await page.getByRole('button',{name:'Subir foto recortada',exact:true}).click();
@@ -211,6 +209,14 @@ async function main() {
 
   await page.getByRole('button',{name:'Guardar ficha',exact:true}).click();
   await page.getByRole('status').filter({hasText:'Ficha guardada'}).waitFor();
+  await page.getByLabel('Presentación de la nueva foto',{exact:true}).selectOption('representatives');
+  await page.getByLabel('Representante de la foto',{exact:true}).selectOption({index:1});
+  assert.equal(await page.getByLabel('Marco de la nueva foto',{exact:true}).inputValue(),'circle');
+  await page.getByLabel('Seleccionar foto',{exact:true}).setInputFiles({name:'portrait.png',mimeType:'image/png',buffer:Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aN6sAAAAASUVORK5CYII=','base64')});
+  assert.equal(await page.locator('.crop-stage canvas').getAttribute('height'),'600');
+  await page.getByRole('button',{name:'Subir foto recortada',exact:true}).click();
+  await page.getByRole('status').filter({hasText:'Foto guardada en la nube'}).waitFor();
+  const portrait=(await Church.findById(c._id)).media[0];assert.equal(portrait.frame,'circle');assert.ok(portrait.leaderId);
   await page.getByRole('button',{name:'Publicar',exact:true}).click();
   await page.getByRole('status').filter({hasText:'Administración actualizada'}).waitFor();
   assert.equal((await Church.findById(c._id)).metadata.dataStatus,'published');

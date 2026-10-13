@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 const embedded = fields => new Schema(fields, { _id: false, strict: 'throw' });
 const Point = embedded({ type: { type: String, enum: ['Point'], default: 'Point', required: true },
   coordinates: { type: [Number], required: true, validate: v => v.length === 2 && v.every(Number.isFinite) && Math.abs(v[0]) <= 180 && Math.abs(v[1]) <= 90 } });
-const Leader = embedded({ name: String, role: String });
+const Leader = embedded({ id: String, name: String, role: String });
 // Modelo de Iglesia
 const ChurchSchema = new Schema({
   identification: { name: { type: String, required: true, trim: true }, abbreviation: String, description: String, yearFounded: Number, distinctiveFeatures: String },
@@ -10,7 +10,7 @@ const ChurchSchema = new Schema({
   location: { address: String, commune: { type: String, required: true }, city: String, region: String, postalCode: String, countryCode: String, coordinates: { type: Point, required: true }, parkingAvailability: { type: String, enum: ['yes', 'no', 'nearby', 'unknown'] }, accessibilityLevel: { type: String, enum: ['yes', 'no', 'partial', 'unknown'] }, parking: Boolean, accessibility: Boolean, accessNotes: String },
   christianIdentity: { branch: String, denomination: String, associatedTradition: String, network: String, languages: [String] },
   doctrine: { officialStatement: String, characteristics: [String], soteriology: String, eschatology: String },
-  privateFields: { soteriology: Boolean, eschatology: Boolean, email: Boolean, phone: Boolean },
+  privateFields: { accessibilityLevel: Boolean, soteriology: Boolean, eschatology: Boolean, email: Boolean, phone: Boolean },
   meetingTypes: [String],
   meetings: [embedded({ type: String, audience: String, modality: String, addressOrUrl: String, frequencyNotes: String,
     schedule: [embedded({ day: String, startTime: String, durationMinutes: Number })] })],
@@ -18,7 +18,7 @@ const ChurchSchema = new Schema({
   leadership: { mainLeader: Leader, otherLeaders: [Leader] },
   contact: { website: String, instagram: String, facebook: String, youtube: String, email: String, phone: String },
   firstVisit: { welcomeSupport: { type: String, enum: ['yes', 'no', 'partial', 'unknown'] }, instructions: String, newVisitorSupport: Boolean, welcomeProcess: String },
-  media: [embedded({ type: { type: String, enum: ['image', 'video'] }, category: { type: String, enum: ['facilities','meetings','activities','representatives','banner'] }, url: String, title: String, source: String, focalX: {type:Number,min:0,max:100}, focalY: {type:Number,min:0,max:100} })],
+  media: [embedded({ leaderId: String, frame: {type:String,enum:['landscape','wide','square','circle','portrait']}, type: { type: String, enum: ['image', 'video'] }, category: { type: String, enum: ['facilities','meetings','activities','representatives','banner'] }, url: String, title: String, source: String, focalX: {type:Number,min:0,max:100}, focalY: {type:Number,min:0,max:100} })],
   externalProfile: { type: require('./external-profile.schema'), default: undefined },
   importInfo: { schemaVersion: String, batchId: String, sourceFile: String, sourceRow: Number, importedAt: Date, issues: [String] },
   metadata: { firstPublishedByAdminAt: Date, dataStatus: { type: String, enum: ['draft', 'published', 'verified'], default: 'draft' }, version: { type: Number, default: 1 }, testData: { type: Boolean, default: false } },
