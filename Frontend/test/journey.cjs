@@ -21,9 +21,12 @@ async function main() {
   browser = await chromium.launch({headless:true,...(process.platform==='win32'?{channel:'msedge'}:{})});
   const context = await browser.newContext({viewport:{width:1440,height:1000}}), page = await context.newPage(), errors=[];
   page.on('pageerror',e=>errors.push(e.message)); page.setDefaultTimeout(12000);
-  await page.goto(url); await page.getByRole('link',{name:'Comenzar mi camino'}).waitFor();
+  await page.goto(url); await page.getByRole('link',{name:'Crear mi perfil'}).waitFor();
+  await page.screenshot({path:path.join(output,'audit-home-desktop.png'),fullPage:true});
+  await page.setViewportSize({width:390,height:844});await page.screenshot({path:path.join(output,'audit-home-mobile.png'),fullPage:true});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);await page.setViewportSize({width:1440,height:1000});
   await page.getByRole('link',{name:'Crear cuenta',exact:true}).click();
   await page.getByLabel('Nombre',{exact:false}).fill('María');
+  await page.screenshot({path:path.join(output,'audit-auth.png'),fullPage:true});
   await page.getByLabel('Correo electrónico',{exact:true}).fill('journey@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('Test-web-password-123');
   await page.getByRole('button',{name:'Crear mi cuenta'}).click();
@@ -91,6 +94,7 @@ async function main() {
   assert.equal(user.preferences.radiusKm,17);assert.equal(user.preferences.location.lat,-33.457);
   assert.equal(user.criterionModes.radiusKm,'preferred');assert.equal(user.searchContext.goal,'join');assert.equal(user.searchContext.spiritualIdentity,'believer');
   assert.equal(await page.getByText('-33.457',{exact:false}).count(),0);
+  await page.screenshot({path:path.join(output,'audit-profile.png'),fullPage:true});
   await page.getByRole('button',{name:'Configurar mi perfil'}).click();
   await page.getByRole('heading',{name:'Configuración del perfil',exact:true}).waitFor();
   await page.getByRole('button',{name:'Tu identidad',exact:true}).click();
@@ -125,7 +129,7 @@ async function main() {
   await page.getByLabel('Comuna de interés',{exact:true}).fill('Ñuñoa');
   await page.route('**/api/users/me',r=>r.request().method()==='PATCH'?r.fulfill({status:401,contentType:'application/json',body:JSON.stringify({error:{message:'Sesión expirada'}})}):r.continue());
   await page.getByRole('button',{name:'Guardar configuración'}).click();
-  await page.getByRole('heading',{name:'Qué bueno verte de nuevo'}).waitFor();
+  await page.getByRole('heading',{name:'Inicia sesión',exact:true}).waitFor();
   await page.unroute('**/api/users/me');
   await page.getByLabel('Correo electrónico',{exact:true}).fill('journey@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('Test-web-password-123');
@@ -183,6 +187,7 @@ async function main() {
   assert.ok(!other.preferences.radiusKm);assert.ok(!other.searchContext?.address);
   assert.equal(await page.locator('.profile-card').count(),3);
   await page.getByRole('link',{name:'Configuración de cuenta',exact:true}).click();
+  await page.screenshot({path:path.join(output,'audit-account-mobile.png'),fullPage:true});
   await page.getByLabel('Contraseña actual',{exact:true}).fill('Test-web-password-456');
   await page.getByLabel('Nueva contraseña',{exact:true}).fill('A-new-password-for-web-123');
   await page.getByLabel('Confirmar nueva contraseña',{exact:true}).fill('A-new-password-for-web-123');

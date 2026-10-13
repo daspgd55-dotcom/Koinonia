@@ -28,7 +28,7 @@ async function main() {
   const u=await User.findOneAndUpdate({email:'discovery@example.test'},{$set:{'onboarding.status':'completed','preferences.denominations':['Bautista'],'criterionModes.denominations':'preferred'}},{returnDocument:'after'});
   const churches=await Church.create(['Bautista','Metodista','Bautista'].map((denomination,i)=>({identification:{name:'Comunidad Descubrimiento '+(i+1),description:'Presentación institucional de prueba.'},location:{commune:'Santiago',coordinates:{type:'Point',coordinates:[-70.65,-33.45]}},christianIdentity:{denomination},meetingTypes:['Grupo pequeño / célula'],metadata:{dataStatus:'published',testData:true},createdBy:u._id})));
   await page.goto(url+'/#/descubrir');
-  await page.getByRole('heading',{name:'Un próximo encuentro.'}).waitFor();
+  await page.getByRole('heading',{name:'Conoce tu próxima comunidad.'}).waitFor();
   await page.getByText('Comunidad 1 de 3',{exact:false}).waitFor();
   assert.equal(await page.getByRole('button',{name:'Guardar',exact:true}).isDisabled(),true);
   await page.getByRole('navigation',{name:'Navegación principal'}).getByRole('link',{name:'Iniciar sesión',exact:true}).click();
@@ -57,6 +57,7 @@ async function main() {
   await page.getByLabel('Describe la comunidad que te gustaría conocer').fill('Busco jóvenes cerca de Santiago');
   await page.getByRole('status').filter({hasText:'pendiente de integración'}).waitFor();
   assert.equal(await page.getByRole('button',{name:'Consultar con LLM/RAG'}).isDisabled(),true);
+  await page.screenshot({path:path.join(output,'audit-semantic-mobile.png'),fullPage:true});
   await page.getByRole('link',{name:'Recomendación tradicional',exact:true}).click();
   await page.getByRole('link',{name:'Consulta semántica · LLM/RAG',exact:true}).click();
   assert.equal(await page.getByLabel('Describe la comunidad que te gustaría conocer').inputValue(),'Busco jóvenes cerca de Santiago');

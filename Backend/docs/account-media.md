@@ -49,3 +49,15 @@ La galería avanza cada cinco segundos con transición; admite pausa, flechas, m
 `npm run test:explore` comprueba cambio automático, selección, zoom, cierre y presentación móvil; `npm run test:discover` comprueba acceso/regreso desde recomendaciones; `npm run test:manage` comprueba vista previa.
 
 Backend: `npm test` incluye cambios de contraseña, revocación, expiración/consumo concurrente del enlace, no divulgación, subida y eliminación con autorización/versionado. Frontend: `npm test`, `npm run test:manage` y `npm run build`. Los proveedores externos se simulan para no consumir cuota ni enviar correos. Tras desplegar, validar entrega real de correo y eliminación en la cuenta Cloudinary configurada.
+
+## Categorías multimedia y contraseña del representante
+
+Cada elemento de `media` admite `category`: `facilities`, `meetings`, `activities`, `representatives` o `banner`. El campo es opcional para conservar compatibilidad; los recursos antiguos sin categoría se presentan como instalaciones. No se borran ni migran archivos. La edición usa el PUT de ficha existente y conserva su control de versión y permisos.
+
+La subida admite `POST /api/churches/:id/media?category=meetings` (cuerpo binario y `If-Match` como antes). Sin parámetro usa `facilities`; una categoría inválida devuelve 400 antes de contactar al proveedor. Los límites de cantidad y tamaño existentes se mantienen. La categoría puede elegirse antes de subir o cambiarse después en cada recurso; los cambios de categoría y orden requieren guardar ficha.
+
+Presentación: instalaciones en Visítanos; reuniones junto a sus horarios; actividades/recuerdos en Vida de comunidad; representantes junto a los datos de liderazgo; banner junto al nombre. Esto sustituye la regla provisoria del segundo recurso. Cada grupo tiene galería con zoom y navegación y enlaces a sus videos; no se crea el bloque si no hay recursos válidos. Descubrir prioriza la primera imagen de categoría banner y conserva la primera foto disponible como alternativa.
+
+`POST /api/representatives` permite `password` opcional. Si falta o es exactamente una cadena vacía, se genera como antes. Si se proporciona, exige 8 caracteres como mínimo y 72 bytes UTF-8 como máximo; no se recortan espacios. Solo admin puede crear representantes. Se almacena el hash y se entrega `initialPassword` una sola vez en la respuesta de creación con `Cache-Control: no-store`; listados y fichas de usuario no devuelven claves.
+
+Validación: `npm test` en Backend cubre categorías válidas/inválidas, subida categorizada, hash, login con contraseña elegida y generación automática. En Frontend, `npm run test:manage` verifica selección antes/después de subir y creación desde el panel; `npm run test:explore` verifica ubicación de los cinco grupos, compatibilidad antigua y ausencia de bloques vacíos.

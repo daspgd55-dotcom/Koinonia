@@ -88,6 +88,21 @@ async function main() {
   await page.unroute('**/api/churches/search?**');
   await page.getByRole('button',{name:'Reintentar búsqueda'}).click();
   await page.getByRole('status').filter({hasText:'14 comunidades encontradas'}).waitFor();
+  const categorized=await Church.findOne({'identification.name':'Comunidad 01'});
+  categorized.media=['facilities','meetings','activities','representatives','banner'].map((category,i)=>({type:'image',category,url:'https://images.example.test/'+(i+1)+'.png'}));await categorized.save();
+  await page.goto(url+'/#/iglesia/'+categorized.id);
+  await page.getByRole('heading',{name:'Comunidad 01',exact:true}).waitFor();
+  await page.getByText('Vida de comunidad',{exact:true}).click();
+  assert.equal(await page.locator('.detail-banner-media .community-cover').getAttribute('src'),'https://images.example.test/5.png');
+  assert.equal(await page.locator('[aria-label="Instalaciones"] .community-cover').getAttribute('src'),'https://images.example.test/1.png');
+  assert.equal(await page.locator('[aria-label="Fotos y videos de reuniones"] .community-cover').getAttribute('src'),'https://images.example.test/2.png');
+  assert.equal(await page.locator('[aria-label="Eventos, actividades y recuerdos"] .community-cover').getAttribute('src'),'https://images.example.test/3.png');
+  assert.equal(await page.locator('[aria-label="Fotos y videos de representantes"] .community-cover').getAttribute('src'),'https://images.example.test/4.png');
+  await page.screenshot({path:path.join(output,'categorized-media-mobile.png'),fullPage:true});
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+  categorized.media=[];await categorized.save();await page.reload();
+  await page.getByRole('heading',{name:'Comunidad 01',exact:true}).waitFor();
+  assert.equal(await page.locator('.categorized-media,.detail-banner-media').count(),0);
   assert.deepEqual(errors,[]);
   console.log('EXPLORAR OK: API real aislada, filtros, paginación, ficha, vuelta con contexto, GPS permitido/denegado, mapa sin red, vacío, reintento y móvil.');
 }

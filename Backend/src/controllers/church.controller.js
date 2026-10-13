@@ -100,8 +100,8 @@ exports.eligibleRepresentatives = async (req, res) => {
   res.json({ data, pagination: { page, limit, total, pages: Math.ceil(total/limit) } });
 };
 exports.createRepresentative = async (req, res) => {
-  const data = v.parse(v.z.strictObject({ name: v.z.string().trim().min(1).max(100), email: v.z.string().trim().email().max(254).toLowerCase(), position: v.z.string().trim().min(1).max(200) }), req.body);
-  const password = require('node:crypto').randomBytes(18).toString('base64url');
+  const data = v.parse(v.z.strictObject({ name: v.z.string().trim().min(1).max(100), email: v.z.string().trim().email().max(254).toLowerCase(), position: v.z.string().trim().min(1).max(200), password: v.z.union([v.password,v.z.literal('')]).optional() }), req.body);
+  const password = data.password || require('node:crypto').randomBytes(18).toString('base64url');
   const user = await User.create({ ...data, password: await require('bcryptjs').hash(password, 12), role: 'representative', onboarding: { status: 'skipped', version: 3, lastStep: 0 } });
   res.set('Cache-Control', 'no-store').status(201).json({ data: { _id: user.id, name: user.name, email: user.email, position: user.position, role: user.role }, initialPassword: password });
 };

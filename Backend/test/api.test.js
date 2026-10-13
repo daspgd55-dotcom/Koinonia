@@ -485,7 +485,8 @@ test('Fotos: permisos, validación, proveedor, persistencia y concurrencia', asy
     await send(repToken,1,Buffer.from('not an image')).expect(400);
     await send(repToken,1,Buffer.alloc(5*1024*1024+1)).expect(413);
     assert.equal(uploads,0);
-    const r=await send(repToken).expect(201);assert.equal(r.body.data.media.length,1);assert.equal(r.body.data.metadata.version,2);assert.equal(r.body.data.metadata.dataStatus,'published');
+    await request(app).post(url+'?category=invalid').set(bearer(repToken)).set('If-Match','"1"').set('Content-Type','image/png').send(png).expect(400);
+    const r=await send(repToken).query({category:'meetings'}).expect(201);assert.equal(r.body.data.media[0].category,'meetings');assert.equal(r.body.data.media.length,1);assert.equal(r.body.data.metadata.version,2);assert.equal(r.body.data.metadata.dataStatus,'published');
     assert.ok(!JSON.stringify(r.body).includes('secret-only-on-server'));
     await send(repToken,1).expect(409);assert.equal(uploads,1);
     app.locals.mediaFetch=async()=>{throw Error('provider down');};await send(repToken,2).expect(502);
@@ -527,4 +528,18 @@ test('Publication history controls representative permissions', async () => {
   await request(app).get('/api/churches/'+c.id).expect(200);
   await status(repToken,'verified').expect(403);
   await request(app).put('/api/churches/'+c.id).set(bearer(repToken)).send({...fixture('Attempt'),metadata:{firstPublishedByAdminAt:new Date()}}).expect(400);
+});
+
+test('Representative optional password and categorized media validation', async()=>{
+ const base={name:'Optional password',email:'custom-password@example.test',position:'Pastor'};
+ await request(app).post('/api/representatives').set(bearer(adminToken)).send({...base,password:'short'}).expect(400);
+ const created=await request(app).post('/api/representatives').set(bearer(adminToken)).send({...base,password:'Custom12'}).expect(201);
+ assert.equal(created.body.initialPassword,'Custom12');assert.equal(created.body.data.password,undefined);
+ const stored=await User.findById(created.body.data._id).select('+password');assert.notEqual(stored.password,'Custom12');
+ await request(app).post('/api/auth/login').send({email:base.email,password:'Custom12'}).expect(200);
+ const generated=await request(app).post('/api/representatives').set(bearer(adminToken)).send({...base,email:'blank-password@example.test',password:''}).expect(201);assert.ok(generated.body.initialPassword.length>=12);
+ const media=['facilities','meetings','activities','representatives','banner'].map(category=>({type:'image',url:'https://example.org/'+category+'.jpg',source:'test',category}));
+ const c=await request(app).post('/api/churches').set(bearer(adminToken)).send({...fixture('Categories'),media}).expect(201);
+ assert.deepEqual(c.body.data.media.map(m=>m.category),media.map(m=>m.category));
+ await request(app).put('/api/churches/'+c.body.data._id).set(bearer(adminToken)).send({...fixture('Categories'),media:[{...media[0],category:'invalid'}]}).expect(400);
 });

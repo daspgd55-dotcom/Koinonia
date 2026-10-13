@@ -36,7 +36,7 @@ const church = z.strictObject({
   contact: z.strictObject({ website: url.optional(), instagram: url.optional(), facebook: url.optional(), youtube: url.optional(),
     email: z.string().email().optional(), phone: text.max(40).optional() }).optional(),
   firstVisit: z.strictObject({ welcomeSupport: z.enum(['yes', 'no', 'partial', 'unknown']).optional(), instructions: longText.optional(), newVisitorSupport: z.boolean().optional(), welcomeProcess: longText.optional() }).optional(),
-  media: z.array(z.strictObject({ type: z.enum(['image', 'video']), url, title: text.optional(), source: text, focalX: z.number().min(0).max(100).optional(), focalY: z.number().min(0).max(100).optional() })).max(30).optional()
+  media: z.array(z.strictObject({ type: z.enum(['image', 'video']), category: z.enum(['facilities','meetings','activities','representatives','banner']).optional(), url, title: text.optional(), source: text, focalX: z.number().min(0).max(100).optional(), focalY: z.number().min(0).max(100).optional() })).max(30).optional()
 });
 const queryNumber = (min, max, fallback) => z.preprocess(v => typeof v === 'string' && v.trim() !== '' ? Number(v) : v,
   z.number().min(min).max(max).optional().default(fallback));
@@ -68,4 +68,4 @@ function parse(schema, input) {
   if (!result.success) throw new HttpError(400, 'VALIDATION_ERROR', 'Datos inválidos', result.error.issues.map(x => ({ path: x.path.join('.'), message: x.message })));
   return result.data;
 }
-module.exports = { z, id, register, login, preferences, profilePatch, church, search, interaction, source, recommendation, parse };
+module.exports = { z, password, id, register, login, preferences, profilePatch, church, search, interaction, source, recommendation, parse };
