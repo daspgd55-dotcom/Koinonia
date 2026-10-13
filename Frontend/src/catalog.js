@@ -1,6 +1,9 @@
-// Opciones transcritas de «Ficha Iglesia - Formularios de Google.pdf», pp. 4–11 y 17–18.
+// Opciones base transcritas de «Ficha Iglesia - Formularios de Google.pdf», pp. 4–11 y 17–18.
 // Las agrupaciones por rama son navegación del cliente, no afirmaciones sobre una iglesia.
 export const catalog = {
+  // Estilos definidos para Koinonía; solo se publican cuando la comunidad los declara.
+  musicalStyles: ["Tradicional / Litúrgica", "Himnodia Clásica", "Góspel", "Música Cristiana Contemporánea (MCC) / Worship", "Géneros Urbanos y Alternativos"],
+  culturalStyles: {"Estilo Litúrgico": "Estilo Litúrgico (Tradición, Sacramento e Historia — Vestimenta Formal / Vestiduras Sagradas)", "Estilo Conservador": "Estilo Conservador (Santidad externa y Separación del mundo — Vestimenta Formal y de alta modestia)", "Estilo Moderado": "Estilo Moderado (Decoro, Sencillez y Orden Social — Ropa casual o Semiformal)", "Estilo Contemporáneo": "Estilo Contemporáneo (Gracia, Inclusión y Relevancia Cultural — Vestimenta Libre e Informal)"},
   branches: ['Católica', 'Ortodoxa', 'Protestante', 'Rama Independiente'],
   denominations: ['Católica Romana', 'Bautista', 'Luterana', 'Metodista', 'Presbiteriana', 'Pentecostal', 'Adventista', 'Anglicana', 'Asamblea de Dios', 'Evangélica', 'No Denominacional'],
   denominationsByBranch: {

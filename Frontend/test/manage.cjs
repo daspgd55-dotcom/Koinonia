@@ -86,6 +86,17 @@ async function main() {
   await page.getByLabel('Día',{exact:true}).selectOption('Domingo');
   await page.getByLabel('Hora',{exact:true}).fill('11:00');
   await page.getByLabel('Frecuencia y variaciones del horario',{exact:true}).fill('Primer domingo del mes');
+  await page.getByRole('button',{name:'Comunidad',exact:true}).click();
+  await page.getByRole('checkbox',{name:'Góspel',exact:true}).check();
+  await page.getByRole('checkbox',{name:'Himnodia Clásica',exact:true}).check();
+  await page.getByLabel('Estilo cultural',{exact:true}).selectOption('Estilo Moderado');
+  await page.getByRole('checkbox',{name:'Ocultar del perfil público: Estilos musicales',exact:true}).check();
+  await page.getByRole('checkbox',{name:'Ocultar del perfil público: Estilo cultural',exact:true}).check();
+  await page.getByRole('button',{name:'Vista previa del perfil',exact:true}).click();
+  await page.locator('.preview-panel').getByText('Vida de comunidad',{exact:true}).click();
+  assert.equal(await page.locator('.preview-panel').getByRole('heading',{name:'Estilos musicales',exact:true}).count(),0);
+  assert.equal(await page.locator('.preview-panel').getByText(/Estilo Moderado/).count(),0);
+  await page.getByRole('button',{name:'Cerrar vista previa',exact:true}).click();
   await page.getByRole('button',{name:'Liderazgo y contacto',exact:true}).click();
   await page.getByLabel('Nombre de autoridad principal',{exact:true}).fill('Responsable de prueba');
   await page.getByLabel('Cargo de autoridad principal',{exact:true}).fill('Pastor');
@@ -209,6 +220,14 @@ async function main() {
 
   await page.getByRole('button',{name:'Guardar ficha',exact:true}).click();
   await page.getByRole('status').filter({hasText:'Ficha guardada'}).waitFor();
+  // Ficha antigua: persona guardada sin UUID. Abrirla debe permitir subir sin Guardar ficha.
+  await Church.updateOne({_id:c._id},{$unset:{'leadership.mainLeader.id':''}});
+  await page.reload();
+  await page.getByRole('button',{name:'Administrar Comunidad administrada'}).click();
+  await page.getByRole('button',{name:'Validación y multimedia',exact:true}).click();
+  assert.deepEqual(Array.from((await Church.findById(c._id)).community.musicalStyles),['Góspel','Himnodia Clásica']);
+  const repairedLeader=(await Church.findById(c._id)).leadership.mainLeader.id;
+  assert.ok(repairedLeader);
   await page.getByLabel('Presentación de la nueva foto',{exact:true}).selectOption('representatives');
   await page.getByLabel('Representante de la foto',{exact:true}).selectOption({index:1});
   assert.equal(await page.getByLabel('Marco de la nueva foto',{exact:true}).inputValue(),'circle');
@@ -216,7 +235,7 @@ async function main() {
   assert.equal(await page.locator('.crop-stage canvas').getAttribute('height'),'600');
   await page.getByRole('button',{name:'Subir foto recortada',exact:true}).click();
   await page.getByRole('status').filter({hasText:'Foto guardada en la nube'}).waitFor();
-  const portrait=(await Church.findById(c._id)).media[0];assert.equal(portrait.frame,'circle');assert.ok(portrait.leaderId);
+  const portrait=(await Church.findById(c._id)).media[0];assert.equal(portrait.frame,'circle');assert.equal(portrait.leaderId,repairedLeader);
   await page.getByRole('button',{name:'Publicar',exact:true}).click();
   await page.getByRole('status').filter({hasText:'Administración actualizada'}).waitFor();
   assert.equal((await Church.findById(c._id)).metadata.dataStatus,'published');

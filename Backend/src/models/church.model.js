@@ -1,3 +1,4 @@
+const { musicalStyles, culturalStyles } = require('../validation/community-styles');
 const { Schema, model } = require('mongoose');
 const embedded = fields => new Schema(fields, { _id: false, strict: 'throw' });
 const Point = embedded({ type: { type: String, enum: ['Point'], default: 'Point', required: true },
@@ -10,11 +11,11 @@ const ChurchSchema = new Schema({
   location: { address: String, commune: { type: String, required: true }, city: String, region: String, postalCode: String, countryCode: String, coordinates: { type: Point, required: true }, parkingAvailability: { type: String, enum: ['yes', 'no', 'nearby', 'unknown'] }, accessibilityLevel: { type: String, enum: ['yes', 'no', 'partial', 'unknown'] }, parking: Boolean, accessibility: Boolean, accessNotes: String },
   christianIdentity: { branch: String, denomination: String, associatedTradition: String, network: String, languages: [String] },
   doctrine: { officialStatement: String, characteristics: [String], soteriology: String, eschatology: String },
-  privateFields: { accessibilityLevel: Boolean, soteriology: Boolean, eschatology: Boolean, email: Boolean, phone: Boolean },
+  privateFields: { musicalStyles: Boolean, culturalStyle: Boolean, accessibilityLevel: Boolean, soteriology: Boolean, eschatology: Boolean, email: Boolean, phone: Boolean },
   meetingTypes: [String],
   meetings: [embedded({ type: String, audience: String, modality: String, addressOrUrl: String, frequencyNotes: String,
     schedule: [embedded({ day: String, startTime: String, durationMinutes: Number })] })],
-  community: { targetGroups: [String], ministries: [String], activities: [String], description: String, memberRange: String },
+  community: { musicalStyles: [{ type: String, enum: musicalStyles }], culturalStyle: { type: String, enum: culturalStyles }, targetGroups: [String], ministries: [String], activities: [String], description: String, memberRange: String },
   leadership: { mainLeader: Leader, otherLeaders: [Leader] },
   contact: { website: String, instagram: String, facebook: String, youtube: String, email: String, phone: String },
   firstVisit: { welcomeSupport: { type: String, enum: ['yes', 'no', 'partial', 'unknown'] }, instructions: String, newVisitorSupport: Boolean, welcomeProcess: String },

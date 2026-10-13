@@ -21,6 +21,8 @@ function publicChurch(doc) {
     if (hidden.email || hidden.phone) c.externalProfile.links = (c.externalProfile.links || []).filter(x => !(hidden.email && /^mailto:/i.test(x.url)) && !(hidden.phone && /^tel:/i.test(x.url)));
   }
   if(hidden.accessibilityLevel){c.location={...c.location};delete c.location.accessibility;delete c.location.accessibilityLevel;delete c.location.accessNotes;}
+  c.community={...c.community};
+  for(const field of ['musicalStyles','culturalStyle'])if(hidden[field])delete c.community[field];
   delete c.privateFields;
   return c;
 }

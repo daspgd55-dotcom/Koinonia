@@ -1,0 +1,1 @@
+module.exports = { musicalStyles: ["Tradicional / Litúrgica", "Himnodia Clásica", "Góspel", "Música Cristiana Contemporánea (MCC) / Worship", "Géneros Urbanos y Alternativos"], culturalStyles: ["Estilo Litúrgico", "Estilo Conservador", "Estilo Moderado", "Estilo Contemporáneo"] };

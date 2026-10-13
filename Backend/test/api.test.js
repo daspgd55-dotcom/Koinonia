@@ -10,7 +10,7 @@ const { createApp } = require('../src/app');
 const { connectDB, disconnectDB } = require('../src/config/db');
 const User = require('../src/models/user.model'), Church = require('../src/models/church.model');
 const Interaction = require('../src/models/interaction.model');
-const config = { jwtSecret: 'a-test-only-secret-with-more-than-32-characters', corsOrigins: ['http://localhost:5173'], recommenderUrl: null, recommenderTimeoutMs: 100 };
+const config = { jwtSecret: 'a-test-only-secret-with-more-than-32-characters', corsOrigins: ['http://localhost:5173'], recommenderUrl: null, recommenderTimeoutMs: 5000 };
 const app = createApp(config);
 let mongo, admin, rep, other, person, adminToken, repToken, otherToken, userToken, nearId, farId;
 const bearer = token => ({ Authorization: 'Bearer ' + token });
@@ -160,8 +160,8 @@ test('Fuentes: aprobación explícita y rechazo de candidatos o evidencias inven
     assert.equal(received.email, undefined); assert.equal(received.candidates[0].representatives, undefined);
     mode = 'foreign'; await request(app).post('/api/recommendations').set(bearer(userToken)).send({}).expect(502);
     mode = 'invented'; await request(app).post('/api/recommendations').set(bearer(userToken)).send({}).expect(502);
-    mode = 'slow'; await request(app).post('/api/recommendations').set(bearer(userToken)).send({}).expect(503);
-  } finally { config.recommenderUrl = null; server.closeAllConnections(); await new Promise(resolve => server.close(resolve)); }
+    mode = 'slow'; config.recommenderTimeoutMs = 100; await request(app).post('/api/recommendations').set(bearer(userToken)).send({}).expect(503);
+  } finally { config.recommenderUrl = null; config.recommenderTimeoutMs = 5000; server.closeAllConnections(); await new Promise(resolve => server.close(resolve)); }
 });
 test('Publicación: exige ficha completa y editar conserva la visibilidad', async () => {
   const incomplete = await request(app).post('/api/churches').set(bearer(adminToken))
@@ -557,4 +557,49 @@ test('Leader photo references and accessibility privacy', async()=>{
  body.media[0].leaderId='22222222-2222-4222-8222-222222222222';await request(app).put('/api/churches/'+c._id).set(bearer(adminToken)).send(body).expect(400);
  body.media[0].leaderId=leaderId;body.media[0].frame='bad';await request(app).put('/api/churches/'+c._id).set(bearer(adminToken)).send(body).expect(400);
  body.media[0].frame='square';body.leadership.mainLeader.name='Pastor renombrado';await request(app).put('/api/churches/'+c._id).set(bearer(adminToken)).send(body).expect(200);
+});
+
+
+test('Legacy leader IDs: explicit repair, stable references, permissions and stale versions',async()=>{
+ const existing='11111111-1111-4111-8111-111111111111';
+ const c=await Church.create({...fixture('Legacy leaders'),leadership:{mainLeader:{name:'Guardado sin UUID',role:'Pastor'},otherLeaders:[{id:existing,name:'Con UUID',role:'Encargada'},{name:'Otra persona',role:'Líder'}]},metadata:{dataStatus:'published'},representatives:[rep._id],createdBy:admin._id});
+ const endpoint='/api/churches/'+c.id+'/leader-identifiers';
+ const repair=(token,version)=>request(app).post(endpoint).set(bearer(token)).set('If-Match','"'+version+'"');
+ await request(app).post(endpoint).expect(401);
+ await repair(otherToken,1).expect(403);
+ await repair(repToken,99).expect(409);
+ const before=(await request(app).get('/api/churches/manage/'+c.id).set(bearer(repToken)).expect(200)).body.data;
+ assert.equal(before.leadership.mainLeader.id,undefined);
+ const fixed=(await repair(repToken,1).expect(200)).body.data;
+ assert.ok(fixed.leadership.mainLeader.id);assert.ok(fixed.leadership.otherLeaders[1].id);
+ assert.equal(fixed.leadership.mainLeader.name,before.leadership.mainLeader.name);
+ assert.equal(fixed.leadership.mainLeader.role,before.leadership.mainLeader.role);
+ assert.equal(fixed.leadership.otherLeaders[0].id,existing);
+ assert.equal(fixed.metadata.dataStatus,'published');assert.equal(fixed.metadata.version,2);
+ const repeated=(await repair(adminToken,2).expect(200)).body.data;
+ assert.deepEqual(repeated.leadership,fixed.leadership);assert.equal(repeated.metadata.version,2);
+ await repair(repToken,1).expect(409);
+ await Church.deleteOne({_id:c.id});
+});
+
+
+test('Community styles: multiple music values, optional culture, validation and independent privacy',async()=>{
+ const body={...fixture('Estilos prueba'),community:{musicalStyles:['Góspel','Himnodia Clásica'],culturalStyle:'Estilo Moderado'},privateFields:{musicalStyles:true,culturalStyle:false}};
+ const c=(await request(app).post('/api/churches').set(bearer(adminToken)).send(body).expect(201)).body.data;
+ await request(app).patch('/api/churches/'+c._id+'/status').set(bearer(adminToken)).send({status:'published'}).expect(200);
+ const read=async()=> (await request(app).get('/api/churches/'+c._id).expect(200)).body.data;
+ let pub=await read();assert.equal(pub.community.musicalStyles,undefined);assert.equal(pub.community.culturalStyle,'Estilo Moderado');
+ const priv=(await request(app).get('/api/churches/manage/'+c._id).set(bearer(adminToken)).expect(200)).body.data;
+ assert.deepEqual(priv.community.musicalStyles,body.community.musicalStyles);
+ for(const community of [{musicalStyles:['Rock desconocido']},{musicalStyles:['Góspel','Góspel']},{culturalStyle:['Estilo Moderado']},{culturalStyle:'Otro'}])
+   await request(app).put('/api/churches/'+c._id).set(bearer(adminToken)).send({...body,community}).expect(400);
+ body.privateFields={musicalStyles:false,culturalStyle:true};
+ await request(app).put('/api/churches/'+c._id).set(bearer(otherToken)).send(body).expect(403);
+ await request(app).put('/api/churches/'+c._id).set(bearer(adminToken)).send(body).expect(200);
+ pub=await read();assert.deepEqual(pub.community.musicalStyles,body.community.musicalStyles);assert.equal(pub.community.culturalStyle,undefined);
+ const list=(await request(app).get('/api/churches/search?q=Estilos%20prueba').expect(200)).body.data;
+ assert.equal(list[0].community.culturalStyle,undefined);
+ await request(app).put('/api/churches/'+c._id).set(bearer(adminToken)).send({...body,community:{musicalStyles:[]}}).expect(200);
+ pub=await read();assert.deepEqual(pub.community.musicalStyles,[]);assert.equal(pub.community.culturalStyle,undefined);
+ await Church.deleteOne({_id:c._id});
 });

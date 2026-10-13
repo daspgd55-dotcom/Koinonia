@@ -30,6 +30,16 @@ exports.detail = async (req, res) => {
   const assignedAccounts = req.user.role === 'admin' ? await User.find({ _id: { $in: church.representatives } }).select('_id name email role').lean() : undefined;
   res.set('ETag', '"' + church.metadata.version + '"').json({ data: church, ...(assignedAccounts ? { assignedAccounts } : {}) });
 };
+// Reparación explícita de identificadores antiguos, sin guardar la ficha ni cambiar su publicación.
+exports.leaderIdentifiers = async (req, res) => {
+  const church=await svc.managed(req,{includeInactive:true});
+  svc.checkVersion(req,church);
+  let changed=false;
+  for(const leader of [church.leadership?.mainLeader,...(church.leadership?.otherLeaders||[])])
+    if(leader?.name&&!leader.id){leader.id=require('node:crypto').randomUUID();changed=true;}
+  if(changed){church.metadata.version+=1;await church.save();}
+  res.set('ETag','"'+church.metadata.version+'"').json({data:church});
+};
 exports.create = async (req, res) => {
   const data = normalizeDetails(v.parse(v.church, req.body));
   const church = await Church.create({ ...data, verification: { ...data.verification, lastUpdated: new Date() },

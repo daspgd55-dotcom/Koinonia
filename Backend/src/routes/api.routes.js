@@ -26,6 +26,7 @@ router.post('/representatives', auth, admin, church.createRepresentative);
 router.get('/representatives', auth, admin, church.eligibleRepresentatives);
 router.get('/churches/manage', auth, managers, church.mine);
 router.get('/churches/manage/:id', auth, managers, church.detail);
+router.post('/churches/:id/leader-identifiers', auth, managers, church.leaderIdentifiers);
 router.get('/churches/search', church.list);
 router.get('/churches/nearby', church.list);
 router.get('/churches', church.list);

@@ -89,7 +89,8 @@ async function main() {
   await page.getByRole('button',{name:'Reintentar búsqueda'}).click();
   await page.getByRole('status').filter({hasText:'14 comunidades encontradas'}).waitFor();
   const categorized=await Church.findOne({'identification.name':'Comunidad 01'});
-  categorized.leadership={mainLeader:{id:'11111111-1111-4111-8111-111111111111',name:'Pastor de prueba',role:'Pastor'}};
+  categorized.community={musicalStyles:['Góspel','Música Cristiana Contemporánea (MCC) / Worship'],culturalStyle:'Estilo Contemporáneo'};
+  categorized.leadership={mainLeader:{id:'11111111-1111-4111-8111-111111111111',name:'Pastor de prueba',role:'Pastor'},otherLeaders:[{name:'Representante sin foto',role:'Encargada'},{name:'Otro representante',role:'Pastor'}]};
   categorized.media=['facilities','meetings','activities','representatives','banner'].map((category,i)=>({type:'image',category,...(category==='representatives'?{leaderId:'11111111-1111-4111-8111-111111111111',frame:'circle'}:{}),url:'https://images.example.test/'+(i+1)+'.png'}));await categorized.save();
   await page.goto(url+'/#/iglesia/'+categorized.id);
   await page.getByRole('heading',{name:'Comunidad 01',exact:true}).waitFor();
@@ -99,11 +100,31 @@ async function main() {
   assert.equal(await page.locator('[aria-label="Fotos y videos de reuniones"] .community-cover').getAttribute('src'),'https://images.example.test/2.png');
   assert.equal(await page.locator('[aria-label="Eventos, actividades y recuerdos"] .community-cover').getAttribute('src'),'https://images.example.test/3.png');
   assert.equal(await page.locator('[aria-label="Foto de Pastor de prueba"] .community-cover').getAttribute('src'),'https://images.example.test/4.png');
+  await page.getByRole('heading',{name:'Estilos musicales',exact:true}).waitFor();
+  await page.getByText('Góspel',{exact:true}).waitFor();
+  await page.getByText(/Estilo Contemporáneo/).waitFor();
+  const representatives=page.getByRole('region',{name:'Representantes',exact:true});
+  assert.equal(await representatives.getByRole('heading',{name:'Representantes',exact:true}).count(),1);
+  assert.equal(await representatives.locator('.leader-profile').count(),3);
+  assert.equal(await representatives.locator('.gallery-enlarge').count(),0);
+  assert.equal(await page.getByRole('heading',{name:'Otros Representantes',exact:true}).count(),0);
+  await representatives.getByRole('button',{name:'Ampliar foto',exact:true}).click();
+  await representatives.getByRole('dialog',{name:'Foto ampliada'}).waitFor();
+  await representatives.getByRole('button',{name:'Cerrar',exact:true}).click();
+  await representatives.screenshot({path:path.join(output,'representatives-mobile.png')});
+  await page.setViewportSize({width:1280,height:900});
+  await representatives.screenshot({path:path.join(output,'representatives-desktop.png')});
+  await page.setViewportSize({width:390,height:844});
   await page.screenshot({path:path.join(output,'categorized-media-mobile.png'),fullPage:true});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   categorized.media=[];await categorized.save();await page.reload();
   await page.getByRole('heading',{name:'Comunidad 01',exact:true}).waitFor();
   assert.equal(await page.locator('.categorized-media,.detail-banner-media').count(),0);
+  await page.getByText('Vida de comunidad',{exact:true}).click();
+  assert.equal(await page.locator('.leader-profile').count(),3);
+  const compact=await page.locator('.leader-profile').first().boundingBox();assert.ok(compact.height<100);
+  await page.getByRole('region',{name:'Representantes',exact:true}).screenshot({path:path.join(output,'representatives-no-photos.png')});
+
   assert.deepEqual(errors,[]);
   console.log('EXPLORAR OK: API real aislada, filtros, paginación, ficha, vuelta con contexto, GPS permitido/denegado, mapa sin red, vacío, reintento y móvil.');
 }
