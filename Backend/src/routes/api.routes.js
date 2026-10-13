@@ -8,6 +8,13 @@ const media = require('../controllers/media.controller');
 router.post('/churches/:id/media', auth, managers, media.limit, media.authorize, require('express').raw({ type: ['image/jpeg', 'image/png', 'image/webp'], limit: '5mb' }), media.upload);
 router.delete('/churches/:id/media/:index', auth, managers, media.authorize, media.remove);
 
+const experiences=require('../controllers/experience.controller');
+const experienceLimit=require('express-rate-limit').rateLimit({windowMs:3600000,limit:5,keyGenerator:req=>String(req.user._id),standardHeaders:'draft-8',legacyHeaders:false,message:{error:{code:'RATE_LIMIT',message:'Has enviado varias experiencias. Inténtalo más tarde.'}}});
+router.get('/churches/:id/experiences',experiences.list);
+router.get('/churches/:id/experiences/mine',auth,experiences.mine);
+router.post('/churches/:id/experiences',auth,experienceLimit,experiences.create);
+router.get('/experiences/manage',auth,admin,experiences.manage);
+router.patch('/experiences/:id/moderation',auth,admin,experiences.moderate);
 router.post('/auth/register', authController.register);
 router.post('/auth/login', authController.login);
 const passwords = require('../controllers/password.controller');

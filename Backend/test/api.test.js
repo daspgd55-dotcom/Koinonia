@@ -603,3 +603,32 @@ test('Community styles: multiple music values, optional culture, validation and 
  pub=await read();assert.deepEqual(pub.community.musicalStyles,[]);assert.equal(pub.community.culturalStyle,undefined);
  await Church.deleteOne({_id:c._id});
 });
+
+
+test('Experiencias: revisión previa, privacidad, autor, roles, motivos y concurrencia',async()=>{
+ const Experience=require('../src/models/experience.model');
+ const c=await Church.create({...fixture('Experiencias prueba'),metadata:{dataStatus:'published'},createdBy:admin._id});
+ const url='/api/churches/'+c.id+'/experiences',body={title:'Visita a la comunidad',body:'Participé en una reunión y pude conocer las actividades abiertas a quienes visitan por primera vez.',displayName:'Visitante'};
+ await request(app).post(url).send(body).expect(401);
+ await request(app).post(url).set(bearer(userToken)).send({...body,status:'approved'}).expect(400);
+ const own=(await request(app).post(url).set(bearer(userToken)).send(body).expect(201)).body.data;
+ assert.equal(own.status,'pending');assert.equal(own.author,undefined);
+ assert.equal((await request(app).get(url).expect(200)).body.data.length,0);
+ assert.equal((await request(app).get(url+'/mine').set(bearer(otherToken)).expect(200)).body.data.length,0);
+ assert.equal((await request(app).get(url+'/mine').set(bearer(userToken)).expect(200)).body.data[0].status,'pending');
+ await request(app).get('/api/experiences/manage').set(bearer(repToken)).expect(403);
+ const moderate=(token,status,version,reason)=>request(app).patch('/api/experiences/'+own._id+'/moderation').set(bearer(token)).send({status,version,...(reason?{reason}:{})});
+ await moderate(userToken,'approved',0).expect(403);
+ await moderate(repToken,'approved',0).expect(403);
+ await moderate(adminToken,'rejected',0).expect(400);
+ await moderate(adminToken,'approved',0).expect(200);
+ const pub=(await request(app).get(url).expect(200)).body.data[0];assert.equal(pub.title,body.title);assert.equal(pub.author,undefined);assert.equal(pub.reason,undefined);assert.equal(pub.moderationLog,undefined);
+ await moderate(adminToken,'rejected',0,'Contiene datos de terceros').expect(409);
+ await moderate(adminToken,'rejected',1,'Contiene datos de terceros').expect(200);
+ assert.equal((await request(app).get(url).expect(200)).body.data.length,0);
+ const rejected=(await request(app).get(url+'/mine').set(bearer(userToken)).expect(200)).body.data[0];assert.equal(rejected.reason,'Contiene datos de terceros');
+ assert.equal((await Experience.findById(own._id)).moderationLog.length,2);
+ await Church.updateOne({_id:c.id},{$set:{'metadata.dataStatus':'draft'}});
+ await request(app).get(url).expect(404);await request(app).post(url).set(bearer(userToken)).send(body).expect(404);
+ await Experience.deleteMany({church:c.id});await Church.deleteOne({_id:c.id});
+});

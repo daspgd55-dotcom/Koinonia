@@ -21,8 +21,8 @@ exports.list = async (req, res) => {
     page: v.z.coerce.number().int().min(1).max(10000).default(1), limit: v.z.coerce.number().int().min(1).max(100).default(20) });
   const { type, page, limit } = v.parse(schema, req.query);
   const filter = { user: req.user._id, ...(type ? { type } : {}) };
-  const rows = await Interaction.find(filter).sort({ updatedAt: -1, _id: 1 }).skip((page - 1) * limit).limit(limit).populate({ path: 'church', match: visible }).lean();
-  res.json({ data: rows.map(row => ({ ...row, church: row.church ? publicChurch(row.church) : null })),
+  const rows = await Interaction.find(filter).sort({ updatedAt: -1, _id: 1 }).skip((page - 1) * limit).limit(limit).populate({ path: 'church', match: visible, transform: (doc,id)=>doc||{_id:id,unavailable:true} }).lean();
+  res.json({ data: rows.map(row => ({ ...row, churchId: row.church._id, church: row.church.unavailable ? null : publicChurch(row.church) })),
     pagination: { page, limit, total: await Interaction.countDocuments(filter) } });
 };
 exports.remove = async (req, res) => {
