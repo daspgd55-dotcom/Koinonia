@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "node test/journey.cjs",
+    "test:help": "node test/representative-help.cjs",
     "test:avatar": "node test/avatar.cjs",
     "test:explore": "node test/explore.cjs",
     "test:manage": "node test/manage.cjs",

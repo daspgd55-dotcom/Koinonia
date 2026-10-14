@@ -34,7 +34,9 @@ async function main() {
   const editor=page.getByRole('region',{name:'Foto de perfil',exact:true});
   await editor.getByRole('img',{name:'Sin foto de perfil'}).waitFor();
   await page.getByLabel('Nombre público',{exact:true}).fill('Nombre pendiente');
-  await page.getByLabel('Cambiar foto de perfil').setInputFiles({name:'avatar.png',mimeType:'image/png',buffer:png});
+  const chooserEvent=page.waitForEvent('filechooser');
+  await page.getByRole('button',{name:'Cambiar foto',exact:true}).click();
+  await (await chooserEvent).setFiles({name:'avatar.png',mimeType:'image/png',buffer:png});
   await page.getByLabel('Zoom',{exact:true}).fill('2');
   await page.getByLabel('Mover imagen con las flechas del teclado').press('ArrowLeft');
   await page.getByRole('button',{name:'Descartar foto seleccionada'}).click();

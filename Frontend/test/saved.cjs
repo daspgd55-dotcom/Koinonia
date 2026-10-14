@@ -37,20 +37,17 @@ async function main() {
   await page.getByRole('heading',{name:'Iglesias guardadas',exact:true}).waitFor();
   await page.getByRole('heading',{name:'Comunidad no disponible',exact:true}).waitFor();
   assert.equal(await page.getByText('Oculta privada',{exact:true}).count(),0);
-  await page.getByRole('checkbox',{name:'Comparar Comunidad Descubrimiento 1',exact:true}).check();
-  await page.getByRole('checkbox',{name:'Comparar Comunidad Descubrimiento 2',exact:true}).check();
-  await page.getByRole('button',{name:'Comparar seleccionadas',exact:true}).click();
-  await page.getByRole('table').waitFor();
-  assert.equal(await page.locator('thead th').count(),3);
-  assert.ok(await page.locator('.comparison-signals').getByText('Coincidencia',{exact:true}).count());
-  assert.ok(await page.locator('.comparison-signals').getByText('Diferencias',{exact:true}).count());
-  assert.ok(await page.locator('.comparison-signals').getByText('Información faltante',{exact:true}).count());
+  assert.equal(await page.getByRole('checkbox',{name:/Comparar/}).count(),0);
+  assert.equal(await page.getByRole('button',{name:'Comparar seleccionadas',exact:true}).count(),0);
+  // Una selección antigua no debe reactivar la interfaz ni permitir el acceso por URL.
+  await page.evaluate(({id,selected})=>sessionStorage.setItem('koinonia-saved-view-'+id,JSON.stringify({selected})),{id:u.id,selected:churches.slice(0,2).map(c=>c.id)});
+  await page.goto(url+'/#/guardadas/comparar');
+  await page.waitForURL('**/#/guardadas');
+  await page.getByRole('heading',{name:'Iglesias guardadas',exact:true}).waitFor();
+  assert.equal(await page.getByRole('table').count(),0);
+  assert.equal(await page.getByRole('checkbox',{name:/Comparar/}).count(),0);
   await page.setViewportSize({width:390,height:844});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-  await page.screenshot({path:path.join(output,'saved-compare-mobile.png'),fullPage:true});
-  await page.getByRole('link',{name:'Volver a mi selección',exact:true}).click();
-  await page.getByRole('checkbox',{name:'Comparar Comunidad Descubrimiento 1',exact:true}).waitFor();
-  assert.equal(await page.getByRole('checkbox',{name:'Comparar Comunidad Descubrimiento 1',exact:true}).isChecked(),true);
   await page.getByLabel('Buscar en guardadas',{exact:true}).fill('Descubrimiento 1');
   await page.getByRole('link',{name:'Ver ficha completa',exact:true}).click();
   await page.getByRole('heading',{name:'Comunidad Descubrimiento 1',exact:true}).waitFor();
@@ -82,7 +79,7 @@ async function main() {
   for(const c of churches.slice(1)){await page.getByRole('button',{name:'Retirar '+c.identification.name,exact:true}).click();await page.getByText('Comunidad retirada de tus guardadas.',{exact:true}).waitFor();}
   await page.getByRole('heading',{name:'Aún no tienes iglesias guardadas',exact:true}).waitFor();
   assert.deepEqual(errors,[]);
-  console.log('SAVED OK: login, privacidad, selección, comparación, regreso, filtro, retirada y fallo conservado, persistencia, accesos y móvil.');
+  console.log('SAVED OK: login, privacidad, comparación bloqueada por URL y controles ocultos, regreso, filtro, retirada y fallo conservado, persistencia, accesos y móvil.');
 }
 
 main().catch(e=>{console.error(e);process.exitCode=1;}).finally(async()=>{if(browser)await browser.close();if(vite)await vite.close();if(server){server.closeAllConnections();await new Promise(r=>server.close(r));}await disconnectDB();if(mongo)await mongo.stop();});
