@@ -494,7 +494,9 @@ test('Fotos: permisos, validación, proveedor, persistencia y concurrencia', asy
     app.locals.mediaFetch=async(url,options)=>{if(url.endsWith('/destroy')){cleanup++;return {ok:true};}await Church.updateOne({_id:c.id},{$inc:{'metadata.version':1}});const id=options.body.get('public_id');return {ok:true,json:async()=>({public_id:id,secure_url:'https://res.cloudinary.com/test-cloud/image/upload/'+id+'.webp'})};};
     await send(repToken,2).expect(409);assert.equal(cleanup,1);assert.equal((await Church.findById(c.id)).media.length,1);
     await Church.updateOne({_id:c.id},{$set:{media:Array.from({length:5},()=>({type:'image',url:'https://example.org/photo.jpg',source:'test'}))}});
-    await send(repToken,3).expect(400);
+    app.locals.mediaFetch=async(url,options)=>{const id=options.body.get('public_id');return {ok:true,json:async()=>({public_id:id,secure_url:'https://res.cloudinary.com/test-cloud/image/upload/'+id+'.webp'})};};
+    await send(repToken,3).expect(201);const seventh=await send(repToken,4).expect(201);assert.equal(seventh.body.data.media.length,7);
+    await send(repToken,5).expect(400);
   } finally {delete config.cloudinary;delete app.locals.mediaFetch;await Church.deleteOne({_id:c.id});}
 });
 
@@ -699,4 +701,35 @@ test('Nombres de usuario: el índice impide duplicados en solicitudes simultáne
  assert.deepEqual(results.map(r=>r.status).sort(),[200,409]);
  assert.equal(results.find(r=>r.status===409).body.error.code,'USERNAME_TAKEN');
  assert.equal(await User.countDocuments({username:'nombre_compartido'}),1);
+});
+
+
+test('Avatar: autenticación, validación, aislamiento, reemplazo, concurrencia y privacidad de experiencias', async () => {
+ const [owner,token]=await account('avatar@example.test','user'),[,otherToken]=await account('avatar-other@example.test','user');
+ const url='/api/users/me/avatar',png=Buffer.from('89504e470d0a1a0a00000000','hex');
+ const upload=(t,version,data=png)=>request(app).put(url).set(bearer(t)).set('If-Match',String(version)).set('Content-Type','image/png').send(data);
+ await request(app).put(url).expect(401);
+ await request(app).put(url).set(bearer(token)).expect(428);
+ await upload(token,0,Buffer.from('invalid')).expect(400);
+ await upload(token,0).expect(503);
+ config.cloudinary={cloudName:'test-cloud',apiKey:'key',apiSecret:'secret'};const deleted=[];
+ const provider=async(url,opts)=>{const id=opts.body.get('public_id');if(url.endsWith('/destroy')){deleted.push(id);return{ok:true};}return{ok:true,json:async()=>({public_id:id,secure_url:'https://res.cloudinary.com/test-cloud/image/upload/'+id+'.webp'})};};app.locals.mediaFetch=provider;
+ try{
+  const first=(await upload(token,0).expect(200)).body.data;assert.ok(first.avatarUrl);assert.equal(first.avatarVersion,1);assert.equal(first.avatar,undefined);
+  assert.equal((await User.findById(owner.id)).profileRevision,0);
+  await upload(token,0).expect(409);
+  await request(app).patch('/api/users/me').set(bearer(otherToken)).send({avatar:{url:first.avatarUrl}}).expect(400);
+  await request(app).delete(url).set(bearer(otherToken)).set('If-Match','0').expect(200);assert.equal((await User.findById(owner.id)).avatar.url,first.avatarUrl);
+  const avatarChurch=await Church.create({...fixture('Iglesia avatar'),createdBy:admin.id,metadata:{dataStatus:'published'}});
+  const exp=await require('../src/models/experience.model').create({church:avatarChurch.id,author:owner.id,title:'Una experiencia',body:'Una experiencia de prueba con información suficiente para ser publicada.',displayName:'Autor público',status:'approved'});
+  const publicEntries=()=>request(app).get('/api/churches/'+avatarChurch.id+'/experiences').expect(200);
+  let entry=(await publicEntries()).body.data.find(x=>x._id===exp.id);assert.equal(entry.avatarUrl,first.avatarUrl);assert.equal(entry.author,undefined);assert.equal(entry.email,undefined);
+  const next=(await upload(token,1).expect(200)).body.data;assert.notEqual(next.avatarUrl,first.avatarUrl);assert.equal(deleted.length,1);
+  entry=(await publicEntries()).body.data.find(x=>x._id===exp.id);assert.equal(entry.avatarUrl,next.avatarUrl);
+  app.locals.mediaFetch=async()=>{throw Error('offline');};await upload(token,2).expect(502);assert.equal((await User.findById(owner.id)).avatar.url,next.avatarUrl);
+  app.locals.mediaFetch=provider;
+  const race=await Promise.all([upload(token,2),upload(token,2)]);assert.deepEqual(race.map(r=>r.status).sort(),[200,409]);
+  await request(app).delete(url).set(bearer(token)).set('If-Match','3').expect(200);
+  assert.equal((await publicEntries()).body.data.find(x=>x._id===exp.id).avatarUrl,null);
+ }finally{delete config.cloudinary;delete app.locals.mediaFetch;}
 });

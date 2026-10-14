@@ -91,3 +91,15 @@ La página `#/perfil` presenta, en orden: Editar perfil (nombre público, nombre
 Ejemplo de cuerpo: `{"name":"María Comunidad","username":"maria_comunidad","expectedRevision":3}`. Respuesta: perfil propio actualizado con nueva `profileRevision`. Username ocupado devuelve 409 `USERNAME_TAKEN`; revisión obsoleta, 409 `STALE_PROFILE`; formato inválido o intento de cambiar email/role, 400. El correo solo es visible para el titular en este formulario, no se añade a la presentación pública. Se utiliza exclusivamente el usuario autenticado, sin aceptar ID de destino.
 
 Verificación: en Backend ejecutar `node --test test/api.test.js`; en Frontend, `npm test` y `npm run build`. Las pruebas usan una base efímera: cubren cuentas sin username, normalización, unicidad concurrente, correo inmutable, aislamiento, conservación de preferencias y formulario móvil con error de duplicado y guardado correcto.
+
+
+## Foto de perfil
+
+`GET /users/me` y las respuestas de sesión incluyen `avatarUrl` (URL o null) y `avatarVersion` (0 para cuentas sin foto). No exponen el identificador interno del archivo. Las cuentas antiguas muestran una silueta estándar.
+
+- `PUT /users/me/avatar`: Bearer y `If-Match: <avatarVersion>` obligatorio; cuerpo binario JPEG, PNG o WebP, máximo 5 MB. El cliente reutiliza ImageCropper con marco circular, zoom, desplazamiento, teclado, restablecer y descartar antes de subir. Guarda la imagen recortada en Cloudinary.
+- `DELETE /users/me/avatar`: mismos encabezados; retira la foto y vuelve a la silueta. Ambas operaciones devuelven `{data: perfilPropio, warning?: texto}` y aumentan solo avatarVersion, sin alterar profileRevision ni preferencias.
+- Errores: 428 versión ausente; 409 STALE_AVATAR ante edición simultánea; 400 archivo inválido; 413 cuerpo demasiado grande; 503 proveedor no configurado; 502 fallo de subida. En errores de subida se conserva la foto previa. Solo se limpian archivos de la carpeta del propio usuario; un conflicto limpia la subida descartada. Una limpieza remota fallida no revierte el cambio guardado y devuelve warning.
+- Los listados de experiencias incluyen `avatarUrl` del autor actual. No incluyen el objeto author, correo ni ID de cuenta. Autores sin foto, eliminados o inactivos muestran la silueta. Cambiar la foto no modifica el texto ni el estado de moderación de sus experiencias.
+
+Se usa la configuración Cloudinary existente, sin credenciales en el navegador. Pruebas: Backend `node --test test/api.test.js`; Frontend `npm run test:avatar` y `npm run build`. Cloudinary se simula en las pruebas para evitar archivos reales. La administración de comunidades admite ahora hasta siete fotos subidas (antes cinco); se mantiene el límite existente de 30 entradas multimedia, incluidos enlaces externos.

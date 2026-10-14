@@ -18,7 +18,7 @@ exports.upload = async (req, res) => {
   const b = req.body, type = req.get('Content-Type');
   const valid = Buffer.isBuffer(b) && ((type === 'image/jpeg' && b.subarray(0,3).equals(Buffer.from([255,216,255]))) || (type === 'image/png' && b.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))) || (type === 'image/webp' && b.toString('ascii',0,4)==='RIFF' && b.toString('ascii',8,12)==='WEBP'));
   if (!valid) throw new HttpError(400, 'INVALID_IMAGE', 'Selecciona una imagen JPEG, PNG o WebP válida.');
-  if (c.media.filter(x => x.type === 'image').length >= 5 || c.media.length >= 30) throw new HttpError(400, 'MEDIA_LIMIT', 'Esta comunidad ya alcanzó el límite de fotos.');
+  if (c.media.filter(x => x.type === 'image').length >= 7 || c.media.length >= 30) throw new HttpError(400, 'MEDIA_LIMIT', 'Esta comunidad ya alcanzó el límite de fotos.');
   const publicId = 'koinonia/' + c.id + '/' + randomUUID(), form = new FormData();
   form.set('file', new Blob([b], { type }), 'image'); form.set('public_id', publicId);
   form.set('overwrite', 'false'); form.set('transformation', 'c_limit,w_1600,h_1600/q_auto/f_webp');

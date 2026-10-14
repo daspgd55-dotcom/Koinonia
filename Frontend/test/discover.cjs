@@ -33,7 +33,7 @@ async function main() {
   assert.equal(await page.getByRole('button',{name:'Guardar',exact:true}).isDisabled(),true);
   await page.getByRole('navigation',{name:'Navegación principal'}).getByRole('link',{name:'Iniciar sesión',exact:true}).click();
   await page.getByLabel('Correo electrónico',{exact:true}).fill(u.email);await page.getByLabel('Contraseña',{exact:true}).fill('Discovery-test-123');await page.getByRole('button',{name:'Iniciar sesión'}).click();
-  await page.getByRole('link',{name:'Descubrir',exact:true}).click();
+  await page.getByRole('link',{name:'Para ti',exact:true}).click();
   await page.getByRole('heading',{name:'Comunidad Descubrimiento 1',exact:true}).waitFor();
   await page.getByText('Coincide',{exact:true}).waitFor();
   await page.screenshot({path:path.join(output,'13-discovery-desktop.png'),fullPage:true});

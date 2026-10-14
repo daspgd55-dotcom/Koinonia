@@ -1,0 +1,17 @@
+const {randomUUID}=require('node:crypto'),User=require('../models/user.model');
+const {HttpError}=require('../utils/errors'),{publicUser}=require('./auth.controller');
+exports.authorize=(req,res,next)=>{const value=req.get('If-Match');if(!value||!/^\d+$/.test(value))throw new HttpError(428,'VERSION_REQUIRED','Recarga el perfil antes de cambiar la foto.');if(Number(value)!==(req.user.avatarVersion||0))throw new HttpError(409,'STALE_AVATAR','La foto cambió en otra sesión. Recarga el perfil.');next();};
+function provider(req){const c=req.app.locals.config.cloudinary;if(!c)throw new HttpError(503,'MEDIA_UNAVAILABLE','La subida de fotos aún no está configurada.');return {endpoint:'https://api.cloudinary.com/v1_1/'+c.cloudName+'/image/',headers:{Authorization:'Basic '+Buffer.from(c.apiKey+':'+c.apiSecret).toString('base64')},transport:req.app.locals.mediaFetch||fetch,cloud:c.cloudName};}
+async function cleanup(req,p,id){if(!id||!id.startsWith('koinonia/avatars/'+req.user.id+'/'))return;try{const r=await p.transport(p.endpoint+'destroy',{method:'POST',headers:p.headers,body:new URLSearchParams({public_id:id,invalidate:'true'}),signal:AbortSignal.timeout(10000)});if(!r.ok)throw Error();}catch{console.error('AVATAR_CLEANUP_FAILED');return 'La foto se actualizó, pero no se pudo limpiar el archivo anterior de Cloudinary.';}}
+async function update(req,avatar){const version=req.user.avatarVersion||0;const data=await User.findOneAndUpdate({_id:req.user._id,active:true,$or:[{avatarVersion:version},...(version===0?[{avatarVersion:{$exists:false}}]:[])]},{$set:{avatar},$inc:{avatarVersion:1}},{returnDocument:'after',runValidators:true});if(!data)throw new HttpError(409,'STALE_AVATAR','La foto cambió en otra sesión. Recarga el perfil.');return data;}
+exports.upload=async(req,res)=>{
+ const b=req.body,type=req.get('Content-Type');
+ const valid=Buffer.isBuffer(b)&&((type==='image/jpeg'&&b.subarray(0,3).equals(Buffer.from([255,216,255])))||(type==='image/png'&&b.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10])))||(type==='image/webp'&&b.toString('ascii',0,4)==='RIFF'&&b.toString('ascii',8,12)==='WEBP'));
+ if(!valid)throw new HttpError(400,'INVALID_IMAGE','Selecciona una imagen JPEG, PNG o WebP válida.');
+ const p=provider(req),id='koinonia/avatars/'+req.user.id+'/'+randomUUID(),form=new FormData();
+ form.set('file',new Blob([b],{type}),'avatar');form.set('public_id',id);form.set('overwrite','false');form.set('transformation','c_fill,g_center,w_600,h_600/q_auto/f_webp');
+ let image;try{const r=await p.transport(p.endpoint+'upload',{method:'POST',headers:p.headers,body:form,signal:AbortSignal.timeout(45000)});image=await r.json();if(!r.ok||image.public_id!==id||!image.secure_url?.startsWith('https://res.cloudinary.com/'+p.cloud+'/'))throw Error();}catch{throw new HttpError(502,'UPLOAD_FAILED','No pudimos subir la foto. Tu foto anterior se conserva.');}
+ let data;try{data=await update(req,{url:image.secure_url,publicId:id});}catch(e){await cleanup(req,p,id);throw e;}
+ const warning=await cleanup(req,p,req.user.avatar?.publicId);res.set('Cache-Control','no-store').json({data:publicUser(data),...(warning?{warning}:{})});
+};
+exports.remove=async(req,res)=>{const p=req.user.avatar?.publicId?provider(req):null,data=await update(req,null),warning=p?await cleanup(req,p,req.user.avatar.publicId):undefined;res.set('Cache-Control','no-store').json({data:publicUser(data),...(warning?{warning}:{})});};

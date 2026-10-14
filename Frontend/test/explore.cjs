@@ -35,7 +35,7 @@ async function main() {
   assert.equal(await page.locator('.church-card').count(),2);
   await page.getByLabel('Comuna',{exact:true}).fill('Providencia');
   await page.getByRole('button',{name:'Aplicar filtros',exact:true}).click();
-  await page.getByRole('status').filter({hasText:'1 comunidades encontradas'}).waitFor();
+  await page.getByRole('status').filter({hasText:'1 comunidad encontrada'}).waitFor();
   await page.getByRole('link',{name:'Ver comunidad Comunidad 01'}).click();
   await page.getByRole('heading',{name:'Comunidad 01',exact:true}).waitFor();
   await page.getByText('Domingo 11:00',{exact:true}).waitFor();

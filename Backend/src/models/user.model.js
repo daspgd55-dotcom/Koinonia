@@ -5,6 +5,8 @@ const states = Object.fromEntries([...fields, 'location', 'address', 'spiritualI
 
 // Modelo de usuario
 const UserSchema = new Schema({
+  avatar: { url: String, publicId: String },
+  avatarVersion: { type: Number, default: 0 },
   name: { type: String, trim: true, maxlength: 100 },
   username: { type: String, trim: true, lowercase: true, minlength: 3, maxlength: 24, match: /^[a-z][a-z0-9_]{2,23}$/ },
   email: { type: String, required: true, unique: true, lowercase: true, trim: true },

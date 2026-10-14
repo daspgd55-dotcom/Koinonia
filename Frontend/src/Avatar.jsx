@@ -1,0 +1,2 @@
+import React,{useState} from 'react';
+export default function Avatar({url,className='',decorative=false}){const [failed,setFailed]=useState(null);return <span aria-hidden={decorative||undefined} className={'user-avatar '+className}>{url&&failed!==url?<img src={url} alt="Foto de perfil" onError={()=>setFailed(url)}/>:<svg viewBox="0 0 64 64" role="img" aria-label="Sin foto de perfil"><circle cx="32" cy="23" r="12"/><path d="M10 60v-6a22 22 0 0 1 44 0v6Z"/></svg>}</span>;}
