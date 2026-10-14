@@ -8,8 +8,8 @@ exports.preferences = async (req, res) => {
   res.json({ data: publicUser(updated) });
 };
 exports.updateProfile = async (req, res) => {
-  const updated = await require('../services/profile.service').updateProfile(req.user, v.parse(v.profilePatch, req.body));
-  res.json({ data: publicUser(updated) });
+  try {const updated = await require('../services/profile.service').updateProfile(req.user, v.parse(v.profilePatch, req.body));res.json({ data: publicUser(updated) });}
+  catch(e){if(e.code===11000&&e.keyPattern?.username)throw new HttpError(409,'USERNAME_TAKEN','Ese nombre de usuario ya está en uso. Elige otro.');throw e;}
 };
 exports.role = async (req, res) => {
   const id = v.parse(v.id, req.params.id);

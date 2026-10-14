@@ -80,3 +80,14 @@ Fase 3: comuna, dirección opcional, ubicación voluntaria y radio.
 `onboarding.version=3`, `lastStep=0..3`: 0–2 representan fases y 3 finalización. No vuelve a abrirse automáticamente tras login aunque el estado sea pendiente u omitido. El usuario puede retomarla voluntariamente. Borradores anteriores conservan respuestas pendientes; su posición incompatible se reinicia a cero.
 
 Un radio legado sin modo explícito no se convierte en restricción en el cliente. La comprobación de radio obligatorio exige ubicación cuando se edita radio, ubicación o sus modos/estados, sin bloquear cambios de contexto independientes por inconsistencias históricas.
+
+
+## Identidad editable y organización de Mi perfil
+
+La página `#/perfil` presenta, en orden: Editar perfil (nombre público, nombre de usuario, correo de solo lectura y Mi iglesia); Identidad, tradición y ubicación; Cuenta (cambio de contraseña); Avanzado. En Avanzado se pueden descartar, con confirmación, los cambios locales de preferencias todavía sin guardar, recuperando los valores del servidor. No elimina datos guardados ni la cuenta.
+
+`PATCH /api/users/me` acepta además `name` (texto recortado, 1–100 caracteres) y `username` (3–24 caracteres ASCII, empieza con letra, permite letras, números y guion bajo). El username se normaliza a minúsculas y es único mediante índice de base de datos, incluso ante peticiones simultáneas. Se reservan admin, administrator, administrador, root, soporte, support, koinonia y moderador. Las cuentas existentes pueden carecer de username; no se asigna uno automáticamente. Al omitir un campo se conserva su valor. El nombre público se propone como autor para nuevas experiencias; no modifica experiencias anteriores.
+
+Ejemplo de cuerpo: `{"name":"María Comunidad","username":"maria_comunidad","expectedRevision":3}`. Respuesta: perfil propio actualizado con nueva `profileRevision`. Username ocupado devuelve 409 `USERNAME_TAKEN`; revisión obsoleta, 409 `STALE_PROFILE`; formato inválido o intento de cambiar email/role, 400. El correo solo es visible para el titular en este formulario, no se añade a la presentación pública. Se utiliza exclusivamente el usuario autenticado, sin aceptar ID de destino.
+
+Verificación: en Backend ejecutar `node --test test/api.test.js`; en Frontend, `npm test` y `npm run build`. Las pruebas usan una base efímera: cubren cuentas sin username, normalización, unicidad concurrente, correo inmutable, aislamiento, conservación de preferencias y formulario móvil con error de duplicado y guardado correcto.

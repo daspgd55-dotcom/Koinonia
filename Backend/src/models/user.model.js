@@ -6,6 +6,7 @@ const states = Object.fromEntries([...fields, 'location', 'address', 'spiritualI
 // Modelo de usuario
 const UserSchema = new Schema({
   name: { type: String, trim: true, maxlength: 100 },
+  username: { type: String, trim: true, lowercase: true, minlength: 3, maxlength: 24, match: /^[a-z][a-z0-9_]{2,23}$/ },
   email: { type: String, required: true, unique: true, lowercase: true, trim: true },
   password: { type: String, required: true, select: false },
   sessionVersion: { type: Number, default: 0, select: false },
@@ -27,4 +28,5 @@ const UserSchema = new Schema({
     version: { type: Number, default: 1 }, lastStep: { type: Number, default: 0 }, updatedAt: Date, completedAt: Date },
   profileRevision: { type: Number, default: 0 }
 }, { timestamps: true, strict: 'throw' });
+UserSchema.index({username:1},{unique:true,partialFilterExpression:{username:{$type:'string'}}});
 module.exports = model('User', UserSchema);

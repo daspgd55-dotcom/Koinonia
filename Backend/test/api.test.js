@@ -674,3 +674,29 @@ test('Solicitud de primera publicación: permisos, idempotencia, bandeja y resol
  assert.equal((await request(app).get('/api/churches/'+c.id).expect(200)).body.data.publicationRequest,undefined);
  await submit(repToken).expect(409);await Church.deleteOne({_id:c.id});
 });
+
+
+test('Identidad editable: cuenta legada, normalización, campos privados e inmutables', async () => {
+ const [legacy,token]=await account('identity@example.test','user');
+ assert.equal(legacy.username,undefined);
+ const before=(await request(app).get('/api/users/me').set(bearer(token)).expect(200)).body.data;
+ const changed=(await request(app).patch('/api/users/me').set(bearer(token)).send({name:'  Nombre público  ',username:'  Mi_Usuario  ',expectedRevision:before.profileRevision}).expect(200)).body.data;
+ assert.equal(changed.name,'Nombre público');assert.equal(changed.username,'mi_usuario');
+ assert.deepEqual(changed.preferences,before.preferences);assert.deepEqual(changed.searchContext,before.searchContext);
+ assert.equal(changed.email,legacy.email);assert.equal(changed.password,undefined);
+ for(const username of ['ab','9usuario','con espacio','con-guion','ámbito','admin','x'.repeat(25),'']) await request(app).patch('/api/users/me').set(bearer(token)).send({username}).expect(400);
+ for(const body of [{email:'otro@example.test'},{role:'admin'},{id:person.id},{name:'   '}]) await request(app).patch('/api/users/me').set(bearer(token)).send(body).expect(400);
+ await request(app).patch('/api/users/me').set(bearer(token)).send({name:'Obsoleto',expectedRevision:before.profileRevision}).expect(409);
+ assert.equal((await User.findById(legacy.id)).name,'Nombre público');
+ const duplicate=await request(app).patch('/api/users/me').set(bearer(userToken)).send({username:'MI_USUARIO'}).expect(409);
+ assert.equal(duplicate.body.error.code,'USERNAME_TAKEN');
+ assert.notEqual((await User.findById(person.id)).username,'mi_usuario');
+ await request(app).patch('/api/users/me').send({name:'Sin sesión'}).expect(401);
+});
+test('Nombres de usuario: el índice impide duplicados en solicitudes simultáneas', async () => {
+ const [,a]=await account('race-a@example.test','user'),[,b]=await account('race-b@example.test','user');
+ const results=await Promise.all([a,b].map(token=>request(app).patch('/api/users/me').set(bearer(token)).send({username:'nombre_compartido'})));
+ assert.deepEqual(results.map(r=>r.status).sort(),[200,409]);
+ assert.equal(results.find(r=>r.status===409).body.error.code,'USERNAME_TAKEN');
+ assert.equal(await User.countDocuments({username:'nombre_compartido'}),1);
+});

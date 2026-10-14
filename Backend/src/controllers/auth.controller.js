@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs'), jwt = require('jsonwebtoken');
 const User = require('../models/user.model');
 const v = require('../validation/schemas');
 const { HttpError } = require('../utils/errors');
-const publicUser = user => ({ id: user.id, email: user.email, name: user.name, role: user.role, membershipChurch: user.membershipChurch || null, preferences: user.preferences,
+const publicUser = user => ({ id: user.id, email: user.email, name: user.name, username: user.username, role: user.role, membershipChurch: user.membershipChurch || null, preferences: user.preferences,
   searchContext: user.searchContext || {}, criterionModes: user.criterionModes || {}, answerStates: user.answerStates || {},
   onboarding: user.onboarding, profileRevision: user.profileRevision || 0 });
 exports.register = async (req, res) => {

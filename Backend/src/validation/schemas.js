@@ -59,6 +59,8 @@ const recommendation = z.strictObject({ mode: z.enum(['traditional']).optional()
   preferences: preferences.omit({ location: true }).optional(), criterionModes: require('./profile').criterionModes.optional(), limit: z.number().int().min(1).max(20).default(10) });
 const profileFields = require('./profile');
 const profilePatch = z.strictObject({
+  name: z.string().trim().min(1).max(100).optional(),
+  username: z.string().trim().toLowerCase().regex(/^[a-z][a-z0-9_]{2,23}$/, 'Usa 3 a 24 caracteres: empieza por una letra; solo letras, números y guion bajo').refine(v=>!['admin','administrator','administrador','root','soporte','support','koinonia','moderador'].includes(v),'Este nombre de usuario está reservado').optional(),
   preferences: z.strictObject(Object.fromEntries(Object.entries(preferences.shape).map(([k, value]) => [k, value.nullable().optional()]))).optional(),
   searchContext: profileFields.searchContext.optional(), criterionModes: profileFields.criterionModes.optional(),
   answerStates: profileFields.answerStates.optional(), onboarding: profileFields.onboarding.optional(),

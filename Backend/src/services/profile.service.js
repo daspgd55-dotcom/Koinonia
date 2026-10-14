@@ -50,14 +50,14 @@ async function updateProfile(user, input, { replacePreferences = false } = {}) {
   const distanceTouched = ['radiusKm','location'].some(k => Object.hasOwn(input.preferences || {}, k) || Object.hasOwn(input.answerStates || {}, k)) || Object.hasOwn(input.criterionModes || {}, 'radiusKm');
   validateCriteria(effective, replacePreferences || !distanceTouched ? { ...criterionModes, radiusKm: undefined } : criterionModes);
   const now = new Date(), onboarding = { status: 'pending', version: 1, lastStep: 0, ...plain(user.onboarding), ...input.onboarding, updatedAt: now };
-  if (onboarding.version === 3 && onboarding.lastStep > 3) fail('La incorporaci�n v3 tiene tres fases');
+  if (onboarding.version === 3 && onboarding.lastStep > 3) fail('La incorporación v3 tiene tres fases');
   if (onboarding.version === 2 && onboarding.lastStep > 4) fail('La incorporación v2 tiene cuatro pasos');
   if (input.onboarding?.status === 'completed' && !onboarding.completedAt) onboarding.completedAt = now;
   if (input.onboarding?.status && input.onboarding.status !== 'completed') delete onboarding.completedAt;
   const revision = user.profileRevision || 0;
   if (input.expectedRevision !== undefined && input.expectedRevision !== revision) throw new HttpError(409, 'STALE_PROFILE', 'Recarga el perfil antes de guardar');
   const updated = await User.findOneAndUpdate({ _id: user._id, $or: [{ profileRevision: revision }, ...(revision === 0 ? [{ profileRevision: { $exists: false } }] : [])] },
-    { $set: { preferences, searchContext, criterionModes, answerStates, onboarding }, $inc: { profileRevision: 1 } }, { returnDocument: 'after', runValidators: true });
+    { $set: { ...(input.name!==undefined?{name:input.name}:{}), ...(input.username!==undefined?{username:input.username}:{}), preferences, searchContext, criterionModes, answerStates, onboarding }, $inc: { profileRevision: 1 } }, { returnDocument: 'after', runValidators: true });
   if (!updated) throw new HttpError(409, 'STALE_PROFILE', 'El perfil cambió durante el guardado; recárgalo');
   return updated;
 }
