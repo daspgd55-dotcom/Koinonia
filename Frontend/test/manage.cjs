@@ -167,7 +167,7 @@ async function main() {
   await login(rep.email);
   await page.getByRole('link',{name:'Administración',exact:true}).click();
   await page.getByRole('heading',{name:'Mis comunidades'}).waitFor();
-  assert.equal(await page.getByRole('navigation',{name:'Áreas de administración'}).count(),0);
+  assert.equal(await page.getByRole('navigation',{name:'Áreas de administración'}).getByRole('link',{name:'Usuarios',exact:true}).count(),0);
   assert.equal(await page.getByRole('button',{name:'Crear iglesia',exact:true}).count(),0);
   await page.getByRole('button',{name:'Administrar Comunidad administrada'}).click();
   await page.getByRole('button',{name:'Comunidad',exact:true}).click();

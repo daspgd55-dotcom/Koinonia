@@ -11,6 +11,7 @@ const UserSchema = new Schema({
   sessionVersion: { type: Number, default: 0, select: false },
   passwordReset: { hash: { type: String, select: false }, expiresAt: { type: Date, select: false }, requestedAt: { type: Date, select: false } },
   role: { type: String, enum: ['user', 'representative', 'admin'], default: 'user' },
+  membershipChurch: { type: Schema.Types.ObjectId, ref: "Church", default: null },
   position: { type: String, trim: true, maxlength: 200 },
   active: { type: Boolean, default: true },
   preferences: {

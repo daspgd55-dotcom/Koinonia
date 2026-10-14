@@ -48,6 +48,14 @@ exports.updateManaged = async (req, res) => {
   if (id === req.user.id && (data.role !== req.user.role || !data.active)) throw new HttpError(409,'SELF_ACCESS_CHANGE','No puedes cambiar tu propio rol ni desactivar tu cuenta.');
   const {expectedUpdatedAt,...changes} = data;
   const updated = await User.findOneAndUpdate({_id:id,updatedAt:new Date(expectedUpdatedAt)},{$set:changes},{returnDocument:'after',runValidators:true}).select(adminProjection).lean();
-  if (!updated) throw new HttpError(409,'STALE_USER','La cuenta cambiÛ o ya no est· disponible. Recarga la lista antes de editar.');
+  if (!updated) throw new HttpError(409,'STALE_USER','La cuenta cambi√≥ o ya no est√° disponible. Recarga la lista antes de editar.');
   res.set('Cache-Control','no-store').json({data:updated});
+};
+
+exports.membership=async(req,res)=>{
+ const {churchId}=v.parse(v.z.strictObject({churchId:v.id.nullable()}),req.body);
+ if(churchId&&!await require('../models/church.model').exists({_id:churchId,...require('../services/church.service').visible}))throw new HttpError(404,'NOT_FOUND','Selecciona una comunidad publicada.');
+ const user=await User.findOneAndUpdate({_id:req.user._id,active:true},{$set:{membershipChurch:churchId}},{returnDocument:'after',runValidators:true});
+ if(!user)throw new HttpError(401,'UNAUTHORIZED','La cuenta ya no est√° activa.');
+ res.set('Cache-Control','no-store').json({data:publicUser(user)});
 };

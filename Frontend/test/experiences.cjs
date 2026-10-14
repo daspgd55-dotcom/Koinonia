@@ -32,10 +32,12 @@ async function main() {
   const id=churches[0].id;
   await page.goto(url+'/#/experiencias/'+id);
   await page.getByText('Aún no hay experiencias publicadas de esta comunidad.',{exact:true}).waitFor();
-  await page.getByRole('link',{name:'Iniciar sesión para escribir',exact:true}).click();
+  await page.getByRole('link',{name:'Inicia sesión',exact:true}).click();
   await page.getByLabel('Correo electrónico',{exact:true}).fill(u.email);
   await page.getByLabel('Contraseña',{exact:true}).fill('Discovery-test-123');
   await page.getByRole('button',{name:'Iniciar sesión'}).click();
+  await page.getByRole('button',{name:'Pertenezco a esta iglesia',exact:true}).click();
+  await page.getByLabel('Categoría de experiencia',{exact:true}).selectOption('new_member');
   await page.getByLabel('Nombre público',{exact:false}).fill('Visitante de prueba');
   await page.getByLabel('Título',{exact:true}).fill('Mi primera visita');
   await page.getByLabel('Tu experiencia',{exact:false}).fill('Participé en una reunión abierta y conversé sobre las actividades para personas nuevas en la comunidad.');
@@ -52,7 +54,8 @@ async function main() {
   await page.screenshot({path:path.join(output,'experiences-mobile.png'),fullPage:true});
   await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
   await request(server).post('/api/auth/register').send({email:'moderator@example.test',password:'Moderator-test-123'}).expect(201);
-  await User.updateOne({email:'moderator@example.test'},{$set:{role:'admin'}});
+  await User.updateOne({email:'moderator@example.test'},{$set:{role:'representative'}});
+  const moderator=await User.findOne({email:'moderator@example.test'});await Church.updateOne({_id:id},{$set:{representatives:[moderator._id]}});
   await page.goto(url+'/#/login');
   await page.getByLabel('Correo electrónico',{exact:true}).fill('moderator@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('Moderator-test-123');
@@ -68,9 +71,15 @@ async function main() {
   await page.setViewportSize({width:1440,height:1000});
   await page.screenshot({path:path.join(output,'experiences-moderation-desktop.png'),fullPage:true});
   await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
-  await page.goto(url+'/#/experiencias/'+id);
+  await page.goto(url+'/#/iglesia/'+id);
+  await page.getByText('Experiencias y Testimonios',{exact:true}).click();
   await page.getByRole('region',{name:'Experiencias publicadas',exact:true}).getByRole('heading',{name:'Mi primera visita',exact:true}).waitFor();
   assert.equal(await page.getByRole('region',{name:'Mis experiencias',exact:true}).count(),0);
+  await page.getByRole('button',{name:'Jóvenes',exact:true}).click();
+  await page.getByText('Aún no hay experiencias publicadas en esta categoría.',{exact:true}).waitFor();
+  await page.getByRole('button',{name:'Miembros Nuevos',exact:true}).click();
+  await page.getByRole('heading',{name:'Mi primera visita',exact:true}).waitFor();
+  await page.screenshot({path:path.join(output,'testimonials-inline.png'),fullPage:true});
   assert.deepEqual(errors,[]);
   console.log('EXPERIENCES OK: visitante, login, envío conservado ante fallo, pendiente privada, moderación admin y publicación pública, móvil.');
 }

@@ -8,7 +8,7 @@ const exact = value => new RegExp('^' + escape(value) + '$', 'i');
 // Función para devolver la información pública de una iglesia, sin datos sensibles ni internos
 function publicChurch(doc) {
   const c = doc.toObject ? doc.toObject() : { ...doc };
-  delete c.representatives; delete c.createdBy; delete c.updatedBy; delete c.__v; delete c.importInfo; delete c.reviewImport;
+  delete c.publicationRequest; delete c.representatives; delete c.createdBy; delete c.updatedBy; delete c.__v; delete c.importInfo; delete c.reviewImport;
   c.verification = { lastUpdated: c.verification?.lastUpdated };
   const hidden = c.privateFields || {};
   c.doctrine = { ...c.doctrine }; c.contact = { ...c.contact };

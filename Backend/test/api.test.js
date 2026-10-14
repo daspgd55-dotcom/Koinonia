@@ -608,15 +608,16 @@ test('Community styles: multiple music values, optional culture, validation and 
 test('Experiencias: revisión previa, privacidad, autor, roles, motivos y concurrencia',async()=>{
  const Experience=require('../src/models/experience.model');
  const c=await Church.create({...fixture('Experiencias prueba'),metadata:{dataStatus:'published'},createdBy:admin._id});
- const url='/api/churches/'+c.id+'/experiences',body={title:'Visita a la comunidad',body:'Participé en una reunión y pude conocer las actividades abiertas a quienes visitan por primera vez.',displayName:'Visitante'};
+ const url='/api/churches/'+c.id+'/experiences',body={category:'new_member',title:'Visita a la comunidad',body:'Participé en una reunión y pude conocer las actividades abiertas a quienes visitan por primera vez.',displayName:'Visitante'};
  await request(app).post(url).send(body).expect(401);
+ await request(app).put('/api/users/me/membership').set(bearer(userToken)).send({churchId:c.id}).expect(200);
  await request(app).post(url).set(bearer(userToken)).send({...body,status:'approved'}).expect(400);
  const own=(await request(app).post(url).set(bearer(userToken)).send(body).expect(201)).body.data;
  assert.equal(own.status,'pending');assert.equal(own.author,undefined);
  assert.equal((await request(app).get(url).expect(200)).body.data.length,0);
  assert.equal((await request(app).get(url+'/mine').set(bearer(otherToken)).expect(200)).body.data.length,0);
  assert.equal((await request(app).get(url+'/mine').set(bearer(userToken)).expect(200)).body.data[0].status,'pending');
- await request(app).get('/api/experiences/manage').set(bearer(repToken)).expect(403);
+ assert.equal((await request(app).get('/api/experiences/manage').set(bearer(repToken)).expect(200)).body.data.length,0);
  const moderate=(token,status,version,reason)=>request(app).patch('/api/experiences/'+own._id+'/moderation').set(bearer(token)).send({status,version,...(reason?{reason}:{})});
  await moderate(userToken,'approved',0).expect(403);
  await moderate(repToken,'approved',0).expect(403);
@@ -631,4 +632,45 @@ test('Experiencias: revisión previa, privacidad, autor, roles, motivos y concur
  await Church.updateOne({_id:c.id},{$set:{'metadata.dataStatus':'draft'}});
  await request(app).get(url).expect(404);await request(app).post(url).set(bearer(userToken)).send(body).expect(404);
  await Experience.deleteMany({church:c.id});await Church.deleteOne({_id:c.id});
+});
+
+
+test('Pertenencia, categorías y moderación de representantes asignados',async()=>{
+ const Experience=require('../src/models/experience.model'),[member,token]=await account('member-new@example.test','user');
+ const a=await Church.create({...fixture('Mi iglesia'),metadata:{dataStatus:'published'},representatives:[rep._id],createdBy:admin._id});
+ const b=await Church.create({...fixture('Otra iglesia'),metadata:{dataStatus:'published'},representatives:[other._id],createdBy:admin._id});
+ const draft=await Church.create({...fixture('Borrador'),createdBy:admin._id});
+ const assign=id=>request(app).put('/api/users/me/membership').set(bearer(token)).send({churchId:id});
+ const body={category:'youth',title:'Comunidad de jóvenes',displayName:'Miembro',body:'Participo en las actividades de jóvenes y comparto mi experiencia de integración en esta comunidad.'};
+ const post=id=>request(app).post('/api/churches/'+id+'/experiences').set(bearer(token)).send(body);
+ await post(a.id).expect(403);await assign(draft.id).expect(404);
+ const changed=(await assign(a.id).expect(200)).body.data;assert.equal(changed.membershipChurch,a.id);assert.equal(changed.role,'user');
+ const experience=(await post(a.id).expect(201)).body.data;
+ await post(b.id).expect(403);
+ const scoped=(await request(app).get('/api/experiences/manage').set(bearer(repToken)).expect(200)).body.data;
+ assert.ok(scoped.some(x=>x._id===experience._id));
+ assert.ok(!(await request(app).get('/api/experiences/manage').set(bearer(otherToken)).expect(200)).body.data.some(x=>x._id===experience._id));
+ await request(app).patch('/api/experiences/'+experience._id+'/moderation').set(bearer(otherToken)).send({status:'approved',version:0}).expect(403);
+ await request(app).patch('/api/experiences/'+experience._id+'/moderation').set(bearer(repToken)).send({status:'approved',version:0}).expect(200);
+ assert.equal((await request(app).get('/api/churches/'+a.id+'/experiences?category=youth').expect(200)).body.data.length,1);
+ assert.equal((await request(app).get('/api/churches/'+a.id+'/experiences?category=testimony').expect(200)).body.data.length,0);
+ await request(app).get('/api/churches/'+a.id+'/experiences?category=invalid').expect(400);
+ await assign(b.id).expect(200);await post(a.id).expect(403);
+ await assign(null).expect(200);await post(b.id).expect(403);
+ assert.equal((await User.findById(member.id)).membershipChurch,null);
+ await Experience.deleteMany({church:{$in:[a.id,b.id]}});await Church.deleteMany({_id:{$in:[a.id,b.id,draft.id]}});
+});
+
+test('Solicitud de primera publicación: permisos, idempotencia, bandeja y resolución',async()=>{
+ const c=await Church.create({...fixture('Solicitud'),representatives:[rep.id],createdBy:admin.id});
+ const submit=token=>request(app).post('/api/churches/'+c.id+'/publication-request').set(bearer(token));
+ await submit(userToken).expect(403);await submit(otherToken).expect(403);
+ const r=(await submit(repToken).expect(200)).body.data;assert.equal(r.metadata.dataStatus,'draft');assert.equal(r.publicationRequest.status,'pending');
+ assert.equal((await submit(repToken).expect(200)).body.data.metadata.version,r.metadata.version);
+ assert.ok((await request(app).get('/api/churches/manage?publicationRequest=pending').set(bearer(adminToken)).expect(200)).body.data.some(x=>x._id===c.id));
+ await request(app).patch('/api/churches/'+c.id+'/status').set(bearer(repToken)).send({status:'published'}).expect(403);
+ const published=(await request(app).patch('/api/churches/'+c.id+'/status').set(bearer(adminToken)).send({status:'published'}).expect(200)).body.data;
+ assert.equal(published.publicationRequest.status,'resolved');
+ assert.equal((await request(app).get('/api/churches/'+c.id).expect(200)).body.data.publicationRequest,undefined);
+ await submit(repToken).expect(409);await Church.deleteOne({_id:c.id});
 });

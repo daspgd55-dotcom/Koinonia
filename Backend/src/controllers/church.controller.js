@@ -16,10 +16,11 @@ exports.get = async (req, res) => {
 exports.mine = async (req, res) => {
   const q = v.parse(v.z.strictObject({ q: v.z.string().trim().max(200).optional(), commune: v.z.string().trim().max(200).optional(),
     denomination: v.z.string().trim().max(200).optional(), status: v.z.enum(['draft', 'published', 'verified']).optional(),
-    active: v.z.enum(['active', 'inactive', 'all']).default('active'),
+    publicationRequest: v.z.literal('pending').optional(), active: v.z.enum(['active', 'inactive', 'all']).default('active'),
     page: v.z.coerce.number().int().min(1).max(10000).default(1), limit: v.z.coerce.number().int().min(1).max(100).default(20) }), req.query);
   const filter = svc.filters(q); delete filter.active; delete filter['metadata.dataStatus'];
   if (q.active !== 'all') filter.active = q.active === 'active';
+  if(q.publicationRequest)filter['publicationRequest.status']=q.publicationRequest;
   if (q.status) filter['metadata.dataStatus'] = q.status;
   if (req.user.role !== 'admin') filter.representatives = req.user._id;
   const [data, total] = await Promise.all([Church.find(filter).sort({ 'identification.name': 1, _id: 1 }).skip((q.page - 1) * q.limit).limit(q.limit), Church.countDocuments(filter)]);
@@ -76,6 +77,7 @@ exports.status = async (req, res) => {
     })) if (!value) missing.push(key);
     if (missing.length) throw new HttpError(400, 'INCOMPLETE_CHURCH', 'Faltan datos esenciales para publicar', missing);
   }
+  if(status!=='draft'&&church.publicationRequest?.status==='pending')church.publicationRequest.status='resolved';
   church.metadata.dataStatus = status; church.metadata.version += 1; church.updatedBy = req.user._id;
   await church.save(); res.json({ data: church });
 };
@@ -128,3 +130,10 @@ function normalizeDetails(data) {
   }
   return data;
 }
+
+exports.requestPublication=async(req,res)=>{
+ const church=await svc.managed(req);svc.checkVersion(req,church);
+ if(church.metadata.firstPublishedByAdminAt||church.metadata.dataStatus!=='draft')throw new HttpError(409,'ALREADY_PUBLISHED','Esta comunidad ya cuenta con publicación. Gestiona su visibilidad desde el panel.');
+ if(church.publicationRequest?.status!=='pending'){church.publicationRequest={status:'pending',requestedBy:req.user._id,requestedAt:new Date()};church.metadata.version+=1;church.updatedBy=req.user._id;await church.save();}
+ res.json({data:church});
+};

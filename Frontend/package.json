@@ -10,6 +10,7 @@
     "test": "node test/journey.cjs",
     "test:explore": "node test/explore.cjs",
     "test:manage": "node test/manage.cjs",
+    "test:publication": "node test/publication.cjs",
     "test:experiences": "node test/experiences.cjs",
     "test:comparison": "node --test test/comparison.test.js",
     "test:saved": "node test/saved.cjs",
