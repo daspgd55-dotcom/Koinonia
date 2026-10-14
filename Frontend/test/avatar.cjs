@@ -31,6 +31,7 @@ async function main() {
   await page.getByLabel('Correo electrónico',{exact:true}).fill('avatar-ui@example.test');await page.getByLabel('Contraseña',{exact:true}).fill('Password-test-123');
   await page.getByRole('button',{name:'Iniciar sesión →',exact:true}).click();
   await page.getByRole('link',{name:'Mi perfil',exact:true}).click();
+  await page.getByRole('button',{name:'Editar perfil',exact:true}).click();
   const editor=page.getByRole('region',{name:'Foto de perfil',exact:true});
   await editor.getByRole('img',{name:'Sin foto de perfil'}).waitFor();
   await page.getByLabel('Nombre público',{exact:true}).fill('Nombre pendiente');
