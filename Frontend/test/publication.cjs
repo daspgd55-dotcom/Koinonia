@@ -32,14 +32,14 @@ async function main() {
 
   await User.updateOne({_id:u._id},{$set:{role:'representative'}});
   const c=await Church.create({identification:{name:'Comunidad lista para revisión'},location:{commune:'Santiago',address:'Dirección de prueba',coordinates:{type:'Point',coordinates:[-70.65,-33.45]}},christianIdentity:{denomination:'Bautista'},doctrine:{officialStatement:'Declaración institucional de prueba'},leadership:{mainLeader:{name:'Representante',role:'Pastor'}},meetingTypes:['Culto'],verification:{source:'Declaración del representante',authorized:true},representatives:[u._id],createdBy:u._id});
-  async function login(email,password){await page.goto(url+'/#/login');await page.getByLabel('Correo electrónico',{exact:true}).fill(email);await page.getByLabel('Contraseña',{exact:true}).fill(password);await page.getByRole('button',{name:'Iniciar sesión'}).click();await page.getByRole('link',{name:'Mi perfil',exact:true}).waitFor();}
+  async function login(email,password){await page.goto(url+'/#/login');await page.getByLabel('Correo electrónico',{exact:true}).fill(email);await page.getByLabel('Contraseña',{exact:true}).fill(password);await page.getByRole('button',{name:'Iniciar sesión'}).click();await page.getByRole('button',{name:'Mi perfil',exact:true}).waitFor();}
   await login(u.email,'Discovery-test-123');
   await page.getByRole('link',{name:'Administración',exact:true}).click();
   await page.getByRole('button',{name:'Administrar Comunidad lista para revisión',exact:false}).click();
   await page.getByRole('button',{name:'Solicitar publicación',exact:true}).click();
   await page.getByText('Solicitud de publicación pendiente de revisión.',{exact:true}).waitFor();
   assert.equal((await Church.findById(c.id)).metadata.dataStatus,'draft');
-  await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
   await request(server).post('/api/auth/register').send({email:'publishing-admin@example.test',password:'Publishing-test-123'}).expect(201);
   await User.updateOne({email:'publishing-admin@example.test'},{$set:{role:'admin'}});
   await login('publishing-admin@example.test','Publishing-test-123');

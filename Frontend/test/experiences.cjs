@@ -61,7 +61,7 @@ async function main() {
   await page.locator('.detail-banner').getByRole('button',{name:'Establecer como Mi iglesia',exact:true}).waitFor();
   assert.equal(await page.getByRole('heading',{name:'Comparte tu experiencia',exact:true}).count(),0);
   assert.equal(await page.getByRole('region',{name:'Mis experiencias',exact:true}).count(),0);
-  await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
   await request(server).post('/api/auth/register').send({email:'moderator@example.test',password:'Moderator-test-123'}).expect(201);
   await User.updateOne({email:'moderator@example.test'},{$set:{role:'representative'}});
   const moderator=await User.findOne({email:'moderator@example.test'});await Church.updateOne({_id:id},{$set:{representatives:[moderator._id]}});
@@ -79,7 +79,7 @@ async function main() {
   await page.getByRole('heading',{name:'Mi primera visita',exact:true}).waitFor();
   await page.setViewportSize({width:1440,height:1000});
   await page.screenshot({path:path.join(output,'experiences-moderation-desktop.png'),fullPage:true});
-  await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
   await page.goto(url+'/#/iglesia/'+id);
   await page.getByText('Experiencias y Testimonios',{exact:true}).click();
   await page.getByRole('region',{name:'Experiencias publicadas',exact:true}).getByRole('heading',{name:'Mi primera visita',exact:true}).waitFor();

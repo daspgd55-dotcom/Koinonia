@@ -47,6 +47,16 @@ async function main() {
   await page.getByText('Comunidad 2 de 3',{exact:false}).waitFor();
   assert.equal(await Interaction.countDocuments({user:u._id}),0);
   await page.reload();await page.getByRole('heading',{name:'Comunidad Descubrimiento 1',exact:true}).waitFor();
+  const profileButton=page.getByRole('button',{name:'Mi perfil',exact:true});
+  await profileButton.hover();await page.getByRole('link',{name:'Configurar perfil',exact:true}).waitFor();
+  assert.equal(await profileButton.getAttribute('aria-expanded'),'true');
+  const avatarBox=await profileButton.locator('.user-avatar').boundingBox(),buttonBox=await profileButton.boundingBox();
+  assert.ok(avatarBox.x>buttonBox.x);
+  await page.screenshot({path:path.join(output,'profile-menu-desktop.png')});
+  await page.mouse.move(0,300);await page.waitForFunction(()=>document.querySelector('.profile-nav-toggle').getAttribute('aria-expanded')==='false');
+  await profileButton.focus();await page.keyboard.press('ArrowDown');
+  await page.getByRole('link',{name:'Configurar perfil',exact:true}).waitFor();
+  await page.keyboard.press('Escape');assert.equal(await profileButton.getAttribute('aria-expanded'),'false');
   await page.screenshot({path:path.join(output,'13-discovery-desktop.png'),fullPage:true});
   await page.getByRole('link',{name:'Ver perfil completo'}).click();
   await page.getByRole('heading',{name:'Comunidad Descubrimiento 1',exact:true}).waitFor();
@@ -69,11 +79,11 @@ async function main() {
   assert.equal(await page.locator('.discovery-preferences').getAttribute('open'),null);
   assert.ok((await page.locator('header').boundingBox()).height<125);
   assert.ok((await page.locator('.discovery-card').boundingBox()).y<500);
-  for(const label of ['Buscar iglesias','Para ti','Mi perfil'])assert.ok(await page.getByRole('navigation',{name:'Navegación principal'}).getByRole('link',{name:label,exact:true}).isVisible());
-  await page.getByRole('button',{name:'Menú',exact:false}).click();
+  for(const label of ['Buscar iglesias','Para ti'])assert.ok(await page.getByRole('navigation',{name:'Navegación principal'}).getByRole('link',{name:label,exact:true}).isVisible());
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).click();
   await page.getByRole('button',{name:'Cerrar sesión',exact:true}).waitFor();
   await page.keyboard.press('Escape');
-  assert.equal(await page.getByRole('button',{name:'Menú',exact:false}).getAttribute('aria-expanded'),'false');
+  assert.equal(await page.getByRole('button',{name:'Mi perfil',exact:true}).getAttribute('aria-expanded'),'false');
   await page.goto(url+'/#/descubrir/semantica');
   await page.getByText('Búsqueda por descripción · Próximamente',{exact:true}).waitFor();
   assert.equal(await page.locator('textarea').count(),0);
@@ -87,7 +97,7 @@ async function main() {
   }
   await page.setViewportSize({width:320,height:740});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-  await page.getByRole('button',{name:'Menú',exact:false}).click();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).click();
   await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
   await page.getByRole('link',{name:'Iniciar sesión',exact:true}).first().waitFor();
   assert.deepEqual(errors,[]);

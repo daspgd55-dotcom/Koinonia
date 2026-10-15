@@ -86,6 +86,6 @@ La vista presenta una comunidad a la vez. El resumen de preferencias y el detall
 
 La consulta por descripción es solo un aviso «Próximamente», sin formulario ni llamada a un proveedor. La ruta antigua `#/descubrir/semantica` muestra la misma vista de descubrimiento con el aviso compacto. No cambia el contrato ni el cálculo del recomendador.
 
-Hasta 800 px la navegación mantiene Buscar iglesias, Para ti y Mi perfil (Iniciar sesión para visitantes) a la vista. Menú agrupa Inicio, Administración cuando corresponde, registro o cierre de sesión. Se cierra al navegar, al pulsar Escape o al hacer clic fuera; Escape devuelve el foco al botón.
+Hasta 800 px la navegación mantiene Buscar iglesias, Para ti y Mi perfil (Iniciar sesión para visitantes) a la vista. Menú agrupa Inicio, Administración cuando corresponde y registro. Mi perfil queda al extremo derecho, con su avatar a la derecha; su desplegable animado ofrece Configurar perfil y Cerrar sesión. Se abre con mouse, clic, toque o flecha abajo, admite Escape y respeta movimiento reducido. Se cierra al navegar, al pulsar Escape o al hacer clic fuera; Escape devuelve el foco al botón.
 
 Ejecutar `npm run test:discover` y `npm run test:explore` en Frontend. Se verifican visitantes y tres roles, explicaciones y datos faltantes, navegación móvil, guardado/deshacer/descarte persistente, Ver otra sin interacción, ausencia de formulario semántico y conservación de contexto.

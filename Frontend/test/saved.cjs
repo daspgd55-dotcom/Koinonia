@@ -73,7 +73,7 @@ async function main() {
   await page.getByRole('navigation',{name:'Navegación principal'}).getByRole('link',{name:'Inicio',exact:true}).click();
   await page.getByRole('link',{name:'Iglesias guardadas',exact:false}).click();
   await page.getByRole('heading',{name:'Iglesias guardadas',exact:true}).waitFor();
-  await page.getByRole('navigation',{name:'Navegación principal'}).getByRole('link',{name:'Mi perfil',exact:true}).click();
+  await page.getByRole('navigation',{name:'Navegación principal'}).getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('link',{name:'Configurar perfil',exact:true}).click();
   await page.getByRole('link',{name:'Iglesias guardadas',exact:false}).click();
   await page.getByRole('heading',{name:'Iglesias guardadas',exact:true}).waitFor();
   for(const c of churches.slice(1)){await page.getByRole('button',{name:'Retirar '+c.identification.name,exact:true}).click();await page.getByText('Comunidad retirada de tus guardadas.',{exact:true}).waitFor();}

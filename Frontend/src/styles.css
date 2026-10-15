@@ -80,3 +80,28 @@ textarea{font:inherit}button:disabled{cursor:not-allowed}summary:focus-visible,t
 @media(max-width:800px){.discovery-layout{grid-template-columns:1fr;gap:14px}.discover-page{margin:20px auto}.discover-heading h1{font-size:28px}.discover-heading p{font-size:14px}.discovery-mode{margin:12px 0}.discovery-mode small{font-size:11px}.discovery-preferences>summary{padding:12px 16px;font-size:14px}.discovery-preferences>summary span{display:inline;margin-left:8px;font-size:11px}.discovery-card h2{font-size:26px}.discovery-card-content{padding:18px}.deck-position{margin:0 0 10px}.discovery-photo{height:200px}.discovery-actions{margin-top:12px}.discovery-context ul{display:block}.discovery-context .full{width:100%}
 header .compact-navigation{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:10px 16px 0;gap:6px;position:relative}header .compact-navigation .brand{font-size:22px}header .compact-navigation .brand img{width:32px;height:32px}header .compact-navigation .brand small{display:none}.mobile-nav-toggle{display:block;background:transparent;color:white;border:1px solid #ffffff66;border-radius:7px;min-height:40px;padding:6px 12px;font-size:12px}header .compact-navigation nav{display:flex;width:100%;border-top:1px solid #ffffff1c;padding:4px 0 0;gap:8px;flex-wrap:nowrap;justify-content:space-between;font-size:12px}header .compact-navigation nav>a{display:flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:5px 4px;white-space:nowrap}header .compact-navigation nav .user-avatar{width:25px;height:25px;min-width:25px}header .compact-navigation .secondary-navigation{display:none}header .compact-navigation .secondary-navigation.is-open{position:absolute;right:16px;top:54px;display:flex;flex-direction:column;align-items:stretch;gap:8px;min-width:190px;max-width:calc(100vw - 32px);padding:14px;background:var(--navy);border:1px solid #ffffff44;border-radius:10px;box-shadow:0 8px 25px #0003;z-index:1100}header .compact-navigation .secondary-navigation a{min-height:44px;padding:12px;color:white}header .compact-navigation .secondary-navigation .nav-button{min-height:44px;text-align:left;margin:0}
 }
+
+/* Acciones de cuenta junto al perfil, con apertura por mouse, toque y teclado. */
+.profile-navigation{position:relative;margin-left:auto;flex-shrink:0}.profile-nav-toggle{display:flex;align-items:center;gap:10px;min-height:44px;padding:0;background:none;color:white;font-size:14px}.profile-nav-toggle .user-avatar{flex-shrink:0}.profile-nav-dropdown{position:absolute;right:0;top:100%;min-width:205px;padding:10px;background:var(--navy);border:1px solid #ffffff40;border-radius:10px;box-shadow:0 12px 28px #0003;z-index:1200;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s ease,transform .18s ease,visibility .18s;pointer-events:none}.profile-navigation.is-open .profile-nav-dropdown{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}.compact-navigation nav .profile-nav-dropdown a,.profile-nav-dropdown button{display:flex;align-items:center;width:100%;min-height:44px;padding:10px 12px;border-radius:6px;color:white;background:transparent;font-size:14px;text-align:left;text-decoration:none}.compact-navigation nav .profile-nav-dropdown a:hover,.profile-nav-dropdown button:hover{background:#ffffff18}.profile-nav-dropdown button{border-top:1px solid #ffffff24;border-radius:0 0 6px 6px}
+@media(max-width:800px){.compact-navigation .profile-navigation{margin-left:0}.compact-navigation .profile-nav-toggle{font-size:12px;gap:6px}.profile-nav-dropdown{max-width:calc(100vw - 32px)}}
+@media(prefers-reduced-motion:reduce){.profile-nav-dropdown{transition:none;transform:none}}
+
+/* Movimiento discreto: sin esperas, desplazamientos forzados ni contenido oculto. */
+@media(prefers-reduced-motion:no-preference){
+:where(.primary,.secondary,.text-button,.nav-cta,.nav-button,.choices button,.view-switch button,.settings-nav button,.search-chips button,.profile-nav-toggle){transition:background-color .16s ease,color .16s ease,border-color .16s ease,box-shadow .18s ease,translate .16s ease,scale .12s ease}
+:where(.primary,.secondary,.nav-cta,.choices button,.search-chips button):not(:disabled):active{scale:.98}
+:where(input,select,textarea){transition:border-color .16s ease,box-shadow .16s ease,background-color .16s ease}
+input[type=checkbox],input[type=radio]{transition:scale .15s ease,filter .15s ease;accent-color:var(--teal)}
+input[type=checkbox]:not(:disabled):active,input[type=radio]:not(:disabled):active{scale:.9}
+.choices button[aria-pressed=true],.view-switch button[aria-pressed=true]{animation:control-selected .18s ease}
+:where(.detail-fold,.discovery-preferences,.match-details,.filter-panel,.discovery-action-help)[open]>:not(summary){animation:section-open .2s ease}
+.church-card,.discovery-card,.profile-block,.manage-list article{transition:box-shadow .2s ease,border-color .2s ease}
+@media(hover:hover) and (pointer:fine){
+:where(.primary,.secondary,.nav-cta):not(:disabled):hover{translate:0 -2px;box-shadow:0 4px 12px #061a3412}
+:where(.church-card,.discovery-card,.manage-list article):hover{box-shadow:0 8px 24px #061a3414;border-color:#b5ccc5}
+.compact-navigation nav>a{transition:color .16s ease}
+}
+}
+@keyframes control-selected{from{scale:.97}to{scale:1}}
+@keyframes section-open{from{opacity:.7;translate:0 -3px}to{opacity:1;translate:0 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.page-motion,.page-motion *{translate:none!important;scale:none!important}}

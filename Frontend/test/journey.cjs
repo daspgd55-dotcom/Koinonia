@@ -57,7 +57,7 @@ async function main() {
   let user=await User.findOne({email:'journey@example.test'}).lean();
   assert.equal(user.onboarding.status,'skipped'); assert.equal(user.onboarding.version,3);
   assert.equal(user.criterionModes.denominations,'preferred');
-  if(!await page.getByRole('button',{name:'Cerrar sesión'}).isVisible())await page.getByRole('button',{name:'Menú',exact:false}).click();
+  if(!await page.getByRole('button',{name:'Cerrar sesión'}).isVisible())await page.getByRole('button',{name:'Mi perfil',exact:true}).click();
   await page.getByRole('button',{name:'Cerrar sesión'}).click();
   await page.getByRole('link',{name:'Iniciar sesión',exact:true}).click();
   await page.getByLabel('Correo electrónico',{exact:true}).fill('journey@example.test');
@@ -89,7 +89,7 @@ async function main() {
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   await page.getByRole('button',{name:'Terminar y explorar iglesias'}).click();
   await page.getByRole('heading',{name:'Resultados'}).waitFor();
-  await page.getByRole('link',{name:'Mi perfil',exact:true}).click();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('link',{name:'Configurar perfil',exact:true}).click();
   await page.getByRole('heading',{name:'Mi perfil',exact:true}).waitFor();
   user=await User.findById(user._id).lean();
   assert.equal(user.onboarding.lastStep,3); assert.equal(user.searchContext.address,'Referencia privada de prueba 123');
@@ -130,7 +130,7 @@ async function main() {
   assert.equal(await page.getByRole('button',{name:'Descartar cambios',exact:true}).count(),0);
   assert.equal((await User.findById(user._id)).preferences.commune,'Providencia');
 
-  await page.getByRole('link',{name:'Mi perfil',exact:true}).click();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('link',{name:'Configurar perfil',exact:true}).click();
   await page.getByRole('button',{name:'Editar preferencias',exact:true}).click();
   await page.getByRole('heading',{name:'Preferencias de búsqueda',exact:true}).waitFor();
   await page.getByRole('button',{name:'Tu identidad',exact:true}).click();
@@ -171,7 +171,7 @@ async function main() {
   await page.getByLabel('Contraseña',{exact:true}).fill('Test-web-password-123');
   await page.getByRole('button',{name:'Iniciar sesión'}).click();
   await page.getByRole('heading',{name:'Resultados'}).waitFor();
-  await page.getByRole('link',{name:'Mi perfil',exact:true}).click();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('link',{name:'Configurar perfil',exact:true}).click();
   await page.getByRole('button',{name:'Editar Tu ubicación',exact:true}).click();
   assert.equal(await page.getByLabel('Comuna de interés',{exact:true}).inputValue(),'Ñuñoa');
   await page.getByRole('checkbox',{name:'Activar mi ubicación aproximada'}).uncheck();
@@ -199,7 +199,7 @@ async function main() {
   assert.equal(await page.getByRole('button',{name:'Portugués (guardada)'}).getAttribute('aria-pressed'),'true');
   assert.equal(await page.locator('select').count(),0);
   assert.equal(await page.evaluate(()=>JSON.stringify(sessionStorage).includes('Test-web-password-123')),false);
-  if(!await page.getByRole('button',{name:'Cerrar sesión'}).isVisible())await page.getByRole('button',{name:'Menú',exact:false}).click();
+  if(!await page.getByRole('button',{name:'Cerrar sesión'}).isVisible())await page.getByRole('button',{name:'Mi perfil',exact:true}).click();
   await page.getByRole('button',{name:'Cerrar sesión'}).click();
   assert.equal(await page.evaluate(()=>Object.keys(sessionStorage).filter(k=>k.startsWith('koinonia-')).length),0);
   if(!await page.getByRole('link',{name:'Crear cuenta',exact:true}).isVisible())await page.getByRole('button',{name:'Menú',exact:false}).click();
@@ -218,7 +218,7 @@ async function main() {
   await page.getByRole('button',{name:'Aún no sé dónde buscar'}).click();
   await page.getByRole('button',{name:'Terminar y explorar iglesias'}).click();
   await page.getByRole('heading',{name:'Resultados'}).waitFor();
-  await page.getByRole('link',{name:'Mi perfil',exact:true}).click();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('link',{name:'Configurar perfil',exact:true}).click();
   await page.getByRole('heading',{name:'Mi perfil',exact:true}).waitFor();
   const other=await User.findOne({email:'other-web@example.test'}).lean();
   assert.equal(other.answerStates.branches,'no_preference');assert.ok(!other.preferences.branches?.length);
@@ -234,8 +234,8 @@ async function main() {
   await page.getByLabel('Correo electrónico',{exact:true}).fill('other-web@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('A-new-password-for-web-123');
   await page.getByRole('button',{name:'Iniciar sesión →',exact:true}).click();
-  await page.getByRole('link',{name:'Mi perfil',exact:true}).waitFor();
-  if(!await page.getByRole('button',{name:'Cerrar sesión',exact:true}).isVisible())await page.getByRole('button',{name:'Menú',exact:false}).click();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).waitFor();
+  if(!await page.getByRole('button',{name:'Cerrar sesión',exact:true}).isVisible())await page.getByRole('button',{name:'Mi perfil',exact:true}).click();
   await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
   await page.goto(url+'/#/registro');
   await page.getByRole('link',{name:'¿Olvidaste tu contraseña?',exact:true}).click();
@@ -256,7 +256,7 @@ async function main() {
   await page.getByLabel('Correo electrónico',{exact:true}).fill('other-web@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('Reset-web-password-789');
   await page.getByRole('button',{name:'Iniciar sesión →',exact:true}).click();
-  await page.getByRole('link',{name:'Mi perfil',exact:true}).waitFor();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).waitFor();
   assert.deepEqual(errors,[]);
   console.log('WEB OK: tres fases, ramas y denominaciones dependientes, omisiones, dirección privada, GPS voluntario (denegado/activado/retirado), deslizador, configuración, casillas, errores, reanudación, legado y móvil.');
   console.log('Capturas: Frontend/.cache/journey');

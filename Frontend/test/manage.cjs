@@ -30,7 +30,7 @@ async function main() {
   await account('plain-web@example.test','user');
   await account('manage-target@example.test','user');
   await account('promote-web@example.test','user');
-  async function login(email){await page.goto(url+'/#/login');await page.getByLabel('Correo electrónico',{exact:true}).fill(email);await page.getByLabel('Contraseña',{exact:true}).fill('Test-admin-password-123');await page.getByRole('button',{name:'Iniciar sesión',exact:false}).click();await page.getByRole('link',{name:'Mi perfil',exact:true}).waitFor();}
+  async function login(email){await page.goto(url+'/#/login');await page.getByLabel('Correo electrónico',{exact:true}).fill(email);await page.getByLabel('Contraseña',{exact:true}).fill('Test-admin-password-123');await page.getByRole('button',{name:'Iniciar sesión',exact:false}).click();await page.getByRole('button',{name:'Mi perfil',exact:true}).waitFor();}
   await login(admin.email);
   await page.getByRole('link',{name:'Administración',exact:true}).click();
   await page.getByRole('heading',{name:'Administrar comunidades'}).waitFor();
@@ -163,7 +163,7 @@ async function main() {
   await page.getByRole('button',{name:'Restaurar como borrador'}).click();
   await page.getByRole('status').filter({hasText:'Administración actualizada'}).waitFor();
   assert.equal((await Church.findById(c._id)).active,true);
-  await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
   await login(rep.email);
   await page.getByRole('link',{name:'Administración',exact:true}).click();
   await page.getByRole('heading',{name:'Mis comunidades'}).waitFor();
@@ -245,7 +245,7 @@ async function main() {
   await page.setViewportSize({width:390,height:844});
   await page.screenshot({path:path.join(output,'09-representative-mobile.png'),fullPage:true});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-  await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
   await login('plain-web@example.test');
   assert.equal(await page.getByRole('link',{name:'Administración',exact:true}).count(),0);
   await page.goto(url+'/#/administracion');

@@ -30,7 +30,7 @@ async function main() {
   await page.goto(url+'/#/login');
   await page.getByLabel('Correo electrónico',{exact:true}).fill('avatar-ui@example.test');await page.getByLabel('Contraseña',{exact:true}).fill('Password-test-123');
   await page.getByRole('button',{name:'Iniciar sesión →',exact:true}).click();
-  await page.getByRole('link',{name:'Mi perfil',exact:true}).click();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('link',{name:'Configurar perfil',exact:true}).click();
   await page.getByRole('button',{name:'Editar perfil',exact:true}).click();
   const editor=page.getByRole('region',{name:'Foto de perfil',exact:true});
   await editor.getByRole('img',{name:'Sin foto de perfil'}).waitFor();
@@ -47,7 +47,7 @@ async function main() {
   await page.getByRole('button',{name:'Subir foto recortada'}).click();
   await page.getByRole('status').filter({hasText:'Foto de perfil actualizada.'}).waitFor();
   assert.equal(await page.getByLabel('Nombre público',{exact:true}).inputValue(),'Nombre pendiente');
-  const navPhoto=page.getByRole('link',{name:'Mi perfil',exact:true}).locator('img');
+  const navPhoto=page.getByRole('button',{name:'Mi perfil',exact:true}).locator('img');
   assert.ok((await navPhoto.getAttribute('src')).includes('koinonia/avatars/'));
   await page.screenshot({path:path.join(output,'avatar-desktop.png'),fullPage:true});
   await page.setViewportSize({width:390,height:844});

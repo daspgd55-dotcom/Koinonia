@@ -32,7 +32,7 @@ async function main() {
   const help=page.getByRole('complementary',{name:'Ayuda de primera visita'});
   await login('help-admin@example.test');assert.equal(await help.count(),0);
   await page.getByRole('button',{name:'Doctrina',exact:true}).click();assert.equal(await help.count(),0);
-  await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
   await login('help-rep@example.test');await help.waitFor();
   await page.getByRole('button',{name:'Entendido',exact:true}).click();assert.equal(await help.count(),0);
   await page.clock.install();

@@ -27,9 +27,22 @@ async function main() {
   await Church.init();
   await page.route('https://tile.openstreetmap.org/**',r=>r.abort());
   await page.route('https://images.example.test/**',r=>r.fulfill({contentType:'image/svg+xml',body:'<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500"><rect width="800" height="500" fill="teal"/></svg>'}));
+  await page.addInitScript(()=>{window.motionEvents=[];const animate=Element.prototype.animate;Element.prototype.animate=function(frames,options){window.motionEvents.push({card:this.matches('.church-card'),page:this.matches('.page-motion')});return animate.call(this,frames,options);};});
   await page.goto(url+'/#/explorar');
   await page.getByRole('status').filter({hasText:'14 comunidades encontradas'}).waitFor();
   assert.equal(await page.locator('.church-card').count(),12);
+  await page.waitForFunction(()=>window.motionEvents.some(e=>e.page)&&window.motionEvents.some(e=>e.card));
+  const beforeScroll=await page.evaluate(()=>window.motionEvents.filter(e=>e.card).length);
+  await page.keyboard.press('End');
+  await page.waitForFunction(n=>window.motionEvents.filter(e=>e.card).length>n,beforeScroll);
+  await page.keyboard.press('Home');
+  await page.emulateMedia({reducedMotion:'reduce'});
+  assert.equal(await page.locator('.page-motion').evaluate(el=>el.getAnimations({subtree:true}).length),0);
+  await page.reload();await page.getByRole('status').filter({hasText:'14 comunidades encontradas'}).waitFor();
+  assert.equal(await page.evaluate(()=>window.motionEvents.length),0);
+  assert.equal(await page.locator('.church-card').first().evaluate(el=>getComputedStyle(el).opacity),'1');
+  await page.emulateMedia({reducedMotion:'no-preference'});
+
   assert.equal(await page.locator('.search-card-photo').count(),12);
   await page.locator('.church-card').first().getByText('Culto · Domingo 11:00',{exact:true}).waitFor();
   await page.locator('.church-card').first().getByText('Voluntariado',{exact:true}).waitFor();
