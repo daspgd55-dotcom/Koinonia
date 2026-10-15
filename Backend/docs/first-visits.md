@@ -47,10 +47,24 @@ No hay borrado automático de historial en esta versión. No se ha incorporado a
 ## Cómo probar
 
 1. Representante: habilitar recepción y guardar una ficha publicada con reunión semanal presencial.
-2. Visitante: abrir Visítanos, seleccionar horario y revisar fecha UTC−3; escribir mensaje; entrar en sesión y enviar.
+2. Visitante: abrir Visítanos, seleccionar horario y revisar la fecha local (sin etiquetas técnicas); escribir mensaje; entrar en sesión y enviar.
 3. Representante: revisar Notificaciones y Administración > Primeras visitas, marcar leído y confirmar recepción con respuesta.
 4. Visitante: revisar la notificación y Mis visitas; cancelar y comprobar Historial. La cancelación llega a representantes.
 5. Tras el término, consultar notificaciones y responder Asistí/No pude asistir/Ahora no. La comunidad no recibe esa respuesta privada.
 6. Probar con representante no asignado, usuario distinto, duplicados y versión anterior: no deben obtener acceso ni crear registros incoherentes.
 
 Automatizado, sin producción: `cd Backend; npm test` incluye `test/visits.test.js`; `cd Frontend; npm run test:visits` usa navegador y MongoDB temporales. Cubren activación desde UI, login conservando selección, confirmación, cancelación, historial, seguimiento, aislamiento, cambios de año/semana y móvil. `npm run build` verifica compilación.
+
+
+## Mejoras de visitas y reuniones
+
+- Cada reunión admite `frequency`: `weekly`, `fortnightly`, `monthly`, `occasional`, y `visitsEnabled` booleano. Son opcionales para conservar fichas existentes. Sin frecuencia explícita se interpreta la nota como antes; sin visitsEnabled se permite. Solo reuniones semanales presenciales/híbridas habilitadas generan opciones.
+- Las opciones se ordenan por tipo de reunión y luego día/hora. La frecuencia estructurada manda sobre la nota; esta queda para indicaciones. La interfaz mantiene UTC-3 internamente sin mostrar la etiqueta.
+- GET `/api/visits/manage` admite `filter=all|pending|week|received` para próximas visitas. `pending` significa recepción sin confirmar, no asignación de un anfitrión. `week` incluye los próximos siete días. El historial ignora este filtro.
+- La recepción registra `receivedByName` y `receivedAt`, visibles solo en administración. No asigna quién recibirá al visitante.
+- PATCH `/api/visits/:id/reschedule`: autenticado propietario, cuerpo `{optionKey, startsAt, churchVersion, version}`. Solo antes de comenzar y mientras siga activo. Valida disponibilidad, versión de la ficha y del aviso; 404 para terceros, 409 para conflictos/cierre, 400 si no cambia el horario. Conserva mensaje, añade la fecha anterior a `scheduleHistory`, reinicia recepción y genera notificación a los representantes en una sola escritura. El índice único sigue evitando duplicados.
+- Antes de guardar modificaciones de reuniones, administración consulta si existen avisos próximos y advierte que conservan la fecha original. El representante debe comunicar los cambios mediante Primeras visitas.
+- Campana con contador y vista previa de cinco avisos; próxima visita destacada; seguimiento privado plegado al responder o elegir Ahora no.
+- No hay correos, push ni asignación de equipo de bienvenida.
+
+Prueba adicional: crea dos horarios, confirma recepción y cambia la reunión desde Mis visitas. Verifica mensaje conservado, historial anterior, recepción pendiente y notificación del cambio. Prueba filtro Sin confirmar, Recepción confirmada y Próximos 7 días. En móvil revisa campana, cierre con Escape y ausencia de desplazamiento horizontal.

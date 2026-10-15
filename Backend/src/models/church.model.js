@@ -13,7 +13,7 @@ const ChurchSchema = new Schema({
   doctrine: { officialStatement: String, characteristics: [String], soteriology: String, eschatology: String },
   privateFields: { musicalStyles: Boolean, culturalStyle: Boolean, accessibilityLevel: Boolean, soteriology: Boolean, eschatology: Boolean, email: Boolean, phone: Boolean },
   meetingTypes: [String],
-  meetings: [embedded({ type: String, audience: String, modality: String, addressOrUrl: String, frequencyNotes: String,
+  meetings: [embedded({ type: String, audience: String, modality: String, addressOrUrl: String, frequencyNotes: String, frequency: {type:String,enum:["weekly","fortnightly","monthly","occasional"]}, visitsEnabled: Boolean,
     schedule: [embedded({ day: String, startTime: String, durationMinutes: Number })] })],
   community: { musicalStyles: [{ type: String, enum: musicalStyles }], culturalStyle: { type: String, enum: culturalStyles }, targetGroups: [String], ministries: [String], activities: [String], description: String, memberRange: String },
   leadership: { mainLeader: Leader, otherLeaders: [Leader] },

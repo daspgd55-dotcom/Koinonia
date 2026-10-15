@@ -21,6 +21,7 @@ router.get('/churches/:id/visit-options',visits.options);
 router.post('/churches/:id/visits',auth,visitLimit,visits.create);
 router.get('/visits/mine',auth,visits.mine);
 router.get('/visits/manage',auth,managers,visits.manage);
+router.patch('/visits/:id/reschedule',auth,visitLimit,visits.reschedule);
 router.patch('/visits/:id',auth,visits.update);
 router.patch('/visits/:id/manage',auth,managers,visits.staffUpdate);
 router.get('/notifications',auth,visits.notifications);

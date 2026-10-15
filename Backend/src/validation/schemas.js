@@ -30,7 +30,7 @@ const church = z.strictObject({
   privateFields: z.strictObject({ musicalStyles: z.boolean().optional(), culturalStyle: z.boolean().optional(), accessibilityLevel: z.boolean().optional(), soteriology: z.boolean().optional(), eschatology: z.boolean().optional(), email: z.boolean().optional(), phone: z.boolean().optional() }).optional(),
   meetingTypes: list.optional(),
   meetings: z.array(z.strictObject({ type: text, audience: text.optional(), modality: z.enum(['Presencial', 'Online', 'Híbrida']),
-    addressOrUrl: text.optional(), frequencyNotes: longText.optional(), schedule: z.array(z.strictObject({ day: days, startTime: z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/),
+    addressOrUrl: text.optional(), frequencyNotes: longText.optional(), frequency: z.enum(["weekly","fortnightly","monthly","occasional"]).optional(), visitsEnabled: z.boolean().optional(), schedule: z.array(z.strictObject({ day: days, startTime: z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/),
       durationMinutes: z.number().int().positive().max(1440).optional() })).min(1).max(14) })).max(50).optional(),
   community: z.strictObject({ musicalStyles: z.array(z.enum(musicalStyles)).max(5).refine(a=>new Set(a).size===a.length, "No repitas estilos musicales").optional(), culturalStyle: z.enum(culturalStyles).optional(), targetGroups: list.optional(), ministries: list.optional(), activities: list.optional(), description: longText.optional(), memberRange: text.optional() }).optional(),
   leadership: z.strictObject({ mainLeader: leader.optional(), otherLeaders: z.array(leader).max(50).optional() }).optional(),

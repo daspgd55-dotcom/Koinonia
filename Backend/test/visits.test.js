@@ -64,6 +64,31 @@ test('Finaliza sin inferir inasistencia; seguimiento único y privado al consult
  const history=(await request(app).get('/api/visits/mine?view=history').set(auth('visitor')).expect(200)).body.data.find(x=>x._id===visitId);assert.equal(history.status,'completed');assert.equal(history.attendance,'unknown');
  await request(app).patch('/api/visits/'+visitId).set(auth('visitor')).send({action:'cancel',version:0}).expect(409);
  await request(app).patch('/api/visits/'+visitId).set(auth('visitor')).send({action:'attendance',attendance:'missed',version:0}).expect(200);
- assert.equal((await User.findById(users.visitor._id)).membershipChurch,null);
+ assert.equal((await User.findById(users.visitor._id)).membershipChurch,null);assert.ok((await Visit.findById(visitId)).events.find(e=>e.kind==='followup').readBy.some(id=>String(id)===users.visitor.id));
  const staff=(await request(app).get('/api/visits/manage?view=history').set(auth('rep')).expect(200)).body.data;assert.ok(staff.every(x=>x.attendance===undefined));
+});
+
+test('Frecuencia explícita, exclusión voluntaria y orden por tipo de reunión',()=>{
+ const meeting={modality:'Presencial',schedule:[{day:'Domingo',startTime:'11:00'}]};
+ const data=svc.options({meetings:[{...meeting,type:'Zeta',frequency:'weekly',frequencyNotes:'Actividad mensual adicional'},{...meeting,type:'Alabanza',frequency:'weekly'},{...meeting,type:'Mensual',frequency:'monthly'},{...meeting,type:'Privada',frequency:'weekly',visitsEnabled:false}]});
+ assert.deepEqual(data.map(x=>x.meeting),['Alabanza','Zeta']);
+});
+test('Reprogramar conserva mensaje e historial, valida dueño/versiones y reinicia recepción',async()=>{
+ await Church.updateOne({_id:c.id},{$push:{meetings:{type:'Jóvenes',modality:'Presencial',frequency:'weekly',schedule:[{day:'Sábado',startTime:'18:00'}]}}});
+ const o=await option(),first=o.data[0],second=o.data[1];
+ const result=await request(app).post('/api/churches/'+c.id+'/visits').set(auth('stranger')).send({optionKey:first.optionKey,startsAt:first.startsAt,version:o.version,message:'Mensaje conservado'}).expect(201),id=result.body.data._id;
+ await request(app).patch('/api/visits/'+id+'/manage').set(auth('rep')).send({action:'receive',version:0}).expect(200);
+ let rows=(await request(app).get('/api/visits/manage?filter=received').set(auth('rep')).expect(200)).body.data;
+ assert.equal(rows.find(x=>x._id===id).receivedByName,'rep');assert.ok(rows.find(x=>x._id===id).receivedAt);
+ const body={optionKey:second.optionKey,startsAt:second.startsAt,churchVersion:o.version,version:1};
+ await request(app).patch('/api/visits/'+id+'/reschedule').set(auth('visitor')).send(body).expect(404);
+ await request(app).patch('/api/visits/'+id+'/reschedule').set(auth('stranger')).send({...body,churchVersion:999}).expect(409);
+ await request(app).patch('/api/visits/'+id+'/reschedule').set(auth('stranger')).send({...body,version:0}).expect(409);
+ const changed=(await request(app).patch('/api/visits/'+id+'/reschedule').set(auth('stranger')).send(body).expect(200)).body.data;
+ assert.equal(changed.message,'Mensaje conservado');assert.equal(changed.status,'sent');assert.equal(changed.scheduleHistory[0].startsAt,first.startsAt);assert.equal(changed.startsAt,second.startsAt);
+ const doc=await Visit.findById(id);assert.equal(doc.receivedAt,undefined);assert.equal(doc.events.filter(e=>e.kind==='rescheduled').length,1);
+ rows=(await request(app).get('/api/visits/manage?filter=pending').set(auth('rep')).expect(200)).body.data;assert.ok(rows.some(x=>x._id===id));
+ assert.ok((await request(app).get('/api/visits/manage?filter=week').set(auth('rep')).expect(200)).body.data.some(x=>x._id===id));
+ await request(app).patch('/api/visits/'+id).set(auth('stranger')).send({action:'cancel',version:2}).expect(200);
+ await request(app).patch('/api/visits/'+id+'/reschedule').set(auth('stranger')).send({...body,version:3}).expect(409);
 });

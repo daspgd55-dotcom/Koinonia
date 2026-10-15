@@ -13,11 +13,11 @@ function needsCoordination(note=''){
 function options(church,now=new Date()){
  const found=new Map();for(const meeting of church.meetings||[]){
  // Las notas informativas no invalidan horarios semanales. Frecuencias no semanales explícitas requieren coordinación.
- if(meeting.modality==='Online'||meeting.modality==='Virtual'||needsCoordination(meeting.frequencyNotes))continue;
+ if(meeting.modality==='Online'||meeting.modality==='Virtual'||meeting.visitsEnabled===false||(meeting.frequency?meeting.frequency!=='weekly':needsCoordination(meeting.frequencyNotes)))continue;
  for(const schedule of meeting.schedule||[]){const startsAt=nextOccurrence(schedule.day,schedule.startTime,now);if(!startsAt)continue;
  const optionKey=createHash('sha256').update(JSON.stringify([meeting.type,schedule.day,schedule.startTime,meeting.modality||'',meeting.addressOrUrl||'',schedule.durationMinutes||120])).digest('hex');
  found.set(optionKey,{optionKey,meeting:meeting.type||'Reunión',day:schedule.day,time:schedule.startTime,address:meeting.addressOrUrl||church.location?.address||'',startsAt:startsAt.toISOString(),endsAt:new Date(startsAt.getTime()+(schedule.durationMinutes||120)*60000).toISOString(),timezone:'UTC-03:00',frequencyNotes:meeting.frequencyNotes||''});}}
- return [...found.values()].sort((a,b)=>a.startsAt.localeCompare(b.startsAt));
+ return [...found.values()].sort((a,b)=>a.meeting.localeCompare(b.meeting,'es')||a.day.localeCompare(b.day,'es')||a.time.localeCompare(b.time));
 }
 const state=(visit,now=new Date())=>visit.status==='cancelled'?'cancelled':new Date(visit.endsAt)<=now?'completed':visit.status;
 module.exports={nextOccurrence,options,state};
