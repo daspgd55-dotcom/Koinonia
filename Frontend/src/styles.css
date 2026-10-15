@@ -117,3 +117,10 @@ input[type=checkbox]:not(:disabled):active,input[type=radio]:not(:disabled):acti
 .compact-navigation nav .notification-preview a{display:block;white-space:normal;color:#17232D;padding:12px 4px;border-bottom:1px solid #eee}
 .notification-preview a span{display:block;font-size:.9rem;margin-top:5px}
 @media(max-width:600px){.notification-navigation{position:static}.notification-preview{position:fixed;top:110px;right:16px}}
+
+.publication-checklist{background:#fff;border:1px solid #ddd;border-radius:14px;padding:18px;margin:18px 0}
+.publication-checklist summary{cursor:pointer;font-weight:700}
+.checklist-sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.checklist-sections ul{padding-left:18px;font-size:.9rem}
+.verification-badge{display:inline-block;padding:6px 12px;border-radius:20px;background:#d9efeb;color:#0f6664;font-weight:700}
+.discarded-panel{margin:12px 0}.discarded-panel .visit-card{padding:14px}

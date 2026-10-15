@@ -23,7 +23,7 @@ const ChurchSchema = new Schema({
   externalProfile: { type: require('./external-profile.schema'), default: undefined },
   importInfo: { schemaVersion: String, batchId: String, sourceFile: String, sourceRow: Number, importedAt: Date, issues: [String] },
   metadata: { firstPublishedByAdminAt: Date, dataStatus: { type: String, enum: ['draft', 'published', 'verified'], default: 'draft' }, version: { type: Number, default: 1 }, testData: { type: Boolean, default: false } },
-  publicationRequest: { status: {type:String,enum:['pending','resolved']}, requestedBy: {type:Schema.Types.ObjectId,ref:'User'}, requestedAt:Date },
+  publicationRequest: { verificationRequested:Boolean, status: {type:String,enum:['pending','resolved']}, requestedBy: {type:Schema.Types.ObjectId,ref:'User'}, requestedAt:Date },
   representatives: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   createdBy: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   updatedBy: { type: Schema.Types.ObjectId, ref: 'User' },

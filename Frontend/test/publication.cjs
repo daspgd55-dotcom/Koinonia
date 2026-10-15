@@ -36,21 +36,21 @@ async function main() {
   await login(u.email,'Discovery-test-123');
   await page.getByRole('link',{name:'Administración',exact:true}).click();
   await page.getByRole('button',{name:'Administrar Comunidad lista para revisión',exact:false}).click();
-  await page.getByRole('button',{name:'Solicitar publicación',exact:true}).click();
-  await page.getByText('Solicitud de publicación pendiente de revisión.',{exact:true}).waitFor();
+  await page.getByText(/Preparación de la ficha/).click();await page.getByText(/Datos esenciales completos/).waitFor();await page.getByRole('button',{name:'Solicitar publicación y verificación',exact:true}).click();
+  await page.getByText('Solicitud de publicación y verificación pendiente de revisión.',{exact:true}).waitFor();
   assert.equal((await Church.findById(c.id)).metadata.dataStatus,'draft');
   await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
   await request(server).post('/api/auth/register').send({email:'publishing-admin@example.test',password:'Publishing-test-123'}).expect(201);
   await User.updateOne({email:'publishing-admin@example.test'},{$set:{role:'admin'}});
   await login('publishing-admin@example.test','Publishing-test-123');
   await page.getByRole('link',{name:'Administración',exact:true}).click();
-  await page.getByRole('button',{name:'Solicitudes de publicación: 1',exact:true}).click();
+  await page.getByRole('button',{name:'Solicitudes de publicación y verificación: 1',exact:true}).click();
   await page.getByRole('button',{name:'Administrar Comunidad lista para revisión',exact:false}).waitFor();
   await page.screenshot({path:path.join(output,'publication-requests.png'),fullPage:true});
   await page.getByRole('button',{name:'Administrar Comunidad lista para revisión',exact:false}).click();
   await page.getByRole('button',{name:'Publicar',exact:true}).click();
   await page.getByRole('status').filter({hasText:'Administración actualizada'}).waitFor();
-  const published=await Church.findById(c.id);assert.equal(published.publicationRequest.status,'resolved');assert.equal(published.metadata.dataStatus,'published');
+  const published=await Church.findById(c.id);assert.equal(published.publicationRequest.status,'pending');assert.equal(published.metadata.dataStatus,'published');await page.getByRole('button',{name:'Marcar verificada',exact:true}).click();await page.getByRole('status').filter({hasText:'Administración actualizada'}).waitFor();await page.goto(url+'/#/iglesia/'+c.id);await page.getByText('✓ Iglesia verificada',{exact:true}).waitFor();assert.equal((await Church.findById(c.id)).publicationRequest.status,'resolved');
   assert.deepEqual(errors,[]);console.log('PUBLICATION OK: representante solicita, administrador recibe bandeja filtrada y publica.');
 }
 

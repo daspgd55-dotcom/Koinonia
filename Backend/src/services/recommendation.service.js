@@ -37,9 +37,14 @@ function rank(church, preferences, modes = {}) {
   const mean = keys => { const values = keys.filter(k => scores[k] !== undefined).map(k => scores[k]); return values.length ? values.reduce((a,b) => a+b,0) / values.length : 0; };
   const components = { doctrine: mean(['denominations', 'branches', 'doctrinalTags']), distance: mean(['radiusKm', 'commune']),
     activities: mean(['activities', 'ministries', 'targetGroups']), availability: mean(['languages', 'meetingDays']),
-    quality: church.metadata?.dataStatus === 'verified' ? 1 : 0.5 };
-  const score = Number((0.4 * components.doctrine + 0.25 * components.distance + 0.2 * components.activities + 0.1 * components.availability + 0.05 * components.quality).toFixed(6));
-  return { churchId: String(church._id), score, components, criteria, church,
+    quality: require('./church-quality.service').quality(church).score };
+  const groups={doctrine:['denominations','branches','doctrinalTags'],distance:['radiusKm','commune'],activities:['activities','ministries','targetGroups'],availability:['languages','meetingDays']},weights={doctrine:.4,distance:.25,activities:.2,availability:.1};
+  const active=Object.keys(groups).filter(k=>groups[k].some(f=>scores[f]!==undefined)),weight=active.reduce((sum,k)=>sum+weights[k],0);
+  const affinity=weight?active.reduce((sum,k)=>sum+weights[k]*components[k],0)/weight:0;
+  const score=Number((weight ? .95*affinity+.05*components.quality:components.quality).toFixed(6));
+  const evidence={activeCriteria:Object.keys(criteria).length,knownCriteria:Object.values(criteria).filter(x=>x.status!=='unknown').length,informationQuality:require('./church-quality.service').quality(church)};
+
+  return { churchId: String(church._id), score, components, criteria, evidence, church,
     explanation: 'Compatibilidad basada en criterios activos y atributos disponibles; los datos desconocidos se indican por separado y no aportan coincidencia.', sourceIds: [] };
 }
 

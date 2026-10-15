@@ -60,7 +60,7 @@ async function main() {
   await page.locator('.detail-banner').getByRole('button',{name:'Dejar de asociar esta iglesia',exact:true}).click();
   await page.locator('.detail-banner').getByRole('button',{name:'Establecer como Mi iglesia',exact:true}).waitFor();
   assert.equal(await page.getByRole('heading',{name:'Comparte tu experiencia',exact:true}).count(),0);
-  assert.equal(await page.getByRole('region',{name:'Mis experiencias',exact:true}).count(),0);
+  assert.equal(await page.getByRole('region',{name:'Mis experiencias',exact:true}).count(),1);
   await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
   await request(server).post('/api/auth/register').send({email:'moderator@example.test',password:'Moderator-test-123'}).expect(201);
   await User.updateOne({email:'moderator@example.test'},{$set:{role:'representative'}});
@@ -69,7 +69,7 @@ async function main() {
   await page.getByLabel('Correo electrónico',{exact:true}).fill('moderator@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('Moderator-test-123');
   await page.getByRole('button',{name:'Iniciar sesión'}).click();
-  await page.getByRole('link',{name:'Administración',exact:true}).click();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).waitFor();await page.goto(url+'/#/administracion');
   await page.getByRole('link',{name:'Experiencias',exact:true}).click();
   await page.getByRole('heading',{name:'Mi primera visita',exact:true}).waitFor();
   assert.equal(await page.getByRole('button',{name:'Rechazar',exact:true}).isDisabled(),true);
@@ -89,6 +89,16 @@ async function main() {
   await page.getByRole('button',{name:'Miembros Nuevos',exact:true}).click();
   await page.getByRole('heading',{name:'Mi primera visita',exact:true}).waitFor();
   await page.screenshot({path:path.join(output,'testimonials-inline.png'),fullPage:true});
+
+  // El autor puede reportar, corregir y retirar sin publicación automática.
+  await page.goto(url+'/#/login');await page.getByLabel('Correo electrónico',{exact:true}).fill(u.email);await page.getByLabel('Contraseña',{exact:true}).fill('Discovery-test-123');await page.getByRole('button',{name:'Iniciar sesión'}).click();await page.getByRole('button',{name:'Mi perfil',exact:true}).waitFor();
+  await page.goto(url+'/#/iglesia/'+id);await page.getByText('Experiencias y Testimonios',{exact:true}).click();await page.getByRole('button',{name:'Reportar contenido',exact:true}).click();await page.getByLabel('Motivo del reporte',{exact:true}).fill('Quiero corregir información de este relato.');await page.getByRole('button',{name:'Enviar reporte',exact:true}).click();await page.getByText('Reporte enviado a revisión.',{exact:true}).waitFor();
+  await page.locator('.detail-banner').getByRole('button',{name:'Establecer como Mi iglesia',exact:true}).click();const own=page.getByRole('region',{name:'Mis experiencias',exact:true});
+  await page.getByRole('heading',{name:'Comparte tu experiencia',exact:true}).waitFor();await own.getByRole('button',{name:'Corregir experiencia',exact:true}).click();await own.getByLabel('Experiencia corregida',{exact:true}).fill('Esta es mi experiencia corregida con detalles suficientes sobre mi participación en la comunidad.');await own.getByRole('button',{name:'Enviar corrección a revisión',exact:true}).click();await own.getByText('Pendiente de revisión',{exact:true}).waitFor();
+  page.once('dialog',d=>d.accept());await own.getByRole('button',{name:'Retirar experiencia',exact:true}).click();await own.getByText('Retirada',{exact:true}).waitFor();
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
+  await page.goto(url+'/#/login');await page.getByLabel('Correo electrónico',{exact:true}).fill('moderator@example.test');await page.getByLabel('Contraseña',{exact:true}).fill('Moderator-test-123');await page.getByRole('button',{name:'Iniciar sesión'}).click();await page.getByRole('button',{name:'Mi perfil',exact:true}).waitFor();
+  await page.goto(url+'/#/administracion/experiencias');await page.getByRole('checkbox',{name:'Solo experiencias reportadas'}).check();await page.getByRole('heading',{name:'Mi primera visita',exact:true}).waitFor();await page.getByLabel('Motivo para Mi primera visita',{exact:true}).fill('El autor retiró su relato y se cierra el reporte.');await page.getByRole('button',{name:'Resolver reporte sin cambiar publicación'}).click();await page.getByText('Reporte resuelto.',{exact:true}).waitFor();
   assert.deepEqual(errors,[]);
   console.log('EXPERIENCES OK: visitante, login, envío conservado ante fallo, pendiente privada, moderación admin y publicación pública, móvil.');
 }

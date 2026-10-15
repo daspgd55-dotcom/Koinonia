@@ -95,6 +95,7 @@ async function main() {
     await page.getByRole('link',{name:'Administración',exact:true}).waitFor();
     await page.keyboard.press('Escape');
   }
+  await page.getByRole('button',{name:'Historial de descartadas',exact:true}).click();await page.getByRole('button',{name:'Recuperar comunidad',exact:true}).click();await page.getByText('No hay comunidades descartadas en esta página.',{exact:true}).waitFor();assert.equal(await Interaction.countDocuments({user:u._id,type:'discarded'}),0);await page.getByRole('button',{name:'Historial de descartadas',exact:true}).click();
   await page.setViewportSize({width:320,height:740});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   await page.getByRole('button',{name:'Mi perfil',exact:true}).click();

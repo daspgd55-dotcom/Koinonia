@@ -69,15 +69,10 @@ exports.status = async (req, res) => {
   if (req.user.role !== 'admin' && (status === 'verified' || !church.metadata.firstPublishedByAdminAt)) throw new HttpError(403, 'ADMIN_PUBLICATION_REQUIRED', 'Un administrador debe publicar primero esta comunidad. Solo el administrador puede verificarla.');
   if (req.user.role === 'admin' && status !== 'draft' && !church.metadata.firstPublishedByAdminAt) church.metadata.firstPublishedByAdminAt = new Date();
   if (status !== 'draft') {
-    const missing = [];
-    for (const [key, value] of Object.entries({
-      address: church.location.address, denomination: church.christianIdentity.denomination,
-      doctrine: church.doctrine.officialStatement, meetings: church.meetings.length || church.meetingTypes?.length,
-      leader: church.leadership.mainLeader?.name, source: church.verification.source, authorized: church.verification.authorized
-    })) if (!value) missing.push(key);
+    const missing = require('../services/church-quality.service').checklist(church).missing.map(x=>x.key);
     if (missing.length) throw new HttpError(400, 'INCOMPLETE_CHURCH', 'Faltan datos esenciales para publicar', missing);
   }
-  if(status!=='draft'&&church.publicationRequest?.status==='pending')church.publicationRequest.status='resolved';
+  if((status==='verified'||status==='published'&&!church.publicationRequest?.verificationRequested)&&church.publicationRequest?.status==='pending')church.publicationRequest.status='resolved';
   church.metadata.dataStatus = status; church.metadata.version += 1; church.updatedBy = req.user._id;
   await church.save(); res.json({ data: church });
 };
@@ -133,7 +128,10 @@ function normalizeDetails(data) {
 
 exports.requestPublication=async(req,res)=>{
  const church=await svc.managed(req);svc.checkVersion(req,church);
- if(church.metadata.firstPublishedByAdminAt||church.metadata.dataStatus!=='draft')throw new HttpError(409,'ALREADY_PUBLISHED','Esta comunidad ya cuenta con publicación. Gestiona su visibilidad desde el panel.');
- if(church.publicationRequest?.status!=='pending'){church.publicationRequest={status:'pending',requestedBy:req.user._id,requestedAt:new Date()};church.metadata.version+=1;church.updatedBy=req.user._id;await church.save();}
+ const {verificationRequested=false}=v.parse(v.z.strictObject({verificationRequested:v.z.boolean().optional()}),req.body||{});
+ if(church.metadata.dataStatus==='verified'||!verificationRequested&&(church.metadata.firstPublishedByAdminAt||church.metadata.dataStatus!=='draft'))throw new HttpError(409,'ALREADY_PUBLISHED','La comunidad ya tiene este estado.');
+ if(church.publicationRequest?.status!=='pending'||verificationRequested&&!church.publicationRequest.verificationRequested){church.publicationRequest={status:'pending',verificationRequested,requestedBy:req.user._id,requestedAt:new Date()};church.metadata.version+=1;church.updatedBy=req.user._id;await church.save();}
  res.json({data:church});
 };
+
+exports.checklist=async(req,res)=>res.set('Cache-Control','no-store').json({data:require('../services/church-quality.service').checklist(await svc.managed(req,{includeInactive:true}))});
