@@ -6,13 +6,17 @@ function nextOccurrence(day,time,now=new Date()){
  let date=new Date(Date.UTC(local.getUTCFullYear(),local.getUTCMonth(),local.getUTCDate()+delta,h,m)+offset);
  if(date<=now)date=new Date(date.getTime()+7*86400000);return date;
 }
+function needsCoordination(note=''){
+ const text=note.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+ return /\b(mensual(?:es)?|quincenal(?:es)?|bimestral(?:es)?|trimestral(?:es)?|anual(?:es)?|esporadic[ao]s?|ocasional(?:es)?)\b|\b(del|al|cada) mes\b|cada (dos|2|tres|3|cuatro|4) semanas|semana por medio|semanas alternas/.test(text);
+}
 function options(church,now=new Date()){
  const found=new Map();for(const meeting of church.meetings||[]){
- // El piloto solo infiere ocurrencias semanales sin variaciones declaradas.
- if(meeting.modality==='Online'||meeting.modality==='Virtual'||meeting.frequencyNotes?.trim())continue;
+ // Las notas informativas no invalidan horarios semanales. Frecuencias no semanales explícitas requieren coordinación.
+ if(meeting.modality==='Online'||meeting.modality==='Virtual'||needsCoordination(meeting.frequencyNotes))continue;
  for(const schedule of meeting.schedule||[]){const startsAt=nextOccurrence(schedule.day,schedule.startTime,now);if(!startsAt)continue;
  const optionKey=createHash('sha256').update(JSON.stringify([meeting.type,schedule.day,schedule.startTime,meeting.modality||'',meeting.addressOrUrl||'',schedule.durationMinutes||120])).digest('hex');
- found.set(optionKey,{optionKey,meeting:meeting.type||'Reunión',day:schedule.day,time:schedule.startTime,address:meeting.addressOrUrl||church.location?.address||'',startsAt:startsAt.toISOString(),endsAt:new Date(startsAt.getTime()+(schedule.durationMinutes||120)*60000).toISOString(),timezone:'UTC-03:00'});}}
+ found.set(optionKey,{optionKey,meeting:meeting.type||'Reunión',day:schedule.day,time:schedule.startTime,address:meeting.addressOrUrl||church.location?.address||'',startsAt:startsAt.toISOString(),endsAt:new Date(startsAt.getTime()+(schedule.durationMinutes||120)*60000).toISOString(),timezone:'UTC-03:00',frequencyNotes:meeting.frequencyNotes||''});}}
  return [...found.values()].sort((a,b)=>a.startsAt.localeCompare(b.startsAt));
 }
 const state=(visit,now=new Date())=>visit.status==='cancelled'?'cancelled':new Date(visit.endsAt)<=now?'completed':visit.status;

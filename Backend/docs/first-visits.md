@@ -13,7 +13,7 @@ Mis visitas está en Mi perfil y en su desplegable. Administración > Primeras v
 ## Reglas de fecha y estado
 
 - La API calcula la próxima ocurrencia **estrictamente futura** de día/hora en UTC−3, independientemente de la zona del servidor o navegador. A la hora exacta se ofrece la semana siguiente.
-- Se ofrecen reuniones semanales presenciales/híbridas (o registros antiguos sin modalidad). Las reuniones Online y aquellas con notas de variación de frecuencia no se convierten automáticamente en fechas semanales: usar canales oficiales. Esto evita inventar fechas para encuentros mensuales o excepcionales.
+- Se ofrecen reuniones semanales presenciales/híbridas (o registros antiguos sin modalidad). Las reuniones Online y aquellas con notas que declaran frecuencia no semanal (mensual, quincenal, etc.) no se convierten automáticamente en fechas semanales: usar canales oficiales. Las notas semanales o informativas no bloquean opciones y se muestran al visitante. El texto libre no es un calendario de excepciones; se recomienda confirmar cualquier variación por canales oficiales.
 - Se deduplican horarios equivalentes mediante una clave estable de su contenido. No se confía en índices de arreglos enviados por el cliente.
 - El cliente confirma clave, fecha y versión de ficha; un cambio devuelve 409 y exige volver a seleccionar. Se guarda una instantánea de iglesia, visitante, reunión, dirección, fecha y hora. Las ediciones posteriores de la ficha no la mueven.
 - Finaliza al llegar a la hora de término (duración publicada; si falta, 120 minutos). `completed` se calcula al consultar, por lo que no depende de cron.
