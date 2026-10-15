@@ -65,7 +65,7 @@ async function search(q, excluded = [], cap) {
     const result = await Church.aggregate([
       { $geoNear: { near: { type: 'Point', coordinates: [q.lng, q.lat] }, key: 'location.coordinates', distanceField: 'distanceMeters',
         maxDistance: (q.radius || 5) * 1000, spherical: true, query: filter } },
-      { $sort: { distanceMeters: 1, _id: 1 } },
+      { $sort: q.sort === 'name' ? { 'identification.name': 1, _id: 1 } : { distanceMeters: 1, _id: 1 } },
       { $facet: { rows: [{ $skip: (page - 1) * limit }, { $limit: limit }], total: [{ $count: 'value' }] } }
     ]);
     rows = result[0].rows; total = result[0].total[0]?.value || 0;

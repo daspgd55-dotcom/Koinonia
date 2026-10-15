@@ -67,3 +67,25 @@ Remove-Item Env:BROWSER_CHANNEL
 La prueba crea cuentas e iglesias ficticias en su base temporal, recorre creación, validación, edición, publicación, verificación, desactivación, restauración, conflicto entre sesiones, filtros, paginación y cierre de sesión. Comprueba también el ancho móvil y que no se almacenen tokens en localStorage. Guarda capturas en `.cache/ui-check/desktop-list.png`, `desktop-editor.png` y `mobile.png`. Cierra navegador, servidor y MongoDB temporal al terminar.
 
 `seed.js` vuelve a exigir un administrador activo existente y solo añade los tres registros ficticios si faltan. No crea cuentas, cambia contraseñas ni sobrescribe iglesias existentes. No necesitas ejecutarlo de nuevo para usar este panel.
+
+
+## Buscar iglesias: filtros y presentación
+
+`GET /api/churches/search` acepta `sort=name|distance`. Sin `sort`, conserva el comportamiento anterior: nombre sin coordenadas y cercanía con coordenadas. `distance` requiere `lat` y `lng`; el radio sigue aplicándose incluso al ordenar por nombre. El orden se calcula en el servidor antes de paginar, con `_id` como desempate.
+
+En escritorio se muestran los filtros laterales; en móvil están cerrados inicialmente y se cierran al aplicar. El nombre y los filtros comparten una búsqueda explícita: los cambios pendientes se indican sin sustituir los resultados anteriores. Las etiquetas permiten retirar un criterio, y retirar una rama retira también su denominación dependiente. El selector de orden se aplica inmediatamente sobre los filtros ya aplicados. Volver desde una ficha conserva la búsqueda.
+
+Las tarjetas usan fotos públicas (banner, instalaciones o imágenes antiguas sin categoría), respetando su punto focal, con ilustración de respaldo si faltan o fallan. Muestran un horario informado y hasta dos actividades. El mapa indica las ubicaciones de la página actual y el total de resultados.
+
+Verificación local: `cd Frontend`, `npm run test:explore`, `npm run build`; en Backend, `npm test`. La prueba de búsqueda utiliza MongoDB temporal y navegador aislado; cubre filtros removibles, datos de tarjetas, orden, paginación, GPS permitido/denegado, mapa sin red, reintento, regreso desde ficha y panel móvil.
+
+
+## Para ti y navegación móvil
+
+La vista presenta una comunidad a la vez. El resumen de preferencias y el detalle de coincidencias se despliegan a petición; las coincidencias principales, diferencias e información faltante permanecen visibles. Editar preferencias lleva directamente a `#/configuracion`. `Ver otra` no registra una decisión; Guardar y Descartar conservan su comportamiento y permiten deshacer la última acción.
+
+La consulta por descripción es solo un aviso «Próximamente», sin formulario ni llamada a un proveedor. La ruta antigua `#/descubrir/semantica` muestra la misma vista de descubrimiento con el aviso compacto. No cambia el contrato ni el cálculo del recomendador.
+
+Hasta 800 px la navegación mantiene Buscar iglesias, Para ti y Mi perfil (Iniciar sesión para visitantes) a la vista. Menú agrupa Inicio, Administración cuando corresponde, registro o cierre de sesión. Se cierra al navegar, al pulsar Escape o al hacer clic fuera; Escape devuelve el foco al botón.
+
+Ejecutar `npm run test:discover` y `npm run test:explore` en Frontend. Se verifican visitantes y tres roles, explicaciones y datos faltantes, navegación móvil, guardado/deshacer/descarte persistente, Ver otra sin interacción, ausencia de formulario semántico y conservación de contexto.

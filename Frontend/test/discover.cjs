@@ -25,17 +25,28 @@ async function main() {
 
   const request=backend('supertest'),Church=backend('./src/models/church.model'),Interaction=backend('./src/models/interaction.model');
   await request(server).post('/api/auth/register').send({email:'discovery@example.test',password:'Discovery-test-123'}).expect(201);
-  const u=await User.findOneAndUpdate({email:'discovery@example.test'},{$set:{'onboarding.status':'completed','preferences.denominations':['Bautista'],'criterionModes.denominations':'preferred'}},{returnDocument:'after'});
+  const u=await User.findOneAndUpdate({email:'discovery@example.test'},{$set:{'onboarding.status':'completed','preferences.denominations':['Bautista'],'criterionModes.denominations':'preferred','preferences.activities':['Jóvenes'],'criterionModes.activities':'preferred'}},{returnDocument:'after'});
   const churches=await Church.create(['Bautista','Metodista','Bautista'].map((denomination,i)=>({identification:{name:'Comunidad Descubrimiento '+(i+1),description:'Presentación institucional de prueba.'},location:{commune:'Santiago',coordinates:{type:'Point',coordinates:[-70.65,-33.45]}},christianIdentity:{denomination},meetingTypes:['Grupo pequeño / célula'],metadata:{dataStatus:'published',testData:true},createdBy:u._id})));
   await page.goto(url+'/#/descubrir');
-  await page.getByRole('heading',{name:'Conoce tu próxima comunidad.'}).waitFor();
+  await page.getByRole('heading',{name:'Comunidades para conocer'}).waitFor();
   await page.getByText('Comunidad 1 de 3',{exact:false}).waitFor();
   assert.equal(await page.getByRole('button',{name:'Guardar',exact:true}).isDisabled(),true);
   await page.getByRole('navigation',{name:'Navegación principal'}).getByRole('link',{name:'Iniciar sesión',exact:true}).click();
   await page.getByLabel('Correo electrónico',{exact:true}).fill(u.email);await page.getByLabel('Contraseña',{exact:true}).fill('Discovery-test-123');await page.getByRole('button',{name:'Iniciar sesión'}).click();
   await page.getByRole('link',{name:'Para ti',exact:true}).click();
   await page.getByRole('heading',{name:'Comunidad Descubrimiento 1',exact:true}).waitFor();
-  await page.getByText('Coincide',{exact:true}).waitFor();
+  await page.getByText('Coincide con tu preferencia de denominación (Bautista).',{exact:true}).waitFor();
+  await page.getByText('1 criterio sin información',{exact:true}).waitFor();
+  await page.locator('.match-details summary').click();
+  await page.getByText('Falta información para confirmar actividades (Jóvenes).',{exact:false}).waitFor();
+  await page.locator('.match-details summary').click();
+  await page.locator('.discovery-preferences summary').click();
+  assert.equal(await page.getByRole('link',{name:'Editar preferencias',exact:true}).getAttribute('href'),'#/configuracion');
+  await page.locator('.discovery-preferences summary').click();
+  await page.getByRole('button',{name:'Ver otra',exact:false}).click();
+  await page.getByText('Comunidad 2 de 3',{exact:false}).waitFor();
+  assert.equal(await Interaction.countDocuments({user:u._id}),0);
+  await page.reload();await page.getByRole('heading',{name:'Comunidad Descubrimiento 1',exact:true}).waitFor();
   await page.screenshot({path:path.join(output,'13-discovery-desktop.png'),fullPage:true});
   await page.getByRole('link',{name:'Ver perfil completo'}).click();
   await page.getByRole('heading',{name:'Comunidad Descubrimiento 1',exact:true}).waitFor();
@@ -53,15 +64,32 @@ async function main() {
   await page.setViewportSize({width:390,height:844});
   await page.screenshot({path:path.join(output,'14-discovery-mobile.png'),fullPage:true});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-  await page.getByRole('link',{name:'Consulta semántica · LLM/RAG',exact:true}).click();
-  await page.getByLabel('Describe la comunidad que te gustaría conocer').fill('Busco jóvenes cerca de Santiago');
-  await page.getByRole('status').filter({hasText:'pendiente de integración'}).waitFor();
-  assert.equal(await page.getByRole('button',{name:'Consultar con LLM/RAG'}).isDisabled(),true);
+  await page.getByText('Búsqueda por descripción · Próximamente',{exact:true}).waitFor();
+  assert.equal(await page.locator('.semantic-panel,textarea').count(),0);
+  assert.equal(await page.locator('.discovery-preferences').getAttribute('open'),null);
+  assert.ok((await page.locator('header').boundingBox()).height<125);
+  assert.ok((await page.locator('.discovery-card').boundingBox()).y<500);
+  for(const label of ['Buscar iglesias','Para ti','Mi perfil'])assert.ok(await page.getByRole('navigation',{name:'Navegación principal'}).getByRole('link',{name:label,exact:true}).isVisible());
+  await page.getByRole('button',{name:'Menú',exact:false}).click();
+  await page.getByRole('button',{name:'Cerrar sesión',exact:true}).waitFor();
+  await page.keyboard.press('Escape');
+  assert.equal(await page.getByRole('button',{name:'Menú',exact:false}).getAttribute('aria-expanded'),'false');
+  await page.goto(url+'/#/descubrir/semantica');
+  await page.getByText('Búsqueda por descripción · Próximamente',{exact:true}).waitFor();
+  assert.equal(await page.locator('textarea').count(),0);
   await page.screenshot({path:path.join(output,'audit-semantic-mobile.png'),fullPage:true});
-  await page.getByRole('link',{name:'Recomendación tradicional',exact:true}).click();
-  await page.getByRole('link',{name:'Consulta semántica · LLM/RAG',exact:true}).click();
-  assert.equal(await page.getByLabel('Describe la comunidad que te gustaría conocer').inputValue(),'Busco jóvenes cerca de Santiago');
-  for(const role of ['representative','admin']){await User.updateOne({_id:u._id},{$set:{role}});await page.reload();await page.getByRole('heading',{name:'Tu búsqueda, en tus palabras.'}).waitFor();await page.getByRole('link',{name:'Recomendación tradicional',exact:true}).click();await page.getByRole('heading',{name:'Comunidad Descubrimiento 3',exact:true}).waitFor();await page.getByRole('link',{name:'Consulta semántica · LLM/RAG',exact:true}).click();}
+  for(const role of ['representative','admin']){
+    await User.updateOne({_id:u._id},{$set:{role}});await page.reload();
+    await page.getByRole('heading',{name:'Comunidad Descubrimiento 3',exact:true}).waitFor();
+    await page.getByRole('button',{name:'Menú',exact:false}).click();
+    await page.getByRole('link',{name:'Administración',exact:true}).waitFor();
+    await page.keyboard.press('Escape');
+  }
+  await page.setViewportSize({width:320,height:740});
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+  await page.getByRole('button',{name:'Menú',exact:false}).click();
+  await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
+  await page.getByRole('link',{name:'Iniciar sesión',exact:true}).first().waitFor();
   assert.deepEqual(errors,[]);
   console.log('DISCOVERY OK: visitantes, tres roles, ranking, ficha/regreso, guardado/deshacer/descarte persistente, móvil y estado semántico honesto.');
 }

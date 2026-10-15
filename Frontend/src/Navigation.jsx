@@ -1,0 +1,8 @@
+import React,{useEffect,useRef,useState} from 'react';
+import Avatar from './Avatar';
+export default function Navigation({route,user,logout,busy,children}){
+ const [open,setOpen]=useState(false),root=useRef(null),toggle=useRef(null);
+ useEffect(()=>{setOpen(false);},[route,user?.id]);
+ useEffect(()=>{if(!open)return;const close=e=>{if(!root.current?.contains(e.target))setOpen(false);};document.addEventListener('pointerdown',close);return()=>document.removeEventListener('pointerdown',close);},[open]);
+ return <header ref={root} onKeyDown={e=>{if(e.key==='Escape'&&open){setOpen(false);toggle.current?.focus();}}}><div className="nav-wrap compact-navigation">{children}<button ref={toggle} className="mobile-nav-toggle" aria-expanded={open} aria-controls="secondary-navigation" onClick={()=>setOpen(x=>!x)}>Menú {open?'−':'+'}</button><nav aria-label="Navegación principal"><a href="#/explorar" aria-current={route==='/explorar'?'page':undefined}>Buscar iglesias</a><a href="#/descubrir" aria-current={route.startsWith('/descubrir')?'page':undefined}>Para ti</a>{user?<a href="#/perfil" aria-current={route==='/perfil'?'page':undefined}><Avatar url={user.avatarUrl} decorative/>Mi perfil</a>:<a href="#/login">Iniciar sesión</a>}<div id="secondary-navigation" className={'secondary-navigation'+(open?' is-open':'')}><a href="#/" aria-current={route==='/'?'page':undefined}>Inicio</a>{user?<>{['admin','representative'].includes(user.role)&&<a href="#/administracion" aria-current={route.startsWith('/administracion')?'page':undefined}>Administración</a>}<button className="nav-button" onClick={()=>{setOpen(false);logout();}} disabled={busy}>Cerrar sesión</button></>:<a className="nav-cta" href="#/registro">Crear cuenta</a>}</div></nav></div></header>;
+}

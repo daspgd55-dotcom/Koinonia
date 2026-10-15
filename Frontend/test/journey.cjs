@@ -24,6 +24,7 @@ async function main() {
   await page.goto(url); await page.getByRole('link',{name:'Crear mi perfil'}).waitFor();
   await page.screenshot({path:path.join(output,'audit-home-desktop.png'),fullPage:true});
   await page.setViewportSize({width:390,height:844});await page.screenshot({path:path.join(output,'audit-home-mobile.png'),fullPage:true});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);await page.setViewportSize({width:1440,height:1000});
+  if(!await page.getByRole('link',{name:'Crear cuenta',exact:true}).isVisible())await page.getByRole('button',{name:'Menú',exact:false}).click();
   await page.getByRole('link',{name:'Crear cuenta',exact:true}).click();
   await page.getByLabel('Nombre',{exact:false}).fill('María');
   await page.screenshot({path:path.join(output,'audit-auth.png'),fullPage:true});
@@ -56,12 +57,13 @@ async function main() {
   let user=await User.findOne({email:'journey@example.test'}).lean();
   assert.equal(user.onboarding.status,'skipped'); assert.equal(user.onboarding.version,3);
   assert.equal(user.criterionModes.denominations,'preferred');
+  if(!await page.getByRole('button',{name:'Cerrar sesión'}).isVisible())await page.getByRole('button',{name:'Menú',exact:false}).click();
   await page.getByRole('button',{name:'Cerrar sesión'}).click();
   await page.getByRole('link',{name:'Iniciar sesión',exact:true}).click();
   await page.getByLabel('Correo electrónico',{exact:true}).fill('journey@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('Test-web-password-123');
   await page.getByRole('button',{name:'Iniciar sesión'}).click();
-  await page.getByRole('heading',{name:'Comunidades para conocer'}).waitFor();
+  await page.getByRole('heading',{name:'Resultados'}).waitFor();
   await page.getByRole('link',{name:'Continuar encuesta'}).click();
   await page.getByRole('heading',{name:'¿Con qué rama te identificas?'}).waitFor();
   assert.equal(await page.getByRole('button',{name:'Metodista'}).getAttribute('aria-pressed'),'true');
@@ -86,7 +88,7 @@ async function main() {
   await page.screenshot({path:path.join(output,'02-location-mobile.png'),fullPage:true});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   await page.getByRole('button',{name:'Terminar y explorar iglesias'}).click();
-  await page.getByRole('heading',{name:'Comunidades para conocer'}).waitFor();
+  await page.getByRole('heading',{name:'Resultados'}).waitFor();
   await page.getByRole('link',{name:'Mi perfil',exact:true}).click();
   await page.getByRole('heading',{name:'Mi perfil',exact:true}).waitFor();
   user=await User.findById(user._id).lean();
@@ -168,7 +170,7 @@ async function main() {
   await page.getByLabel('Correo electrónico',{exact:true}).fill('journey@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('Test-web-password-123');
   await page.getByRole('button',{name:'Iniciar sesión'}).click();
-  await page.getByRole('heading',{name:'Comunidades para conocer'}).waitFor();
+  await page.getByRole('heading',{name:'Resultados'}).waitFor();
   await page.getByRole('link',{name:'Mi perfil',exact:true}).click();
   await page.getByRole('button',{name:'Editar Tu ubicación',exact:true}).click();
   assert.equal(await page.getByLabel('Comuna de interés',{exact:true}).inputValue(),'Ñuñoa');
@@ -197,8 +199,10 @@ async function main() {
   assert.equal(await page.getByRole('button',{name:'Portugués (guardada)'}).getAttribute('aria-pressed'),'true');
   assert.equal(await page.locator('select').count(),0);
   assert.equal(await page.evaluate(()=>JSON.stringify(sessionStorage).includes('Test-web-password-123')),false);
+  if(!await page.getByRole('button',{name:'Cerrar sesión'}).isVisible())await page.getByRole('button',{name:'Menú',exact:false}).click();
   await page.getByRole('button',{name:'Cerrar sesión'}).click();
   assert.equal(await page.evaluate(()=>Object.keys(sessionStorage).filter(k=>k.startsWith('koinonia-')).length),0);
+  if(!await page.getByRole('link',{name:'Crear cuenta',exact:true}).isVisible())await page.getByRole('button',{name:'Menú',exact:false}).click();
   await page.getByRole('link',{name:'Crear cuenta',exact:true}).click();
   await page.getByLabel('Correo electrónico',{exact:true}).fill('other-web@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('Test-web-password-456');
@@ -213,7 +217,7 @@ async function main() {
 
   await page.getByRole('button',{name:'Aún no sé dónde buscar'}).click();
   await page.getByRole('button',{name:'Terminar y explorar iglesias'}).click();
-  await page.getByRole('heading',{name:'Comunidades para conocer'}).waitFor();
+  await page.getByRole('heading',{name:'Resultados'}).waitFor();
   await page.getByRole('link',{name:'Mi perfil',exact:true}).click();
   await page.getByRole('heading',{name:'Mi perfil',exact:true}).waitFor();
   const other=await User.findOne({email:'other-web@example.test'}).lean();
@@ -231,6 +235,7 @@ async function main() {
   await page.getByLabel('Contraseña',{exact:true}).fill('A-new-password-for-web-123');
   await page.getByRole('button',{name:'Iniciar sesión →',exact:true}).click();
   await page.getByRole('link',{name:'Mi perfil',exact:true}).waitFor();
+  if(!await page.getByRole('button',{name:'Cerrar sesión',exact:true}).isVisible())await page.getByRole('button',{name:'Menú',exact:false}).click();
   await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
   await page.goto(url+'/#/registro');
   await page.getByRole('link',{name:'¿Olvidaste tu contraseña?',exact:true}).click();

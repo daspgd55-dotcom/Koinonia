@@ -42,12 +42,14 @@ const church = z.strictObject({
 const queryNumber = (min, max, fallback) => z.preprocess(v => typeof v === 'string' && v.trim() !== '' ? Number(v) : v,
   z.number().min(min).max(max).optional().default(fallback));
 const search = z.strictObject({
+  sort: z.enum(['name','distance']).optional(),
   q: text.optional(), commune: text.optional(), denomination: text.optional(), branch: text.optional(),
   doctrine: text.optional(), activity: text.optional(), language: text.optional(), day: days.optional(),
   lat: queryNumber(-90, 90, undefined), lng: queryNumber(-180, 180, undefined),
   radius: queryNumber(0.01, 200, undefined), page: queryNumber(1, 10000, 1).refine(Number.isInteger),
   limit: queryNumber(1, 100, 20).refine(Number.isInteger)
 }).superRefine((v, ctx) => {
+  if (v.sort === 'distance' && (v.lat === undefined || v.lng === undefined)) ctx.addIssue({ code: 'custom', message: 'La cercanía requiere lat y lng' });
   if ([v.lat, v.lng, v.radius].some(x => x !== undefined) && (v.lat === undefined || v.lng === undefined))
     ctx.addIssue({ code: 'custom', message: 'lat y lng deben proporcionarse juntos' });
 });

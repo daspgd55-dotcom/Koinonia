@@ -99,6 +99,15 @@ test('Geografía real: radio en km, orden por distancia y filtros combinados', a
   const wide = await request(app).get('/api/churches/nearby?lat=-33.45&lng=-70.65&radius=50').expect(200);
   assert.deepEqual(wide.body.data.map(c => c._id), [nearId, farId]);
   assert.ok(wide.body.data[1].distanceMeters > 20000);
+  const alphabetical = await request(app).get('/api/churches/search?lat=-33.45&lng=-70.65&radius=50&sort=name&limit=1').expect(200);
+  const expected = [...wide.body.data].sort((a,b)=>a.identification.name.localeCompare(b.identification.name));
+  assert.equal(alphabetical.body.data[0]._id, expected[0]._id);
+  const second = await request(app).get('/api/churches/search?lat=-33.45&lng=-70.65&radius=50&sort=name&limit=1&page=2').expect(200);
+  assert.equal(second.body.data[0]._id, expected[1]._id);
+  const closest = await request(app).get('/api/churches/search?lat=-33.45&lng=-70.65&radius=50&sort=distance').expect(200);
+  assert.deepEqual(closest.body.data.map(c=>c._id),[nearId,farId]);
+  await request(app).get('/api/churches/search?sort=distance').expect(400);
+  await request(app).get('/api/churches/search?sort=invalid').expect(400);
   const none = await request(app).get('/api/churches/search?activity=Inexistente').expect(200);
   assert.equal(none.body.pagination.total, 0);
   const literal = await request(app).get('/api/churches/search?q=.*').expect(200);
