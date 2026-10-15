@@ -6,7 +6,7 @@ export function MembershipButton({church}){
  if(!user)return null;
  const current=String(user.membershipChurch||'')===church._id;
  async function assign(){if(user.membershipChurch&&!current&&!window.confirm('¿Cambiar tu iglesia de pertenencia a '+church.identification.name+'?'))return;setBusy(true);setError('');try{onUser((await api('/users/me/membership',{token,method:'PUT',body:{churchId:current?null:church._id}})).data);}catch(e){setError(e.message);}finally{setBusy(false);}}
- return <div className="membership-choice">{current?<><p>Esta es tu iglesia de pertenencia.</p><button className="text-button" disabled={busy} onClick={assign}>Dejar de asociar esta iglesia</button></>:<button className="secondary" disabled={busy} onClick={assign}>{busy?'Guardando…':'Establecer como Mi iglesia'}</button>}{error&&<p role="alert">{error}</p>}</div>;
+ return <div className="membership-choice">{current?<><p>Esta es la iglesia a la que Perteneces.</p><button className="text-button" disabled={busy} onClick={assign}>Dejar de asociar esta iglesia</button></>:<button className="secondary" disabled={busy} onClick={assign}>{busy?'Guardando…':'Establecer como Mi iglesia'}</button>}{error&&<p role="alert">{error}</p>}</div>;
 }
 export default function Membership(){
  const {user,token,onUser}=useContext(SessionContext),[current,setCurrent]=useState(null),[query,setQuery]=useState(''),[search,setSearch]=useState(null),[rows,setRows]=useState([]),[page,setPage]=useState(1),[pages,setPages]=useState(1),[error,setError]=useState(''),[loading,setLoading]=useState(false);

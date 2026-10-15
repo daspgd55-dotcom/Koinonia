@@ -18,7 +18,7 @@ const ChurchSchema = new Schema({
   community: { musicalStyles: [{ type: String, enum: musicalStyles }], culturalStyle: { type: String, enum: culturalStyles }, targetGroups: [String], ministries: [String], activities: [String], description: String, memberRange: String },
   leadership: { mainLeader: Leader, otherLeaders: [Leader] },
   contact: { website: String, instagram: String, facebook: String, youtube: String, email: String, phone: String },
-  firstVisit: { welcomeSupport: { type: String, enum: ['yes', 'no', 'partial', 'unknown'] }, instructions: String, newVisitorSupport: Boolean, welcomeProcess: String },
+  firstVisit: { requestsEnabled: {type:Boolean,default:false}, welcomeSupport: { type: String, enum: ['yes', 'no', 'partial', 'unknown'] }, instructions: String, newVisitorSupport: Boolean, welcomeProcess: String },
   media: [embedded({ leaderId: String, frame: {type:String,enum:['landscape','wide','square','circle','portrait']}, type: { type: String, enum: ['image', 'video'] }, category: { type: String, enum: ['facilities','meetings','activities','representatives','banner'] }, url: String, title: String, source: String, focalX: {type:Number,min:0,max:100}, focalY: {type:Number,min:0,max:100} })],
   externalProfile: { type: require('./external-profile.schema'), default: undefined },
   importInfo: { schemaVersion: String, batchId: String, sourceFile: String, sourceRow: Number, importedAt: Date, issues: [String] },
