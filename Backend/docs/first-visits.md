@@ -40,7 +40,7 @@ Los listados devuelven `pagination.total`. Los avisos devuelven `version` para c
 
 Colección `visits`, con eventos de notificación embebidos. Cambiar estado e insertar su evento ocurre en **una escritura atómica**: no hay una visita confirmada sin su notificación por una segunda escritura fallida. Índice único parcial `(church, visitor, optionKey, startsAt)` para avisos activos; permite volver a avisar después de cancelar. El seguimiento usa condición atómica `followupSent:false` y IDs propios por evento, evitando duplicados con consultas concurrentes.
 
-Lectura de notificaciones por destinatario; los eventos de comunidad se autorizan mediante asignaciones vigentes, no una lista antigua copiada. Los avisos y mensajes no se incorporan a la ficha pública. No contienen correo, contraseña, ubicación personal ni preferencias del perfil. El nombre público se guarda como instantánea; si no hay nombre/usuario se muestra Visitante.
+Lectura privada para el visitante y compartida para el equipo de la comunidad; los eventos de comunidad se autorizan mediante asignaciones vigentes, no una lista antigua copiada. Los avisos y mensajes no se incorporan a la ficha pública. No contienen correo, contraseña, ubicación personal ni preferencias del perfil. El nombre público se guarda como instantánea; si no hay nombre/usuario se muestra Visitante.
 
 No hay borrado automático de historial en esta versión. No se ha incorporado aún una política de retención configurable, equipo de bienvenida con permisos específicos, correos ni notificaciones push.
 
@@ -68,3 +68,11 @@ Automatizado, sin producción: `cd Backend; npm test` incluye `test/visits.test.
 - No hay correos, push ni asignación de equipo de bienvenida.
 
 Prueba adicional: crea dos horarios, confirma recepción y cambia la reunión desde Mis visitas. Verifica mensaje conservado, historial anterior, recepción pendiente y notificación del cambio. Prueba filtro Sin confirmar, Recepción confirmada y Próximos 7 días. En móvil revisa campana, cierre con Escape y ausencia de desplazamiento horizontal.
+
+
+### Lectura compartida de avisos
+Abrir una notificación desde la campana o su enlace en Notificaciones marca el evento como leído antes de navegar. El contador se actualiza inmediatamente en esa sesión.
+Marcar leído, confirmar recepción o informar cambio desde administración acusa lectura de los eventos del equipo existentes. Leer no confirma recepción: el filtro Sin confirmar sigue reflejando ese estado independiente.
+Los representantes actualmente asignados y administradores comparten el estado de lectura de cada evento de comunidad. La identidad de quien lo leyó queda en readBy como auditoría; no es una lista de destinatarios. Los eventos privados del visitante mantienen su lectura individual.
+Una reprogramación genera un evento nuevo no leído y reinicia recepción. No queda absorbida por lecturas anteriores. La compatibilidad interpreta los avisos antiguos ya leídos/recibidos sin reactivar la alerta inicial.
+Bandeja de visitas y contador se refrescan cada 15 segundos mientras se usan, y al recuperar foco. Las listas conservan mensajes en edición. La sincronización entre sesiones no requiere volver a iniciar sesión.

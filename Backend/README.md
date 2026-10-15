@@ -87,6 +87,8 @@ Crea tres comunidades **ficticias**, sin borrar ni sobrescribir registros existe
 
 ## API
 
+El backend de RF-05 dispone de eventos independientes de reuniones y primeras visitas: [contrato de eventos, permisos, fechas y pruebas](docs/events.md). Incluye borradores, publicación, cancelación y consulta pública; interfaces, asistencia y notificaciones de eventos permanecen pendientes.
+
 Las respuestas utilizan `{ "data": ... }`; las listas incorporan `pagination` donde corresponde. Login incluye además `token`, `tokenType` y `expiresIn`. Los errores tienen `{ "error": { "code", "message", "details"? } }`. Las eliminaciones exitosas responden `204` sin cuerpo.
 
 | Método y ruta, relativas a `/api` | Acceso | Operación |

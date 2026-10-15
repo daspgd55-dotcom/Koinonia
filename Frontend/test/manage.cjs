@@ -85,7 +85,7 @@ async function main() {
   await page.getByLabel('Tipo de reunión *',{exact:true}).fill('Culto principal');
   await page.getByLabel('Día',{exact:true}).selectOption('Domingo');
   await page.getByLabel('Hora',{exact:true}).fill('11:00');
-  await page.getByLabel('Frecuencia y variaciones del horario',{exact:true}).fill('Primer domingo del mes');
+  await page.getByLabel('Indicaciones y variaciones del horario',{exact:true}).fill('Primer domingo del mes');
   await page.getByRole('button',{name:'Comunidad',exact:true}).click();
   await page.getByRole('checkbox',{name:'Góspel',exact:true}).check();
   await page.getByRole('checkbox',{name:'Himnodia Clásica',exact:true}).check();

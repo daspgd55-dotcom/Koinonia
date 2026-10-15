@@ -1,0 +1,56 @@
+const assert = require('node:assert/strict');
+const path = require('node:path'), fs = require('node:fs/promises');
+const { createRequire } = require('node:module');
+const backend = createRequire(path.resolve(__dirname, '../../Backend/package.json'));
+const { chromium } = backend('playwright');
+const { MongoMemoryServer } = backend('mongodb-memory-server');
+const { connectDB, disconnectDB } = backend('./src/config/db');
+const { createApp } = backend('./src/app');
+const User = backend('./src/models/user.model');
+let mongo, server, vite, browser;
+const output = path.resolve(__dirname, '../.cache/journey');
+async function main() {
+  await fs.mkdir(output,{recursive:true});
+  mongo = await MongoMemoryServer.create({ binary:{version:'8.0.12',downloadDir:path.resolve(__dirname,'../../Backend/.cache/mongodb')} });
+  await connectDB(mongo.getUri('koinonia_web_test'));
+  server = createApp({jwtSecret:'web-test-only-secret-longer-than-32-characters',corsOrigins:[],enableTestUi:false}).listen(0,'127.0.0.1');
+  await new Promise(resolve => server.once('listening',resolve));
+  const { createServer } = await import('vite');
+  vite = await createServer({ root:path.resolve(__dirname,'..'),configFile:false,server:{host:'127.0.0.1',port:0,proxy:{'/api':`http://127.0.0.1:${server.address().port}`}} });
+  await vite.listen(); const url = `http://127.0.0.1:${vite.httpServer.address().port}`;
+  browser = await chromium.launch({headless:true,...(process.platform==='win32'?{channel:'msedge'}:{})});
+  const context = await browser.newContext({viewport:{width:1440,height:1000}}), page = await context.newPage(), errors=[];
+  page.on('pageerror',e=>errors.push(e.message)); page.setDefaultTimeout(12000);
+
+
+
+  const request=backend('supertest'),Church=backend('./src/models/church.model'),Community=backend('./src/models/linked-community.model');
+  const users={};for(const [name,role]of [['admin','admin'],['rep','representative'],['outsider','representative']]){await request(server).post('/api/auth/register').send({email:name+'@linked-ui.test',password:'Linked-ui-test-123',name}).expect(201);users[name]=await User.findOneAndUpdate({email:name+'@linked-ui.test'},{$set:{role,'onboarding.status':'completed'}},{returnDocument:'after'});}
+  const seed=(name,rep,metadata)=>Church.create({identification:{name},location:{commune:'Santiago',address:'Dirección pública',coordinates:{type:'Point',coordinates:[-70.65,-33.45]}},metadata,createdBy:users.admin._id,representatives:[users[rep]._id]});
+  const church=await seed('Iglesia de prueba vinculada','rep',{dataStatus:'published',firstPublishedByAdminAt:new Date()}),draft=await seed('Iglesia borrador vinculada','rep',{dataStatus:'draft'}),other=await seed('Iglesia ajena','outsider',{dataStatus:'draft'});
+  async function login(name){await page.goto(url+'/#/login');await page.getByLabel('Correo electrónico',{exact:true}).fill(name+'@linked-ui.test');await page.getByLabel('Contraseña',{exact:true}).fill('Linked-ui-test-123');await page.getByRole('button',{name:'Iniciar sesión'}).click();await page.getByRole('button',{name:'Mi perfil',exact:true}).waitFor();await page.goto(url+'/#/administracion');}
+  async function logout(){await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();}
+  async function enter(name){await page.getByRole('button',{name:'Administrar '+name,exact:false}).click();await page.getByRole('button',{name:'Comunidades vinculadas',exact:true}).click();await page.getByRole('button',{name:'Crear comunidad vinculada',exact:true}).waitFor();}
+  await login('rep');assert.equal(await page.getByRole('button',{name:'Administrar Iglesia ajena',exact:false}).count(),0);await enter(church.identification.name);
+  await page.getByRole('button',{name:'Crear comunidad vinculada',exact:true}).click();await page.getByLabel('Nombre de la comunidad',{exact:true}).fill('Jóvenes del barrio');await page.getByLabel('Descripción',{exact:true}).fill('Descripción a conservar');await page.getByText('Responsables y contacto oficial',{exact:true}).click();await page.getByLabel('Correo oficial',{exact:true}).fill('privado@example.test');await page.getByLabel('Ocultar correo oficial del perfil público',{exact:true}).check();
+  await page.getByRole('button',{name:'Vista previa pública',exact:true}).click();assert.equal(await page.getByRole('region',{name:'Vista previa de comunidad'}).getByText('privado@example.test',{exact:false}).count(),0);
+  await page.getByRole('button',{name:'Guardar comunidad',exact:true}).click();await page.getByText('Comunidad guardada.',{exact:true}).waitFor();let stored=await Community.findOne({name:'Jóvenes del barrio'});assert.equal(stored.status,'draft');
+  const localApp=server.listeners('request')[0];localApp.locals.config.cloudinary={cloudName:'linked-ui',apiKey:'test',apiSecret:'test'};localApp.locals.mediaFetch=async(u,o)=>({ok:true,json:async()=>({public_id:o.body.get('public_id'),secure_url:'https://res.cloudinary.com/linked-ui/image/upload/'+o.body.get('public_id')+'.webp'})});
+  const png=Buffer.from(await page.evaluate(()=>{const c=document.createElement('canvas');c.width=50;c.height=50;c.getContext('2d').fillRect(0,0,50,50);return c.toDataURL('image/png').split(',')[1];}),'base64');await page.route('https://res.cloudinary.com/**',r=>r.fulfill({contentType:'image/png',body:png}));
+  await page.getByText('Fotos y videos (0/7)',{exact:true}).click();
+  for(let i=0;i<2;i++){await page.locator('input[type=file]').setInputFiles({name:'foto.png',mimeType:'image/png',buffer:png});await page.getByRole('button',{name:'Subir foto recortada',exact:true}).click();await page.getByText('Foto subida. Guarda la ficha para conservar los demás cambios.',{exact:true}).waitFor();await page.getByLabel('Editor de recorte').waitFor({state:'detached'});}
+  let mediaStored=await Community.findById(stored.id);assert.equal(mediaStored.media.length,2);const originalFirst=mediaStored.media[0].url;
+  await page.getByRole('button',{name:'Arrastrar recurso 1',exact:true}).focus();await page.keyboard.press('ArrowRight');await page.getByRole('button',{name:'Guardar comunidad',exact:true}).click();await page.getByText('Comunidad guardada.',{exact:true}).waitFor();mediaStored=await Community.findById(stored.id);assert.equal(mediaStored.media[1].url,originalFirst);
+  await page.getByRole('button',{name:'Añadir enlace externo',exact:true}).click();await page.getByRole('button',{name:'Eliminar recurso 3',exact:true}).click();assert.equal(await page.getByRole('button',{name:'Eliminar recurso 3',exact:true}).count(),0);await page.getByRole('button',{name:'Guardar comunidad',exact:true}).click();await page.getByText('Comunidad guardada.',{exact:true}).waitFor();
+  await page.getByRole('button',{name:'Publicar',exact:true}).click();await page.getByText('Estado actualizado.',{exact:true}).waitFor();assert.equal((await Community.findById(stored.id)).status,'published');
+  await page.getByLabel('Descripción',{exact:true}).fill('Edición conservada ante error');await page.route('**/api/communities/'+stored.id,route=>route.request().method()==='PATCH'?route.fulfill({status:500,contentType:'application/json',body:JSON.stringify({error:{message:'Fallo de prueba'}})}):route.continue());await page.getByRole('button',{name:'Guardar comunidad',exact:true}).click();await page.getByRole('alert').filter({hasText:'Fallo de prueba'}).waitFor();assert.equal(await page.getByLabel('Descripción',{exact:true}).inputValue(),'Edición conservada ante error');await page.unroute('**/api/communities/'+stored.id);
+  page.once('dialog',d=>d.dismiss());await page.getByRole('button',{name:'Ficha de la iglesia',exact:true}).click();await page.getByLabel('Descripción',{exact:true}).waitFor();await page.getByRole('button',{name:'Guardar comunidad',exact:true}).click();await page.getByText('Comunidad guardada.',{exact:true}).waitFor();
+  page.once('dialog',d=>d.accept());await page.getByRole('button',{name:'Archivar',exact:true}).click();await page.getByText('Estado actualizado.',{exact:true}).waitFor();assert.equal((await Community.findById(stored.id)).status,'archived');await page.getByRole('button',{name:'Volver a borrador',exact:true}).click();await page.getByText('Estado actualizado.',{exact:true}).waitFor();
+  await page.getByRole('button',{name:'Comunidades vinculadas',exact:true}).click();await page.getByLabel('Buscar por nombre',{exact:true}).fill('Inexistente');await page.getByRole('button',{name:'Aplicar filtros',exact:true}).click();await page.getByText('No hay comunidades que coincidan. Puedes crear una o cambiar los filtros.',{exact:true}).waitFor();
+  await page.getByRole('button',{name:'Ficha de la iglesia',exact:true}).click();await page.getByRole('button',{name:'← Volver a comunidades',exact:true}).click();await enter(draft.identification.name);await page.getByRole('button',{name:'Crear comunidad vinculada',exact:true}).click();await page.getByLabel('Nombre de la comunidad',{exact:true}).fill('Voluntarios en preparación');await page.getByRole('button',{name:'Guardar comunidad',exact:true}).click();await page.getByText('Comunidad guardada.',{exact:true}).waitFor();assert.equal(await page.getByRole('button',{name:'Publicar',exact:true}).isDisabled(),true);await page.getByText('La iglesia necesita su primera publicación autorizada por un administrador.',{exact:true}).waitFor();
+  await page.setViewportSize({width:390,height:844});await page.screenshot({path:path.join(output,'linked-mobile.png'),fullPage:true});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+  await logout();await login('admin');await enter(other.identification.name);await page.getByRole('button',{name:'Crear comunidad vinculada',exact:true}).click();await page.getByLabel('Nombre de la comunidad',{exact:true}).fill('Grupo creado por admin');await page.getByRole('button',{name:'Guardar comunidad',exact:true}).click();await page.getByText('Comunidad guardada.',{exact:true}).waitFor();assert.equal((await Community.findOne({name:'Grupo creado por admin'})).churchId.toString(),other.id);
+  const token=(await request(server).post('/api/auth/login').send({email:'rep@linked-ui.test',password:'Linked-ui-test-123'})).body.token;await request(server).get('/api/communities/manage?churchId='+other.id).set('Authorization','Bearer '+token).expect(403);
+  assert.deepEqual(errors,[]);console.log('LINKED UI OK: representante, admin, aislamiento, creación, edición, privacidad, error, salida, publicación, archivado, filtros y móvil.');
+}
+main().catch(e=>{console.error(e);process.exitCode=1;}).finally(async()=>{if(browser)await browser.close();if(vite)await vite.close();if(server){server.closeAllConnections();await new Promise(r=>server.close(r));}await disconnectDB();if(mongo)await mongo.stop();});

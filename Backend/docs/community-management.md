@@ -1,5 +1,7 @@
 # Administración de comunidades
 
+Las fichas de este documento corresponden a iglesias. La entidad independiente de grupos y ministerios asociados se documenta en [Comunidades vinculadas: contrato de backend](linked-communities.md); sus endpoints son `/api/communities` y no sustituyen `/api/churches`.
+
 Panel React: `http://127.0.0.1:5173/#/administracion`. El enlace Administración aparece para `representative` y `admin`. La API consulta el rol vigente en MongoDB en cada solicitud; el navegador no concede permisos.
 
 ## Permisos

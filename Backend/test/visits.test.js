@@ -27,7 +27,7 @@ test('Aviso: requiere autenticación, activación y horario vigente; duplicados 
  await send({visitor:users.stranger.id}).then(r=>assert.equal(r.status,400));
  const publicData=await request(app).get('/api/churches/'+c.id).expect(200);assert.ok(!JSON.stringify(publicData.body).includes('Voy con mi familia'));
 });
-test('Privacidad, asignación actual, lectura por usuario y recepción con respuesta interna',async()=>{
+test('Privacidad, asignación actual, lectura compartida del equipo y recepción con respuesta interna',async()=>{
  const mine=await request(app).get('/api/visits/mine').set(auth('visitor')).expect(200);assert.equal(mine.body.data.length,1);
  assert.equal((await request(app).get('/api/visits/mine').set(auth('stranger')).expect(200)).body.data.length,0);
  await request(app).get('/api/visits/manage').set(auth('visitor')).expect(403);
@@ -38,9 +38,17 @@ test('Privacidad, asignación actual, lectura por usuario y recepción con respu
  const notices=(await request(app).get('/api/notifications').set(auth('rep')).expect(200)).body;assert.equal(notices.unread,1);
  const nid=notices.data[0]._id;await request(app).patch('/api/notifications/'+nid+'/read').set(auth('otherRep')).expect(404);await request(app).patch('/api/notifications/'+nid+'/read').set(auth('rep')).expect(200);
  assert.equal((await request(app).get('/api/notifications').set(auth('rep')).expect(200)).body.unread,0);
- assert.equal((await request(app).get('/api/notifications').set(auth('admin')).expect(200)).body.unread,1);
- await request(app).patch('/api/visits/'+visitId+'/manage').set(auth('rep')).send({action:'read',version:0}).expect(200);
- await request(app).patch('/api/visits/'+visitId+'/manage').set(auth('rep')).send({action:'receive',version:0,message:'Te esperamos en la entrada.'}).expect(200);
+ assert.equal((await request(app).get('/api/notifications').set(auth('admin')).expect(200)).body.unread,0);
+ await request(app).patch('/api/visits/'+visitId+'/manage').set(auth('rep')).send({action:'read',version:1}).expect(200);
+ await Church.updateOne({_id:c.id},{$addToSet:{representatives:users.otherRep._id}});
+ assert.equal((await request(app).get('/api/visits/manage').set(auth('otherRep')).expect(200)).body.data[0].read,true);
+ assert.equal((await request(app).get('/api/notifications').set(auth('otherRep')).expect(200)).body.unread,0);
+ await Church.updateOne({_id:c.id},{$pull:{representatives:users.otherRep._id}});
+ await request(app).patch('/api/visits/'+visitId+'/manage').set(auth('rep')).send({action:'receive',version:2,message:'Te esperamos en la entrada.'}).expect(200);
+ await Church.updateOne({_id:c.id},{$addToSet:{representatives:users.otherRep._id}});
+ assert.equal((await request(app).get('/api/notifications').set(auth('otherRep')).expect(200)).body.unread,0);
+ assert.equal((await request(app).get('/api/visits/manage').set(auth('otherRep')).expect(200)).body.data[0].read,true);
+ await Church.updateOne({_id:c.id},{$pull:{representatives:users.otherRep._id}});
  const visitorNotifications=(await request(app).get('/api/notifications').set(auth('visitor')).expect(200)).body.data;assert.equal(visitorNotifications[0].text,'Te esperamos en la entrada.');
  await Church.updateOne({_id:c.id},{$set:{representatives:[]}});assert.equal((await request(app).get('/api/notifications').set(auth('rep')).expect(200)).body.data.length,0);await Church.updateOne({_id:c.id},{$set:{representatives:[users.rep._id]}});
 });
@@ -48,7 +56,7 @@ test('Cancelación, nueva intención y cambio de horario conservan la fecha orig
  const original=await Visit.findById(visitId);await Church.updateOne({_id:c.id},{$set:{'meetings.0.schedule.0.startTime':'12:00'},$inc:{'metadata.version':1}});
  assert.equal((await Visit.findById(visitId)).startsAt.toISOString(),original.startsAt.toISOString());
  await request(app).patch('/api/visits/'+visitId).set(auth('visitor')).send({action:'cancel',version:0}).expect(409);
- await request(app).patch('/api/visits/'+visitId).set(auth('visitor')).send({action:'cancel',version:1}).expect(200);
+ await request(app).patch('/api/visits/'+visitId).set(auth('visitor')).send({action:'cancel',version:3}).expect(200);
  assert.equal((await request(app).get('/api/visits/mine').set(auth('visitor')).expect(200)).body.data.length,0);
  const fresh=await send();assert.equal(fresh.status,201);visitId=fresh.body.data._id;
  await request(app).patch('/api/visits/'+visitId+'/manage').set(auth('rep')).send({action:'change',version:0,message:'La reunión se suspendió; elige otro horario.'}).expect(200);
@@ -79,14 +87,14 @@ test('Reprogramar conserva mensaje e historial, valida dueño/versiones y reinic
  const result=await request(app).post('/api/churches/'+c.id+'/visits').set(auth('stranger')).send({optionKey:first.optionKey,startsAt:first.startsAt,version:o.version,message:'Mensaje conservado'}).expect(201),id=result.body.data._id;
  await request(app).patch('/api/visits/'+id+'/manage').set(auth('rep')).send({action:'receive',version:0}).expect(200);
  let rows=(await request(app).get('/api/visits/manage?filter=received').set(auth('rep')).expect(200)).body.data;
- assert.equal(rows.find(x=>x._id===id).receivedByName,'rep');assert.ok(rows.find(x=>x._id===id).receivedAt);
+ assert.equal(rows.find(x=>x._id===id).receivedByName,'rep');assert.ok(rows.find(x=>x._id===id).receivedAt);assert.ok((await request(app).get('/api/notifications').set(auth('rep')).expect(200)).body.data.filter(x=>x.visitId===id&&x.audience==='staff').every(x=>x.read));
  const body={optionKey:second.optionKey,startsAt:second.startsAt,churchVersion:o.version,version:1};
  await request(app).patch('/api/visits/'+id+'/reschedule').set(auth('visitor')).send(body).expect(404);
  await request(app).patch('/api/visits/'+id+'/reschedule').set(auth('stranger')).send({...body,churchVersion:999}).expect(409);
  await request(app).patch('/api/visits/'+id+'/reschedule').set(auth('stranger')).send({...body,version:0}).expect(409);
  const changed=(await request(app).patch('/api/visits/'+id+'/reschedule').set(auth('stranger')).send(body).expect(200)).body.data;
  assert.equal(changed.message,'Mensaje conservado');assert.equal(changed.status,'sent');assert.equal(changed.scheduleHistory[0].startsAt,first.startsAt);assert.equal(changed.startsAt,second.startsAt);
- const doc=await Visit.findById(id);assert.equal(doc.receivedAt,undefined);assert.equal(doc.events.filter(e=>e.kind==='rescheduled').length,1);
+ const doc=await Visit.findById(id);assert.equal(doc.receivedAt,undefined);assert.equal(doc.events.filter(e=>e.kind==='rescheduled').length,1);assert.equal((await request(app).get('/api/visits/manage').set(auth('rep')).expect(200)).body.data.find(x=>x._id===id).read,false);assert.ok((await request(app).get('/api/notifications').set(auth('rep')).expect(200)).body.data.some(x=>x.kind==='rescheduled'&&!x.read));
  rows=(await request(app).get('/api/visits/manage?filter=pending').set(auth('rep')).expect(200)).body.data;assert.ok(rows.some(x=>x._id===id));
  assert.ok((await request(app).get('/api/visits/manage?filter=week').set(auth('rep')).expect(200)).body.data.some(x=>x._id===id));
  await request(app).patch('/api/visits/'+id).set(auth('stranger')).send({action:'cancel',version:2}).expect(200);

@@ -27,3 +27,6 @@ Evaluación técnica: test/ranking-quality.test.js compara seis pares etiquetado
 Backend: npm test. Frontend: npm run test:publication, npm run test:experiences, npm run test:discover, npm run build.
 Casos nuevos verifican solicitud conjunta y permisos, checklist, edición con nueva moderación, retiro, reportes concurrentes, privacidad del denunciante, resolución y recuperación de descartes.
 Eventos, frecuencia pública de reuniones, comparación, LLM/RAG y cambios del informe quedan fuera de esta entrega.
+
+## Reportes reservados
+La interfaz de reportar contenido y los controles de reportes en moderación quedan ocultos mediante reportsEnabled=false. Se conservan modelo, endpoints, historial y pruebas para una futura función de comentarios. Corregir, retirar y moderar experiencias siguen disponibles.
