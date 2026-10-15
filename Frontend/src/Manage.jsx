@@ -3,7 +3,7 @@ import {allowedFrames,frames,defaultFrame} from './mediaFrames';
 import {mediaCategories} from './mediaCategories';
 import ImageCropper from './ImageCropper';
 import MediaEditor from './MediaEditor';
-import {Detail} from './Explore';
+import Detail from './ChurchDetail';
 import React, { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import { api } from './api';
