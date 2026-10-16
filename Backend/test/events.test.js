@@ -13,6 +13,18 @@ before(async()=>{mongo=await MongoMemoryServer.create({binary:{version:'8.0.12',
  const group=(churchId,status)=>Community.create({churchId,name:'Ministerio',type:'ministry',status,createdBy:users.admin.id,updatedBy:users.admin.id});community=await group(church.id,'published');otherCommunity=await group(other.id,'published');draftCommunity=await group(church.id,'draft');});
 after(async()=>{await disconnectDB();if(mongo)await mongo.stop();});
 
+test('Portada en borrador: permisos, versión, proveedor simulado y búsqueda literal',async()=>{
+ const e=(await create({title:'Encuentro [especial]'}).expect(201)).body.data,url='/api/events/'+e._id+'/cover?frame=wide',bytes=Buffer.from([255,216,255,0]);
+ const upload=(who='rep',version=1)=>request(app).post(url).set(auth(who)).set('If-Match','"'+version+'"').set('Content-Type','image/jpeg').send(bytes);
+ await upload('otherRep').expect(403);await upload('visitor').expect(403);await upload().expect(503);
+ app.locals.config.cloudinary={cloudName:'events-test',apiKey:'test',apiSecret:'test'};app.locals.mediaFetch=async(u,o)=>({ok:true,json:async()=>({public_id:o.body.get('public_id'),secure_url:'https://res.cloudinary.com/events-test/image/upload/'+o.body.get('public_id')+'.webp'})});
+ try{const result=(await upload().expect(201)).body.data;assert.equal(result.cover.frame,'wide');assert.equal(result.publicationStatus,'draft');assert.equal(result.version,2);await upload().expect(409);
+ await request(app).post(url).set(auth('rep')).set('If-Match','"2"').set('Content-Type','image/jpeg').send(Buffer.from('invalid')).expect(400);
+ const removed=(await patch(result,{cover:null}).expect(200)).body.data;assert.equal(removed.cover,null);
+ }finally{delete app.locals.config.cloudinary;delete app.locals.mediaFetch;}
+ const result=(await request(app).get('/api/events/manage?q='+encodeURIComponent('[especial]')).set(auth('rep')).expect(200)).body;assert.equal(result.pagination.total,1);assert.equal(result.data[0]._id,e._id);
+});
+
 test('UTC-3 fijo, fechas reales y cierre local sin depender de horario estacional',()=>{
  assert.equal(v.instant('2026-01-15T19:30').toISOString(),'2026-01-15T22:30:00.000Z');assert.equal(v.instant('2026-07-15T19:30').toISOString(),'2026-07-15T22:30:00.000Z');
  assert.equal(v.instant('2026-10-15T23:30-03:00').toISOString(),'2026-10-16T02:30:00.000Z');assert.equal(v.instant('2026-10-15T19:30Z').toISOString(),'2026-10-15T19:30:00.000Z');

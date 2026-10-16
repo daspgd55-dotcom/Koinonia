@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test:event-participation": "node test/event-participation.cjs",
+    "test:public-events": "node test/public-events.cjs",
+    "test:events-admin": "node test/events-admin.cjs",
     "test:linked": "node test/linked-communities.cjs",
     "test:public-communities": "node test/public-communities.cjs",
     "dev": "vite --host 127.0.0.1",

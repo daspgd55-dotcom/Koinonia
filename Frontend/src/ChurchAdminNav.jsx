@@ -1,0 +1,2 @@
+import React from 'react';
+export default function ChurchAdminNav({active,busy,onSelect}){return <nav className="admin-area-nav linked-subnav" aria-label="Administración de esta iglesia">{[['church','Ficha de la iglesia'],['communities','Comunidades vinculadas'],['events','Eventos']].map(([key,label])=><button key={key} type="button" disabled={busy} aria-current={active===key?'page':undefined} onClick={()=>onSelect(key)}>{label}</button>)}</nav>;}

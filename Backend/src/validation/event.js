@@ -30,5 +30,5 @@ const state=z.discriminatedUnion('eventStatus',[z.strictObject({eventStatus:z.li
 const queryFields={churchId:id.optional(),communityId:id.optional(),category:z.enum(categories).optional(),commune:text.optional(),audience:text.optional(),dateFrom:day.optional(),dateTo:day.optional(),view:z.enum(['upcoming','past','all']).default('upcoming'),page:z.coerce.number().int().min(1).max(10000).default(1),limit:z.coerce.number().int().min(1).max(100).default(20)};
 const validRange=v=>!v.dateFrom||!v.dateTo||v.dateFrom<=v.dateTo;
 const query=z.strictObject(queryFields).refine(validRange,'dateFrom no puede ser posterior a dateTo');
-const managedQuery=z.strictObject({...queryFields,view:queryFields.view.removeDefault().default('all'),publicationStatus:z.enum(publicationStatuses).optional(),eventStatus:z.enum(eventStatuses).optional()}).refine(validRange,'dateFrom no puede ser posterior a dateTo');
+const managedQuery=z.strictObject({...queryFields,q:text.optional(),view:queryFields.view.removeDefault().default('all'),publicationStatus:z.enum(publicationStatuses).optional(),eventStatus:z.enum(eventStatuses).optional()}).refine(validRange,'dateFrom no puede ser posterior a dateTo');
 module.exports={categories,publicationStatuses,eventStatuses,fields,create,content,patch,publication,state,query,managedQuery,instant};

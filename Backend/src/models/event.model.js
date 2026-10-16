@@ -11,6 +11,7 @@ const schema=new Schema({
  participation:{type:String,enum:['free','registration','invitation'],default:'free'},participationConditions:{type:String,default:''},registrationInstructions:{type:String,default:''},registrationUrl:{type:String,default:null},
  contact:{website:String,instagram:String,facebook:String,youtube:String,email:String,phone:String},privateFields:{email:{type:Boolean,default:false},phone:{type:Boolean,default:false}},
  publicationStatus:{type:String,enum:publicationStatuses,default:'draft'},eventStatus:{type:String,enum:eventStatuses,default:'scheduled'},cancellationReason:{type:String,default:''},
+ participationChanges:[{version:{type:Number,required:true},at:{type:Date,required:true},kind:{type:String,enum:['changed','cancelled','rescheduled'],required:true}}],
  version:{type:Number,default:1},createdBy:{type:Schema.Types.ObjectId,ref:'User',required:true},updatedBy:{type:Schema.Types.ObjectId,ref:'User',required:true}
 },{timestamps:true,strict:'throw',optimisticConcurrency:true});
 schema.index({churchId:1,publicationStatus:1,startsAt:1});schema.index({communityId:1,publicationStatus:1,startsAt:1});schema.index({publicationStatus:1,effectiveEndsAt:1});schema.index({publicationStatus:1,category:1,'location.commune':1,startsAt:1});
