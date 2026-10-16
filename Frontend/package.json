@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test:event-collaboration": "node test/event-collaboration.cjs",
     "test:event-participation": "node test/event-participation.cjs",
     "test:public-events": "node test/public-events.cjs",
     "test:events-admin": "node test/events-admin.cjs",

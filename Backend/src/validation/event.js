@@ -12,7 +12,7 @@ function instant(value){
 const date=z.string().refine(v=>instant(v)!==null,'Usa una fecha válida YYYY-MM-DDTHH:mm, con zona opcional').transform(instant);
 const location=church.shape.location.pick({address:true,commune:true,city:true,region:true,countryCode:true,coordinates:true}).partial({coordinates:true});
 const cover=church.shape.media.unwrap().element.omit({leaderId:true,category:true,type:true});
-const fields=z.strictObject({title:text,description:long.default(''),category:z.enum(categories).default('other'),communityId:id.nullable().default(null),
+const fields=z.strictObject({title:text,openCollaboration:z.boolean().default(false),description:long.default(''),category:z.enum(categories).default('other'),communityId:id.nullable().default(null),
  startsAt:date.nullable().default(null),endsAt:date.nullable().default(null),modality:z.enum(['in_person','online','hybrid']).default('in_person'),
  venue:text.nullable().default(null),location:location.nullable().default(null),onlineUrl:url.nullable().default(null),audience:z.array(text).max(50).default([]),
  cover:cover.nullable().default(null),participation:z.enum(['free','registration','invitation']).default('free'),participationConditions:long.default(''),registrationInstructions:long.default(''),registrationUrl:url.nullable().default(null),
@@ -27,7 +27,7 @@ const create=fields.extend({churchId:id}).superRefine(coherent),content=fields.s
 const patch=z.strictObject(Object.fromEntries(Object.entries(fields.shape).map(([k,v])=>[k,(v instanceof z.ZodDefault?v.removeDefault():v).optional()]))).refine(v=>Object.keys(v).length>0,'Indica al menos un campo');
 const publication=z.strictObject({publicationStatus:z.enum(publicationStatuses)});
 const state=z.discriminatedUnion('eventStatus',[z.strictObject({eventStatus:z.literal('cancelled'),cancellationReason:z.string().trim().min(5).max(1000)}),z.strictObject({eventStatus:z.literal('scheduled')})]);
-const queryFields={churchId:id.optional(),communityId:id.optional(),category:z.enum(categories).optional(),commune:text.optional(),audience:text.optional(),dateFrom:day.optional(),dateTo:day.optional(),view:z.enum(['upcoming','past','all']).default('upcoming'),page:z.coerce.number().int().min(1).max(10000).default(1),limit:z.coerce.number().int().min(1).max(100).default(20)};
+const queryFields={associatedChurchId:id.optional(),churchId:id.optional(),communityId:id.optional(),category:z.enum(categories).optional(),commune:text.optional(),audience:text.optional(),dateFrom:day.optional(),dateTo:day.optional(),view:z.enum(['upcoming','past','all']).default('upcoming'),page:z.coerce.number().int().min(1).max(10000).default(1),limit:z.coerce.number().int().min(1).max(100).default(20)};
 const validRange=v=>!v.dateFrom||!v.dateTo||v.dateFrom<=v.dateTo;
 const query=z.strictObject(queryFields).refine(validRange,'dateFrom no puede ser posterior a dateTo');
 const managedQuery=z.strictObject({...queryFields,q:text.optional(),view:queryFields.view.removeDefault().default('all'),publicationStatus:z.enum(publicationStatuses).optional(),eventStatus:z.enum(eventStatuses).optional()}).refine(validRange,'dateFrom no puede ser posterior a dateTo');

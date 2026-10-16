@@ -11,8 +11,11 @@ const schema=new Schema({
  participation:{type:String,enum:['free','registration','invitation'],default:'free'},participationConditions:{type:String,default:''},registrationInstructions:{type:String,default:''},registrationUrl:{type:String,default:null},
  contact:{website:String,instagram:String,facebook:String,youtube:String,email:String,phone:String},privateFields:{email:{type:Boolean,default:false},phone:{type:Boolean,default:false}},
  publicationStatus:{type:String,enum:publicationStatuses,default:'draft'},eventStatus:{type:String,enum:eventStatuses,default:'scheduled'},cancellationReason:{type:String,default:''},
+ openCollaboration:{type:Boolean,default:false},
+ collaborations:[{invitationNoticeId:Schema.Types.ObjectId,churchId:{type:Schema.Types.ObjectId,ref:'Church',required:true},status:{type:String,enum:['pending','accepted','rejected','withdrawn'],required:true},history:[{action:{type:String,required:true},actor:{type:Schema.Types.ObjectId,ref:'User',required:true},actorName:String,actorRole:String,at:{type:Date,required:true},audienceChurchId:{type:Schema.Types.ObjectId,required:true},readAt:Date}]}],
  participationChanges:[{version:{type:Number,required:true},at:{type:Date,required:true},kind:{type:String,enum:['changed','cancelled','rescheduled'],required:true}}],
  version:{type:Number,default:1},createdBy:{type:Schema.Types.ObjectId,ref:'User',required:true},updatedBy:{type:Schema.Types.ObjectId,ref:'User',required:true}
 },{timestamps:true,strict:'throw',optimisticConcurrency:true});
-schema.index({churchId:1,publicationStatus:1,startsAt:1});schema.index({communityId:1,publicationStatus:1,startsAt:1});schema.index({publicationStatus:1,effectiveEndsAt:1});schema.index({publicationStatus:1,category:1,'location.commune':1,startsAt:1});
+schema.index({churchId:1,publicationStatus:1,startsAt:1});schema.index({'collaborations.churchId':1});
+schema.index({communityId:1,publicationStatus:1,startsAt:1});schema.index({publicationStatus:1,effectiveEndsAt:1});schema.index({publicationStatus:1,category:1,'location.commune':1,startsAt:1});
 module.exports=model('Event',schema);

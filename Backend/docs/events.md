@@ -1,6 +1,6 @@
 # Eventos — contrato de backend
 
-Entidad independiente `Event`, colección `events`. No se modifica la estructura de iglesias, comunidades vinculadas, reuniones ni primeras visitas; no hay importación automática desde horarios semanales. Incluye administración web y subida de portadas. Incluye descubrimiento y fichas públicas de eventos. Incluye intenciones personales de participación y notificaciones internas. No incluye inscripciones internas, asistencia efectiva ni colaboración entre iglesias.
+Entidad independiente `Event`, colección `events`. No se modifica la estructura de iglesias, comunidades vinculadas, reuniones ni primeras visitas; no hay importación automática desde horarios semanales. Incluye administración web y subida de portadas. Incluye descubrimiento y fichas públicas de eventos. Incluye intenciones personales de participación y notificaciones internas. Incluye colaboración institucional por invitación aceptada. No incluye inscripciones internas ni asistencia efectiva.
 
 ## Organización y permisos
 
@@ -184,7 +184,7 @@ Desde `Frontend`: `npm.cmd run test:events-admin`. Arranca API, Vite y MongoDB t
 
 **RF-05 implementado:** comunidades vinculadas con permisos y ciclo de publicación; administración de eventos independientes con organizador, portada, ubicación propia, fechas, participación, cancelación y archivo; descubrimiento público filtrado, fichas compartibles e integración con iglesias/comunidades. La inscripción, cuando se exige, se realiza según las instrucciones o el enlace oficial del organizador.
 
-**Pendiente:** inscripciones dentro de Koinonía, asistencia efectiva, correos, cupos, entradas, pagos, equipos de bienvenida para eventos y colaboración entre iglesias. Tampoco hay membresías de grupos ni seguimiento. La consulta de una ficha o enlace no registra ni confirma asistencia.
+**Pendiente:** inscripciones dentro de Koinonía, asistencia efectiva, correos, cupos, entradas, pagos, equipos de bienvenida para eventos y permisos compartidos de edición. Tampoco hay membresías de grupos ni seguimiento. La consulta de una ficha o enlace no registra ni confirma asistencia.
 
 Verificación aislada desde `Frontend`: `npm.cmd run test:public-events`, `npm.cmd run test:public-communities`, `npm.cmd run test:events-admin` y `npm.cmd run test:linked`. Desde `Backend`: `node --test --test-concurrency=1 test/*.test.js`. Se usan MongoDB temporal, usuarios ficticios y proveedores multimedia simulados; no Atlas ni datos de producción.
 
@@ -213,3 +213,10 @@ Al archivar, despublicar el evento, ocultar la iglesia o la comunidad organizado
 Interfaz: botones “Me interesa” y “Voy a asistir” en ficha pública; inicio de sesión con regreso al evento; enlace “Mis eventos” en menú de perfil y ficha, ruta `/#/mis-eventos`; conteos en administración del evento. La intención de asistir no sustituye inscripción externa ni invitación. Abrir un aviso marca leído, actualiza la campana y navega a `/#/evento/:id`. No hay listas públicas de personas.
 
 Pruebas nuevas: `Backend/test/event-participation.test.js` (concurrencia, aislamiento, privacidad, cambios, deduplicación, lecturas, archivo e historial) y `Frontend/test/event-participation.cjs` (`npm run test:event-participation`: sesión con regreso, opciones, retiro, vista personal, lectura desde campana e historial móvil). Regresión: suite completa backend y `npm run test:visits`, además de comunidades y eventos.
+
+
+## Colaboración institucional (RF-05)
+
+Implementada: invitación abierta informativa, invitaciones a iglesias publicadas, aceptación/rechazo por representantes asignados, intervención auditada de admin, retiradas y reenvío; notificaciones compartidas y presencia en la iglesia colaboradora. Se conserva un evento y propietario únicos, sin transferir permisos. `openCollaboration` es editable; `collaborations` es interno y solo el DTO `collaborators` con iglesias aceptadas/públicas se expone públicamente. `associatedChurchId` busca eventos propios y colaboraciones visibles.
+
+Contrato completo, transiciones, limitaciones, pruebas y estado actualizado de RF-05: [event-collaboration.md](event-collaboration.md). La colaboración institucional ya no está pendiente; siguen fuera de alcance roles de ministerio, correos, entradas, pagos y edición compartida.
