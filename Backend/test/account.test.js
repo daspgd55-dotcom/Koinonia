@@ -1,7 +1,7 @@
 const {test,before,after}=require('node:test'),assert=require('node:assert/strict'),request=require('supertest'),path=require('node:path');
 const {MongoMemoryServer}=require('mongodb-memory-server'),{connectDB,disconnectDB}=require('../src/config/db'),{createApp}=require('../src/app'),User=require('../src/models/user.model');
 const cfg={jwtSecret:'account-test-only-secret-longer-than-32-characters',corsOrigins:[],mail:{key:'private-key',from:'test@example.org',appUrl:'https://example.org'}};
-const app=createApp(cfg);let mongo,token,mail;
+const app=createApp(Object.assign(cfg,{requireVerifiedEmail:false}));let mongo,token,mail;
 const pass='Start123',next='Next1234';
 before(async()=>{mongo=await MongoMemoryServer.create({binary:{version:'8.0.12',downloadDir:path.resolve(__dirname,'../.cache/mongodb')}});await connectDB(mongo.getUri('account_tests'));await request(app).post('/api/auth/register').send({email:'account@example.org',password:'Short12'}).expect(400);await request(app).post('/api/auth/register').send({email:'account@example.org',password:pass}).expect(201);token=(await request(app).post('/api/auth/login').send({email:'account@example.org',password:pass})).body.token;app.locals.mailFetch=async(url,opts)=>{mail=JSON.parse(opts.body);return{ok:true};};});
 after(async()=>{await disconnectDB();if(mongo)await mongo.stop();});

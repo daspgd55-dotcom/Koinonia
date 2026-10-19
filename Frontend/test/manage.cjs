@@ -7,13 +7,13 @@ const { MongoMemoryServer } = backend('mongodb-memory-server');
 const { connectDB, disconnectDB } = backend('./src/config/db');
 const { createApp } = backend('./src/app');
 const User = backend('./src/models/user.model');
-let mongo, server, vite, browser;
+let mongo, server, vite, browser,debugPage;
 const output = path.resolve(__dirname, '../.cache/journey');
 async function main() {
   await fs.mkdir(output,{recursive:true});
   mongo = await MongoMemoryServer.create({ binary:{version:'8.0.12',downloadDir:path.resolve(__dirname,'../../Backend/.cache/mongodb')} });
   await connectDB(mongo.getUri('koinonia_web_test'));
-  const app = createApp({jwtSecret:'web-test-only-secret-longer-than-32-characters',corsOrigins:[],enableTestUi:false,cloudinary:{cloudName:'test-cloud',apiKey:'key',apiSecret:'secret'}});
+  const app = createApp({requireVerifiedEmail:false,jwtSecret:'web-test-only-secret-longer-than-32-characters',corsOrigins:[],enableTestUi:false,cloudinary:{cloudName:'test-cloud',apiKey:'key',apiSecret:'secret'}});
   app.locals.mediaFetch=async(url,options)=>({ok:true,json:async()=>({public_id:options.body.get('public_id'),secure_url:'https://res.cloudinary.com/test-cloud/image/upload/photo.webp'})});
   server = app.listen(0,'127.0.0.1');
   await new Promise(resolve => server.once('listening',resolve));
@@ -22,7 +22,7 @@ async function main() {
   await vite.listen(); const url = `http://127.0.0.1:${vite.httpServer.address().port}`;
   browser = await chromium.launch({headless:true,...(process.platform==='win32'?{channel:'msedge'}:{})});
   const context = await browser.newContext({viewport:{width:1440,height:1000}}), page = await context.newPage(), errors=[];
-  page.on('pageerror',e=>errors.push(e.message)); page.setDefaultTimeout(12000);
+  debugPage=page;page.on('pageerror',e=>{errors.push(e.message);console.error('PAGE_ERROR',e.message);}); page.setDefaultTimeout(12000);
 
   const request=backend('supertest'), Church=backend('./src/models/church.model');
   async function account(email,role){await request(server).post('/api/auth/register').send({email,password:'Test-admin-password-123'}).expect(201);const u=await User.findOneAndUpdate({email},{$set:{role,'onboarding.status':'completed'}},{returnDocument:'after'});return u;}
@@ -38,6 +38,7 @@ async function main() {
   await page.getByRole('heading',{name:'Administrar usuarios'}).waitFor();
   await page.getByLabel('Nombre o correo',{exact:true}).fill('manage-target@example.test');
   await page.getByRole('button',{name:'Buscar usuarios',exact:true}).click();
+  await page.getByText('1 usuarios encontrados',{exact:true}).waitFor();
   await page.getByRole('button',{name:'Editar usuario manage-target@example.test'}).click();
   await page.getByLabel('Nombre',{exact:true}).fill('Cuenta administrada');
   await page.getByLabel('Cargo',{exact:true}).fill('Encargado');
@@ -131,14 +132,15 @@ async function main() {
   await page.getByRole('button',{name:'Guardar asignaciones',exact:true}).click();
   await page.getByRole('status').filter({hasText:'Administración actualizada'}).waitFor();
   assert.ok((await Church.findById(c._id)).representatives.some(x=>x.equals(rep._id)));
+  app.locals.config.requireVerifiedEmail=true;app.locals.config.mail={key:'test-only',from:'test@example.test',appUrl:'https://example.test'};app.locals.mailFetch=async()=>({ok:true});
   await page.getByLabel('Nombre del nuevo representante',{exact:true}).fill('Representante creado desde panel');
   await page.getByLabel('Correo del nuevo representante',{exact:true}).fill('created-panel@example.test');
   await page.getByLabel('Cargo del nuevo representante',{exact:true}).fill('Encargado de jóvenes');
-  await page.getByLabel('Contraseña inicial (opcional)',{exact:true}).fill('Panel123');
+  assert.equal(await page.getByLabel('Contraseña inicial (opcional)',{exact:true}).count(),0);
   await page.getByRole('button',{name:'Crear representante',exact:true}).click();
-  await page.getByText('Credenciales del representante creado',{exact:true}).waitFor();
+  await page.getByText('Invitación del representante',{exact:true}).waitFor();
   const createdRep=await User.findOne({email:'created-panel@example.test'}).lean();
-  assert.equal(createdRep.role,'representative');assert.equal(createdRep.position,'Encargado de jóvenes');
+  assert.equal(createdRep.invitationPending,true);assert.equal(createdRep.role,'representative');assert.equal(createdRep.position,'Encargado de jóvenes');
   await page.getByRole('button',{name:'Guardar asignaciones',exact:true}).click();
   await page.getByRole('status').filter({hasText:'Administración actualizada'}).waitFor();
   assert.ok((await Church.findById(c._id)).representatives.some(x=>x.equals(createdRep._id)));
@@ -254,4 +256,4 @@ async function main() {
   console.log('ADMIN OK: crear, validación, campos Forms, publicar, asignar, conflicto conservado, baja/restauración, representante, acceso restringido y móvil.');
 }
 
-main().catch(e=>{console.error(e);process.exitCode=1;}).finally(async()=>{if(browser)await browser.close();if(vite)await vite.close();if(server){server.closeAllConnections();await new Promise(r=>server.close(r));}await disconnectDB();if(mongo)await mongo.stop();});
+main().catch(async e=>{if(debugPage)console.error((await debugPage.locator('body').innerText()).slice(-3500));console.error(e);process.exitCode=1;}).finally(async()=>{if(browser)await browser.close();if(vite)await vite.close();if(server){server.closeAllConnections();await new Promise(r=>server.close(r));}await disconnectDB();if(mongo)await mongo.stop();});

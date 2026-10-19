@@ -1,7 +1,7 @@
 const {test,before,after}=require('node:test'),assert=require('node:assert/strict'),request=require('supertest'),path=require('node:path'),jwt=require('jsonwebtoken');
 const {MongoMemoryServer}=require('mongodb-memory-server'),{connectDB,disconnectDB}=require('../src/config/db'),{createApp}=require('../src/app');
 const User=require('../src/models/user.model'),Church=require('../src/models/church.model'),Community=require('../src/models/linked-community.model'),Event=require('../src/models/event.model'),svc=require('../src/services/event.service'),v=require('../src/validation/event');
-const secret='events-isolated-test-secret-longer-than-32',app=createApp({jwtSecret:secret,corsOrigins:[],enableTestUi:false}),users={},tokens={};let mongo,church,other,draft,legacy,community,otherCommunity,draftCommunity;
+const secret='events-isolated-test-secret-longer-than-32',app=createApp({requireVerifiedEmail:false,jwtSecret:secret,corsOrigins:[],enableTestUi:false}),users={},tokens={};let mongo,church,other,draft,legacy,community,otherCommunity,draftCommunity;
 const auth=who=>({Authorization:'Bearer '+tokens[who]});
 const create=(body={},who='rep')=>request(app).post('/api/events').set(auth(who)).send({churchId:church.id,title:'Encuentro de prueba',description:'Descripción del encuentro.',startsAt:'2099-10-15T19:00',location:{address:'Plaza de prueba',commune:'Santiago'},...body});
 const publish=(e,value='published',who='rep',version=e.version)=>request(app).patch('/api/events/'+e._id+'/publication').set(auth(who)).set('If-Match','"'+version+'"').send({publicationStatus:value});

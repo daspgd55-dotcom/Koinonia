@@ -11,7 +11,7 @@ const { connectDB, disconnectDB } = require('../src/config/db');
 const User = require('../src/models/user.model'), Church = require('../src/models/church.model');
 const Interaction = require('../src/models/interaction.model');
 const config = { jwtSecret: 'a-test-only-secret-with-more-than-32-characters', corsOrigins: ['http://localhost:5173'], recommenderUrl: null, recommenderTimeoutMs: 5000 };
-const app = createApp(config);
+const app = createApp(Object.assign(config,{requireVerifiedEmail:false}));
 let mongo, admin, rep, other, person, adminToken, repToken, otherToken, userToken, nearId, farId;
 const bearer = token => ({ Authorization: 'Bearer ' + token });
 const fixture = (name, point = [-70.65, -33.45]) => ({
@@ -216,7 +216,7 @@ test('Panel de pruebas: recursos locales y desactivación explícita', async () 
   assert.match(html.text, /Test de servicios/);
   assert.match(html.headers['content-security-policy'], /script-src 'self'/);
   await request(app).get('/testing/app.js').expect(200);
-  await request(createApp({ ...config, enableTestUi: false })).get('/testing/').expect(404);
+  await request(createApp({requireVerifiedEmail:false, ...config, enableTestUi: false })).get('/testing/').expect(404);
 });
 test('Gestión completa: filtros privados, ficha inactiva, restauración y conflicto entre sesiones', async () => {
   await request(app).get('/api/churches/manage/' + nearId).expect(401);
@@ -468,7 +468,7 @@ test('Gestión de usuarios: filtro, privacidad, edición, concurrencia y protecc
 test('Descubrimiento: modo tradicional independiente del proveedor y capacidades públicas honestas', async () => {
   const capabilities=await request(app).get('/api/recommendations/capabilities').expect(200);
   assert.equal(capabilities.body.traditional,true);assert.equal(capabilities.body.semantic,false);
-  const isolated=createApp({...config,recommenderUrl:'http://127.0.0.1:1'});
+  const isolated=createApp({requireVerifiedEmail:false,...config,recommenderUrl:'http://127.0.0.1:1'});
   const r=await request(isolated).post('/api/recommendations').set(bearer(adminToken)).send({mode:'traditional',limit:20}).expect(200);
   assert.equal(r.body.meta.mode,'deterministic');assert.equal(r.body.meta.queryInterpreted,false);
   await request(isolated).post('/api/recommendations').set(bearer(adminToken)).send({mode:'semantic'}).expect(400);

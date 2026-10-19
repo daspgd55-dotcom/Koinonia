@@ -14,7 +14,7 @@ const jwt = require('jsonwebtoken');
 let mongo, records, admin, temp;
 const email = 'import-admin@example.test';
 const config = { jwtSecret: 'dataset-tests-only-long-secret-12345', corsOrigins: [], recommenderUrl: null };
-const app = createApp(config);
+const app = createApp(Object.assign(config,{requireVerifiedEmail:false}));
 before(async () => {
   temp = await fs.mkdtemp(path.join(os.tmpdir(), 'koinonia-import-'));
   records = await readDataset(path.resolve(__dirname, '../data/google-maps-2026-05-18/churches.import.ndjson'));

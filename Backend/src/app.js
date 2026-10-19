@@ -13,7 +13,8 @@ function createApp(config) {
     app.use('/testing', express.static(require('node:path').resolve(__dirname, '../public/testing'), { etag: false, maxAge: 0 }));
   }
   app.get('/health', (req, res) => res.json({ status: 'ok' }));
-  app.use('/api/auth', rateLimit({ windowMs: 900000, limit: 30, standardHeaders: 'draft-8', legacyHeaders: false,
+  app.use('/api/auth',async(req,res,next)=>{const security=require('./services/account-security.service');res.set('Cache-Control','no-store');if(security.enabled(config))await security.quota(config,'auth-ip',req.ip,60,900000);next();});
+  app.use('/api/auth', rateLimit({ windowMs: 900000, limit: 60, standardHeaders: 'draft-8', legacyHeaders: false,
     message: { error: { code: 'RATE_LIMIT', message: 'Demasiados intentos' } } }));
   app.use('/api', require('./routes/api.routes'));
   app.use((req, res, next) => next(new HttpError(404, 'NOT_FOUND', 'Ruta no encontrada')));

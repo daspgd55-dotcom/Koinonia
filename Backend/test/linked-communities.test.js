@@ -1,7 +1,7 @@
 const { test, before, after } = require('node:test'), assert = require('node:assert/strict'), request = require('supertest'), path = require('node:path'), jwt = require('jsonwebtoken');
 const { MongoMemoryServer } = require('mongodb-memory-server'), { connectDB, disconnectDB } = require('../src/config/db'), { createApp } = require('../src/app');
 const User = require('../src/models/user.model'), Church = require('../src/models/church.model'), Community = require('../src/models/linked-community.model');
-const secret = 'linked-community-isolated-test-secret-123456', app = createApp({ jwtSecret: secret, corsOrigins: [], enableTestUi: false });
+const secret = 'linked-community-isolated-test-secret-123456', app = createApp({requireVerifiedEmail:false, jwtSecret: secret, corsOrigins: [], enableTestUi: false });
 let mongo, church, other, draft, legacy; const users = {}, tokens = {};
 const auth = who => ({ Authorization: 'Bearer ' + tokens[who] });
 const create = (who = 'rep', extra = {}) => request(app).post('/api/communities').set(auth(who)).send({ churchId: church.id, name: 'Jóvenes de prueba', type: 'youth', ...extra });

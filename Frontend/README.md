@@ -123,3 +123,7 @@ La preferencia del sistema `prefers-reduced-motion` desactiva los efectos, inclu
 ## Ubicación por dirección
 
 En Preferencias de búsqueda → Tu ubicación, «Buscar cerca de» permite elegir dispositivo, dirección o sin ubicación. La dirección se consulta solo al pulsar comprobar y se guarda al confirmar un candidato y guardar configuración. Cambiar calle o comuna invalida su confirmación. Las respuestas permanecen ante errores; no hay fallback silencioso a GPS. `node test/address-location.cjs` comprueba el recorrido con proveedor simulado; configuración y contrato en [address-location.md](../Backend/docs/address-location.md). La integración real requiere `GEOAPIFY_API_KEY` en el backend.
+
+## Verificación de cuentas e invitaciones
+
+El registro muestra una confirmación genérica y espera verificación antes de iniciar sesión. Las rutas `#/verificar-correo` y `#/aceptar-invitacion` gestionan los enlaces sin consumirlos automáticamente. El panel crea representantes mediante invitaciones, sin mostrar contraseñas. La recuperación mantiene el enlace de un solo uso y cierra sesiones. `node test/email-security.cjs` verifica el flujo seguro con correo simulado; configuración y transición de cuentas anteriores en [account-security.md](../Backend/docs/account-security.md).

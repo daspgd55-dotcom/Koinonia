@@ -13,6 +13,7 @@ async function auth(req, res, next) {
   if (typeof claims.sub !== 'string' || !/^[a-fA-F0-9]{24}$/.test(claims.sub)) throw new HttpError(401, 'UNAUTHORIZED', 'Sesión inválida');
   const user = await User.findById(claims.sub).select('+sessionVersion');
   if (!user?.active || (claims.sv || 0) !== (user.sessionVersion || 0)) throw new HttpError(401, 'UNAUTHORIZED', 'Sesión inválida');
+  if(user.invitationPending||require('../services/account-security.service').required(user,req.app.locals.config))throw new HttpError(403,'EMAIL_VERIFICATION_REQUIRED','Verifica tu correo antes de continuar.');
   req.user = user; next();
 }
 const roles = (...allowed) => (req, res, next) => {

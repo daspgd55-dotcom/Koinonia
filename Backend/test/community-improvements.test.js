@@ -1,6 +1,6 @@
 const {test,before,after}=require('node:test'),assert=require('node:assert/strict'),request=require('supertest'),path=require('node:path');
 const {MongoMemoryServer}=require('mongodb-memory-server'),{connectDB,disconnectDB}=require('../src/config/db'),{createApp}=require('../src/app'),User=require('../src/models/user.model'),Church=require('../src/models/church.model'),Visit=require('../src/models/visit.model'),svc=require('../src/services/visit.service');
-const app=createApp({jwtSecret:'visits-test-only-secret-longer-than-32-characters',corsOrigins:[],enableTestUi:false});let mongo,c,otherChurch,users={},tokens={},visitId;
+const app=createApp({requireVerifiedEmail:false,jwtSecret:'visits-test-only-secret-longer-than-32-characters',corsOrigins:[],enableTestUi:false});let mongo,c,otherChurch,users={},tokens={},visitId;
 const auth=name=>({Authorization:'Bearer '+tokens[name]});
 const option=async()=> (await request(app).get('/api/churches/'+c.id+'/visit-options').expect(200)).body;
 const send=async(extra={})=>{const o=await option();return request(app).post('/api/churches/'+c.id+'/visits').set(auth('visitor')).send({optionKey:o.data[0].optionKey,startsAt:o.data[0].startsAt,version:o.version,message:'Voy con mi familia',requestReply:true,...extra});};

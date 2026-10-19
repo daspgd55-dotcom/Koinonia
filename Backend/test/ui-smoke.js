@@ -18,7 +18,7 @@ async function main() {
   for (let i = 1; i <= 12; i++) await Church.create({ identification: { name: 'Comunidad de prueba ' + String(i).padStart(2, '0') },
     location: { commune: i % 2 ? 'Santiago' : 'Providencia', coordinates: { type: 'Point', coordinates: [-70.65 + i / 10000, -33.45] } },
     metadata: { dataStatus: 'published', testData: true }, createdBy: admin._id, representatives: [admin._id] });
-  const app = createApp({ jwtSecret: 'test-ui-only-secret-over-32-characters', corsOrigins: [], enableTestUi: true });
+  const app = createApp({requireVerifiedEmail:false, jwtSecret: 'test-ui-only-secret-over-32-characters', corsOrigins: [], enableTestUi: true });
   server = app.listen(0, '127.0.0.1'); await new Promise(resolve => server.once('listening', resolve));
   const base = 'http://127.0.0.1:' + server.address().port;
   browser = await chromium.launch({ headless: true, ...(process.env.BROWSER_CHANNEL ? { channel: process.env.BROWSER_CHANNEL } : process.platform === 'win32' ? { channel: 'msedge' } : {}) });

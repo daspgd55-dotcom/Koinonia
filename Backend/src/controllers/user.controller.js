@@ -33,7 +33,7 @@ exports.promoteRepresentative = async (req, res) => {
   res.json({ data });
 };
 
-const adminProjection = '_id name email position role active createdAt updatedAt';
+const adminProjection = '_id name email position role active emailVerifiedAt invitationPending createdAt updatedAt';
 exports.listManaged = async (req, res) => {
   const q = v.parse(v.z.strictObject({ q: v.z.string().trim().max(200).optional(), role: v.z.enum(['user','representative','admin']).optional(), active: v.z.enum(['all','active','inactive']).default('all'), page: v.z.coerce.number().int().min(1).max(10000).default(1), limit: v.z.coerce.number().int().min(1).max(100).default(12) }), req.query);
   const filter = {};
