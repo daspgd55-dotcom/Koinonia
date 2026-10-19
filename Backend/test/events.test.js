@@ -83,3 +83,21 @@ test('Filtros, límites de día UTC-3, paginación y eventos finalizados',async(
  let old=(await create({startsAt:'2000-01-01T23:00',endsAt:'2000-01-03T10:00'}).expect(201)).body.data;old=(await publish(old).expect(200)).body.data;assert.equal(old.displayStatus,'finished');const stored=await Event.findById(old._id);assert.equal(stored.eventStatus,'scheduled');
  assert.ok((await request(app).get('/api/events?view=past').expect(200)).body.data.some(e=>e._id===old._id));assert.ok(!(await request(app).get('/api/events').expect(200)).body.data.some(e=>e._id===old._id));
 });
+
+test('Búsqueda pública literal por título, longitud, paginación y privacidad',async()=>{
+ const marker='[encuentro].*',make=body=>create({title:'Jornada '+marker,...body});
+ const a=(await make({startsAt:'2099-11-01T10:00',category:'workshop'}).expect(201)).body.data;await publish(a).expect(200);
+ const b=(await make({startsAt:'2099-11-02T10:00',communityId:community.id}).expect(201)).body.data;await publish(b).expect(200);
+ await make({title:'Borrador '+marker}).expect(201);
+ const archived=(await make({title:'Archivado '+marker}).expect(201)).body.data;await publish(archived,'archived').expect(200);
+ const decoy=(await create({title:'Jornada encuentro distinta'}).expect(201)).body.data;await publish(decoy).expect(200);
+ const url='/api/events?q='+encodeURIComponent('  [ENCUENTRO].*  ');let result=(await request(app).get(url+'&limit=1&page=2').expect(200)).body;
+ assert.deepEqual(result.pagination,{page:2,limit:1,total:2,pages:2});assert.equal(result.data[0]._id,b._id);
+ result=(await request(app).get(url+'&category=workshop').expect(200)).body;assert.equal(result.pagination.total,1);assert.equal(result.data[0]._id,a._id);
+ try{
+  await Community.updateOne({_id:community.id},{$set:{status:'draft'}});result=(await request(app).get(url).expect(200)).body;assert.equal(result.pagination.total,1);assert.equal(result.data[0]._id,a._id);
+  await Church.updateOne({_id:church.id},{$set:{'metadata.dataStatus':'draft'}});result=(await request(app).get(url).expect(200)).body;assert.equal(result.pagination.total,0);assert.deepEqual(result.data,[]);
+ }finally{await Community.updateOne({_id:community.id},{$set:{status:'published'}});await Church.updateOne({_id:church.id},{$set:{'metadata.dataStatus':'published'}});}
+ for(const value of ['','   ','a'.repeat(201)])await request(app).get('/api/events?q='+encodeURIComponent(value)).expect(400);
+ await request(app).get('/api/events?q='+encodeURIComponent('a'.repeat(200))).expect(200);
+});

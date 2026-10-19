@@ -1,0 +1,55 @@
+{
+  "sourceDatabase": "Koinonia_pilot",
+  "targetDatabase": "koinonia_synthetic_test_v2",
+  "fingerprint": "c862f9a90a873f95f9af48092084c4ecc0232585f59005948d82328ad78b8cfd",
+  "sourceChurches": 2,
+  "targetChurches": 338,
+  "matched": 2,
+  "inserted": 0,
+  "requiredUsersToInsert": 0,
+  "sourcesToInsert": 0,
+  "churchChanges": [
+    {
+      "sourceId": "6ac9b9225017eda79d91466c",
+      "targetId": "6ac9b9225017eda79d91466c",
+      "name": "Iglesia Bíblica Alma",
+      "method": "id_or_origin",
+      "fieldsFromPilot": [],
+      "remainingUnverifiedEnrichedFields": []
+    },
+    {
+      "sourceId": "6acea311257d49e4fbd58865",
+      "targetId": "6acea311257d49e4fbd58865",
+      "name": "Iglesia Viña Ágape",
+      "method": "id_or_origin",
+      "fieldsFromPilot": [],
+      "remainingUnverifiedEnrichedFields": []
+    }
+  ],
+  "mapping": {
+    "6ac9b9225017eda79d91466c": "6ac9b9225017eda79d91466c",
+    "6acea311257d49e4fbd58865": "6acea311257d49e4fbd58865"
+  },
+  "blockers": [],
+  "actions": [
+    {
+      "collection": "churches",
+      "id": "6ac9b9225017eda79d91466c",
+      "name": "Iglesia Bíblica Alma"
+    },
+    {
+      "collection": "test_fixture_provenance",
+      "id": "6ac9b9225017eda79d91466c"
+    },
+    {
+      "collection": "churches",
+      "id": "6acea311257d49e4fbd58865",
+      "name": "Iglesia Viña Ágape"
+    },
+    {
+      "collection": "test_fixture_provenance",
+      "id": "6acea311257d49e4fbd58865"
+    }
+  ],
+  "scope": "churches, referenced users and church_sources; no interactions, events or visits"
+}

@@ -1,0 +1,71 @@
+{
+  "database": "koinonia_synthetic_test_v2",
+  "checkedAt": "2026-10-18T19:55:38.568Z",
+  "inserted": 8,
+  "accounts": [
+    {
+      "email": "bautista.santiago@koinonia.test",
+      "role": "user",
+      "loginVerified": true,
+      "results": 5,
+      "evaluatedCandidates": 28,
+      "topChurch": "Culto Unidos Primera IGLESIA Bautista"
+    },
+    {
+      "email": "catolica.providencia@koinonia.test",
+      "role": "user",
+      "loginVerified": true,
+      "results": 5,
+      "evaluatedCandidates": 36,
+      "topChurch": "Parroquia San Rafael Arcángel"
+    },
+    {
+      "email": "presbiteriana.nunoa@koinonia.test",
+      "role": "user",
+      "loginVerified": true,
+      "results": 5,
+      "evaluatedCandidates": 24,
+      "topChurch": "MINFA SANTIAGO"
+    },
+    {
+      "email": "pentecostal.maipu@koinonia.test",
+      "role": "user",
+      "loginVerified": true,
+      "results": 0,
+      "evaluatedCandidates": 0,
+      "topChurch": null
+    },
+    {
+      "email": "adventista.puentealto@koinonia.test",
+      "role": "user",
+      "loginVerified": true,
+      "results": 5,
+      "evaluatedCandidates": 26,
+      "topChurch": "Iglesia San Pablo"
+    },
+    {
+      "email": "explorador.lascondes@koinonia.test",
+      "role": "user",
+      "loginVerified": true,
+      "results": 5,
+      "evaluatedCandidates": 337,
+      "topChurch": "Iglesia Bíblica Alma"
+    },
+    {
+      "email": "familia.laflorida@koinonia.test",
+      "role": "user",
+      "loginVerified": true,
+      "results": 5,
+      "evaluatedCandidates": 337,
+      "topChurch": "Iglesia Bíblica Alma"
+    },
+    {
+      "email": "bilingue.recoleta@koinonia.test",
+      "role": "user",
+      "loginVerified": true,
+      "results": 5,
+      "evaluatedCandidates": 50,
+      "topChurch": "Templo Evangelico Bautista \"La Roca\""
+    }
+  ]
+}

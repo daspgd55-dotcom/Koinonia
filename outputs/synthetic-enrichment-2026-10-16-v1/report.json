@@ -1,0 +1,71 @@
+{
+  "batchId": "synthetic-enrichment-2026-10-16-v1",
+  "testOnly": true,
+  "sourceFiles": [
+    "Backend/.cache/import-backups/1790801843577-review.json",
+    "Backend/data/review-2026-09-30/consolidated.ndjson"
+  ],
+  "sourceHashes": {
+    "Backend/.cache/import-backups/1790801843577-review.json": "65342d57d990a598b5cf45ea9c80a311ffff13ad867120b1372cd76d38a03a19",
+    "Backend/data/review-2026-09-30/consolidated.ndjson": "1dfabb7621156202cd900eea4067c4dfeddd3e6fc5088027c5f713497359a210"
+  },
+  "reconstruction": {
+    "backupDocuments": 264,
+    "reconstructedDocuments": 343,
+    "active": 336,
+    "manualReviewGroups": 0
+  },
+  "records": 336,
+  "syntheticRecords": 302,
+  "syntheticValues": 4012,
+  "scenarios": {
+    "enriched": 268,
+    "partial_enrichment": 34,
+    "original_missing_data": 34
+  },
+  "coverage": {
+    "identification.name": 336,
+    "identification.description": 8,
+    "location.address": 336,
+    "location.commune": 336,
+    "location.city": 336,
+    "location.region": 336,
+    "location.coordinates.type": 336,
+    "location.coordinates.coordinates": 336,
+    "christianIdentity.branch": 303,
+    "christianIdentity.denomination": 303,
+    "christianIdentity.languages": 303,
+    "doctrine.officialStatement": 3,
+    "doctrine.characteristics": 269,
+    "meetings": 269,
+    "community.activities": 303,
+    "leadership.mainLeader.name": 3,
+    "leadership.mainLeader.role": 3,
+    "verification.source": 336,
+    "verification.authorized": 336,
+    "location.parkingAvailability": 268,
+    "location.accessibilityLevel": 268,
+    "community.ministries": 302,
+    "community.targetGroups": 302,
+    "community.musicalStyles": 302,
+    "community.culturalStyle": 302,
+    "community.memberRange": 268,
+    "firstVisit.welcomeSupport": 268,
+    "location.postalCode": 176,
+    "location.countryCode": 333,
+    "contact.phone": 169,
+    "media": 107,
+    "contact.website": 86,
+    "contact.instagram": 8,
+    "contact.facebook": 7,
+    "contact.youtube": 2
+  },
+  "limitations": [
+    "Reconstrucción histórica local, no consulta de la base actual.",
+    "No mide pertinencia real ni calidad de evidencia institucional.",
+    "Las denominaciones y ramas simuladas no son inferencias ni hechos comprobados.",
+    "Distribución diseñada para cobertura técnica, no para representar prevalencias reales.",
+    "No se generan contactos, líderes, testimonios ni declaraciones oficiales.",
+    "El corpus permite probar recuperación; el sistema LLM/RAG no se integra con este script."
+  ]
+}

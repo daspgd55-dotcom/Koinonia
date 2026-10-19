@@ -53,6 +53,7 @@ async function main() {
   await page.getByRole('button',{name:'Asamblea de Dios'}).waitFor();
   await page.screenshot({path:path.join(output,'01-denominations-desktop.png'),fullPage:true});
   await page.getByRole('button',{name:'Guardar y completar después'}).click();
+  await page.waitForURL('**/#/descubrir');
   await page.getByRole('link',{name:'Continuar encuesta'}).waitFor();
   let user=await User.findOne({email:'journey@example.test'}).lean();
   assert.equal(user.onboarding.status,'skipped'); assert.equal(user.onboarding.version,3);
@@ -63,7 +64,7 @@ async function main() {
   await page.getByLabel('Correo electrónico',{exact:true}).fill('journey@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('Test-web-password-123');
   await page.getByRole('button',{name:'Iniciar sesión'}).click();
-  await page.getByRole('heading',{name:'Resultados'}).waitFor();
+  await page.waitForURL('**/#/descubrir'); await page.getByRole('heading',{name:'Comunidades para conocer',exact:true}).waitFor();
   await page.getByRole('link',{name:'Continuar encuesta'}).click();
   await page.getByRole('heading',{name:'¿Con qué rama te identificas?'}).waitFor();
   assert.equal(await page.getByRole('button',{name:'Metodista'}).getAttribute('aria-pressed'),'true');
@@ -87,8 +88,8 @@ async function main() {
   await page.setViewportSize({width:390,height:844});
   await page.screenshot({path:path.join(output,'02-location-mobile.png'),fullPage:true});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-  await page.getByRole('button',{name:'Terminar y explorar iglesias'}).click();
-  await page.getByRole('heading',{name:'Resultados'}).waitFor();
+  await page.getByRole('button',{name:'Terminar e ir a Para ti'}).click();
+  await page.waitForURL('**/#/descubrir'); await page.getByRole('heading',{name:'Comunidades para conocer',exact:true}).waitFor();
   await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('link',{name:'Configurar perfil',exact:true}).click();
   await page.getByRole('heading',{name:'Mi perfil',exact:true}).waitFor();
   user=await User.findById(user._id).lean();
@@ -170,7 +171,7 @@ async function main() {
   await page.getByLabel('Correo electrónico',{exact:true}).fill('journey@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('Test-web-password-123');
   await page.getByRole('button',{name:'Iniciar sesión'}).click();
-  await page.getByRole('heading',{name:'Resultados'}).waitFor();
+  await page.waitForURL('**/#/descubrir'); await page.getByRole('heading',{name:'Comunidades para conocer',exact:true}).waitFor();
   await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('link',{name:'Configurar perfil',exact:true}).click();
   await page.getByRole('button',{name:'Editar Tu ubicación',exact:true}).click();
   assert.equal(await page.getByLabel('Comuna de interés',{exact:true}).inputValue(),'Ñuñoa');
@@ -216,8 +217,8 @@ async function main() {
   await page.getByRole('button',{name:'Guardar y continuar'}).click();
 
   await page.getByRole('button',{name:'Aún no sé dónde buscar'}).click();
-  await page.getByRole('button',{name:'Terminar y explorar iglesias'}).click();
-  await page.getByRole('heading',{name:'Resultados'}).waitFor();
+  await page.getByRole('button',{name:'Terminar e ir a Para ti'}).click();
+  await page.waitForURL('**/#/descubrir'); await page.getByRole('heading',{name:'Comunidades para conocer',exact:true}).waitFor();
   await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('link',{name:'Configurar perfil',exact:true}).click();
   await page.getByRole('heading',{name:'Mi perfil',exact:true}).waitFor();
   const other=await User.findOne({email:'other-web@example.test'}).lean();
@@ -234,6 +235,7 @@ async function main() {
   await page.getByLabel('Correo electrónico',{exact:true}).fill('other-web@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('A-new-password-for-web-123');
   await page.getByRole('button',{name:'Iniciar sesión →',exact:true}).click();
+  await page.waitForURL('**/#/descubrir');
   await page.getByRole('button',{name:'Mi perfil',exact:true}).waitFor();
   if(!await page.getByRole('button',{name:'Cerrar sesión',exact:true}).isVisible())await page.getByRole('button',{name:'Mi perfil',exact:true}).click();
   await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
@@ -256,6 +258,7 @@ async function main() {
   await page.getByLabel('Correo electrónico',{exact:true}).fill('other-web@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('Reset-web-password-789');
   await page.getByRole('button',{name:'Iniciar sesión →',exact:true}).click();
+  await page.waitForURL('**/#/descubrir');
   await page.getByRole('button',{name:'Mi perfil',exact:true}).waitFor();
   assert.deepEqual(errors,[]);
   console.log('WEB OK: tres fases, ramas y denominaciones dependientes, omisiones, dirección privada, GPS voluntario (denegado/activado/retirado), deslizador, configuración, casillas, errores, reanudación, legado y móvil.');

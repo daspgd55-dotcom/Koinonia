@@ -1,0 +1,665 @@
+[
+  {
+    "email": "bautista.santiago@koinonia.test",
+    "summary": "Bautista obligatoria; formación bíblica y jóvenes; comuna y distancia flexibles.",
+    "name": "Prueba Bautista Centro",
+    "username": "test_bautista_santiago",
+    "role": "user",
+    "active": true,
+    "membershipChurch": null,
+    "preferences": {
+      "commune": "Santiago",
+      "denominations": [
+        "Bautista"
+      ],
+      "branches": [
+        "Protestante"
+      ],
+      "doctrinalTags": [
+        "Autoridad de las Escrituras"
+      ],
+      "activities": [
+        "Cursos / institutos"
+      ],
+      "ministries": [
+        "Formación bíblica",
+        "Jóvenes"
+      ],
+      "targetGroups": [
+        "Jóvenes"
+      ],
+      "languages": [
+        "Español"
+      ],
+      "meetingDays": [
+        "Domingo"
+      ],
+      "radiusKm": 10,
+      "location": {
+        "lat": -33.4489,
+        "lng": -70.6693
+      }
+    },
+    "criterionModes": {
+      "commune": "preferred",
+      "denominations": "required",
+      "branches": "preferred",
+      "doctrinalTags": "preferred",
+      "activities": "preferred",
+      "ministries": "preferred",
+      "targetGroups": "preferred",
+      "languages": "preferred",
+      "meetingDays": "preferred",
+      "radiusKm": "preferred"
+    },
+    "answerStates": {
+      "commune": "answered",
+      "denominations": "answered",
+      "branches": "answered",
+      "doctrinalTags": "answered",
+      "activities": "answered",
+      "ministries": "answered",
+      "targetGroups": "answered",
+      "languages": "answered",
+      "meetingDays": "answered",
+      "radiusKm": "answered",
+      "location": "answered",
+      "spiritualIdentity": "answered",
+      "goal": "answered",
+      "firstVisitPreference": "answered"
+    },
+    "searchContext": {
+      "spiritualIdentity": "christian",
+      "goal": "join",
+      "firstVisitPreference": "information"
+    },
+    "onboarding": {
+      "status": "completed",
+      "version": 3,
+      "lastStep": 3,
+      "completedAt": "2026-10-18T19:55:38.579Z",
+      "updatedAt": "2026-10-18T19:55:38.580Z"
+    },
+    "profileRevision": 1
+  },
+  {
+    "email": "catolica.providencia@koinonia.test",
+    "summary": "Rama Católica obligatoria; familias, Eucaristía y voluntariado preferidos.",
+    "name": "Prueba Católica Providencia",
+    "username": "test_catolica_providenci",
+    "role": "user",
+    "active": true,
+    "membershipChurch": null,
+    "preferences": {
+      "commune": "Providencia",
+      "denominations": [
+        "Católica Romana"
+      ],
+      "branches": [
+        "Católica"
+      ],
+      "doctrinalTags": [
+        "Eucaristía"
+      ],
+      "activities": [
+        "Voluntariado",
+        "Eventos familiares"
+      ],
+      "ministries": [
+        "Familias",
+        "Acción social"
+      ],
+      "targetGroups": [
+        "Familias intergeneracionales"
+      ],
+      "languages": [
+        "Español"
+      ],
+      "meetingDays": [
+        "Domingo"
+      ],
+      "radiusKm": 12,
+      "location": {
+        "lat": -33.431,
+        "lng": -70.609
+      }
+    },
+    "criterionModes": {
+      "commune": "preferred",
+      "denominations": "preferred",
+      "branches": "required",
+      "doctrinalTags": "preferred",
+      "activities": "preferred",
+      "ministries": "preferred",
+      "targetGroups": "preferred",
+      "languages": "preferred",
+      "meetingDays": "preferred",
+      "radiusKm": "preferred"
+    },
+    "answerStates": {
+      "commune": "answered",
+      "denominations": "answered",
+      "branches": "answered",
+      "doctrinalTags": "answered",
+      "activities": "answered",
+      "ministries": "answered",
+      "targetGroups": "answered",
+      "languages": "answered",
+      "meetingDays": "answered",
+      "radiusKm": "answered",
+      "location": "answered",
+      "spiritualIdentity": "answered",
+      "goal": "answered",
+      "firstVisitPreference": "answered"
+    },
+    "searchContext": {
+      "spiritualIdentity": "christian",
+      "goal": "join",
+      "firstVisitPreference": "information"
+    },
+    "onboarding": {
+      "status": "completed",
+      "version": 3,
+      "lastStep": 3,
+      "completedAt": "2026-10-18T19:55:38.580Z",
+      "updatedAt": "2026-10-18T19:55:38.580Z"
+    },
+    "profileRevision": 1
+  },
+  {
+    "email": "presbiteriana.nunoa@koinonia.test",
+    "summary": "Presbiteriana obligatoria; predicación, formación y consejería preferidas.",
+    "name": "Prueba Presbiteriana Ñuñoa",
+    "username": "test_presbiteriana_nunoa",
+    "role": "user",
+    "active": true,
+    "membershipChurch": null,
+    "preferences": {
+      "commune": "Ñuñoa",
+      "denominations": [
+        "Presbiteriana"
+      ],
+      "branches": [
+        "Protestante"
+      ],
+      "doctrinalTags": [
+        "Predicación",
+        "Formación bíblica"
+      ],
+      "activities": [
+        "Conferencias",
+        "Cursos / institutos"
+      ],
+      "ministries": [
+        "Formación bíblica",
+        "Consejería"
+      ],
+      "targetGroups": [
+        "Adultos"
+      ],
+      "languages": [
+        "Español"
+      ],
+      "meetingDays": [
+        "Domingo",
+        "Miércoles"
+      ],
+      "radiusKm": 15,
+      "location": {
+        "lat": -33.4569,
+        "lng": -70.5975
+      }
+    },
+    "criterionModes": {
+      "commune": "preferred",
+      "denominations": "required",
+      "branches": "preferred",
+      "doctrinalTags": "preferred",
+      "activities": "preferred",
+      "ministries": "preferred",
+      "targetGroups": "preferred",
+      "languages": "preferred",
+      "meetingDays": "preferred",
+      "radiusKm": "preferred"
+    },
+    "answerStates": {
+      "commune": "answered",
+      "denominations": "answered",
+      "branches": "answered",
+      "doctrinalTags": "answered",
+      "activities": "answered",
+      "ministries": "answered",
+      "targetGroups": "answered",
+      "languages": "answered",
+      "meetingDays": "answered",
+      "radiusKm": "answered",
+      "location": "answered",
+      "spiritualIdentity": "answered",
+      "goal": "answered",
+      "firstVisitPreference": "answered"
+    },
+    "searchContext": {
+      "spiritualIdentity": "christian",
+      "goal": "join",
+      "firstVisitPreference": "information"
+    },
+    "onboarding": {
+      "status": "completed",
+      "version": 3,
+      "lastStep": 3,
+      "completedAt": "2026-10-18T19:55:38.580Z",
+      "updatedAt": "2026-10-18T19:55:38.580Z"
+    },
+    "profileRevision": 1
+  },
+  {
+    "email": "pentecostal.maipu@koinonia.test",
+    "summary": "Maipú y radio de 12 km obligatorios; afinidad pentecostal flexible. Caso de restricciones geográficas.",
+    "name": "Prueba Pentecostal Maipú",
+    "username": "test_pentecostal_maipu",
+    "role": "user",
+    "active": true,
+    "membershipChurch": null,
+    "preferences": {
+      "commune": "Maipú",
+      "denominations": [
+        "Pentecostal",
+        "Asamblea de Dios"
+      ],
+      "branches": [
+        "Protestante"
+      ],
+      "doctrinalTags": [
+        "Prácticas carismáticas"
+      ],
+      "activities": [
+        "Reuniones de Alabanza",
+        "Campamentos"
+      ],
+      "ministries": [
+        "Música / alabanza",
+        "Oración",
+        "Jóvenes"
+      ],
+      "targetGroups": [
+        "Jóvenes"
+      ],
+      "languages": [
+        "Español"
+      ],
+      "meetingDays": [
+        "Viernes",
+        "Domingo"
+      ],
+      "radiusKm": 12,
+      "location": {
+        "lat": -33.509,
+        "lng": -70.7575
+      }
+    },
+    "criterionModes": {
+      "commune": "required",
+      "denominations": "preferred",
+      "branches": "preferred",
+      "doctrinalTags": "preferred",
+      "activities": "preferred",
+      "ministries": "preferred",
+      "targetGroups": "preferred",
+      "languages": "preferred",
+      "meetingDays": "preferred",
+      "radiusKm": "required"
+    },
+    "answerStates": {
+      "commune": "answered",
+      "denominations": "answered",
+      "branches": "answered",
+      "doctrinalTags": "answered",
+      "activities": "answered",
+      "ministries": "answered",
+      "targetGroups": "answered",
+      "languages": "answered",
+      "meetingDays": "answered",
+      "radiusKm": "answered",
+      "location": "answered",
+      "spiritualIdentity": "answered",
+      "goal": "answered",
+      "firstVisitPreference": "answered"
+    },
+    "searchContext": {
+      "spiritualIdentity": "christian",
+      "goal": "join",
+      "firstVisitPreference": "information"
+    },
+    "onboarding": {
+      "status": "completed",
+      "version": 3,
+      "lastStep": 3,
+      "completedAt": "2026-10-18T19:55:38.580Z",
+      "updatedAt": "2026-10-18T19:55:38.580Z"
+    },
+    "profileRevision": 1
+  },
+  {
+    "email": "adventista.puentealto@koinonia.test",
+    "summary": "Adventista y reuniones en sábado obligatorias; cercanía y ayuda comunitaria preferidas.",
+    "name": "Prueba Adventista Puente Alto",
+    "username": "test_adventista_puenteal",
+    "role": "user",
+    "active": true,
+    "membershipChurch": null,
+    "preferences": {
+      "commune": "Puente Alto",
+      "denominations": [
+        "Adventista"
+      ],
+      "branches": [
+        "Protestante"
+      ],
+      "doctrinalTags": [
+        "Formación bíblica"
+      ],
+      "activities": [
+        "Ayuda social"
+      ],
+      "ministries": [
+        "Familias",
+        "Ayuda comunitaria"
+      ],
+      "targetGroups": [
+        "Familias intergeneracionales"
+      ],
+      "languages": [
+        "Español"
+      ],
+      "meetingDays": [
+        "Sábado"
+      ],
+      "radiusKm": 30,
+      "location": {
+        "lat": -33.6095,
+        "lng": -70.5758
+      }
+    },
+    "criterionModes": {
+      "commune": "preferred",
+      "denominations": "required",
+      "branches": "preferred",
+      "doctrinalTags": "preferred",
+      "activities": "preferred",
+      "ministries": "preferred",
+      "targetGroups": "preferred",
+      "languages": "preferred",
+      "meetingDays": "required",
+      "radiusKm": "preferred"
+    },
+    "answerStates": {
+      "commune": "answered",
+      "denominations": "answered",
+      "branches": "answered",
+      "doctrinalTags": "answered",
+      "activities": "answered",
+      "ministries": "answered",
+      "targetGroups": "answered",
+      "languages": "answered",
+      "meetingDays": "answered",
+      "radiusKm": "answered",
+      "location": "answered",
+      "spiritualIdentity": "answered",
+      "goal": "answered",
+      "firstVisitPreference": "answered"
+    },
+    "searchContext": {
+      "spiritualIdentity": "christian",
+      "goal": "join",
+      "firstVisitPreference": "information"
+    },
+    "onboarding": {
+      "status": "completed",
+      "version": 3,
+      "lastStep": 3,
+      "completedAt": "2026-10-18T19:55:38.580Z",
+      "updatedAt": "2026-10-18T19:55:38.580Z"
+    },
+    "profileRevision": 1
+  },
+  {
+    "email": "explorador.lascondes@koinonia.test",
+    "summary": "Sin preferencia de rama, denominación ni doctrina; prioriza acción social y deportes.",
+    "name": "Prueba Explorador Las Condes",
+    "username": "test_explorador_lasconde",
+    "role": "user",
+    "active": true,
+    "membershipChurch": null,
+    "preferences": {
+      "commune": "Las Condes",
+      "activities": [
+        "Voluntariado",
+        "Actividades deportivas"
+      ],
+      "ministries": [
+        "Acción social",
+        "Deportes"
+      ],
+      "targetGroups": [
+        "Jóvenes",
+        "Adultos"
+      ],
+      "languages": [
+        "Español"
+      ],
+      "meetingDays": [
+        "Sábado",
+        "Domingo"
+      ],
+      "radiusKm": 25,
+      "location": {
+        "lat": -33.408,
+        "lng": -70.567
+      }
+    },
+    "criterionModes": {
+      "commune": "preferred",
+      "denominations": "disabled",
+      "branches": "disabled",
+      "doctrinalTags": "disabled",
+      "activities": "preferred",
+      "ministries": "preferred",
+      "targetGroups": "preferred",
+      "languages": "preferred",
+      "meetingDays": "preferred",
+      "radiusKm": "preferred"
+    },
+    "answerStates": {
+      "commune": "answered",
+      "denominations": "no_preference",
+      "branches": "no_preference",
+      "doctrinalTags": "no_preference",
+      "activities": "answered",
+      "ministries": "answered",
+      "targetGroups": "answered",
+      "languages": "answered",
+      "meetingDays": "answered",
+      "radiusKm": "answered",
+      "location": "answered",
+      "spiritualIdentity": "answered",
+      "goal": "answered",
+      "firstVisitPreference": "answered"
+    },
+    "searchContext": {
+      "spiritualIdentity": "no_religion",
+      "goal": "explore",
+      "firstVisitPreference": "information"
+    },
+    "onboarding": {
+      "status": "completed",
+      "version": 3,
+      "lastStep": 3,
+      "completedAt": "2026-10-18T19:55:38.580Z",
+      "updatedAt": "2026-10-18T19:55:38.580Z"
+    },
+    "profileRevision": 1
+  },
+  {
+    "email": "familia.laflorida@koinonia.test",
+    "summary": "Perfil familiar amplio; todas las coincidencias son preferencias, sin filtros obligatorios.",
+    "name": "Prueba Familia La Florida",
+    "username": "test_familia_laflorida",
+    "role": "user",
+    "active": true,
+    "membershipChurch": null,
+    "preferences": {
+      "commune": "La Florida",
+      "denominations": [
+        "Bautista",
+        "Pentecostal",
+        "No Denominacional"
+      ],
+      "branches": [
+        "Protestante",
+        "Rama Independiente"
+      ],
+      "activities": [
+        "Eventos familiares",
+        "Retiros"
+      ],
+      "ministries": [
+        "Niños",
+        "Familias",
+        "Matrimonios"
+      ],
+      "targetGroups": [
+        "Niños",
+        "Familias intergeneracionales"
+      ],
+      "languages": [
+        "Español"
+      ],
+      "meetingDays": [
+        "Domingo"
+      ],
+      "radiusKm": 18,
+      "location": {
+        "lat": -33.522,
+        "lng": -70.598
+      }
+    },
+    "criterionModes": {
+      "commune": "preferred",
+      "denominations": "preferred",
+      "branches": "preferred",
+      "doctrinalTags": "disabled",
+      "activities": "preferred",
+      "ministries": "preferred",
+      "targetGroups": "preferred",
+      "languages": "preferred",
+      "meetingDays": "preferred",
+      "radiusKm": "preferred"
+    },
+    "answerStates": {
+      "commune": "answered",
+      "denominations": "answered",
+      "branches": "answered",
+      "doctrinalTags": "no_preference",
+      "activities": "answered",
+      "ministries": "answered",
+      "targetGroups": "answered",
+      "languages": "answered",
+      "meetingDays": "answered",
+      "radiusKm": "answered",
+      "location": "answered",
+      "spiritualIdentity": "answered",
+      "goal": "answered",
+      "firstVisitPreference": "answered"
+    },
+    "searchContext": {
+      "spiritualIdentity": "christian",
+      "goal": "join",
+      "firstVisitPreference": "information"
+    },
+    "onboarding": {
+      "status": "completed",
+      "version": 3,
+      "lastStep": 3,
+      "completedAt": "2026-10-18T19:55:38.580Z",
+      "updatedAt": "2026-10-18T19:55:38.580Z"
+    },
+    "profileRevision": 1
+  },
+  {
+    "email": "bilingue.recoleta@koinonia.test",
+    "summary": "Inglés obligatorio; cualquier rama o denominación; misiones y streaming preferidos.",
+    "name": "Prueba Bilingüe Recoleta",
+    "username": "test_bilingue_recoleta",
+    "role": "user",
+    "active": true,
+    "membershipChurch": null,
+    "preferences": {
+      "commune": "Recoleta",
+      "activities": [
+        "Obras Audiovisuales",
+        "Confraternidades"
+      ],
+      "ministries": [
+        "Misiones",
+        "Streaming"
+      ],
+      "targetGroups": [
+        "Adultos"
+      ],
+      "languages": [
+        "Inglés"
+      ],
+      "meetingDays": [
+        "Miércoles",
+        "Viernes",
+        "Domingo"
+      ],
+      "radiusKm": 15,
+      "location": {
+        "lat": -33.406,
+        "lng": -70.64
+      }
+    },
+    "criterionModes": {
+      "commune": "preferred",
+      "denominations": "disabled",
+      "branches": "disabled",
+      "doctrinalTags": "disabled",
+      "activities": "preferred",
+      "ministries": "preferred",
+      "targetGroups": "preferred",
+      "languages": "required",
+      "meetingDays": "preferred",
+      "radiusKm": "preferred"
+    },
+    "answerStates": {
+      "commune": "answered",
+      "denominations": "no_preference",
+      "branches": "no_preference",
+      "doctrinalTags": "no_preference",
+      "activities": "answered",
+      "ministries": "answered",
+      "targetGroups": "answered",
+      "languages": "answered",
+      "meetingDays": "answered",
+      "radiusKm": "answered",
+      "location": "answered",
+      "spiritualIdentity": "answered",
+      "goal": "answered",
+      "firstVisitPreference": "answered"
+    },
+    "searchContext": {
+      "spiritualIdentity": "christian",
+      "goal": "join",
+      "firstVisitPreference": "information"
+    },
+    "onboarding": {
+      "status": "completed",
+      "version": 3,
+      "lastStep": 3,
+      "completedAt": "2026-10-18T19:55:38.580Z",
+      "updatedAt": "2026-10-18T19:55:38.580Z"
+    },
+    "profileRevision": 1
+  }
+]

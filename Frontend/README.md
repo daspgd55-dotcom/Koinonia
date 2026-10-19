@@ -65,10 +65,10 @@ Verificación de la encuesta breve: 35 pruebas del backend aprobadas. Compilaci�
 
 ## Exploración de iglesias
 
-- Rutas públicas `#/explorar` y `#/iglesia/:id`. Finalizar o posponer la encuesta redirige a explorar. La posposición ofrece continuar desde la búsqueda. Mi perfil, en la navegación superior, mantiene el resumen y el acceso a configuración.
+- Rutas públicas `#/explorar` y `#/iglesia/:id`. Finalizar o posponer la encuesta redirige a **Para ti** (`#/descubrir`), desde donde se puede reanudar. Mi perfil, en la navegación superior, mantiene el resumen y el acceso a configuración.
 - `GET /api/churches/search`: nombre parcial, comuna, rama, denominación, día, actividad, doctrina e idioma. Cada filtro exige coincidencia; los filtros se combinan con AND. Se reutiliza el contrato sin cambios de backend. No se convierten preferencias del perfil en restricciones ni se aplican automáticamente sus datos privados.
 - Ubicación obtenida solo por acción expresa, aproximada a tres decimales, mantenida en memoria y enviada a la API como `lat`, `lng`, `radius`. Distancia 1–50 km. Sin GPS se ordena por nombre; con GPS por distancia en línea recta. La comuna y el radio pueden combinarse. Desactivar ubicación retira el criterio geográfico; cambiar de cuenta limpia la búsqueda.
-- Lista de 12 resultados por página. Mapa Leaflet con las coordenadas públicas de esa página, marcadores que abren fichas, atribución visible y aviso si falla la cartografía. Solo se solicitan teselas al abrir la vista mapa, sin precarga ni modo offline. Se puede configurar `VITE_MAP_TILES` antes del build; para otro proveedor debe adaptarse también su atribución. Proveedor inicial: OpenStreetMap, https://operations.osmfoundation.org/policies/tiles/ . Su disponibilidad no está garantizada.
+- Lista de 12 resultados por página, en dos columnas de tarjetas en escritorio y una en móvil. Mapa Leaflet con las coordenadas públicas de esa página, marcadores que abren fichas, atribución visible y aviso si falla la cartografía. Solo se solicitan teselas al abrir la vista mapa, sin precarga ni modo offline. Se puede configurar `VITE_MAP_TILES` antes del build; para otro proveedor debe adaptarse también su atribución. Proveedor inicial: OpenStreetMap, https://operations.osmfoundation.org/policies/tiles/ . Su disponibilidad no está garantizada.
 - `GET /api/churches/:id`: identidad, ubicación, accesibilidad, reuniones, doctrina, actividades, ministerios, primera visita y contacto. Enlaces externos limitados a HTTP(S). Cómo llegar abre Google Maps con el destino público, sin enviar dirección privada ni origen del perfil.
 - Filtros, página y posición de lista/mapa se conservan en memoria al volver de una ficha durante la misma sesión de la aplicación; una recarga reinicia la búsqueda. Las respuestas del perfil mantienen su propia persistencia existente.
 - Las ilustraciones de tarjetas son decorativas, no fotografías de las iglesias. Datos desconocidos se muestran como sin información; horarios externos comerciales no se presentan como horarios de culto. Los registros de prueba se identifican.
@@ -85,7 +85,7 @@ Contrato, permisos, nuevos atributos y recorrido manual: `Backend/docs/community
 
 ## Actualización 2026-10-06
 
-- Solo el registro recién realizado abre automáticamente la encuesta; todo login de una cuenta existente abre Explorar. Retomar la encuesta es voluntario desde el perfil o el aviso de exploración.
+- Solo el registro recién realizado abre automáticamente la encuesta. El login general abre **Para ti**; los accesos iniciados desde eventos, visitas, experiencias, guardadas o colaboraciones conservan su destino contextual. Retomar la encuesta es voluntario desde Para ti, el perfil o el aviso de exploración.
 - Incorporación v3: identidad espiritual y objetivo; rama con denominación solo para Protestante/Independiente; ubicación. La identidad espiritual es contexto privado, no un filtro obligatorio.
 - Valores legados sin modo explícito se presentan como preferencias. Validar un radio obligatorio sin ubicación solo bloquea al editar distancia/ubicación, no al guardar contexto ajeno. Los valores existentes no se borran.
 - Administración permite crear representantes con nombre, correo y cargo. La API fija su rol y genera contraseña inicial; se muestra una sola vez en la respuesta, no se almacena en el navegador. Selección de representantes existentes mediante lista con correo y cargo, paginada en grupos de 100 con Cargar más. Guardar asignaciones confirma la asociación.
@@ -105,3 +105,15 @@ Guardar/Descartar persisten mediante `/interactions`; Siguiente solo avanza. Des
 `#/descubrir/semantica` es la interfaz de consulta dedicada, con ejemplos y texto conservado entre pestañas en memoria. **LLM/RAG e interpretación semántica no implementados**: informa el estado real y mantiene deshabilitado el envío. No simula resultados ni envía el texto a proveedores. Cambiar de cuenta limpia el texto. `/recommendations/capabilities` informa esta disponibilidad sin revelar configuración interna.
 
 `npm.cmd run test:discover` verifica visitante y tres roles, ranking, ficha/regreso, guardar/deshacer, descarte persistente, adaptación móvil y pestaña semántica pendiente. Capturas `.cache/journey/13-discovery-desktop.png`, `14-discovery-mobile.png`.
+
+## Eventos públicos
+
+`#/eventos` ofrece búsqueda por nombre y comuna, con fechas, categoría, público y eventos pasados en “Más filtros”. Los criterios aplicados aparecen como etiquetas retirables y se conservan en la URL al abrir una ficha y regresar. La cuadrícula usa dos columnas en escritorio y una en móvil; toda la tarjeta abre `#/evento/:id`. La ficha compacta reúne portada ampliable, organizador, fecha y ubicación, seguida de descripción, participación y contacto desplegable. Las imágenes conservan su marco y posición; una portada circular mantiene la relación 1:1 y una imagen que falla se omite.
+
+Verificación: `npm.cmd run test:public-events` usa API y MongoDB temporales y comprueba búsqueda, filtros, fechas inválidas dentro de filtros cerrados, teclado, paginación, privacidad, cancelaciones, imágenes fallidas y los cinco marcos a 1440, 390 y 320 px. Regresiones: `npm.cmd run test:event-participation` y `npm.cmd run test:event-collaboration`. Capturas: `.cache/journey/events-directory-desktop.png`, `events-public-desktop.png` y `events-detail-circle-mobile.png`. Contrato: [Backend/docs/events.md](../Backend/docs/events.md).
+
+## Movimiento y accesibilidad
+
+`PageMotion` conserva la transición entre rutas y aplica apariciones a las secciones de eventos, comunidades, visitas/notificaciones, experiencias, perfil y administración. Las tarjetas (incluidas Buscar iglesias y Eventos) usan **fade-in up** de 480 ms al entrar en pantalla, una vez por elemento durante la ruta actual. Los elementos cargados después de consultar la API también se observan; las tarjetas retiradas se dejan de observar. El desplazamiento animado es independiente del efecto hover.
+
+La preferencia del sistema `prefers-reduced-motion` desactiva los efectos, incluso si cambia con la página abierta. Enfocar un control termina la animación de sus contenedores para conservar el acceso inmediato por teclado. No hay estilos que oculten permanentemente contenido: sin IntersectionObserver el contenido sigue visible. `npm.cmd run test:motion` verifica estos comportamientos con componentes reales en un navegador aislado, sin base de datos ni cuentas.

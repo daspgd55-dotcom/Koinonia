@@ -72,8 +72,9 @@ Fichas y mutaciones devuelven `{data:{...}}`. Gestión incluye `version`, audito
 
 ### Filtros y paginación
 
-`churchId`, `communityId`, `category`, `commune`, `audience`, `dateFrom`, `dateTo`, `view`, `page` y `limit`.
+`q`, `churchId`, `communityId`, `category`, `commune`, `audience`, `dateFrom`, `dateTo`, `view`, `page` y `limit`.
 
+- `q` busca una parte literal del título sin distinguir mayúsculas, tanto en consulta pública como administrativa. Acepta 1–200 caracteres después de quitar espacios exteriores; omite el parámetro cuando no hay búsqueda. Los caracteres de expresiones regulares se interpretan como texto. Se combina con los demás filtros antes de paginar y solo cuenta eventos visibles/autorizados. Ejemplo: `GET /api/events?q=encuentro&category=gathering&limit=12&page=1`.
 - `commune` y `audience` buscan coincidencia exacta sin distinguir mayúsculas, escapando expresiones regulares. Comuna corresponde al lugar del evento, no a la iglesia.
 - Fechas `YYYY-MM-DD`: filtran **el inicio** desde la medianoche local inclusiva de `dateFrom` hasta la medianoche siguiente a `dateTo`, exclusiva. No son un filtro de solapamiento de duración. Se rechaza rango invertido. Cada límite es opcional.
 - `view=upcoming` (predeterminado público): término efectivo futuro, incluye eventos que ya comenzaron pero no han terminado. Incluye cancelados futuros para mostrar su aviso.
@@ -154,7 +155,7 @@ Para probar manualmente, utiliza una base desechable: crea dos iglesias con repr
 
 ## Administración web
 
-En `/#/administracion`, abre una iglesia y selecciona “Eventos”, junto a “Ficha de la iglesia” y “Comunidades vinculadas”. La sección permite listar, buscar, filtrar, crear, editar, previsualizar, publicar, cancelar y archivar. Gestión acepta ahora `q` (hasta 200 caracteres): búsqueda literal parcial por título, sin distinguir mayúsculas; se aplica en servidor antes de paginar. El listado público conserva sus filtros anteriores.
+En `/#/administracion`, abre una iglesia y selecciona “Eventos”, junto a “Ficha de la iglesia” y “Comunidades vinculadas”. La sección permite listar, buscar, filtrar, crear, editar, previsualizar, publicar, cancelar y archivar. Gestión y consulta pública aceptan `q` (hasta 200 caracteres): búsqueda literal parcial por título, sin distinguir mayúsculas; se aplica en servidor antes de paginar.
 
 El formulario organiza información principal, fecha/lugar, participación/contacto e imagen. El organizador puede ser la iglesia o una comunidad asignada; una comunidad en borrador sirve para preparar el evento, pero impide publicarlo. Las archivadas no se ofrecen para nuevas selecciones; una selección antigua se conserva identificada y bloquea publicación.
 
@@ -175,11 +176,12 @@ Desde `Frontend`: `npm.cmd run test:events-admin`. Arranca API, Vite y MongoDB t
 
 ## Interfaz pública y alcance de RF-05
 
-- `/#/eventos`: accesible sin sesión y con cualquier rol. Próximos primero (incluye los que ya comenzaron y no terminaron), con pasados en “Más filtros”. Comuna visible inicialmente; fecha desde/hasta, categoría y público en controles secundarios. Comuna y público usan coincidencia exacta sin distinguir mayúsculas, conforme al contrato de API.
-- Los filtros y la página se guardan en la URL (`view`, `dateFrom`, `dateTo`, `commune`, `category`, `audience`, `page`). También se admite `churchId` o `communityId` para los enlaces contextuales. Volver desde una ficha recupera esa URL; limpiar filtros elimina también el contexto del organizador.
-- `/#/evento/:id`: ficha compartible independiente de la sesión. `volver` opcional guarda un regreso interno al listado filtrado, iglesia o comunidad; no es necesario para compartir. Muestra la portada con el visor compartido, fecha local, organizador, iglesia de origen, modalidad, ubicación, contactos públicos e instrucciones oficiales disponibles. Los estados cancelado y finalizado son explícitos; cancelar no oculta la descripción ni el motivo público.
+- `/#/eventos`: accesible sin sesión y con cualquier rol. Búsqueda parcial por nombre y comuna visibles inicialmente; periodo (próximos/pasados/todos), fecha desde/hasta, categoría y público en “Más filtros”. Próximos primero (incluye los que ya comenzaron y no terminaron). Comuna y público usan coincidencia exacta sin distinguir mayúsculas, conforme al contrato de API. Cada filtro aplicado se puede retirar individualmente y los cambios sin aplicar se señalan.
+- Los filtros y la página se guardan en la URL (`q`, `view`, `dateFrom`, `dateTo`, `commune`, `category`, `audience`, `page`). También se admite `churchId`, `associatedChurchId` o `communityId` para los enlaces contextuales. Volver desde una ficha recupera esa URL; limpiar filtros conserva el contexto del organizador, mientras que “Ver todos” lo elimina.
+- Tarjetas completas pulsables y accesibles por teclado, en dos columnas en escritorio y una en móvil. Sin portada no se reserva un espacio de imagen. Se conservan los marcos horizontal, panorámico, cuadrado, circular y vertical, ajustando el marco completo para evitar deformaciones; una imagen que falla se omite.
+- `/#/evento/:id`: ficha compacta y compartible independiente de la sesión. `volver` opcional guarda un regreso interno al listado filtrado, iglesia o comunidad; no es necesario para compartir. La cabecera reúne portada ampliable, fecha local, organizador, iglesia de origen, modalidad y ubicación. Bajo ella se muestran descripción, audiencia e instrucciones oficiales; el contacto público es desplegable. Los estados cancelado y finalizado son explícitos; cancelar no oculta la descripción ni el motivo público.
 - Navegación: Eventos en el grupo secundario, desplegado mediante “Menú” en móvil para conservar la barra compacta.
-- “Próximos eventos” en iglesia muestra sus eventos y los de sus comunidades; en comunidad solo muestra los organizados por ella. Hasta tres tarjetas, con enlace al listado completo cuando existen más. Sin resultados visibles, se omite toda la sección. Las imágenes son opcionales y respetan marco y posición.
+- “Próximos eventos” en iglesia muestra sus eventos y los de sus comunidades; en comunidad solo muestra los organizados por ella. Hasta dos tarjetas, con enlace al listado completo cuando existen más. Sin resultados visibles, se omite toda la sección. Las imágenes son opcionales y respetan marco y posición.
 - La página utiliza exclusivamente endpoints públicos, incluso cuando hay sesión. Borradores, archivados y eventos de iglesias/comunidades no públicas devuelven contenido no disponible por enlace directo. Se respetan las banderas de privacidad del contacto. No se hereda una insignia de verificación.
 
 **RF-05 implementado:** comunidades vinculadas con permisos y ciclo de publicación; administración de eventos independientes con organizador, portada, ubicación propia, fechas, participación, cancelación y archivo; descubrimiento público filtrado, fichas compartibles e integración con iglesias/comunidades. La inscripción, cuando se exige, se realiza según las instrucciones o el enlace oficial del organizador.
