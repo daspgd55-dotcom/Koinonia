@@ -1,0 +1,655 @@
+[
+  {
+    "_id": "0d35021f277424f7c9996b26",
+    "audience": [
+      "Adolescentes",
+      "Jóvenes",
+      "Adultos"
+    ],
+    "cancellationReason": "",
+    "category": "cultural",
+    "churchId": "6ac9b9225017eda79d91466c",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "eventos.alma@koinonia.test"
+    },
+    "cover": {
+      "url": "https://res.cloudinary.com/no3sqnzz/image/upload/v1791609532/koinonia/6ac9b9225017eda79d91466c/37aa3a80-5750-488f-b5d1-078022694904.webp",
+      "source": "test_fixture_inherited_church_image",
+      "title": "Sede organizadora · imagen de la ficha de prueba",
+      "frame": "landscape",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-19T02:26:45.769Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "El equipo de música y alabanza de Alma compartirá un repertorio de música cristiana contemporánea, intercalado con lecturas bíblicas y tiempos de oración. Puedes sumarte presencialmente o seguir la transmisión. Habrá una bienvenida para quienes nos visitan por primera vez y un espacio final de conversación con el equipo pastoral.\n\nPublicación ficticia creada para pruebas de Koinonía; no corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-31T00:00:00.000Z",
+    "endsAt": "2026-10-31T00:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Av. Perú 9065",
+      "commune": "La Florida",
+      "city": "Santiago",
+      "region": "Metropolitana",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.586801,
+          -33.537634
+        ]
+      }
+    },
+    "modality": "hybrid",
+    "onlineUrl": "https://reuniones.koinonia.test/voces-esperanza",
+    "openCollaboration": true,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada. No se requiere inscripción. La transmisión es una alternativa para quienes no pueden desplazarse. Las propuestas de colaboración musical se coordinan previamente con la iglesia; la invitación abierta no confirma por sí sola la participación de otra comunidad.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-10-30T22:00:00.000Z",
+    "title": "Voces de esperanza: noche de alabanza y oración",
+    "updatedAt": "2026-10-19T02:26:45.769Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Iglesia Bíblica Alma · salón de actividades",
+    "version": 1
+  },
+  {
+    "_id": "40859bbbde54aebaa9f5df65",
+    "audience": [
+      "Adolescentes",
+      "Jóvenes",
+      "Adultos"
+    ],
+    "cancellationReason": "La revisión del espacio detectó reparaciones pendientes. Se cancela esta fecha para resguardar a los participantes; aún no hay nueva programación.",
+    "category": "other",
+    "churchId": "6ac9b9225017eda79d91466c",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "eventos.alma@koinonia.test"
+    },
+    "cover": {
+      "url": "https://res.cloudinary.com/no3sqnzz/image/upload/v1791609532/koinonia/6ac9b9225017eda79d91466c/37aa3a80-5750-488f-b5d1-078022694904.webp",
+      "source": "test_fixture_inherited_church_image",
+      "title": "Sede organizadora · imagen de la ficha de prueba",
+      "frame": "landscape",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-19T02:26:45.769Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Habíamos preparado una mañana de juegos de coordinación, circuitos recreativos y convivencia para jóvenes de la comunidad. El programa contemplaba bienvenida, actividades por equipos y cierre con una reflexión sobre el compañerismo. Este encuentro ha sido cancelado; no debes acudir en la fecha anunciada.\n\nPublicación ficticia creada para pruebas de Koinonía; no corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-21T16:00:00.000Z",
+    "endsAt": "2026-11-21T16:00:00.000Z",
+    "eventStatus": "cancelled",
+    "location": {
+      "address": "Av. Perú 9065",
+      "commune": "La Florida",
+      "city": "Santiago",
+      "region": "Metropolitana",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.586801,
+          -33.537634
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [
+      {
+        "_id": "2ea8c7db950468de4027c7c1",
+        "version": 2,
+        "at": "2026-10-19T02:26:45.769Z",
+        "kind": "cancelled"
+      }
+    ],
+    "participationConditions": "Evento cancelado. No se realizarán actividades ni se recibirán asistentes. Si se organiza una nueva fecha, se publicará como una convocatoria actualizada.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-21T13:00:00.000Z",
+    "title": "Encuentro deportivo y convivencia juvenil",
+    "updatedAt": "2026-10-19T02:26:45.769Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Iglesia Bíblica Alma · salón de actividades",
+    "version": 2
+  },
+  {
+    "_id": "421b724d84442848e67fe4cd",
+    "audience": [
+      "Jóvenes",
+      "Adultos"
+    ],
+    "cancellationReason": "",
+    "category": "evangelism",
+    "churchId": "6ac9b9225017eda79d91466c",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "eventos.alma@koinonia.test"
+    },
+    "cover": {
+      "url": "https://res.cloudinary.com/no3sqnzz/image/upload/v1791609532/koinonia/6ac9b9225017eda79d91466c/37aa3a80-5750-488f-b5d1-078022694904.webp",
+      "source": "test_fixture_inherited_church_image",
+      "title": "Sede organizadora · imagen de la ficha de prueba",
+      "frame": "landscape",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-19T02:26:45.769Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Nos reuniremos en el templo para una breve preparación bíblica sobre el testimonio cristiano y la escucha respetuosa. Después formaremos equipos para conversar con vecinos que deseen participar y presentar las actividades abiertas de la iglesia. Finalizaremos en el mismo punto de encuentro para compartir aprendizajes y orar por el barrio.\n\nPublicación ficticia creada para pruebas de Koinonía; no corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-31T15:30:00.000Z",
+    "endsAt": "2026-10-31T15:30:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Av. Perú 9065",
+      "commune": "La Florida",
+      "city": "Santiago",
+      "region": "Metropolitana",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.586801,
+          -33.537634
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Participación voluntaria. No se ingresará a domicilios ni se registrarán datos personales de vecinos. Respeta a quienes no quieran conversar. Lleva agua, protección solar y calzado cómodo; menores acompañados.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-10-31T13:00:00.000Z",
+    "title": "Esperanza para el barrio: preparación y salida comunitaria",
+    "updatedAt": "2026-10-19T02:26:45.769Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Iglesia Bíblica Alma · salón de actividades",
+    "version": 1
+  },
+  {
+    "_id": "45c54d8029fd1741dd63cb4f",
+    "audience": [
+      "Jóvenes",
+      "Adultos"
+    ],
+    "cancellationReason": "",
+    "category": "workshop",
+    "churchId": "6ac9b9225017eda79d91466c",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "eventos.alma@koinonia.test"
+    },
+    "cover": {
+      "url": "https://res.cloudinary.com/no3sqnzz/image/upload/v1791609532/koinonia/6ac9b9225017eda79d91466c/37aa3a80-5750-488f-b5d1-078022694904.webp",
+      "source": "test_fixture_inherited_church_image",
+      "title": "Sede organizadora · imagen de la ficha de prueba",
+      "frame": "landscape",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-19T02:26:45.769Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Abriremos el Evangelio de Marcos para practicar una lectura atenta al contexto, al mensaje del pasaje y a su aplicación cotidiana. No necesitas estudios previos. La sesión combinará una introducción, trabajo con un texto breve, preguntas y una guía de lectura para continuar durante la semana.\n\nPublicación ficticia creada para pruebas de Koinonía; no corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-29T00:00:00.000Z",
+    "endsAt": "2026-10-29T00:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": null,
+    "modality": "online",
+    "onlineUrl": "https://reuniones.koinonia.test/lectura-marcos",
+    "openCollaboration": false,
+    "participation": "registration",
+    "participationChanges": [],
+    "participationConditions": "Inscripción gratuita y personal. Ten a mano una Biblia, cuaderno y conexión a internet. No se grabarán las intervenciones de quienes participen.",
+    "privateFields": {
+      "email": true,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Completa la inscripción en el formulario indicado. En esta publicación de prueba, el formulario y la sala son enlaces simulados.",
+    "registrationUrl": "https://inscripciones.koinonia.test/taller-marcos",
+    "startsAt": "2026-10-28T22:30:00.000Z",
+    "title": "Cómo leer un evangelio: taller bíblico en línea",
+    "updatedAt": "2026-10-19T02:26:45.769Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sala virtual de formación",
+    "version": 1
+  },
+  {
+    "_id": "4dfbb5090bbe264a95b44858",
+    "audience": [
+      "Jóvenes",
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "community_service",
+    "churchId": "6ac9b9225017eda79d91466c",
+    "collaborations": [
+      {
+        "_id": "e5b64ca377d440da13257a06",
+        "churchId": "7592f8c1b8371e8f6fcb2427",
+        "status": "accepted",
+        "invitationNoticeId": "c08f75a994e401c2c056d4f8",
+        "history": [
+          {
+            "_id": "c08f75a994e401c2c056d4f8",
+            "action": "invite",
+            "actor": "6ac9a1f6898ae28f50236730",
+            "actorName": "David Silva",
+            "actorRole": "admin",
+            "at": "2026-10-19T02:24:45.769Z",
+            "audienceChurchId": "7592f8c1b8371e8f6fcb2427"
+          },
+          {
+            "_id": "5a6ac2ac81fdd8e775a88aed",
+            "action": "accept",
+            "actor": "6ac9a1f6898ae28f50236730",
+            "actorName": "David Silva",
+            "actorRole": "admin",
+            "at": "2026-10-19T02:25:45.769Z",
+            "audienceChurchId": "6ac9b9225017eda79d91466c"
+          }
+        ]
+      }
+    ],
+    "communityId": null,
+    "contact": {
+      "email": "eventos.alma@koinonia.test"
+    },
+    "cover": {
+      "url": "https://res.cloudinary.com/no3sqnzz/image/upload/v1791609532/koinonia/6ac9b9225017eda79d91466c/37aa3a80-5750-488f-b5d1-078022694904.webp",
+      "source": "test_fixture_inherited_church_image",
+      "title": "Sede organizadora · imagen de la ficha de prueba",
+      "frame": "landscape",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-19T02:26:45.769Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Nos reuniremos para preparar kits de higiene y tarjetas de acompañamiento destinados a personas mayores. La jornada contempla una bienvenida, organización de equipos, preparación de materiales y cierre con una reflexión sobre el servicio al prójimo. La iglesia colaboradora apoyará la clasificación y preparación de los kits; la coordinación general corresponde a Iglesia Bíblica Alma. No se publicarán nombres ni fotografías de beneficiarios. Iglesia colaboradora confirmada en este escenario: Iglesia Bautista Vida Nueva.\n\nPublicación ficticia creada para pruebas de Koinonía; no corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-24T16:30:00.000Z",
+    "endsAt": "2026-10-24T16:30:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Av. Perú 9065",
+      "commune": "La Florida",
+      "city": "Santiago",
+      "region": "Metropolitana",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.586801,
+          -33.537634
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Puedes colaborar con tu tiempo; no es obligatorio aportar productos. Para donaciones se recibirán únicamente artículos de higiene nuevos y cerrados. Menores de edad acompañados por una persona adulta.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-10-24T12:30:00.000Z",
+    "title": "Manos que acompañan: jornada de apoyo a personas mayores",
+    "updatedAt": "2026-10-19T02:27:33.281Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Punto de encuentro: Iglesia Bíblica Alma",
+    "version": 4
+  },
+  {
+    "_id": "50c264a29400085103e4a36f",
+    "audience": [
+      "Niños",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "gathering",
+    "churchId": "6ac9b9225017eda79d91466c",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "eventos.alma@koinonia.test"
+    },
+    "cover": {
+      "url": "https://res.cloudinary.com/no3sqnzz/image/upload/v1791609532/koinonia/6ac9b9225017eda79d91466c/37aa3a80-5750-488f-b5d1-078022694904.webp",
+      "source": "test_fixture_inherited_church_image",
+      "title": "Sede organizadora · imagen de la ficha de prueba",
+      "frame": "landscape",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-19T02:26:45.769Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Una tarde para conocernos como familias, compartir una merienda y conversar sobre la gratitud en el hogar. Tendremos juegos cooperativos, un relato bíblico participativo y una actividad creativa para realizar entre adultos y niños. Cerraremos con un tiempo breve de alabanza y presentación de las actividades regulares de la comunidad.\n\nPublicación ficticia creada para pruebas de Koinonía; no corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-25T21:30:00.000Z",
+    "endsAt": "2026-10-25T21:30:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Av. Perú 9065",
+      "commune": "La Florida",
+      "city": "Santiago",
+      "region": "Metropolitana",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.586801,
+          -33.537634
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Actividad gratuita. Cada niño debe asistir con su adulto responsable, quien permanecerá durante el encuentro. Informa al equipo de bienvenida sobre alergias antes de compartir alimentos.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-10-25T19:00:00.000Z",
+    "title": "Una mesa para todos: encuentro de familias y niños",
+    "updatedAt": "2026-10-19T02:26:45.769Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Iglesia Bíblica Alma · salón de actividades",
+    "version": 1
+  },
+  {
+    "_id": "62d66d2eff227ae0a1664cbc",
+    "audience": [
+      "Adultos",
+      "Adultos mayores"
+    ],
+    "cancellationReason": "",
+    "category": "gathering",
+    "churchId": "6ac9b9225017eda79d91466c",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "eventos.alma@koinonia.test"
+    },
+    "cover": {
+      "url": "https://res.cloudinary.com/no3sqnzz/image/upload/v1791609532/koinonia/6ac9b9225017eda79d91466c/37aa3a80-5750-488f-b5d1-078022694904.webp",
+      "source": "test_fixture_inherited_church_image",
+      "title": "Sede organizadora · imagen de la ficha de prueba",
+      "frame": "landscape",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-19T02:26:45.769Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Te invitamos a una hora de oración, lectura de un salmo y acompañamiento mutuo. Comenzaremos con una breve reflexión bíblica, compartiremos motivos de gratitud y dedicaremos el último tramo a orar en grupos pequeños. Puedes participar aunque sea tu primera visita; no es necesario hablar delante de todos.\n\nPublicación ficticia creada para pruebas de Koinonía; no corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-19T15:00:00.000Z",
+    "endsAt": "2026-10-19T15:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Av. Perú 9065",
+      "commune": "La Florida",
+      "city": "Santiago",
+      "region": "Metropolitana",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.586801,
+          -33.537634
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada. Llega diez minutos antes y consulta al equipo de bienvenida por el salón de oración. Los menores deben permanecer acompañados por una persona adulta.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-10-19T14:00:00.000Z",
+    "title": "Pausa de oración: comenzamos la semana juntos",
+    "updatedAt": "2026-10-19T02:26:45.769Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Iglesia Bíblica Alma · salón de actividades",
+    "version": 1
+  },
+  {
+    "_id": "95c51929217ab0e43c876ae8",
+    "audience": [
+      "Adolescentes",
+      "Jóvenes"
+    ],
+    "cancellationReason": "",
+    "category": "workshop",
+    "churchId": "6ac9b9225017eda79d91466c",
+    "collaborations": [
+      {
+        "_id": "fca9b1c9551b12a177bf1996",
+        "churchId": "7592f8c1b8371e8f6fcb2427",
+        "status": "pending",
+        "invitationNoticeId": "b0e43827122189c618ca7d67",
+        "history": [
+          {
+            "_id": "b0e43827122189c618ca7d67",
+            "action": "invite",
+            "actor": "6ac9a1f6898ae28f50236730",
+            "actorName": "David Silva",
+            "actorRole": "admin",
+            "at": "2026-10-19T02:24:45.769Z",
+            "audienceChurchId": "7592f8c1b8371e8f6fcb2427"
+          }
+        ]
+      }
+    ],
+    "communityId": null,
+    "contact": {
+      "email": "eventos.alma@koinonia.test"
+    },
+    "cover": {
+      "url": "https://res.cloudinary.com/no3sqnzz/image/upload/v1791609532/koinonia/6ac9b9225017eda79d91466c/37aa3a80-5750-488f-b5d1-078022694904.webp",
+      "source": "test_fixture_inherited_church_image",
+      "title": "Sede organizadora · imagen de la ficha de prueba",
+      "frame": "landscape",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-19T02:26:45.769Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Taller participativo para transformar ideas de ayuda comunitaria en proyectos pequeños y realizables. Trabajaremos en equipos para identificar una necesidad, organizar tareas, estimar recursos y preparar una presentación breve. El encuentro incluirá una reflexión bíblica sobre el servicio y un espacio para conocer el ministerio de jóvenes.\n\nPublicación ficticia creada para pruebas de Koinonía; no corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-14T21:00:00.000Z",
+    "endsAt": "2026-11-14T21:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Av. Perú 9065",
+      "commune": "La Florida",
+      "city": "Santiago",
+      "region": "Metropolitana",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.586801,
+          -33.537634
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "registration",
+    "participationChanges": [],
+    "participationConditions": "Actividad gratuita para adolescentes y jóvenes. Los menores deben contar con autorización de su adulto responsable. Una iglesia invitada tiene su colaboración pendiente; no se presenta como participante confirmada.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Inscríbete con el equipo de jóvenes al finalizar una reunión de la iglesia antes del 11 de noviembre. Indica tu nombre y si necesitas una adaptación para participar.",
+    "registrationUrl": null,
+    "startsAt": "2026-11-14T18:00:00.000Z",
+    "title": "Jóvenes con propósito: servicio y proyectos para el barrio",
+    "updatedAt": "2026-10-19T02:27:33.281Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Iglesia Bíblica Alma · salón de actividades",
+    "version": 3
+  },
+  {
+    "_id": "ac0582d5fe86f097b73b579f",
+    "audience": [
+      "Adultos"
+    ],
+    "cancellationReason": "",
+    "category": "retreat",
+    "churchId": "6ac9b9225017eda79d91466c",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "eventos.alma@koinonia.test"
+    },
+    "cover": {
+      "url": "https://res.cloudinary.com/no3sqnzz/image/upload/v1791609532/koinonia/6ac9b9225017eda79d91466c/37aa3a80-5750-488f-b5d1-078022694904.webp",
+      "source": "test_fixture_inherited_church_image",
+      "title": "Sede organizadora · imagen de la ficha de prueba",
+      "frame": "landscape",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-19T02:26:45.769Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Una jornada de pausa para matrimonios de la comunidad, con reflexión bíblica, ejercicios de escucha, conversación en pareja y momentos de oración. La actividad se realizará en dependencias de la iglesia, con pausas para compartir alimentos y conversar con el equipo de acompañamiento. Los ejercicios de pareja serán privados y no se pedirán testimonios públicos.\n\nPublicación ficticia creada para pruebas de Koinonía; no corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-07T20:00:00.000Z",
+    "endsAt": "2026-11-07T20:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Av. Perú 9065",
+      "commune": "La Florida",
+      "city": "Santiago",
+      "region": "Metropolitana",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.586801,
+          -33.537634
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "invitation",
+    "participationChanges": [],
+    "participationConditions": "Dirigido a matrimonios previamente invitados por el equipo de familias. Confirma tu asistencia con ese equipo hasta el 3 de noviembre para coordinar materiales y alimentación. La jornada es gratuita; no se ofrecerá cuidado infantil.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Si recibiste la invitación, confirma presencialmente con el equipo de familias al finalizar una reunión. Esta publicación no permite reservar cupos ni realizar pagos.",
+    "registrationUrl": null,
+    "startsAt": "2026-11-07T12:00:00.000Z",
+    "title": "Tiempo para escucharnos: retiro de matrimonios",
+    "updatedAt": "2026-10-19T02:26:45.769Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Salón de encuentros de Iglesia Bíblica Alma",
+    "version": 1
+  },
+  {
+    "_id": "d67846a804233c538e061b55",
+    "audience": [
+      "Jóvenes",
+      "Adultos",
+      "Adultos mayores"
+    ],
+    "cancellationReason": "",
+    "category": "workshop",
+    "churchId": "6ac9b9225017eda79d91466c",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "eventos.alma@koinonia.test"
+    },
+    "cover": {
+      "url": "https://res.cloudinary.com/no3sqnzz/image/upload/v1791609532/koinonia/6ac9b9225017eda79d91466c/37aa3a80-5750-488f-b5d1-078022694904.webp",
+      "source": "test_fixture_inherited_church_image",
+      "title": "Sede organizadora · imagen de la ficha de prueba",
+      "frame": "landscape",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-19T02:26:45.769Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Encuentro introductorio para quienes desean comenzar a leer la Biblia o retomar el hábito. El programa incluyó una presentación de los evangelios, ejercicios de observación de un pasaje y una propuesta de lectura semanal. La ficha se conserva como referencia de la actividad y de los contenidos trabajados.\n\nPublicación ficticia creada para pruebas de Koinonía; no corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-10T15:00:00.000Z",
+    "endsAt": "2026-10-10T15:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Av. Perú 9065",
+      "commune": "La Florida",
+      "city": "Santiago",
+      "region": "Metropolitana",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.586801,
+          -33.537634
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Actividad ya finalizada. La información se mantiene en el historial; esta publicación no recibe nuevas inscripciones.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-10-10T13:00:00.000Z",
+    "title": "Primeros pasos en la lectura bíblica: encuentro de bienvenida",
+    "updatedAt": "2026-10-19T02:26:45.769Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Iglesia Bíblica Alma · salón de actividades",
+    "version": 1
+  }
+]

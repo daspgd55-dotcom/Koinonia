@@ -82,7 +82,7 @@ function App() {
   async function logout() {if(draft?.dirty.length && !(await save('stay')))return;if(user)storage.remove(draftKey(user.id));storage.remove('koinonia-session');setToken('');setUser(null);setDraft(null);setMessage('');go('/');}
   function change(key,{value,state,mode}) {
     setError('');setMessage('');setDraft(previous=>({...previous,
-      values:{...previous.values,...(value!==undefined?{[key]:value}:{})},
+      values:{...previous.values,...(value!==undefined?{[key]:value}:{}),...(['address','commune'].includes(key)&&value!==undefined&&value!==previous.values[key]?{addressSelection:null}:{})},
       states:{...previous.states,...(state?{[key]:state}:{})},
       modes:{...previous.modes,...(mode?{[key]:mode}:value!==undefined && hasValue(value) && previous.modes[key]==='disabled'?{[key]:'preferred'}:{})},
       dirty:[...new Set([...previous.dirty,key])]}));

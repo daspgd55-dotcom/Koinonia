@@ -70,6 +70,8 @@ router.put('/users/me/membership',auth,user.membership);
 const avatar=require('../controllers/avatar.controller');
 router.put('/users/me/avatar',auth,media.limit,avatar.authorize,require('express').raw({type:['image/jpeg','image/png','image/webp'],limit:'5mb'}),avatar.upload);
 router.delete('/users/me/avatar',auth,avatar.authorize,avatar.remove);
+const addressLimit=require('express-rate-limit').rateLimit({windowMs:3600000,limit:20,keyGenerator:req=>String(req.user._id),standardHeaders:'draft-8',legacyHeaders:false,message:{error:{code:'RATE_LIMIT',message:'Has consultado varias direcciones. Inténtalo más tarde.'}}});
+router.post('/users/me/address/resolve',auth,addressLimit,require('../controllers/address-location.controller').resolve);
 router.get('/users/me', auth, user.profile);
 router.patch('/users/me', auth, user.updateProfile);
 router.put('/users/me/preferences', auth, user.preferences);

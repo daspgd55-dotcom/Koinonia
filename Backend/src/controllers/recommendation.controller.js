@@ -9,7 +9,7 @@ exports.recommend = async (req, res) => {
   const preferences = { ...stored, ...input.preferences }, modes = { ...plain(req.user.criterionModes), ...input.criterionModes };
   if (input.preferences?.meetingDay !== undefined) delete preferences.meetingDays;
   if (input.preferences?.meetingDays !== undefined) delete preferences.meetingDay;
-  const location = input.location || stored.location;
+  const location = input.location || require('../services/address-location.service').referenceLocation(stored,plain(req.user.searchContext));
   const days = preferences.meetingDays?.length ? preferences.meetingDays : preferences.meetingDay ? [preferences.meetingDay] : [];
   for (const [key, value] of Object.entries(input.preferences || {})) if (Array.isArray(value) && !value.length && !input.criterionModes?.[key]) modes[key] = 'disabled';
   validateCriteria({ ...preferences, location, meetingDay: undefined, meetingDays: days }, modes);
@@ -42,6 +42,7 @@ exports.recommend = async (req, res) => {
       if (ranked.length > input.limit) ranked.pop();
     }
   } finally { await cursor.close(); }
+  delete preferences.location;
   const effectivePreferences = Object.fromEntries(Object.entries(preferences).filter(([key]) => modes[key === 'meetingDay' ? 'meetingDays' : key] !== 'disabled'));
   const result = input.mode === 'traditional' ? { results: ranked, mode: 'deterministic', queryInterpreted: false } : await enrich(req.app.locals.config, input.query, effectivePreferences, ranked);
   res.json({ data: result.results, meta: { mode: result.mode, queryInterpreted: result.queryInterpreted,

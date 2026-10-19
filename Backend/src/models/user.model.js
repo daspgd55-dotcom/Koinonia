@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const { fields } = require('../validation/profile');
 const modes = Object.fromEntries(fields.map(k => [k, { type: String, enum: ['preferred', 'required', 'disabled'] }]));
-const states = Object.fromEntries([...fields, 'location', 'address', 'spiritualIdentity', 'goal', 'firstVisitPreference'].map(k => [k, { type: String, enum: ['answered', 'no_preference', 'unknown', 'omitted'] }]));
+const states = Object.fromEntries([...fields, 'location', 'locationSource', 'address', 'spiritualIdentity', 'goal', 'firstVisitPreference'].map(k => [k, { type: String, enum: ['answered', 'no_preference', 'unknown', 'omitted'] }]));
 
 // Modelo de usuario
 const UserSchema = new Schema({
@@ -22,7 +22,7 @@ const UserSchema = new Schema({
     activities: [String], ministries: [String], targetGroups: [String], languages: [String], meetingDay: String, meetingDays: [String],
     radiusKm: Number, location: { lat: Number, lng: Number }
   },
-  searchContext: { spiritualIdentity: { type: String, enum: ['christian','believer','no_religion','other_religion','nonbeliever','other'] }, address: { type: String, trim: true, maxlength: 200 }, goal: { type: String, enum: ['join', 'explore', 'change', 'connect'] },
+  searchContext: { locationSource: {type:String,enum:['device','address','none']}, addressPoint: {lat:Number,lng:Number,label:String,address:String,commune:String,verifiedAt:Date}, spiritualIdentity: { type: String, enum: ['christian','believer','no_religion','other_religion','nonbeliever','other'] }, address: { type: String, trim: true, maxlength: 200 }, goal: { type: String, enum: ['join', 'explore', 'change', 'connect'] },
     firstVisitPreference: { type: String, enum: ['information', 'welcome', 'contact', 'not_planned'] } },
   criterionModes: modes,
   answerStates: states,

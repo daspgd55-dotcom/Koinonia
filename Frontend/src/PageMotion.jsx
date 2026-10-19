@@ -1,6 +1,6 @@
 import React,{useEffect,useRef} from 'react';
 const cards='.church-card,.event-public-card,.saved-card,.linked-public-card,.experience-card,.visit-card,.manage-list article,.linked-grid>article';
-const panels='.home>section,.home .landscape,.home-bottom,.discovery-card,.profile-block,.profile-preferences,.manage-editor,.user-editor,.auth-card,.question-card,.detail-section,.detail-fold,.detail-banner,.event-profile-hero,.events-intro,.event-search-panel,.linked-public-heading,.linked-filters,.manage-filters,.saved-tools,.visit-request,.experience-form,.settings-heading,.settings-body,.preview-panel';
+const panels='.home>section,.home .landscape,.home-bottom,.discovery-card,.profile-block,.profile-preferences,.manage-editor,.user-editor,.auth-card,.question-card,.detail-section,.detail-fold,.detail-banner,.event-profile-hero,.events-intro,.event-search-panel,.discovery-description-search,.linked-public-heading,.linked-filters,.manage-filters,.saved-tools,.visit-request,.experience-form,.settings-heading,.settings-body,.preview-panel';
 const targets=cards+','+panels;
 export default function PageMotion({route,children}){
  const root=useRef(null);

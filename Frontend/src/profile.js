@@ -17,7 +17,9 @@ export const fields = {
   denominations: { label: 'Denominación', multiple: true, custom: true, emptyLabel: 'Sin una denominación específica', options: catalog.denominations },
   commune: { label: 'Comuna de interés', text: true, emptyLabel: 'Aún no sé dónde buscar', placeholder: 'Por ejemplo, Providencia', options: catalog.communes },
   address: { label: 'Dirección (opcional)', context: true, text: true, emptyLabel: 'Prefiero no indicar una dirección', placeholder: 'Una dirección de referencia' },
-  location: { label: 'Ubicación del dispositivo', location: true },
+  location: { label: 'Tu punto de partida', location: true },
+  locationSource: {context:true,internal:true},
+  addressSelection: {context:true,internal:true},
   radiusKm: { label: 'Distancia que te acomoda', range: true, emptyLabel: 'Sin preferencia de distancia' },
   doctrinalTags: { label: 'Doctrina, valores y prácticas', multiple: true, custom: true, options: catalog.doctrinalTags },
   activities: { label: 'Actividades', multiple: true, custom: true, options: catalog.activities },
@@ -29,6 +31,8 @@ export const fields = {
 };
 export const hasValue = v => Array.isArray(v) ? v.length > 0 : v && typeof v === 'object' ? Object.keys(v).length > 0 : v !== null && v !== undefined && String(v).trim() !== '';
 export const validLocation = v => v && Number.isFinite(v.lat) && Number.isFinite(v.lng) && Math.abs(v.lat) <= 90 && Math.abs(v.lng) <= 180;
+const same=(a,b)=>String(a||'').trim().toLocaleLowerCase('es')===String(b||'').trim().toLocaleLowerCase('es');
+export function effectiveLocation(draft){const v=draft.values;if(v.locationSource==='none')return null;if(v.locationSource==='address'){const p=v.addressSelection;return validLocation(p)&&same(p.address,v.address)&&same(p.commune,v.commune)?p:null;}return validLocation(v.location)?v.location:null;}
 export const stateLabels = { answered: 'Respondida', no_preference: 'Sin preferencia', unknown: 'No lo sé', omitted: 'Sin responder' };
 export function fromUser(user) {
   const values = {}, states = {}, modes = {};
@@ -38,6 +42,8 @@ export function fromUser(user) {
     states[key] = user.answerStates?.[key] || (hasValue(values[key]) ? 'answered' : 'omitted');
     modes[key] = user.criterionModes?.[key] || 'preferred';
   }
+  values.locationSource=user.searchContext?.locationSource||'device';states.locationSource='answered';
+  values.addressSelection=user.searchContext?.addressPoint||null;states.addressSelection=values.addressSelection?'answered':'omitted';
   return { values, states, modes, dirty: [], revision: user.profileRevision || 0, flowVersion: 3,
     step: user.onboarding?.version === 3 ? Math.min(user.onboarding.lastStep || 0, 2) : 0 };
 }
@@ -54,17 +60,20 @@ export function restoreDraft(user, cached) {
 export function patchFromDraft(draft, onboarding) {
   const body = { preferences: {}, searchContext: {}, answerStates: {}, criterionModes: {}, expectedRevision: draft.revision, ...(onboarding ? {onboarding} : {}) };
   for (const key of draft.dirty) {
+    if(key==='addressSelection'){if(draft.values.addressSelection?.token)body.addressToken=draft.values.addressSelection.token;continue;}
     const field = fields[key], value = draft.values[key], answered = draft.states[key] === 'answered' && hasValue(value);
     if (answered && field.location && !validLocation(value)) throw Error('No pudimos confirmar tu ubicación. Actívala nuevamente o continúa sin ella.');
     body[field.context ? 'searchContext' : 'preferences'][key] = answered ? typeof value === 'string' ? value.trim() : value : null;
     body.answerStates[key] = answered ? 'answered' : draft.states[key] === 'answered' ? 'omitted' : draft.states[key];
     if (!field.context && !field.location) body.criterionModes[key] = answered ? draft.modes[key] : 'disabled';
   }
-  if (draft.dirty.some(k => ['radiusKm','location'].includes(k)) && draft.modes.radiusKm === 'required' && draft.states.radiusKm === 'answered' && !validLocation(draft.values.location)) throw Error('Activa tu ubicación para usar la distancia como restricción, o desmarca esa casilla.');
+  if (draft.dirty.some(k => ['radiusKm','location','locationSource','addressSelection','address','commune'].includes(k)) && draft.modes.radiusKm === 'required' && draft.states.radiusKm === 'answered' && !effectiveLocation(draft)) throw Error('Confirma tu dirección o activa la ubicación del dispositivo para exigir una distancia máxima.');
   return body;
 }
 export function displayValue(key, draft) {
   const value = draft.values[key];
+  if(key==='location'&&draft.values.locationSource==='address')return effectiveLocation(draft)?'Cerca de mi dirección':'Dirección por confirmar';
+  if(key==='location'&&draft.values.locationSource==='none')return 'Sin ubicación';
   if (draft.states[key] !== 'answered' || !hasValue(value)) return draft.states[key] === 'no_preference' ? fields[key].emptyLabel || 'Sin preferencia' : stateLabels[draft.states[key]] || 'Sin responder';
   if (Array.isArray(value)) return value.join(' · ');
   if (key === 'location') return validLocation(value) ? 'Ubicación aproximada activada' : 'Sin ubicación';

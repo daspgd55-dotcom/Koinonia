@@ -1,0 +1,137 @@
+{
+  "batchId": "test-events-2026-10-18-v1",
+  "database": "koinonia_synthetic_test_v2",
+  "inserted": 0,
+  "publiclyVisible": 10,
+  "organizer": "Iglesia Bíblica Alma",
+  "collaborator": "Iglesia Bautista Vida Nueva",
+  "timezone": "America/Santiago (-03:00 para estas fechas)",
+  "checkedAt": "2026-10-19T02:27:34.596Z",
+  "transition": {
+    "at": "2026-10-19T12:00:00-03:00",
+    "before": "scheduled",
+    "after": "finished"
+  },
+  "events": [
+    {
+      "id": "0d35021f277424f7c9996b26",
+      "title": "Voces de esperanza: noche de alabanza y oración",
+      "startsAt": "2026-10-30T22:00:00.000Z",
+      "endsAt": "2026-10-31T00:00:00.000Z",
+      "modality": "hybrid",
+      "category": "cultural",
+      "participation": "free",
+      "displayStatus": "scheduled",
+      "collaboration": []
+    },
+    {
+      "id": "40859bbbde54aebaa9f5df65",
+      "title": "Encuentro deportivo y convivencia juvenil",
+      "startsAt": "2026-11-21T13:00:00.000Z",
+      "endsAt": "2026-11-21T16:00:00.000Z",
+      "modality": "in_person",
+      "category": "other",
+      "participation": "free",
+      "displayStatus": "cancelled",
+      "collaboration": []
+    },
+    {
+      "id": "421b724d84442848e67fe4cd",
+      "title": "Esperanza para el barrio: preparación y salida comunitaria",
+      "startsAt": "2026-10-31T13:00:00.000Z",
+      "endsAt": "2026-10-31T15:30:00.000Z",
+      "modality": "in_person",
+      "category": "evangelism",
+      "participation": "free",
+      "displayStatus": "scheduled",
+      "collaboration": []
+    },
+    {
+      "id": "45c54d8029fd1741dd63cb4f",
+      "title": "Cómo leer un evangelio: taller bíblico en línea",
+      "startsAt": "2026-10-28T22:30:00.000Z",
+      "endsAt": "2026-10-29T00:00:00.000Z",
+      "modality": "online",
+      "category": "workshop",
+      "participation": "registration",
+      "displayStatus": "scheduled",
+      "collaboration": []
+    },
+    {
+      "id": "4dfbb5090bbe264a95b44858",
+      "title": "Manos que acompañan: jornada de apoyo a personas mayores",
+      "startsAt": "2026-10-24T12:30:00.000Z",
+      "endsAt": "2026-10-24T16:30:00.000Z",
+      "modality": "in_person",
+      "category": "community_service",
+      "participation": "free",
+      "displayStatus": "scheduled",
+      "collaboration": [
+        {
+          "churchId": "7592f8c1b8371e8f6fcb2427",
+          "status": "accepted"
+        }
+      ]
+    },
+    {
+      "id": "50c264a29400085103e4a36f",
+      "title": "Una mesa para todos: encuentro de familias y niños",
+      "startsAt": "2026-10-25T19:00:00.000Z",
+      "endsAt": "2026-10-25T21:30:00.000Z",
+      "modality": "in_person",
+      "category": "gathering",
+      "participation": "free",
+      "displayStatus": "scheduled",
+      "collaboration": []
+    },
+    {
+      "id": "62d66d2eff227ae0a1664cbc",
+      "title": "Pausa de oración: comenzamos la semana juntos",
+      "startsAt": "2026-10-19T14:00:00.000Z",
+      "endsAt": "2026-10-19T15:00:00.000Z",
+      "modality": "in_person",
+      "category": "gathering",
+      "participation": "free",
+      "displayStatus": "scheduled",
+      "collaboration": []
+    },
+    {
+      "id": "95c51929217ab0e43c876ae8",
+      "title": "Jóvenes con propósito: servicio y proyectos para el barrio",
+      "startsAt": "2026-11-14T18:00:00.000Z",
+      "endsAt": "2026-11-14T21:00:00.000Z",
+      "modality": "in_person",
+      "category": "workshop",
+      "participation": "registration",
+      "displayStatus": "scheduled",
+      "collaboration": [
+        {
+          "churchId": "7592f8c1b8371e8f6fcb2427",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "ac0582d5fe86f097b73b579f",
+      "title": "Tiempo para escucharnos: retiro de matrimonios",
+      "startsAt": "2026-11-07T12:00:00.000Z",
+      "endsAt": "2026-11-07T20:00:00.000Z",
+      "modality": "in_person",
+      "category": "retreat",
+      "participation": "invitation",
+      "displayStatus": "scheduled",
+      "collaboration": []
+    },
+    {
+      "id": "d67846a804233c538e061b55",
+      "title": "Primeros pasos en la lectura bíblica: encuentro de bienvenida",
+      "startsAt": "2026-10-10T13:00:00.000Z",
+      "endsAt": "2026-10-10T15:00:00.000Z",
+      "modality": "in_person",
+      "category": "workshop",
+      "participation": "free",
+      "displayStatus": "finished",
+      "collaboration": []
+    }
+  ]
+}

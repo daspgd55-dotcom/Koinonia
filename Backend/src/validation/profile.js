@@ -3,8 +3,9 @@ const fields = ['commune', 'denominations', 'branches', 'doctrinalTags', 'activi
 const mode = z.enum(['preferred', 'required', 'disabled']);
 const criterionModes = z.strictObject(Object.fromEntries(fields.map(k => [k, mode.optional()])));
 const answerState = z.enum(['answered', 'no_preference', 'unknown', 'omitted']);
-const answerStates = z.strictObject(Object.fromEntries([...fields, 'location', 'address', 'spiritualIdentity', 'goal', 'firstVisitPreference'].map(k => [k, answerState.optional()])));
+const answerStates = z.strictObject(Object.fromEntries([...fields, 'location', 'locationSource', 'address', 'spiritualIdentity', 'goal', 'firstVisitPreference'].map(k => [k, answerState.optional()])));
 const searchContext = z.strictObject({
+  locationSource: z.enum(['device','address','none']).optional(),
   spiritualIdentity: z.enum(['christian','believer','no_religion','other_religion','nonbeliever','other']).nullable().optional(),
   address: z.string().trim().min(1).max(200).nullable().optional(),
   goal: z.enum(['join', 'explore', 'change', 'connect']).nullable().optional(),

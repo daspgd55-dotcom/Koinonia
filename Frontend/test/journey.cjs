@@ -178,7 +178,7 @@ async function main() {
   await page.getByRole('checkbox',{name:'Activar mi ubicación aproximada'}).uncheck();
   await page.getByRole('checkbox',{name:'Usar como restricción: Distancia que te acomoda'}).check();
   await page.getByRole('button',{name:'Guardar configuración'}).click();
-  await page.getByRole('alert').filter({hasText:'Activa tu ubicación'}).waitFor();
+  await page.getByRole('alert').filter({hasText:'Confirma tu dirección'}).waitFor();
   await page.getByRole('checkbox',{name:'Usar como restricción: Distancia que te acomoda'}).uncheck();
   await page.getByRole('button',{name:'Guardar configuración'}).click();
   await page.getByRole('status').filter({hasText:'Configuración guardada.'}).waitFor();

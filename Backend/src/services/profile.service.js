@@ -10,7 +10,7 @@ function validateCriteria(preferences, modes) {
   if (modes.radiusKm === 'required' && (!Number.isFinite(preferences.location?.lat) || !Number.isFinite(preferences.location?.lng))) fail('El radio obligatorio requiere una ubicación de referencia');
   if (preferences.meetingDay && preferences.meetingDays?.length) fail('Usa meetingDay o meetingDays, no ambos');
 }
-async function updateProfile(user, input, { replacePreferences = false } = {}) {
+async function updateProfile(user, input, { replacePreferences = false, config = {} } = {}) {
   if (input.preferences?.meetingDay && input.preferences?.meetingDays?.length) fail('Usa meetingDay o meetingDays, no ambos');
   const preferences = replacePreferences ? {} : { ...plain(user.preferences) };
   const searchContext = { ...plain(user.searchContext) }, criterionModes = { ...plain(user.criterionModes) }, answerStates = { ...plain(user.answerStates) };
@@ -45,9 +45,12 @@ async function updateProfile(user, input, { replacePreferences = false } = {}) {
     }
   }
   if (!replacePreferences && !present(preferences.radiusKm) && !criterionModes.radiusKm) criterionModes.radiusKm = 'disabled';
-  const effective = { ...preferences, meetingDay: undefined, meetingDays: preferences.meetingDays?.length ? preferences.meetingDays : preferences.meetingDay ? [preferences.meetingDay] : undefined };
+  const {confirmedAddress,verifyAddress,referenceLocation}=require('./address-location.service');
+  if(!confirmedAddress(searchContext,preferences))delete searchContext.addressPoint;
+  if(input.addressToken)searchContext.addressPoint=verifyAddress(input.addressToken,config,user,searchContext.address,preferences.commune);
+  const effective = { ...preferences, location:referenceLocation(preferences,searchContext), meetingDay: undefined, meetingDays: preferences.meetingDays?.length ? preferences.meetingDays : preferences.meetingDay ? [preferences.meetingDay] : undefined };
   // El PUT anterior permite radio sin coordenadas: conserva ese contrato.
-  const distanceTouched = ['radiusKm','location'].some(k => Object.hasOwn(input.preferences || {}, k) || Object.hasOwn(input.answerStates || {}, k)) || Object.hasOwn(input.criterionModes || {}, 'radiusKm');
+  const distanceTouched = ['radiusKm','location'].some(k => Object.hasOwn(input.preferences || {}, k) || Object.hasOwn(input.answerStates || {}, k)) || Object.hasOwn(input.criterionModes || {}, 'radiusKm') || ['address','locationSource'].some(k=>Object.hasOwn(input.searchContext||{},k)) || Object.hasOwn(input.preferences||{},'commune') || !!input.addressToken;
   validateCriteria(effective, replacePreferences || !distanceTouched ? { ...criterionModes, radiusKm: undefined } : criterionModes);
   const now = new Date(), onboarding = { status: 'pending', version: 1, lastStep: 0, ...plain(user.onboarding), ...input.onboarding, updatedAt: now };
   if (onboarding.version === 3 && onboarding.lastStep > 3) fail('La incorporación v3 tiene tres fases');

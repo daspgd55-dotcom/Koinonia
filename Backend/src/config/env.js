@@ -24,6 +24,7 @@ function loadConfig() {
   if (!Number.isInteger(trustProxy) || trustProxy < 0 || trustProxy > 5) throw new Error('TRUST_PROXY_HOPS inválido');
   return { mongoUri: MONGO_URI, jwtSecret: JWT_SECRET, port,
     enableTestUi: process.env.NODE_ENV !== 'production' && process.env.ENABLE_TEST_UI !== 'false',
+    geocoding:process.env.GEOAPIFY_API_KEY?{apiKey:process.env.GEOAPIFY_API_KEY}:null,
     corsOrigins, trustProxy, mail, cloudinary: cloudName ? { cloudName, apiKey, apiSecret } : null,
     recommenderUrl: RECOMMENDER_URL || null, recommenderToken: process.env.RECOMMENDER_TOKEN || '', recommenderTimeoutMs: 5000 };
 }

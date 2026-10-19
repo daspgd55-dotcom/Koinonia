@@ -23,7 +23,7 @@ No se aceptan roles, ID de otro usuario ni fechas de servidor en el perfil. La r
 
 Las opciones sin respuesta concreta (incluida Ninguna de las anteriores) se representan con `answerStates: {campo: "no_preference"}` y valor nulo. No se almacenan como etiquetas religiosas. La UI no usa menús desplegables de estado ni de interpretación de criterios. Termina en el cuarto paso, sin pantalla adicional de revisión.
 
-`searchContext.address` es texto privado opcional, máximo 200 caracteres. Se puede borrar con null o estado no_preference. No participa en filtros o ranking, no se geocodifica y no se envía al adaptador semántico. `preferences.location` sigue siendo `{lat,lng}` internamente, obtenido con permiso del navegador; la web no muestra campos ni números de coordenadas. Retirar la casilla borra el punto al guardar.
+`searchContext.address` es texto privado opcional, máximo 200 caracteres. Se puede borrar con null o estado no_preference. Puede comprobarse explícitamente mediante Geoapify y utilizarse como referencia de distancia. El texto no se envía al adaptador semántico. Consulta [contrato de ubicación](address-location.md). `preferences.location` sigue siendo `{lat,lng}` internamente, obtenido con permiso del navegador; la web no muestra campos ni números de coordenadas. Retirar la casilla borra el punto al guardar.
 
 El deslizador inicial ofrece 1–50 km y no establece un radio hasta interactuar con él. Una preferencia antigua superior a 50 se mantiene y amplía el rango mostrado durante esa edición. El backend conserva el rango válido hasta 200 km por compatibilidad. Distancia deseable sin punto se conserva, pero no se calcula; distancia obligatoria sin coordenadas válidas se rechaza.
 

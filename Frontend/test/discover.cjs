@@ -36,7 +36,7 @@ async function main() {
   await page.getByRole('link',{name:'Para ti',exact:true}).click();
   await page.getByRole('heading',{name:'Comunidad Descubrimiento 1',exact:true}).waitFor();
   await page.getByText('Coincide con tu preferencia de denominación (Bautista).',{exact:true}).waitFor();
-  await page.getByText('1 criterio sin información',{exact:true}).waitFor();
+  await page.getByText('1 dato por confirmar',{exact:true}).waitFor();
   await page.locator('.match-details summary').click();
   await page.getByText('Falta información para confirmar actividades (Jóvenes).',{exact:false}).waitFor();
   await page.locator('.match-details summary').click();
@@ -74,18 +74,18 @@ async function main() {
   await page.setViewportSize({width:390,height:844});
   await page.screenshot({path:path.join(output,'14-discovery-mobile.png'),fullPage:true});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-  await page.getByText('Búsqueda por descripción · Próximamente',{exact:true}).waitFor();
+  await page.getByRole('region',{name:'Búsqueda por descripción',exact:true}).waitFor();assert.equal(await page.getByLabel('Describe la comunidad que buscas',{exact:true}).isDisabled(),true);
   assert.equal(await page.locator('.semantic-panel,textarea').count(),0);
   assert.equal(await page.locator('.discovery-preferences').getAttribute('open'),null);
   assert.ok((await page.locator('header').boundingBox()).height<125);
-  assert.ok((await page.locator('.discovery-card').boundingBox()).y<500);
+  assert.ok((await page.locator('.discovery-card').boundingBox()).y<720);
   for(const label of ['Buscar iglesias','Para ti'])assert.ok(await page.getByRole('navigation',{name:'Navegación principal'}).getByRole('link',{name:label,exact:true}).isVisible());
   await page.getByRole('button',{name:'Mi perfil',exact:true}).click();
   await page.getByRole('button',{name:'Cerrar sesión',exact:true}).waitFor();
   await page.keyboard.press('Escape');
   assert.equal(await page.getByRole('button',{name:'Mi perfil',exact:true}).getAttribute('aria-expanded'),'false');
   await page.goto(url+'/#/descubrir/semantica');
-  await page.getByText('Búsqueda por descripción · Próximamente',{exact:true}).waitFor();
+  await page.getByRole('region',{name:'Búsqueda por descripción',exact:true}).waitFor();assert.equal(await page.getByLabel('Describe la comunidad que buscas',{exact:true}).isDisabled(),true);
   assert.equal(await page.locator('textarea').count(),0);
   await page.screenshot({path:path.join(output,'audit-semantic-mobile.png'),fullPage:true});
   for(const role of ['representative','admin']){
@@ -95,6 +95,10 @@ async function main() {
     await page.getByRole('link',{name:'Administración',exact:true}).waitFor();
     await page.keyboard.press('Escape');
   }
+  await User.updateOne({_id:u._id},{$set:{'preferences.activities':['Campamentos','Evangelismo','Obras Audiovisuales','Bautismos'],'preferences.ministries':['Jóvenes','Formación bíblica'],'criterionModes.ministries':'preferred'}});
+  await Church.updateOne({_id:churches[2]._id},{$set:{'community.activities':['Reuniones de Alabanza','Retiros','Voluntariado','Campamentos','Evangelismo'],'community.ministries':['Jóvenes','Formación bíblica']}});
+  await page.reload();await page.getByRole('heading',{name:'Comunidad Descubrimiento 3',exact:true}).waitFor();const matched=page.locator('.discovery-interest-tags .interest-match');assert.deepEqual(new Set((await matched.allTextContents()).map(t=>t.replace('✓ ','').trim())),new Set(['Campamentos','Evangelismo','Jóvenes','Formación bíblica']));assert.equal(await page.locator('.discovery-reasons').getByText(/criterio/i).count(),0);
+  await page.getByText('Preguntas de ejemplo',{exact:true}).click();await page.getByText('¿Qué iglesias tienen campamentos y un ministerio de jóvenes?',{exact:true}).waitFor();await page.getByText('Preguntas de ejemplo',{exact:true}).click();
   await page.getByRole('button',{name:'Historial de descartadas',exact:true}).click();await page.getByRole('button',{name:'Recuperar comunidad',exact:true}).click();await page.getByText('No hay comunidades descartadas en esta página.',{exact:true}).waitFor();assert.equal(await Interaction.countDocuments({user:u._id,type:'discarded'}),0);await page.getByRole('button',{name:'Historial de descartadas',exact:true}).click();
   await page.setViewportSize({width:320,height:740});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
