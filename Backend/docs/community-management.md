@@ -80,7 +80,7 @@ Los cambios del editor viven en memoria hasta guardar. Errores de API conservan 
 
 ## Creación y selección de representantes (2026-10-06)
 
-`POST /api/representatives`, solo admin: `{name,email,position}`. Crea una cuenta pendiente y envía una invitación para que su propietario verifique el correo y elija contraseña. No admite ni devuelve contraseña inicial. Respuesta 201 con datos básicos y estado `delivery`. La asignación de iglesias continúa siendo independiente. Ver [seguridad de cuentas](account-security.md).
+`POST /api/representatives`, solo admin: `{name,email,position}`. Crea una cuenta pendiente y envía una invitación para que su propietario verifique el correo y elija contraseña. Durante la pausa de verificación admite `password` opcional: si se completa, permite acceso directo sin correo; vacía mantiene la invitación. No devuelve la contraseña. Respuesta 201 con datos básicos y estado `delivery`. La asignación de iglesias continúa siendo independiente. Ver [seguridad de cuentas](account-security.md).
 
 `GET /api/representatives` ahora admite `email` opcional y `page/limit` (máximo 100), devuelve cuentas activas de rol representante con nombre, correo y cargo, y `pagination`. La lista desplegable carga páginas adicionales explícitamente; no requiere teclear correos para asignar. Las asignaciones previas de administradores se conservan. Crear una cuenta no la asigna en servidor: el panel la añade a la selección pendiente y el admin confirma con Guardar asignaciones.
 

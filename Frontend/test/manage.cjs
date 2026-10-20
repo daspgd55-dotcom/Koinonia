@@ -13,7 +13,7 @@ async function main() {
   await fs.mkdir(output,{recursive:true});
   mongo = await MongoMemoryServer.create({ binary:{version:'8.0.12',downloadDir:path.resolve(__dirname,'../../Backend/.cache/mongodb')} });
   await connectDB(mongo.getUri('koinonia_web_test'));
-  const app = createApp({requireVerifiedEmail:false,jwtSecret:'web-test-only-secret-longer-than-32-characters',corsOrigins:[],enableTestUi:false,cloudinary:{cloudName:'test-cloud',apiKey:'key',apiSecret:'secret'}});
+  const app = createApp({requireVerifiedEmail:false,verificationPaused:true,jwtSecret:'web-test-only-secret-longer-than-32-characters',corsOrigins:[],enableTestUi:false,cloudinary:{cloudName:'test-cloud',apiKey:'key',apiSecret:'secret'}});
   app.locals.mediaFetch=async(url,options)=>({ok:true,json:async()=>({public_id:options.body.get('public_id'),secure_url:'https://res.cloudinary.com/test-cloud/image/upload/photo.webp'})});
   server = app.listen(0,'127.0.0.1');
   await new Promise(resolve => server.once('listening',resolve));
@@ -136,11 +136,11 @@ async function main() {
   await page.getByLabel('Nombre del nuevo representante',{exact:true}).fill('Representante creado desde panel');
   await page.getByLabel('Correo del nuevo representante',{exact:true}).fill('created-panel@example.test');
   await page.getByLabel('Cargo del nuevo representante',{exact:true}).fill('Encargado de jóvenes');
-  assert.equal(await page.getByLabel('Contraseña inicial (opcional)',{exact:true}).count(),0);
+  await page.getByLabel('Contraseña provisional (opcional)',{exact:true}).fill('Panel123');
   await page.getByRole('button',{name:'Crear representante',exact:true}).click();
-  await page.getByText('Invitación del representante',{exact:true}).waitFor();
+  await page.getByText('Cuenta del representante',{exact:true}).waitFor();
   const createdRep=await User.findOne({email:'created-panel@example.test'}).lean();
-  assert.equal(createdRep.invitationPending,true);assert.equal(createdRep.role,'representative');assert.equal(createdRep.position,'Encargado de jóvenes');
+  assert.equal(createdRep.invitationPending,false);assert.equal(createdRep.role,'representative');assert.equal(createdRep.position,'Encargado de jóvenes');
   await page.getByRole('button',{name:'Guardar asignaciones',exact:true}).click();
   await page.getByRole('status').filter({hasText:'Administración actualizada'}).waitFor();
   assert.ok((await Church.findById(c._id)).representatives.some(x=>x.equals(createdRep._id)));

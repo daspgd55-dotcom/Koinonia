@@ -9,8 +9,10 @@ const publicUser = user => ({ id: user.id, emailVerified:!!user.emailVerifiedAt,
 exports.register = async (req, res) => {
   const data = v.parse(v.register, req.body);
   if(security.enabled(req.app.locals.config)){
-    const config=req.app.locals.config;security.mailReady(config);
-    await security.quota(config,'registration-ip',req.ip,10,3600000);await security.quota(config,'mail-email',data.email,5,3600000);
+    const config=req.app.locals.config;
+    await security.quota(config,'registration-ip',req.ip,10,3600000);
+    if(config.verificationPaused){const user=await User.create({...data,password:await bcrypt.hash(data.password,12),role:'user',emailVerificationRequired:true});return res.status(201).json({data:publicUser(user)});}
+    security.mailReady(config);await security.quota(config,'mail-email',data.email,5,3600000);
     const password=await bcrypt.hash(data.password,12);let pending;
     try{pending=await User.create({...data,password,role:'user',emailVerificationRequired:true});}catch(e){if(e.code!==11000)throw e;}
     if(pending)await security.issue(req,pending,'verify');

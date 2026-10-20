@@ -76,3 +76,7 @@ Marcar leído, confirmar recepción o informar cambio desde administración acus
 Los representantes actualmente asignados y administradores comparten el estado de lectura de cada evento de comunidad. La identidad de quien lo leyó queda en readBy como auditoría; no es una lista de destinatarios. Los eventos privados del visitante mantienen su lectura individual.
 Una reprogramación genera un evento nuevo no leído y reinicia recepción. No queda absorbida por lecturas anteriores. La compatibilidad interpreta los avisos antiguos ya leídos/recibidos sin reactivar la alerta inicial.
 Bandeja de visitas y contador se refrescan cada 15 segundos mientras se usan, y al recuperar foco. Las listas conservan mensajes en edición. La sincronización entre sesiones no requiere volver a iniciar sesión.
+
+### Campana y filtro de pendientes
+
+`GET /api/notifications?unreadOnly=true&limit=5` devuelve únicamente notificaciones sin leer, filtradas antes de paginar, incluyendo visitas, eventos y colaboraciones. `pagination.total` corresponde a ese filtro; `unread` mantiene el total pendiente. `unreadOnly` acepta `true` o `false`; por defecto es `false` y conserva el historial. Se mantienen las reglas de autorización y lectura compartida del equipo. La campana usa el filtro; «Ver todas las notificaciones» abre la lista completa.

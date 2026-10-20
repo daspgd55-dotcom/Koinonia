@@ -65,6 +65,7 @@ router.use('/auth',(req,res,next)=>{res.set('Cache-Control','no-store');next();}
 router.post('/auth/resend-verification',verification.resend);
 router.post('/auth/verify-email',verification.verify);
 router.post('/auth/accept-invitation',verification.accept);
+router.get('/auth/capabilities',(req,res)=>res.json({emailVerificationRequired:!req.app.locals.config.verificationPaused,representativePasswordAllowed:!!req.app.locals.config.verificationPaused}));
 router.post('/auth/register', authController.register);
 router.post('/auth/login', authController.login);
 const passwords = require('../controllers/password.controller');

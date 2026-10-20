@@ -1,5 +1,17 @@
 # Seguridad de cuentas: primera versión
 
+## Pausa durante el piloto (estado actual)
+
+`EMAIL_VERIFICATION_REQUIRED=false` es el valor predeterminado. Pausa las restricciones de acceso por correo, incluso si `ENFORCE_LEGACY_EMAIL_VERIFICATION=true`, pero conserva cuotas, permisos por rol/asignación, expiración de sesiones y contraseñas con hash. No cambia `emailVerifiedAt` ni borra datos. Los registros nuevos responden 201 con perfil y pueden iniciar sesión sin correo.
+
+Durante la pausa, `POST /api/representatives` acepta `password` opcional (8 caracteres mínimo). Si se proporciona, crea una cuenta utilizable sin enviar correo ni devolver la clave. Si falta o está vacía, mantiene la invitación y exige proveedor configurado. Las invitaciones existentes sin contraseña elegida siguen necesitando aceptación: no se inventa una clave accesible ni se habilita autenticación sin contraseña.
+
+`GET /api/auth/capabilities` indica `emailVerificationRequired` y `representativePasswordAllowed` para adaptar la interfaz. Se retiraron el enlace permanente de verificación en registro/login y el recordatorio global. El enlace solo aparece tras un registro pendiente, bloqueo efectivo o invitación.
+
+Para retomar el modo estricto descrito debajo, configurar `EMAIL_VERIFICATION_REQUIRED=true`; para incluir todas las cuentas antiguas, también `ENFORCE_LEGACY_EMAIL_VERIFICATION=true`. Antes verificar entrega y acceso del administrador. Prueba de pausa: `node --test test/verification-pause.test.js`.
+
+Las siguientes secciones describen el modo estricto y la infraestructura que permanece disponible.
+
 ## Comportamiento disponible
 
 Los nuevos registros de la aplicación requieren verificar el correo. No se emite sesión hasta entonces; el middleware también bloquea sesiones de cuentas pendientes en todas las rutas autenticadas. Las páginas públicas siguen disponibles. La verificación prueba control del buzón, no identidad civil ni unicidad de una persona.

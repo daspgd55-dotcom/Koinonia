@@ -51,7 +51,7 @@ Con el servidor todavía ejecutándose en la primera terminal, abre una segunda 
 cd C:\Users\david\Documents\python\Koinonia\Backend
 ```
 
-El registro público crea un `user` pendiente de verificación de correo. Configura el remitente y verifica el enlace recibido antes de iniciar sesión; contrato y transición de cuentas existentes en [Seguridad de cuentas](docs/account-security.md). No acepta un campo `role`. La contraseña debe tener al menos 8 caracteres y como máximo 72 bytes UTF-8; se almacena con bcrypt. JWT dura una hora y usa `Authorization: Bearer <token>`.
+El registro público crea un `user`. Durante el piloto (`EMAIL_VERIFICATION_REQUIRED=false`, predeterminado) permite acceso directo; con el modo estricto queda pendiente de verificación. Configura el remitente y verifica el enlace recibido antes de iniciar sesión; contrato y transición de cuentas existentes en [Seguridad de cuentas](docs/account-security.md). No acepta un campo `role`. La contraseña debe tener al menos 8 caracteres y como máximo 72 bytes UTF-8; se almacena con bcrypt. JWT dura una hora y usa `Authorization: Bearer <token>`.
 
 ```powershell
 $base = 'http://localhost:3000/api'
@@ -94,7 +94,7 @@ Las respuestas utilizan `{ "data": ... }`; las listas incorporan `pagination` do
 
 | Método y ruta, relativas a `/api` | Acceso | Operación |
 |---|---|---|
-| `POST /auth/register` | Público | Registro pendiente: email, password, name opcional. 202 genérico; requiere verificación. |
+| `POST /auth/register` | Público | email, password, name opcional. Piloto: 201 y acceso directo; modo estricto: 202 y verificación. |
 | `POST /auth/login` | Público | Obtener token. |
 | `GET /users/me` | Sesión | Perfil propio sin hash de contraseña. |
 | `PUT /users/me/preferences` | Sesión | Reemplazar preferencias propias. |

@@ -36,9 +36,11 @@ test('Privacidad, asignación actual, lectura compartida del equipo y recepción
  await request(app).patch('/api/visits/'+visitId+'/manage').set(auth('otherRep')).send({action:'receive',version:0}).expect(404);
  await request(app).patch('/api/visits/'+visitId).set(auth('stranger')).send({action:'cancel',version:0}).expect(404);
  const notices=(await request(app).get('/api/notifications').set(auth('rep')).expect(200)).body;assert.equal(notices.unread,1);
+ assert.equal((await request(app).get('/api/notifications?unreadOnly=true&limit=1').set(auth('rep')).expect(200)).body.data.length,1);
  const nid=notices.data[0]._id;await request(app).patch('/api/notifications/'+nid+'/read').set(auth('otherRep')).expect(404);await request(app).patch('/api/notifications/'+nid+'/read').set(auth('rep')).expect(200);
  assert.equal((await request(app).get('/api/notifications').set(auth('rep')).expect(200)).body.unread,0);
  assert.equal((await request(app).get('/api/notifications').set(auth('admin')).expect(200)).body.unread,0);
+ const pending=(await request(app).get('/api/notifications?unreadOnly=true').set(auth('rep')).expect(200)).body;assert.deepEqual(pending.data,[]);assert.equal(pending.pagination.total,0);assert.equal(pending.unread,0);assert.equal((await request(app).get('/api/notifications?unreadOnly=false').set(auth('rep')).expect(200)).body.data.length,1);await request(app).get('/api/notifications?unreadOnly=bad').set(auth('rep')).expect(400);
  await request(app).patch('/api/visits/'+visitId+'/manage').set(auth('rep')).send({action:'read',version:1}).expect(200);
  await Church.updateOne({_id:c.id},{$addToSet:{representatives:users.otherRep._id}});
  assert.equal((await request(app).get('/api/visits/manage').set(auth('otherRep')).expect(200)).body.data[0].read,true);
@@ -99,4 +101,13 @@ test('Reprogramar conserva mensaje e historial, valida dueño/versiones y reinic
  assert.ok((await request(app).get('/api/visits/manage?filter=week').set(auth('rep')).expect(200)).body.data.some(x=>x._id===id));
  await request(app).patch('/api/visits/'+id).set(auth('stranger')).send({action:'cancel',version:2}).expect(200);
  await request(app).patch('/api/visits/'+id+'/reschedule').set(auth('stranger')).send({...body,version:3}).expect(409);
+});
+
+
+test('Campana filtra antes de paginar aunque los avisos recientes estén leídos',async()=>{
+ const base=new Date('2099-01-01T00:00:00Z');const pending={audience:'visitor',kind:'reply',text:'Pendiente antiguo',at:base,readBy:[]};
+ const recent=Array.from({length:6},(_,i)=>({audience:'visitor',kind:'reply',text:'Ya leído '+i,at:new Date(+base+(i+1)*1000),readBy:[users.visitor._id]}));
+ await Visit.updateOne({_id:visitId},{$push:{events:{$each:[pending,...recent]}}});
+ const all=(await request(app).get('/api/notifications?limit=5').set(auth('visitor')).expect(200)).body;assert.ok(all.data.every(n=>n.read));
+ const only=(await request(app).get('/api/notifications?unreadOnly=true&limit=1').set(auth('visitor')).expect(200)).body;assert.equal(only.data[0].text,'Pendiente antiguo');assert.equal(only.data[0].read,false);assert.ok(only.pagination.total>0);
 });

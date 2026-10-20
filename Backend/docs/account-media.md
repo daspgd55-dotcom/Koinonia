@@ -58,7 +58,7 @@ La subida admite `POST /api/churches/:id/media?category=meetings` (cuerpo binari
 
 Presentación: instalaciones en Visítanos; reuniones junto a sus horarios; actividades/recuerdos en Vida de comunidad; representantes junto a los datos de liderazgo; banner junto al nombre. Esto sustituye la regla provisoria del segundo recurso. Cada grupo tiene galería con zoom y navegación y enlaces a sus videos; no se crea el bloque si no hay recursos válidos. Descubrir prioriza la primera imagen de categoría banner y conserva la primera foto disponible como alternativa.
 
-`POST /api/representatives` utiliza ahora invitaciones por correo y rechaza `password`. El destinatario define su contraseña al aceptar; no se devuelve `initialPassword`. Ver [contrato vigente de cuentas](account-security.md).
+`POST /api/representatives` admite contraseña provisional durante la pausa de verificación; si `password` falta o está vacío, envía invitación. En modo estricto usa únicamente invitaciones. El destinatario define su contraseña al aceptar; no se devuelve `initialPassword`. Ver [contrato vigente de cuentas](account-security.md).
 
 Validación: `npm test` en Backend cubre categorías válidas/inválidas, subida categorizada, hash, login con contraseña elegida y generación automática. En Frontend, `npm run test:manage` verifica selección antes/después de subir y creación desde el panel; `npm run test:explore` verifica ubicación de los cinco grupos, compatibilidad antigua y ausencia de bloques vacíos.
 

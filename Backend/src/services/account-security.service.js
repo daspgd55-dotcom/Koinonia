@@ -1,7 +1,7 @@
 const {randomBytes,createHash,createHmac}=require('node:crypto'),User=require('../models/user.model'),Limit=require('../models/security-limit.model'),{HttpError}=require('../utils/errors');
 const hash=token=>createHash('sha256').update(token).digest('hex');
 const enabled=config=>config.requireVerifiedEmail!==false;
-const required=(user,config)=>enabled(config)&&!user.emailVerifiedAt&&(user.emailVerificationRequired||config.enforceLegacyVerification);
+const required=(user,config)=>enabled(config)&&!config.verificationPaused&&!user.emailVerifiedAt&&(user.emailVerificationRequired||config.enforceLegacyVerification);
 const message='Si corresponde, recibirás un enlace por correo. Revisa spam y espera un minuto antes de repetir.';
 function mailReady(config){if(!config.mail)throw new HttpError(503,'MAIL_UNAVAILABLE','El envío de correos aún no está disponible. Inténtalo más tarde.');}
 async function quota(config,scope,key,max,windowMs){

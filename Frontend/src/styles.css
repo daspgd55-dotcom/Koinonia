@@ -138,3 +138,5 @@ input[type=checkbox]:not(:disabled):active,input[type=radio]:not(:disabled):acti
 .my-events-page>label{display:block;margin:1.25rem 0 .5rem}.my-events-page>.detail-section{margin-top:1rem}.my-events-page>.detail-section>small{display:block;margin-bottom:.75rem}
 
 .collaboration-panel{margin:1.5rem 0;overflow-wrap:anywhere}.collaboration-panel fieldset{margin:1rem 0;padding:1rem 0;border:0}.collaboration-panel label{display:block;margin:.75rem 0}.collaboration-panel details{margin:1rem 0}.collaboration-panel li{margin:.5rem 0}.collaboration-panel summary{cursor:pointer;color:#0F6664;font-weight:600}
+
+.action-feedback{width:100%;margin:12px 0;overflow-wrap:anywhere;text-align:left}.action-feedback strong{display:block;margin-bottom:4px}

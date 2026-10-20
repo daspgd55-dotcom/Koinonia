@@ -1,0 +1,3 @@
+import React,{useEffect,useRef} from 'react';
+// The original alert announces the error once; this copy keeps it near the action.
+export default function ActionFeedback({error}){const ref=useRef(null);useEffect(()=>{if(!error||!ref.current)return;const box=ref.current.getBoundingClientRect();if(box.top>=0&&box.top<innerHeight+80&&box.bottom>innerHeight)ref.current.scrollIntoView({block:'nearest',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});},[error]);return error?<p ref={ref} className="notice error action-feedback"><strong>No se pudo completar la acción.</strong> {error}</p>:null;}

@@ -21,12 +21,12 @@ function loadConfig() {
     if (u.origin!==APP_PUBLIC_URL || (production ? u.protocol!=='https:' : !['http:','https:'].includes(u.protocol))) throw new Error('APP_PUBLIC_URL debe ser el origen del frontend sin barra final');
     mail={key:RESEND_API_KEY,from:MAIL_FROM,appUrl:APP_PUBLIC_URL};
   }
-  if(process.env.ENFORCE_LEGACY_EMAIL_VERIFICATION==='true'&&!mail)throw new Error('Configura correo antes de exigir verificación a las cuentas existentes');
+  if(process.env.EMAIL_VERIFICATION_REQUIRED==='true'&&process.env.ENFORCE_LEGACY_EMAIL_VERIFICATION==='true'&&!mail)throw new Error('Configura correo antes de exigir verificación a las cuentas existentes');
   if (!Number.isInteger(trustProxy) || trustProxy < 0 || trustProxy > 5) throw new Error('TRUST_PROXY_HOPS inválido');
   return { mongoUri: MONGO_URI, jwtSecret: JWT_SECRET, port,
     enableTestUi: process.env.NODE_ENV !== 'production' && process.env.ENABLE_TEST_UI !== 'false',
     geocoding:process.env.GEOAPIFY_API_KEY?{apiKey:process.env.GEOAPIFY_API_KEY}:null,
-    requireVerifiedEmail:true, enforceLegacyVerification:process.env.ENFORCE_LEGACY_EMAIL_VERIFICATION==='true',
+    requireVerifiedEmail:true, verificationPaused:process.env.EMAIL_VERIFICATION_REQUIRED!=='true', enforceLegacyVerification:process.env.ENFORCE_LEGACY_EMAIL_VERIFICATION==='true',
     corsOrigins, trustProxy, mail, cloudinary: cloudName ? { cloudName, apiKey, apiSecret } : null,
     recommenderUrl: RECOMMENDER_URL || null, recommenderToken: process.env.RECOMMENDER_TOKEN || '', recommenderTimeoutMs: 5000 };
 }

@@ -42,7 +42,7 @@ export function fromUser(user) {
     states[key] = user.answerStates?.[key] || (hasValue(values[key]) ? 'answered' : 'omitted');
     modes[key] = user.criterionModes?.[key] || 'preferred';
   }
-  values.locationSource=user.searchContext?.locationSource||'device';states.locationSource='answered';
+  values.locationSource=user.searchContext?.locationSource||(validLocation(values.location)?'device':'none');states.locationSource='answered';
   values.addressSelection=user.searchContext?.addressPoint||null;states.addressSelection=values.addressSelection?'answered':'omitted';
   return { values, states, modes, dirty: [], revision: user.profileRevision || 0, flowVersion: 3,
     step: user.onboarding?.version === 3 ? Math.min(user.onboarding.lastStep || 0, 2) : 0 };

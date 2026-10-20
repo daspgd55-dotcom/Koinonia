@@ -13,7 +13,7 @@ async function main() {
   await fs.mkdir(output,{recursive:true});
   mongo = await MongoMemoryServer.create({ binary:{version:'8.0.12',downloadDir:path.resolve(__dirname,'../../Backend/.cache/mongodb')} });
   await connectDB(mongo.getUri('koinonia_web_test'));
-  server = createApp({requireVerifiedEmail:false,jwtSecret:'web-test-only-secret-longer-than-32-characters',corsOrigins:[],enableTestUi:false}).listen(0,'127.0.0.1');
+  server = createApp({requireVerifiedEmail:false,jwtSecret:'web-test-only-secret-longer-than-32-characters',corsOrigins:[],enableTestUi:false,geocoding:{apiKey:'test-only',fetch:async url=>new Response(JSON.stringify({results:[{lat:-33.457,lon:-70.654,city:new URL(url).searchParams.get('text').split(', ')[1],country_code:'cl',street:'Referencia privada de prueba',housenumber:'123',result_type:'building',rank:{confidence:1}}]}))}}).listen(0,'127.0.0.1');
   await new Promise(resolve => server.once('listening',resolve));
   const { createServer } = await import('vite');
   vite = await createServer({ root:path.resolve(__dirname,'..'),configFile:false,server:{host:'127.0.0.1',port:0,proxy:{'/api':`http://127.0.0.1:${server.address().port}`}} });
@@ -79,16 +79,16 @@ async function main() {
   assert.equal(await page.getByRole('textbox',{name:'Dirección (opcional)',exact:true}).inputValue(),'Referencia privada de prueba 123');
   assert.equal(await page.getByRole('slider',{name:'Distancia que te acomoda'}).inputValue(),'17');
   await page.evaluate(()=>Object.defineProperty(navigator,'geolocation',{configurable:true,value:{getCurrentPosition:(success,error)=>error({code:1})}}));
-  await page.getByRole('checkbox',{name:'Activar mi ubicación aproximada'}).click();
+  await page.getByRole('checkbox',{name:'Activar ubicación'}).click();
   await page.getByRole('alert').filter({hasText:'No se pudo activar'}).waitFor();
-  assert.equal(await page.getByRole('checkbox',{name:'Activar mi ubicación aproximada'}).isChecked(),false);
+  assert.equal(await page.getByRole('checkbox',{name:'Activar ubicación'}).isChecked(),true);
   await page.evaluate(()=>Object.defineProperty(navigator,'geolocation',{configurable:true,value:{getCurrentPosition:success=>success({coords:{latitude:-33.45678,longitude:-70.65432}})}}));
-  await page.getByRole('checkbox',{name:'Activar mi ubicación aproximada'}).check();
-  await page.getByText('Ubicación activada.',{exact:false}).waitFor();
+  await page.getByRole('button',{name:'Actualizar ubicación actual'}).click();
+  await page.getByText('Usaremos la ubicación de tu dispositivo.',{exact:false}).waitFor();
   await page.setViewportSize({width:390,height:844});
   await page.screenshot({path:path.join(output,'02-location-mobile.png'),fullPage:true});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-  await page.getByRole('button',{name:'Terminar e ir a Para ti'}).click();
+  await page.getByRole('button',{name:'¡Empecemos!'}).click();
   await page.waitForURL('**/#/descubrir'); await page.getByRole('heading',{name:'Comunidades para conocer',exact:true}).waitFor();
   await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('link',{name:'Configurar perfil',exact:true}).click();
   await page.getByRole('heading',{name:'Mi perfil',exact:true}).waitFor();
@@ -175,7 +175,7 @@ async function main() {
   await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('link',{name:'Configurar perfil',exact:true}).click();
   await page.getByRole('button',{name:'Editar Tu ubicación',exact:true}).click();
   assert.equal(await page.getByLabel('Comuna de interés',{exact:true}).inputValue(),'Ñuñoa');
-  await page.getByRole('checkbox',{name:'Activar mi ubicación aproximada'}).uncheck();
+  await page.getByRole('checkbox',{name:'Activar ubicación'}).uncheck();
   await page.getByRole('checkbox',{name:'Usar como restricción: Distancia que te acomoda'}).check();
   await page.getByRole('button',{name:'Guardar configuración'}).click();
   await page.getByRole('alert').filter({hasText:'Confirma tu dirección'}).waitFor();
@@ -217,7 +217,7 @@ async function main() {
   await page.getByRole('button',{name:'Guardar y continuar'}).click();
 
   await page.getByRole('button',{name:'Aún no sé dónde buscar'}).click();
-  await page.getByRole('button',{name:'Terminar e ir a Para ti'}).click();
+  await page.getByRole('button',{name:'¡Empecemos!'}).click();
   await page.waitForURL('**/#/descubrir'); await page.getByRole('heading',{name:'Comunidades para conocer',exact:true}).waitFor();
   await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('link',{name:'Configurar perfil',exact:true}).click();
   await page.getByRole('heading',{name:'Mi perfil',exact:true}).waitFor();
