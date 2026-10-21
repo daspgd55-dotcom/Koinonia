@@ -45,3 +45,15 @@ test('Límite persistente de envíos y cuerpos estrictos',async()=>{
  const id=await connect(6,7),url='/api/friends/'+id+'/messages';await request(app).post(url).set(auth(6)).send({clientId:randomUUID(),text:'x',sender:users[0].id}).expect(400);await request(app).post(url).set(auth(6)).send({clientId:randomUUID(),text:' '.repeat(10)}).expect(400);
  const results=await Promise.all(Array.from({length:31},()=>request(app).post(url).set(auth(6)).send({clientId:randomUUID(),text:'Prueba de límite'})));assert.ok(results.some(r=>r.status===429));assert.ok(results.filter(r=>r.status===200).length<=28);
 });
+
+test('Campana solo incluye solicitudes de amistad, lectura aislada y resolución; mensajes separados',async()=>{
+ const id=(await request(app).post('/api/friends').set(auth(0)).send({userId:users[6].id}).expect(200)).body.data.id;
+ const notices=(await request(app).get('/api/notifications?unreadOnly=true').set(auth(6)).expect(200)).body;
+ assert.ok(notices.data.some(n=>n._id===id&&n.source==='friendship'&&!n.read));assert.ok(notices.data.every(n=>n.source!=='message'));assert.equal((await request(app).get('/api/friends/summary').set(auth(6))).body.data.requests,1);
+ await request(app).patch('/api/notifications/'+id+'/read').set(auth(7)).expect(404);await request(app).patch('/api/notifications/'+id+'/read').set(auth(6)).expect(200);
+ assert.ok(!(await request(app).get('/api/notifications?unreadOnly=true').set(auth(6))).body.data.some(n=>n._id===id));
+ const f=await Friend.findById(id);await request(app).patch('/api/friends/'+id).set(auth(6)).send({action:'accept',revision:f.revision}).expect(200);
+ assert.ok(!(await request(app).get('/api/notifications').set(auth(6))).body.data.some(n=>n._id===id));
+ await request(app).post('/api/friends/'+id+'/messages').set(auth(0)).send({clientId:randomUUID(),text:'Solo en mensajes'}).expect(200);
+ assert.equal((await request(app).get('/api/friends/summary').set(auth(6))).body.data.unread,1);assert.ok(!(await request(app).get('/api/notifications').set(auth(6))).body.data.some(n=>n.text==='Solo en mensajes'));
+});
