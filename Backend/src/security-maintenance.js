@@ -1,0 +1,3 @@
+const {loadConfig}=require('./config/env'),{connectDB,disconnectDB}=require('./config/db'),maintenance=require('./services/maintenance.service');
+async function main(){const args=process.argv.slice(2);if(args.length!==1||!['--dry-run','--apply'].includes(args[0]))throw Error('USE_DRY_RUN_OR_APPLY');const cfg=loadConfig(),mode=args[0]==='--apply'?'apply':'dry-run';if(mode==='apply'&&cfg.securityPolicy.cleanupMode!=='apply')throw Error('MAINTENANCE_APPLY_DISABLED');await connectDB(cfg.mongoUri);try{console.log(JSON.stringify(await maintenance.run(cfg,{mode})));}finally{await disconnectDB();}}
+main().catch(()=>{console.error('SECURITY_MAINTENANCE_FAILED');process.exitCode=1;});

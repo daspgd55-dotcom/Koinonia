@@ -1,0 +1,3 @@
+const v=require('../validation/schemas'),{Run}=require('../models/maintenance.model');
+exports.simulate=async(req,res)=>{v.parse(v.z.strictObject({}),req.body||{});await require('../services/account-security.service').quota(req.app.locals.config,'maintenance-preview',req.user.id,5,3600000);res.set('Cache-Control','no-store').json(await require('../services/maintenance.service').run(req.app.locals.config,{mode:'dry-run'}));};
+exports.history=async(req,res)=>{res.set('Cache-Control','no-store').json({data:await Run.find().select('_id mode state startedAt finishedAt counts batch reason').sort({startedAt:-1}).limit(20).lean()});};

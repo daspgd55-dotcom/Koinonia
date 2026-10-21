@@ -5,6 +5,7 @@ const states = Object.fromEntries([...fields, 'location', 'locationSource', 'add
 
 // Modelo de usuario
 const UserSchema = new Schema({
+  mailOutbox: {type:[new Schema({id:String,payload:String,expiresAt:Date,createdAt:Date},{_id:false})],select:false,default:undefined},
   avatar: { url: String, publicId: String },
   avatarVersion: { type: Number, default: 0 },
   name: { type: String, trim: true, maxlength: 100 },
@@ -14,6 +15,8 @@ const UserSchema = new Schema({
   emailVerifiedAt: {type:Date,default:null},
   emailVerificationRequired: {type:Boolean,default:false},
   invitationPending: {type:Boolean,default:false},
+  invitationRevokedAt: {type:Date,select:false},
+  invitationAudit: {type:[{actor:Schema.Types.ObjectId,at:Date,action:String}],select:false},
   invitedBy: {type:Schema.Types.ObjectId,ref:'User',select:false},
   emailAction: {hash:{type:String,select:false},purpose:{type:String,enum:['verify','invite'],select:false},expiresAt:{type:Date,select:false},requestedAt:{type:Date,select:false},issuedBy:{type:Schema.Types.ObjectId,ref:'User',select:false}},
   sessionVersion: { type: Number, default: 0, select: false },

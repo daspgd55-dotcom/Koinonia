@@ -3,8 +3,8 @@ const token=v.z.string().regex(/^[a-f0-9]{64}$/);
 exports.resend=async(req,res)=>{
  const {email}=v.parse(v.z.strictObject({email:v.register.shape.email}),req.body),cfg=req.app.locals.config;s.mailReady(cfg);
  await s.quota(cfg,'mail-email',email,5,3600000);
- const user=await User.findOne({email,active:true,emailVerifiedAt:null});if(user)await s.issue(req,user,user.invitationPending?'invite':'verify');
- res.json({message:s.message});
+ const user=await User.findOne({email,active:true,emailVerifiedAt:null,invitationRevokedAt:{$exists:false}});if(user)await s.issue(req,user,user.invitationPending?'invite':'verify');
+ res.json({message:s.responseMessage(cfg)});
 };
 exports.verify=async(req,res)=>{
  const data=v.parse(v.z.strictObject({token,password:v.login.shape.password}),req.body),digest=s.hash(data.token),cfg=req.app.locals.config;
@@ -16,7 +16,7 @@ exports.verify=async(req,res)=>{
 };
 exports.accept=async(req,res)=>{
  const {token:raw,newPassword}=v.parse(v.z.strictObject({token,newPassword:v.password}),req.body),digest=s.hash(raw);
- const r=await User.updateOne({active:true,invitationPending:true,'emailAction.hash':digest,'emailAction.purpose':'invite','emailAction.expiresAt':{$gt:new Date()}},{$set:{password:await bcrypt.hash(newPassword,12),emailVerifiedAt:new Date(),invitationPending:false},$unset:{emailAction:1,passwordReset:1},$inc:{sessionVersion:1}});
+ const r=await User.updateOne({active:true,invitationPending:true,invitationRevokedAt:{$exists:false},'emailAction.hash':digest,'emailAction.purpose':'invite','emailAction.expiresAt':{$gt:new Date()}},{$set:{password:await bcrypt.hash(newPassword,12),emailVerifiedAt:new Date(),invitationPending:false},$unset:{emailAction:1,passwordReset:1},$inc:{sessionVersion:1}});
  if(!r.modifiedCount)throw new HttpError(400,'INVALID_INVITATION','La invitación venció o ya fue utilizada. Solicita un nuevo enlace.');res.json({message:'Invitación aceptada. Ya puedes iniciar sesión con tu contraseña.'});
 };
 exports.invite=async(req,res)=>{
@@ -25,5 +25,5 @@ exports.invite=async(req,res)=>{
  await s.quota(cfg,'invite-admin',String(req.user._id),20,3600000);if(!provisional)await s.quota(cfg,'mail-email',data.email,5,3600000);
  let user;try{user=await User.create({...data,password:await bcrypt.hash(provisional?data.password:crypto.randomBytes(32).toString('hex'),12),role:'representative',invitationPending:!provisional,emailVerificationRequired:true,invitedBy:req.user._id,onboarding:{status:'skipped',version:3,lastStep:0}});}catch(e){if(e.code!==11000)throw e;throw new HttpError(409,'ACCOUNT_EXISTS','Esa cuenta ya existe. Utiliza la consulta de cuentas o reenvía su invitación.');}
  if(provisional)return res.status(201).set('Cache-Control','no-store').json({data:{_id:user.id,name:user.name,email:user.email,role:user.role,position:user.position,invitationPending:false},delivery:'not_requested',message:'Cuenta creada con la contraseña provisional indicada. Ya puede iniciar sesión; su correo no se ha marcado como verificado.'});
- const sent=await s.issue(req,user,'invite');res.status(201).json({data:{_id:user.id,name:user.name,email:user.email,role:user.role,position:user.position,invitationPending:true},delivery:sent?'sent':'failed',message:sent?'Invitación enviada. El representante elegirá su contraseña.':'Cuenta pendiente creada; no se pudo enviar el correo. Puedes reenviar el enlace cuando el servicio esté disponible.'});
+ const sent=await s.issue(req,user,'invite');res.status(201).json({data:{_id:user.id,name:user.name,email:user.email,role:user.role,position:user.position,invitationPending:true},delivery:sent==='queued'?'queued':sent?'sent':'failed',message:sent==='queued'?'Invitación en cola. El representante elegirá su contraseña cuando reciba el enlace.':sent?'Invitación enviada. El representante elegirá su contraseña.':'Cuenta pendiente creada; no se pudo enviar el correo. Puedes reenviar el enlace cuando el servicio esté disponible.'});
 };

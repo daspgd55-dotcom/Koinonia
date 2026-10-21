@@ -12,7 +12,7 @@ Para retomar el modo estricto descrito debajo, configurar `EMAIL_VERIFICATION_RE
 
 Las siguientes secciones describen el modo estricto y la infraestructura que permanece disponible.
 
-## Comportamiento disponible
+## Comportamiento del modo estricto (no activo por defecto)
 
 Los nuevos registros de la aplicación requieren verificar el correo. No se emite sesión hasta entonces; el middleware también bloquea sesiones de cuentas pendientes en todas las rutas autenticadas. Las páginas públicas siguen disponibles. La verificación prueba control del buzón, no identidad civil ni unicidad de una persona.
 
@@ -32,13 +32,13 @@ Configurar en el backend, nunca en VITE:
 Con correo ausente, registro nuevo, recuperación e invitaciones responden 503; no se habilitan cuentas sin verificar como alternativa. El inicio de sesión de cuentas anteriores sigue operativo durante la transición. No hay cambios ni borrados de cuentas por migración automática.
 
 1. Configurar el proveedor y probar entrega a un buzón controlado, spam y enlaces desde otro dispositivo.
-2. Verificar al menos una cuenta administrativa desde «Verificar correo». Las cuentas existentes muestran un recordatorio; el administrador ve el estado en gestión de usuarios.
+2. Verificar al menos una cuenta administrativa desde «Verificar correo». No se muestra un recordatorio global. El administrador puede consultar el estado en gestión de usuarios.
 3. Confirmar recuperación y acceso del administrador.
-4. Establecer `ENFORCE_LEGACY_EMAIL_VERIFICATION=true` y reiniciar. Desde entonces toda cuenta no verificada, incluso con JWT antiguo o rol admin, debe verificar. No existe exención de rol. Arrancar con esa variable sin correo configurado falla explícitamente.
+4. Establecer `EMAIL_VERIFICATION_REQUIRED=true` y, cuando corresponda incluir cuentas antiguas, `ENFORCE_LEGACY_EMAIL_VERIFICATION=true`; reiniciar. Desde entonces toda cuenta no verificada, incluso con JWT antiguo o rol admin, debe verificar. No existe exención de rol. Arrancar con verificación obligatoria sin correo configurado falla explícitamente, también sin imponerla al legado.
 
-La producción carga siempre `requireVerifiedEmail:true`. La opción inyectable `requireVerifiedEmail:false` solo se usa en fixtures locales de regresión que necesitan crear cuentas con el contrato anterior; no tiene variable de entorno ni control HTTP. Las suites email-security usan el comportamiento seguro real.
+La producción carga `requireVerifiedEmail:true`, pero `verificationPaused:true` suspende la exigencia de correo mientras conserva las cuotas. La opción inyectable `requireVerifiedEmail:false` solo se usa en fixtures locales de regresión que necesitan crear cuentas con el contrato anterior; no tiene variable de entorno ni control HTTP. Las suites email-security usan el comportamiento seguro real.
 
-## API
+## API del modo estricto (excepciones del piloto indicadas arriba)
 
 | Método/ruta | Contrato |
 |---|---|
@@ -66,9 +66,9 @@ Las páginas web son `#/verificar-correo`, `#/verificar-correo?token=…`, `#/ac
 
 Cuotas por ventanas fijas, atómicas y persistentes en MongoDB, con claves HMAC (sin guardar correo/IP en claro) y borrado por TTL. No sustituyen protección de red ni un CAPTCHA frente a ataques distribuidos. Una red compartida puede agotar su cuota temporal: ajustar tras observar el piloto. `TRUST_PROXY_HOPS` debe reflejar únicamente los proxies reales; no confiar indiscriminadamente en X-Forwarded-For.
 
-Tokens aleatorios de 256 bits, guardados como SHA-256, separados por finalidad y consumidos con una actualización condicional atómica. Expiración comprobada al consumir, no dependiente de limpieza TTL. Los reenvíos invalidan el enlace anterior. Fallos de entrega invalidan el token, conservan el cooldown y registran únicamente un código de error. Contraseñas con bcrypt y revocación por sessionVersion. Respuestas de autenticación no almacenables.
+Tokens aleatorios de 256 bits, guardados como SHA-256, separados por finalidad y consumidos con una actualización condicional atómica. Expiración comprobada al consumir, no dependiente de limpieza TTL. Los reenvíos invalidan el enlace anterior. En modo directo, los fallos de entrega invalidan el token y conservan el cooldown; en cola, un fallo temporal conserva el token para reintentar. Los logs registran únicamente códigos de error. Contraseñas con bcrypt y revocación por sessionVersion. Respuestas de autenticación no almacenables.
 
-Se intenta enviar un aviso después de cambiar o recuperar contraseña. Un fallo de ese aviso no revierte el cambio de seguridad; aún no hay cola persistente ni garantía de entrega/reintento. Los registros pendientes se conservan; no se declara un borrado automático de cuentas.
+Se intenta enviar un aviso después de cambiar o recuperar contraseña. Un fallo de ese aviso no revierte el cambio de seguridad; el piloto conserva envío directo, y la cola persistente opcional permite reintentos sin garantizar entrega final (ver mail-queue.md). Los registros pendientes se conservan; no se declara un borrado automático de cuentas.
 
 ## Verificación
 
@@ -78,4 +78,27 @@ Se intenta enviar un aviso después de cambiar o recuperar contraseña. Un fallo
 
 Se utiliza MongoDB temporal y correo simulado: ninguna cuenta real ni envío externo. Se prueban autorización, cuentas pendientes, enlaces vencidos/reutilizados, concurrencia, recuperación, aviso de contraseña, privacidad, invitaciones, fallo del proveedor y transición de legado. La entrega real exige la configuración anterior y una prueba manual controlada.
 
-Pendiente: segundo factor administrativo, CAPTCHA adaptativo, cola de correo con reintentos, métricas de entrega, limpieza de registros pendientes y controles más avanzados para ataques distribuidos. Verificar correo no permite prometer «una cuenta por persona».
+Disponible: segundo factor administrativo voluntario (ver [MFA](admin-mfa.md)). Disponibles sin activación obligatoria: CAPTCHA adaptativo, cola de correo con reintentos y observación de abuso distribuido. Disponible: observabilidad de correo y panel administrativo (mail-observability.md). Disponible: mantenimiento de artefactos e invitaciones (security-maintenance.md). Pendiente: protección volumétrica externa. Verificar correo no permite prometer «una cuenta por persona».
+
+
+## Base de políticas independientes
+
+Todas las variables siguientes se leen exclusivamente en el servidor al arrancar. No existe endpoint de escritura ni bypass mediante cabeceras, query o navegador. Los valores inválidos se rechazan sin imprimir su contenido. La política nueva es inmutable durante la ejecución; cambiarla exige reiniciar. `/auth/capabilities` mantiene solamente los dos booleanos públicos existentes, sin publicar políticas internas ni secretos.
+
+| Variable | Predeterminado | Valores y estado real |
+|---|---|---|
+| `ADMIN_MFA_REQUIRED` | `false` | MFA disponible; `true` exige claves válidas y restringe al administrador no inscrito a la configuración |
+| `CAPTCHA_MODE` | `off` | `off`, `observe`, `enforce` con Turnstile y riesgo configurados; ver adaptive-captcha.md |
+| `MAIL_QUEUE_ENABLED` | `false` | `true` activa outbox; requiere correo y claves de cifrado. Worker separado: mail-queue.md |
+| `ADVANCED_ABUSE_MODE` | `observe` | `off`, `observe`; `enforce` rechaza arranque |
+| `SECURITY_CLEANUP_MODE` | `off` | `dry-run` y `apply` disponibles mediante ejecución explícita; nunca eliminan cuentas |
+
+Los modos desactivados no requieren claves de MFA/CAPTCHA/cola. Abuso avanzado obligatorio continúa reservado; el mantenimiento ya dispone de simulación y aplicación por lotes. La cola ya está implementada, desactivada por defecto; ver mail-queue.md. CAPTCHA adaptativo ya está implementado; su aplicación sigue desactivada y su activación exige configuración completa (ver adaptive-captcha.md). MFA ya valida claves y permite inscripción voluntaria sin activar su obligatoriedad. Las cuotas actuales nunca dependen de estas variables. Los contadores separan vencimiento lógico y retención física; ver security-maintenance.md.
+
+`security-observation.service.js` ofrece `observeDecision` para futuros detectores del servidor. En `observe` registra únicamente control y decisión hipotética; nunca rechaza solicitudes. En `off` no registra. Los errores del destino de registro no añaden bloqueos. La detección de volumen distribuido ya está conectada en observación; consulta [abuse-observation.md](abuse-observation.md) para umbrales, precisión y límites. El panel administrativo permite simular limpieza sin borrar artefactos; su aplicación solo existe en CLI.
+
+`EMAIL_VERIFICATION_REQUIRED` y `ENFORCE_LEGACY_EMAIL_VERIFICATION` aceptan exclusivamente `true` o `false`; ausencia equivale a `false`. Se preserva el piloto y no se modifica ninguna cuenta. No se migra ni borra `emailVerifiedAt`. Configurar correo parcialmente sigue siendo un error de configuración del servicio de correo existente.
+
+Pruebas aisladas: `node --test test/security-policy.test.js test/verification-pause.test.js test/email-security.test.js test/account.test.js`. Las pruebas inyectan configuración, base temporal y correo simulado: nunca necesitan el `.env` real ni envían mensajes externos. No activar las nuevas políticas en Render en esta etapa.
+
+Revisión integral, matriz del piloto y reversión: [security-review.md](security-review.md).

@@ -16,7 +16,7 @@ exports.register = async (req, res) => {
     const password=await bcrypt.hash(data.password,12);let pending;
     try{pending=await User.create({...data,password,role:'user',emailVerificationRequired:true});}catch(e){if(e.code!==11000)throw e;}
     if(pending)await security.issue(req,pending,'verify');
-    return res.status(202).json({verificationRequired:true,message:security.message});
+    return res.status(202).json({verificationRequired:true,message:security.responseMessage(config)});
   }
   const user = await User.create({ ...data, password: await bcrypt.hash(data.password, 12), role: 'user' });
   res.status(201).json({ data: publicUser(user) });
@@ -30,7 +30,11 @@ exports.login = async (req, res) => {
   const valid = await bcrypt.compare(data.password, hash);
   if (!user?.active || !valid) throw new HttpError(401, 'INVALID_CREDENTIALS', 'Correo o contraseña incorrectos');
   if(user.invitationPending||security.required(user,req.app.locals.config))throw new HttpError(403,'EMAIL_VERIFICATION_REQUIRED','Verifica tu correo para continuar. Puedes solicitar un nuevo enlace.');
-  const token = jwt.sign({ sv: user.sessionVersion || 0 }, req.app.locals.config.jwtSecret, { algorithm: 'HS256', subject: user.id, expiresIn: '1h', issuer: 'koinonia', audience: 'koinonia-api' });
-  res.json({ token, tokenType: 'Bearer', expiresIn: 3600, data: publicUser(user) });
+  const mfa=await require('../models/mfa.model').findOne({user:user._id,active:true});
+  if(mfa)return res.json(await require('../services/mfa.service').challenge(user,req.app.locals.config));
+  res.json(session(user,req.app.locals.config,false));
 };
 exports.publicUser = publicUser;
+
+function session(user,config,mfa){const token=jwt.sign({sv:user.sessionVersion||0,mfa},config.jwtSecret,{algorithm:'HS256',subject:user.id,expiresIn:'1h',issuer:'koinonia',audience:'koinonia-api'});return {token,tokenType:'Bearer',expiresIn:3600,data:publicUser(user),mfaEnrollmentRequired:user.role==='admin'&&config.securityPolicy?.adminMfaRequired&&!mfa};}
+exports.session=session;

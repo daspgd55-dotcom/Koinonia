@@ -135,3 +135,14 @@ Durante el piloto, `EMAIL_VERIFICATION_REQUIRED=false` pausa el bloqueo por corr
 Iglesias, comunidades vinculadas, eventos, preferencias, edición de perfil, cuenta y usuarios repiten el error junto al guardado. Las cargas de fotos también muestran el aviso cerca de sus controles. El aviso superior mantiene un único anuncio accesible; la copia cercana puede desplazar ligeramente la vista si queda justo fuera de pantalla. Las validaciones nativas abren los detalles plegados y enfocan el primer campo inválido, respetando movimiento reducido. Los errores del servidor que no identifican un campo se muestran como resumen; las respuestas permanecen sin borrar.
 
 La campana consulta solo avisos sin leer; si no hay pendientes lo indica y permite abrir el historial completo. Prueba aislada: `node test/action-feedback.cjs`; regresión de eventos: `node test/events-admin.cjs`.
+
+## Segundo factor administrativo
+
+Cuenta y seguridad enlaza a Cuenta, donde administradores pueden inscribirse con contraseña actual, QR local y confirmación TOTP. Los códigos de recuperación se muestran una vez y nunca se guardan en localStorage/sessionStorage. Un login con MFA pasa por un desafío en memoria antes de recibir sesión; recargar obliga a iniciar nuevamente. La obligatoriedad global sigue desactivada. Prueba aislada: `node test/mfa.cjs`. Contrato y operación: [admin-mfa.md](../Backend/docs/admin-mfa.md).
+
+CAPTCHA adaptativo: diálogo compartido en registro, login, recuperación y reenvío; conserva campos. Ver Backend/docs/adaptive-captcha.md. Prueba aislada: node test/captcha.cjs. No se configura ninguna clave secreta en Vite.
+
+Panel exclusivo admin: /#/administracion/seguridad. Métricas mínimas de correo, eventos del proveedor y reintentos elegibles. Configuración: Backend/docs/mail-observability.md. Prueba aislada: node test/security-mail.cjs.
+# Mantenimiento de seguridad
+
+En Administración → Seguridad, solo admin puede simular limpieza, consultar auditorías y revisar invitaciones pendientes/vencidas/revocadas. No existe aplicación de limpieza desde el navegador. Reenvío y revocación requieren confirmación; preservan cuentas y asignaciones. Véanse `../Backend/docs/security-maintenance.md` y `../Backend/docs/security-review.md` para contrato, retenciones y estado real del piloto.

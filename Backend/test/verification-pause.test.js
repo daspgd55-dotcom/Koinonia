@@ -18,3 +18,19 @@ test('La pausa mantiene los límites de creación por conexión',async()=>{
  for(let i=0;i<9;i++)await post('/auth/register',{email:`limited${i}@example.test`,password:pass}).expect(201);
  await post('/auth/register',{email:'over@example.test',password:pass}).expect(429);assert.equal(await User.countDocuments({email:'over@example.test'}),0);
 });
+
+test('Representante sin verificar mantiene edición de su iglesia durante el piloto',async()=>{
+ const rep=await User.findOne({email:'rep@example.test'}),token=(await post('/auth/login',{email:rep.email,password:pass}).expect(200)).body.token;
+ const body={identification:{name:'Comunidad piloto aislada'},location:{commune:'Santiago',coordinates:{type:'Point',coordinates:[-70.65,-33.45]}}};
+ const created=await post('/churches',body,adminToken).expect(201),id=created.body.data._id;
+ await request(app).put('/api/churches/'+id+'/representatives').set('Authorization','Bearer '+adminToken).send({userIds:[rep.id]}).expect(200);
+ await request(app).put('/api/churches/'+id).set('Authorization','Bearer '+token).send({...body,identification:{...body.identification,name:'Comunidad editada durante la pausa'}}).expect(200);
+ assert.equal((await User.findById(rep.id)).emailVerifiedAt,null);
+});
+
+test('Capacidades públicas no exponen secretos ni aceptan políticas desde HTTP',async()=>{
+ const r=await request(app).get('/api/auth/capabilities?EMAIL_VERIFICATION_REQUIRED=true&CAPTCHA_MODE=enforce').set('X-Admin-Mfa-Required','true').expect(200);
+ assert.deepEqual(r.body,{emailVerificationRequired:false,representativePasswordAllowed:true});assert.equal(cfg.verificationPaused,true);assert.equal(cfg.securityPolicy.captchaMode,'off');
+ await request(app).patch('/api/auth/capabilities').set('Authorization','Bearer '+adminToken).send({verificationPaused:false,securityPolicy:{adminMfaRequired:true}}).expect(404);
+ assert.equal((await User.findOne({email:'admin@example.test'})).emailVerifiedAt,null);
+});

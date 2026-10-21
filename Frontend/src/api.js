@@ -1,10 +1,16 @@
+import {requestCaptcha} from './Captcha';
 const base = (import.meta.env.VITE_API_BASE_URL || '/api').replace(/\/$/, '');
-export async function api(path, { token, body, method = 'GET', headers = {}, raw = false } = {}) {
+export async function api(path, { token, body, method = 'GET', headers = {}, raw = false, captchaAttempts=0 } = {}) {
   const controller = new AbortController(), timeout = setTimeout(() => controller.abort(), raw ? 60000 : 90000);
   try {
     const response = await fetch(base + path, { method, signal: controller.signal, headers: { ...(body && !raw ? { 'Content-Type': 'application/json' } : {}), ...(token ? { Authorization: 'Bearer ' + token } : {}), ...headers }, body: body ? (raw ? body : JSON.stringify(body)) : undefined });
     const data = await response.json().catch(() => ({}));
     if (!response.ok) {
+      if(data.error?.code==='CAPTCHA_REQUIRED'&&data.error.details?.captcha&&captchaAttempts<3){
+        clearTimeout(timeout);
+        const proof=await requestCaptcha(data.error.details.captcha);
+        return api(path,{token,body,method,raw,headers:{...headers,'X-Captcha-Token':proof},captchaAttempts:captchaAttempts+1});
+      }
       const error = Error(data.error?.message || 'No pudimos completar la solicitud. Intenta nuevamente.');
       error.details = data.error?.details; error.status = response.status; error.code = data.error?.code; throw error;
     }
