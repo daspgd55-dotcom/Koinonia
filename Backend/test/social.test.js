@@ -32,8 +32,8 @@ test('Mensajes idempotentes, lectura privada y paginación; ni admin lee convers
  const first=(await request(app).get(url+'/messages').set(auth(3))).body;assert.equal(first.data.length,50);const older=(await request(app).get(url+'/messages?before='+first.nextBefore).set(auth(3))).body;assert.equal(older.data.length,3);
 });
 test('Compartir recursos públicos y ocultarlos dinámicamente, bloqueo y retiro sin perder historial',async()=>{
- const id=await connect(4,5),url='/api/friends/'+id;for(const [type,r] of [['church',church],['event',event]])await request(app).post(url+'/messages').set(auth(4)).send({clientId:randomUUID(),resource:{type,id:r.id}}).expect(200);
- assert.equal((await request(app).get(url+'/messages').set(auth(5))).body.data.filter(m=>m.resource).length,2);
+ await Church.updateOne({_id:church.id},{$set:{media:[{type:'image',category:'banner',url:'https://example.test/banner.jpg'}]}});await Event.updateOne({_id:event.id},{$set:{cover:{url:'https://example.test/cover.jpg',frame:'wide',source:'Prueba aislada'}}});const id=await connect(4,5),url='/api/friends/'+id;for(const [type,r] of [['church',church],['event',event]])await request(app).post(url+'/messages').set(auth(4)).send({clientId:randomUUID(),resource:{type,id:r.id}}).expect(200);
+ const shared=(await request(app).get(url+'/messages').set(auth(5))).body.data;assert.equal(shared.filter(m=>m.resource).length,2);assert.deepEqual(shared.map(m=>m.resource.image.url),['https://example.test/banner.jpg','https://example.test/cover.jpg']);
  await Church.updateOne({_id:church.id},{$set:{'metadata.dataStatus':'draft'}});const hidden=(await request(app).get(url+'/messages').set(auth(5))).body;assert.ok(hidden.data.every(m=>m.resourceUnavailable&&!m.resource));assert.ok(!JSON.stringify(hidden).includes('Evento social'));
  await request(app).post(url+'/messages').set(auth(4)).send({clientId:randomUUID(),resource:{type:'event',id:event.id}}).expect(404);
  let f=await Friend.findById(id);await request(app).patch(url).set(auth(5)).send({action:'block',revision:f.revision}).expect(200);

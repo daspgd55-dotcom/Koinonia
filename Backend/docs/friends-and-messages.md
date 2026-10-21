@@ -36,7 +36,7 @@ Los recibos se guardan por mensaje, no solo por una última secuencia global: un
 
 ## Compartir y privacidad
 
-«Enviar a un amigo» aparece junto a Compartir en fichas de iglesia y evento cuando hay sesión. Selecciona una amistad aceptada (lista paginada), añade texto opcional y envía una referencia interna. El servidor exige que la ficha sea pública al enviarla. Al consultar el historial vuelve a resolver su visibilidad: si fue ocultada, no entrega título ni enlace y muestra «Publicación no disponible». No se guardan copias de títulos/contactos de recursos como parte de la tarjeta. El texto libre del autor sí permanece, incluso si menciona información que después cambió.
+«Enviar a amigo», con icono de mensaje, aparece junto a Compartir cuando hay sesión. Abre el selector en la ventana flotante, sin expandir la ficha. Elegir una amistad aceptada añade el enlace al borrador, conservando el texto previo, y no crea mensajes hasta pulsar Enviar mensaje. La referencia interna se envía si el enlace sigue en el borrador; se elimina del texto persistido para no duplicar la tarjeta. Si el usuario quita el enlace, no se adjunta esa publicación. El servidor exige que la ficha sea pública al enviarla. Al consultar el historial vuelve a resolver su visibilidad: si fue ocultada, no entrega título ni enlace y muestra «Publicación no disponible». No se guardan copias de títulos/contactos de recursos como parte de la tarjeta. El texto libre del autor sí permanece, incluso si menciona información que después cambió.
 
 No se exponen correo, preferencias, ubicación del usuario, listas de seguidores ni datos administrativos. Texto renderizado como texto, sin HTML ni archivos adjuntos. Los mensajes se almacenan en MongoDB y se protegen por autorización; **no tienen cifrado de extremo a extremo**. El transporte depende del HTTPS del alojamiento. No hay acceso público a historiales ni endpoint administrativo para leerlos.
 
@@ -76,3 +76,11 @@ Pendientes: archivos, grupos, audio/video, presencia, WebSocket, búsqueda de me
 Minimizar conserva una barra inferior; restaurar vuelve al chat. Cerrar ejecuta una transición de salida y oculta la ventana; el avión permite reabrirla. Escape cierra y devuelve foco al icono. El movimiento reducido evita las animaciones. Mientras está minimizada/cerrada no se consultan ni marcan mensajes como leídos; recibirlos incrementa el contador del avión, no el de la campana. La ventana se adapta al ancho móvil y no bloquea navegación de fondo.
 
 Verificación del cambio a chat flotante: 9 pruebas backend (social y participación de eventos) aprobadas; recorrido de navegador actualizado aprobado con dos sesiones, lectura de solicitud desde campana, mensaje pendiente mientras se minimiza, conservación de borrador al navegar/cerrar/restaurar y botón de envío visible a 390 px. Compilación correcta y captura móvil inspeccionada. Sin cambios en servicios externos ni despliegue.
+
+### Presentación de chats y compartir
+
+Cada mensaje muestra únicamente hora y minuto AM/PM. Un separador discreto agrupa los mensajes por fecha local del dispositivo; no altera los instantes almacenados ni el horario de eventos. Las tarjetas compartidas incluyen imagen pública opcional: banner de iglesia o primera imagen disponible, y portada del evento. La API resuelve título, enlace e imagen al consultar, sin copiarlos en el registro. Imágenes fallidas se omiten. La ventana minimizada incluye un control explícito Maximizar mensajes. El grupo de campana/avión usa separación compacta.
+
+Se elimina el botón independiente Copiar enlace en las fichas; Compartir conserva el panel nativo y la copia como alternativa si no está disponible. Se elimina «Tu elección» en eventos; los botones seleccionados mantienen aria-pressed.
+
+Verificación de mejoras visuales y compartir: seis pruebas backend aprobadas (incluidas miniaturas y privacidad), recorridos de chat y participación de eventos aprobados, compilación correcta. El test comprueba que elegir destinatario no crea mensajes antes de Enviar y que el borrador contiene el enlace. Miniaturas reservan altura para evitar saltos durante su carga.
