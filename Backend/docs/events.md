@@ -202,7 +202,7 @@ Colección independiente `eventparticipations`, sin registros en `visits`. Índi
 | `GET /api/events/mine?view=upcoming|history&page=1&limit=20` | Solo registros del usuario; paginación máximo 50. `{data:[{eventId,status,pending,event}],pagination}` |
 | `GET /api/events/:id/participation-counts` | Admin o representante actualmente asignado; `{data:{interested,going}}`, sin identidades ni correos |
 
-Crear/cambiar opción exige evento visible, no cancelado e inicio estrictamente futuro; se valida también después de escribir. 401 sin sesión, 400 estado/cuerpo inválido, 409 no disponible para participar. Retirar se permite incluso si ya comenzó o dejó de ser público. El público nunca recibe listas ni conteos de asistentes. Los conteos administrativos expresan intención, no inscripciones ni asistencia real.
+Crear/cambiar opción exige evento visible, no cancelado e inicio estrictamente futuro; se valida también después de escribir. 401 sin sesión, 400 estado/cuerpo inválido, 409 no disponible para participar. Retirar se permite incluso si ya comenzó o dejó de ser público. El público nunca recibe listas ni conteos de asistentes; sí puede consultar el total agregado de Me interesa mediante `/api/events/:id/interest-count`. Los conteos administrativos expresan intención, no inscripciones ni asistencia real.
 
 `upcoming` solo incluye eventos públicos no cancelados cuyo inicio es futuro. `history` contiene iniciados/finalizados, cancelados y ocultos. En ocultos, `event:null` y la interfaz solo dice “Evento no disponible”, sin título, lugar ni contactos. Un evento iniciado no se presenta como asistencia pendiente, aunque todavía no termine. No se infiere que el usuario haya asistido.
 

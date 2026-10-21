@@ -10,7 +10,8 @@ const lat = z.number().min(-90).max(90), lng = z.number().min(-180).max(180);
 const coordinates = z.strictObject({ type: z.literal('Point'), coordinates: z.tuple([lng, lat]) });
 const location = z.strictObject({ lat, lng });
 const password = z.string().min(8).refine(v => Buffer.byteLength(v, 'utf8') <= 72, 'Máximo 72 bytes UTF-8');
-const register = z.strictObject({ email: z.string().trim().email().max(254).toLowerCase(), name: text.max(100).optional(), password });
+const username = z.string().trim().toLowerCase().regex(/^[a-z][a-z0-9_]{2,23}$/, 'Usa 3 a 24 caracteres: empieza por una letra; solo letras, números y guion bajo').refine(v=>!['admin','administrator','administrador','root','soporte','support','koinonia','moderador'].includes(v),'Este nombre de usuario está reservado');
+const register = z.strictObject({ email: z.string().trim().email().max(254).toLowerCase(), name: text.max(100).optional(), username: username.optional(), password });
 const login = z.strictObject({ email: register.shape.email, password: z.string().min(1).max(200) });
 const preferences = z.strictObject({
   commune: text.optional(), denominations: list.optional(), branches: list.optional(), doctrinalTags: list.optional(),
@@ -63,7 +64,7 @@ const profileFields = require('./profile');
 const profilePatch = z.strictObject({
   addressToken: z.string().min(1).max(3000).optional(),
   name: z.string().trim().min(1).max(100).optional(),
-  username: z.string().trim().toLowerCase().regex(/^[a-z][a-z0-9_]{2,23}$/, 'Usa 3 a 24 caracteres: empieza por una letra; solo letras, números y guion bajo').refine(v=>!['admin','administrator','administrador','root','soporte','support','koinonia','moderador'].includes(v),'Este nombre de usuario está reservado').optional(),
+  username: username.optional(),
   preferences: z.strictObject(Object.fromEntries(Object.entries(preferences.shape).map(([k, value]) => [k, value.nullable().optional()]))).optional(),
   searchContext: profileFields.searchContext.optional(), criterionModes: profileFields.criterionModes.optional(),
   answerStates: profileFields.answerStates.optional(), onboarding: profileFields.onboarding.optional(),

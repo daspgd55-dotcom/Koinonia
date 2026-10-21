@@ -30,7 +30,7 @@ async function main() {
   await page.screenshot({path:path.join(output,'audit-auth.png'),fullPage:true});
   await page.getByLabel('Correo electrónico',{exact:true}).fill('journey@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('Test-web-password-123');
-  await page.getByRole('button',{name:'Crear mi cuenta'}).click();
+  await page.getByLabel('Nombre de usuario',{exact:false}).fill('journey_user_0');await page.getByRole('button',{name:'Crear mi cuenta'}).click();
   await page.getByRole('heading',{name:'Cada búsqueda tiene un comienzo.'}).waitFor();
   assert.equal(await page.locator('select').count(),0);
   assert.equal(await page.getByRole('checkbox',{name:/restricción/}).count(),0);
@@ -207,7 +207,7 @@ async function main() {
   await page.getByRole('link',{name:'Crear cuenta',exact:true}).click();
   await page.getByLabel('Correo electrónico',{exact:true}).fill('other-web@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('Test-web-password-456');
-  await page.getByRole('button',{name:'Crear mi cuenta'}).click();
+  await page.getByLabel('Nombre de usuario',{exact:false}).fill('journey_user_1');await page.getByRole('button',{name:'Crear mi cuenta'}).click();
   await page.getByRole('heading',{name:'Cada búsqueda tiene un comienzo.'}).waitFor();
   assert.equal(await page.getByRole('button',{name:'Explorar sin decidir todavía'}).getAttribute('aria-pressed'),'false');
   // Las tres fases pueden omitirse mediante sus opciones, sin textos ficticios en los filtros.

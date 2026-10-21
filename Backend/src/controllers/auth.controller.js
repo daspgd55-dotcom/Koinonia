@@ -8,13 +8,14 @@ const publicUser = user => ({ id: user.id, emailVerified:!!user.emailVerifiedAt,
   onboarding: user.onboarding, profileRevision: user.profileRevision || 0 });
 exports.register = async (req, res) => {
   const data = v.parse(v.register, req.body);
+  if(data.username&&await User.exists({username:data.username}))throw new HttpError(409,'USERNAME_TAKEN','Ese nombre de usuario ya está en uso. Elige otro.');
   if(security.enabled(req.app.locals.config)){
     const config=req.app.locals.config;
     await security.quota(config,'registration-ip',req.ip,10,3600000);
     if(config.verificationPaused){const user=await User.create({...data,password:await bcrypt.hash(data.password,12),role:'user',emailVerificationRequired:true});return res.status(201).json({data:publicUser(user)});}
     security.mailReady(config);await security.quota(config,'mail-email',data.email,5,3600000);
     const password=await bcrypt.hash(data.password,12);let pending;
-    try{pending=await User.create({...data,password,role:'user',emailVerificationRequired:true});}catch(e){if(e.code!==11000)throw e;}
+    try{pending=await User.create({...data,password,role:'user',emailVerificationRequired:true});}catch(e){if(e.code!==11000)throw e;if(e.keyPattern?.username)throw new HttpError(409,'USERNAME_TAKEN','Ese nombre de usuario ya está en uso. Elige otro.');}
     if(pending)await security.issue(req,pending,'verify');
     return res.status(202).json({verificationRequired:true,message:security.responseMessage(config)});
   }

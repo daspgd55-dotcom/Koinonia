@@ -31,3 +31,13 @@ El ranking aplica permisos, visibilidad y filtros antes de ordenar y paginar. Bo
 - Frontend: `node test/event-participation.cjs`, `node test/public-events.cjs` y `npm run build`.
 
 Cubren prioridades, invitados, paginación, privacidad, manipulación de parámetros, conteo concurrente único, visibilidad y restricciones de inscripción; navegador para login con regreso, selección, retirada, notificaciones, filtros y móvil. Usan bases efímeras y cuentas ficticias.
+
+## Total de interés y enlaces compartibles
+
+GET `/api/events/:id/interest-count` es público para eventos visibles y devuelve exclusivamente `{data:{interested:number}}`. Cuenta estado `interested`, no `going` ni `withdrawn`. No publica identidades, asistencia ni visualizaciones. Un evento oculto o de iglesia no pública devuelve 404. La ficha actualiza el total al cambiar la participación y distingue singular/plural.
+
+Eventos e iglesias incluyen «Compartir». Se construye el enlace desde el origen y ruta base actuales, con `#/evento/:id` o `#/iglesia/:id`, sin parámetros de retorno, filtros ni credenciales. Funciona en el dominio provisional de Render; enlaces antiguos no se redirigen automáticamente al cambiar de dominio. Los permisos públicos siguen aplicándose al abrir el enlace.
+
+Si el navegador ofrece Web Share, se solicita su panel nativo desde el clic; las aplicaciones disponibles dependen del dispositivo. Cancelarlo no copia nada. También se ofrece copiar el enlace. Sin Web Share se usa Clipboard; si falla el permiso, se presenta un campo seleccionable para copia manual. HTTPS (o localhost en desarrollo) permite estas APIs. No se incorporan SDK de redes sociales ni publicación automática. Las vistas enriquecidas en redes no se implementan: las rutas hash comparten el documento HTML inicial.
+
+Pruebas de navegador simulan Web Share y Clipboard (éxito y fallo) y verifican los enlaces de eventos/iglesias y la actualización del total. El selector nativo de aplicaciones requiere comprobación manual en el dispositivo real.

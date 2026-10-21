@@ -36,3 +36,10 @@ test('Cancelados y finalizados no desplazan próximos; conserva orden cronológi
  assert.deepEqual(ranked.body.data.map(e=>e._id),[events[3].id,events[4].id,events[1].id,events[2].id]);
  const dated=await request(app).get('/api/events?sort=date&view=upcoming').expect(200);assert.equal(dated.body.data.length,3);
 });
+
+test('Total público de interés sin asistentes ni identidades; ocultos no disponibles',async()=>{
+ const r=await request(app).get('/api/events/'+events[4].id+'/interest-count').expect(200);assert.deepEqual(r.body,{data:{interested:4}});assert.equal(r.headers['cache-control'],'no-store');
+ await request(app).get('/api/events/'+events[5].id+'/interest-count').expect(404);await request(app).get('/api/events/'+events[0].id+'/interest-count').expect(404);
+ const url='/api/events/'+events[3].id+'/participation';await request(app).put(url).set(auth(0)).send({status:'interested'}).expect(200);assert.equal((await request(app).get('/api/events/'+events[3].id+'/interest-count')).body.data.interested,1);
+ await request(app).put(url).set(auth(0)).send({status:'going'}).expect(200);assert.equal((await request(app).get('/api/events/'+events[3].id+'/interest-count')).body.data.interested,0);
+});

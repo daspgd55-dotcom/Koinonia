@@ -23,3 +23,5 @@ exports.mine=async(req,res)=>{
  res.set('Cache-Control','no-store').json({data:result.data.map(p=>({eventId:p.event,status:p.status,pending:p.pending,event:p.publicEvent?svc.publicData(p.publicEvent,p.publicEvent.parent,p.publicEvent.organizerDoc,now):null})),pagination:{...q,total:result.total[0]?.value||0}});
 };
 exports.read=async(req,res)=>{const changeId=oid(req.params.id),[event]=await Event.aggregate([{$match:{'participationChanges._id':changeId}},...svc.publicStages()]);if(!event)return false;const change=event.participationChanges.find(c=>String(c._id)===String(changeId));const result=await Participation.updateOne({event:event._id,user:req.user._id,status:{$ne:'withdrawn'},since:{$lte:change.at}},{$addToSet:{readChanges:changeId}});if(!result.matchedCount)return false;res.set('Cache-Control','no-store').json({ok:true});return true;};
+
+exports.interestCount=async(req,res)=>{const event=await visible(req.params.id);if(!event)throw new HttpError(404,'NOT_FOUND','Evento no disponible');respond(res,{interested:await Participation.countDocuments({event:event._id,status:'interested'})});};

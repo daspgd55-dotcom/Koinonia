@@ -152,3 +152,6 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 .church-follow{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:8px 0 14px}.follow-button{gap:7px;min-height:36px;padding:7px 12px;border-radius:24px;font-size:13px}.follow-button[aria-pressed=true]{background:#e5f1ec;border-color:var(--teal)}.church-follow [role=alert]{font-size:12px;color:#813720}
 
 .follow-count{font-size:13px;color:var(--muted);white-space:nowrap}
+
+.public-share-actions,.share-control{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}.public-share-actions{margin:12px 0}.share-control{max-width:100%}.share-control [role="status"],.event-interest-count{font-size:.85rem;color:var(--muted,#66727A)}.share-control input{width:100%;min-width:0}.event-profile-intro>.public-share-actions{justify-content:flex-end}.share-control .text-button{font-size:.8rem}
+@media(max-width:600px){.event-profile-intro>.public-share-actions{justify-content:flex-start}}
