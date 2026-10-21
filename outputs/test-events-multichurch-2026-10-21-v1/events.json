@@ -1,0 +1,2295 @@
+[
+  {
+    "_id": "0435a54265df318c88a0b403",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "evangelism",
+    "churchId": "03218dbdd2818ed870a2ec54",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento10@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Parroquia San Andrés invita a este encuentro. Presentaremos la vida comunitaria, sus espacios de oración y las maneras de acercarse por primera vez. Habrá una reflexión sobre el evangelio y preguntas abiertas; participar no implica inscripción ni compromiso religioso.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-27T17:00:00.000Z",
+    "endsAt": "2026-10-27T17:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Av. Manuel Antonio Matta 230, Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6322502,
+          -33.4564749
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "invitation",
+    "participationChanges": [],
+    "participationConditions": "Participación por invitación del equipo organizador. Confirma previamente tu asistencia; no se recibirán pagos ni se reservarán cupos desde Koinonía. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Confirma con el equipo organizador que te hizo llegar la invitación, antes de la fecha del encuentro.",
+    "registrationUrl": null,
+    "startsAt": "2026-10-27T14:00:00.000Z",
+    "title": "Puertas abiertas: conoce tu parroquia",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Parroquia San Andrés",
+    "version": 1
+  },
+  {
+    "_id": "04907c18b507046e1edef53f",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "community_service",
+    "churchId": "8d829bc8624778bca81fa963",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento18@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Presbiteriana Coreana invita a este encuentro. Organizaremos libros de lectura y material escolar para una biblioteca comunitaria de prueba. Aprenderemos criterios de clasificación, prepararemos fichas y conversaremos sobre el servicio a través de la educación.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-04T22:00:00.000Z",
+    "endsAt": "2026-11-04T22:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Juan Vicuña 1505, 8360460 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6435979,
+          -33.4658078
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-04T21:00:00.000Z",
+    "title": "Biblioteca compartida para el barrio",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Presbiteriana Coreana",
+    "version": 1
+  },
+  {
+    "_id": "063b492756efd6b1872711e5",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "workshop",
+    "churchId": "9fc179a91f9c253dbb025756",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento30@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Adventista del Séptimo Día - CENTRAL invita a este encuentro. Conversaremos sobre descanso, movimiento cotidiano y organización de rutinas desde una mirada comunitaria. Habrá ejercicios suaves opcionales; la actividad es educativa y no ofrece diagnóstico, tratamiento ni recomendaciones médicas individuales.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-21T15:00:00.000Z",
+    "endsAt": "2026-11-21T15:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "San Isidro 80, 8330093 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6442721,
+          -33.4443784
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "invitation",
+    "participationChanges": [],
+    "participationConditions": "Participación por invitación del equipo organizador. Confirma previamente tu asistencia; no se recibirán pagos ni se reservarán cupos desde Koinonía. Los menores deben asistir con una persona adulta responsable. La actividad se realiza en sábado.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Confirma con el equipo organizador que te hizo llegar la invitación, antes de la fecha del encuentro.",
+    "registrationUrl": null,
+    "startsAt": "2026-11-21T14:00:00.000Z",
+    "title": "Caminar juntos: hábitos de bienestar",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Adventista del Séptimo Día - CENTRAL",
+    "version": 1
+  },
+  {
+    "_id": "0a918c981093145e4708f9f6",
+    "audience": [
+      "Adolescentes",
+      "Jóvenes"
+    ],
+    "cancellationReason": "",
+    "category": "gathering",
+    "churchId": "4bba7a508b87e338c418ca36",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento13@koinonia.test"
+    },
+    "cover": {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmKaNtSf670w2ciAsFi5QIP_ZCXxsPKS3nIEUlybdNWAfoZjdl-O29QTqt4HYQBvcynwRk2qi71wgCfBW3m_FehXaDMXxlD4X1rTHVViQr5mCRc9sYZenNYYS2V6-vUo-OyrVx6Cg=w424-h240-k-no",
+      "source": "synthetic_test_inherited_church_image",
+      "title": "Imagen de la sede heredada de la ficha de prueba",
+      "frame": "landscape",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Bíblica Bautista Bet-El invita a este encuentro. Abriremos un espacio de conversación sobre dudas frecuentes al leer la Biblia y vivir la fe en la semana. El equipo moderará el diálogo para que todas las preguntas puedan plantearse con respeto, sin exigir intervenciones públicas.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-30T23:00:00.000Z",
+    "endsAt": "2026-10-30T23:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "San Diego 246, 8330309 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6507593,
+          -33.4482309
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "registration",
+    "participationChanges": [],
+    "participationConditions": "Actividad gratuita con inscripción previa para preparar materiales. Indica al equipo cualquier adaptación que necesites; no se exige aportar donaciones. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": true,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Utiliza el formulario indicado para registrar tu interés. El formulario es simulado en este entorno de pruebas.",
+    "registrationUrl": "https://inscripciones.koinonia.test/evento-13",
+    "startsAt": "2026-10-30T21:00:00.000Z",
+    "title": "Fe y preguntas: diálogo para jóvenes",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Bíblica Bautista Bet-El",
+    "version": 1
+  },
+  {
+    "_id": "0f14498a0ef99e5fa9522a5d",
+    "audience": [
+      "Adultos",
+      "Adultos mayores"
+    ],
+    "cancellationReason": "",
+    "category": "community_service",
+    "churchId": "d0387404215979e1fb9acf35",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento06@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Parroquia Nuestra Señora de Andacollo invita a este encuentro. Prepararemos materiales de lectura y tarjetas de saludo para personas mayores. Habrá una conversación sobre escucha respetuosa y una actividad de elaboración de mensajes, sin publicar datos ni imágenes de sus destinatarios.\n\nLa actividad será completamente en línea. No necesitas desplazarte a la sede. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-23T14:00:00.000Z",
+    "endsAt": "2026-10-23T14:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": null,
+    "modality": "online",
+    "onlineUrl": "https://reuniones.koinonia.test/evento-06",
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-10-23T13:00:00.000Z",
+    "title": "Compañía para la tercera edad",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sala virtual de la comunidad",
+    "version": 1
+  },
+  {
+    "_id": "112fd6ccb30d719f0a9ad5d4",
+    "audience": [
+      "Jóvenes",
+      "Adultos",
+      "Adultos mayores"
+    ],
+    "cancellationReason": "",
+    "category": "workshop",
+    "churchId": "e73553e81418100479a77bc5",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento20@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "IGLESIA PRESBITERIANA EL ENCUENTRO SANTIAGO CENTRO invita a este encuentro. Adultos y jóvenes leerán un mismo pasaje para comparar observaciones y aprender a escuchar perspectivas distintas. Cada equipo preparará una pregunta y una aplicación práctica para conversar durante la semana.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-06T15:00:00.000Z",
+    "endsAt": "2026-11-06T15:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Portugal 415, Piso 12, 8330297 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6358857,
+          -33.4474162
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "invitation",
+    "participationChanges": [],
+    "participationConditions": "Participación por invitación del equipo organizador. Confirma previamente tu asistencia; no se recibirán pagos ni se reservarán cupos desde Koinonía.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Confirma con el equipo organizador que te hizo llegar la invitación, antes de la fecha del encuentro.",
+    "registrationUrl": null,
+    "startsAt": "2026-11-06T14:00:00.000Z",
+    "title": "Lectura bíblica entre generaciones",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de IGLESIA PRESBITERIANA EL ENCUENTRO SANTIAGO CENTRO",
+    "version": 1
+  },
+  {
+    "_id": "11b03c1ee8a84e8694a22e8e",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "cultural",
+    "churchId": "de3a1a313ec1baf0e8a40447",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento23@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Evangelica Pentecostal Toesca invita a este encuentro. El encuentro alternará música cristiana y lecturas bíblicas sobre la gratitud. Los asistentes podrán escuchar o sumarse a los cantos; no se solicitarán relatos personales ni se registrarán testimonios sin consentimiento.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-09T22:00:00.000Z",
+    "endsAt": "2026-11-09T22:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Toesca 2474, 8370346 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6700173,
+          -33.4552038
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "registration",
+    "participationChanges": [],
+    "participationConditions": "Actividad gratuita con inscripción previa para preparar materiales. Indica al equipo cualquier adaptación que necesites; no se exige aportar donaciones. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Utiliza el formulario indicado para registrar tu interés. El formulario es simulado en este entorno de pruebas.",
+    "registrationUrl": "https://inscripciones.koinonia.test/evento-23",
+    "startsAt": "2026-11-09T21:00:00.000Z",
+    "title": "Cantos de gratitud y testimonio",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Evangelica Pentecostal Toesca",
+    "version": 1
+  },
+  {
+    "_id": "13f6bce6cf0fd1f50fdb8d6d",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "community_service",
+    "churchId": "7592f8c1b8371e8f6fcb2427",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento12@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Bautista Vida Nueva invita a este encuentro. Prepararemos paquetes de útiles y materiales de lectura para una actividad de apoyo escolar. Trabajaremos por estaciones y cerraremos con una reflexión bíblica sobre el servicio. No se recibirán datos personales de beneficiarios.\n\nPuedes asistir a la sede indicada o participar a distancia. La bienvenida y las preguntas estarán disponibles en ambas modalidades. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-29T20:00:00.000Z",
+    "endsAt": "2026-10-29T20:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Agustinas 2332, 8350539 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6685863,
+          -33.4429537
+        ]
+      }
+    },
+    "modality": "hybrid",
+    "onlineUrl": "https://reuniones.koinonia.test/evento-12",
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-10-29T19:00:00.000Z",
+    "title": "Servir con las manos: útiles para estudiar",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Bautista Vida Nueva",
+    "version": 1
+  },
+  {
+    "_id": "1eafeffd0fcb55dbc8384f83",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "cultural",
+    "churchId": "23ce17aa73b9f0c7e72e989a",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento34@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Adventista del Séptimo Día - MARANATHA invita a este encuentro. Un encuentro de cantos, lecturas y gratitud para cerrar el sábado en comunidad. Alternaremos momentos de escucha con participación congregacional y un saludo para quienes nos visitan por primera vez.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-21T23:00:00.000Z",
+    "endsAt": "2026-11-21T23:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Pl. Manuel Rodríguez 2139, 8370102 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6650786,
+          -33.4510252
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable. La actividad se realiza en sábado.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-21T22:00:00.000Z",
+    "title": "Música y esperanza al terminar el sábado",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Adventista del Séptimo Día - MARANATHA",
+    "version": 1
+  },
+  {
+    "_id": "2239765611f4d03543e3898c",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "cultural",
+    "churchId": "31097046eefccc80ffa9b7a0",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento04@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Parroquia de la Veracruz invita a este encuentro. Un encuentro para escuchar cantos de tradición católica y conocer las historias que la comunidad asocia a ellos. Alternaremos breves presentaciones, momentos de escucha y conversación; no es una audición ni exige conocimientos musicales.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-20T23:00:00.000Z",
+    "endsAt": "2026-10-20T23:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "José Victorino Lastarria 124, 8320156 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6412553,
+          -33.4388135
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-10-20T22:00:00.000Z",
+    "title": "Cantos y memoria de nuestra comunidad",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Parroquia de la Veracruz",
+    "version": 1
+  },
+  {
+    "_id": "3af6517793ca0c98fa9750cb",
+    "audience": [
+      "Jóvenes",
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "El equipo organizador necesita reorganizar el espacio y los recursos de acogida. Se cancela esta fecha; una nueva convocatoria se anunciará por separado.",
+    "category": "evangelism",
+    "churchId": "f1feb886eb534c3f0e20473b",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento40@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Asamblea de Dios Autonoma invita a este encuentro. Exploraremos maneras sencillas de compartir la fe y ayudar a nuestro entorno como familias. Habrá una reflexión bíblica, actividades por equipos y preparación de propuestas que respeten las decisiones y la privacidad de otras personas.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. Esta fecha fue cancelada por necesidades de reorganización; conservamos la ficha para informar a quienes la habían consultado.\n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-26T15:00:00.000Z",
+    "endsAt": "2026-11-26T15:00:00.000Z",
+    "eventStatus": "cancelled",
+    "location": {
+      "address": "Av. Manuel Antonio Matta 610, 8360056 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6412228,
+          -33.4581522
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "invitation",
+    "participationChanges": [
+      {
+        "_id": "87d74afb6d896cb67b16fac7",
+        "version": 2,
+        "at": "2026-10-21T17:52:49.384Z",
+        "kind": "cancelled"
+      }
+    ],
+    "participationConditions": "Evento cancelado. No acudas en la fecha anunciada; no existe por ahora una fecha de reemplazo.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Confirma con el equipo organizador que te hizo llegar la invitación, antes de la fecha del encuentro.",
+    "registrationUrl": null,
+    "startsAt": "2026-11-26T14:00:00.000Z",
+    "title": "Familias en misión: servir con lo que tenemos",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Asamblea de Dios Autonoma",
+    "version": 2
+  },
+  {
+    "_id": "3d2ee01dcda27a7d468a2426",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "retreat",
+    "churchId": "d0387404215979e1fb9acf35",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento05@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Parroquia Nuestra Señora de Andacollo invita a este encuentro. Reservaremos una jornada de recogimiento con lectura del evangelio, silencio personal y diálogo acompañado. Los espacios de reflexión serán voluntarios; nadie tendrá que compartir experiencias privadas ante el grupo.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-22T20:00:00.000Z",
+    "endsAt": "2026-10-22T20:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Av. Mapocho 2325, 8350148 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6696868,
+          -33.4319223
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "registration",
+    "participationChanges": [],
+    "participationConditions": "Actividad gratuita con inscripción previa para preparar materiales. Indica al equipo cualquier adaptación que necesites; no se exige aportar donaciones. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Utiliza el formulario indicado para registrar tu interés. El formulario es simulado en este entorno de pruebas.",
+    "registrationUrl": "https://inscripciones.koinonia.test/evento-05",
+    "startsAt": "2026-10-22T12:00:00.000Z",
+    "title": "Pausa para cuidar la vida interior",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Jornada de retiro en la sede de la iglesia",
+    "version": 1
+  },
+  {
+    "_id": "509036b519dbac823e60cab5",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "El equipo organizador necesita reorganizar el espacio y los recursos de acogida. Se cancela esta fecha; una nueva convocatoria se anunciará por separado.",
+    "category": "gathering",
+    "churchId": "f1feb886eb534c3f0e20473b",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento39@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Asamblea de Dios Autonoma invita a este encuentro. Tendremos música congregacional, lectura bíblica y oración en comunidad. El equipo de bienvenida orientará a las personas nuevas y se ofrecerá un momento de conversación al terminar, sin obligación de participar en voz alta.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. Esta fecha fue cancelada por necesidades de reorganización; conservamos la ficha para informar a quienes la habían consultado.\n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-25T23:00:00.000Z",
+    "endsAt": "2026-11-25T23:00:00.000Z",
+    "eventStatus": "cancelled",
+    "location": {
+      "address": "Av. Manuel Antonio Matta 610, 8360056 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6412228,
+          -33.4581522
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [
+      {
+        "_id": "e75a528a9d9c1e484267fec5",
+        "version": 2,
+        "at": "2026-10-21T17:52:49.384Z",
+        "kind": "cancelled"
+      }
+    ],
+    "participationConditions": "Evento cancelado. No acudas en la fecha anunciada; no existe por ahora una fecha de reemplazo.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-25T22:00:00.000Z",
+    "title": "Encuentro de oración y alabanza compartida",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Asamblea de Dios Autonoma",
+    "version": 2
+  },
+  {
+    "_id": "52230e4ee2695db0dfe4277b",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "cultural",
+    "churchId": "e73553e81418100479a77bc5",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento19@koinonia.test"
+    },
+    "cover": {
+      "url": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=N6J_FEQpS-uHiRQ9L1oy2A&cb_client=search.gws-prod.grass&w=408&h=240&yaw=258.2218&pitch=0&thumbfov=100",
+      "source": "synthetic_test_inherited_church_image",
+      "title": "Imagen de la sede heredada de la ficha de prueba",
+      "frame": "landscape",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "IGLESIA PRESBITERIANA EL ENCUENTRO SANTIAGO CENTRO invita a este encuentro. Una aproximación introductoria a la Reforma protestante y a la formación de comunidades presbiterianas. Se trabajará con una línea del tiempo y preguntas abiertas, sin exigir conocimientos previos ni convertir diferencias históricas en descalificaciones.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-06T01:00:00.000Z",
+    "endsAt": "2026-11-06T01:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Portugal 415, Piso 12, 8330297 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6358857,
+          -33.4474162
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": true,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-05T22:00:00.000Z",
+    "title": "Historia de la Reforma: preguntas y contexto",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de IGLESIA PRESBITERIANA EL ENCUENTRO SANTIAGO CENTRO",
+    "version": 1
+  },
+  {
+    "_id": "5234397ba02e4560302ce680",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "community_service",
+    "churchId": "de86ac9e40f76f1a4326f85e",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento35@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Metodista de Chile invita a este encuentro. Prepararemos una acción de ayuda práctica y reflexionaremos sobre el vínculo entre fe, cuidado y vida cotidiana. El trabajo por estaciones permitirá colaborar con distintas habilidades, sin que aportar materiales sea un requisito.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-21T15:00:00.000Z",
+    "endsAt": "2026-11-21T15:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Sgto. Aldea 1041, Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6474713,
+          -33.4684727
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "registration",
+    "participationChanges": [],
+    "participationConditions": "Actividad gratuita con inscripción previa para preparar materiales. Indica al equipo cualquier adaptación que necesites; no se exige aportar donaciones. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Utiliza el formulario indicado para registrar tu interés. El formulario es simulado en este entorno de pruebas.",
+    "registrationUrl": "https://inscripciones.koinonia.test/evento-35",
+    "startsAt": "2026-11-21T14:00:00.000Z",
+    "title": "Fe que se expresa en servicio",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Metodista de Chile",
+    "version": 1
+  },
+  {
+    "_id": "5779ac7dce505db217a74fe1",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "gathering",
+    "churchId": "1a3269701769dffef02575c4",
+    "collaborations": [
+      {
+        "_id": "5b0603c04f03c499ba128aa1",
+        "churchId": "de3a1a313ec1baf0e8a40447",
+        "status": "pending",
+        "invitationNoticeId": "21a90ab38ee3cd12d7ab92ed",
+        "history": [
+          {
+            "_id": "21a90ab38ee3cd12d7ab92ed",
+            "action": "invite",
+            "actor": "6ac9a1f6898ae28f50236730",
+            "actorName": "David Silva",
+            "actorRole": "admin",
+            "at": "2026-10-21T17:50:49.384Z",
+            "audienceChurchId": "de3a1a313ec1baf0e8a40447"
+          }
+        ]
+      }
+    ],
+    "communityId": null,
+    "contact": {
+      "email": "evento21@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Evangelica Metodista Pentecostal Temple Esperanza invita a este encuentro. Tendremos lectura bíblica, cantos congregacionales y tiempos de oración por necesidades de la comunidad. Se ofrecerá una bienvenida a visitantes y un espacio de conversación al finalizar, sin requerir testimonios públicos.\n\nLa actividad será completamente en línea. No necesitas desplazarte a la sede. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-07T15:00:00.000Z",
+    "endsAt": "2026-11-07T15:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": null,
+    "modality": "online",
+    "onlineUrl": "https://reuniones.koinonia.test/evento-21",
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-07T13:00:00.000Z",
+    "title": "Oración y esperanza para comenzar",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sala virtual de la comunidad",
+    "version": 2
+  },
+  {
+    "_id": "57d3ff89b8fafa9f7cbbec0f",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "El equipo organizador necesita reorganizar el espacio y los recursos de acogida. Se cancela esta fecha; una nueva convocatoria se anunciará por separado.",
+    "category": "gathering",
+    "churchId": "f526265697052e6f4307f0a2",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento37@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "ISA - Iglesia Santiago Apóstol - Iglesia Anglicana Santiago Centro invita a este encuentro. Presentaremos una forma sencilla de oración comunitaria con lecturas bíblicas, silencio e intercesiones. Quienes se acerquen por primera vez recibirán indicaciones para seguir el encuentro sin conocer previamente la liturgia.\n\nPuedes asistir a la sede indicada o participar a distancia. La bienvenida y las preguntas estarán disponibles en ambas modalidades. Esta fecha fue cancelada por necesidades de reorganización; conservamos la ficha para informar a quienes la habían consultado.\n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-23T22:00:00.000Z",
+    "endsAt": "2026-11-23T22:00:00.000Z",
+    "eventStatus": "cancelled",
+    "location": {
+      "address": "García Reyes 180, 8350552 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6713852,
+          -33.4432654
+        ]
+      }
+    },
+    "modality": "hybrid",
+    "onlineUrl": "https://reuniones.koinonia.test/evento-37",
+    "openCollaboration": false,
+    "participation": "registration",
+    "participationChanges": [
+      {
+        "_id": "8616571dc17b996baa897d09",
+        "version": 2,
+        "at": "2026-10-21T17:52:49.384Z",
+        "kind": "cancelled"
+      }
+    ],
+    "participationConditions": "Evento cancelado. No acudas en la fecha anunciada; no existe por ahora una fecha de reemplazo.",
+    "privateFields": {
+      "email": true,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Utiliza el formulario indicado para registrar tu interés. El formulario es simulado en este entorno de pruebas.",
+    "registrationUrl": "https://inscripciones.koinonia.test/evento-37",
+    "startsAt": "2026-11-23T19:00:00.000Z",
+    "title": "Oración y lectura para el camino diario",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de ISA - Iglesia Santiago Apóstol - Iglesia Anglicana Santiago Centro",
+    "version": 2
+  },
+  {
+    "_id": "58b11d690e014b70981a5874",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "El equipo organizador necesita reorganizar el espacio y los recursos de acogida. Se cancela esta fecha; una nueva convocatoria se anunciará por separado.",
+    "category": "workshop",
+    "churchId": "f526265697052e6f4307f0a2",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento38@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "ISA - Iglesia Santiago Apóstol - Iglesia Anglicana Santiago Centro invita a este encuentro. Conversaremos sobre la acogida a visitantes, la claridad de las indicaciones y el acompañamiento respetuoso. Se trabajará con situaciones ficticias y propuestas para mejorar la bienvenida, sin registrar información personal de asistentes.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. Esta fecha fue cancelada por necesidades de reorganización; conservamos la ficha para informar a quienes la habían consultado.\n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-24T22:00:00.000Z",
+    "endsAt": "2026-11-24T22:00:00.000Z",
+    "eventStatus": "cancelled",
+    "location": {
+      "address": "García Reyes 180, 8350552 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6713852,
+          -33.4432654
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [
+      {
+        "_id": "9cbf41bcca5e6d45428591f6",
+        "version": 2,
+        "at": "2026-10-21T17:52:49.384Z",
+        "kind": "cancelled"
+      }
+    ],
+    "participationConditions": "Evento cancelado. No acudas en la fecha anunciada; no existe por ahora una fecha de reemplazo.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-24T21:00:00.000Z",
+    "title": "Hospitalidad: recibir a quien llega",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de ISA - Iglesia Santiago Apóstol - Iglesia Anglicana Santiago Centro",
+    "version": 2
+  },
+  {
+    "_id": "5ef33e4f2f52e19c888b1fd9",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "community_service",
+    "churchId": "8008616a34e819e84e6258fc",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento02@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Parroquia de la Asunción invita a este encuentro. Nos organizaremos para clasificar alimentos no perecibles y preparar bolsas de apoyo comunitario. El encuentro incluye orientación para un trato digno y un cierre de oración por las familias; no se divulgarán identidades de beneficiarios.\n\nPuedes asistir a la sede indicada o participar a distancia. La bienvenida y las preguntas estarán disponibles en ambas modalidades. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-20T20:00:00.000Z",
+    "endsAt": "2026-10-20T20:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Av. Vicuña Mackenna 69, 8330018 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6346367,
+          -33.440307
+        ]
+      }
+    },
+    "modality": "hybrid",
+    "onlineUrl": "https://reuniones.koinonia.test/evento-02",
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-10-20T19:00:00.000Z",
+    "title": "Una despensa que acompaña",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Parroquia de la Asunción",
+    "version": 1
+  },
+  {
+    "_id": "6f136fc4541a43dcaaea4f5c",
+    "audience": [
+      "Niños",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "workshop",
+    "churchId": "31097046eefccc80ffa9b7a0",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento03@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Parroquia de la Veracruz invita a este encuentro. Niños y adultos compartirán una actividad introductoria sobre la oración y los signos de la vida cristiana. Prepararemos una sencilla propuesta para continuar en casa. Este taller abierto no reemplaza ni acredita un proceso sacramental.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-20T22:00:00.000Z",
+    "endsAt": "2026-10-20T22:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "José Victorino Lastarria 124, 8320156 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6412553,
+          -33.4388135
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "registration",
+    "participationChanges": [],
+    "participationConditions": "Actividad gratuita con inscripción previa para preparar materiales. Indica al equipo cualquier adaptación que necesites; no se exige aportar donaciones. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Utiliza el formulario indicado para registrar tu interés. El formulario es simulado en este entorno de pruebas.",
+    "registrationUrl": "https://inscripciones.koinonia.test/evento-03",
+    "startsAt": "2026-10-20T21:00:00.000Z",
+    "title": "Pequeños pasos de catequesis en familia",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Parroquia de la Veracruz",
+    "version": 1
+  },
+  {
+    "_id": "73cfe1cb19d7f3f886f8f056",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "workshop",
+    "churchId": "ea848efc77b6b72864e5d0ec",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento07@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Parroquia Sagrado Corazón de Jesús invita a este encuentro. Exploraremos dos parábolas, su contexto y las preguntas que proponen para la vida diaria. Se ofrecerá una guía breve para practicar en casa y un espacio de preguntas para personas sin formación previa.\n\nPuedes asistir a la sede indicada o participar a distancia. La bienvenida y las preguntas estarán disponibles en ambas modalidades. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-24T20:00:00.000Z",
+    "endsAt": "2026-10-24T20:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Av. Alameda Libertador Bernardo O'Higgins 3129, 8350687 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6772432,
+          -33.4499011
+        ]
+      }
+    },
+    "modality": "hybrid",
+    "onlineUrl": "https://reuniones.koinonia.test/evento-07",
+    "openCollaboration": false,
+    "participation": "registration",
+    "participationChanges": [],
+    "participationConditions": "Actividad gratuita con inscripción previa para preparar materiales. Indica al equipo cualquier adaptación que necesites; no se exige aportar donaciones. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": true,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Utiliza el formulario indicado para registrar tu interés. El formulario es simulado en este entorno de pruebas.",
+    "registrationUrl": "https://inscripciones.koinonia.test/evento-07",
+    "startsAt": "2026-10-24T19:00:00.000Z",
+    "title": "Aprender a leer las parábolas",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Parroquia Sagrado Corazón de Jesús",
+    "version": 1
+  },
+  {
+    "_id": "7af5bde7656236180ea1206d",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "workshop",
+    "churchId": "d39b36d022bb796930f5154c",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento32@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Adventista del Séptimo Día - LIBERTAD invita a este encuentro. Practicaremos la observación de un texto bíblico y compartiremos herramientas para continuar leyendo en casa. Cada participante podrá hacer preguntas o simplemente escuchar; no se exige pertenecer a la comunidad.\n\nPuedes asistir a la sede indicada o participar a distancia. La bienvenida y las preguntas estarán disponibles en ambas modalidades. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-21T20:00:00.000Z",
+    "endsAt": "2026-11-21T20:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Santo Domingo 2804, 8350377 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6746125,
+          -33.4382272
+        ]
+      }
+    },
+    "modality": "hybrid",
+    "onlineUrl": "https://reuniones.koinonia.test/evento-32",
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable. La actividad se realiza en sábado.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-21T19:00:00.000Z",
+    "title": "Lectura acompañada para nuevos visitantes",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Adventista del Séptimo Día - LIBERTAD",
+    "version": 1
+  },
+  {
+    "_id": "83d47202cd268602271c390d",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "evangelism",
+    "churchId": "4bba7a508b87e338c418ca36",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento14@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Bíblica Bautista Bet-El invita a este encuentro. Practicaremos cómo presentar el mensaje cristiano y escuchar a otras personas sin presionarlas. El taller incluye ejercicios de conversación, lectura bíblica y preparación de una actividad voluntaria en el entorno de la iglesia.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-31T23:00:00.000Z",
+    "endsAt": "2026-10-31T23:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "San Diego 246, 8330309 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6507593,
+          -33.4482309
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-10-31T22:00:00.000Z",
+    "title": "Compartir esperanza con respeto",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Bíblica Bautista Bet-El",
+    "version": 1
+  },
+  {
+    "_id": "8ad5678f2a572cd3a9d61db7",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "workshop",
+    "churchId": "822e89de9059472b186b6e91",
+    "collaborations": [
+      {
+        "_id": "2455ab5ce4af5e39d8ddf153",
+        "churchId": "8d829bc8624778bca81fa963",
+        "status": "accepted",
+        "invitationNoticeId": "c3310001d3df92ecd1e3dea9",
+        "history": [
+          {
+            "_id": "c3310001d3df92ecd1e3dea9",
+            "action": "invite",
+            "actor": "6ac9a1f6898ae28f50236730",
+            "actorName": "David Silva",
+            "actorRole": "admin",
+            "at": "2026-10-21T17:50:49.384Z",
+            "audienceChurchId": "8d829bc8624778bca81fa963"
+          },
+          {
+            "_id": "5e08194adc8c22576a97bf72",
+            "action": "accept",
+            "actor": "6ac9a1f6898ae28f50236730",
+            "actorName": "David Silva",
+            "actorRole": "admin",
+            "at": "2026-10-21T17:51:49.384Z",
+            "audienceChurchId": "822e89de9059472b186b6e91"
+          }
+        ]
+      }
+    ],
+    "communityId": null,
+    "contact": {
+      "email": "evento15@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Cuarta Iglesia Presbiteriana de Chile invita a este encuentro. Leeremos salmos de gratitud, confianza y lamento para reconocer sus géneros y contexto. Cada participante podrá preparar una pequeña guía de lectura personal; habrá acompañamiento para quienes se acerquen por primera vez.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nColabora en este escenario: Iglesia Presbiteriana Coreana. La organización y coordinación general corresponden a la iglesia convocante.\n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-01T15:00:00.000Z",
+    "endsAt": "2026-11-01T15:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Sierra Bella 1682, 8360633 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.634391,
+          -33.466478
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": true,
+    "participation": "registration",
+    "participationChanges": [],
+    "participationConditions": "Actividad gratuita con inscripción previa para preparar materiales. Indica al equipo cualquier adaptación que necesites; no se exige aportar donaciones. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Utiliza el formulario indicado para registrar tu interés. El formulario es simulado en este entorno de pruebas.",
+    "registrationUrl": "https://inscripciones.koinonia.test/evento-15",
+    "startsAt": "2026-11-01T14:00:00.000Z",
+    "title": "Salmos para la vida diaria",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Cuarta Iglesia Presbiteriana de Chile",
+    "version": 3
+  },
+  {
+    "_id": "95bb15b14301a8a46b125473",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "retreat",
+    "churchId": "8d829bc8624778bca81fa963",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento17@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Presbiteriana Coreana invita a este encuentro. Dedicaremos una jornada a la lectura pausada de los salmos, el silencio y la oración. Habrá pausas de descanso y una conversación final para compartir aprendizajes de manera voluntaria.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-03T20:00:00.000Z",
+    "endsAt": "2026-11-03T20:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Juan Vicuña 1505, 8360460 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6435979,
+          -33.4658078
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "registration",
+    "participationChanges": [],
+    "participationConditions": "Actividad gratuita con inscripción previa para preparar materiales. Indica al equipo cualquier adaptación que necesites; no se exige aportar donaciones. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Utiliza el formulario indicado para registrar tu interés. El formulario es simulado en este entorno de pruebas.",
+    "registrationUrl": "https://inscripciones.koinonia.test/evento-17",
+    "startsAt": "2026-11-03T12:00:00.000Z",
+    "title": "Descanso y oración en los salmos",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Jornada de retiro en la sede de la iglesia",
+    "version": 1
+  },
+  {
+    "_id": "a3144e50272859eba861af18",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "gathering",
+    "churchId": "ea848efc77b6b72864e5d0ec",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento08@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Parroquia Sagrado Corazón de Jesús invita a este encuentro. Nos reuniremos para rezar el rosario y conversar sobre las necesidades de nuestro entorno. Quienes no conozcan la práctica recibirán una guía de participación y podrán acompañar el encuentro en silencio.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-25T22:00:00.000Z",
+    "endsAt": "2026-10-25T22:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Av. Alameda Libertador Bernardo O'Higgins 3129, 8350687 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6772432,
+          -33.4499011
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": true,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-10-25T21:00:00.000Z",
+    "title": "Rosario y encuentro de vecinos",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Parroquia Sagrado Corazón de Jesús",
+    "version": 1
+  },
+  {
+    "_id": "a349fe4f0e18fffcf4ff8c32",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "community_service",
+    "churchId": "23ce17aa73b9f0c7e72e989a",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento33@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Adventista del Séptimo Día - MARANATHA invita a este encuentro. Prepararemos materiales para una acción comunitaria y conversaremos sobre el cuidado de las personas. Trabajaremos en equipos con tareas accesibles para distintos ritmos, sin publicar datos ni imágenes de beneficiarios.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-21T23:00:00.000Z",
+    "endsAt": "2026-11-21T23:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Pl. Manuel Rodríguez 2139, 8370102 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6650786,
+          -33.4510252
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "registration",
+    "participationChanges": [],
+    "participationConditions": "Actividad gratuita con inscripción previa para preparar materiales. Indica al equipo cualquier adaptación que necesites; no se exige aportar donaciones. Los menores deben asistir con una persona adulta responsable. La actividad se realiza en sábado.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Utiliza el formulario indicado para registrar tu interés. El formulario es simulado en este entorno de pruebas.",
+    "registrationUrl": "https://inscripciones.koinonia.test/evento-33",
+    "startsAt": "2026-11-21T21:00:00.000Z",
+    "title": "Sábado de solidaridad: manos disponibles",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Adventista del Séptimo Día - MARANATHA",
+    "version": 1
+  },
+  {
+    "_id": "b2443a4ff111b76d3c9f09a2",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "workshop",
+    "churchId": "7592f8c1b8371e8f6fcb2427",
+    "collaborations": [
+      {
+        "_id": "2210c8898f95cf9971a1484f",
+        "churchId": "4bba7a508b87e338c418ca36",
+        "status": "accepted",
+        "invitationNoticeId": "beacf172f22817a31030f29f",
+        "history": [
+          {
+            "_id": "beacf172f22817a31030f29f",
+            "action": "invite",
+            "actor": "6ac9a1f6898ae28f50236730",
+            "actorName": "David Silva",
+            "actorRole": "admin",
+            "at": "2026-10-21T17:50:49.384Z",
+            "audienceChurchId": "4bba7a508b87e338c418ca36"
+          },
+          {
+            "_id": "c3130ac7086f61b1ecf1f981",
+            "action": "accept",
+            "actor": "6ac9a1f6898ae28f50236730",
+            "actorName": "David Silva",
+            "actorRole": "admin",
+            "at": "2026-10-21T17:51:49.384Z",
+            "audienceChurchId": "7592f8c1b8371e8f6fcb2427"
+          }
+        ]
+      }
+    ],
+    "communityId": null,
+    "contact": {
+      "email": "evento11@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Bautista Vida Nueva invita a este encuentro. Un taller para observar el texto, comprender el contexto y formular aplicaciones personales a partir del Evangelio de Marcos. Practicaremos en grupos pequeños y compartiremos preguntas; no se requieren estudios teológicos.\n\nLa actividad será completamente en línea. No necesitas desplazarte a la sede. \n\nColabora en este escenario: Iglesia Bíblica Bautista Bet-El. La organización y coordinación general corresponden a la iglesia convocante.\n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-28T14:00:00.000Z",
+    "endsAt": "2026-10-28T14:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": null,
+    "modality": "online",
+    "onlineUrl": "https://reuniones.koinonia.test/evento-11",
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-10-28T13:00:00.000Z",
+    "title": "Marcos en cuatro conversaciones",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sala virtual de la comunidad",
+    "version": 3
+  },
+  {
+    "_id": "bc2b6096baf4d34d6e9a48d8",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "gathering",
+    "churchId": "822e89de9059472b186b6e91",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento16@koinonia.test"
+    },
+    "cover": {
+      "url": "https://lh3.googleusercontent.com/grass-cs/AABkmLdmPmmKPCVtNe3-dIsSQk12ZxCSUIuUpawlMPYjLEpBUJWrhT33wmuPJhK9qXTT9yL5B1q81PADM6IvLwHyt6_5eC7YRVOjjRrABg2tGd-kIMkpuaY6g8nCPeRKrz74d9_RCzzT=w408-h544-k-no",
+      "source": "synthetic_test_inherited_church_image",
+      "title": "Imagen de la sede heredada de la ficha de prueba",
+      "frame": "wide",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Cuarta Iglesia Presbiteriana de Chile invita a este encuentro. Compartiremos una reflexión bíblica sobre la gracia, la vida comunitaria y el cuidado mutuo. El encuentro combinará exposición breve, preguntas y oración, con libertad para escuchar sin intervenir.\n\nLa actividad será completamente en línea. No necesitas desplazarte a la sede. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-02T14:00:00.000Z",
+    "endsAt": "2026-11-02T14:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": null,
+    "modality": "online",
+    "onlineUrl": "https://reuniones.koinonia.test/evento-16",
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-02T13:00:00.000Z",
+    "title": "Conversaciones sobre gracia y comunidad",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sala virtual de la comunidad",
+    "version": 1
+  },
+  {
+    "_id": "c430558053661a8c40917930",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "workshop",
+    "churchId": "de3a1a313ec1baf0e8a40447",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento24@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Evangelica Pentecostal Toesca invita a este encuentro. Practicaremos escucha atenta, límites y formas respetuosas de acompañar situaciones difíciles. Se utilizarán ejemplos ficticios y pautas de derivación; el taller no sustituye atención profesional ni exige compartir experiencias privadas.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-10T23:00:00.000Z",
+    "endsAt": "2026-11-10T23:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Toesca 2474, 8370346 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6700173,
+          -33.4552038
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-10T22:00:00.000Z",
+    "title": "Acompañar sin invadir: taller de escucha",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Evangelica Pentecostal Toesca",
+    "version": 1
+  },
+  {
+    "_id": "cb723155ee50bd9f5708da31",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "community_service",
+    "churchId": "a4c0fd73a6cf7cd4efa5d08a",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento28@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Metodista Pentecostal De Chile Santiago Centro invita a este encuentro. Clasificaremos prendas limpias y en buen estado para preparar conjuntos de ayuda. Se explicarán criterios de recepción y entrega respetuosa, evitando fotografías o exposición de quienes reciban los aportes.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-15T00:00:00.000Z",
+    "endsAt": "2026-11-15T00:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Esperanza 14, 8350676 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.674589,
+          -33.4485703
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-14T21:00:00.000Z",
+    "title": "Abrigo y cuidado para nuestros vecinos",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Metodista Pentecostal De Chile Santiago Centro",
+    "version": 1
+  },
+  {
+    "_id": "d1a43880be50c40c0a91f1df",
+    "audience": [
+      "Niños",
+      "Jóvenes",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "other",
+    "churchId": "03218dbdd2818ed870a2ec54",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento09@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Parroquia San Andrés invita a este encuentro. Una jornada recreativa de juegos de mesa, desafíos cooperativos y conversación entre generaciones. Las actividades se adaptarán al ritmo de los participantes y cerrarán con un saludo de la comunidad.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-27T00:00:00.000Z",
+    "endsAt": "2026-10-27T00:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Av. Manuel Antonio Matta 230, Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6322502,
+          -33.4564749
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-10-26T22:00:00.000Z",
+    "title": "Tarde de juegos y convivencia parroquial",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Parroquia San Andrés",
+    "version": 1
+  },
+  {
+    "_id": "d9666ae1ae0ed3dd2eae7e97",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "retreat",
+    "churchId": "a4c0fd73a6cf7cd4efa5d08a",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento27@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Metodista Pentecostal De Chile Santiago Centro invita a este encuentro. Una jornada de lectura bíblica, oración y descanso con espacios personales y momentos comunitarios. La participación en conversaciones grupales será voluntaria y no se ofrecerán promesas de resultados personales o de salud.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-13T20:00:00.000Z",
+    "endsAt": "2026-11-13T20:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Esperanza 14, 8350676 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.674589,
+          -33.4485703
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "registration",
+    "participationChanges": [],
+    "participationConditions": "Actividad gratuita con inscripción previa para preparar materiales. Indica al equipo cualquier adaptación que necesites; no se exige aportar donaciones. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Utiliza el formulario indicado para registrar tu interés. El formulario es simulado en este entorno de pruebas.",
+    "registrationUrl": "https://inscripciones.koinonia.test/evento-27",
+    "startsAt": "2026-11-13T12:00:00.000Z",
+    "title": "Una pausa para orar y descansar",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Jornada de retiro en la sede de la iglesia",
+    "version": 1
+  },
+  {
+    "_id": "db74a5865f98313a454b0f63",
+    "audience": [
+      "Adolescentes",
+      "Jóvenes"
+    ],
+    "cancellationReason": "",
+    "category": "workshop",
+    "churchId": "1a3269701769dffef02575c4",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento22@koinonia.test"
+    },
+    "cover": {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlXAhCew8ubZwWupjVE24a1m85n0QH_PQ9Rurq1t6-9ifumx8SdEedHHXqo89J6aDTA59ZE0a0ANyBmGsdMADtxka1k0BYkn9oHoI_O9RCLdDFdw6Dws2Eo-ZGyWs9Sv9SZaSpFuMUytE5G=w408-h544-k-no",
+      "source": "synthetic_test_inherited_church_image",
+      "title": "Imagen de la sede heredada de la ficha de prueba",
+      "frame": "wide",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Evangelica Metodista Pentecostal Temple Esperanza invita a este encuentro. Diseñaremos pequeñas acciones de ayuda que puedan realizarse en equipo con recursos sencillos. La jornada combina una reflexión sobre el servicio, trabajo por grupos y presentación de propuestas.\n\nPuedes asistir a la sede indicada o participar a distancia. La bienvenida y las preguntas estarán disponibles en ambas modalidades. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-08T20:00:00.000Z",
+    "endsAt": "2026-11-08T20:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Esperanza 1265, 8350078 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6764898,
+          -33.4306469
+        ]
+      }
+    },
+    "modality": "hybrid",
+    "onlineUrl": "https://reuniones.koinonia.test/evento-22",
+    "openCollaboration": true,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-08T19:00:00.000Z",
+    "title": "Jóvenes que sirven: una idea para el barrio",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Evangelica Metodista Pentecostal Temple Esperanza",
+    "version": 1
+  },
+  {
+    "_id": "e1c780902f677976efdbe0ed",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "gathering",
+    "churchId": "8008616a34e819e84e6258fc",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento01@koinonia.test"
+    },
+    "cover": {
+      "url": "https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-6/699330982_1405966918223563_5024225629362191743_n.png?stp=dst-png&cstp=mx2048x1152&ctp=s960x960&_nc_cat=100&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=DVj4CSKfI_IQ7kNvwF8E1Ex&_nc_oc=AdqT3loNn4S3PoP1Le5u1k2ulKAW0b06WBWWcqCWgXnOosbrOWGH09rCSZXoQ-ccfd1WIIdzNl8U8yg8itFEnk93&_nc_zt=23&_nc_ht=scontent-dfw5-2.xx&_nc_gid=qlbnfHTYJLIK9iA03IiDiw&_nc_ss=7d289&oh=00_AQONGHvwhrBYiNgl5mVdB9WywJorLWIWMHlPXj199nw2Zw&oe=6AC33C94",
+      "source": "synthetic_test_inherited_church_image",
+      "title": "Imagen de la sede heredada de la ficha de prueba",
+      "frame": "landscape",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Parroquia de la Asunción invita a este encuentro. Compartiremos una lectura orante del evangelio, un tiempo de silencio y una conversación guiada sobre cómo llevar el texto a la vida cotidiana. La acogida está abierta a vecinos y feligreses que deseen conocer la comunidad.\n\nLa actividad será completamente en línea. No necesitas desplazarte a la sede. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-10-20T16:00:00.000Z",
+    "endsAt": "2026-10-20T16:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": null,
+    "modality": "online",
+    "onlineUrl": "https://reuniones.koinonia.test/evento-01",
+    "openCollaboration": true,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": true,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-10-20T13:00:00.000Z",
+    "title": "Escuchar el Evangelio en comunidad",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sala virtual de la comunidad",
+    "version": 1
+  },
+  {
+    "_id": "e29fb9cc44d5e468950880ed",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "workshop",
+    "churchId": "9fc179a91f9c253dbb025756",
+    "collaborations": [
+      {
+        "_id": "3870c51032abf850f49c1c41",
+        "churchId": "d39b36d022bb796930f5154c",
+        "status": "accepted",
+        "invitationNoticeId": "88c6e106f1a811a378f755e1",
+        "history": [
+          {
+            "_id": "88c6e106f1a811a378f755e1",
+            "action": "invite",
+            "actor": "6ac9a1f6898ae28f50236730",
+            "actorName": "David Silva",
+            "actorRole": "admin",
+            "at": "2026-10-21T17:50:49.384Z",
+            "audienceChurchId": "d39b36d022bb796930f5154c"
+          },
+          {
+            "_id": "c806f1a17d372cff35c1fa01",
+            "action": "accept",
+            "actor": "6ac9a1f6898ae28f50236730",
+            "actorName": "David Silva",
+            "actorRole": "admin",
+            "at": "2026-10-21T17:51:49.384Z",
+            "audienceChurchId": "9fc179a91f9c253dbb025756"
+          }
+        ]
+      }
+    ],
+    "communityId": null,
+    "contact": {
+      "email": "evento29@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Adventista del Séptimo Día - CENTRAL invita a este encuentro. Compartiremos el estudio de un pasaje bíblico, preguntas en grupos pequeños y una aplicación para la semana. El encuentro está abierto a visitantes que quieran conocer una dinámica de estudio de la comunidad.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nColabora en este escenario: Iglesia Adventista del Séptimo Día - LIBERTAD. La organización y coordinación general corresponden a la iglesia convocante.\n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-22T00:00:00.000Z",
+    "endsAt": "2026-11-22T00:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "San Isidro 80, 8330093 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6442721,
+          -33.4443784
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": true,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable. La actividad se realiza en sábado.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-21T22:00:00.000Z",
+    "title": "Sábado de estudio: fe y vida cotidiana",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Adventista del Séptimo Día - CENTRAL",
+    "version": 3
+  },
+  {
+    "_id": "ea4b68ab7159e1e678739e25",
+    "audience": [
+      "Niños",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "other",
+    "churchId": "de257a338f61c8ee9716a86d",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento26@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Metodista Pentecostal De Chile invita a este encuentro. Compartiremos juegos cooperativos y conversaciones guiadas para fortalecer la convivencia familiar. Habrá propuestas sencillas para continuar en casa y una reflexión bíblica de cierre.\n\nLa actividad será completamente en línea. No necesitas desplazarte a la sede. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-12T14:00:00.000Z",
+    "endsAt": "2026-11-12T14:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": null,
+    "modality": "online",
+    "onlineUrl": "https://reuniones.koinonia.test/evento-26",
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-12T13:00:00.000Z",
+    "title": "Familias que conversan y juegan",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sala virtual de la comunidad",
+    "version": 1
+  },
+  {
+    "_id": "eabbb9380148c99995be9f1f",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "cultural",
+    "churchId": "de86ac9e40f76f1a4326f85e",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento36@koinonia.test"
+    },
+    "cover": null,
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Metodista de Chile invita a este encuentro. Escucharemos himnos y conoceremos el lugar del canto en la vida comunitaria metodista. Habrá breves introducciones históricas, lectura de textos y participación voluntaria en los cantos.\n\nLa actividad será completamente en línea. No necesitas desplazarte a la sede. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-22T14:00:00.000Z",
+    "endsAt": "2026-11-22T14:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": null,
+    "modality": "online",
+    "onlineUrl": "https://reuniones.koinonia.test/evento-36",
+    "openCollaboration": true,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": false,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-22T13:00:00.000Z",
+    "title": "Himnos y memoria de la comunidad metodista",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sala virtual de la comunidad",
+    "version": 1
+  },
+  {
+    "_id": "f0db4bd82ce98bec69c92cce",
+    "audience": [
+      "Adultos",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "evangelism",
+    "churchId": "de257a338f61c8ee9716a86d",
+    "collaborations": [],
+    "communityId": null,
+    "contact": {
+      "email": "evento25@koinonia.test"
+    },
+    "cover": {
+      "url": "https://lh3.googleusercontent.com/grass-cs/ACvplmPrNKf5vyfpza0eIbiYB_aTZcEsw9pRuDvY9fEY_ozaTrlWb0a7xkDkQOYq9_jDJMJwjKioguoiHlYeIdFW4q6_p7QX5JugvGtBWidEPPmEmbU4Fq1gA1axUy8zbpB1XCsUs-ac=w408-h544-k-no",
+      "source": "synthetic_test_inherited_church_image",
+      "title": "Imagen de la sede heredada de la ficha de prueba",
+      "frame": "landscape",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Metodista Pentecostal De Chile invita a este encuentro. Prepararemos una presentación breve del mensaje cristiano y ejercicios de diálogo con respeto a la decisión de cada persona. El encuentro comienza y termina en la iglesia; cualquier participación en el barrio será voluntaria.\n\nNos encontraremos en la sede indicada de la iglesia; consulta al equipo de acogida al llegar. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-11T16:00:00.000Z",
+    "endsAt": "2026-11-11T16:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": {
+      "address": "Coquimbo 778, 8330892 Santiago, Región Metropolitana, Chile",
+      "commune": "Santiago",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.6453559,
+          -33.456429
+        ]
+      }
+    },
+    "modality": "in_person",
+    "onlineUrl": null,
+    "openCollaboration": false,
+    "participation": "registration",
+    "participationChanges": [],
+    "participationConditions": "Actividad gratuita con inscripción previa para preparar materiales. Indica al equipo cualquier adaptación que necesites; no se exige aportar donaciones. Los menores deben asistir con una persona adulta responsable.",
+    "privateFields": {
+      "email": true,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "Utiliza el formulario indicado para registrar tu interés. El formulario es simulado en este entorno de pruebas.",
+    "registrationUrl": "https://inscripciones.koinonia.test/evento-25",
+    "startsAt": "2026-11-11T14:00:00.000Z",
+    "title": "Sembrar esperanza en el entorno",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sede de Iglesia Metodista Pentecostal De Chile",
+    "version": 1
+  },
+  {
+    "_id": "fa803f834f9411a751edd6e6",
+    "audience": [
+      "Niños",
+      "Familias intergeneracionales"
+    ],
+    "cancellationReason": "",
+    "category": "gathering",
+    "churchId": "d39b36d022bb796930f5154c",
+    "collaborations": [
+      {
+        "_id": "fefaa442e26873d878984bc7",
+        "churchId": "23ce17aa73b9f0c7e72e989a",
+        "status": "pending",
+        "invitationNoticeId": "3015a31b77f875a5ce1b302b",
+        "history": [
+          {
+            "_id": "3015a31b77f875a5ce1b302b",
+            "action": "invite",
+            "actor": "6ac9a1f6898ae28f50236730",
+            "actorName": "David Silva",
+            "actorRole": "admin",
+            "at": "2026-10-21T17:50:49.384Z",
+            "audienceChurchId": "23ce17aa73b9f0c7e72e989a"
+          }
+        ]
+      }
+    ],
+    "communityId": null,
+    "contact": {
+      "email": "evento31@koinonia.test"
+    },
+    "cover": {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWl8pSLOLzIRZH6T0WkhG8AYWkQZLj0ANL1lPoeukWceF-UwkktEls8REiW6qfXcFoGIGmiFdAEbPxBVcEoEk1oE9DXwydtmPzMbaaimk7o2sS9sFmCnXdNPvZ0V87No_XyXEWJp=w408-h544-k-no",
+      "source": "synthetic_test_inherited_church_image",
+      "title": "Imagen de la sede heredada de la ficha de prueba",
+      "frame": "landscape",
+      "focalX": 50,
+      "focalY": 50
+    },
+    "createdAt": "2026-10-21T17:52:49.384Z",
+    "createdBy": "6ac9a1f6898ae28f50236730",
+    "description": "Iglesia Adventista del Séptimo Día - LIBERTAD invita a este encuentro. Nos reuniremos para una lectura bíblica sobre gratitud, cantos y una actividad participativa entre generaciones. Las familias visitantes recibirán una orientación sencilla para integrarse sin preparación previa.\n\nLa actividad será completamente en línea. No necesitas desplazarte a la sede. \n\nPublicación ficticia para pruebas de Koinonía. No corresponde a una convocatoria real.",
+    "effectiveEndsAt": "2026-11-21T14:00:00.000Z",
+    "endsAt": "2026-11-21T14:00:00.000Z",
+    "eventStatus": "scheduled",
+    "location": null,
+    "modality": "online",
+    "onlineUrl": "https://reuniones.koinonia.test/evento-31",
+    "openCollaboration": false,
+    "participation": "free",
+    "participationChanges": [],
+    "participationConditions": "Entrada liberada, sin inscripción ni aportes obligatorios. Puedes participar aunque sea tu primera visita. Los menores deben asistir con una persona adulta responsable. La actividad se realiza en sábado.",
+    "privateFields": {
+      "email": true,
+      "phone": true
+    },
+    "publicationStatus": "published",
+    "registrationInstructions": "",
+    "registrationUrl": null,
+    "startsAt": "2026-11-21T13:00:00.000Z",
+    "title": "Un sábado para agradecer en familia",
+    "updatedAt": "2026-10-21T17:52:49.384Z",
+    "updatedBy": "6ac9a1f6898ae28f50236730",
+    "venue": "Sala virtual de la comunidad",
+    "version": 2
+  }
+]

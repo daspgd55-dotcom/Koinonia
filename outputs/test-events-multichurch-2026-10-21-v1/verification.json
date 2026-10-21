@@ -1,0 +1,669 @@
+{
+  "batchId": "test-events-multichurch-2026-10-21-v1",
+  "database": "koinonia_synthetic_test_v2",
+  "events": [
+    {
+      "id": "0435a54265df318c88a0b403",
+      "title": "Puertas abiertas: conoce tu parroquia",
+      "church": "Parroquia San Andrés",
+      "startsAt": "2026-10-27T14:00:00.000Z",
+      "endsAt": "2026-10-27T17:00:00.000Z",
+      "modality": "in_person",
+      "participation": "invitation",
+      "category": "evangelism",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "04907c18b507046e1edef53f",
+      "title": "Biblioteca compartida para el barrio",
+      "church": "Iglesia Presbiteriana Coreana",
+      "startsAt": "2026-11-04T21:00:00.000Z",
+      "endsAt": "2026-11-04T22:00:00.000Z",
+      "modality": "in_person",
+      "participation": "free",
+      "category": "community_service",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "063b492756efd6b1872711e5",
+      "title": "Caminar juntos: hábitos de bienestar",
+      "church": "Iglesia Adventista del Séptimo Día - CENTRAL",
+      "startsAt": "2026-11-21T14:00:00.000Z",
+      "endsAt": "2026-11-21T15:00:00.000Z",
+      "modality": "in_person",
+      "participation": "invitation",
+      "category": "workshop",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "0a918c981093145e4708f9f6",
+      "title": "Fe y preguntas: diálogo para jóvenes",
+      "church": "Iglesia Bíblica Bautista Bet-El",
+      "startsAt": "2026-10-30T21:00:00.000Z",
+      "endsAt": "2026-10-30T23:00:00.000Z",
+      "modality": "in_person",
+      "participation": "registration",
+      "category": "gathering",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "0f14498a0ef99e5fa9522a5d",
+      "title": "Compañía para la tercera edad",
+      "church": "Parroquia Nuestra Señora de Andacollo",
+      "startsAt": "2026-10-23T13:00:00.000Z",
+      "endsAt": "2026-10-23T14:00:00.000Z",
+      "modality": "online",
+      "participation": "free",
+      "category": "community_service",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "112fd6ccb30d719f0a9ad5d4",
+      "title": "Lectura bíblica entre generaciones",
+      "church": "IGLESIA PRESBITERIANA EL ENCUENTRO SANTIAGO CENTRO",
+      "startsAt": "2026-11-06T14:00:00.000Z",
+      "endsAt": "2026-11-06T15:00:00.000Z",
+      "modality": "in_person",
+      "participation": "invitation",
+      "category": "workshop",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "11b03c1ee8a84e8694a22e8e",
+      "title": "Cantos de gratitud y testimonio",
+      "church": "Iglesia Evangelica Pentecostal Toesca",
+      "startsAt": "2026-11-09T21:00:00.000Z",
+      "endsAt": "2026-11-09T22:00:00.000Z",
+      "modality": "in_person",
+      "participation": "registration",
+      "category": "cultural",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "13f6bce6cf0fd1f50fdb8d6d",
+      "title": "Servir con las manos: útiles para estudiar",
+      "church": "Iglesia Bautista Vida Nueva",
+      "startsAt": "2026-10-29T19:00:00.000Z",
+      "endsAt": "2026-10-29T20:00:00.000Z",
+      "modality": "hybrid",
+      "participation": "free",
+      "category": "community_service",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "1eafeffd0fcb55dbc8384f83",
+      "title": "Música y esperanza al terminar el sábado",
+      "church": "Iglesia Adventista del Séptimo Día - MARANATHA",
+      "startsAt": "2026-11-21T22:00:00.000Z",
+      "endsAt": "2026-11-21T23:00:00.000Z",
+      "modality": "in_person",
+      "participation": "free",
+      "category": "cultural",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "2239765611f4d03543e3898c",
+      "title": "Cantos y memoria de nuestra comunidad",
+      "church": "Parroquia de la Veracruz",
+      "startsAt": "2026-10-20T22:00:00.000Z",
+      "endsAt": "2026-10-20T23:00:00.000Z",
+      "modality": "in_person",
+      "participation": "free",
+      "category": "cultural",
+      "status": "finished",
+      "collaborations": []
+    },
+    {
+      "id": "3af6517793ca0c98fa9750cb",
+      "title": "Familias en misión: servir con lo que tenemos",
+      "church": "Iglesia Asamblea de Dios Autonoma",
+      "startsAt": "2026-11-26T14:00:00.000Z",
+      "endsAt": "2026-11-26T15:00:00.000Z",
+      "modality": "in_person",
+      "participation": "invitation",
+      "category": "evangelism",
+      "status": "cancelled",
+      "collaborations": []
+    },
+    {
+      "id": "3d2ee01dcda27a7d468a2426",
+      "title": "Pausa para cuidar la vida interior",
+      "church": "Parroquia Nuestra Señora de Andacollo",
+      "startsAt": "2026-10-22T12:00:00.000Z",
+      "endsAt": "2026-10-22T20:00:00.000Z",
+      "modality": "in_person",
+      "participation": "registration",
+      "category": "retreat",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "509036b519dbac823e60cab5",
+      "title": "Encuentro de oración y alabanza compartida",
+      "church": "Iglesia Asamblea de Dios Autonoma",
+      "startsAt": "2026-11-25T22:00:00.000Z",
+      "endsAt": "2026-11-25T23:00:00.000Z",
+      "modality": "in_person",
+      "participation": "free",
+      "category": "gathering",
+      "status": "cancelled",
+      "collaborations": []
+    },
+    {
+      "id": "52230e4ee2695db0dfe4277b",
+      "title": "Historia de la Reforma: preguntas y contexto",
+      "church": "IGLESIA PRESBITERIANA EL ENCUENTRO SANTIAGO CENTRO",
+      "startsAt": "2026-11-05T22:00:00.000Z",
+      "endsAt": "2026-11-06T01:00:00.000Z",
+      "modality": "in_person",
+      "participation": "free",
+      "category": "cultural",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "5234397ba02e4560302ce680",
+      "title": "Fe que se expresa en servicio",
+      "church": "Iglesia Metodista de Chile",
+      "startsAt": "2026-11-21T14:00:00.000Z",
+      "endsAt": "2026-11-21T15:00:00.000Z",
+      "modality": "in_person",
+      "participation": "registration",
+      "category": "community_service",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "5779ac7dce505db217a74fe1",
+      "title": "Oración y esperanza para comenzar",
+      "church": "Iglesia Evangelica Metodista Pentecostal Temple Esperanza",
+      "startsAt": "2026-11-07T13:00:00.000Z",
+      "endsAt": "2026-11-07T15:00:00.000Z",
+      "modality": "online",
+      "participation": "free",
+      "category": "gathering",
+      "status": "scheduled",
+      "collaborations": [
+        {
+          "churchId": "de3a1a313ec1baf0e8a40447",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "57d3ff89b8fafa9f7cbbec0f",
+      "title": "Oración y lectura para el camino diario",
+      "church": "ISA - Iglesia Santiago Apóstol - Iglesia Anglicana Santiago Centro",
+      "startsAt": "2026-11-23T19:00:00.000Z",
+      "endsAt": "2026-11-23T22:00:00.000Z",
+      "modality": "hybrid",
+      "participation": "registration",
+      "category": "gathering",
+      "status": "cancelled",
+      "collaborations": []
+    },
+    {
+      "id": "58b11d690e014b70981a5874",
+      "title": "Hospitalidad: recibir a quien llega",
+      "church": "ISA - Iglesia Santiago Apóstol - Iglesia Anglicana Santiago Centro",
+      "startsAt": "2026-11-24T21:00:00.000Z",
+      "endsAt": "2026-11-24T22:00:00.000Z",
+      "modality": "in_person",
+      "participation": "free",
+      "category": "workshop",
+      "status": "cancelled",
+      "collaborations": []
+    },
+    {
+      "id": "5ef33e4f2f52e19c888b1fd9",
+      "title": "Una despensa que acompaña",
+      "church": "Parroquia de la Asunción",
+      "startsAt": "2026-10-20T19:00:00.000Z",
+      "endsAt": "2026-10-20T20:00:00.000Z",
+      "modality": "hybrid",
+      "participation": "free",
+      "category": "community_service",
+      "status": "finished",
+      "collaborations": []
+    },
+    {
+      "id": "6f136fc4541a43dcaaea4f5c",
+      "title": "Pequeños pasos de catequesis en familia",
+      "church": "Parroquia de la Veracruz",
+      "startsAt": "2026-10-20T21:00:00.000Z",
+      "endsAt": "2026-10-20T22:00:00.000Z",
+      "modality": "in_person",
+      "participation": "registration",
+      "category": "workshop",
+      "status": "finished",
+      "collaborations": []
+    },
+    {
+      "id": "73cfe1cb19d7f3f886f8f056",
+      "title": "Aprender a leer las parábolas",
+      "church": "Parroquia Sagrado Corazón de Jesús",
+      "startsAt": "2026-10-24T19:00:00.000Z",
+      "endsAt": "2026-10-24T20:00:00.000Z",
+      "modality": "hybrid",
+      "participation": "registration",
+      "category": "workshop",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "7af5bde7656236180ea1206d",
+      "title": "Lectura acompañada para nuevos visitantes",
+      "church": "Iglesia Adventista del Séptimo Día - LIBERTAD",
+      "startsAt": "2026-11-21T19:00:00.000Z",
+      "endsAt": "2026-11-21T20:00:00.000Z",
+      "modality": "hybrid",
+      "participation": "free",
+      "category": "workshop",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "83d47202cd268602271c390d",
+      "title": "Compartir esperanza con respeto",
+      "church": "Iglesia Bíblica Bautista Bet-El",
+      "startsAt": "2026-10-31T22:00:00.000Z",
+      "endsAt": "2026-10-31T23:00:00.000Z",
+      "modality": "in_person",
+      "participation": "free",
+      "category": "evangelism",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "8ad5678f2a572cd3a9d61db7",
+      "title": "Salmos para la vida diaria",
+      "church": "Cuarta Iglesia Presbiteriana de Chile",
+      "startsAt": "2026-11-01T14:00:00.000Z",
+      "endsAt": "2026-11-01T15:00:00.000Z",
+      "modality": "in_person",
+      "participation": "registration",
+      "category": "workshop",
+      "status": "scheduled",
+      "collaborations": [
+        {
+          "churchId": "8d829bc8624778bca81fa963",
+          "status": "accepted"
+        }
+      ]
+    },
+    {
+      "id": "95bb15b14301a8a46b125473",
+      "title": "Descanso y oración en los salmos",
+      "church": "Iglesia Presbiteriana Coreana",
+      "startsAt": "2026-11-03T12:00:00.000Z",
+      "endsAt": "2026-11-03T20:00:00.000Z",
+      "modality": "in_person",
+      "participation": "registration",
+      "category": "retreat",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "a3144e50272859eba861af18",
+      "title": "Rosario y encuentro de vecinos",
+      "church": "Parroquia Sagrado Corazón de Jesús",
+      "startsAt": "2026-10-25T21:00:00.000Z",
+      "endsAt": "2026-10-25T22:00:00.000Z",
+      "modality": "in_person",
+      "participation": "free",
+      "category": "gathering",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "a349fe4f0e18fffcf4ff8c32",
+      "title": "Sábado de solidaridad: manos disponibles",
+      "church": "Iglesia Adventista del Séptimo Día - MARANATHA",
+      "startsAt": "2026-11-21T21:00:00.000Z",
+      "endsAt": "2026-11-21T23:00:00.000Z",
+      "modality": "in_person",
+      "participation": "registration",
+      "category": "community_service",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "b2443a4ff111b76d3c9f09a2",
+      "title": "Marcos en cuatro conversaciones",
+      "church": "Iglesia Bautista Vida Nueva",
+      "startsAt": "2026-10-28T13:00:00.000Z",
+      "endsAt": "2026-10-28T14:00:00.000Z",
+      "modality": "online",
+      "participation": "free",
+      "category": "workshop",
+      "status": "scheduled",
+      "collaborations": [
+        {
+          "churchId": "4bba7a508b87e338c418ca36",
+          "status": "accepted"
+        }
+      ]
+    },
+    {
+      "id": "bc2b6096baf4d34d6e9a48d8",
+      "title": "Conversaciones sobre gracia y comunidad",
+      "church": "Cuarta Iglesia Presbiteriana de Chile",
+      "startsAt": "2026-11-02T13:00:00.000Z",
+      "endsAt": "2026-11-02T14:00:00.000Z",
+      "modality": "online",
+      "participation": "free",
+      "category": "gathering",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "c430558053661a8c40917930",
+      "title": "Acompañar sin invadir: taller de escucha",
+      "church": "Iglesia Evangelica Pentecostal Toesca",
+      "startsAt": "2026-11-10T22:00:00.000Z",
+      "endsAt": "2026-11-10T23:00:00.000Z",
+      "modality": "in_person",
+      "participation": "free",
+      "category": "workshop",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "cb723155ee50bd9f5708da31",
+      "title": "Abrigo y cuidado para nuestros vecinos",
+      "church": "Iglesia Metodista Pentecostal De Chile Santiago Centro",
+      "startsAt": "2026-11-14T21:00:00.000Z",
+      "endsAt": "2026-11-15T00:00:00.000Z",
+      "modality": "in_person",
+      "participation": "free",
+      "category": "community_service",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "d1a43880be50c40c0a91f1df",
+      "title": "Tarde de juegos y convivencia parroquial",
+      "church": "Parroquia San Andrés",
+      "startsAt": "2026-10-26T22:00:00.000Z",
+      "endsAt": "2026-10-27T00:00:00.000Z",
+      "modality": "in_person",
+      "participation": "free",
+      "category": "other",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "d9666ae1ae0ed3dd2eae7e97",
+      "title": "Una pausa para orar y descansar",
+      "church": "Iglesia Metodista Pentecostal De Chile Santiago Centro",
+      "startsAt": "2026-11-13T12:00:00.000Z",
+      "endsAt": "2026-11-13T20:00:00.000Z",
+      "modality": "in_person",
+      "participation": "registration",
+      "category": "retreat",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "db74a5865f98313a454b0f63",
+      "title": "Jóvenes que sirven: una idea para el barrio",
+      "church": "Iglesia Evangelica Metodista Pentecostal Temple Esperanza",
+      "startsAt": "2026-11-08T19:00:00.000Z",
+      "endsAt": "2026-11-08T20:00:00.000Z",
+      "modality": "hybrid",
+      "participation": "free",
+      "category": "workshop",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "e1c780902f677976efdbe0ed",
+      "title": "Escuchar el Evangelio en comunidad",
+      "church": "Parroquia de la Asunción",
+      "startsAt": "2026-10-20T13:00:00.000Z",
+      "endsAt": "2026-10-20T16:00:00.000Z",
+      "modality": "online",
+      "participation": "free",
+      "category": "gathering",
+      "status": "finished",
+      "collaborations": []
+    },
+    {
+      "id": "e29fb9cc44d5e468950880ed",
+      "title": "Sábado de estudio: fe y vida cotidiana",
+      "church": "Iglesia Adventista del Séptimo Día - CENTRAL",
+      "startsAt": "2026-11-21T22:00:00.000Z",
+      "endsAt": "2026-11-22T00:00:00.000Z",
+      "modality": "in_person",
+      "participation": "free",
+      "category": "workshop",
+      "status": "scheduled",
+      "collaborations": [
+        {
+          "churchId": "d39b36d022bb796930f5154c",
+          "status": "accepted"
+        }
+      ]
+    },
+    {
+      "id": "ea4b68ab7159e1e678739e25",
+      "title": "Familias que conversan y juegan",
+      "church": "Iglesia Metodista Pentecostal De Chile",
+      "startsAt": "2026-11-12T13:00:00.000Z",
+      "endsAt": "2026-11-12T14:00:00.000Z",
+      "modality": "online",
+      "participation": "free",
+      "category": "other",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "eabbb9380148c99995be9f1f",
+      "title": "Himnos y memoria de la comunidad metodista",
+      "church": "Iglesia Metodista de Chile",
+      "startsAt": "2026-11-22T13:00:00.000Z",
+      "endsAt": "2026-11-22T14:00:00.000Z",
+      "modality": "online",
+      "participation": "free",
+      "category": "cultural",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "f0db4bd82ce98bec69c92cce",
+      "title": "Sembrar esperanza en el entorno",
+      "church": "Iglesia Metodista Pentecostal De Chile",
+      "startsAt": "2026-11-11T14:00:00.000Z",
+      "endsAt": "2026-11-11T16:00:00.000Z",
+      "modality": "in_person",
+      "participation": "registration",
+      "category": "evangelism",
+      "status": "scheduled",
+      "collaborations": []
+    },
+    {
+      "id": "fa803f834f9411a751edd6e6",
+      "title": "Un sábado para agradecer en familia",
+      "church": "Iglesia Adventista del Séptimo Día - LIBERTAD",
+      "startsAt": "2026-11-21T13:00:00.000Z",
+      "endsAt": "2026-11-21T14:00:00.000Z",
+      "modality": "online",
+      "participation": "free",
+      "category": "gathering",
+      "status": "scheduled",
+      "collaborations": [
+        {
+          "churchId": "23ce17aa73b9f0c7e72e989a",
+          "status": "pending"
+        }
+      ]
+    }
+  ],
+  "churches": 20,
+  "excludedChurch": "Iglesia Bíblica Alma",
+  "approvalsNeeded": 0,
+  "selection": [
+    {
+      "id": "8008616a34e819e84e6258fc",
+      "name": "Parroquia de la Asunción",
+      "tradition": "catolica",
+      "events": 2
+    },
+    {
+      "id": "31097046eefccc80ffa9b7a0",
+      "name": "Parroquia de la Veracruz",
+      "tradition": "catolica",
+      "events": 2
+    },
+    {
+      "id": "d0387404215979e1fb9acf35",
+      "name": "Parroquia Nuestra Señora de Andacollo",
+      "tradition": "catolica",
+      "events": 2
+    },
+    {
+      "id": "ea848efc77b6b72864e5d0ec",
+      "name": "Parroquia Sagrado Corazón de Jesús",
+      "tradition": "catolica",
+      "events": 2
+    },
+    {
+      "id": "03218dbdd2818ed870a2ec54",
+      "name": "Parroquia San Andrés",
+      "tradition": "catolica",
+      "events": 2
+    },
+    {
+      "id": "7592f8c1b8371e8f6fcb2427",
+      "name": "Iglesia Bautista Vida Nueva",
+      "tradition": "bautista",
+      "events": 2
+    },
+    {
+      "id": "4bba7a508b87e338c418ca36",
+      "name": "Iglesia Bíblica Bautista Bet-El",
+      "tradition": "bautista",
+      "events": 2
+    },
+    {
+      "id": "822e89de9059472b186b6e91",
+      "name": "Cuarta Iglesia Presbiteriana de Chile",
+      "tradition": "presbiteriana",
+      "events": 2
+    },
+    {
+      "id": "8d829bc8624778bca81fa963",
+      "name": "Iglesia Presbiteriana Coreana",
+      "tradition": "presbiteriana",
+      "events": 2
+    },
+    {
+      "id": "e73553e81418100479a77bc5",
+      "name": "IGLESIA PRESBITERIANA EL ENCUENTRO SANTIAGO CENTRO",
+      "tradition": "presbiteriana",
+      "events": 2
+    },
+    {
+      "id": "1a3269701769dffef02575c4",
+      "name": "Iglesia Evangelica Metodista Pentecostal Temple Esperanza",
+      "tradition": "pentecostal",
+      "events": 2
+    },
+    {
+      "id": "de3a1a313ec1baf0e8a40447",
+      "name": "Iglesia Evangelica Pentecostal Toesca",
+      "tradition": "pentecostal",
+      "events": 2
+    },
+    {
+      "id": "de257a338f61c8ee9716a86d",
+      "name": "Iglesia Metodista Pentecostal De Chile",
+      "tradition": "pentecostal",
+      "events": 2
+    },
+    {
+      "id": "a4c0fd73a6cf7cd4efa5d08a",
+      "name": "Iglesia Metodista Pentecostal De Chile Santiago Centro",
+      "tradition": "pentecostal",
+      "events": 2
+    },
+    {
+      "id": "9fc179a91f9c253dbb025756",
+      "name": "Iglesia Adventista del Séptimo Día - CENTRAL",
+      "tradition": "adventista",
+      "events": 2
+    },
+    {
+      "id": "d39b36d022bb796930f5154c",
+      "name": "Iglesia Adventista del Séptimo Día - LIBERTAD",
+      "tradition": "adventista",
+      "events": 2
+    },
+    {
+      "id": "23ce17aa73b9f0c7e72e989a",
+      "name": "Iglesia Adventista del Séptimo Día - MARANATHA",
+      "tradition": "adventista",
+      "events": 2
+    },
+    {
+      "id": "de86ac9e40f76f1a4326f85e",
+      "name": "Iglesia Metodista de Chile",
+      "tradition": "metodista",
+      "events": 2
+    },
+    {
+      "id": "f526265697052e6f4307f0a2",
+      "name": "ISA - Iglesia Santiago Apóstol - Iglesia Anglicana Santiago Centro",
+      "tradition": "anglicana",
+      "events": 2
+    },
+    {
+      "id": "f1feb886eb534c3f0e20473b",
+      "name": "Iglesia Asamblea de Dios Autonoma",
+      "tradition": "asamblea",
+      "events": 2
+    }
+  ],
+  "modalities": {
+    "online": 8,
+    "hybrid": 6,
+    "in_person": 26
+  },
+  "participation": {
+    "free": 24,
+    "registration": 12,
+    "invitation": 4
+  },
+  "categories": {
+    "gathering": 8,
+    "community_service": 7,
+    "workshop": 11,
+    "cultural": 5,
+    "retreat": 3,
+    "other": 2,
+    "evangelism": 4
+  },
+  "states": {
+    "finished": 4,
+    "scheduled": 32,
+    "cancelled": 4
+  },
+  "inserted": 0,
+  "approvalsPerformed": 0,
+  "publiclyVisible": 40,
+  "listedInDirectory": 40,
+  "otherEventsUntouched": true,
+  "otherEvents": 10,
+  "totalEvents": 50,
+  "verifiedAt": "2026-10-21T17:53:35.873Z",
+  "backup": "C:\\Users\\david\\Documents\\python\\Koinonia\\Backend\\.cache\\test-event-backups\\1792605213990-multichurch.ejson"
+}

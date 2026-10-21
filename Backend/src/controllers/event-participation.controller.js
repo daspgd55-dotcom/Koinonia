@@ -8,11 +8,12 @@ exports.set=async(req,res)=>{
  const {status}=v.parse(v.z.strictObject({status:v.z.enum(['interested','going','withdrawn'])}),req.body),eventId=oid(req.params.id),filter={event:eventId,user:req.user._id};
  if(status==='withdrawn'){await Participation.updateOne(filter,{$set:{status}});return respond(res,{status:null});}
  const event=await visible(req.params.id);if(!eligible(event))throw new HttpError(409,'PARTICIPATION_CLOSED','Solo puedes participar en eventos públicos que aún no comienzan y no están cancelados.');
+ if(status==='going'&&event.participation==='registration')throw new HttpError(409,'REGISTRATION_REQUIRED','Este evento requiere inscripción. Puedes marcar Me interesa y consultar las instrucciones del organizador.');
  const now=new Date();
  // Pipeline atómico: cambiar de opción conserva el inicio de la suscripción; reactivar lo reinicia.
  const pipeline=[{$set:{event:eventId,user:req.user._id,status,since:{$cond:[{$or:[{$eq:['$status','withdrawn']},{$eq:[{$ifNull:['$since',null]},null]}]},now,'$since']},createdAt:{$ifNull:['$createdAt',now]},updatedAt:now,readChanges:{$ifNull:['$readChanges',[]]}}}];
  try{await Participation.findOneAndUpdate(filter,pipeline,{upsert:true,updatePipeline:true,timestamps:false});}catch(e){if(e.code!==11000)throw e;await Participation.findOneAndUpdate(filter,pipeline,{updatePipeline:true,timestamps:false});}
- if(!eligible(await visible(req.params.id))){await Participation.updateOne({...filter,updatedAt:now},{$set:{status:'withdrawn'}});throw new HttpError(409,'PARTICIPATION_CLOSED','El evento dejó de estar disponible para participar.');}
+ const current=await visible(req.params.id);if(!eligible(current)||(status==='going'&&current.participation==='registration')){await Participation.updateOne({...filter,updatedAt:now},{$set:{status:'withdrawn'}});throw new HttpError(409,'PARTICIPATION_CLOSED','El evento dejó de estar disponible para participar.');}
  respond(res,{status});
 };
 exports.counts=async(req,res)=>{const {event}=await managed(req),rows=await Participation.aggregate([{$match:{event:event._id,status:{$ne:'withdrawn'}}},{$group:{_id:'$status',count:{$sum:1}}}]);respond(res,{interested:rows.find(r=>r._id==='interested')?.count||0,going:rows.find(r=>r._id==='going')?.count||0});};

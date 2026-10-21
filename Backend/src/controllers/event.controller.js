@@ -3,7 +3,7 @@ const {Types}=require('mongoose'),Event=require('../models/event.model'),Church=
 const v=require('../validation/event'),{id,parse}=require('../validation/schemas'),svc=require('../services/event.service'),{HttpError}=require('../utils/errors');
 const {expectedVersion}=require('../utils/resource-version');
 const objectId=value=>new Types.ObjectId(parse(id,value)),notFound=()=>new HttpError(404,'NOT_FOUND','Evento no encontrado');
-const clean=e=>{const {participationChanges,collaborations,...data}=e.toObject?e.toObject():e;return data;};
+const clean=e=>{const {participationChanges,collaborations,publicationNotice,...data}=e.toObject?e.toObject():e;return data;};
 const reply=(res,e,status=200)=>res.status(status).set('Cache-Control','no-store').set('ETag','"'+e.version+'"').json({data:{...clean(e),displayStatus:svc.displayStatus(e)}});
 async function managed(req){const event=await Event.findById(objectId(req.params.id)).lean();if(!event)throw notFound();const church=await svc.parent(req,event.churchId);return {event,church};}
 exports.create=async(req,res)=>{const body=parse(v.create,req.body);await svc.parent(req,body.churchId);await svc.organizer(body.churchId,body.communityId);const data=await Event.create({...body,effectiveEndsAt:svc.effectiveEnd(body.startsAt,body.endsAt),createdBy:req.user._id,updatedBy:req.user._id});reply(res,data,201);};
@@ -18,7 +18,7 @@ exports.update=async(req,res)=>{
  if(event.publicationStatus==='published')svc.publishable(content,church,community);
  await write(req,res,event,{...content,effectiveEndsAt:svc.effectiveEnd(content.startsAt,content.endsAt)},version);
 };
-exports.publication=async(req,res)=>{const body=parse(v.publication,req.body),version=expectedVersion(req),{event,church}=await managed(req);if(body.publicationStatus==='published')svc.publishable(event,church,await svc.organizer(event.churchId,event.communityId));await write(req,res,event,body,version);};
+exports.publication=async(req,res)=>{const body=parse(v.publication,req.body),version=expectedVersion(req),{event,church}=await managed(req);if(body.publicationStatus==='published')svc.publishable(event,church,await svc.organizer(event.churchId,event.communityId));await write(req,res,event,{...body,...(body.publicationStatus==='published'&&event.publicationStatus!=='published'&&!event.publicationNotice?{publicationNotice:{_id:new Types.ObjectId(),at:new Date()}}:{})},version);};
 exports.state=async(req,res)=>{const body=parse(v.state,req.body),version=expectedVersion(req),{event}=await managed(req);await write(req,res,event,{...body,cancellationReason:body.eventStatus==='scheduled'?'':body.cancellationReason},version);};
 exports.get=async(req,res)=>{const [row]=await Event.aggregate([{$match:{_id:objectId(req.params.id)}},...svc.publicStages()]);if(!row)throw notFound();res.set('Cache-Control','no-store').json({data:svc.publicData(row,row.parent,row.organizerDoc,new Date())});};
 const exact=value=>new RegExp('^'+value.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'$','i');
@@ -30,9 +30,12 @@ async function list(req,res,management){
  if(q.category)filter.category=q.category;if(q.commune)filter['location.commune']=exact(q.commune);if(q.audience)filter.audience=exact(q.audience);
  for(const k of ['publicationStatus','eventStatus'])if(q[k])filter[k]=q[k];
  if(q.view!=='all')filter.effectiveEndsAt=q.view==='past'?{$ne:null,$lte:now}:{$gt:now};
+ // Public directories retain finished events for 72 hours; management keeps history.
+ if(!management&&q.view!=='upcoming')filter.effectiveEndsAt={...(filter.effectiveEndsAt||{}),$gte:new Date(+now-3*86400000)};
  if(q.dateFrom||q.dateTo){filter.startsAt={};if(q.dateFrom)filter.startsAt.$gte=new Date(q.dateFrom+'T00:00:00-03:00');if(q.dateTo)filter.startsAt.$lt=new Date(+new Date(q.dateTo+'T00:00:00-03:00')+86400000);}
  const stages=management?[{$lookup:{from:Church.collection.name,localField:'churchId',foreignField:'_id',as:'parent'}},{$unwind:'$parent'},...(req.user.role==='admin'?[]:[{$match:{'parent.representatives':req.user._id}}])]:svc.publicStages();
- const [result]=await Event.aggregate([{$match:filter},...stages,...(q.associatedChurchId?[{$match:{$or:[{churchId:objectId(q.associatedChurchId)},{'collaboratorDocs._id':objectId(q.associatedChurchId)}]}}]:[]),{$sort:{startsAt:q.view==='past'?-1:1,_id:1}},{$facet:{rows:[{$skip:(q.page-1)*q.limit},{$limit:q.limit}],total:[{$count:'value'}]}}]);
+ const ordering=!management&&q.sort==='recommended'?require('../services/event-ranking.service').stages(req.user,now):!management&&q.view==='all'?[{$set:{directoryFinished:{$cond:[{$lte:['$effectiveEndsAt',now]},1,0]},directoryDate:{$cond:[{$lte:['$effectiveEndsAt',now]},{$multiply:[{$toLong:'$effectiveEndsAt'},-1]},{$toLong:'$startsAt'}]}}},{$sort:{directoryFinished:1,directoryDate:1,_id:1}},{$unset:['directoryFinished','directoryDate']}]:[{$sort:{startsAt:q.view==='past'?-1:1,_id:1}}];
+ const [result]=await Event.aggregate([{$match:filter},...stages,...(q.associatedChurchId?[{$match:{$or:[{churchId:objectId(q.associatedChurchId)},{'collaboratorDocs._id':objectId(q.associatedChurchId)}]}}]:[]),...ordering,{$facet:{rows:[{$skip:(q.page-1)*q.limit},{$limit:q.limit}],total:[{$count:'value'}]}}]);
  const total=result.total[0]?.value||0,data=result.rows.map(({parent,organizerDoc,organizers,...e})=>management?{...clean(e),displayStatus:svc.displayStatus(e,now)}:svc.publicData(e,parent,organizerDoc,now));
  res.set('Cache-Control','no-store').json({data,pagination:{page:q.page,limit:q.limit,total,pages:Math.ceil(total/q.limit)}});
 }

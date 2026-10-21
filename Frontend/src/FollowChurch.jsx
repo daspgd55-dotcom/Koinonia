@@ -1,0 +1,10 @@
+import React,{useContext,useEffect,useState} from 'react';
+import {SessionContext} from './Membership';
+import {api} from './api';
+export default function FollowChurch({church}){
+ const {user,token}=useContext(SessionContext),[following,setFollowing]=useState(false),[followers,setFollowers]=useState(null),[busy,setBusy]=useState(false),[ready,setReady]=useState(false),[error,setError]=useState(''),[retry,setRetry]=useState(0);
+ useEffect(()=>{let alive=true;setReady(false);setFollowers(null);setError('');api('/churches/'+church._id+(token?'/follow':'/followers/count'),{token}).then(r=>{if(alive){setFollowing(!!r.data.following);setFollowers(r.data.followers??null);setReady(true);}}).catch(e=>{if(alive)setError(e.message);});return()=>{alive=false;};},[token,church._id,retry]);
+ const heart=<svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill={following?'currentColor':'none'} stroke="currentColor" strokeWidth="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>;
+ async function toggle(){setBusy(true);setError('');try{const r=await api('/churches/'+church._id+'/follow',{token,method:'PUT',body:{following:!following}});setFollowing(!!r.data.following);setFollowers(r.data.followers??null);window.dispatchEvent(new Event('visits-changed'));}catch(e){setError(e.message);}finally{setBusy(false);}}
+ return <div className="church-follow">{!user?<a className="secondary small follow-button" href={'#/login?visita='+church._id} title="Inicia sesión para seguir sus eventos">{heart} Seguir</a>:<button className="secondary small follow-button" aria-pressed={following} disabled={busy||!ready} onClick={toggle} title={following?'Dejar de seguir esta iglesia':'Recibir avisos de nuevos eventos'}>{heart} {busy?'Guardando…':following?'Siguiendo':'Seguir'}</button>}<span className="follow-count" role="status">{followers===null?'':`${followers.toLocaleString('es-CL')} ${followers===1?'seguidor':'seguidores'}`}</span>{error&&<span role="alert">{error} {!ready&&<button className="text-button" onClick={()=>setRetry(x=>x+1)}>Reintentar</button>}</span>}</div>;
+}

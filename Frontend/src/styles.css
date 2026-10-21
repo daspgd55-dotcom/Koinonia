@@ -95,7 +95,6 @@ header .compact-navigation{display:flex;flex-wrap:wrap;align-items:center;justif
 input[type=checkbox],input[type=radio]{transition:scale .15s ease,filter .15s ease;accent-color:var(--teal)}
 input[type=checkbox]:not(:disabled):active,input[type=radio]:not(:disabled):active{scale:.9}
 .choices button[aria-pressed=true],.view-switch button[aria-pressed=true]{animation:control-selected .18s ease}
-:where(.detail-fold,.discovery-preferences,.match-details,.filter-panel,.discovery-action-help,.event-search-more,.event-contact,.linked-form details,.collaboration-panel details,.question-card details)[open]>:not(summary){animation:section-open .2s ease}
 .church-card,.discovery-card,.profile-block,.manage-list article{transition:box-shadow .2s ease,border-color .2s ease}
 @media(hover:hover) and (pointer:fine){
 :where(.primary,.secondary,.nav-cta):not(:disabled):hover{translate:0 -2px;box-shadow:0 4px 12px #061a3412}
@@ -146,3 +145,10 @@ input[type=checkbox]:not(:disabled):active,input[type=radio]:not(:disabled):acti
 .captcha-dialog{border:0;border-radius:20px;padding:24px;width:min(440px,calc(100vw - 24px));max-height:90vh;overflow:auto;color:#17232D}.captcha-dialog::backdrop{background:#061a34aa}.captcha-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}.captcha-dialog button:focus-visible{outline:3px solid #168C87;outline-offset:3px}
 
 .security-mail{max-width:1100px;margin:auto;padding:24px}.security-mail-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:24px 0}.security-mail-metrics article{background:white;border-radius:16px;padding:20px;display:grid;gap:10px}.security-mail-metrics strong{font-size:1.5rem}.security-mail-controls{display:flex;gap:16px;align-items:end;flex-wrap:wrap;margin:24px 0}.security-mail .mail-id{overflow-wrap:anywhere}.security-mail details{margin:16px 0}.security-mail nav{display:flex;align-items:center;gap:12px}
+
+/* Enfoque cercano al campo, sin invadir etiquetas vecinas. */
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:1px;box-shadow:none}
+
+.church-follow{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:8px 0 14px}.follow-button{gap:7px;min-height:36px;padding:7px 12px;border-radius:24px;font-size:13px}.follow-button[aria-pressed=true]{background:#e5f1ec;border-color:var(--teal)}.church-follow [role=alert]{font-size:12px;color:#813720}
+
+.follow-count{font-size:13px;color:var(--muted);white-space:nowrap}

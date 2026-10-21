@@ -1,0 +1,154 @@
+{
+  "batchId": "test-events-multichurch-2026-10-21-v1",
+  "database": "koinonia_synthetic_test_v2",
+  "events": 40,
+  "churches": 20,
+  "excludedChurch": "Iglesia Bíblica Alma",
+  "approvalsNeeded": 0,
+  "selection": [
+    {
+      "id": "8008616a34e819e84e6258fc",
+      "name": "Parroquia de la Asunción",
+      "tradition": "catolica",
+      "events": 2
+    },
+    {
+      "id": "31097046eefccc80ffa9b7a0",
+      "name": "Parroquia de la Veracruz",
+      "tradition": "catolica",
+      "events": 2
+    },
+    {
+      "id": "d0387404215979e1fb9acf35",
+      "name": "Parroquia Nuestra Señora de Andacollo",
+      "tradition": "catolica",
+      "events": 2
+    },
+    {
+      "id": "ea848efc77b6b72864e5d0ec",
+      "name": "Parroquia Sagrado Corazón de Jesús",
+      "tradition": "catolica",
+      "events": 2
+    },
+    {
+      "id": "03218dbdd2818ed870a2ec54",
+      "name": "Parroquia San Andrés",
+      "tradition": "catolica",
+      "events": 2
+    },
+    {
+      "id": "7592f8c1b8371e8f6fcb2427",
+      "name": "Iglesia Bautista Vida Nueva",
+      "tradition": "bautista",
+      "events": 2
+    },
+    {
+      "id": "4bba7a508b87e338c418ca36",
+      "name": "Iglesia Bíblica Bautista Bet-El",
+      "tradition": "bautista",
+      "events": 2
+    },
+    {
+      "id": "822e89de9059472b186b6e91",
+      "name": "Cuarta Iglesia Presbiteriana de Chile",
+      "tradition": "presbiteriana",
+      "events": 2
+    },
+    {
+      "id": "8d829bc8624778bca81fa963",
+      "name": "Iglesia Presbiteriana Coreana",
+      "tradition": "presbiteriana",
+      "events": 2
+    },
+    {
+      "id": "e73553e81418100479a77bc5",
+      "name": "IGLESIA PRESBITERIANA EL ENCUENTRO SANTIAGO CENTRO",
+      "tradition": "presbiteriana",
+      "events": 2
+    },
+    {
+      "id": "1a3269701769dffef02575c4",
+      "name": "Iglesia Evangelica Metodista Pentecostal Temple Esperanza",
+      "tradition": "pentecostal",
+      "events": 2
+    },
+    {
+      "id": "de3a1a313ec1baf0e8a40447",
+      "name": "Iglesia Evangelica Pentecostal Toesca",
+      "tradition": "pentecostal",
+      "events": 2
+    },
+    {
+      "id": "de257a338f61c8ee9716a86d",
+      "name": "Iglesia Metodista Pentecostal De Chile",
+      "tradition": "pentecostal",
+      "events": 2
+    },
+    {
+      "id": "a4c0fd73a6cf7cd4efa5d08a",
+      "name": "Iglesia Metodista Pentecostal De Chile Santiago Centro",
+      "tradition": "pentecostal",
+      "events": 2
+    },
+    {
+      "id": "9fc179a91f9c253dbb025756",
+      "name": "Iglesia Adventista del Séptimo Día - CENTRAL",
+      "tradition": "adventista",
+      "events": 2
+    },
+    {
+      "id": "d39b36d022bb796930f5154c",
+      "name": "Iglesia Adventista del Séptimo Día - LIBERTAD",
+      "tradition": "adventista",
+      "events": 2
+    },
+    {
+      "id": "23ce17aa73b9f0c7e72e989a",
+      "name": "Iglesia Adventista del Séptimo Día - MARANATHA",
+      "tradition": "adventista",
+      "events": 2
+    },
+    {
+      "id": "de86ac9e40f76f1a4326f85e",
+      "name": "Iglesia Metodista de Chile",
+      "tradition": "metodista",
+      "events": 2
+    },
+    {
+      "id": "f526265697052e6f4307f0a2",
+      "name": "ISA - Iglesia Santiago Apóstol - Iglesia Anglicana Santiago Centro",
+      "tradition": "anglicana",
+      "events": 2
+    },
+    {
+      "id": "f1feb886eb534c3f0e20473b",
+      "name": "Iglesia Asamblea de Dios Autonoma",
+      "tradition": "asamblea",
+      "events": 2
+    }
+  ],
+  "modalities": {
+    "online": 8,
+    "hybrid": 6,
+    "in_person": 26
+  },
+  "participation": {
+    "free": 24,
+    "registration": 12,
+    "invitation": 4
+  },
+  "categories": {
+    "gathering": 8,
+    "community_service": 7,
+    "workshop": 11,
+    "cultural": 5,
+    "retreat": 3,
+    "other": 2,
+    "evangelism": 4
+  },
+  "states": {
+    "finished": 4,
+    "scheduled": 32,
+    "cancelled": 4
+  }
+}

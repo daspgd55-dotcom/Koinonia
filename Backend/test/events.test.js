@@ -81,7 +81,7 @@ test('Filtros, límites de día UTC-3, paginación y eventos finalizados',async(
  r=(await request(app).get(query+'&limit=1&page=2').expect(200)).body;assert.equal(r.pagination.total,2);assert.equal(r.data[0]._id,b._id);assert.equal(r.data[0].organizer.type,'church');
  for(const suffix of ['dateFrom=2099-01-02&dateTo=2099-01-01','dateFrom=2026-02-30','limit=0','page=1.5','churchId=invalid','publicationStatus=draft'])await request(app).get('/api/events?'+suffix).expect(400);
  let old=(await create({startsAt:'2000-01-01T23:00',endsAt:'2000-01-03T10:00'}).expect(201)).body.data;old=(await publish(old).expect(200)).body.data;assert.equal(old.displayStatus,'finished');const stored=await Event.findById(old._id);assert.equal(stored.eventStatus,'scheduled');
- assert.ok((await request(app).get('/api/events?view=past').expect(200)).body.data.some(e=>e._id===old._id));assert.ok(!(await request(app).get('/api/events').expect(200)).body.data.some(e=>e._id===old._id));
+ assert.ok(!(await request(app).get('/api/events?view=past').expect(200)).body.data.some(e=>e._id===old._id));assert.ok(!(await request(app).get('/api/events').expect(200)).body.data.some(e=>e._id===old._id));
 });
 
 test('Búsqueda pública literal por título, longitud, paginación y privacidad',async()=>{
@@ -100,4 +100,39 @@ test('Búsqueda pública literal por título, longitud, paginación y privacidad
  }finally{await Community.updateOne({_id:community.id},{$set:{status:'published'}});await Church.updateOne({_id:church.id},{$set:{'metadata.dataStatus':'published'}});}
  for(const value of ['','   ','a'.repeat(201)])await request(app).get('/api/events?q='+encodeURIComponent(value)).expect(400);
  await request(app).get('/api/events?q='+encodeURIComponent('a'.repeat(200))).expect(200);
+});
+
+
+test('Directorio público conserva finalizados solo 72 horas sin borrar historial',async()=>{
+ const now=Date.now(),ids=[];
+ for(const hours of [24,71,73,-24]){const end=new Date(now-hours*3600000),start=new Date(+end-3600000);const e=await Event.create({churchId:church.id,title:'Ventana reciente '+hours,description:'Prueba aislada',startsAt:start,endsAt:end,effectiveEndsAt:end,publicationStatus:'published',createdBy:users.admin.id,updatedBy:users.admin.id});ids.push(e.id);}
+ const list=(await request(app).get('/api/events?view=all&q=Ventana%20reciente').expect(200)).body;
+ assert.deepEqual(list.data.map(e=>e._id),[ids[3],ids[0],ids[1]]);assert.equal(list.pagination.total,3);assert.equal(list.data[1].displayStatus,'finished');
+ const past=(await request(app).get('/api/events?view=past&q=Ventana%20reciente').expect(200)).body;assert.equal(past.pagination.total,2);
+ const history=(await request(app).get('/api/events/manage?q=Ventana%20reciente').set(auth('rep')).expect(200)).body;assert.equal(history.pagination.total,4);
+ await request(app).get('/api/events/'+ids[2]).expect(200);
+});
+
+
+test('Seguimiento privado, publicación única y lectura aislada de notificaciones',async()=>{
+ const Follow=require('../src/models/church-follow.model'),follow=(who,following,id=church.id)=>request(app).put('/api/churches/'+id+'/follow').set(auth(who)).send({following}),notices=who=>request(app).get('/api/notifications').set(auth(who));
+ await request(app).put('/api/churches/'+church.id+'/follow').send({following:true}).expect(401);
+ await follow('visitor',true,draft.id).expect(404);
+ await Promise.all(Array.from({length:5},()=>follow('visitor',true).expect(200)));assert.equal(await Follow.countDocuments({user:users.visitor.id,church:church.id}),1);
+ const e=(await create({title:'Evento para seguidores',communityId:community.id}).expect(201)).body.data;
+ assert.equal((await notices('visitor')).body.data.filter(n=>n.audience==='follower').length,0);
+ let pub=(await publish(e).expect(200)).body.data;let n=(await notices('visitor')).body.data.find(n=>n.eventId===e._id&&n.audience==='follower');assert.ok(n);assert.equal(n.read,false);
+ await request(app).patch('/api/notifications/'+n._id+'/read').set(auth('otherRep')).expect(404);
+ await request(app).patch('/api/notifications/'+n._id+'/read').set(auth('visitor')).expect(200);assert.equal((await notices('visitor')).body.data.find(x=>x._id===n._id).read,true);
+ pub=(await patch(pub,{description:'Edición menor'}).expect(200)).body.data;pub=(await publish(pub,'draft').expect(200)).body.data;assert.equal((await notices('visitor')).body.data.some(x=>x._id===n._id),false);
+ pub=(await publish(pub).expect(200)).body.data;assert.equal((await notices('visitor')).body.data.filter(x=>x.eventId===e._id&&x.audience==='follower').length,1);
+ await follow('otherRep',true).expect(200);assert.equal((await notices('otherRep')).body.data.some(x=>x._id===n._id),false);
+ await follow('visitor',false).expect(200);assert.equal((await notices('visitor')).body.data.some(x=>x._id===n._id),false);
+ await follow('visitor',true).expect(200);assert.equal((await notices('visitor')).body.data.some(x=>x._id===n._id),false);
+ const total=()=>request(app).get('/api/churches/'+church.id+'/followers/count');
+ assert.deepEqual((await total().expect(200)).body,{data:{followers:2}});
+ assert.equal((await follow('visitor',false).expect(200)).body.data.followers,1);
+ assert.equal((await follow('otherRep',false).expect(200)).body.data.followers,0);
+ await request(app).get('/api/churches/'+draft.id+'/followers/count').expect(404);
+ const publicResult=(await request(app).get('/api/events/'+e._id).expect(200)).body;assert.ok(!JSON.stringify(publicResult).includes('publicationNotice'));
 });

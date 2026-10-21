@@ -78,8 +78,8 @@ Fichas y mutaciones devuelven `{data:{...}}`. Gestión incluye `version`, audito
 - `commune` y `audience` buscan coincidencia exacta sin distinguir mayúsculas, escapando expresiones regulares. Comuna corresponde al lugar del evento, no a la iglesia.
 - Fechas `YYYY-MM-DD`: filtran **el inicio** desde la medianoche local inclusiva de `dateFrom` hasta la medianoche siguiente a `dateTo`, exclusiva. No son un filtro de solapamiento de duración. Se rechaza rango invertido. Cada límite es opcional.
 - `view=upcoming` (predeterminado público): término efectivo futuro, incluye eventos que ya comenzaron pero no han terminado. Incluye cancelados futuros para mostrar su aviso.
-- `view=past`: término efectivo alcanzado; `view=all`: sin filtro temporal. Gestión usa `all` por defecto y admite además `publicationStatus` y `eventStatus`.
-- Orden por inicio ascendente; en `past`, descendente. Desempate por `_id` ascendente. En gestión `all`, los borradores sin fecha se ordenan primero.
+- `view=past`: término efectivo alcanzado en las últimas 72 horas; `view=all`: próximos y finalizados en las últimas 72 horas. Estas ventanas solo afectan consultas públicas; gestión conserva el historial. Gestión usa `all` por defecto y admite además `publicationStatus` y `eventStatus`.
+- En consultas públicas `all`: próximos por inicio ascendente, luego finalizados por término descendente. En otras vistas, orden por inicio ascendente; en `past`, descendente. Desempate por `_id` ascendente. En gestión `all`, los borradores sin fecha se ordenan primero.
 - `page` entero 1–10000 (por defecto 1); `limit` entero 1–100 (por defecto 20).
 - Respuesta `{data:[...],pagination:{page,limit,total,pages}}`; solo cuenta registros visibles/autorizados. Un filtro administrativo explícito de iglesia ajena responde 403.
 
@@ -177,16 +177,16 @@ Desde `Frontend`: `npm.cmd run test:events-admin`. Arranca API, Vite y MongoDB t
 ## Interfaz pública y alcance de RF-05
 
 - `/#/eventos`: accesible sin sesión y con cualquier rol. Búsqueda parcial por nombre y comuna visibles inicialmente; periodo (próximos/pasados/todos), fecha desde/hasta, categoría y público en “Más filtros”. Próximos primero (incluye los que ya comenzaron y no terminaron). Comuna y público usan coincidencia exacta sin distinguir mayúsculas, conforme al contrato de API. Cada filtro aplicado se puede retirar individualmente y los cambios sin aplicar se señalan.
-- Los filtros y la página se guardan en la URL (`q`, `view`, `dateFrom`, `dateTo`, `commune`, `category`, `audience`, `page`). También se admite `churchId`, `associatedChurchId` o `communityId` para los enlaces contextuales. Volver desde una ficha recupera esa URL; limpiar filtros conserva el contexto del organizador, mientras que “Ver todos” lo elimina.
+- Los filtros y la página se guardan en la URL (`q`, `view`, `dateFrom`, `dateTo`, `commune`, `category`, `audience`, `sort`, `page`). También se admite `churchId`, `associatedChurchId` o `communityId` para los enlaces contextuales. Volver desde una ficha recupera esa URL; limpiar filtros conserva el contexto del organizador, mientras que “Ver todos” lo elimina.
 - Tarjetas completas pulsables y accesibles por teclado, en dos columnas en escritorio y una en móvil. Sin portada no se reserva un espacio de imagen. Se conservan los marcos horizontal, panorámico, cuadrado, circular y vertical, ajustando el marco completo para evitar deformaciones; una imagen que falla se omite.
 - `/#/evento/:id`: ficha compacta y compartible independiente de la sesión. `volver` opcional guarda un regreso interno al listado filtrado, iglesia o comunidad; no es necesario para compartir. La cabecera reúne portada ampliable, fecha local, organizador, iglesia de origen, modalidad y ubicación. Bajo ella se muestran descripción, audiencia e instrucciones oficiales; el contacto público es desplegable. Los estados cancelado y finalizado son explícitos; cancelar no oculta la descripción ni el motivo público.
 - Navegación: Eventos en el grupo secundario, desplegado mediante “Menú” en móvil para conservar la barra compacta.
 - “Próximos eventos” en iglesia muestra sus eventos y los de sus comunidades; en comunidad solo muestra los organizados por ella. Hasta dos tarjetas, con enlace al listado completo cuando existen más. Sin resultados visibles, se omite toda la sección. Las imágenes son opcionales y respetan marco y posición.
-- La página utiliza exclusivamente endpoints públicos, incluso cuando hay sesión. Borradores, archivados y eventos de iglesias/comunidades no públicas devuelven contenido no disponible por enlace directo. Se respetan las banderas de privacidad del contacto. No se hereda una insignia de verificación.
+- Las fichas usan respuestas públicas; el listado admite sesión opcional para personalizar el orden, y participación/visualización usan endpoints autenticados. Borradores, archivados y eventos de iglesias/comunidades no públicas devuelven contenido no disponible por enlace directo. Se respetan las banderas de privacidad del contacto. No se hereda una insignia de verificación.
 
 **RF-05 implementado:** comunidades vinculadas con permisos y ciclo de publicación; administración de eventos independientes con organizador, portada, ubicación propia, fechas, participación, cancelación y archivo; descubrimiento público filtrado, fichas compartibles e integración con iglesias/comunidades. La inscripción, cuando se exige, se realiza según las instrucciones o el enlace oficial del organizador.
 
-**Pendiente:** inscripciones dentro de Koinonía, asistencia efectiva, correos, cupos, entradas, pagos, equipos de bienvenida para eventos y permisos compartidos de edición. Tampoco hay membresías de grupos ni seguimiento. La consulta de una ficha o enlace no registra ni confirma asistencia.
+**Pendiente:** inscripciones dentro de Koinonía, asistencia efectiva, correos, cupos, entradas, pagos, equipos de bienvenida para eventos y permisos compartidos de edición. Tampoco hay membresías de grupos; el seguimiento de iglesias sí está implementado. La consulta de una ficha o enlace no registra ni confirma asistencia.
 
 Verificación aislada desde `Frontend`: `npm.cmd run test:public-events`, `npm.cmd run test:public-communities`, `npm.cmd run test:events-admin` y `npm.cmd run test:linked`. Desde `Backend`: `node --test --test-concurrency=1 test/*.test.js`. Se usan MongoDB temporal, usuarios ficticios y proveedores multimedia simulados; no Atlas ni datos de producción.
 
@@ -222,3 +222,12 @@ Pruebas nuevas: `Backend/test/event-participation.test.js` (concurrencia, aislam
 Implementada: invitación abierta informativa, invitaciones a iglesias publicadas, aceptación/rechazo por representantes asignados, intervención auditada de admin, retiradas y reenvío; notificaciones compartidas y presencia en la iglesia colaboradora. Se conserva un evento y propietario únicos, sin transferir permisos. `openCollaboration` es editable; `collaborations` es interno y solo el DTO `collaborators` con iglesias aceptadas/públicas se expone públicamente. `associatedChurchId` busca eventos propios y colaboraciones visibles.
 
 Contrato completo, transiciones, limitaciones, pruebas y estado actualizado de RF-05: [event-collaboration.md](event-collaboration.md). La colaboración institucional ya no está pendiente; siguen fuera de alcance roles de ministerio, correos, entradas, pagos y edición compartida.
+# Visibilidad reciente en el directorio
+
+La página Eventos solicita `view=all` por defecto: muestra primero próximos eventos y después los finalizados recientemente, con etiqueta «Evento Finalizado». Las consultas públicas `view=all` y `view=past` excluyen eventos cuyo `effectiveEndsAt` es anterior a las últimas 72 horas; se filtra antes de paginar y contar. `upcoming` conserva únicamente eventos que no han terminado. En ausencia de término explícito sigue aplicándose el cierre del día local fijo UTC−3.
+
+Esta ventana no borra eventos ni cambia su publicación. Administración conserva el historial y los enlaces directos siguen sujetos a los permisos y visibilidad habituales. Las secciones «Próximos eventos» de iglesias y comunidades continúan mostrando solo próximos. La prueba `events.test.js` cubre 24, 71 y 73 horas, orden, conteo y conservación del historial.
+
+## Recomendación y acciones de interés
+
+El directorio usa recomendaciones por pertenencia, seguimiento y popularidad; los botones de participación se muestran en la cabecera. Para inscripción requerida, `going` devuelve 409 `REGISTRATION_REQUIRED`; interés y retirada siguen disponibles. Contrato, privacidad de visualizaciones y pruebas: [event-recommendations.md](event-recommendations.md).

@@ -1,7 +1,7 @@
 import React,{useEffect,useRef} from 'react';
 const cards='.church-card,.event-public-card,.saved-card,.linked-public-card,.experience-card,.visit-card,.manage-list article,.linked-grid>article';
 const panels='.home>section,.home .landscape,.home-bottom,.discovery-card,.profile-block,.profile-preferences,.manage-editor,.user-editor,.auth-card,.question-card,.detail-section,.detail-fold,.detail-banner,.event-profile-hero,.events-intro,.event-search-panel,.discovery-description-search,.linked-public-heading,.linked-filters,.manage-filters,.saved-tools,.visit-request,.experience-form,.settings-heading,.settings-body,.preview-panel';
-const targets=cards+','+panels;
+const targets=cards+','+panels+',main>section,main>form,.security-mail-page>section,[aria-label="Mantenimiento de seguridad"]';
 export default function PageMotion({route,children}){
  const root=useRef(null);
  useEffect(()=>{
@@ -17,8 +17,9 @@ export default function PageMotion({route,children}){
    scan();mutations=new MutationObserver(()=>{if(!frame)frame=requestAnimationFrame(scan);});mutations.observe(node,{childList:true,subtree:true});
   }
   function focus(e){let el=e.target;while(el&&el!==node){if(el.matches?.(targets)){seen.add(el);observer?.unobserve(el);observed.delete(el);}el=el.parentElement;}animations.forEach(a=>{if(a.effect?.target?.contains(e.target))a.finish();});}
-  start();media.addEventListener('change',start);node.addEventListener('focusin',focus);
-  return()=>{stop();media.removeEventListener('change',start);node.removeEventListener('focusin',focus);};
+  function toggle(e){const el=e.target;if(el.tagName!=='DETAILS')return;const children=[...el.children].filter(c=>c.tagName!=='SUMMARY');animations.forEach(a=>{if(children.includes(a.effect?.target))a.cancel();});if(el.open)children.forEach(child=>animate(child,[{opacity:.35,translate:'0 -5px'},{opacity:1,translate:'0 0'}],220));}
+  start();media.addEventListener('change',start);node.addEventListener('focusin',focus);node.addEventListener('toggle',toggle,true);
+  return()=>{stop();media.removeEventListener('change',start);node.removeEventListener('focusin',focus);node.removeEventListener('toggle',toggle,true);};
  },[route]);
  return <div ref={root} className="page-motion">{children}</div>;
 }

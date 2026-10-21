@@ -1,0 +1,16 @@
+const {Types}=require('mongoose'),Follow=require('../models/church-follow.model'),Church=require('../models/church.model'),Event=require('../models/event.model'),svc=require('../services/event.service'),v=require('../validation/schemas'),{HttpError}=require('../utils/errors');
+const oid=id=>new Types.ObjectId(v.parse(v.id,id)),respond=(res,data)=>res.set('Cache-Control','no-store').json({data});
+async function visible(id){const c=await Church.findOne({_id:id,...require('../services/church.service').visible}).lean();if(!c)throw new HttpError(404,'NOT_FOUND','Iglesia no disponible');return c;}
+const count=church=>Follow.countDocuments({church,active:true});
+exports.count=async(req,res)=>{const church=oid(req.params.id);await visible(church);respond(res,{followers:await count(church)});};
+exports.get=async(req,res)=>{const church=oid(req.params.id);await visible(church);const f=await Follow.findOne({church,user:req.user._id});respond(res,{following:!!f?.active,followers:await count(church)});};
+exports.set=async(req,res)=>{const church=oid(req.params.id),{following}=v.parse(v.z.strictObject({following:v.z.boolean()}),req.body),filter={church,user:req.user._id};
+ if(!following){await Follow.updateOne(filter,{$set:{active:false}});return respond(res,{following:false,...(await Church.exists({_id:church,...require('../services/church.service').visible})?{followers:await count(church)}:{})});}await visible(church);const now=new Date(),pipeline=[{$set:{...filter,active:true,since:{$cond:[{$eq:['$active',true]},'$since',now]},readNotices:{$ifNull:['$readNotices',[]]},createdAt:{$ifNull:['$createdAt',now]},updatedAt:now}}];
+ try{await Follow.updateOne(filter,pipeline,{upsert:true,updatePipeline:true,timestamps:false});}catch(e){if(e.code!==11000)throw e;await Follow.updateOne(filter,pipeline,{updatePipeline:true,timestamps:false});}respond(res,{following:true,followers:await count(church)});
+};
+exports.notificationStages=user=>[
+ {$match:{'publicationNotice.at':{$exists:true},eventStatus:'scheduled',effectiveEndsAt:{$gte:new Date(Date.now()-3*86400000)}}},...svc.publicStages(),
+ {$lookup:{from:Follow.collection.name,let:{church:'$churchId',at:'$publicationNotice.at'},pipeline:[{$match:{$expr:{$and:[{$eq:['$church','$$church']},{$eq:['$user',user._id]},{$eq:['$active',true]},{$lte:['$since','$$at']}]}}}],as:'follow'}},{$unwind:'$follow'},
+ {$project:{_id:'$publicationNotice._id',eventId:'$_id',churchName:'$title',startsAt:1,source:{$literal:'event'},audience:{$literal:'follower'},at:'$publicationNotice.at',kind:{$literal:'published'},read:{$in:['$publicationNotice._id',{$ifNull:['$follow.readNotices',[]]}]},text:{$concat:['$parent.identification.name',' publicó un nuevo evento. Descubre los detalles.']}}}
+];
+exports.read=async(req,res)=>{const id=oid(req.params.id),[event]=await Event.aggregate([{$match:{'publicationNotice._id':id}},...exports.notificationStages(req.user)]);if(!event)return false;const original=await Event.findOne({'publicationNotice._id':id}).lean();const result=await Follow.updateOne({church:original.churchId,user:req.user._id,active:true,since:{$lte:original.publicationNotice.at}},{$addToSet:{readNotices:id}});if(!result.matchedCount)return false;res.set('Cache-Control','no-store').json({ok:true});return true;};
