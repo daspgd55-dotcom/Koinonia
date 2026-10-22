@@ -155,3 +155,6 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 
 .public-share-actions,.share-control{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}.public-share-actions{margin:12px 0}.share-control{max-width:100%}.share-control [role="status"],.event-interest-count{font-size:.85rem;color:var(--muted,#66727A)}.share-control input{width:100%;min-width:0}.event-profile-intro>.public-share-actions{justify-content:flex-end}.share-control .text-button{font-size:.8rem}
 @media(max-width:600px){.event-profile-intro>.public-share-actions{justify-content:flex-start}}
+
+.detail-banner-photo .church-identity-line{font-weight:700;color:#17232D;margin:14px 0 6px}.detail-banner-photo .church-language-line{font-weight:400;color:#66727A;margin:0 0 12px;line-height:1.5}.church-follow-block{margin:12px 0}.church-follow-block .church-follow{margin:0;gap:10px;align-items:center}.church-follow-block .follow-count{display:block;color:#66727A;font-size:13px;margin-top:8px}.church-follow-block [role=alert]{display:block;color:#813720;font-size:12px;margin-top:6px}
+@media(max-width:360px){header .compact-navigation nav{gap:4px}header .compact-navigation nav>a{padding-inline:2px}}
