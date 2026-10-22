@@ -21,7 +21,7 @@ async function main() {
   vite = await createServer({ root:path.resolve(__dirname,'..'),configFile:false,server:{host:'127.0.0.1',port:0,proxy:{'/api':`http://127.0.0.1:${server.address().port}`}} });
   await vite.listen(); const url = `http://127.0.0.1:${vite.httpServer.address().port}`;
   browser = await chromium.launch({headless:true,...(process.platform==='win32'?{channel:'msedge'}:{})});
-  const context = await browser.newContext({viewport:{width:1440,height:1000}}), page = await context.newPage(), errors=[];
+  const context = await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'}), page = await context.newPage(), errors=[];
   debugPage=page;page.on('pageerror',e=>{errors.push(e.message);console.error('PAGE_ERROR',e.message);}); page.setDefaultTimeout(12000);
 
   const request=backend('supertest'), Church=backend('./src/models/church.model');
@@ -114,6 +114,7 @@ async function main() {
   assert.deepEqual(c.meetingTypes,['Grupo pequeño / célula']);assert.equal(c.privateFields.email,true);assert.equal(c.contact.email,'privado@example.test');
   assert.equal(c.location.accessibilityLevel,'partial');assert.equal(c.location.accessibility,undefined);
   assert.equal(c.firstVisit.welcomeSupport,'partial');assert.equal(c.meetings[0].frequencyNotes,'Primer domingo del mes');
+  if(await page.locator('.admin-control-fold').count()&&!await page.locator('.admin-control-fold').evaluate(el=>el.open))await page.locator('.admin-control-fold>summary').click();
   await page.getByRole('button',{name:'Publicar',exact:true}).click();
   await page.getByRole('status').filter({hasText:'Administración actualizada'}).waitFor();
   assert.equal((await Church.findById(c._id)).metadata.dataStatus,'published');
@@ -162,6 +163,7 @@ async function main() {
   await page.getByLabel('Estado',{exact:true}).selectOption('inactive');
   await page.getByRole('button',{name:'Buscar comunidades',exact:true}).click();
   await page.getByRole('button',{name:'Administrar Comunidad administrada'}).click();
+  await page.locator('.admin-control-fold>summary').click();
   await page.getByRole('button',{name:'Restaurar como borrador'}).click();
   await page.getByRole('status').filter({hasText:'Administración actualizada'}).waitFor();
   assert.equal((await Church.findById(c._id)).active,true);
@@ -169,6 +171,7 @@ async function main() {
   await login(rep.email);
   await page.getByRole('link',{name:'Administración',exact:true}).click();
   await page.getByRole('heading',{name:'Mis comunidades'}).waitFor();
+  await page.getByText('1 comunidad administrable',{exact:true}).waitFor();assert.equal(await page.locator('.manage-filter-fold').evaluate(el=>el.open),false);await page.locator('.manage-filter-fold>summary').focus();await page.keyboard.press('Enter');assert.ok(await page.getByLabel('Publicación',{exact:true}).isVisible());assert.equal(await page.getByLabel('Publicación',{exact:true}).locator('option').first().textContent(),'Todos los estados de publicación');await page.locator('.manage-filter-fold>summary').press('Enter');
   assert.equal(await page.getByRole('navigation',{name:'Áreas de administración'}).getByRole('link',{name:'Usuarios',exact:true}).count(),0);
   assert.equal(await page.getByRole('button',{name:'Crear iglesia',exact:true}).count(),0);
   await page.getByRole('button',{name:'Administrar Comunidad administrada'}).click();
@@ -238,6 +241,7 @@ async function main() {
   await page.getByRole('button',{name:'Subir foto recortada',exact:true}).click();
   await page.getByRole('status').filter({hasText:'Foto guardada en la nube'}).waitFor();
   const portrait=(await Church.findById(c._id)).media[0];assert.equal(portrait.frame,'circle');assert.equal(portrait.leaderId,repairedLeader);
+  if(await page.locator('.admin-control-fold').count()&&!await page.locator('.admin-control-fold').evaluate(el=>el.open))await page.locator('.admin-control-fold>summary').click();
   await page.getByRole('button',{name:'Publicar',exact:true}).click();
   await page.getByRole('status').filter({hasText:'Administración actualizada'}).waitFor();
   assert.equal((await Church.findById(c._id)).metadata.dataStatus,'published');

@@ -46,6 +46,7 @@ async function main() {
   assert.equal(await page.locator('.search-card-photo').count(),12);
   await page.locator('.church-card').first().getByText('Culto · Domingo 11:00',{exact:true}).waitFor();
   await page.locator('.church-card').first().getByText('Voluntariado',{exact:true}).waitFor();
+  if(!await page.locator('.filter-panel').evaluate(e=>e.open))await page.locator('.filter-panel>summary').click();
   await page.getByLabel('Comuna',{exact:true}).fill('Providencia');
   await page.getByRole('status').filter({hasText:'Tienes cambios sin aplicar'}).waitFor();
   await page.getByRole('button',{name:'Aplicar filtros',exact:true}).click();
@@ -54,6 +55,7 @@ async function main() {
   await page.getByRole('button',{name:'Siguiente',exact:true}).click();
   await page.getByText('Página 2 de 2',{exact:true}).waitFor();
   assert.equal(await page.locator('.church-card').count(),2);
+  if(!await page.locator('.filter-panel').evaluate(e=>e.open))await page.locator('.filter-panel>summary').click();
   await page.getByLabel('Comuna',{exact:true}).fill('Providencia');
   await page.getByRole('button',{name:'Aplicar filtros',exact:true}).click();
   await page.getByRole('status').filter({hasText:'1 comunidad encontrada'}).waitFor();
@@ -76,6 +78,7 @@ async function main() {
   await page.getByRole('link',{name:'Volver a resultados'}).click();
   assert.equal(await page.getByLabel('Comuna',{exact:true}).inputValue(),'Providencia');
   assert.equal(await page.locator('.church-card').count(),1);
+  if(!await page.locator('.filter-panel').evaluate(e=>e.open))await page.locator('.filter-panel>summary').click();
   await page.getByRole('button',{name:'Limpiar búsqueda y filtros'}).click();
   await page.getByRole('status').filter({hasText:'14 comunidades encontradas'}).waitFor();
   await page.evaluate(()=>Object.defineProperty(navigator,'geolocation',{configurable:true,value:{getCurrentPosition:(success,error)=>error({code:1})}}));

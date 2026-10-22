@@ -1,0 +1,1351 @@
+[
+  {
+    "name": "guest-0-desktop",
+    "url": "#/",
+    "width": 1440,
+    "height": 868,
+    "overflow": false,
+    "headings": [
+      "Una comunidadpara caminaren la fe."
+    ],
+    "buttons": [],
+    "text": "ENCUENTRA TU LUGAR\nUna comunidad\npara caminar\nen la fe.\n\nConoce iglesias, sus creencias, horarios y actividades. Encuentra opciones para preparar tu primera visita.\n\nExplorar comunidades →\nCrear mi perfil →\nPuedes explorar sin crear una cuenta.\n✝\nUN LUGAR PARA ENCONTRARNOS\n01 Busca por comuna\n02 Conoce sus creencias y actividades\n03 Prepara tu visita"
+  },
+  {
+    "name": "guest-0-mobile",
+    "url": "#/",
+    "width": 390,
+    "height": 1262,
+    "overflow": false,
+    "headings": [
+      "Una comunidadpara caminaren la fe."
+    ],
+    "buttons": [],
+    "text": "ENCUENTRA TU LUGAR\nUna comunidad\npara caminar\nen la fe.\n\nConoce iglesias, sus creencias, horarios y actividades. Encuentra opciones para preparar tu primera visita.\n\nExplorar comunidades →\nCrear mi perfil →\nPuedes explorar sin crear una cuenta.\n✝\nUN LUGAR PARA ENCONTRARNOS\n01\nBusca por comuna\n02\nConoce sus creencias y actividades\n03\nPrepara tu visita"
+  },
+  {
+    "name": "guest-1-desktop",
+    "url": "#/login",
+    "width": 1440,
+    "height": 912,
+    "overflow": false,
+    "headings": [
+      "Los vínculosempiezan conun encuentro.",
+      "Inicia sesión"
+    ],
+    "buttons": [
+      "Iniciar sesión →"
+    ],
+    "text": "TU CAMINO, TU COMUNIDAD\nLos vínculos\nempiezan con\nun encuentro.\n\nUn espacio para conocer comunidades cristianas y descubrir dónde te gustaría participar.\n\n✝\nBIENVENIDO A KOINONÍA\nInicia sesión\n\nEntra para continuar donde lo dejaste.\n\nCorreo electrónico\nContraseña\nIniciar sesión →\n\n¿Olvidaste tu contraseña?\n\n¿Primera vez por aquí? Crea tu cuenta\n\nTu nombre público, usuario y foto permiten que tus amigos te encuentren. Tu correo y preferencias no se muestran en la búsqueda."
+  },
+  {
+    "name": "guest-1-mobile",
+    "url": "#/login",
+    "width": 390,
+    "height": 882,
+    "overflow": false,
+    "headings": [
+      "Inicia sesión"
+    ],
+    "buttons": [
+      "Iniciar sesión →"
+    ],
+    "text": "BIENVENIDO A KOINONÍA\nInicia sesión\n\nEntra para continuar donde lo dejaste.\n\nCorreo electrónico\nContraseña\nIniciar sesión →\n\n¿Olvidaste tu contraseña?\n\n¿Primera vez por aquí? Crea tu cuenta\n\nTu nombre público, usuario y foto permiten que tus amigos te encuentren. Tu correo y preferencias no se muestran en la búsqueda."
+  },
+  {
+    "name": "guest-2-desktop",
+    "url": "#/registro",
+    "width": 1440,
+    "height": 1149,
+    "overflow": false,
+    "headings": [
+      "Los vínculosempiezan conun encuentro.",
+      "Crea tu cuenta"
+    ],
+    "buttons": [
+      "Crear mi cuenta →"
+    ],
+    "text": "TU CAMINO, TU COMUNIDAD\nLos vínculos\nempiezan con\nun encuentro.\n\nUn espacio para conocer comunidades cristianas y descubrir dónde te gustaría participar.\n\n✝\nBIENVENIDO A KOINONÍA\nCrea tu cuenta\n\nCrea tu cuenta. Después podrás contarnos qué buscas, a tu ritmo.\n\nNombre opcional\nNombre de usuario\nDe 3 a 24 caracteres. Empieza por una letra; usa letras, números o guion bajo. Tus amigos podrán encontrarte con este nombre.\nCorreo electrónico\nContraseña\nUsa al menos 8 caracteres.\nCrear mi cuenta →\n\n¿Olvidaste tu contraseña?\n\n¿Ya tienes una cuenta? Inicia sesión\n\nTu nombre público, usuario y foto permiten que tus amigos te encuentren. Tu correo y preferencias no se muestran en la búsqueda."
+  },
+  {
+    "name": "guest-2-mobile",
+    "url": "#/registro",
+    "width": 390,
+    "height": 1159,
+    "overflow": false,
+    "headings": [
+      "Crea tu cuenta"
+    ],
+    "buttons": [
+      "Crear mi cuenta →"
+    ],
+    "text": "BIENVENIDO A KOINONÍA\nCrea tu cuenta\n\nCrea tu cuenta. Después podrás contarnos qué buscas, a tu ritmo.\n\nNombre opcional\nNombre de usuario\nDe 3 a 24 caracteres. Empieza por una letra; usa letras, números o guion bajo. Tus amigos podrán encontrarte con este nombre.\nCorreo electrónico\nContraseña\nUsa al menos 8 caracteres.\nCrear mi cuenta →\n\n¿Olvidaste tu contraseña?\n\n¿Ya tienes una cuenta? Inicia sesión\n\nTu nombre público, usuario y foto permiten que tus amigos te encuentren. Tu correo y preferencias no se muestran en la búsqueda."
+  },
+  {
+    "name": "guest-3-desktop",
+    "url": "#/recuperar",
+    "width": 1440,
+    "height": 623,
+    "overflow": false,
+    "headings": [
+      "Recuperar contraseña"
+    ],
+    "buttons": [
+      "Enviar enlace de recuperación"
+    ],
+    "text": "← Iniciar sesión\nRecuperar contraseña\n\nTe enviaremos un enlace para elegir una nueva contraseña.\n\nCorreo electrónico\nEnviar enlace de recuperación"
+  },
+  {
+    "name": "guest-3-mobile",
+    "url": "#/recuperar",
+    "width": 390,
+    "height": 661,
+    "overflow": false,
+    "headings": [
+      "Recuperar contraseña"
+    ],
+    "buttons": [
+      "Enviar enlace de recuperación"
+    ],
+    "text": "← Iniciar sesión\nRecuperar contraseña\n\nTe enviaremos un enlace para elegir una nueva contraseña.\n\nCorreo electrónico\nEnviar enlace de recuperación"
+  },
+  {
+    "name": "guest-4-desktop",
+    "url": "#/verificar-correo",
+    "width": 1440,
+    "height": 664,
+    "overflow": false,
+    "headings": [
+      "Verifica tu correo"
+    ],
+    "buttons": [
+      "Enviar enlace"
+    ],
+    "text": "← Iniciar sesión\nVerifica tu correo\n\nSolicita un nuevo enlace para verificar tu correo o aceptar una invitación pendiente.\n\nCorreo electrónico\nEnviar enlace\n\nSeguir explorando iglesias"
+  },
+  {
+    "name": "guest-4-mobile",
+    "url": "#/verificar-correo",
+    "width": 390,
+    "height": 702,
+    "overflow": false,
+    "headings": [
+      "Verifica tu correo"
+    ],
+    "buttons": [
+      "Enviar enlace"
+    ],
+    "text": "← Iniciar sesión\nVerifica tu correo\n\nSolicita un nuevo enlace para verificar tu correo o aceptar una invitación pendiente.\n\nCorreo electrónico\nEnviar enlace\n\nSeguir explorando iglesias"
+  },
+  {
+    "name": "guest-5-desktop",
+    "url": "#/explorar",
+    "width": 1440,
+    "height": 1377,
+    "overflow": false,
+    "headings": [
+      "Buscar iglesias",
+      "Resultados",
+      "Comunidad Cristiana del Parque",
+      "Iglesia Camino de Esperanza"
+    ],
+    "buttons": [
+      "Buscar comunidades →",
+      "Filtros",
+      "Usar mi ubicación",
+      "Más filtros",
+      "Aplicar filtros",
+      "Limpiar búsqueda y filtros",
+      "Lista",
+      "Mapa",
+      "Anterior",
+      "Siguiente"
+    ],
+    "text": "Buscar iglesias\n\nEncuentra comunidades por nombre, ubicación y lo que te interesa.\n\nNombre de iglesia o comunidad\nBuscar comunidades →\nFiltros\nComuna\nUsar mi ubicación\nDistancia máxima: 10 km\nActiva tu ubicación para filtrar por distancia.\nRama\nSin filtro\nCatólica\nOrtodoxa\nProtestante\nRama Independiente\nDenominación\nSin filtro\nCatólica Romana\nBautista\nLuterana\nMetodista\nPresbiteriana\nPentecostal\nAdventista\nAnglicana\nAsamblea de Dios\nEvangélica\nNo Denominacional\nDía de reunión\nSin filtro\nLunes\nMartes\nMiércoles\nJueves\nViernes\nSábado\nDomingo\nActividad\nSin filtro\nReuniones de Alabanza\nCampamentos\nRetiros\nEvangelismo\nVoluntariado\nAyuda social\nCursos / institutos\nConferencias\nEventos familiares\nActividades deportivas\nConfraternidades\nObras Audiovisuales\nBautismos\nMás filtros\n\nAquí eliges los filtros. Para recibir sugerencias según tu perfil, visita Para ti.\n\nAplicar filtrosLimpiar búsqueda y filtros\nResultados\n\n2 comunidades encontradas\n\nLista\nMapa\nOrdenar por\nNombre\nCercanía\nActiva y aplica tu ubicación para ordenar por cercanía.\n✝\nKOINONÍA · COMUNIDADES\nDenominación sin informar\nComunidad Cristiana del Parque\n\nÑuñoa\n\nHorario sin informar\n\nFicha publicada\nVer comunidad\nComunidad Cristiana del Parque\n→\n✝\nKOINONÍA · COMUNIDADES\nBautista\nIglesia Camino de Esperanza\n\nCalle de prueba 123, Providencia\n\nCulto dominical · Domingo 11:00\n\nVoluntariado\nEstudio bíblico\nFicha verificada\nVer comunidad\nIglesia Camino de Esperanza\n→\nAnterior\nPágina 1 de 1\nSiguiente"
+  },
+  {
+    "name": "guest-5-mobile",
+    "url": "#/explorar",
+    "width": 390,
+    "height": 1909,
+    "overflow": false,
+    "headings": [
+      "Buscar iglesias",
+      "Resultados",
+      "Comunidad Cristiana del Parque",
+      "Iglesia Camino de Esperanza"
+    ],
+    "buttons": [
+      "Buscar comunidades →",
+      "Filtros",
+      "Usar mi ubicación",
+      "Más filtros",
+      "Aplicar filtros",
+      "Limpiar búsqueda y filtros",
+      "Lista",
+      "Mapa",
+      "Anterior",
+      "Siguiente"
+    ],
+    "text": "Buscar iglesias\n\nEncuentra comunidades por nombre, ubicación y lo que te interesa.\n\nNombre de iglesia o comunidad\nBuscar comunidades →\nFiltros\nResultados\n\n2 comunidades encontradas\n\nLista\nMapa\nOrdenar por\nNombre\nCercanía\nActiva y aplica tu ubicación para ordenar por cercanía.\n✝\nKOINONÍA · COMUNIDADES\nDenominación sin informar\nComunidad Cristiana del Parque\n\nÑuñoa\n\nHorario sin informar\n\nFicha publicada\nVer comunidad\nComunidad Cristiana del Parque\n→\n✝\nKOINONÍA · COMUNIDADES\nBautista\nIglesia Camino de Esperanza\n\nCalle de prueba 123, Providencia\n\nCulto dominical · Domingo 11:00\n\nVoluntariado\nEstudio bíblico\nFicha verificada\nVer comunidad\nIglesia Camino de Esperanza\n→\nAnterior\nPágina 1 de 1\nSiguiente"
+  },
+  {
+    "name": "guest-6-desktop",
+    "url": "#/descubrir",
+    "width": 1440,
+    "height": 1137,
+    "overflow": false,
+    "headings": [
+      "Comunidades para conocer",
+      "Búsqueda por descripción",
+      "Comunidad Cristiana del Parque",
+      "Por qué aparece"
+    ],
+    "buttons": [
+      "Preguntas de ejemplo",
+      "Personaliza tus sugerenciasVer opciones",
+      "Descartar",
+      "Ver otra →",
+      "Guardar",
+      "¿Qué hace cada acción?"
+    ],
+    "text": "Comunidades para conocer\n\nExplora una comunidad a la vez y descubre qué ofrece.\n\nBúsqueda por descripción\nPróximamente\nDescribe la comunidad que buscas\n\nPronto podrás buscar con tus propias palabras.\n\nPreguntas de ejemplo\nPersonaliza tus sugerenciasVer opciones\n\nComunidad 1 de 2\n\n✝\nUN LUGAR PARA ENCONTRARNOS\nIdentidad por informar\nFicha publicada\nComunidad Cristiana del Parque\n\nÑuñoa\n\nPor qué aparece\n\nEstás explorando las comunidades por nombre. Inicia sesión para recibir sugerencias según tus preferencias.\n\nVer perfil completo →\nDescartar\nVer otra →\nGuardar\n\nInicia sesión para guardar o descartar comunidades.\n\n¿Qué hace cada acción?"
+  },
+  {
+    "name": "guest-6-mobile",
+    "url": "#/descubrir",
+    "width": 390,
+    "height": 1399,
+    "overflow": false,
+    "headings": [
+      "Comunidades para conocer",
+      "Búsqueda por descripción",
+      "Comunidad Cristiana del Parque",
+      "Por qué aparece"
+    ],
+    "buttons": [
+      "Preguntas de ejemplo",
+      "Personaliza tus sugerenciasVer opciones",
+      "Descartar",
+      "Ver otra →",
+      "Guardar",
+      "¿Qué hace cada acción?"
+    ],
+    "text": "Comunidades para conocer\n\nExplora una comunidad a la vez y descubre qué ofrece.\n\nBúsqueda por descripción\nPróximamente\nDescribe la comunidad que buscas\n\nPronto podrás buscar con tus propias palabras.\n\nPreguntas de ejemplo\nPersonaliza tus sugerencias\nVer opciones\n\nComunidad 1 de 2\n\n✝\nUN LUGAR PARA ENCONTRARNOS\nIdentidad por informar\nFicha publicada\nComunidad Cristiana del Parque\n\nÑuñoa\n\nPor qué aparece\n\nEstás explorando las comunidades por nombre. Inicia sesión para recibir sugerencias según tus preferencias.\n\nVer perfil completo →\nDescartar\nVer otra →\nGuardar\n\nInicia sesión para guardar o descartar comunidades.\n\n¿Qué hace cada acción?"
+  },
+  {
+    "name": "guest-7-desktop",
+    "url": "#/eventos",
+    "width": 1440,
+    "height": 1107,
+    "overflow": false,
+    "headings": [
+      "Eventos",
+      "Próximos y recién finalizados",
+      "Manos que acompañan: jornada de apoyo a personas mayores"
+    ],
+    "buttons": [
+      "Buscar eventos ",
+      "Más filtros"
+    ],
+    "text": "VIDA EN COMUNIDAD\nEventos\n\nDescubre encuentros, talleres y actividades para compartir.\n\nNombre del evento\nComuna\nBuscar eventos\nMás filtros\nPróximos y recién finalizados\n\n1 evento encontrado\n\nServicio comunitario\nPresencial\nManos que acompañan: jornada de apoyo a personas mayores\n\n29-10-2026, 2:32 a. m.\n\nProvidencia\n\nOrganiza Iglesia Camino de Esperanza\n\nEntrada libre\nVer evento"
+  },
+  {
+    "name": "guest-7-mobile",
+    "url": "#/eventos",
+    "width": 390,
+    "height": 1228,
+    "overflow": false,
+    "headings": [
+      "Eventos",
+      "Próximos y recién finalizados",
+      "Manos que acompañan: jornada de apoyo a personas mayores"
+    ],
+    "buttons": [
+      "Buscar eventos ",
+      "Más filtros"
+    ],
+    "text": "VIDA EN COMUNIDAD\nEventos\n\nDescubre encuentros, talleres y actividades para compartir.\n\nNombre del evento\nComuna\nBuscar eventos\nMás filtros\nPróximos y recién finalizados\n\n1 evento encontrado\n\nServicio comunitario\nPresencial\nManos que acompañan: jornada de apoyo a personas mayores\n\n29-10-2026, 2:32 a. m.\n\nProvidencia\n\nOrganiza Iglesia Camino de Esperanza\n\nEntrada libre\nVer evento"
+  },
+  {
+    "name": "guest-8-desktop",
+    "url": "#/iglesia/6ad99fd67ca3805c58ef1552",
+    "width": 1440,
+    "height": 2411,
+    "overflow": false,
+    "headings": [],
+    "buttons": [],
+    "text": ""
+  },
+  {
+    "name": "guest-8-mobile",
+    "url": "#/iglesia/6ad99fd67ca3805c58ef1552",
+    "width": 390,
+    "height": 2855,
+    "overflow": false,
+    "headings": [],
+    "buttons": [],
+    "text": ""
+  },
+  {
+    "name": "guest-9-desktop",
+    "url": "#/evento/6ad99fd77ca3805c58ef1555",
+    "width": 1440,
+    "height": 901,
+    "overflow": false,
+    "headings": [
+      "Manos que acompañan: jornada de apoyo a personas mayores",
+      "Sobre el evento",
+      "Cómo participar"
+    ],
+    "buttons": [
+      "Compartir"
+    ],
+    "text": "← Volver a eventos\nServicio comunitario\n0 personas interesadas\nManos que acompañan: jornada de apoyo a personas mayores\n\nOrganiza Iglesia Camino de Esperanza\n\n29-10-2026, 2:32 a. m.\nHasta 29-10-2026, 4:32 a. m.\nPresencial · Salón principal\nCalle de prueba 123, Providencia\nMe interesa\n✓\nVoy a asistir\nCompartir\nSobre el evento\n\nUna mañana para compartir y acompañar a nuestros vecinos. Actividad abierta a la comunidad.\n\nCómo participar\nEntrada libre"
+  },
+  {
+    "name": "guest-9-mobile",
+    "url": "#/evento/6ad99fd77ca3805c58ef1555",
+    "width": 390,
+    "height": 1059,
+    "overflow": false,
+    "headings": [
+      "Manos que acompañan: jornada de apoyo a personas mayores",
+      "Sobre el evento",
+      "Cómo participar"
+    ],
+    "buttons": [
+      "Compartir"
+    ],
+    "text": "← Volver a eventos\nServicio comunitario\n0 personas interesadas\nManos que acompañan: jornada de apoyo a personas mayores\n\nOrganiza Iglesia Camino de Esperanza\n\n29-10-2026, 2:32 a. m.\nHasta 29-10-2026, 4:32 a. m.\nPresencial · Salón principal\nCalle de prueba 123, Providencia\nMe interesa\n✓\nVoy a asistir\nCompartir\nSobre el evento\n\nUna mañana para compartir y acompañar a nuestros vecinos. Actividad abierta a la comunidad.\n\nCómo participar\nEntrada libre"
+  },
+  {
+    "name": "guest-10-desktop",
+    "url": "#/comunidad/6ad99fd67ca3805c58ef1554",
+    "width": 1440,
+    "height": 862,
+    "overflow": false,
+    "headings": [
+      "Jóvenes con propósito",
+      "Sobre la comunidad",
+      "¿A quién está dirigida?",
+      "Responsables",
+      "Ubicación habitual"
+    ],
+    "buttons": [],
+    "text": "← Volver a la iglesia\nJóvenes\nJóvenes con propósito\nComunidad de Iglesia Camino de Esperanza\nSobre la comunidad\n\nEncuentros para conversar, compartir y servir junto a otros jóvenes.\n\n¿A quién está dirigida?\nJóvenes\nResponsables\nAna Fuentes\n\nCoordinadora\n\nUbicación habitual\n\nCalle de prueba 123, Providencia, Santiago\n\nCómo llegar ↗"
+  },
+  {
+    "name": "guest-10-mobile",
+    "url": "#/comunidad/6ad99fd67ca3805c58ef1554",
+    "width": 390,
+    "height": 1305,
+    "overflow": false,
+    "headings": [
+      "Jóvenes con propósito",
+      "Sobre la comunidad",
+      "¿A quién está dirigida?",
+      "Responsables",
+      "Ubicación habitual"
+    ],
+    "buttons": [],
+    "text": "← Volver a la iglesia\nJóvenes\nJóvenes con propósito\nComunidad de Iglesia Camino de Esperanza\nSobre la comunidad\n\nEncuentros para conversar, compartir y servir junto a otros jóvenes.\n\n¿A quién está dirigida?\nJóvenes\nResponsables\nAna Fuentes\n\nCoordinadora\n\nUbicación habitual\n\nCalle de prueba 123, Providencia, Santiago\n\nCómo llegar ↗"
+  },
+  {
+    "name": "user-0-desktop",
+    "url": "#/perfil",
+    "width": 1440,
+    "height": 1662,
+    "overflow": false,
+    "headings": [
+      "Mi perfil",
+      "Daniela Morales",
+      "Mi iglesia",
+      "Preferencias de búsqueda",
+      "Tu identidad",
+      "Tu tradición",
+      "Tu ubicación",
+      "Cuenta y seguridad",
+      "Correo de acceso",
+      "Contraseña"
+    ],
+    "buttons": [
+      "Perfil",
+      "Mi iglesia",
+      "Preferencias de búsqueda",
+      "Cuenta y seguridad",
+      "Editar perfil",
+      "Buscar iglesia",
+      "Editar Tu identidad",
+      "Editar Tu tradición",
+      "Editar Tu ubicación",
+      "Editar preferencias"
+    ],
+    "text": "TU ESPACIO PERSONAL\nMi perfil\nMis eventos →\nMis visitas →\nIglesias guardadas →\nPerfil\nMi iglesia\nPreferencias de búsqueda\nCuenta y seguridad\nDaniela Morales\n\n@audit_user\n\nTu nombre y foto acompañan tus experiencias publicadas.\nEditar perfil\nMi iglesia\n\nNo has asociado una iglesia.\n\nBuscar mi iglesia\nBuscar iglesia\nPreferencias de búsqueda\n\nRespuestas privadas que ayudan a encontrar comunidades afines a lo que buscas.\n\nTu identidad\n\nSin responder\n\nEditar\nTu identidad\nTu tradición\n\nSin responder\n\nEditar\nTu tradición\nTu ubicación\n\nSin responder\n\nEditar\nTu ubicación\nEditar preferencias\nCuenta y seguridad\nCorreo de acceso\n\nuser@example.test\n\nEs privado y no se puede modificar desde la aplicación.\nContraseña\n\nActualiza la contraseña con la que inicias sesión.\n\nCambiar contraseña"
+  },
+  {
+    "name": "user-0-mobile",
+    "url": "#/perfil",
+    "width": 390,
+    "height": 1985,
+    "overflow": false,
+    "headings": [
+      "Mi perfil",
+      "Daniela Morales",
+      "Mi iglesia",
+      "Preferencias de búsqueda",
+      "Tu identidad",
+      "Tu tradición",
+      "Tu ubicación",
+      "Cuenta y seguridad",
+      "Correo de acceso",
+      "Contraseña"
+    ],
+    "buttons": [
+      "Editar perfil",
+      "Buscar iglesia",
+      "Editar Tu identidad",
+      "Editar Tu tradición",
+      "Editar Tu ubicación",
+      "Editar preferencias"
+    ],
+    "text": "TU ESPACIO PERSONAL\nMi perfil\nMis eventos →\nMis visitas →\nIglesias guardadas →\nDaniela Morales\n\n@audit_user\n\nTu nombre y foto acompañan tus experiencias publicadas.\nEditar perfil\nMi iglesia\n\nNo has asociado una iglesia.\n\nBuscar mi iglesia\nBuscar iglesia\nPreferencias de búsqueda\n\nRespuestas privadas que ayudan a encontrar comunidades afines a lo que buscas.\n\nTu identidad\n\nSin responder\n\nEditar\nTu identidad\nTu tradición\n\nSin responder\n\nEditar\nTu tradición\nTu ubicación\n\nSin responder\n\nEditar\nTu ubicación\nEditar preferencias\nCuenta y seguridad\nCorreo de acceso\n\nuser@example.test\n\nEs privado y no se puede modificar desde la aplicación.\nContraseña\n\nActualiza la contraseña con la que inicias sesión.\n\nCambiar contraseña"
+  },
+  {
+    "name": "user-1-desktop",
+    "url": "#/configuracion",
+    "width": 1440,
+    "height": 2470,
+    "overflow": false,
+    "headings": [
+      "Preferencias de búsqueda",
+      "Tu identidad"
+    ],
+    "buttons": [
+      "Tu identidad",
+      "Tu tradición",
+      "Tu ubicación",
+      "Cristiano/a+",
+      "Solo creyente en Dios+",
+      "No me identifico con una religión+",
+      "Pertenezco a otra religión+",
+      "No creyente+",
+      "Otro+",
+      "Prefiero no responder−",
+      "Encontrar una comunidad+",
+      "Explorar sin decidir todavía+",
+      "Cambiar de comunidad+",
+      "Conocer otras comunidades+",
+      "Todavía no lo tengo claro−",
+      "Reuniones de Alabanza+",
+      "Campamentos+",
+      "Retiros+",
+      "Evangelismo+",
+      "Voluntariado+",
+      "Ayuda social+",
+      "Cursos / institutos+",
+      "Conferencias+",
+      "Eventos familiares+",
+      "Actividades deportivas+",
+      "Confraternidades+",
+      "Obras Audiovisuales+",
+      "Bautismos+",
+      "Sin preferencia−",
+      "Añadir",
+      "Jóvenes+",
+      "Niños+",
+      "Matrimonios+",
+      "Familias+",
+      "Adultos mayores+",
+      "Música / alabanza+",
+      "Misiones+",
+      "Evangelismo+",
+      "Acción social+",
+      "Ayuda comunitaria+",
+      "Formación bíblica+",
+      "Consejería+",
+      "Deportes+",
+      "Streaming+",
+      "Oración+",
+      "Sin preferencia−",
+      "Añadir",
+      "Niños+",
+      "Adolescentes+",
+      "Jóvenes+",
+      "Adultos+",
+      "Adultos mayores+",
+      "Familias intergeneracionales+",
+      "Sin preferencia−",
+      "Añadir",
+      "Consultar información por mi cuenta+",
+      "Contar con orientación de bienvenida+",
+      "Contactar antes de visitar+",
+      "Por ahora no planeo una visita+",
+      "Sin preferencia−",
+      "Guardar configuración"
+    ],
+    "text": "← Volver a mi perfil\nA TU RITMO, CON MÁS DETALLE\nPreferencias de búsqueda\n\nAmplía tus preferencias cuando quieras. Marca “Usar este valor como una restricción” solo cuando sea indispensable; sin marcar, será una preferencia.\n\nTu identidad\nTu tradición\nTu ubicación\nTu identidad\n¿Cómo te identificas espiritualmente?\nCristiano/a\n+\nSolo creyente en Dios\n+\nNo me identifico con una religión\n+\nPertenezco a otra religión\n+\nNo creyente\n+\nOtro\n+\nPrefiero no responder\n−\n¿Qué buscas actualmente?\nEncontrar una comunidad\n+\nExplorar sin decidir todavía\n+\nCambiar de comunidad\n+\nConocer otras comunidades\n+\nTodavía no lo tengo claro\n−\nActividades\nReuniones de Alabanza\n+\nCampamentos\n+\nRetiros\n+\nEvangelismo\n+\nVoluntariado\n+\nAyuda social\n+\nCursos / institutos\n+\nConferencias\n+\nEventos familiares\n+\nActividades deportivas\n+\nConfraternidades\n+\nObras Audiovisuales\n+\nBautismos\n+\nSin preferencia\n−\nAñadir\nMinisterios o grupos\nJóvenes\n+\nNiños\n+\nMatrimonios\n+\nFamilias\n+\nAdultos mayores\n+\nMúsica / alabanza\n+\nMisiones\n+\nEvangelismo\n+\nAcción social\n+\nAyuda comunitaria\n+\nFormación bíblica\n+\nConsejería\n+\nDeportes\n+\nStreaming\n+\nOración\n+\nSin preferencia\n−\nAñadir\nPúblico con el que deseas participar\nNiños\n+\nAdolescentes\n+\nJóvenes\n+\nAdultos\n+\nAdultos mayores\n+\nFamilias intergeneracionales\n+\nSin preferencia\n−\nAñadir\n¿Cómo prefieres preparar una visita?\nConsultar información por mi cuenta\n+\nContar con orientación de bienvenida\n+\nContactar antes de visitar\n+\nPor ahora no planeo una visita\n+\nSin preferencia\n−\nTodo guardado\nGuardar configuración"
+  },
+  {
+    "name": "user-1-mobile",
+    "url": "#/configuracion",
+    "width": 390,
+    "height": 3604,
+    "overflow": false,
+    "headings": [
+      "Preferencias de búsqueda",
+      "Tu identidad"
+    ],
+    "buttons": [
+      "Tu identidad",
+      "Tu tradición",
+      "Tu ubicación",
+      "Cristiano/a+",
+      "Solo creyente en Dios+",
+      "No me identifico con una religión+",
+      "Pertenezco a otra religión+",
+      "No creyente+",
+      "Otro+",
+      "Prefiero no responder−",
+      "Encontrar una comunidad+",
+      "Explorar sin decidir todavía+",
+      "Cambiar de comunidad+",
+      "Conocer otras comunidades+",
+      "Todavía no lo tengo claro−",
+      "Reuniones de Alabanza+",
+      "Campamentos+",
+      "Retiros+",
+      "Evangelismo+",
+      "Voluntariado+",
+      "Ayuda social+",
+      "Cursos / institutos+",
+      "Conferencias+",
+      "Eventos familiares+",
+      "Actividades deportivas+",
+      "Confraternidades+",
+      "Obras Audiovisuales+",
+      "Bautismos+",
+      "Sin preferencia−",
+      "Añadir",
+      "Jóvenes+",
+      "Niños+",
+      "Matrimonios+",
+      "Familias+",
+      "Adultos mayores+",
+      "Música / alabanza+",
+      "Misiones+",
+      "Evangelismo+",
+      "Acción social+",
+      "Ayuda comunitaria+",
+      "Formación bíblica+",
+      "Consejería+",
+      "Deportes+",
+      "Streaming+",
+      "Oración+",
+      "Sin preferencia−",
+      "Añadir",
+      "Niños+",
+      "Adolescentes+",
+      "Jóvenes+",
+      "Adultos+",
+      "Adultos mayores+",
+      "Familias intergeneracionales+",
+      "Sin preferencia−",
+      "Añadir",
+      "Consultar información por mi cuenta+",
+      "Contar con orientación de bienvenida+",
+      "Contactar antes de visitar+",
+      "Por ahora no planeo una visita+",
+      "Sin preferencia−",
+      "Guardar configuración"
+    ],
+    "text": "← Volver a mi perfil\nA TU RITMO, CON MÁS DETALLE\nPreferencias de búsqueda\n\nAmplía tus preferencias cuando quieras. Marca “Usar este valor como una restricción” solo cuando sea indispensable; sin marcar, será una preferencia.\n\nTu identidad\nTu tradición\nTu ubicación\nTu identidad\n¿Cómo te identificas espiritualmente?\nCristiano/a\n+\nSolo creyente en Dios\n+\nNo me identifico con una religión\n+\nPertenezco a otra religión\n+\nNo creyente\n+\nOtro\n+\nPrefiero no responder\n−\n¿Qué buscas actualmente?\nEncontrar una comunidad\n+\nExplorar sin decidir todavía\n+\nCambiar de comunidad\n+\nConocer otras comunidades\n+\nTodavía no lo tengo claro\n−\nActividades\nReuniones de Alabanza\n+\nCampamentos\n+\nRetiros\n+\nEvangelismo\n+\nVoluntariado\n+\nAyuda social\n+\nCursos / institutos\n+\nConferencias\n+\nEventos familiares\n+\nActividades deportivas\n+\nConfraternidades\n+\nObras Audiovisuales\n+\nBautismos\n+\nSin preferencia\n−\nAñadir\nMinisterios o grupos\nJóvenes\n+\nNiños\n+\nMatrimonios\n+\nFamilias\n+\nAdultos mayores\n+\nMúsica / alabanza\n+\nMisiones\n+\nEvangelismo\n+\nAcción social\n+\nAyuda comunitaria\n+\nFormación bíblica\n+\nConsejería\n+\nDeportes\n+\nStreaming\n+\nOración\n+\nSin preferencia\n−\nAñadir\nPúblico con el que deseas participar\nNiños\n+\nAdolescentes\n+\nJóvenes\n+\nAdultos\n+\nAdultos mayores\n+\nFamilias intergeneracionales\n+\nSin preferencia\n−\nAñadir\n¿Cómo prefieres preparar una visita?\nConsultar información por mi cuenta\n+\nContar con orientación de bienvenida\n+\nContactar antes de visitar\n+\nPor ahora no planeo una visita\n+\nSin preferencia\n−\nTodo guardado\nGuardar configuración"
+  },
+  {
+    "name": "user-2-desktop",
+    "url": "#/cuenta",
+    "width": 1440,
+    "height": 869,
+    "overflow": false,
+    "headings": [
+      "Cambiar contraseña"
+    ],
+    "buttons": [
+      "Cambiar contraseña"
+    ],
+    "text": "← Mi perfil\nCambiar contraseña\n\nConfirma tu contraseña actual. Al cambiarla se cerrarán las sesiones abiertas.\n\nContraseña actual\nNueva contraseña\nConfirmar nueva contraseña\nAl menos 8 caracteres, hasta 72 bytes.\nCambiar contraseña"
+  },
+  {
+    "name": "user-2-mobile",
+    "url": "#/cuenta",
+    "width": 390,
+    "height": 911,
+    "overflow": false,
+    "headings": [
+      "Cambiar contraseña"
+    ],
+    "buttons": [
+      "Cambiar contraseña"
+    ],
+    "text": "← Mi perfil\nCambiar contraseña\n\nConfirma tu contraseña actual. Al cambiarla se cerrarán las sesiones abiertas.\n\nContraseña actual\nNueva contraseña\nConfirmar nueva contraseña\nAl menos 8 caracteres, hasta 72 bytes.\nCambiar contraseña"
+  },
+  {
+    "name": "user-3-desktop",
+    "url": "#/encuesta",
+    "width": 1440,
+    "height": 1353,
+    "overflow": false,
+    "headings": [
+      "Un primer paso.A tu manera.",
+      "Una comunidad cerca de tu vida."
+    ],
+    "buttons": [
+      "1Tu identidad",
+      "2Tu tradición",
+      "3Tu ubicación",
+      "Aún no sé dónde buscar",
+      "Prefiero no indicar una dirección",
+      "Sin preferencia de distancia",
+      "← Atrás",
+      "¡Empecemos!",
+      "Guardar y completar después"
+    ],
+    "text": "SOLO LO ESENCIAL\nUn primer paso.\nA tu manera.\n\nTres fases para empezar.\nEl resto puede esperar.\n\n1\nTu identidad\n2\nTu tradición\n3\nTu ubicación\nMás adelante podrás añadir intereses, actividades y otros detalles desde tu perfil.\nPASO 3 DE 3\nAvance guardado\nUna comunidad cerca de tu vida.\n\nIndica tu comuna. La dirección y la ubicación del dispositivo son opcionales.\n\nComuna de interés\nAún no sé dónde buscar\nDirección (opcional)\n\nIndica calle y número, sin departamento. Al guardar consultaremos Geoapify para comprobarla; tu dirección sigue siendo privada en Koinonía.\n\nPrefiero no indicar una dirección\nTu punto de partida\nActivar ubicación\nDistancia que te acomoda\nSin preferencia de distancia\nDistancia aproximada\n1 km\n50 km\n\nActiva la ubicación para ver distancias; puedes usar tu dirección o tu ubicación actual.\n\nSin preferencia de distancia\n← Atrás\n¡Empecemos!\nGuardar y completar después"
+  },
+  {
+    "name": "user-3-mobile",
+    "url": "#/encuesta",
+    "width": 390,
+    "height": 1504,
+    "overflow": false,
+    "headings": [
+      "Una comunidad cerca de tu vida."
+    ],
+    "buttons": [
+      "1Tu identidad",
+      "2Tu tradición",
+      "3Tu ubicación",
+      "Aún no sé dónde buscar",
+      "Prefiero no indicar una dirección",
+      "Sin preferencia de distancia",
+      "← Atrás",
+      "¡Empecemos!",
+      "Guardar y completar después"
+    ],
+    "text": "1\nTu identidad\n2\nTu tradición\n3\nTu ubicación\nPASO 3 DE 3\nAvance guardado\nUna comunidad cerca de tu vida.\n\nIndica tu comuna. La dirección y la ubicación del dispositivo son opcionales.\n\nComuna de interés\nAún no sé dónde buscar\nDirección (opcional)\n\nIndica calle y número, sin departamento. Al guardar consultaremos Geoapify para comprobarla; tu dirección sigue siendo privada en Koinonía.\n\nPrefiero no indicar una dirección\nTu punto de partida\nActivar ubicación\nDistancia que te acomoda\nSin preferencia de distancia\nDistancia aproximada\n1 km\n50 km\n\nActiva la ubicación para ver distancias; puedes usar tu dirección o tu ubicación actual.\n\nSin preferencia de distancia\n← Atrás\n¡Empecemos!\nGuardar y completar después"
+  },
+  {
+    "name": "user-4-desktop",
+    "url": "#/guardadas",
+    "width": 1440,
+    "height": 667,
+    "overflow": false,
+    "headings": [
+      "Iglesias guardadas",
+      "Aún no tienes iglesias guardadas"
+    ],
+    "buttons": [],
+    "text": "← Mi perfil\nTU SELECCIÓN PERSONAL\nIglesias guardadas\n\nReencuentra las comunidades que te interesan y consulta sus fichas.\n\nAún no tienes iglesias guardadas\n\nEn Para ti, pulsa Guardar en las comunidades que quieras volver a consultar.\n\nDescubrir comunidades"
+  },
+  {
+    "name": "user-4-mobile",
+    "url": "#/guardadas",
+    "width": 390,
+    "height": 774,
+    "overflow": false,
+    "headings": [
+      "Iglesias guardadas",
+      "Aún no tienes iglesias guardadas"
+    ],
+    "buttons": [],
+    "text": "← Mi perfil\nTU SELECCIÓN PERSONAL\nIglesias guardadas\n\nReencuentra las comunidades que te interesan y consulta sus fichas.\n\nAún no tienes iglesias guardadas\n\nEn Para ti, pulsa Guardar en las comunidades que quieras volver a consultar.\n\nDescubrir comunidades"
+  },
+  {
+    "name": "user-5-desktop",
+    "url": "#/amigos",
+    "width": 1440,
+    "height": 690,
+    "overflow": false,
+    "headings": [
+      "Amigos"
+    ],
+    "buttons": [
+      "Buscar usuario",
+      "Amigos",
+      "Solicitudes",
+      "Historial",
+      "Bloqueados",
+      "Anterior",
+      "Siguiente"
+    ],
+    "text": "TUS VÍNCULOS\nAmigos\nBuscar por nombre de usuario\nBuscar usuario\n\nAmigos\nSolicitudes\nHistorial\nBloqueados\n\nNo hay usuarios en esta sección.\n\nAnterior\nPágina 1\nSiguiente"
+  },
+  {
+    "name": "user-5-mobile",
+    "url": "#/amigos",
+    "width": 390,
+    "height": 717,
+    "overflow": false,
+    "headings": [
+      "Amigos"
+    ],
+    "buttons": [
+      "Buscar usuario",
+      "Amigos",
+      "Solicitudes",
+      "Historial",
+      "Bloqueados",
+      "Anterior",
+      "Siguiente"
+    ],
+    "text": "TUS VÍNCULOS\nAmigos\nBuscar por nombre de usuario\nBuscar usuario\n\nAmigos\nSolicitudes\nHistorial\nBloqueados\n\nNo hay usuarios en esta sección.\n\nAnterior\nPágina 1\nSiguiente"
+  },
+  {
+    "name": "user-6-desktop",
+    "url": "#/mis-eventos",
+    "width": 1440,
+    "height": 657,
+    "overflow": false,
+    "headings": [
+      "Mis eventos"
+    ],
+    "buttons": [
+      "Actualizar",
+      "Anterior",
+      "Siguiente"
+    ],
+    "text": "Mis eventos\n\nTu interés y tus intenciones de participación.\n\nExplorar eventos\nMostrar\nParticipación prevista\nHistorial y no disponibles\nActualizar\n\nNo tienes eventos en esta sección.\n\nAnterior\nPágina 1\nSiguiente"
+  },
+  {
+    "name": "user-6-mobile",
+    "url": "#/mis-eventos",
+    "width": 390,
+    "height": 648,
+    "overflow": false,
+    "headings": [
+      "Mis eventos"
+    ],
+    "buttons": [
+      "Actualizar",
+      "Anterior",
+      "Siguiente"
+    ],
+    "text": "Mis eventos\n\nTu interés y tus intenciones de participación.\n\nExplorar eventos\nMostrar\nParticipación prevista\nHistorial y no disponibles\nActualizar\n\nNo tienes eventos en esta sección.\n\nAnterior\nPágina 1\nSiguiente"
+  },
+  {
+    "name": "user-7-desktop",
+    "url": "#/visitas",
+    "width": 1440,
+    "height": 498,
+    "overflow": false,
+    "headings": [
+      "Mis visitas"
+    ],
+    "buttons": [
+      "Próximas",
+      "Historial",
+      "Actualizar",
+      "Anterior",
+      "Siguiente"
+    ],
+    "text": "Mis visitas\n\nConsulta tus avisos, cancela una visita o revisa tu historial.\n\nPróximas\nHistorial\nActualizar\n\nNo hay avisos en esta sección.\n\nAnterior\nPágina 1\nSiguiente"
+  },
+  {
+    "name": "user-7-mobile",
+    "url": "#/visitas",
+    "width": 390,
+    "height": 529,
+    "overflow": false,
+    "headings": [
+      "Mis visitas"
+    ],
+    "buttons": [
+      "Próximas",
+      "Historial",
+      "Actualizar",
+      "Anterior",
+      "Siguiente"
+    ],
+    "text": "Mis visitas\n\nConsulta tus avisos, cancela una visita o revisa tu historial.\n\nPróximas\nHistorial\nActualizar\n\nNo hay avisos en esta sección.\n\nAnterior\nPágina 1\nSiguiente"
+  },
+  {
+    "name": "user-8-desktop",
+    "url": "#/notificaciones",
+    "width": 1440,
+    "height": 474,
+    "overflow": false,
+    "headings": [
+      "Notificaciones"
+    ],
+    "buttons": [
+      "Actualizar",
+      "Anterior",
+      "Siguiente"
+    ],
+    "text": "Notificaciones\n\nSolicitudes de amistad, eventos y avisos de primeras visitas.\n\nActualizar\n\nNo tienes notificaciones.\n\nAnterior\n0 sin leer · Página 1\nSiguiente"
+  },
+  {
+    "name": "user-8-mobile",
+    "url": "#/notificaciones",
+    "width": 390,
+    "height": 505,
+    "overflow": false,
+    "headings": [
+      "Notificaciones"
+    ],
+    "buttons": [
+      "Actualizar",
+      "Anterior",
+      "Siguiente"
+    ],
+    "text": "Notificaciones\n\nSolicitudes de amistad, eventos y avisos de primeras visitas.\n\nActualizar\n\nNo tienes notificaciones.\n\nAnterior\n0 sin leer · Página 1\nSiguiente"
+  },
+  {
+    "name": "representative-0-desktop",
+    "url": "#/administracion",
+    "width": 1440,
+    "height": 948,
+    "overflow": false,
+    "headings": [
+      "Mis comunidades",
+      "Iglesia Camino de Esperanza"
+    ],
+    "buttons": [
+      "Buscar comunidades",
+      "Administrar Iglesia Camino de Esperanza →",
+      "Anterior",
+      "Siguiente"
+    ],
+    "text": "CUIDEMOS LA INFORMACIÓN\nMis comunidades\n\nConsulta y actualiza las comunidades que tienes asignadas.\n\nNombre\nComuna\nDenominación\nPublicación\nSin información\nBorrador\nPublicada\nVerificada\nEstado\nActivas\nInactivas\nTodas\nBuscar comunidades\n\n1 comunidades administrables\n\nIglesia Camino de Esperanza\n\nProvidencia · Bautista\n\nVerificada · Activa\nAdministrar\nIglesia Camino de Esperanza\n→\nAnterior\nPágina 1 de 1\nSiguiente"
+  },
+  {
+    "name": "representative-0-mobile",
+    "url": "#/administracion",
+    "width": 390,
+    "height": 1331,
+    "overflow": false,
+    "headings": [
+      "Mis comunidades",
+      "Iglesia Camino de Esperanza"
+    ],
+    "buttons": [
+      "Buscar comunidades",
+      "Administrar Iglesia Camino de Esperanza →",
+      "Anterior",
+      "Siguiente"
+    ],
+    "text": "CUIDEMOS LA INFORMACIÓN\nMis comunidades\n\nConsulta y actualiza las comunidades que tienes asignadas.\n\nNombre\nComuna\nDenominación\nPublicación\nSin información\nBorrador\nPublicada\nVerificada\nEstado\nActivas\nInactivas\nTodas\nBuscar comunidades\n\n1 comunidades administrables\n\nIglesia Camino de Esperanza\n\nProvidencia · Bautista\n\nVerificada · Activa\nAdministrar\nIglesia Camino de Esperanza\n→\nAnterior\nPágina 1 de 1\nSiguiente"
+  },
+  {
+    "name": "representative-church-editor",
+    "url": "#/administracion",
+    "width": 1440,
+    "height": 1981,
+    "overflow": false,
+    "headings": [
+      "Iglesia Camino de Esperanza",
+      "Identificación",
+      "Publicación y verificación"
+    ],
+    "buttons": [
+      "← Volver a comunidades",
+      "Ficha de la iglesia",
+      "Comunidades vinculadas",
+      "Eventos",
+      "Vista previa del perfil",
+      "Preparación de la ficha · 81% completado",
+      "Identificación · 2/2",
+      "Ubicación · 3/3",
+      "Identidad cristiana · 3/3",
+      "Doctrina · 2/2",
+      "Reuniones · 2/2",
+      "Comunidad · 2/3",
+      "Liderazgo y contacto · 2/2",
+      "Primera visita · 1/1",
+      "Validación y multimedia · 0/3",
+      "Identificación",
+      "Ubicación",
+      "Identidad cristiana",
+      "Doctrina",
+      "Reuniones",
+      "Comunidad",
+      "Liderazgo y contacto",
+      "Primera visita",
+      "Validación y multimedia",
+      "Entendido",
+      "Mantener visible",
+      "No mostrar más ayudas",
+      "Guardar ficha",
+      "Pasar a borrador",
+      "Publicar"
+    ],
+    "text": "← Volver a comunidades\nADMINISTRACIÓN DE COMUNIDAD\nIglesia Camino de Esperanza\n\nVerificada · Activa · Versión 1\n\nRepresentante\nFicha de la iglesia\nComunidades vinculadas\nEventos\nVista previa del perfil\nPreparación de la ficha · 81% completado\nIdentificación\nUbicación\nIdentidad cristiana\nDoctrina\nReuniones\nComunidad\nLiderazgo y contacto\nPrimera visita\nValidación y multimedia\nIdentificación\nTu primera edición\n\nCompleta la ficha por secciones y guarda tus cambios. La vista previa permite revisar cómo se verá. Si aún no se ha publicado, solicita su publicación al terminar.\n\nEntendido\nMantener visible\nNo mostrar más ayudas\nNombre de la iglesia *\nAbreviación\nAño de fundación\nDescripción\nCaracterísticas distintivas\nSin cambios pendientes\nGuardar ficha\n\nGuardar conserva la visibilidad actual. Si estaba verificada, quedará publicada hasta una nueva verificación.\n\nPublicación y verificación\n\nEsta comunidad ya fue publicada por un administrador. Puedes gestionar su visibilidad.\n\nPasar a borradorPublicar"
+  },
+  {
+    "name": "representative-church-section-0",
+    "url": "#/administracion",
+    "width": 1440,
+    "height": 1981,
+    "overflow": false,
+    "headings": [
+      "Iglesia Camino de Esperanza",
+      "Identificación",
+      "Publicación y verificación"
+    ],
+    "buttons": [
+      "← Volver a comunidades",
+      "Ficha de la iglesia",
+      "Comunidades vinculadas",
+      "Eventos",
+      "Vista previa del perfil",
+      "Preparación de la ficha · 81% completado",
+      "Identificación · 2/2",
+      "Ubicación · 3/3",
+      "Identidad cristiana · 3/3",
+      "Doctrina · 2/2",
+      "Reuniones · 2/2",
+      "Comunidad · 2/3",
+      "Liderazgo y contacto · 2/2",
+      "Primera visita · 1/1",
+      "Validación y multimedia · 0/3",
+      "Identificación",
+      "Ubicación",
+      "Identidad cristiana",
+      "Doctrina",
+      "Reuniones",
+      "Comunidad",
+      "Liderazgo y contacto",
+      "Primera visita",
+      "Validación y multimedia",
+      "Entendido",
+      "Mantener visible",
+      "No mostrar más ayudas",
+      "Guardar ficha",
+      "Pasar a borrador",
+      "Publicar"
+    ],
+    "text": "← Volver a comunidades\nADMINISTRACIÓN DE COMUNIDAD\nIglesia Camino de Esperanza\n\nVerificada · Activa · Versión 1\n\nRepresentante\nFicha de la iglesia\nComunidades vinculadas\nEventos\nVista previa del perfil\nPreparación de la ficha · 81% completado\nIdentificación\nUbicación\nIdentidad cristiana\nDoctrina\nReuniones\nComunidad\nLiderazgo y contacto\nPrimera visita\nValidación y multimedia\nIdentificación\nTu primera edición\n\nCompleta la ficha por secciones y guarda tus cambios. La vista previa permite revisar cómo se verá. Si aún no se ha publicado, solicita su publicación al terminar.\n\nEntendido\nMantener visible\nNo mostrar más ayudas\nNombre de la iglesia *\nAbreviación\nAño de fundación\nDescripción\nCaracterísticas distintivas\nSin cambios pendientes\nGuardar ficha\n\nGuardar conserva la visibilidad actual. Si estaba verificada, quedará publicada hasta una nueva verificación.\n\nPublicación y verificación\n\nEsta comunidad ya fue publicada por un administrador. Puedes gestionar su visibilidad.\n\nPasar a borradorPublicar"
+  },
+  {
+    "name": "representative-church-section-1",
+    "url": "#/administracion",
+    "width": 1440,
+    "height": 2423,
+    "overflow": false,
+    "headings": [
+      "Iglesia Camino de Esperanza",
+      "Ubicación",
+      "Publicación y verificación"
+    ],
+    "buttons": [
+      "← Volver a comunidades",
+      "Ficha de la iglesia",
+      "Comunidades vinculadas",
+      "Eventos",
+      "Vista previa del perfil",
+      "Preparación de la ficha · 81% completado",
+      "Identificación · 2/2",
+      "Ubicación · 3/3",
+      "Identidad cristiana · 3/3",
+      "Doctrina · 2/2",
+      "Reuniones · 2/2",
+      "Comunidad · 2/3",
+      "Liderazgo y contacto · 2/2",
+      "Primera visita · 1/1",
+      "Validación y multimedia · 0/3",
+      "Identificación",
+      "Ubicación",
+      "Identidad cristiana",
+      "Doctrina",
+      "Reuniones",
+      "Comunidad",
+      "Liderazgo y contacto",
+      "Primera visita",
+      "Validación y multimedia",
+      "Coordenadas verificadas (opcional)",
+      "Guardar ficha",
+      "Pasar a borrador",
+      "Publicar"
+    ],
+    "text": "← Volver a comunidades\nADMINISTRACIÓN DE COMUNIDAD\nIglesia Camino de Esperanza\n\nVerificada · Activa · Versión 1\n\nRepresentante\nFicha de la iglesia\nComunidades vinculadas\nEventos\nVista previa del perfil\nPreparación de la ficha · 81% completado\nIdentificación\nUbicación\nIdentidad cristiana\nDoctrina\nReuniones\nComunidad\nLiderazgo y contacto\nPrimera visita\nValidación y multimedia\nUbicación\nDirección\nComuna *\nCiudad\nRegión\nCódigo postal\nEstacionamiento\nSin información\nSí\nNo\nSegún disponibilidad del sector\nNo sabe\nAccesibilidad para personas con movilidad reducida\nSin información\nSí\nNo\nParcialmente\nNo sabe\nOcultar del perfil público\nIndicaciones para llegar\n\nMarca en el mapa la ubicación de la iglesia. Es la ubicación pública de la comunidad.\n\n✝\n+\n−\n Leaflet | © OpenStreetMap\n\nUbicación seleccionada\n\nCoordenadas verificadas (opcional)\nSin cambios pendientes\nGuardar ficha\n\nGuardar conserva la visibilidad actual. Si estaba verificada, quedará publicada hasta una nueva verificación.\n\nPublicación y verificación\n\nEsta comunidad ya fue publicada por un administrador. Puedes gestionar su visibilidad.\n\nPasar a borradorPublicar"
+  },
+  {
+    "name": "representative-church-section-2",
+    "url": "#/administracion",
+    "width": 1440,
+    "height": 1933,
+    "overflow": false,
+    "headings": [
+      "Iglesia Camino de Esperanza",
+      "Identidad cristiana",
+      "Publicación y verificación"
+    ],
+    "buttons": [
+      "← Volver a comunidades",
+      "Ficha de la iglesia",
+      "Comunidades vinculadas",
+      "Eventos",
+      "Vista previa del perfil",
+      "Preparación de la ficha · 81% completado",
+      "Identificación · 2/2",
+      "Ubicación · 3/3",
+      "Identidad cristiana · 3/3",
+      "Doctrina · 2/2",
+      "Reuniones · 2/2",
+      "Comunidad · 2/3",
+      "Liderazgo y contacto · 2/2",
+      "Primera visita · 1/1",
+      "Validación y multimedia · 0/3",
+      "Identificación",
+      "Ubicación",
+      "Identidad cristiana",
+      "Doctrina",
+      "Reuniones",
+      "Comunidad",
+      "Liderazgo y contacto",
+      "Primera visita",
+      "Validación y multimedia",
+      "Entendido",
+      "Mantener visible",
+      "No mostrar más ayudas",
+      "Añadir opción",
+      "Guardar ficha",
+      "Pasar a borrador",
+      "Publicar"
+    ],
+    "text": "← Volver a comunidades\nADMINISTRACIÓN DE COMUNIDAD\nIglesia Camino de Esperanza\n\nVerificada · Activa · Versión 1\n\nRepresentante\nFicha de la iglesia\nComunidades vinculadas\nEventos\nVista previa del perfil\nPreparación de la ficha · 81% completado\nIdentificación\nUbicación\nIdentidad cristiana\nDoctrina\nReuniones\nComunidad\nLiderazgo y contacto\nPrimera visita\nValidación y multimedia\nIdentidad cristiana\nRama, denominación y red\n\nLa rama es la tradición general; la denominación es más específica. Por ejemplo: Protestante → Bautista. En red, indica la asociación a la que pertenece la iglesia, si corresponde.\n\nEntendido\nMantener visible\nNo mostrar más ayudas\nRama\nDenominación\nTradición vinculada\nInstitución, asociación o red\nIdiomas\nEspañol\nInglés\nAñadir opción\nSin cambios pendientes\nGuardar ficha\n\nGuardar conserva la visibilidad actual. Si estaba verificada, quedará publicada hasta una nueva verificación.\n\nPublicación y verificación\n\nEsta comunidad ya fue publicada por un administrador. Puedes gestionar su visibilidad.\n\nPasar a borradorPublicar"
+  },
+  {
+    "name": "representative-church-section-3",
+    "url": "#/administracion",
+    "width": 1440,
+    "height": 2233,
+    "overflow": false,
+    "headings": [
+      "Iglesia Camino de Esperanza",
+      "Doctrina",
+      "Publicación y verificación"
+    ],
+    "buttons": [
+      "← Volver a comunidades",
+      "Ficha de la iglesia",
+      "Comunidades vinculadas",
+      "Eventos",
+      "Vista previa del perfil",
+      "Preparación de la ficha · 81% completado",
+      "Identificación · 2/2",
+      "Ubicación · 3/3",
+      "Identidad cristiana · 3/3",
+      "Doctrina · 2/2",
+      "Reuniones · 2/2",
+      "Comunidad · 2/3",
+      "Liderazgo y contacto · 2/2",
+      "Primera visita · 1/1",
+      "Validación y multimedia · 0/3",
+      "Identificación",
+      "Ubicación",
+      "Identidad cristiana",
+      "Doctrina",
+      "Reuniones",
+      "Comunidad",
+      "Liderazgo y contacto",
+      "Primera visita",
+      "Validación y multimedia",
+      "Entendido",
+      "Mantener visible",
+      "No mostrar más ayudas",
+      "Añadir opción",
+      "Guardar ficha",
+      "Pasar a borrador",
+      "Publicar"
+    ],
+    "text": "← Volver a comunidades\nADMINISTRACIÓN DE COMUNIDAD\nIglesia Camino de Esperanza\n\nVerificada · Activa · Versión 1\n\nRepresentante\nFicha de la iglesia\nComunidades vinculadas\nEventos\nVista previa del perfil\nPreparación de la ficha · 81% completado\nIdentificación\nUbicación\nIdentidad cristiana\nDoctrina\nReuniones\nComunidad\nLiderazgo y contacto\nPrimera visita\nValidación y multimedia\nDoctrina\nCreencias sin adivinar\n\nUsa la declaración oficial de tu comunidad. Soteriología se refiere a la salvación; escatología, a los acontecimientos finales. Si no conoces una postura, déjala vacía. “Ocultar del perfil público” evita mostrar ese dato.\n\nEntendido\nMantener visible\nNo mostrar más ayudas\nDeclaración oficial de creencias y valores\nDoctrina y prácticas\nAutoridad de las Escrituras\nSacramentos / ordenanzas\nBautismo infantil\nBautismo de creyentes\nSanta Cena\nEucaristía\nPredicación\nCulto litúrgico\nCulto contemporáneo\nPrácticas carismáticas\nEvangelización\nMisiones\nFormación bíblica\nTrinidad\nAutoridad de la Biblia\nAñadir opción\nPostura soteriológica\nOcultar del perfil público\nPostura escatológica\nOcultar del perfil público\nSin cambios pendientes\nGuardar ficha\n\nGuardar conserva la visibilidad actual. Si estaba verificada, quedará publicada hasta una nueva verificación.\n\nPublicación y verificación\n\nEsta comunidad ya fue publicada por un administrador. Puedes gestionar su visibilidad.\n\nPasar a borradorPublicar"
+  },
+  {
+    "name": "representative-church-section-4",
+    "url": "#/administracion",
+    "width": 1440,
+    "height": 2975,
+    "overflow": false,
+    "headings": [
+      "Iglesia Camino de Esperanza",
+      "Reuniones",
+      "Publicación y verificación"
+    ],
+    "buttons": [
+      "← Volver a comunidades",
+      "Ficha de la iglesia",
+      "Comunidades vinculadas",
+      "Eventos",
+      "Vista previa del perfil",
+      "Preparación de la ficha · 81% completado",
+      "Identificación · 2/2",
+      "Ubicación · 3/3",
+      "Identidad cristiana · 3/3",
+      "Doctrina · 2/2",
+      "Reuniones · 2/2",
+      "Comunidad · 2/3",
+      "Liderazgo y contacto · 2/2",
+      "Primera visita · 1/1",
+      "Validación y multimedia · 0/3",
+      "Identificación",
+      "Ubicación",
+      "Identidad cristiana",
+      "Doctrina",
+      "Reuniones",
+      "Comunidad",
+      "Liderazgo y contacto",
+      "Primera visita",
+      "Validación y multimedia",
+      "Entendido",
+      "Mantener visible",
+      "No mostrar más ayudas",
+      "Añadir opción",
+      "Quitar horario 1",
+      "Añadir horario",
+      "Quitar reunión 1",
+      "Añadir reunión",
+      "Guardar ficha",
+      "Pasar a borrador",
+      "Publicar"
+    ],
+    "text": "← Volver a comunidades\nADMINISTRACIÓN DE COMUNIDAD\nIglesia Camino de Esperanza\n\nVerificada · Activa · Versión 1\n\nRepresentante\nFicha de la iglesia\nComunidades vinculadas\nEventos\nVista previa del perfil\nPreparación de la ficha · 81% completado\nIdentificación\nUbicación\nIdentidad cristiana\nDoctrina\nReuniones\nComunidad\nLiderazgo y contacto\nPrimera visita\nValidación y multimedia\nReuniones\nTipos de reunión y horarios\n\nMarca los tipos de reuniones que existen, aunque no tengas todos sus horarios. Luego añade los que conozcas: por ejemplo, Culto · Domingo · 11:00. No es necesario registrar cada célula para indicar que hay grupos pequeños.\n\nEntendido\nMantener visible\nNo mostrar más ayudas\nTipos de reuniones de la comunidad\nCulto principal\nMisa\nEstudio bíblico\nReunión de jóvenes\nReunión de oración\nEscuela dominical\nGrupo pequeño / célula\nAñadir opción\n\nPuedes declarar estos tipos sin completar horarios. Los horarios se añaden por separado.\n\nAñade cada tipo de reunión y sus horarios. La duración se guarda en minutos. Para avisos de primera visita se usan horarios semanales presenciales o híbridos. Las reuniones quincenales, mensuales y ocasionales se coordinan por los canales oficiales. En reuniones antiguas sin frecuencia seleccionada conservamos la interpretación de sus notas.\n\nReunión 1\nTipo de reunión *\nPúblico objetivo\nModalidad\nSin información\nPresencial\nOnline\nHíbrida\nDirección o enlace de reunión\nFrecuencia\nSin información\nSemanal\nQuincenal\nMensual\nOcasional\nPermitir avisos de primera visita\nIndicaciones y variaciones del horario\nDía\nSin información\nLunes\nMartes\nMiércoles\nJueves\nViernes\nSábado\nDomingo\nHora\nDuración (minutos)\nQuitar horario 1\nAñadir horario\nQuitar reunión 1\nAñadir reunión\nSin cambios pendientes\nGuardar ficha\n\nGuardar conserva la visibilidad actual. Si estaba verificada, quedará publicada hasta una nueva verificación.\n\nPublicación y verificación\n\nEsta comunidad ya fue publicada por un administrador. Puedes gestionar su visibilidad.\n\nPasar a borradorPublicar"
+  },
+  {
+    "name": "representative-church-section-5",
+    "url": "#/administracion",
+    "width": 1440,
+    "height": 3055,
+    "overflow": false,
+    "headings": [
+      "Iglesia Camino de Esperanza",
+      "Comunidad",
+      "Publicación y verificación"
+    ],
+    "buttons": [
+      "← Volver a comunidades",
+      "Ficha de la iglesia",
+      "Comunidades vinculadas",
+      "Eventos",
+      "Vista previa del perfil",
+      "Preparación de la ficha · 81% completado",
+      "Identificación · 2/2",
+      "Ubicación · 3/3",
+      "Identidad cristiana · 3/3",
+      "Doctrina · 2/2",
+      "Reuniones · 2/2",
+      "Comunidad · 2/3",
+      "Liderazgo y contacto · 2/2",
+      "Primera visita · 1/1",
+      "Validación y multimedia · 0/3",
+      "Identificación",
+      "Ubicación",
+      "Identidad cristiana",
+      "Doctrina",
+      "Reuniones",
+      "Comunidad",
+      "Liderazgo y contacto",
+      "Primera visita",
+      "Validación y multimedia",
+      "Entendido",
+      "Mantener visible",
+      "No mostrar más ayudas",
+      "Añadir opción",
+      "Añadir opción",
+      "Añadir opción",
+      "Guardar ficha",
+      "Pasar a borrador",
+      "Publicar"
+    ],
+    "text": "← Volver a comunidades\nADMINISTRACIÓN DE COMUNIDAD\nIglesia Camino de Esperanza\n\nVerificada · Activa · Versión 1\n\nRepresentante\nFicha de la iglesia\nComunidades vinculadas\nEventos\nVista previa del perfil\nPreparación de la ficha · 81% completado\nIdentificación\nUbicación\nIdentidad cristiana\nDoctrina\nReuniones\nComunidad\nLiderazgo y contacto\nPrimera visita\nValidación y multimedia\nComunidad\nAsí se vive la comunidad\n\nPuedes elegir varios estilos musicales y las actividades que realmente ofrecen. Por ejemplo: Himnodia Clásica y Góspel; campamentos y ayuda social. Las casillas de privacidad controlan si los estilos se muestran públicamente.\n\nEntendido\nMantener visible\nNo mostrar más ayudas\nEstilos musicales\nTradicional / Litúrgica\nHimnodia Clásica\nGóspel\nMúsica Cristiana Contemporánea (MCC) / Worship\nGéneros Urbanos y Alternativos\n\nVisibilidad de los estilos musicales\n\nOcultar del perfil público\nEstilo cultural\nSin información\nEstilo Litúrgico (Tradición, Sacramento e Historia — Vestimenta Formal / Vestiduras Sagradas)\nEstilo Conservador (Santidad externa y Separación del mundo — Vestimenta Formal y de alta modestia)\nEstilo Moderado (Decoro, Sencillez y Orden Social — Ropa casual o Semiformal)\nEstilo Contemporáneo (Gracia, Inclusión y Relevancia Cultural — Vestimenta Libre e Informal)\nOcultar del perfil público\nRango de miembros\nMinisterios\nJóvenes\nNiños\nMatrimonios\nFamilias\nAdultos mayores\nMúsica / alabanza\nMisiones\nEvangelismo\nAcción social\nAyuda comunitaria\nFormación bíblica\nConsejería\nDeportes\nStreaming\nOración\nAñadir opción\nActividades\nReuniones de Alabanza\nCampamentos\nRetiros\nEvangelismo\nVoluntariado\nAyuda social\nCursos / institutos\nConferencias\nEventos familiares\nActividades deportivas\nConfraternidades\nObras Audiovisuales\nBautismos\nEstudio bíblico\nAñadir opción\nGrupos etarios\nNiños\nAdolescentes\nJóvenes\nAdultos\nAdultos mayores\nFamilias intergeneracionales\nAñadir opción\nDescripción de actividades comunitarias\nSin cambios pendientes\nGuardar ficha\n\nGuardar conserva la visibilidad actual. Si estaba verificada, quedará publicada hasta una nueva verificación.\n\nPublicación y verificación\n\nEsta comunidad ya fue publicada por un administrador. Puedes gestionar su visibilidad.\n\nPasar a borradorPublicar"
+  },
+  {
+    "name": "representative-church-section-6",
+    "url": "#/administracion",
+    "width": 1440,
+    "height": 2640,
+    "overflow": false,
+    "headings": [
+      "Iglesia Camino de Esperanza",
+      "Liderazgo y contacto",
+      "Otros responsables",
+      "Publicación y verificación"
+    ],
+    "buttons": [
+      "← Volver a comunidades",
+      "Ficha de la iglesia",
+      "Comunidades vinculadas",
+      "Eventos",
+      "Vista previa del perfil",
+      "Preparación de la ficha · 81% completado",
+      "Identificación · 2/2",
+      "Ubicación · 3/3",
+      "Identidad cristiana · 3/3",
+      "Doctrina · 2/2",
+      "Reuniones · 2/2",
+      "Comunidad · 2/3",
+      "Liderazgo y contacto · 2/2",
+      "Primera visita · 1/1",
+      "Validación y multimedia · 0/3",
+      "Identificación",
+      "Ubicación",
+      "Identidad cristiana",
+      "Doctrina",
+      "Reuniones",
+      "Comunidad",
+      "Liderazgo y contacto",
+      "Primera visita",
+      "Validación y multimedia",
+      "Entendido",
+      "Mantener visible",
+      "No mostrar más ayudas",
+      "Quitar responsable 1",
+      "Añadir responsable",
+      "Guardar ficha",
+      "Pasar a borrador",
+      "Publicar"
+    ],
+    "text": "← Volver a comunidades\nADMINISTRACIÓN DE COMUNIDAD\nIglesia Camino de Esperanza\n\nVerificada · Activa · Versión 1\n\nRepresentante\nFicha de la iglesia\nComunidades vinculadas\nEventos\nVista previa del perfil\nPreparación de la ficha · 81% completado\nIdentificación\nUbicación\nIdentidad cristiana\nDoctrina\nReuniones\nComunidad\nLiderazgo y contacto\nPrimera visita\nValidación y multimedia\nLiderazgo y contacto\nPersonas y canales de contacto\n\nEscribe el nombre y cargo de cada líder: por ejemplo, Ana Pérez · Líder de jóvenes. Guarda antes de asociarle una foto en multimedia. Estos datos de presentación no crean cuentas ni conceden permisos de administración.\n\nEntendido\nMantener visible\nNo mostrar más ayudas\nNombre de autoridad principal\nCargo de autoridad principal\nSitio web\nInstagram\nFacebook\nYouTube\nCorreo institucional\nOcultar del perfil público\nTeléfono institucional\nOcultar del perfil público\nOtros responsables\nResponsable 1\nNombre\nCargo\nQuitar responsable 1\nAñadir responsable\nSin cambios pendientes\nGuardar ficha\n\nGuardar conserva la visibilidad actual. Si estaba verificada, quedará publicada hasta una nueva verificación.\n\nPublicación y verificación\n\nEsta comunidad ya fue publicada por un administrador. Puedes gestionar su visibilidad.\n\nPasar a borradorPublicar"
+  },
+  {
+    "name": "representative-church-section-7",
+    "url": "#/administracion",
+    "width": 1440,
+    "height": 1615,
+    "overflow": false,
+    "headings": [
+      "Iglesia Camino de Esperanza",
+      "Primera visita",
+      "Publicación y verificación"
+    ],
+    "buttons": [
+      "← Volver a comunidades",
+      "Ficha de la iglesia",
+      "Comunidades vinculadas",
+      "Eventos",
+      "Vista previa del perfil",
+      "Preparación de la ficha · 81% completado",
+      "Identificación · 2/2",
+      "Ubicación · 3/3",
+      "Identidad cristiana · 3/3",
+      "Doctrina · 2/2",
+      "Reuniones · 2/2",
+      "Comunidad · 2/3",
+      "Liderazgo y contacto · 2/2",
+      "Primera visita · 1/1",
+      "Validación y multimedia · 0/3",
+      "Identificación",
+      "Ubicación",
+      "Identidad cristiana",
+      "Doctrina",
+      "Reuniones",
+      "Comunidad",
+      "Liderazgo y contacto",
+      "Primera visita",
+      "Validación y multimedia",
+      "Guardar ficha",
+      "Pasar a borrador",
+      "Publicar"
+    ],
+    "text": "← Volver a comunidades\nADMINISTRACIÓN DE COMUNIDAD\nIglesia Camino de Esperanza\n\nVerificada · Activa · Versión 1\n\nRepresentante\nFicha de la iglesia\nComunidades vinculadas\nEventos\nVista previa del perfil\nPreparación de la ficha · 81% completado\nIdentificación\nUbicación\nIdentidad cristiana\nDoctrina\nReuniones\nComunidad\nLiderazgo y contacto\nPrimera visita\nValidación y multimedia\nPrimera visita\nRecibir avisos de primera visita (notificaciones internas)\nIndicaciones para nuevos asistentes\nAcompañamiento a personas nuevas\nSin información\nSí\nNo\nParcialmente\nNo sabe\nProceso de bienvenida\nSin cambios pendientes\nGuardar ficha\n\nGuardar conserva la visibilidad actual. Si estaba verificada, quedará publicada hasta una nueva verificación.\n\nPublicación y verificación\n\nEsta comunidad ya fue publicada por un administrador. Puedes gestionar su visibilidad.\n\nPasar a borradorPublicar"
+  },
+  {
+    "name": "representative-church-section-8",
+    "url": "#/administracion",
+    "width": 1440,
+    "height": 2428,
+    "overflow": false,
+    "headings": [
+      "Iglesia Camino de Esperanza",
+      "Validación y multimedia",
+      "Subir foto de la comunidad",
+      "Fotos y videos",
+      "Publicación y verificación"
+    ],
+    "buttons": [
+      "← Volver a comunidades",
+      "Ficha de la iglesia",
+      "Comunidades vinculadas",
+      "Eventos",
+      "Vista previa del perfil",
+      "Preparación de la ficha · 81% completado",
+      "Identificación · 2/2",
+      "Ubicación · 3/3",
+      "Identidad cristiana · 3/3",
+      "Doctrina · 2/2",
+      "Reuniones · 2/2",
+      "Comunidad · 2/3",
+      "Liderazgo y contacto · 2/2",
+      "Primera visita · 1/1",
+      "Validación y multimedia · 0/3",
+      "Identificación",
+      "Ubicación",
+      "Identidad cristiana",
+      "Doctrina",
+      "Reuniones",
+      "Comunidad",
+      "Liderazgo y contacto",
+      "Primera visita",
+      "Validación y multimedia",
+      "Entendido",
+      "Mantener visible",
+      "No mostrar más ayudas",
+      "Añadir enlace externo",
+      "Guardar ficha",
+      "Pasar a borrador",
+      "Publicar"
+    ],
+    "text": "← Volver a comunidades\nADMINISTRACIÓN DE COMUNIDAD\nIglesia Camino de Esperanza\n\nVerificada · Activa · Versión 1\n\nRepresentante\nFicha de la iglesia\nComunidades vinculadas\nEventos\nVista previa del perfil\nPreparación de la ficha · 81% completado\nIdentificación\nUbicación\nIdentidad cristiana\nDoctrina\nReuniones\nComunidad\nLiderazgo y contacto\nPrimera visita\nValidación y multimedia\nValidación y multimedia\nCada foto tiene su lugar\n\nElige la categoría antes de subir: instalaciones, reuniones, actividades, representantes o banner. Para un retrato, selecciona un líder ya guardado y ajusta el recorte. Puedes subir hasta 7 fotos. En fuente, indica de dónde viene la información, por ejemplo: Secretaría de la iglesia.\n\nEntendido\nMantener visible\nNo mostrar más ayudas\nNombre del informante\nCargo del informante\nFuente de la información\nAutorización para uso informativo\nSubir foto de la comunidad\n\nJPEG, PNG o WebP; hasta 5 MB y siete fotos. Prepara el recorte antes de subir. La publicación se administra por separado.\n\nPresentación de la nueva foto\nInstalaciones\nReuniones\nEventos, actividades y recuerdos\nRepresentantes, pastores y líderes\nBanner\nMarco de la nueva foto\nHorizontal · 3:2\nPanorámico · 16:9\nCuadrado · 1:1\nVertical · 4:5\nSeleccionar foto\nFotos y videos\n\nLas fotos se muestran en su sección; el primer banner será la portada en Para ti. Arrastra las miniaturas para cambiar el orden; también puedes enfocarlas y usar las flechas del teclado. Guarda para conservar el orden. El original se conserva.\n\nAñadir enlace externo\n\n“Eliminar” retira el recurso sin descartar tus otros cambios pendientes. “Quitar de la ficha” solo retira el enlace al guardar y conserva el archivo remoto.\n\nSin cambios pendientes\nGuardar ficha\n\nGuardar conserva la visibilidad actual. Si estaba verificada, quedará publicada hasta una nueva verificación.\n\nPublicación y verificación\n\nEsta comunidad ya fue publicada por un administrador. Puedes gestionar su visibilidad.\n\nPasar a borradorPublicar"
+  },
+  {
+    "name": "representative-Comunidades vinculadas",
+    "url": "#/administracion",
+    "width": 1440,
+    "height": 981,
+    "overflow": false,
+    "headings": [
+      "Iglesia Camino de Esperanza",
+      "Comunidades vinculadas",
+      "Jóvenes con propósito"
+    ],
+    "buttons": [
+      "Ficha de la iglesia",
+      "Comunidades vinculadas",
+      "Eventos",
+      "Crear comunidad vinculada",
+      "Aplicar filtros",
+      "Administrar Jóvenes con propósito",
+      "Anterior",
+      "Siguiente"
+    ],
+    "text": "Ficha de la iglesia\nComunidades vinculadas\nEventos\nIGLESIA DE ORIGEN\nIglesia Camino de Esperanza\n\nComunidades vinculadas · Publicada\n\nComunidades vinculadas\nCrear comunidad vinculada\nBuscar por nombre\nTipo\nTodos\nJóvenes\nMinisterio\nVoluntariado\nOrganización\nMovimiento\nOtro\nEstado\nTodos\nBorrador\nPublicada\nArchivada\nAplicar filtros\nPublicada\nJóvenes con propósito\n\nJóvenes\n\nAdministrar Jóvenes con propósito\nAnterior\nPágina 1 de 1\nSiguiente"
+  },
+  {
+    "name": "representative-Comunidades vinculadas-create",
+    "url": "#/administracion",
+    "width": 1440,
+    "height": 1729,
+    "overflow": false,
+    "headings": [
+      "Iglesia Camino de Esperanza",
+      "Nueva comunidad vinculada",
+      "Fotos y videos",
+      "Publicación"
+    ],
+    "buttons": [
+      "Ficha de la iglesia",
+      "Comunidades vinculadas",
+      "Eventos",
+      "← Volver a comunidades vinculadas",
+      "Vista previa pública",
+      "Responsables y contacto oficial",
+      "Añadir responsable",
+      "Ubicación habitual",
+      "Fotos y videos (0/7)",
+      "Subir foto",
+      "Añadir enlace externo",
+      "Guardar comunidad"
+    ],
+    "text": "Ficha de la iglesia\nComunidades vinculadas\nEventos\nIGLESIA DE ORIGEN\nIglesia Camino de Esperanza\n\nComunidades vinculadas · Publicada\n\n← Volver a comunidades vinculadas\nNueva comunidad vinculada\n\nBorrador · Sin cambios pendientes\n\nVista previa pública\nNombre de la comunidad\nTipo de comunidad\nJóvenes\nMinisterio\nVoluntariado\nOrganización\nMovimiento\nOtro\nDescripción\nPúblico destinatario (uno por línea)\nResponsables y contacto oficial\nUbicación habitual\nFotos y videos (0/7)\nGuardar comunidad\nPublicación\n\nGuarda la comunidad como borrador antes de publicarla."
+  }
+]

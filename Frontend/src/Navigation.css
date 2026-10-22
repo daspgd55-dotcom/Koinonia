@@ -1,0 +1,33 @@
+/* Shared navigation controls; scoped to avoid changing content buttons or chat. */
+.site-navigation .compact-navigation{gap:20px}
+.site-navigation .compact-navigation nav{gap:14px}
+.primary-navigation,.navigation-account{display:flex;align-items:center;gap:12px}
+.navigation-account{margin-left:auto}
+.site-navigation .primary-navigation>a,.site-navigation .secondary-navigation>a,.navigation-login{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px;border-radius:8px;white-space:nowrap}
+.site-navigation .compact-navigation :is(.primary-navigation,.secondary-navigation)>a:hover,.navigation-login:hover,.profile-nav-toggle:hover{background:#ffffff14;text-decoration:none}
+.site-navigation .compact-navigation :is(.primary-navigation,.secondary-navigation)>a[aria-current=page]{color:#D7B56D;box-shadow:inset 0 -2px #D7B56D}
+.site-navigation .compact-navigation :is(a,button):focus-visible{outline:2px solid #D7B56D;outline-offset:1px}
+.site-navigation .nav-inbox-actions{gap:0}
+.site-navigation .nav-inbox-actions :is(.notification-toggle,.chat-toggle){min-width:44px;min-height:44px;padding:8px;border-radius:8px}
+.site-navigation .profile-nav-toggle{padding:4px 6px;border-radius:8px;min-height:44px;white-space:nowrap}
+.site-navigation .profile-nav-dropdown{width:248px;max-height:calc(100dvh - 112px);overflow-y:auto;overscroll-behavior:contain;padding:8px}
+.profile-menu-group{padding:5px 0 8px}
+.profile-menu-group+.profile-menu-group{border-top:1px solid #ffffff24}
+.profile-menu-label{display:block;padding:4px 12px;color:#c1ccda;font-size:12px}
+.site-navigation .profile-nav-dropdown a[aria-current=page]{background:#ffffff18;color:#D7B56D;box-shadow:inset 3px 0 #D7B56D}
+@media(min-width:801px) and (max-width:1150px){.site-navigation .compact-navigation{padding:12px 20px;gap:12px}.site-navigation .compact-navigation nav,.primary-navigation,.navigation-account{gap:4px}.site-navigation .brand{font-size:23px}.site-navigation .brand small{display:none}.site-navigation .compact-navigation nav{font-size:13px}}
+@media(max-width:800px){
+ .site-navigation .compact-navigation{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 4px;padding:4px 12px 0;min-height:100px}
+ .site-navigation .compact-navigation>.brand{grid-column:1;grid-row:1;font-size:20px;gap:6px;min-width:0}
+ .site-navigation .compact-navigation>.brand img{width:28px;height:28px}
+ .site-navigation .compact-navigation nav{display:contents}
+ .site-navigation .navigation-account{grid-row:1;grid-column:2;gap:2px;margin:0;justify-content:flex-end}
+ .site-navigation .profile-nav-toggle{font-size:12px;gap:5px;padding:4px 0 4px 4px}
+ .site-navigation .primary-navigation{grid-row:2;grid-column:1 / -1;display:flex;gap:4px;border-top:1px solid #ffffff24;padding-right:64px;justify-content:space-between;font-size:12px}
+ .site-navigation .primary-navigation>a{padding:8px 5px;min-height:44px}
+ .site-navigation .mobile-nav-toggle{display:block;grid-row:2;grid-column:2;justify-self:end;align-self:center;min-width:56px;min-height:44px;padding:6px;font-size:12px;border:0;border-radius:8px;background:transparent;color:white}
+ .site-navigation .compact-navigation .secondary-navigation.is-open{top:100%;right:12px;gap:4px;padding:8px}
+ .site-navigation .profile-nav-dropdown{right:0;max-width:calc(100vw - 24px)}
+ .site-navigation .navigation-login{font-size:12px;padding:8px}
+}
+@media(max-width:350px){.site-navigation .compact-navigation>.brand{font-size:17px}.site-navigation .compact-navigation>.brand img{width:25px;height:25px}.site-navigation .compact-navigation{padding-left:8px;padding-right:8px}.site-navigation .profile-nav-toggle{gap:3px}}

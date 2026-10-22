@@ -48,6 +48,7 @@ async function main() {
   await page.getByRole('button',{name:'Administrar Comunidad lista para revisión',exact:false}).waitFor();
   await page.screenshot({path:path.join(output,'publication-requests.png'),fullPage:true});
   await page.getByRole('button',{name:'Administrar Comunidad lista para revisión',exact:false}).click();
+  if(await page.locator('.admin-control-fold').count()&&!await page.locator('.admin-control-fold').evaluate(el=>el.open))await page.locator('.admin-control-fold>summary').click();
   await page.getByRole('button',{name:'Publicar',exact:true}).click();
   await page.getByRole('status').filter({hasText:'Administración actualizada'}).waitFor();
   const published=await Church.findById(c.id);assert.equal(published.publicationRequest.status,'pending');assert.equal(published.metadata.dataStatus,'published');await page.getByRole('button',{name:'Marcar verificada',exact:true}).click();await page.getByRole('status').filter({hasText:'Administración actualizada'}).waitFor();await page.goto(url+'/#/iglesia/'+c.id);await page.getByText('✓ Iglesia verificada',{exact:true}).waitFor();assert.equal((await Church.findById(c.id)).publicationRequest.status,'resolved');

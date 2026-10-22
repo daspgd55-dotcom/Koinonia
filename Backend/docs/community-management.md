@@ -105,3 +105,15 @@ Solo admin ve la barra Comunidades / Usuarios. `/administracion` abre Comunidade
 `PATCH /api/users/manage/:id`: exclusivamente admin. Body `{name,position,role,active,expectedUpdatedAt}`. Usa la fecha de actualización como condición de concurrencia; cambios obsoletos devuelven 409. No permite modificar correo, contraseña o perfil personal. El administrador no puede cambiar su propio rol ni desactivarse. La interfaz solicita confirmación concreta para cambios de rol/estado. Desactivar bloquea login y solicitudes con tokens existentes; reactivar conserva la cuenta y sus asociaciones. Las comunidades asignadas no se eliminan al cambiar rol/estado.
 
 No incluye borrado físico ni recuperación de contraseñas. La creación de representantes permanece en el control administrativo de comunidades. Pruebas: `Backend/npm test` y `Frontend/npm run test:manage`; capturas de Usuarios en `.cache/journey/11-user-management-desktop.png` y `12-user-management-mobile.png`.
+
+## Organización del editor (octubre de 2026)
+
+La iglesia mantiene un encabezado contextual compartido y las pestañas Ficha de la iglesia / Comunidades vinculadas / Eventos en el mismo orden y posición. El editor reúne Volver a comunidades y Vista previa en una fila de herramientas. El guardado permanece accesible durante el desplazamiento; los errores continúan apareciendo junto a la acción.
+
+El Control del administrador se abre explícitamente desde un desplegable, inicialmente cerrado, independiente del formulario cotidiano. Conserva publicación, verificación, baja/restauración, creación y asignación de representantes. Los permisos del servidor no cambian. La publicación del representante conserva sus condiciones anteriores.
+
+Los representantes con hasta tres resultados ven los filtros plegados inicialmente; siguen disponibles por teclado y conservan sus valores al abrir/cerrar. Los administradores los ven abiertos. Publicación utiliza “Todos los estados de publicación” para ausencia de filtro. Se corrige el singular y se oculta paginación sin páginas adicionales.
+
+El checklist describe la última versión guardada: sus pendientes llevan a la sección y enfocan el campo cuando existe un control individual. Las entradas compuestas llevan al encabezado de la sección. El desplazamiento respeta movimiento reducido.
+
+Verificación local: `node Frontend/test/manage-layout.cjs` (API simulada, móvil/escritorio, títulos largos, ausencia de fotos, teclado, carga/error/vacío y conservación de texto); `node Frontend/test/manage.cjs` y `node Frontend/test/publication.cjs` (MongoDB temporal, creación, privacidad, roles, publicación, asignaciones y conflictos). No requieren datos de producción ni envíos reales. Compilación: `npm --prefix Frontend run build`.
