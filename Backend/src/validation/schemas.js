@@ -43,6 +43,7 @@ const church = z.strictObject({
 const queryNumber = (min, max, fallback) => z.preprocess(v => typeof v === 'string' && v.trim() !== '' ? Number(v) : v,
   z.number().min(min).max(max).optional().default(fallback));
 const search = z.strictObject({
+  view: z.enum(['full','card']).default('full'),
   sort: z.enum(['name','distance']).optional(),
   q: text.optional(), commune: text.optional(), denomination: text.optional(), branch: text.optional(),
   doctrine: text.optional(), activity: text.optional(), language: text.optional(), day: days.optional(),

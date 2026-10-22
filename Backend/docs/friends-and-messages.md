@@ -84,3 +84,11 @@ Cada mensaje muestra únicamente hora y minuto AM/PM. Un separador discreto agru
 Se elimina el botón independiente Copiar enlace en las fichas; Compartir conserva el panel nativo y la copia como alternativa si no está disponible. Se elimina «Tu elección» en eventos; los botones seleccionados mantienen aria-pressed.
 
 Verificación de mejoras visuales y compartir: seis pruebas backend aprobadas (incluidas miniaturas y privacidad), recorridos de chat y participación de eventos aprobados, compilación correcta. El test comprueba que elegir destinatario no crea mensajes antes de Enviar y que el borrador contiene el enlace. Miniaturas reservan altura para evitar saltos durante su carga.
+
+## Optimización de lecturas (2026-10-22)
+
+`GET /api/friends/:id/messages?after=N` devuelve hasta 50 mensajes con secuencia mayor a N, en orden ascendente. `before` y `after` son excluyentes. Sin cursor se conserva el contrato original (últimos 50); `before` continúa disponible para historial. Si llegan 50 novedades, continuar desde la última secuencia recibida; no desde la secuencia de la amistad.
+
+La respuesta incremental añade `resourceUpdates`: id, sequence, resource y resourceUnavailable para hasta 50 mensajes compartidos anteriores al cursor. No contiene textos de mensajes. Se recalcula la disponibilidad pública en cada solicitud y el cliente actualiza solo las tarjetas que ya tiene cargadas. La resolución de recursos usa consultas por lotes para iglesias y eventos. No hay caché persistente de contenido privado.
+
+El chat hace lecturas incrementales cada cinco segundos mientras está activo, confirma lectura solo cuando avanza y vuelve a consultar la ventana reciente cada 30 segundos para reconciliar inserciones tardías. Conserva el historial y los borradores. No implementa WebSocket ni cambia los permisos de conversación.

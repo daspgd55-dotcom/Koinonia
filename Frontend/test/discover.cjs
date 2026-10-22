@@ -77,7 +77,7 @@ async function main() {
   await page.getByRole('region',{name:'Búsqueda por descripción',exact:true}).waitFor();assert.equal(await page.getByLabel('Describe la comunidad que buscas',{exact:true}).isDisabled(),true);
   assert.equal(await page.locator('.semantic-panel,textarea').count(),0);
   assert.equal(await page.locator('.discovery-preferences').getAttribute('open'),null);
-  assert.ok((await page.locator('header').boundingBox()).height<125);
+  assert.ok((await page.locator('header.site-navigation').boundingBox()).height<125);
   assert.ok((await page.locator('.discovery-card').boundingBox()).y<720);
   for(const label of ['Buscar iglesias','Para ti'])assert.ok(await page.getByRole('navigation',{name:'Navegación principal'}).getByRole('link',{name:label,exact:true}).isVisible());
   await page.getByRole('button',{name:'Mi perfil',exact:true}).click();

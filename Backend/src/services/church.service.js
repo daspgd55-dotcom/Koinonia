@@ -56,6 +56,8 @@ function filters(q) {
 }
 
 //funcion para buscar iglesias según parámetros de búsqueda, con paginación y ordenamiento por distancia si se proveen coordenadas
+const cardProjection={'identification.name':1,'location.address':1,'location.commune':1,'location.coordinates':1,'christianIdentity.denomination':1,'community.activities':1,'meetings.type':1,'meetings.schedule':1,media:1,'metadata.dataStatus':1,'metadata.testData':1,distanceMeters:1};
+function cardChurch(c){const images=(c.media||[]).filter(m=>m.type==='image'&&/^https?:\/\//i.test(m.url||'')),photo=images.find(m=>m.category==='banner')||images.find(m=>m.category==='facilities')||images.find(m=>!m.category),meeting=(c.meetings||[]).flatMap(m=>(m.schedule||[]).map(t=>({...t,type:m.type}))).find(t=>t.day&&t.startTime);return {_id:c._id,identification:{name:c.identification?.name},location:c.location,christianIdentity:{denomination:c.christianIdentity?.denomination},community:{activities:(c.community?.activities||[]).slice(0,2)},media:photo?[photo]:[],meetings:meeting?[{type:meeting.type,schedule:[{day:meeting.day,startTime:meeting.startTime}]}]:[],metadata:{dataStatus:c.metadata?.dataStatus,testData:c.metadata?.testData},...(c.distanceMeters!==undefined?{distanceMeters:c.distanceMeters}:{})};}
 async function search(q, excluded = [], cap) {
   const filter = filters(q);
   if (excluded.length) filter._id = { $nin: excluded };
@@ -65,14 +67,15 @@ async function search(q, excluded = [], cap) {
     const result = await Church.aggregate([
       { $geoNear: { near: { type: 'Point', coordinates: [q.lng, q.lat] }, key: 'location.coordinates', distanceField: 'distanceMeters',
         maxDistance: (q.radius || 5) * 1000, spherical: true, query: filter } },
+      ...(q.view==='card'?[{$project:cardProjection}]:[]),
       { $sort: q.sort === 'name' ? { 'identification.name': 1, _id: 1 } : { distanceMeters: 1, _id: 1 } },
       { $facet: { rows: [{ $skip: (page - 1) * limit }, { $limit: limit }], total: [{ $count: 'value' }] } }
     ]);
     rows = result[0].rows; total = result[0].total[0]?.value || 0;
   } else {
-    [rows, total] = await Promise.all([Church.find(filter).sort({ 'identification.name': 1, _id: 1 }).skip((page - 1) * limit).limit(limit).lean(), Church.countDocuments(filter)]);
+    [rows, total] = await Promise.all([Church.find(filter).select(q.view==='card'?cardProjection:null).sort({ 'identification.name': 1, _id: 1 }).skip((page - 1) * limit).limit(limit).lean(), Church.countDocuments(filter)]);
   }
-  return { data: rows.map(publicChurch), pagination: { page, limit, total, pages: Math.ceil(total / limit) } };
+  return { data: rows.map(q.view==='card'?cardChurch:publicChurch), pagination: { page, limit, total, pages: Math.ceil(total / limit) } };
 }
 
 module.exports = { visible, publicChurch, managed, filters, search, exact, checkVersion };

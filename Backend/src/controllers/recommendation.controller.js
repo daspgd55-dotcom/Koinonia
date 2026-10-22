@@ -37,11 +37,14 @@ exports.recommend = async (req, res) => {
   try {
     for await (const candidate of cursor) {
       if (!personalized && evaluated === 100) { truncated = true; break; }
-      evaluated++; ranked.push(rank(publicChurch(candidate), preferences, modes));
-      ranked.sort((a, b) => b.score - a.score || a.churchId.localeCompare(b.churchId));
+      evaluated++; const row=rank(publicChurch(candidate), preferences, modes);
+      let low=0,high=ranked.length;while(low<high){const mid=(low+high)>>>1,order=ranked[mid].score-row.score||row.churchId.localeCompare(ranked[mid].churchId);if(order<0)high=mid;else low=mid+1;}
+      ranked.splice(low,0,row);
       if (ranked.length > input.limit) ranked.pop();
     }
   } finally { await cursor.close(); }
+  const saved=new Set((await Interaction.find({user:req.user._id,type:'saved',church:{$in:ranked.map(r=>r.churchId)}}).distinct('church')).map(String));
+  for(const row of ranked)row.saved=saved.has(row.churchId);
   delete preferences.location;
   const effectivePreferences = Object.fromEntries(Object.entries(preferences).filter(([key]) => modes[key === 'meetingDay' ? 'meetingDays' : key] !== 'disabled'));
   const result = input.mode === 'traditional' ? { results: ranked, mode: 'deterministic', queryInterpreted: false } : await enrich(req.app.locals.config, input.query, effectivePreferences, ranked);
