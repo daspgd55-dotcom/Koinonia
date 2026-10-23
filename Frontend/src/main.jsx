@@ -44,9 +44,9 @@ import './styles.css';
 
 const go = route => { location.hash = route; };
 const draftKey = id => 'koinonia-draft-' + id;
-function Brand() { return <a className="brand" href="#/" aria-label="Koinonía, inicio"><img src="/logo.png" alt=""/><span>Koinonía<small>IGLESIAS Y EVENTOS</small></span></a>; }
+function Brand() { return <a className="brand" href="#/" aria-label="Koinonía, inicio"><img src="/logo.png" alt=""/><span>Koinonía<small>COMUNIDADES CRISTIANAS</small></span></a>; }
 function Notice({ children, error = false }) { return children ? <div className={'notice ' + (error ? 'error' : '')} role={error ? 'alert' : 'status'}>{children}</div> : null; }
-function Landscape() { return <div className="landscape" aria-hidden="true"><div className="sun"/><div className="mountain back"/><div className="mountain"/><div className="chapel"><div className="cross">✝</div><div className="door"/></div><div className="path"/><span>KOINONÍA · SANTIAGO</span></div>; }
+function Landscape() { return <div className="landscape" aria-hidden="true"><div className="sun"/><div className="mountain back"/><div className="mountain"/><div className="chapel"><div className="cross">✝</div><div className="door"/></div><div className="path"/></div>; }
 function Auth({ register, onSession, message }) {
   const [challenge,setChallenge]=useState(null);
   const [busy,setBusy] = useState(false), [error,setError] = useState(''),[pending,setPending]=useState(false),[needsVerification,setNeedsVerification]=useState(false);

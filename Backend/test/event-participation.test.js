@@ -17,11 +17,13 @@ const Participation=require('../src/models/event-participation.model');
 const choose=(e,status='interested',who='visitor')=>request(app).put('/api/events/'+e._id+'/participation').set(auth(who)).send({status});
 const notices=who=>request(app).get('/api/notifications').set(auth(who)).expect(200);
 async function published(){return (await publish((await create().expect(201)).body.data).expect(200)).body.data;}
-test('Participación única concurrente, opciones excluyentes, retiro, validación y conteos privados',async()=>{
+test('Participación única concurrente, interés y asistencia independientes, retiro, validación y conteos privados',async()=>{
  const e=await published();await request(app).put('/api/events/'+e._id+'/participation').send({status:'going'}).expect(401);
  const results=await Promise.all(Array.from({length:12},(_,i)=>choose(e,i%2?'going':'interested')));assert.ok(results.every(r=>r.status===200),JSON.stringify(results.map(r=>r.body)));assert.equal(await Participation.countDocuments({event:e._id,user:users.visitor.id}),1);
  await choose(e,'going').expect(200);await choose(e,'invalid').expect(400);await request(app).put('/api/events/'+e._id+'/participation').set(auth('visitor')).send({status:'going',user:users.rep.id}).expect(400);
- const counts=await request(app).get('/api/events/'+e._id+'/participation-counts').set(auth('rep')).expect(200);assert.deepEqual(counts.body.data,{interested:0,going:1});await request(app).get('/api/events/'+e._id+'/participation-counts').set(auth('otherRep')).expect(403);await request(app).get('/api/events/'+e._id+'/participation-counts').set(auth('visitor')).expect(403);
+ const counts=await request(app).get('/api/events/'+e._id+'/participation-counts').set(auth('rep')).expect(200);assert.deepEqual(counts.body.data,{interested:1,going:1});await request(app).get('/api/events/'+e._id+'/participation-counts').set(auth('otherRep')).expect(403);await request(app).get('/api/events/'+e._id+'/participation-counts').set(auth('visitor')).expect(403);
+ const toggle=(status,enabled)=>request(app).put('/api/events/'+e._id+'/participation').set(auth('visitor')).send({status,enabled}).expect(200);
+ let choice=(await toggle('going',false)).body.data;assert.equal(choice.interested,true);assert.equal(choice.going,false);choice=(await toggle('going',true)).body.data;assert.equal(choice.interested,true);assert.equal(choice.going,true);choice=(await toggle('interested',false)).body.data;assert.equal(choice.interested,false);assert.equal(choice.going,true);await toggle('interested',true);assert.equal((await request(app).get('/api/events/'+e._id+'/interest-count').expect(200)).body.data.interested,1);
  assert.equal((await request(app).get('/api/events/mine').set(auth('otherRep')).expect(200)).body.pagination.total,0);
  const pub=(await request(app).get('/api/events/'+e._id).expect(200)).body;assert.ok(!JSON.stringify(pub).includes(users.visitor.email));assert.equal(pub.data.participationChanges,undefined);
  await request(app).get('/api/events/'+e._id+'/participation-counts').set(auth('admin')).expect(200);

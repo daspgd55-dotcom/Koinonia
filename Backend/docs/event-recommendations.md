@@ -34,7 +34,7 @@ Cubren prioridades, invitados, paginación, privacidad, manipulación de paráme
 
 ## Total de interés y enlaces compartibles
 
-GET `/api/events/:id/interest-count` es público para eventos visibles y devuelve exclusivamente `{data:{interested:number}}`. Cuenta estado `interested`, no `going` ni `withdrawn`. No publica identidades, asistencia ni visualizaciones. Un evento oculto o de iglesia no pública devuelve 404. La ficha actualiza el total al cambiar la participación y distingue singular/plural.
+GET `/api/events/:id/interest-count` es público para eventos visibles y devuelve exclusivamente `{data:{interested:number}}`. Cuenta estados `interested` y `both`, no `going` por sí solo ni `withdrawn`. No publica identidades, asistencia ni visualizaciones. Un evento oculto o de iglesia no pública devuelve 404. La ficha actualiza el total al cambiar la participación y distingue singular/plural.
 
 Eventos e iglesias incluyen «Compartir». Se construye el enlace desde el origen y ruta base actuales, con `#/evento/:id` o `#/iglesia/:id`, sin parámetros de retorno, filtros ni credenciales. Funciona en el dominio provisional de Render; enlaces antiguos no se redirigen automáticamente al cambiar de dominio. Los permisos públicos siguen aplicándose al abrir el enlace.
 

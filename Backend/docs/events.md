@@ -193,12 +193,12 @@ Verificación aislada desde `Frontend`: `npm.cmd run test:public-events`, `npm.c
 
 ## Participación personal y notificaciones internas
 
-Colección independiente `eventparticipations`, sin registros en `visits`. Índice único compuesto `(event,user)`; un único estado `interested`, `going` o `withdrawn`. PUT atómico y repetible: ante peticiones simultáneas permanece una sola fila y prevalece la última escritura. Cambiar entre interés e intención conserva el inicio de la suscripción; retirar conserva la fila, excluye conteos y avisos. Reactivar inicia una nueva suscripción y no recupera avisos anteriores. No se recogen datos personales adicionales.
+Colección independiente `eventparticipations`, sin registros en `visits`. Índice único compuesto `(event,user)`; estado compatible `interested`, `going`, `both` o `withdrawn`, con interés y asistencia independientes. PUT atómico y repetible: ante peticiones simultáneas permanece una sola fila y cada cambio conserva la otra opción. Activar interés o intención conserva el inicio de la suscripción; retirar conserva la fila, excluye conteos y avisos. Reactivar inicia una nueva suscripción y no recupera avisos anteriores. No se recogen datos personales adicionales.
 
 | Método y ruta | Contrato |
 | --- | --- |
-| `GET /api/events/:id/participation` | Sesión; `{data:{status:null|interested|going,canParticipate:boolean}}`; 404 si evento no público |
-| `PUT /api/events/:id/participation` | Sesión; cuerpo estricto `{status:interested|going|withdrawn}`; usuario tomado del token, no del cliente |
+| `GET /api/events/:id/participation` | Sesión; `{data:{status:null|interested|going|both,interested:boolean,going:boolean,canParticipate:boolean}}`; 404 si evento no público |
+| `PUT /api/events/:id/participation` | Sesión; cuerpo estricto `{status:interested|going|withdrawn,enabled?:boolean}` (por defecto true; false desactiva solo esa opción; withdrawn retira ambas); usuario tomado del token, no del cliente |
 | `GET /api/events/mine?view=upcoming|history&page=1&limit=20` | Solo registros del usuario; paginación máximo 50. `{data:[{eventId,status,pending,event}],pagination}` |
 | `GET /api/events/:id/participation-counts` | Admin o representante actualmente asignado; `{data:{interested,going}}`, sin identidades ni correos |
 
@@ -231,3 +231,6 @@ Esta ventana no borra eventos ni cambia su publicación. Administración conserv
 ## Recomendación y acciones de interés
 
 El directorio usa recomendaciones por pertenencia, seguimiento y popularidad; los botones de participación se muestran en la cabecera. Para inscripción requerida, `going` devuelve 409 `REGISTRATION_REQUIRED`; interés y retirada siguen disponibles. Contrato, privacidad de visualizaciones y pruebas: [event-recommendations.md](event-recommendations.md).
+
+### Interés independiente de asistencia
+Los registros anteriores conservan su significado sin migración destructiva. `both` cuenta una vez en cada total; el ranking suma ese interés una sola vez. GET/PUT y Mis eventos incluyen booleanos `interested` y `going`. Me interesa expresa afinidad, no asistencia ni inscripción. Se conservan avisos de cambios para cualquiera de las opciones activas, sin duplicarlos por activar ambas. La ficha permite desactivar cada botón al pulsarlo de nuevo; la eliminación conjunta queda en Mis eventos.
