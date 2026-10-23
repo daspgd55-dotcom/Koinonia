@@ -1,0 +1,1 @@
+import React from 'react';import {createRoot} from 'react-dom/client';import Home,{SiteFooter} from '../../src/Home';import '../../src/styles.css';createRoot(document.getElementById('root')).render(<><Home user={location.search.includes('admin')?{role:'admin'}:null}/><SiteFooter/></>);

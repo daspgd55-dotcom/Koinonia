@@ -6,7 +6,7 @@ export const steps = [
 ];
 export const asksDenomination = branches => branches?.some(v => ['Protestante', 'Rama Independiente'].includes(v));
 export const profileSections = [
-  { title: 'Tu identidad', fields: ['spiritualIdentity','goal','activities','ministries','targetGroups','firstVisitPreference'] },
+  { title: 'Identidad e intereses', fields: ['spiritualIdentity','goal','activities','ministries','targetGroups','firstVisitPreference'] },
   { title: 'Tu tradición', fields: ['branches','denominations','doctrinalTags','languages'] },
   { title: 'Tu ubicación', fields: ['commune','address','location','radiusKm','meetingDays'] }
 ];

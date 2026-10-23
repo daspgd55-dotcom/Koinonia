@@ -21,18 +21,20 @@ async function main() {
   browser = await chromium.launch({headless:true,...(process.platform==='win32'?{channel:'msedge'}:{})});
   const context = await browser.newContext({viewport:{width:1440,height:1000}}), page = await context.newPage(), errors=[];
   page.on('pageerror',e=>errors.push(e.message)); page.setDefaultTimeout(12000);
+  async function expand(title){const group=page.locator('.preference-group').filter({has:page.locator('summary strong',{hasText:title})});if(!await group.evaluate(e=>e.open))await group.locator('summary').click();}
   await page.goto(url); await page.getByRole('link',{name:'Crear mi perfil'}).waitFor();
   await page.screenshot({path:path.join(output,'audit-home-desktop.png'),fullPage:true});
   await page.setViewportSize({width:390,height:844});await page.screenshot({path:path.join(output,'audit-home-mobile.png'),fullPage:true});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);await page.setViewportSize({width:1440,height:1000});
   if(!await page.getByRole('link',{name:'Crear cuenta',exact:true}).isVisible())await page.getByRole('button',{name:'Menú',exact:false}).click();
   await page.getByRole('link',{name:'Crear cuenta',exact:true}).click();
-  await page.getByLabel('Nombre',{exact:false}).fill('María');
+  assert.equal(await page.getByRole('link',{name:'¿Olvidaste tu contraseña?',exact:true}).count(),0);
+  await page.locator('input[name="name"]').fill('María');
   await page.screenshot({path:path.join(output,'audit-auth.png'),fullPage:true});
   await page.getByLabel('Correo electrónico',{exact:true}).fill('journey@example.test');
   await page.getByLabel('Contraseña',{exact:true}).fill('Test-web-password-123');
   await page.getByLabel('Nombre de usuario',{exact:false}).fill('journey_user_0');await page.getByRole('button',{name:'Crear mi cuenta'}).click();
   await page.getByRole('heading',{name:'Cada búsqueda tiene un comienzo.'}).waitFor();
-  assert.equal(await page.locator('select').count(),0);
+  assert.equal(await page.locator('select:visible').count(),0);
   assert.equal(await page.getByRole('checkbox',{name:/restricción/}).count(),0);
   await page.getByRole('button',{name:'Solo creyente en Dios',exact:true}).click();
   await page.getByRole('button',{name:'Encontrar una comunidad'}).click();
@@ -134,7 +136,8 @@ async function main() {
   await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('link',{name:'Configurar perfil',exact:true}).click();
   await page.getByRole('button',{name:'Editar preferencias',exact:true}).click();
   await page.getByRole('heading',{name:'Preferencias de búsqueda',exact:true}).waitFor();
-  await page.getByRole('button',{name:'Tu identidad',exact:true}).click();
+  await page.getByRole('button',{name:'Identidad e intereses',exact:true}).click();
+  await expand('Actividades y ministerios');
   await page.getByRole('button',{name:'Confraternidades'}).click();
   await page.getByRole('button',{name:'Obras Audiovisuales'}).waitFor();
   await page.getByRole('button',{name:'Música / alabanza'}).click();
@@ -145,6 +148,7 @@ async function main() {
   assert.deepEqual(user.preferences.activities,['Confraternidades']); assert.equal(user.onboarding.lastStep,3);
   await page.getByRole('checkbox',{name:'Usar como restricción: Actividades',exact:true}).uncheck();
   await page.getByRole('button',{name:'Tu tradición',exact:true}).click();
+  await expand('Creencias y prácticas');
   await page.getByRole('button',{name:'Prácticas carismáticas'}).click();
   await page.getByRole('button',{name:'Eucaristía'}).waitFor();
   await page.setViewportSize({width:1440,height:1000});
@@ -152,7 +156,7 @@ async function main() {
   await page.getByRole('button',{name:'Guardar configuración'}).click();
   await page.getByRole('status').filter({hasText:'Configuración guardada.'}).waitFor();
   user=await User.findById(user._id).lean();assert.equal(user.criterionModes.activities,'preferred');
-  await page.getByRole('button',{name:'Tu identidad',exact:true}).click();
+  await page.getByRole('button',{name:'Identidad e intereses',exact:true}).click();
   await page.getByRole('button',{name:'Explorar sin decidir todavía'}).click();
   await User.updateOne({_id:user._id},{$inc:{profileRevision:1},$set:{'searchContext.firstVisitPreference':'welcome'}});
   await page.getByRole('button',{name:'Guardar configuración'}).click();
@@ -176,6 +180,7 @@ async function main() {
   await page.getByRole('button',{name:'Editar Tu ubicación',exact:true}).click();
   assert.equal(await page.getByLabel('Comuna de interés',{exact:true}).inputValue(),'Ñuñoa');
   await page.getByRole('checkbox',{name:'Activar ubicación'}).uncheck();
+  await expand('Distancia y días');
   await page.getByRole('checkbox',{name:'Usar como restricción: Distancia que te acomoda'}).check();
   await page.getByRole('button',{name:'Guardar configuración'}).click();
   await page.getByRole('alert').filter({hasText:'Confirma tu dirección'}).waitFor();
@@ -189,7 +194,8 @@ async function main() {
   await User.updateOne({_id:user._id},{$set:{'onboarding.version':1,'onboarding.lastStep':6,'preferences.languages':['Portugués']}});
   await page.evaluate(id=>sessionStorage.setItem('koinonia-draft-'+id,JSON.stringify({values:{activities:['Actividad previa personalizada']},states:{activities:'answered'},modes:{activities:'preferred'},dirty:['activities'],revision:0,step:6})),user._id.toString());
   await page.reload();await page.getByRole('heading',{name:'Preferencias de búsqueda',exact:true}).waitFor();
-  await page.getByRole('button',{name:'Tu identidad',exact:true}).click();
+  await page.getByRole('button',{name:'Identidad e intereses',exact:true}).click();
+  await expand('Actividades y ministerios');
   assert.equal(await page.getByRole('button',{name:'Actividad previa personalizada (guardada)'}).getAttribute('aria-pressed'),'true');
   await page.getByRole('button',{name:'Guardar configuración'}).click();
   await page.getByRole('button',{name:'Recargar y conservar mis ediciones'}).click();
@@ -197,8 +203,9 @@ async function main() {
   await page.getByRole('button',{name:'Guardar configuración'}).click();
   await page.getByRole('status').filter({hasText:'Configuración guardada.'}).waitFor();
   await page.getByRole('button',{name:'Tu tradición',exact:true}).click();
+  await expand('Idiomas');
   assert.equal(await page.getByRole('button',{name:'Portugués (guardada)'}).getAttribute('aria-pressed'),'true');
-  assert.equal(await page.locator('select').count(),0);
+  assert.equal(await page.locator('select:visible').count(),0);
   assert.equal(await page.evaluate(()=>JSON.stringify(sessionStorage).includes('Test-web-password-123')),false);
   if(!await page.getByRole('button',{name:'Cerrar sesión'}).isVisible())await page.getByRole('button',{name:'Mi perfil',exact:true}).click();
   await page.getByRole('button',{name:'Cerrar sesión'}).click();
@@ -239,7 +246,7 @@ async function main() {
   await page.getByRole('button',{name:'Mi perfil',exact:true}).waitFor();
   if(!await page.getByRole('button',{name:'Cerrar sesión',exact:true}).isVisible())await page.getByRole('button',{name:'Mi perfil',exact:true}).click();
   await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
-  await page.goto(url+'/#/registro');
+  await page.goto(url+'/#/login');
   await page.getByRole('link',{name:'¿Olvidaste tu contraseña?',exact:true}).click();
   await page.getByRole('heading',{name:'Recuperar contraseña',exact:true}).waitFor();
   await page.getByLabel('Correo electrónico',{exact:true}).fill('other-web@example.test');

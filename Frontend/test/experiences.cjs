@@ -16,7 +16,7 @@ async function main() {
   server = createApp({requireVerifiedEmail:false,jwtSecret:'web-test-only-secret-longer-than-32-characters',corsOrigins:[],enableTestUi:false}).listen(0,'127.0.0.1');
   await new Promise(resolve => server.once('listening',resolve));
   const { createServer } = await import('vite');
-  vite = await createServer({ root:path.resolve(__dirname,'..'),configFile:false,server:{host:'127.0.0.1',port:0,proxy:{'/api':`http://127.0.0.1:${server.address().port}`}} });
+  vite = await createServer({ root:path.resolve(__dirname,'..'),configFile:false,envDir:false,define:{'import.meta.env.VITE_API_BASE_URL':JSON.stringify('/api')},server:{host:'127.0.0.1',port:0,proxy:{'/api':`http://127.0.0.1:${server.address().port}`}} });
   await vite.listen(); const url = `http://127.0.0.1:${vite.httpServer.address().port}`;
   browser = await chromium.launch({headless:true,...(process.platform==='win32'?{channel:'msedge'}:{})});
   const context = await browser.newContext({viewport:{width:1440,height:1000}}), page = await context.newPage(), errors=[];
@@ -36,12 +36,15 @@ async function main() {
   await page.getByLabel('Correo electrónico',{exact:true}).fill(u.email);
   await page.getByLabel('Contraseña',{exact:true}).fill('Discovery-test-123');
   await page.getByRole('button',{name:'Iniciar sesión'}).click();
+  await page.waitForURL('**/#/experiencias/'+id);
+  await page.getByRole('button',{name:'Mi perfil',exact:true}).waitFor();
   await page.goto(url+'/#/iglesia/'+id);
-  await page.getByText('Experiencias y Testimonios',{exact:true}).click();
-  await page.getByText('Aún no hay experiencias publicadas de esta comunidad.',{exact:true}).waitFor();
+  await page.locator('.detail-fold[hidden]').waitFor({state:'attached'});
+  assert.equal(await page.getByText('Experiencias y Testimonios',{exact:true}).isVisible(),false);
   assert.equal(await page.getByRole('heading',{name:'Comparte tu experiencia',exact:true}).count(),0);
   assert.equal(await page.getByRole('region',{name:'Mis experiencias',exact:true}).count(),0);
-  await page.locator('.detail-banner').getByRole('button',{name:'Establecer como Mi iglesia',exact:true}).click();
+  await page.getByRole('button',{name:'Establecer como Mi iglesia',exact:true}).click();
+  await page.getByText('Experiencias y Testimonios',{exact:true}).click();
   await page.getByLabel('Categoría de experiencia',{exact:true}).selectOption('new_member');
   await page.getByLabel('Nombre público',{exact:false}).fill('Visitante de prueba');
   await page.getByLabel('Título',{exact:true}).fill('Mi primera visita');
@@ -57,9 +60,10 @@ async function main() {
   await page.setViewportSize({width:390,height:844});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   await page.screenshot({path:path.join(output,'experiences-mobile.png'),fullPage:true});
-  await page.locator('.detail-banner').getByRole('button',{name:'Dejar de asociar esta iglesia',exact:true}).click();
-  await page.locator('.detail-banner').getByRole('button',{name:'Establecer como Mi iglesia',exact:true}).waitFor();
+  await page.locator('.public-profile-actions').getByRole('button',{name:'Dejar de asociar esta iglesia',exact:true}).click();
+  await page.locator('.public-profile-actions').getByRole('button',{name:'Establecer como Mi iglesia',exact:true}).waitFor();
   assert.equal(await page.getByRole('heading',{name:'Comparte tu experiencia',exact:true}).count(),0);
+  await page.getByRole('region',{name:'Mis experiencias',exact:true}).waitFor();
   assert.equal(await page.getByRole('region',{name:'Mis experiencias',exact:true}).count(),1);
   await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
   await request(server).post('/api/auth/register').send({email:'moderator@example.test',password:'Moderator-test-123'}).expect(201);
@@ -93,7 +97,8 @@ async function main() {
   // El autor puede reportar, corregir y retirar sin publicación automática.
   await page.goto(url+'/#/login');await page.getByLabel('Correo electrónico',{exact:true}).fill(u.email);await page.getByLabel('Contraseña',{exact:true}).fill('Discovery-test-123');await page.getByRole('button',{name:'Iniciar sesión'}).click();await page.getByRole('button',{name:'Mi perfil',exact:true}).waitFor();
   await page.goto(url+'/#/iglesia/'+id);await page.getByText('Experiencias y Testimonios',{exact:true}).click();assert.equal(await page.getByRole('button',{name:'Reportar contenido',exact:true}).count(),0);
-  await page.locator('.detail-banner').getByRole('button',{name:'Establecer como Mi iglesia',exact:true}).click();const own=page.getByRole('region',{name:'Mis experiencias',exact:true});
+  await page.getByRole('button',{name:'Establecer como Mi iglesia',exact:true}).click();
+  const own=page.getByRole('region',{name:'Mis experiencias',exact:true});
   await page.getByRole('heading',{name:'Comparte tu experiencia',exact:true}).waitFor();await own.getByRole('button',{name:'Corregir experiencia',exact:true}).click();await own.getByLabel('Experiencia corregida',{exact:true}).fill('Esta es mi experiencia corregida con detalles suficientes sobre mi participación en la comunidad.');await own.getByRole('button',{name:'Enviar corrección a revisión',exact:true}).click();await own.getByText('Pendiente de revisión',{exact:true}).waitFor();
   page.once('dialog',d=>d.accept());await own.getByRole('button',{name:'Retirar experiencia',exact:true}).click();await own.getByText('Retirada',{exact:true}).waitFor();
   await page.getByRole('button',{name:'Mi perfil',exact:true}).click();await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();
@@ -103,4 +108,4 @@ async function main() {
   console.log('EXPERIENCES OK: visitante, login, envío conservado ante fallo, pendiente privada, moderación admin y publicación pública, móvil.');
 }
 
-main().catch(e=>{console.error(e);process.exitCode=1;}).finally(async()=>{if(browser)await browser.close();if(vite)await vite.close();if(server){server.closeAllConnections();await new Promise(r=>server.close(r));}await disconnectDB();if(mongo)await mongo.stop();});
+main().catch(async e=>{console.error(e);const p=browser?.contexts()[0]?.pages()[0];if(p)console.error('PAGE:',(await p.locator('body').innerText()).slice(0,3500));process.exitCode=1;}).finally(async()=>{if(browser)await browser.close();if(vite)await vite.close();if(server){server.closeAllConnections();await new Promise(r=>server.close(r));}await disconnectDB();if(mongo)await mongo.stop();});

@@ -16,7 +16,7 @@ async function main() {
   server = createApp({requireVerifiedEmail:false,jwtSecret:'web-test-only-secret-longer-than-32-characters',corsOrigins:[],enableTestUi:false}).listen(0,'127.0.0.1');
   await new Promise(resolve => server.once('listening',resolve));
   const { createServer } = await import('vite');
-  vite = await createServer({ root:path.resolve(__dirname,'..'),configFile:false,server:{host:'127.0.0.1',port:0,proxy:{'/api':`http://127.0.0.1:${server.address().port}`}} });
+  vite = await createServer({ root:path.resolve(__dirname,'..'),configFile:false,envDir:false,define:{'import.meta.env.VITE_API_BASE_URL':JSON.stringify('/api')},server:{host:'127.0.0.1',port:0,proxy:{'/api':`http://127.0.0.1:${server.address().port}`}} });
   await vite.listen(); const url = `http://127.0.0.1:${vite.httpServer.address().port}`;
   browser = await chromium.launch({headless:true,...(process.platform==='win32'?{channel:'msedge'}:{})});
   const context = await browser.newContext({viewport:{width:1440,height:1000}}), page = await context.newPage(), errors=[];
@@ -85,6 +85,7 @@ async function main() {
  for(let i=0;i<11;i++)await seed('Actividad adicional '+i);
  await page.reload();await main.getByText('14 eventos encontrados',{exact:true}).waitFor();assert.equal(await main.getByRole('article').count(),12);await main.getByRole('button',{name:'Siguiente',exact:true}).click();await main.getByText('Página 2 de 2',{exact:true}).waitFor();assert.equal(await main.getByRole('article').count(),2);
  await page.goto(url+'/#/eventos');await main.getByText('14 eventos encontrados',{exact:true}).waitFor();await page.screenshot({path:path.join(output,'events-public-mobile.png'),fullPage:true});
+ const selectedCard=main.locator('.event-card-link').nth(8);await selectedCard.locator('h2').scrollIntoViewIfNeeded();await page.evaluate(()=>document.addEventListener('click',()=>sessionStorage.setItem('test-event-scroll',String(scrollY)),{once:true,capture:true}));const returnUrl=page.url();await selectedCard.locator('h2').click();const returnY=await page.evaluate(()=>Number(sessionStorage.getItem('test-event-scroll')));await main.locator('.event-profile-intro h1').waitFor();await main.getByRole('link',{name:'← Volver a eventos',exact:true}).click();await main.getByText('14 eventos encontrados',{exact:true}).waitFor();await page.waitForFunction(y=>Math.abs(scrollY-y)<5,returnY).catch(async err=>{console.log('SCROLL',returnY,await page.evaluate(()=>scrollY));throw err;});assert.equal(page.url(),returnUrl);
  await Event.updateMany({churchId:church.id},{$set:{publicationStatus:'archived'}});await page.goto(url+'/#/comunidad/'+community.id);await page.getByRole('heading',{name:community.name,exact:true}).waitFor();await page.getByText('Consultando próximos eventos…',{exact:true}).waitFor({state:'hidden'});assert.equal(await section.count(),0);
  assert.deepEqual(errors,[]);console.log('PUBLIC EVENTS OK: búsqueda por nombre, filtros persistentes y fechas inválidas, 2/1 columnas, 5 marcos a 1440/390/320 px, imágenes fallidas, teclado, privacidad, cancelación y contenido oculto.');
 }
