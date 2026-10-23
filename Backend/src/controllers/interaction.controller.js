@@ -17,10 +17,10 @@ exports.set = async (req, res) => {
   res.json({ data: item });
 };
 exports.list = async (req, res) => {
-  const schema = v.z.strictObject({ type: v.z.enum(['saved', 'discarded']).optional(),
+  const schema = v.z.strictObject({ churchId:v.id.optional(), type: v.z.enum(['saved', 'discarded']).optional(),
     page: v.z.coerce.number().int().min(1).max(10000).default(1), limit: v.z.coerce.number().int().min(1).max(100).default(20) });
-  const { type, page, limit } = v.parse(schema, req.query);
-  const filter = { user: req.user._id, ...(type ? { type } : {}) };
+  const { type, page, limit, churchId } = v.parse(schema, req.query);
+  const filter = { user: req.user._id, ...(churchId?{church:churchId}:{}), ...(type ? { type } : {}) };
   const rows = await Interaction.find(filter).sort({ updatedAt: -1, _id: 1 }).skip((page - 1) * limit).limit(limit).populate({ path: 'church', match: visible, transform: (doc,id)=>doc||{_id:id,unavailable:true} }).lean();
   res.json({ data: rows.map(row => ({ ...row, churchId: row.church._id, church: row.church.unavailable ? null : publicChurch(row.church) })),
     pagination: { page, limit, total: await Interaction.countDocuments(filter) } });
