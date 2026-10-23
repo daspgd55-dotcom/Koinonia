@@ -18,6 +18,7 @@ const ChurchSchema = new Schema({
   community: { musicalStyles: [{ type: String, enum: musicalStyles }], culturalStyle: { type: String, enum: culturalStyles }, targetGroups: [String], ministries: [String], activities: [String], description: String, memberRange: String },
   leadership: { mainLeader: Leader, otherLeaders: [Leader] },
   contact: { website: String, instagram: String, facebook: String, youtube: String, email: String, phone: String },
+  visitSettings:{accessMode:{type:String,enum:['all','selected'],default:'all'},representativeIds:[{type:Schema.Types.ObjectId,ref:'User'}],emailEnabled:{type:Boolean,default:false},emailRecipients:[String]},
   firstVisit: { requestsEnabled: {type:Boolean,default:false}, welcomeSupport: { type: String, enum: ['yes', 'no', 'partial', 'unknown'] }, instructions: String, newVisitorSupport: Boolean, welcomeProcess: String },
   media: [embedded({ leaderId: String, frame: {type:String,enum:['landscape','wide','square','circle','portrait']}, type: { type: String, enum: ['image', 'video'] }, category: { type: String, enum: ['facilities','meetings','activities','representatives','banner'] }, url: String, title: String, source: String, focalX: {type:Number,min:0,max:100}, focalY: {type:Number,min:0,max:100} })],
   externalProfile: { type: require('./external-profile.schema'), default: undefined },

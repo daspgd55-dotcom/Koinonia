@@ -4,6 +4,7 @@ const { auth, roles } = require('../middleware/auth.middleware');
 const authController = require('../controllers/auth.controller');
 const user = require('../controllers/user.controller'), church = require('../controllers/church.controller');
 const interaction = require('../controllers/interaction.controller'), source = require('../controllers/source.controller');
+router.get('/users/me/home',auth,require('../controllers/home.controller').get);
 router.get('/churches/:id/followers/count',follow.count);
 router.get('/churches/:id/follow',auth,follow.get);
 router.put('/churches/:id/follow',auth,follow.set);
@@ -79,6 +80,7 @@ const visitLimit=require('express-rate-limit').rateLimit({windowMs:3600000,limit
 router.get('/churches/:id/visit-options',visits.options);
 router.post('/churches/:id/visits',auth,visitLimit,visits.create);
 router.get('/visits/mine',auth,visits.mine);
+router.get('/visits/churches',auth,managers,visits.churches);
 router.get('/visits/manage',auth,managers,visits.manage);
 router.patch('/visits/:id/reschedule',auth,visitLimit,visits.reschedule);
 router.patch('/visits/:id',auth,visits.update);

@@ -111,3 +111,30 @@ test('Campana filtra antes de paginar aunque los avisos recientes estén leídos
  const all=(await request(app).get('/api/notifications?limit=5').set(auth('visitor')).expect(200)).body;assert.ok(all.data.every(n=>n.read));
  const only=(await request(app).get('/api/notifications?unreadOnly=true&limit=1').set(auth('visitor')).expect(200)).body;assert.equal(only.data[0].text,'Pendiente antiguo');assert.equal(only.data[0].read,false);assert.ok(only.pagination.total>0);
 });
+
+test('Equipo de Visitas, datos de encuesta y correo privado simulado',async()=>{
+ const base={identification:{name:'Equipo de recepción'},location:{commune:'Santiago',coordinates:{type:'Point',coordinates:[-70.65,-33.45]}},firstVisit:{requestsEnabled:true},meetings:[{type:'Culto',modality:'Presencial',schedule:[{day:'Domingo',startTime:'12:00'}]}]},settings={accessMode:'selected',representativeIds:[users.rep.id],emailEnabled:true,emailRecipients:['welcome@example.test']};
+ const church=await Church.create({...base,visitSettings:settings,representatives:[users.rep.id,users.otherRep.id],createdBy:users.admin.id,metadata:{dataStatus:'published'}});
+ await User.updateOne({_id:users.visitor.id},{$set:{'searchContext.spiritualIdentity':'believer','preferences.commune':'La Florida'}});
+ const pub=(await request(app).get('/api/churches/'+church.id).expect(200)).body.data;assert.equal(pub.visitSettings,undefined);
+ await request(app).put('/api/churches/'+church.id).set(auth('rep')).send({...base,visitSettings:{...settings,representativeIds:[users.stranger.id]}}).expect(400);
+ await request(app).put('/api/churches/'+church.id).set(auth('rep')).send({...base,visitSettings:{...settings,emailRecipients:['no es correo']}}).expect(400);
+ const recipients=[];app.locals.config.mail={key:'test-key',from:'test@example.test',appUrl:'https://example.test'};app.locals.mailFetch=async(url,opts)=>{recipients.push(JSON.parse(opts.body));return {ok:true,json:async()=>({id:'test-mail'})};};
+ const options=(await request(app).get('/api/churches/'+church.id+'/visit-options')).body,body={optionKey:options.data[0].optionKey,startsAt:options.data[0].startsAt,version:options.version,message:'Mensaje privado'};
+ const results=await Promise.all([1,2].map(()=>request(app).post('/api/churches/'+church.id+'/visits').set(auth('visitor')).send(body)));assert.deepEqual(results.map(r=>r.status).sort(),[201,409]);const visit=results.find(r=>r.status===201).body.data;
+ assert.equal(recipients.length,1);assert.deepEqual(recipients[0].to,['welcome@example.test']);assert.ok(!recipients[0].text.includes('Mensaje privado'));assert.ok(!recipients[0].text.includes('believer'));assert.equal(visit.visitorIdentity,undefined);
+ const staff=(await request(app).get('/api/visits/manage?churchId='+church.id).set(auth('rep')).expect(200)).body.data[0];assert.equal(staff.visitorIdentity,'believer');assert.equal(staff.visitorCommune,'La Florida');assert.equal(staff.mailStatus,'accepted');
+ assert.equal((await request(app).get('/api/visits/manage?churchId='+church.id).set(auth('otherRep')).expect(200)).body.data.length,0);await request(app).patch('/api/visits/'+visit._id+'/manage').set(auth('otherRep')).send({action:'read',version:0}).expect(404);
+ assert.ok(!(await request(app).get('/api/visits/churches').set(auth('otherRep')).expect(200)).body.data.some(x=>x._id===church.id));assert.ok(!(await request(app).get('/api/notifications').set(auth('otherRep')).expect(200)).body.data.some(x=>x.visitId===visit._id));
+ await request(app).patch('/api/visits/'+visit._id+'/manage').set(auth('rep')).send({action:'read',version:0}).expect(200);assert.equal((await request(app).get('/api/visits/manage?churchId='+church.id).set(auth('admin')).expect(200)).body.data[0].read,true);
+ delete app.locals.mailFetch;delete app.locals.config.mail;
+});
+test('Outbox de visitas cifrada, reconciliación concurrente y sin envío al crear en modo cola',async()=>{
+ const q=require('../src/services/mail-queue.service'),Job=require('../src/models/mail-job.model'),cfg={...app.locals.config,securityPolicy:{...app.locals.config.securityPolicy,mailQueueEnabled:true}};
+ cfg.mail={key:'isolated',from:'test@example.test',appUrl:'https://example.test'};cfg.mailQueue={activeKeyId:'test',keys:{test:Buffer.alloc(32,7).toString('base64')}};cfg.securityPolicy={...cfg.securityPolicy,mailQueueEnabled:true};
+ const queuedApp=createApp(cfg);queuedApp.locals.mailFetch=()=>{throw Error('No real mail');};
+ const church=await Church.create({identification:{name:'Cola de visitas'},location:{commune:'Santiago',coordinates:{type:'Point',coordinates:[-70.65,-33.45]}},createdBy:users.admin.id,representatives:[users.rep.id],metadata:{dataStatus:'published'},firstVisit:{requestsEnabled:true},visitSettings:{emailEnabled:true,emailRecipients:['queue-visit@example.test']},meetings:[{type:'Culto',modality:'Presencial',schedule:[{day:'Lunes',startTime:'12:00'}]}]});
+ const options=(await request(queuedApp).get('/api/churches/'+church.id+'/visit-options')).body,r=await request(queuedApp).post('/api/churches/'+church.id+'/visits').set(auth('visitor')).send({optionKey:options.data[0].optionKey,startsAt:options.data[0].startsAt,version:options.version}).expect(201),row=await Visit.findById(r.body.data._id).select('+mailOutbox');assert.equal(row.mailStatus,'queued');assert.equal(row.mailOutbox.length,1);assert.ok(!row.mailOutbox[0].payload.includes('queue-visit@example.test'));
+ const jobId=row.mailOutbox[0].id;await Promise.all([q.reconcile(),q.reconcile()]);assert.equal(await Job.countDocuments({_id:jobId}),1);assert.equal((await Visit.findById(row.id).select('+mailOutbox')).mailOutbox.length,0);let delivered=0;await q.runOne(cfg,{send:async()=>{delivered++;return {ok:true,providerId:'simulated-visit'};}});assert.equal(delivered,1);
+ cfg.securityPolicy={...cfg.securityPolicy,mailQueueEnabled:false};delete cfg.mail;delete cfg.mailQueue;
+});

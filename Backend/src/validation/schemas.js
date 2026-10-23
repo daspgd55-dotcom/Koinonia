@@ -37,6 +37,7 @@ const church = z.strictObject({
   leadership: z.strictObject({ mainLeader: leader.optional(), otherLeaders: z.array(leader).max(50).optional() }).optional(),
   contact: z.strictObject({ website: url.optional(), instagram: url.optional(), facebook: url.optional(), youtube: url.optional(),
     email: z.string().email().optional(), phone: text.max(40).optional() }).optional(),
+  visitSettings:z.strictObject({accessMode:z.enum(['all','selected']).default('all'),representativeIds:z.array(id).max(50).default([]),emailEnabled:z.boolean().default(false),emailRecipients:z.array(z.string().trim().toLowerCase().email().max(254)).max(10).default([])}).optional(),
   firstVisit: z.strictObject({ requestsEnabled: z.boolean().optional(), welcomeSupport: z.enum(['yes', 'no', 'partial', 'unknown']).optional(), instructions: longText.optional(), newVisitorSupport: z.boolean().optional(), welcomeProcess: longText.optional() }).optional(),
   media: z.array(z.strictObject({ leaderId: z.string().uuid().optional(), frame: z.enum(['landscape','wide','square','circle','portrait']).optional(), type: z.enum(['image', 'video']), category: z.enum(['facilities','meetings','activities','representatives','banner']).optional(), url, title: text.optional(), source: text, focalX: z.number().min(0).max(100).optional(), focalY: z.number().min(0).max(100).optional() })).max(30).optional()
 });

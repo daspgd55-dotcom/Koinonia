@@ -1,14 +1,14 @@
-# Primera visita y notificaciones internas — v1
+# Visitas y avisos de recepción
 
 ## Alcance y activación
 
-Piloto para Santiago con **UTC−03:00 fijo**, no zona horaria estacional. No hay correos, push, calendarios ni reserva de cupos. Tampoco se registra automáticamente pertenencia, asistencia o acceso a experiencias.
+Piloto para Santiago con **UTC−03:00 fijo**, no zona horaria estacional. Los avisos internos son predeterminados; los correos opcionales se describen abajo. No hay push, calendarios ni reserva de cupos. Tampoco se registra automáticamente pertenencia, asistencia o acceso a experiencias.
 
-En Administración > Comunidades > administrar ficha > Primera visita, activar «Recibir avisos de primera visita (notificaciones internas)» y guardar. `firstVisit.requestsEnabled` es opcional y false por defecto; cuentas y fichas existentes conservan sus datos. Solo representantes actualmente asignados a una comunidad activa y administradores pueden atender sus avisos. La baja o reasignación retira el acceso inmediatamente.
+En Administración > Comunidades > administrar ficha > Primera visita, activar «Recibir avisos de visitas» y guardar. `firstVisit.requestsEnabled` es opcional y false por defecto; cuentas y fichas existentes conservan sus datos. Solo representantes actualmente asignados a una comunidad activa y administradores pueden atender sus avisos. La baja o reasignación retira el acceso inmediatamente.
 
 La ficha publicada muestra «Quiero visitar esta comunidad» en Visítanos cuando la función está activa. Permite seleccionar una reunión registrada, muestra fecha explícita, mensaje opcional (1000 caracteres) y solicitud de respuesta dentro de la aplicación. No comparte correo de acceso. Iniciar sesión conserva la selección y el mensaje en sessionStorage y vuelve a la ficha. Tras un envío correcto se limpia ese borrador.
 
-Mis visitas está en Mi perfil y en su desplegable. Administración > Primeras visitas ofrece próximas/historial y filtro por comunidad. Notificaciones está en el desplegable de Mi perfil, con indicador de mensajes sin leer. Se actualiza al abrir la app, recuperar visibilidad, cada 60 segundos mientras esté visible y tras acciones de visita. No se requiere un servicio externo.
+Mis visitas está en Mi perfil y en su desplegable. Administración > Visitas ofrece próximas/historial y filtro por comunidad. Notificaciones está en el desplegable de Mi perfil, con indicador de mensajes sin leer. Se actualiza al abrir la app, recuperar visibilidad, cada 60 segundos mientras esté visible y tras acciones de visita. No se requiere un servicio externo.
 
 ## Reglas de fecha y estado
 
@@ -48,7 +48,7 @@ No hay borrado automático de historial en esta versión. No se ha incorporado a
 
 1. Representante: habilitar recepción y guardar una ficha publicada con reunión semanal presencial.
 2. Visitante: abrir Visítanos, seleccionar horario y revisar la fecha local (sin etiquetas técnicas); escribir mensaje; entrar en sesión y enviar.
-3. Representante: revisar Notificaciones y Administración > Primeras visitas, marcar leído y confirmar recepción con respuesta.
+3. Representante: revisar Notificaciones y Administración > Visitas, marcar leído y confirmar recepción con respuesta.
 4. Visitante: revisar la notificación y Mis visitas; cancelar y comprobar Historial. La cancelación llega a representantes.
 5. Tras el término, consultar notificaciones y responder Asistí/No pude asistir/Ahora no. La comunidad no recibe esa respuesta privada.
 6. Probar con representante no asignado, usuario distinto, duplicados y versión anterior: no deben obtener acceso ni crear registros incoherentes.
@@ -80,3 +80,24 @@ Bandeja de visitas y contador se refrescan cada 15 segundos mientras se usan, y 
 ### Campana y filtro de pendientes
 
 `GET /api/notifications?unreadOnly=true&limit=5` devuelve únicamente notificaciones sin leer, filtradas antes de paginar, incluyendo visitas, eventos y colaboraciones. `pagination.total` corresponde a ese filtro; `unread` mantiene el total pendiente. `unreadOnly` acepta `true` o `false`; por defecto es `false` y conserva el historial. Se mantienen las reglas de autorización y lectura compartida del equipo. La campana usa el filtro; «Ver todas las notificaciones» abre la lista completa.
+
+
+## Configuración privada del equipo y correo (2026-10-23)
+
+La ficha editable conserva la bienvenida pública y separa **Configuración privada de avisos**. `visitSettings` se acepta en creación/actualización de iglesia y se excluye completamente de sus respuestas públicas:
+
+```json
+{"visitSettings":{"accessMode":"selected","representativeIds":["ID_ASIGNADO"],"emailEnabled":false,"emailRecipients":["bienvenida@example.org"]}}
+```
+
+- `all` es el valor predeterminado compatible con iglesias existentes. `selected` restringe Visitas a representantes seleccionados que sigan asignados y activos; lista vacía deja acceso solo al administrador. La configuración no altera permisos de edición de iglesias ni de colaboraciones. Los editores autorizados de la iglesia pueden ajustar su equipo.
+- IDs ajenos/inactivos se rechazan. La lectura y atención siguen compartidas entre el equipo. `GET /api/visits/churches` devuelve solo iglesias disponibles para este panel. El servidor aplica la restricción también a listados, acciones y notificaciones.
+- Nuevos avisos guardan instantáneas `visitorIdentity` y `visitorCommune`, solo expuestas al equipo en `/api/visits/manage`, junto con nombre y mensaje. Respuestas omitidas muestran “No indicada”. No se rellenan retrospectivamente avisos anteriores ni se publican datos del visitante.
+- Hasta 10 correos válidos, deduplicados, que pueden no corresponder a usuarios. Desactivado por defecto. El correo solo anuncia un nuevo aviso para la iglesia y enlaza al panel: no incluye nombre, identidad espiritual, comuna ni mensaje del visitante. El formulario informa al visitante de los datos compartidos con el equipo.
+- Reutiliza el proveedor y límites existentes. Sin proveedor el aviso interno se conserva y el panel informa indisponibilidad. En modo directo no se reintenta automáticamente un fallo/timeout; “aceptado” no significa entregado. Las reprogramaciones y cancelaciones mantienen sus avisos internos, sin nuevos correos externos.
+- Si está activada la cola existente, el outbox cifrado se guarda atómicamente dentro de Visit. El worker reconcilia outboxes de User y Visit, con deduplicación, vencimiento y reintentos existentes. Un worker suspendido no entrega hasta reanudarse; no hay fallback directo. Cambiar destinatarios o desactivar correos no revoca trabajos previamente encolados. Consultar la documentación de cola para sus claves y activación; no hace falta otra API key.
+
+### Comprobación aislada
+`node --test Backend/test/visits.test.js Backend/test/linked-communities.test.js Backend/test/mail-queue.test.js Backend/test/event-collaboration.test.js`
+
+`node Frontend/test/visits.cjs` verifica recepción, notificaciones, lectura, cambios de reunión, cancelación, historial y privacidad. Las pruebas de correo usan adaptadores simulados; no envían correos reales. Para revisión manual, elegir un equipo parcial, enviar un aviso con otro usuario y verificar que el representante excluido no puede consultarlo ni recibe notificación; el admin conserva acceso.

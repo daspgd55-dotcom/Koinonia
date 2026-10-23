@@ -18,7 +18,7 @@ function publicData(data, church) {
   const contact = { ...data.contact };
   for (const key of ['email', 'phone']) if (data.privateFields?.[key]) delete contact[key];
   const location = data.location.mode === 'church' ? { mode: 'church', resolved: publicChurch(church).location } : data.location;
-  return { _id: data._id, churchId: data.churchId, church: { _id: church._id, name: church.identification.name }, name: data.name, type: data.type, description: data.description, audience: data.audience, leaders: data.leaders, contact, location, media: data.media };
+  return { _id: data._id, churchId: data.churchId, church: { _id: church._id, name: church.identification.name }, name: data.name, type: data.type, description: data.description, audience: data.audience, leaders: data.leaders, contact, location, schedules:{mode:data.schedules?.mode||'none',meetings:(data.schedules?.mode==='church'?church.meetings:data.schedules?.mode==='custom'?data.schedules.meetings:[])?.map(m=>({type:m.type,audience:m.audience,modality:m.modality,addressOrUrl:m.addressOrUrl,frequency:m.frequency,frequencyNotes:m.frequencyNotes,schedule:m.schedule}))||[]}, media: data.media };
 }
 function assertPublishable(church) {
   if (!church.active || !['published', 'verified'].includes(church.metadata?.dataStatus) || !church.metadata?.firstPublishedByAdminAt)

@@ -9,6 +9,7 @@ const fields = z.strictObject({
   audience: z.array(text).max(50).default([]), leaders: z.array(z.strictObject({ name: text, role: text })).max(50).default([]),
   contact: church.shape.contact.unwrap().default({}),
   privateFields: z.strictObject({ email: z.boolean().default(false), phone: z.boolean().default(false) }).default({ email: false, phone: false }),
+  schedules:z.discriminatedUnion('mode',[z.strictObject({mode:z.literal('none')}),z.strictObject({mode:z.literal('church')}),z.strictObject({mode:z.literal('custom'),meetings:church.shape.meetings.unwrap()})]).default({mode:'none'}),
   location: location.default({ mode: 'none' }),
   media: church.shape.media.unwrap().element.omit({ leaderId: true, category: true }).array().max(7).default([])
 });

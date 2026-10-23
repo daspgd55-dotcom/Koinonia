@@ -55,3 +55,16 @@ test('Archivo e iglesia oculta no filtran contenido; historial conserva intenciÃ
  e=(await publish(e).expect(200)).body.data;await Church.updateOne({_id:church.id},{$set:{active:false}});assert.equal((await notices('visitor')).body.unread,0);await request(app).get('/api/events/'+e._id+'/participation').set(auth('visitor')).expect(404);await choose(e).expect(409);await Church.updateOne({_id:church.id},{$set:{active:true}});
  await Event.updateOne({_id:e._id},{$set:{startsAt:new Date(Date.now()-86400000),effectiveEndsAt:new Date(Date.now()-1000)}});rows=(await request(app).get('/api/events/mine?view=history').set(auth('visitor')).expect(200)).body.data;assert.equal(rows.find(p=>p.eventId===e._id).pending,false);assert.equal(rows.find(p=>p.eventId===e._id).event.displayStatus,'finished');await choose(e,'withdrawn').expect(200);
 });
+
+test('Inicio personal: relaciones independientes, aislamiento y contenido pÃºblico',async()=>{
+ const Follow=require('../src/models/church-follow.model'),Interaction=require('../src/models/interaction.model');
+ await request(app).get('/api/users/me/home').expect(401);
+ let home=(await request(app).get('/api/users/me/home').set(auth('visitor')).expect(200)).body.data;assert.equal(home.personalized,false);
+ await Interaction.create({user:users.visitor._id,church:church._id,type:'saved'});
+ home=(await request(app).get('/api/users/me/home').set(auth('visitor')).expect(200)).body.data;assert.equal(home.personalized,true);assert.equal(home.hasSaved,true);assert.equal(home.followingCount,0);assert.equal(home.events.length,0);
+ await User.updateOne({_id:users.visitor._id},{$set:{membershipChurch:church._id}});const e=await published();await Follow.create({user:users.visitor._id,church:church._id,active:true,since:new Date()});
+ home=(await request(app).get('/api/users/me/home').set(auth('visitor')).expect(200)).body.data;assert.equal(home.membership._id,church.id);assert.equal(home.following.length,1);assert.ok(home.events.some(r=>r._id===e._id));assert.equal(home.membership.representatives,undefined);assert.equal(home.membership.contact,undefined);
+ const otherHome=(await request(app).get('/api/users/me/home').set(auth('otherRep')).expect(200)).body.data;assert.equal(otherHome.personalized,false);assert.equal(otherHome.events.length,0);
+ await Church.updateOne({_id:church._id},{$set:{active:false}});home=(await request(app).get('/api/users/me/home').set(auth('visitor')).expect(200)).body.data;assert.equal(home.membership,null);assert.equal(home.following.length,0);assert.equal(home.events.length,0);assert.equal(home.hasMembership,true);await Church.updateOne({_id:church._id},{$set:{active:true}});
+ await request(app).get('/api/users/me/home?user='+users.otherRep.id).set(auth('visitor')).expect(400);
+});

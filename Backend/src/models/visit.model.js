@@ -1,7 +1,7 @@
 const {Schema,model}=require('mongoose');
 const event=new Schema({audience:{type:String,enum:['visitor','staff'],required:true},kind:String,text:{type:String,maxlength:1000},at:{type:Date,default:Date.now},readBy:[{type:Schema.Types.ObjectId,ref:'User'}]});
 const schema=new Schema({
- church:{type:Schema.Types.ObjectId,ref:'Church',required:true},visitor:{type:Schema.Types.ObjectId,ref:'User',required:true},churchName:String,visitorName:String,
+ church:{type:Schema.Types.ObjectId,ref:'Church',required:true},visitor:{type:Schema.Types.ObjectId,ref:'User',required:true},churchName:String,visitorName:String,visitorIdentity:String,visitorCommune:String,mailStatus:String,mailOutbox:{type:[new Schema({id:String,payload:String,expiresAt:Date,createdAt:Date},{_id:false})],select:false,default:undefined},
  optionKey:{type:String,required:true},meeting:{type:String,required:true},day:String,time:String,address:String,frequencyNotes:String,startsAt:{type:Date,required:true},endsAt:{type:Date,required:true},timezone:{type:String,default:'UTC-03:00'},
  message:{type:String,maxlength:1000},requestReply:{type:Boolean,default:false},status:{type:String,enum:['sent','received','cancelled'],default:'sent'},active:{type:Boolean,default:true},cancelledBy:String,
  receivedByName:String,receivedAt:Date,scheduleHistory:[{meeting:String,startsAt:Date,endsAt:Date,optionKey:String,changedAt:Date}],

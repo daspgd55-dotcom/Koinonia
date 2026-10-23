@@ -96,3 +96,11 @@ test('PATCH conserva campos omitidos, limpia grupos explícitos y exige versión
   await request(app).patch(url).set(auth('rep')).set('If-Match', '"3"').send({ name: 'Sin permiso' }).expect(403);
   await Church.updateOne({ _id: church.id }, { $addToSet: { representatives: users.rep._id } });
 });
+
+test('Horarios propios e heredados, validación y privacidad',async()=>{
+ const meetings=[{type:'Jóvenes',modality:'Presencial',schedule:[{day:'Viernes',startTime:'19:30',durationMinutes:90}]}];await Church.updateOne({_id:church.id},{$set:{active:true,'metadata.dataStatus':'published','metadata.firstPublishedByAdminAt':new Date(),meetings,visitSettings:{emailEnabled:true,emailRecipients:['private@example.test']}}});
+ const linked=(await create('rep',{schedules:{mode:'church'}}).expect(201)).body.data;await status(linked,'published').expect(200);let pub=(await request(app).get('/api/communities/'+linked._id).expect(200)).body.data;assert.equal(pub.schedules.meetings[0].schedule[0].startTime,'19:30');assert.ok(!JSON.stringify(pub).includes('private@example.test'));
+ await Church.updateOne({_id:church.id},{$set:{'meetings.0.schedule.0.startTime':'20:00'}});pub=(await request(app).get('/api/communities/'+linked._id).expect(200)).body.data;assert.equal(pub.schedules.meetings[0].schedule[0].startTime,'20:00');
+ const own=(await create('rep',{schedules:{mode:'custom',meetings}}).expect(201)).body.data;await status(own,'published').expect(200);assert.equal((await request(app).get('/api/communities/'+own._id)).body.data.schedules.meetings[0].schedule[0].startTime,'19:30');
+ await create('rep',{schedules:{mode:'custom',meetings:[{...meetings[0],schedule:[{day:'Viernes',startTime:'99:99'}]}]}}).expect(400);await create('rep',{schedules:{mode:'church',churchId:other.id}}).expect(400);
+});

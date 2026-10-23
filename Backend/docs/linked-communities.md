@@ -160,3 +160,15 @@ Prueba de navegador local desde `Frontend`: `npm.cmd run test:linked`. Crea Mong
 - Se descartan respuestas de solicitudes anteriores al cambiar de ficha y se consulta nuevamente al recuperar el foco o volver a una pestaña visible. No se añade membresía, seguimiento, asistencia ni eventos.
 
 Verificación de navegador desde `Frontend`: `npm.cmd run test:public-communities`. Usa MongoDB y servidores temporales, navegación anónima desde iglesia y por enlace directo, validación de privacidad, marcos y zoom, vista móvil, ausencia de secciones vacías, iglesias ocultas y error con reintento. Capturas locales en `Frontend/.cache/journey/linked-public-desktop.png` y `linked-public-mobile.png` (datos ficticios). No necesita Atlas ni credenciales reales.
+
+
+## Reuniones y horarios (2026-10-23)
+
+Campo opcional `schedules` en creación y PATCH, conservando If-Match y los permisos actuales:
+- `{ "mode": "none" }`: sin horarios (predeterminado para datos existentes).
+- `{ "mode": "church" }`: muestra todas las reuniones actuales de la iglesia de origen. Es una referencia dinámica, no una copia ni una selección de otra iglesia.
+- `{ "mode": "custom", "meetings": [...] }`: reuniones propias con el mismo contrato de tipo, público, modalidad, dirección/enlace, frecuencia, notas y arreglo schedule (day, startTime, durationMinutes) de la iglesia.
+
+La administración reutiliza el editor de reuniones; oculta el control de avisos de visita para comunidades vinculadas. No se crean avisos independientes, eventos ni permisos a partir de estos horarios. La respuesta pública resuelve los horarios efectivos y excluye controles internos de visitas. La ficha y vista previa ocultan el bloque si no hay reuniones. La publicación/visibilidad sigue dependiendo de la iglesia y del estado de la comunidad.
+
+Pruebas: `node --test Backend/test/linked-communities.test.js` verifica herencia dinámica, horarios propios, validación y privacidad. `node Frontend/test/linked-communities.cjs` comprueba edición, horarios, vista previa, permisos, borradores, publicación y móvil. Las tarjetas de administración presentan título y estado juntos.

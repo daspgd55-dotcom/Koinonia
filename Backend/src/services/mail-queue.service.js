@@ -13,10 +13,12 @@ function open(value,id,cfg){const [key,iv,tag,data]=value.split('.'),d=crypto.cr
 function entry(cfg,email,subject,text,guard=null){const id=crypto.randomUUID(),expiresAt=new Date(Math.min(guard?.expiresAt?.getTime()||Infinity,Date.now()+23*3600000));return {id,createdAt:new Date(),payload:seal({email,subject,text,from:cfg.mail.from,guard},id,cfg),expiresAt};}
 function notice(cfg,email){return entry(cfg,email,'Tu contraseña de Koinonía cambió','Se cambió tu contraseña y se cerraron las sesiones anteriores. Si no reconoces este cambio, utiliza Recuperar contraseña desde Koinonía.');}
 async function reconcile(){
- const users=await User.find({'mailOutbox.0':{$exists:true}}).select('+mailOutbox').limit(100);
+ for(const Model of [User,require('../models/visit.model')]){
+ const users=await Model.find({'mailOutbox.0':{$exists:true}}).select('+mailOutbox').limit(100);
  for(const u of users)for(const item of u.mailOutbox){
   try{await Job.updateOne({_id:item.id},{$setOnInsert:{payload:item.payload,expiresAt:item.expiresAt,createdAt:item.createdAt||new Date(),state:'pending',attempts:0,nextAttemptAt:new Date()}},{upsert:true});}catch(e){if(e.code!==11000)throw e;}
-  await User.updateOne({_id:u._id},{$pull:{mailOutbox:{id:item.id}}});
+  await Model.updateOne({_id:u._id},{$pull:{mailOutbox:{id:item.id}}});
+ }
  }
 }
 function retryAfter(value,now=Date.now()){if(!value)return 0;const n=Number(value);return Number.isFinite(n)?Math.max(0,n*1000):Math.max(0,Date.parse(value)-now)||0;}
