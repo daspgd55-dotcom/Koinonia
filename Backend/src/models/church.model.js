@@ -25,6 +25,8 @@ const ChurchSchema = new Schema({
   importInfo: { schemaVersion: String, batchId: String, sourceFile: String, sourceRow: Number, importedAt: Date, issues: [String] },
   metadata: { firstPublishedByAdminAt: Date, dataStatus: { type: String, enum: ['draft', 'published', 'verified'], default: 'draft' }, version: { type: Number, default: 1 }, testData: { type: Boolean, default: false } },
   publicationRequest: { verificationRequested:Boolean, status: {type:String,enum:['pending','resolved']}, requestedBy: {type:Schema.Types.ObjectId,ref:'User'}, requestedAt:Date },
+  representativeRoles:[embedded({user:{type:Schema.Types.ObjectId,ref:'User',required:true},subrole:{type:String,enum:['administrator','moderator','editor','welcome'],required:true}})],
+  teamAudit:[embedded({actor:{type:Schema.Types.ObjectId,ref:'User'},at:Date,user:{type:Schema.Types.ObjectId,ref:'User'},subrole:String,action:String})],
   representatives: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   createdBy: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   updatedBy: { type: Schema.Types.ObjectId, ref: 'User' },

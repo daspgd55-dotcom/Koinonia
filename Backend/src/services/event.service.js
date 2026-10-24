@@ -3,7 +3,7 @@ const {managed,visible}=require('./church.service'),{HttpError}=require('../util
 const offset=3*60*60*1000;
 function effectiveEnd(startsAt,endsAt){if(endsAt)return new Date(endsAt);if(!startsAt)return null;const local=new Date(new Date(startsAt).getTime()-offset);local.setUTCHours(24,0,0,0);return new Date(+local+offset);}
 const displayStatus=(event,now=new Date())=>event.eventStatus==='cancelled'?'cancelled':event.effectiveEndsAt&&new Date(event.effectiveEndsAt)<=now?'finished':'scheduled';
-const parent=(req,churchId)=>managed({user:req.user,params:{id:String(churchId)}},{includeInactive:true});
+const parent=(req,churchId)=>managed({user:req.user,params:{id:String(churchId)}},{includeInactive:true,permission:'content'});
 async function organizer(churchId,communityId){if(!communityId)return null;const community=await Community.findOne({_id:communityId,churchId});if(!community)throw new HttpError(400,'INVALID_ORGANIZER','La comunidad organizadora debe pertenecer a esta iglesia');return community;}
 function publishable(event,church,community){
  if(!church.active||!['published','verified'].includes(church.metadata?.dataStatus)||!church.metadata?.firstPublishedByAdminAt)throw new HttpError(409,'CHURCH_NOT_PUBLISHABLE','La iglesia debe estar publicada y tener una primera publicación autorizada por un administrador');

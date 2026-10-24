@@ -13,14 +13,14 @@ exports.create=async(req,res)=>{
  res.set('Cache-Control','no-store').status(201).json({data:{_id:item._id,title:item.title,body:item.body,displayName:item.displayName,category:item.category,status:item.status,createdAt:item.createdAt}});
 };
 exports.manage=async(req,res)=>{const q=v.parse(pagination.extend({status:v.z.enum(['pending','approved','rejected','withdrawn']).default('pending'),reported:v.z.enum(['true']).optional()}),req.query);
- const filter=q.reported?{'reports.status':'pending'}:{status:q.status};if(req.user.role!=='admin')filter.church={$in:await Church.find({representatives:req.user._id,active:true}).distinct('_id')};
+ const filter=q.reported?{'reports.status':'pending'}:{status:q.status};if(req.user.role!=='admin')filter.church={$in:await Church.find({...require('../services/church-permissions').scope(req.user,'moderation'),active:true}).distinct('_id')};
  return listing(res,filter,q,'title body displayName category church status reason createdAt __v reports',true);
 };
 exports.moderate=async(req,res)=>{
  const id=v.parse(v.id,req.params.id),data=v.parse(v.z.strictObject({status:v.z.enum(['approved','rejected','resolve']),reason:v.z.string().trim().max(1000).optional(),version:v.z.number().int().min(0)}).refine(x=>x.status!=='rejected'||x.reason?.length>=5,{message:'Indica el motivo del rechazo (mínimo 5 caracteres)'}),req.body);
  const current=await Experience.findById(id).select('church status reports');
  if(!current)throw new HttpError(404,'NOT_FOUND','Experiencia no encontrada');
- if(req.user.role!=='admin'&&!await Church.exists({_id:current.church,representatives:req.user._id,active:true}))throw new HttpError(403,'FORBIDDEN','Solo puedes moderar experiencias de tus comunidades asignadas.');
+ if(req.user.role!=='admin'&&!await Church.exists({_id:current.church,...require('../services/church-permissions').scope(req.user,'moderation'),active:true}))throw new HttpError(403,'FORBIDDEN','Solo puedes moderar experiencias de tus comunidades asignadas.');
  if(current.status==='withdrawn'&&data.status!=='resolve')throw new HttpError(409,'WITHDRAWN','El autor retiró esta experiencia.');
  if(data.status==='resolve'&&(!data.reason||data.reason.length<5))throw new HttpError(400,'REASON_REQUIRED','Explica la resolución del reporte.');
  const status=data.status==='resolve'?current.status:data.status;

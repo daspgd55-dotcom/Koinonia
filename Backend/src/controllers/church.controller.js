@@ -24,12 +24,14 @@ exports.mine = async (req, res) => {
   if (q.status) filter['metadata.dataStatus'] = q.status;
   if (req.user.role !== 'admin') filter.representatives = req.user._id;
   const [data, total] = await Promise.all([Church.find(filter).sort({ 'identification.name': 1, _id: 1 }).skip((q.page - 1) * q.limit).limit(q.limit), Church.countDocuments(filter)]);
-  res.json({ data, pagination: { page: q.page, limit: q.limit, total, pages: Math.ceil(total / q.limit) } });
+  res.json({ data:data.map(c=>{const permissions=require('../services/church-permissions').permissions(c,req.user);return {...(permissions.includes('church')?c.toObject():svc.publicChurch(c)),permissions};}), pagination: { page: q.page, limit: q.limit, total, pages: Math.ceil(total / q.limit) } });
 };
 exports.detail = async (req, res) => {
-  const church = await svc.managed(req, { includeInactive: true });
+  const church = await svc.managed(req, { includeInactive: true,permission:null });
+  const permissions=require('../services/church-permissions').permissions(church,req.user);
+  if(!permissions.includes('church'))return res.set('Cache-Control','no-store').json({data:{...svc.publicChurch(church),permissions,metadata:{dataStatus:church.metadata.dataStatus,firstPublishedByAdminAt:church.metadata.firstPublishedByAdminAt,version:church.metadata.version},active:church.active},assignedAccounts:[]});
   const assignedAccounts = await User.find({ _id: { $in: church.representatives },active:true }).select(req.user.role==='admin'?'_id name email role':'_id name role').lean();
-  res.set('ETag', '"' + church.metadata.version + '"').json({ data: church, ...(assignedAccounts ? { assignedAccounts } : {}) });
+  res.set('ETag', '"' + church.metadata.version + '"').json({ data: {...church.toObject(),permissions}, ...(assignedAccounts ? { assignedAccounts } : {}) });
 };
 // Reparación explícita de identificadores antiguos, sin guardar la ficha ni cambiar su publicación.
 exports.leaderIdentifiers = async (req, res) => {
@@ -85,7 +87,9 @@ exports.representatives = async (req, res) => {
   const { userIds } = v.parse(v.z.strictObject({ userIds: v.z.array(v.id).min(1).max(20).refine(a => new Set(a).size === a.length) }), req.body);
   const count = await User.countDocuments({ _id: { $in: userIds }, role: { $in: ['representative', 'admin'] }, active: true });
   if (count !== userIds.length) throw new HttpError(400, 'INVALID_REPRESENTATIVES', 'Todos deben ser representantes o administradores activos');
-  church.representatives = userIds; church.updatedBy = req.user._id; church.metadata.version += 1;
+  const entries=userIds.map(id=>({user:id,subrole:church.representativeRoles?.find(r=>String(r.user)===id)?.subrole||'administrator'}));
+  if(!entries.some(r=>r.subrole==='administrator'))throw new HttpError(409,'LAST_ADMIN','Debe quedar al menos un representante administrador.');
+  church.representativeRoles=entries;church.teamAudit.push({actor:req.user._id,at:new Date(),action:'replace_team'});church.teamAudit=church.teamAudit.slice(-200);church.representatives = userIds; church.updatedBy = req.user._id; church.metadata.version += 1;
   await church.save(); res.json({ data: church });
 };
 exports.remove = async (req, res) => {
@@ -143,4 +147,6 @@ exports.requestPublication=async(req,res)=>{
 
 exports.checklist=async(req,res)=>res.set('Cache-Control','no-store').json({data:require('../services/church-quality.service').checklist(await svc.managed(req,{includeInactive:true}))});
 
-exports.meetingIdentifiers=async(req,res)=>{const c=await svc.managed(req,{includeInactive:true});svc.checkVersion(req,c);let changed=false;for(const m of c.meetings||[])if(!m.id){m.id=require('node:crypto').randomUUID();changed=true;}if(changed){c.metadata.version+=1;await c.save();}res.set('ETag','"'+c.metadata.version+'"').json({data:c});};
+exports.meetingIdentifiers=async(req,res)=>{const c=await svc.managed(req,{includeInactive:true,permission:'content'});svc.checkVersion(req,c);let changed=false;for(const m of c.meetings||[])if(!m.id){m.id=require('node:crypto').randomUUID();changed=true;}if(changed){c.metadata.version+=1;await c.save();}res.set('ETag','"'+c.metadata.version+'"').json({data:require('../services/church-permissions').permissions(c,req.user).includes('church')?c:{...svc.publicChurch(c),permissions:['content'],metadata:{dataStatus:c.metadata.dataStatus,firstPublishedByAdminAt:c.metadata.firstPublishedByAdminAt,version:c.metadata.version},active:c.active}});};
+
+exports.managementPermissions=async(req,res)=>{const p=require('../services/church-permissions');const rows=req.user.role==='admin'?[]:await Church.find({active:true,representatives:req.user._id}).select('representatives representativeRoles visitSettings.accessMode visitSettings.representativeIds').lean();const permissions=req.user.role==='admin'?p.roles.administrator:[...new Set(rows.flatMap(c=>p.permissions(c,req.user).filter(k=>k!=='visits'||c.visitSettings?.accessMode!=='selected'||c.visitSettings?.representativeIds?.some(id=>String(id)===String(req.user._id)))))];res.set('Cache-Control','no-store').json({permissions});};

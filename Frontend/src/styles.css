@@ -158,3 +158,5 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 
 .detail-banner-photo .church-identity-line{font-weight:700;color:#17232D;margin:14px 0 6px}.detail-banner-photo .church-language-line{font-weight:400;color:#66727A;margin:0 0 12px;line-height:1.5}.church-follow-block{margin:12px 0}.church-follow-block .church-follow{margin:0;gap:10px;align-items:center}.church-follow-block .follow-count{display:block;color:#66727A;font-size:13px;margin-top:8px}.church-follow-block [role=alert]{display:block;color:#813720;font-size:12px;margin-top:6px}
 @media(max-width:360px){header .compact-navigation nav{gap:4px}header .compact-navigation nav>a{padding-inline:2px}}
+
+.church-team{max-width:960px;margin:1.5rem auto}.church-team-list{list-style:none;padding:0;display:grid;gap:.75rem}.church-team-list li,.church-team-found{padding:1rem;border:1px solid #d6dfdc;border-radius:12px;overflow-wrap:anywhere}.church-team-list li p{margin:.35rem 0}.church-team label{display:grid;gap:.35rem;margin:.6rem 0;max-width:32rem}.church-team select,.church-team input{width:100%;min-height:44px}.church-team-list .text-button{margin-top:.5rem}

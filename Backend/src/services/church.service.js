@@ -8,7 +8,7 @@ const exact = value => new RegExp('^' + escape(value) + '$', 'i');
 // Función para devolver la información pública de una iglesia, sin datos sensibles ni internos
 function publicChurch(doc) {
   const c = doc.toObject ? doc.toObject() : { ...doc };
-  delete c.visitSettings; delete c.publicationRequest; delete c.representatives; delete c.createdBy; delete c.updatedBy; delete c.__v; delete c.importInfo; delete c.reviewImport;
+  delete c.representativeRoles; delete c.teamAudit; delete c.visitSettings; delete c.publicationRequest; delete c.representatives; delete c.createdBy; delete c.updatedBy; delete c.__v; delete c.importInfo; delete c.reviewImport;
   c.verification = { lastUpdated: c.verification?.lastUpdated };
   const hidden = c.privateFields || {};
   c.doctrine = { ...c.doctrine }; c.contact = { ...c.contact };
@@ -28,11 +28,12 @@ function publicChurch(doc) {
 }
 
 //Función para obtener una iglesia y verificar que el usuario tenga permisos de administración
-async function managed(req, { includeInactive = false } = {}) {
-  const church = await Church.findOne({ _id: parse(id, req.params.id), ...(!includeInactive ? { active: true } : {}) });
+async function managed(req, { includeInactive = false, permission = 'church', session = null } = {}) {
+  const church = await Church.findOne({ _id: parse(id, req.params.id), ...(!includeInactive ? { active: true } : {}) }).session(session);
   if (!church) throw new HttpError(404, 'NOT_FOUND', 'Comunidad no encontrada');
   if (req.user.role !== 'admin' && !(req.user.role === 'representative' && church.representatives.some(x => x.equals(req.user._id))))
     throw new HttpError(403, 'FORBIDDEN', 'No puedes administrar esta comunidad');
+  if(permission&&!require('./church-permissions').permissions(church,req.user).includes(permission))throw new HttpError(403,'FORBIDDEN','Tu función en esta iglesia no permite esta acción');
   return church;
 }
 

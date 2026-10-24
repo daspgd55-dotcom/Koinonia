@@ -8,7 +8,7 @@ const notFound = () => new HttpError(404, 'NOT_FOUND', 'Comunidad vinculada no e
 const objectId = value => new Types.ObjectId(parse(id, value));
 const escape = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const reply = (res, data, status = 200) => res.status(status).set('Cache-Control', 'no-store').set('ETag', '"' + data.version + '"').json({ data });
-const parent = (req, churchId) => managed({ user: req.user, params: { id: String(churchId) } }, { includeInactive: true });
+const parent = (req, churchId) => managed({ user: req.user, params: { id: String(churchId) } }, { includeInactive: true, permission: 'content' });
 async function managedCommunity(req) {
   const data = await Community.findById(objectId(req.params.id));
   if (!data) throw notFound();
@@ -53,7 +53,7 @@ async function list(req, res, management) {
   if (!management) filter.status = 'published'; else if (q.status) filter.status = q.status;
   if (q.type) filter.type = q.type;
   if (q.q) filter.name = new RegExp(escape(q.q), 'i');
-  const scope = management ? (req.user.role === 'admin' ? {} : { 'parent.representatives': req.user._id }) : Object.fromEntries(Object.entries(visible).map(([key, value]) => ['parent.' + key, value]));
+  const scope = management ? (req.user.role === 'admin' ? {} : require('../services/church-permissions').scope(req.user,'content','parent.')) : Object.fromEntries(Object.entries(visible).map(([key, value]) => ['parent.' + key, value]));
   const [result] = await Community.aggregate([{ $match: filter }, { $lookup: { from: Church.collection.name, localField: 'churchId', foreignField: '_id', as: 'parent' } }, { $unwind: '$parent' }, { $match: scope },
     { $sort: { name: 1, _id: 1 } }, { $facet: { rows: [{ $skip: (q.page - 1) * q.limit }, { $limit: q.limit }], total: [{ $count: 'value' }] } }]);
   const total = result.total[0]?.value || 0, data = result.rows.map(({ parent: church, ...row }) => management ? row : publicData(row, church));

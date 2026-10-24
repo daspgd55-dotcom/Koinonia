@@ -122,9 +122,14 @@ router.post('/users/:id/promote-representative', auth, admin, user.promoteRepres
 router.patch('/users/:id/role', auth, admin, user.role);
 router.post('/representatives', auth, admin, church.createRepresentative);
 router.get('/representatives', auth, admin, church.eligibleRepresentatives);
+router.get('/churches/management-permissions',auth,managers,church.managementPermissions);
 router.get('/churches/manage', auth, managers, church.mine);
 router.get('/churches/manage/:id/checklist', auth, managers, church.checklist);
 router.get('/churches/manage/:id', auth, managers, church.detail);
+const team=require('../controllers/church-team.controller');
+router.get('/churches/:id/team',auth,managers,team.list);
+router.get('/churches/:id/team/lookup',auth,managers,team.lookup);
+router.put('/churches/:id/team',auth,managers,team.assign);
 router.post('/churches/:id/meeting-identifiers', auth, managers, church.meetingIdentifiers);
 router.post('/churches/:id/leader-identifiers', auth, managers, church.leaderIdentifiers);
 router.get('/churches/search', church.list);

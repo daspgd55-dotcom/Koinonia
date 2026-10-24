@@ -89,3 +89,7 @@ La consulta por descripción es solo un aviso «Próximamente», sin formulario 
 Hasta 800 px la navegación mantiene Buscar iglesias, Para ti y Mi perfil (Iniciar sesión para visitantes) a la vista. Menú agrupa Inicio, Administración cuando corresponde y registro. Mi perfil queda al extremo derecho, con su avatar a la derecha; su desplegable animado ofrece Configurar perfil y Cerrar sesión. Se abre con mouse, clic, toque o flecha abajo, admite Escape y respeta movimiento reducido. Se cierra al navegar, al pulsar Escape o al hacer clic fuera; Escape devuelve el foco al botón.
 
 Ejecutar `npm run test:discover` y `npm run test:explore` en Frontend. Se verifican visitantes y tres roles, explicaciones y datos faltantes, navegación móvil, guardado/deshacer/descarte persistente, Ver otra sin interacción, ausencia de formulario semántico y conservación de contexto.
+
+## Subroles de representantes
+
+Contrato, matriz de permisos y prueba aislada: [representative-subroles.md](representative-subroles.md). Ejecutar `node Frontend/test/church-subroles.cjs` desde la raíz. Usa una réplica MongoDB temporal para las asignaciones transaccionales; no usa cuentas de producción.

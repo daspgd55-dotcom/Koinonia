@@ -93,11 +93,11 @@ async function main() {
   await page.getByLabel('Estilo cultural',{exact:true}).selectOption('Estilo Moderado');
   await page.getByRole('checkbox',{name:'Ocultar del perfil público: Estilos musicales',exact:true}).check();
   await page.getByRole('checkbox',{name:'Ocultar del perfil público: Estilo cultural',exact:true}).check();
-  await page.getByRole('button',{name:'Vista previa del perfil',exact:true}).click();
-  await page.locator('.preview-panel').getByText('Vida de comunidad',{exact:true}).click();
+  await page.getByRole('button',{name:'Vista previa del perfil',exact:true}).click();assert.equal(await page.locator('.church-edit-form').isVisible(),false);
+  if(await page.locator('.preview-panel').getByText('Vida de comunidad',{exact:true}).count())await page.locator('.preview-panel').getByText('Vida de comunidad',{exact:true}).click();
   assert.equal(await page.locator('.preview-panel').getByRole('heading',{name:'Estilos musicales',exact:true}).count(),0);
   assert.equal(await page.locator('.preview-panel').getByText(/Estilo Moderado/).count(),0);
-  await page.getByRole('button',{name:'Cerrar vista previa',exact:true}).click();
+  await page.getByRole('button',{name:'Cerrar vista previa',exact:true}).click();assert.equal(await page.locator('.church-edit-form').isVisible(),true);assert.equal(await page.getByLabel('Estilo cultural',{exact:true}).inputValue(),'Estilo Moderado');
   await page.getByRole('button',{name:'Liderazgo y contacto',exact:true}).click();
   await page.getByLabel('Nombre de autoridad principal',{exact:true}).fill('Responsable de prueba');
   await page.getByLabel('Cargo de autoridad principal',{exact:true}).fill('Pastor');

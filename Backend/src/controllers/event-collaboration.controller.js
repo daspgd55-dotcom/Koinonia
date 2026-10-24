@@ -5,7 +5,7 @@ async function publicEvent(id){const [e]=await Event.aggregate([{$match:{_id:oid
 const eligible=e=>e&&e.eventStatus==='scheduled'&&new Date(e.startsAt)>new Date();
 const history=(req,action,audienceChurchId)=>({_id:new Types.ObjectId(),action,actor:req.user._id,actorName:req.user.name||req.user.username||'Representante',actorRole:req.user.role,at:new Date(),audienceChurchId});
 const audit=c=>(c.history||[]).map(h=>({action:h.action,actor:h.actor,actorName:h.actorName,actorRole:h.actorRole,at:h.at}));
-async function ids(user){return user.role==='admin'?Church.find({}).distinct('_id'):user.role==='representative'?Church.find({representatives:user._id}).distinct('_id'):[];}
+async function ids(user){return user.role==='admin'?Church.find({}).distinct('_id'):user.role==='representative'?Church.find(require('../services/church-permissions').scope(user,'content')).distinct('_id'):[];}
 async function getEvent(id){const e=await Event.findById(oid(id)).lean();if(!e)throw new HttpError(404,'NOT_FOUND','Evento no encontrado');return e;}
 exports.list=async(req,res)=>{const e=await getEvent(req.params.id);await svc.parent(req,e.churchId);const churches=await Church.find({_id:{$in:(e.collaborations||[]).map(c=>c.churchId)},...visible}).select('identification.name').lean();res.set('Cache-Control','no-store').json({version:e.version,canInvite:!!eligible(await publicEvent(e._id)),data:(e.collaborations||[]).map(c=>({churchId:c.churchId,churchName:churches.find(x=>String(x._id)===String(c.churchId))?.identification.name||'Iglesia no disponible públicamente',status:c.status,history:audit(c)}))});};
 exports.invite=async(req,res)=>{
