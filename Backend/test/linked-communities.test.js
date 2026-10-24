@@ -135,3 +135,12 @@ test('Sección independiente de categoría, orden conservado y validación',asyn
  const pub=(await request(app).get('/api/communities/'+c._id).expect(200)).body.data;assert.deepEqual(pub.media.map(m=>m.section),['meetings','recommendation','facilities']);assert.ok(pub.media.every(m=>m.category==='logo'));
  await create('rep',{media:[photo('unknown')]}).expect(400);await create('rep',{media:[photo('representatives')]}).expect(400);
 });
+
+test('Orden público validado, persistente y protegido por permisos y versión',async()=>{
+ const schema=require('../src/validation/schemas').church.shape.sectionOrder;assert.equal(schema.safeParse(['contact','visit']).success,true);assert.equal(schema.safeParse(['contact','contact']).success,false);assert.equal(schema.safeParse(['team']).success,false);
+ const c=await Church.findById(church.id),body={identification:{name:c.identification.name},location:{commune:'Santiago',coordinates:{type:'Point',coordinates:[-70.65,-33.45]}},sectionOrder:['contact','meetings','intro','visit','doctrine','life']};
+ await request(app).put('/api/churches/'+c.id).set(auth('otherRep')).set('If-Match','"'+c.metadata.version+'"').send(body).expect(403);
+ await request(app).put('/api/churches/'+c.id).set(auth('rep')).set('If-Match','"'+c.metadata.version+'"').send(body).expect(200);
+ assert.deepEqual((await Church.findById(c.id)).sectionOrder.toObject(),body.sectionOrder);const pub=(await request(app).get('/api/churches/'+c.id).expect(200)).body.data;assert.deepEqual(pub.sectionOrder,body.sectionOrder);
+ const next=await Church.findById(c.id);delete body.sectionOrder;await request(app).put('/api/churches/'+c.id).set(auth('rep')).set('If-Match','"'+next.metadata.version+'"').send(body).expect(200);assert.equal((await Church.findById(c.id)).sectionOrder[0],'contact');
+});

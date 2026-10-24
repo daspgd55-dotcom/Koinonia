@@ -29,8 +29,9 @@ function Cards({events,back='/eventos'}){return <div className="events-public-gr
  <div className="event-card-owner"><p className="event-card-organizer">Organiza <strong>{e.organizer.name}</strong></p>{e.organizer.type==='community'&&<p className="event-card-church">{e.church.name}</p>}{back.startsWith('/iglesia/')&&back!=='/iglesia/'+e.churchId&&<span className="event-status">Esta iglesia colabora</span>}</div>
  <div className="event-card-footer"><span>{participations[e.participation]}</span><span className="event-card-action">Ver evento <Icon type="arrow"/></span></div></div>
  </a></article>)}</div>;}
-export function UpcomingEvents({churchId,communityId}){
+export function UpcomingEvents({churchId,communityId,onAvailability}){
  const query=params({view:'upcoming',limit:2,...(communityId?{communityId}:{associatedChurchId:churchId})}),{data,error,retry}=usePublic('/events?'+query);
+ useEffect(()=>{onAvailability?.(!data||!!error||data.data.length>0);},[data,error,onAvailability]);
  if(error)return <p role="alert">No pudimos cargar los próximos eventos. <button className="text-button" onClick={retry}>Reintentar eventos</button></p>;
  if(!data)return <Loading label="Consultando próximos eventos…"/>;
  if(!data.data.length)return null;

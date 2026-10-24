@@ -11,8 +11,9 @@ import {frameStyle} from './mediaFrames';
 import {communityTypes} from './linkedCommunityCatalog';
 const web=value=>/^https?:\/\//i.test(value||'');
 const labels={website:'Sitio web',instagram:'Instagram',facebook:'Facebook',youtube:'YouTube',email:'Correo oficial',phone:'Teléfono oficial'};
-export function LinkedCommunityCards({churchId}){
+export function LinkedCommunityCards({churchId,onAvailability}){
  const [page,setPage]=useState(1),{data,error,retry}=usePublic('/communities?'+new URLSearchParams({churchId,page,limit:6}));
+ useEffect(()=>{onAvailability?.(!data||!!error||data.data.length>0);},[data,error,onAvailability]);
  if(error)return <div className="notice error" role="alert">No pudimos consultar las comunidades vinculadas. <button className="text-button" onClick={retry}>Reintentar comunidades</button></div>;
  if(!data)return <Loading label="Consultando comunidades vinculadas…"/>;
  if(!data.data.length)return page>1?<button className="text-button" onClick={()=>setPage(1)}>Volver a las comunidades disponibles</button>:null;

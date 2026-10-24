@@ -29,6 +29,7 @@ const church = z.strictObject({
   christianIdentity: z.strictObject({ branch: text.optional(), denomination: text.optional(), associatedTradition: text.optional(), network: text.optional(), languages: list.optional() }).optional(),
   doctrine: z.strictObject({ officialStatement: longText.optional(), characteristics: list.optional(), soteriology: text.optional(), eschatology: text.optional() }).optional(),
   privateFields: z.strictObject({ musicalStyles: z.boolean().optional(), culturalStyle: z.boolean().optional(), accessibilityLevel: z.boolean().optional(), soteriology: z.boolean().optional(), eschatology: z.boolean().optional(), email: z.boolean().optional(), phone: z.boolean().optional() }).optional(),
+  sectionOrder:z.array(z.enum(['intro','visit','meetings','doctrine','life','contact'])).max(6).refine(a=>new Set(a).size===a.length,'No repitas apartados').optional(),
   meetingTypes: list.optional(),
   meetings: z.array(z.strictObject({ id:z.string().uuid().optional(), type: text, audience: text.optional(), modality: z.enum(['Presencial', 'Online', 'Híbrida']),
     addressOrUrl: text.optional(), frequencyNotes: longText.optional(), frequency: z.enum(["weekly","fortnightly","monthly","occasional"]).optional(), visitsEnabled: z.boolean().optional(), schedule: z.array(z.strictObject({ day: days, startTime: z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/),

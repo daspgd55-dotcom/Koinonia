@@ -58,7 +58,7 @@ exports.update = async (req, res) => {
   await validateVisitSettings(data,church.representatives);
   // PUT reemplaza la ficha editable, preservando identidad, permisos y metadatos técnicos.
   for (const key of Object.keys(v.church.shape)) {
-    if (['privateFields','meetingTypes','visitSettings'].includes(key) && data[key] === undefined) continue;
+    if (['privateFields','meetingTypes','visitSettings','sectionOrder'].includes(key) && data[key] === undefined) continue;
     church.set(key, data[key]);
   }
   church.verification.lastUpdated = new Date();
