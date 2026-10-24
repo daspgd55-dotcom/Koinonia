@@ -1,0 +1,4 @@
+export const churchSections={logo:'Identidad, junto al nombre',banner:'Cabecera',facilities:'Visítanos',meetings:'Reuniones',activities:'Vida en comunidad',representatives:'Representantes',recommendation:'Tarjeta de presentación (Para ti y búsqueda)'};
+export const linkedSections={logo:'Identidad, junto al nombre',banner:'Cabecera',facilities:'Ubicación habitual',meetings:'Reuniones y horarios',activities:'Sobre la comunidad',gallery:'Galería',recommendation:'Tarjeta de comunidad'};
+export const sectionOf=(m,linked=false)=>m.section||(linked?(m.category==='logo'?'logo':'gallery'):m.category||'facilities');
+export const cardPhoto=(media=[])=>{const images=media.filter(m=>m.type==='image'&&/^https?:\/\//i.test(m.url||''));return images.find(m=>m.section==='recommendation')||images.find(m=>!m.section&&['banner','logo'].includes(m.category))||images.find(m=>!m.section&&(!m.category||m.category==='facilities'));};

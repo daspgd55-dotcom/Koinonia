@@ -1,3 +1,4 @@
+import {cardPhoto} from './mediaPlacement';
 import './DiscoveryLayout.css';
 import {imageProps} from './imageDelivery';
 import Loading from './Loading';
@@ -29,7 +30,7 @@ function MapView({churches}) {
 }
 function Select({label,value,options,onChange}) {return <label>{label}<select aria-label={label} value={value} onChange={e=>onChange(e.target.value)}><option value="">Sin filtro</option>{options.map(v=><option key={v}>{v}</option>)}</select></label>;}
 function Card({church:c}) {
-  const photos=(c.media||[]).filter(x=>x.type==='image'&&safeUrl(x.url)), photo=photos.find(x=>x.category==='banner')||photos.find(x=>x.category==='facilities')||photos.find(x=>!x.category), [failed,setFailed]=useState(false);
+  const photos=(c.media||[]).filter(x=>x.type==='image'&&safeUrl(x.url)), photo=cardPhoto(photos), [failed,setFailed]=useState(false);
   const meeting=(c.meetings||[]).flatMap(m=>(m.schedule||[]).map(t=>({...t,type:m.type}))).find(t=>t.day&&t.startTime), activities=(c.community?.activities||[]).slice(0,2);
   return <article className="church-card">{photo&&!failed?<img className="search-card-photo" {...imageProps(photo.url,640,'(max-width:700px) 100vw, 40vw')} decoding="async" alt={photo.title||'Presentación de '+name(c)} style={imagePosition(photo)} loading="lazy" onError={()=>setFailed(true)}/>:<Art/>}<div className="church-card-body"><span className="church-tag">{c.christianIdentity?.denomination || 'Denominación sin informar'}</span><h3>{name(c)}</h3><p>{[c.location?.address,c.location?.commune].filter(Boolean).join(', ') || 'Ubicación sin informar'}</p>{Number.isFinite(c.distanceMeters)&&<p className="distance">A {(c.distanceMeters/1000).toFixed(1)} km en línea recta</p>}<p className="search-card-meeting">{meeting?`${meeting.type} · ${meeting.day} ${meeting.startTime}`:'Horario sin informar'}</p>{activities.length>0&&<div className="search-card-activities">{activities.map(x=><span key={x}>{x}</span>)}</div>}<small>{c.metadata?.testData?'Datos de prueba':c.metadata?.dataStatus==='verified'?'Ficha verificada':'Ficha publicada'}</small><a className="secondary full" href={'#/iglesia/'+c._id}>Ver comunidad<span className="sr-only"> {name(c)}</span> →</a></div></article>;
 }

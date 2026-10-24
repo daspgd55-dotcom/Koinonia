@@ -30,7 +30,7 @@ const church = z.strictObject({
   doctrine: z.strictObject({ officialStatement: longText.optional(), characteristics: list.optional(), soteriology: text.optional(), eschatology: text.optional() }).optional(),
   privateFields: z.strictObject({ musicalStyles: z.boolean().optional(), culturalStyle: z.boolean().optional(), accessibilityLevel: z.boolean().optional(), soteriology: z.boolean().optional(), eschatology: z.boolean().optional(), email: z.boolean().optional(), phone: z.boolean().optional() }).optional(),
   meetingTypes: list.optional(),
-  meetings: z.array(z.strictObject({ type: text, audience: text.optional(), modality: z.enum(['Presencial', 'Online', 'Híbrida']),
+  meetings: z.array(z.strictObject({ id:z.string().uuid().optional(), type: text, audience: text.optional(), modality: z.enum(['Presencial', 'Online', 'Híbrida']),
     addressOrUrl: text.optional(), frequencyNotes: longText.optional(), frequency: z.enum(["weekly","fortnightly","monthly","occasional"]).optional(), visitsEnabled: z.boolean().optional(), schedule: z.array(z.strictObject({ day: days, startTime: z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/),
       durationMinutes: z.number().int().positive().max(1440).optional() })).min(1).max(14) })).max(50).optional(),
   community: z.strictObject({ musicalStyles: z.array(z.enum(musicalStyles)).max(5).refine(a=>new Set(a).size===a.length, "No repitas estilos musicales").optional(), culturalStyle: z.enum(culturalStyles).optional(), targetGroups: list.optional(), ministries: list.optional(), activities: list.optional(), description: longText.optional(), memberRange: text.optional() }).optional(),
@@ -39,7 +39,7 @@ const church = z.strictObject({
     email: z.string().email().optional(), phone: text.max(40).optional() }).optional(),
   visitSettings:z.strictObject({accessMode:z.enum(['all','selected']).default('all'),representativeIds:z.array(id).max(50).default([]),emailEnabled:z.boolean().default(false),emailRecipients:z.array(z.string().trim().toLowerCase().email().max(254)).max(10).default([])}).optional(),
   firstVisit: z.strictObject({ requestsEnabled: z.boolean().optional(), welcomeSupport: z.enum(['yes', 'no', 'partial', 'unknown']).optional(), instructions: longText.optional(), newVisitorSupport: z.boolean().optional(), welcomeProcess: longText.optional() }).optional(),
-  media: z.array(z.strictObject({ leaderId: z.string().uuid().optional(), frame: z.enum(['landscape','wide','square','circle','portrait']).optional(), type: z.enum(['image', 'video']), category: z.enum(['facilities','meetings','activities','representatives','banner']).optional(), url, title: text.optional(), source: text, focalX: z.number().min(0).max(100).optional(), focalY: z.number().min(0).max(100).optional() })).max(30).optional()
+  media: z.array(z.strictObject({ section:z.enum(['logo','banner','facilities','meetings','activities','representatives','recommendation']).optional(), leaderId: z.string().uuid().optional(), frame: z.enum(['landscape','wide','square','circle','portrait']).optional(), type: z.enum(['image', 'video']), category: z.enum(['facilities','meetings','activities','representatives','banner','logo']).optional(), url, title: text.optional(), source: text, focalX: z.number().min(0).max(100).optional(), focalY: z.number().min(0).max(100).optional() })).max(30).optional()
 });
 const queryNumber = (min, max, fallback) => z.preprocess(v => typeof v === 'string' && v.trim() !== '' ? Number(v) : v,
   z.number().min(min).max(max).optional().default(fallback));

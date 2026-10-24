@@ -18,20 +18,21 @@ function publicData(data, church) {
   const contact = { ...data.contact };
   for (const key of ['email', 'phone']) if (data.privateFields?.[key]) delete contact[key];
   const location = data.location.mode === 'church' ? { mode: 'church', resolved: publicChurch(church).location } : data.location;
-  return { _id: data._id, churchId: data.churchId, church: { _id: church._id, name: church.identification.name }, name: data.name, type: data.type, description: data.description, audience: data.audience, leaders: data.leaders, contact, location, schedules:{mode:data.schedules?.mode||'none',meetings:(data.schedules?.mode==='church'?church.meetings:data.schedules?.mode==='custom'?data.schedules.meetings:[])?.map(m=>({type:m.type,audience:m.audience,modality:m.modality,addressOrUrl:m.addressOrUrl,frequency:m.frequency,frequencyNotes:m.frequencyNotes,schedule:m.schedule}))||[]}, media: data.media };
+  return { _id: data._id, churchId: data.churchId, church: { _id: church._id, name: church.identification.name }, name: data.name, type: data.type, description: data.description, audience: data.audience, leaders: data.leaders, contact, location, schedules:{mode:data.schedules?.mode||'none',meetings:(data.schedules?.mode==='church'?(church.meetings||[]).filter(m=>data.schedules.meetingIds===undefined||data.schedules.meetingIds.includes(m.id)):data.schedules?.mode==='custom'?data.schedules.meetings:[])?.map(m=>({type:m.type,audience:m.audience,modality:m.modality,addressOrUrl:m.addressOrUrl,frequency:m.frequency,frequencyNotes:m.frequencyNotes,schedule:m.schedule}))||[]}, media: data.media };
 }
 function assertPublishable(church) {
   if (!church.active || !['published', 'verified'].includes(church.metadata?.dataStatus) || !church.metadata?.firstPublishedByAdminAt)
     throw new HttpError(409, 'CHURCH_NOT_PUBLISHABLE', 'La iglesia debe estar publicada y contar con una primera publicación autorizada por un administrador');
 }
 exports.create = async (req, res) => {
-  const body = parse(v.create, req.body); await parent(req, body.churchId);
+  const body = parse(v.create, req.body),church=await parent(req, body.churchId);validateSchedules(body,church);
   const data = await Community.create({ ...body, createdBy: req.user._id, updatedBy: req.user._id }); reply(res, data, 201);
 };
 exports.detail = async (req, res) => { const { data } = await managedCommunity(req); reply(res, data); };
 async function mutate(req, res, isStatus) {
   const body = parse(isStatus ? v.status : v.patch, req.body), version = expectedVersion(req);
   const { data, church } = await managedCommunity(req);
+  if(!isStatus)validateSchedules(body,church);
   if (isStatus && body.status === 'published') assertPublishable(church);
   const updated = await Community.findOneAndUpdate({ _id: data._id, version }, { $set: { ...body, updatedBy: req.user._id }, $inc: { version: 1 } }, { returnDocument: 'after', runValidators: true });
   if (!updated) throw new HttpError(409, 'STALE_VERSION', 'La comunidad cambió en otra sesión. Recarga antes de guardar.');
@@ -62,3 +63,5 @@ exports.list = (req, res) => list(req, res, false);
 exports.manage = (req, res) => list(req, res, true);
 exports.managedCommunity = managedCommunity;
 exports.expectedVersion = expectedVersion;
+
+function validateSchedules(body,church){const ids=body.schedules?.meetingIds;if(ids&&ids.some(id=>!church.meetings.some(m=>m.id===id)))throw new HttpError(400,'INVALID_MEETING','Alguna reunión ya no pertenece a la iglesia. Revisa los horarios seleccionados.');}

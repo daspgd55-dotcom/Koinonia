@@ -1,3 +1,4 @@
+import {cardPhoto} from './mediaPlacement';
 import {frames} from './mediaFrames';
 import {imageProps} from './imageDelivery';
 import Loading from './Loading';
@@ -10,7 +11,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { api } from './api';
 const labels={commune:'Comuna',denominations:'Denominación',branches:'Rama',doctrinalTags:'Doctrina',activities:'Actividades',ministries:'Ministerios',targetGroups:'Participación',languages:'Idioma',meetingDays:'Días',radiusKm:'Distancia'};
 const status={matched:'Coincide',partial:'Coincide parcialmente',not_matched:'No coincide',unknown:'Sin información'};
-function Photo({church}){const [failed,setFailed]=useState(false),[wide,setWide]=useState(false),[ratio,setRatio]=useState(1.5),item=church.media?.find(m=>m.category==='banner'&&m.type==='image'&&/^https?:\/\//i.test(m.url))||church.media?.find(m=>m.type==='image'&&/^https?:\/\//i.test(m.url)),url=item?.url;return <div className={'discovery-photo'+(wide&&!failed?' discovery-photo-wide':'')}>{url&&!failed?<img {...imageProps(url,960,'(max-width:700px) 100vw, 50vw')} decoding="async" onLoad={e=>{const r=e.currentTarget.naturalWidth/e.currentTarget.naturalHeight;setWide(r>=1.4);setRatio(r);}} style={{...imagePosition(item),'--photo-ratio':frames[item.frame]?.ratio||ratio,aspectRatio:frames[item.frame]?.ratio||ratio,borderRadius:item.frame==='circle'?'50%':undefined}} alt={'Imagen institucional de '+church.identification.name} onError={()=>setFailed(true)}/>:<div className="discovery-illustration" aria-hidden="true"><span>✝</span><i/><small>UN LUGAR PARA ENCONTRARNOS</small></div>}</div>;}
+function Photo({church}){const [failed,setFailed]=useState(false),[wide,setWide]=useState(false),[ratio,setRatio]=useState(1.5),item=cardPhoto(church.media),url=item?.url;return <div className={'discovery-photo'+(wide&&!failed?' discovery-photo-wide':'')}>{url&&!failed?<img {...imageProps(url,960,'(max-width:700px) 100vw, 50vw')} decoding="async" onLoad={e=>{const r=e.currentTarget.naturalWidth/e.currentTarget.naturalHeight;setWide(r>=1.4);setRatio(r);}} style={{...imagePosition(item),...(item.category==='logo'?{objectFit:'contain'}:{}),'--photo-ratio':frames[item.frame]?.ratio||ratio,aspectRatio:frames[item.frame]?.ratio||ratio,borderRadius:item.frame==='circle'?'50%':undefined}} alt={'Imagen institucional de '+church.identification.name} onError={()=>setFailed(true)}/>:<div className="discovery-illustration" aria-hidden="true"><span>✝</span><i/><small>UN LUGAR PARA ENCONTRARNOS</small></div>}</div>;}
 export default function Discover({route,user,token}){
   const [visited,setVisited]=useState(route.startsWith('/descubrir'));
   useEffect(()=>{if(route.startsWith('/descubrir'))setVisited(true);},[route]);

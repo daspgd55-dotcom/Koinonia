@@ -9,8 +9,8 @@ exports.upload = async (req, res) => {
   const c = req.church, config = req.app.locals.config.cloudinary;
   if (!config) throw new HttpError(503, 'MEDIA_UNAVAILABLE', 'La subida de fotos aún no está configurada.');
   const category = req.query.category || 'facilities';
-  if (!['facilities','meetings','activities','representatives','banner'].includes(category)) throw new HttpError(400, 'INVALID_CATEGORY', 'Categoría multimedia inválida.');
-  const frame=req.query.frame||({banner:'wide',representatives:'circle'}[category]||'landscape'),leaderId=req.query.leaderId;
+  if (!['facilities','meetings','activities','representatives','banner','logo'].includes(category)) throw new HttpError(400, 'INVALID_CATEGORY', 'Categoría multimedia inválida.');
+  const frame=req.query.frame||({banner:'wide',representatives:'circle',logo:'square'}[category]||'landscape'),leaderId=req.query.leaderId;
   if(!['landscape','wide','square','circle','portrait'].includes(frame))throw new HttpError(400,'INVALID_FRAME','Marco inválido.');
   if((category==='representatives'&&!['circle','square'].includes(frame))||(category==='banner'&&!['wide','landscape'].includes(frame)))throw new HttpError(400,'INVALID_FRAME','El marco no corresponde al tipo de recurso.');
   if(category==='representatives'&&(!leaderId||![c.leadership?.mainLeader,...(c.leadership?.otherLeaders||[])].some(l=>l?.id===leaderId&&l.name)))throw new HttpError(400,'INVALID_LEADER','Guarda primero el representante en Liderazgo y contacto y selecciona su nombre.');

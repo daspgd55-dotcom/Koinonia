@@ -9,9 +9,9 @@ const fields = z.strictObject({
   audience: z.array(text).max(50).default([]), leaders: z.array(z.strictObject({ name: text, role: text })).max(50).default([]),
   contact: church.shape.contact.unwrap().default({}),
   privateFields: z.strictObject({ email: z.boolean().default(false), phone: z.boolean().default(false) }).default({ email: false, phone: false }),
-  schedules:z.discriminatedUnion('mode',[z.strictObject({mode:z.literal('none')}),z.strictObject({mode:z.literal('church')}),z.strictObject({mode:z.literal('custom'),meetings:church.shape.meetings.unwrap()})]).default({mode:'none'}),
+  schedules:z.discriminatedUnion('mode',[z.strictObject({mode:z.literal('none')}),z.strictObject({mode:z.literal('church'),meetingIds:z.array(z.string().uuid()).max(50).optional()}),z.strictObject({mode:z.literal('custom'),meetings:church.shape.meetings.unwrap()})]).default({mode:'none'}),
   location: location.default({ mode: 'none' }),
-  media: church.shape.media.unwrap().element.omit({ leaderId: true, category: true }).array().max(7).default([])
+  media: church.shape.media.unwrap().element.omit({ leaderId: true, category: true }).extend({section:z.enum(['logo','banner','facilities','meetings','activities','recommendation','gallery']).optional(),category:z.enum(['facilities','logo']).optional()}).array().max(7).default([])
 });
 const create = fields.extend({ churchId: id });
 const patch = z.strictObject(Object.fromEntries(Object.entries(fields.shape).map(([key, value]) => [key, (value instanceof z.ZodDefault ? value.removeDefault() : value).optional()]))).refine(v => Object.keys(v).length > 0, 'Indica al menos un campo');

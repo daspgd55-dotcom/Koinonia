@@ -172,3 +172,17 @@ Campo opcional `schedules` en creación y PATCH, conservando If-Match y los perm
 La administración reutiliza el editor de reuniones; oculta el control de avisos de visita para comunidades vinculadas. No se crean avisos independientes, eventos ni permisos a partir de estos horarios. La respuesta pública resuelve los horarios efectivos y excluye controles internos de visitas. La ficha y vista previa ocultan el bloque si no hay reuniones. La publicación/visibilidad sigue dependiendo de la iglesia y del estado de la comunidad.
 
 Pruebas: `node --test Backend/test/linked-communities.test.js` verifica herencia dinámica, horarios propios, validación y privacidad. `node Frontend/test/linked-communities.cjs` comprueba edición, horarios, vista previa, permisos, borradores, publicación y móvil. Las tarjetas de administración presentan título y estado juntos.
+
+
+### Selección de reuniones y logos
+- `schedules: {mode:"church", meetingIds:["UUID"]}` hereda únicamente las reuniones seleccionadas. `[]` no muestra ninguna; omitir meetingIds conserva la herencia completa de registros antiguos. IDs ajenos o eliminados se rechazan al guardar. Si una reunión seleccionada se elimina después, desaparece públicamente sin sustituirse por otra.
+- Las reuniones de iglesia incorporan `id` UUID estable. Se debe conservar al editar/reordenar. `POST /churches/:id/meeting-identifiers`, con permisos de administración de esa iglesia e If-Match, completa identificadores antiguos, incrementando versión sin alterar publicación. El editor vinculado lo utiliza al preparar la lista; volver a Ficha recarga la versión.
+- Multimedia de comunidades admite `category: facilities|logo`; de iglesias añade `logo` a las categorías existentes. Upload de comunidad admite `?category=logo&frame=square`. Se conservan límites, permisos, recorte, posición, orden y control de versión. El marco inicial de logo es cuadrado.
+- Logos se muestran junto a identidad en fichas públicas. Para ti y búsqueda de iglesias priorizan el primer logo o banner según el orden de recursos; luego aplican los fallbacks existentes. No se añade un nuevo recomendador de comunidades vinculadas.
+- Comprobación: linked-communities.test.js (contrato, IDs, privacidad), linked-communities.cjs (logo con proveedor simulado y selección), public-profiles.cjs (logos en fichas, marcos y móvil). Sin servicios reales ni cambios de datos productivos.
+
+
+### Ubicación explícita de recursos
+`media[].section` separa ubicación y categoría: `logo` (junto al nombre), `banner` (cabecera), `facilities` (Visítanos/ubicación), `meetings`, `activities` (Vida en comunidad/Sobre la comunidad), `recommendation` (tarjeta); además `representatives` solo en iglesias y `gallery` solo en comunidades. Un logo puede ubicarse en Reuniones sin dejar de ser logo. Los retratos en Representantes requieren asociación válida.
+El selector **Mostrar en** de cada recurso conserva su sección al reordenar. La secuencia global solo determina el orden relativo entre recursos de la misma sección. Una tarjeta usa la primera imagen de su sección. No hay duplicación automática en otras secciones. Cambiar categoría no cambia una sección ya seleccionada.
+Sin `section`, los recursos antiguos conservan su ubicación por categoría y las tarjetas mantienen su fallback previo. Seleccionar una sección elimina ese fallback para ese recurso. Los campos se conservan en las APIs públicas y administrativas sin cambiar permisos ni límites.

@@ -5,3 +5,5 @@
 
 /* Flujo continuo: ninguna tarjeta hereda la altura de otra sección. */
 .church-detail .profile-visit-grid,.church-detail .profile-practical{grid-template-columns:minmax(0,1fr);align-items:start;gap:14px}.profile-practical .detail-fold{align-self:start;min-height:0}.profile-meeting-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;margin-bottom:12px;align-items:start}.profile-meeting-list>.meeting-compact{min-width:0}.profile-meeting-list>.meeting-compact:only-child{grid-column:1/-1}.profile-visit-grid .categorized-media{max-width:760px}.profile-practical .detail-fold:not([open])>div{display:none}@media(max-width:650px){.profile-meeting-list{grid-template-columns:minmax(0,1fr)}}
+
+.church-logo,.community-logo{width:min(150px,40vw);margin:12px 0}.church-logo .community-gallery,.community-logo .community-gallery{margin:0}.church-logo .gallery-enlarge,.community-logo .gallery-enlarge{display:none}

@@ -104,3 +104,34 @@ test('Horarios propios e heredados, validación y privacidad',async()=>{
  const own=(await create('rep',{schedules:{mode:'custom',meetings}}).expect(201)).body.data;await status(own,'published').expect(200);assert.equal((await request(app).get('/api/communities/'+own._id)).body.data.schedules.meetings[0].schedule[0].startTime,'19:30');
  await create('rep',{schedules:{mode:'custom',meetings:[{...meetings[0],schedule:[{day:'Viernes',startTime:'99:99'}]}]}}).expect(400);await create('rep',{schedules:{mode:'church',churchId:other.id}}).expect(400);
 });
+
+
+test('Logo y selección estable de reuniones, aislamiento y eliminación',async()=>{
+ const {randomUUID}=require('node:crypto'),a=randomUUID(),b=randomUUID();await Church.updateOne({_id:church.id},{$set:{meetings:[{id:a,type:'Culto',modality:'Presencial',schedule:[{day:'Domingo',startTime:'11:00'}]},{id:b,type:'Jóvenes',modality:'Presencial',schedule:[{day:'Viernes',startTime:'19:00'}]}]}});
+ const c=(await create('rep',{schedules:{mode:'church',meetingIds:[b]},media:[{type:'image',category:'logo',url:'https://example.test/logo.png',source:'Propia',frame:'square'}]}).expect(201)).body.data;await status(c,'published').expect(200);
+ const read=async()=>(await request(app).get('/api/communities/'+c._id).expect(200)).body.data;
+ assert.equal((await read()).media[0].category,'logo');assert.deepEqual((await read()).schedules.meetings.map(m=>m.type),['Jóvenes']);
+ await Church.updateOne({_id:church.id},{$set:{'meetings.1.schedule.0.startTime':'20:00'}});assert.equal((await read()).schedules.meetings[0].schedule[0].startTime,'20:00');
+ await Church.updateOne({_id:church.id},{$pull:{meetings:{id:b}}});assert.equal((await read()).schedules.meetings.length,0);
+ await create('rep',{schedules:{mode:'church',meetingIds:[randomUUID()]}}).expect(400);
+ await request(app).post('/api/churches/'+church.id+'/meeting-identifiers').set(auth('otherRep')).expect(403);
+
+});
+
+
+test('Iglesia admite logo, conserva identificadores al editar y repara reuniones antiguas con versión',async()=>{
+ const body={identification:{name:'Iglesia con logo'},location:{commune:'Santiago',coordinates:{type:'Point',coordinates:[-70.65,-33.45]}},meetings:[{type:'Jóvenes',modality:'Presencial',schedule:[{day:'Viernes',startTime:'19:00'}]}],media:[{type:'image',category:'logo',frame:'square',url:'https://example.test/logo.png',source:'Propia'}]};
+ const c=(await request(app).post('/api/churches').set(auth('admin')).send(body).expect(201)).body.data;assert.ok(c.meetings[0].id);assert.equal(c.media[0].category,'logo');
+ const next=(await request(app).put('/api/churches/'+c._id).set(auth('admin')).set('If-Match','"'+c.metadata.version+'"').send({...body,meetings:c.meetings.map(m=>({...m,schedule:[{day:'Viernes',startTime:'20:00'}]}))}).expect(200)).body.data;assert.equal(next.meetings[0].id,c.meetings[0].id);
+ await Church.updateOne({_id:c._id},{$unset:{'meetings.0.id':''}});
+ const fixed=(await request(app).post('/api/churches/'+c._id+'/meeting-identifiers').set(auth('admin')).set('If-Match','"'+next.metadata.version+'"').expect(200)).body.data;assert.ok(fixed.meetings[0].id);assert.equal(fixed.metadata.dataStatus,'draft');
+ await request(app).post('/api/churches/'+c._id+'/meeting-identifiers').set(auth('admin')).set('If-Match','"'+next.metadata.version+'"').expect(409);
+});
+
+
+test('Sección independiente de categoría, orden conservado y validación',async()=>{
+ const photo=section=>({type:'image',category:'logo',section,frame:'square',url:'https://example.test/'+section+'.png',source:'Propia'});
+ const c=(await create('rep',{media:[photo('meetings'),photo('recommendation'),photo('facilities')]}).expect(201)).body.data;await status(c,'published').expect(200);
+ const pub=(await request(app).get('/api/communities/'+c._id).expect(200)).body.data;assert.deepEqual(pub.media.map(m=>m.section),['meetings','recommendation','facilities']);assert.ok(pub.media.every(m=>m.category==='logo'));
+ await create('rep',{media:[photo('unknown')]}).expect(400);await create('rep',{media:[photo('representatives')]}).expect(400);
+});

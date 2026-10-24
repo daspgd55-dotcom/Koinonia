@@ -118,9 +118,12 @@ exports.createRepresentative = async (req, res) => {
 };
 
 function normalizeDetails(data) {
+ for(const m of data.meetings||[])if(!m.id)m.id=require('node:crypto').randomUUID();
+ if(new Set((data.meetings||[]).map(m=>m.id)).size!==(data.meetings||[]).length)throw new HttpError(400,'INVALID_MEETING','Las reuniones deben tener identificadores únicos.');
   const leaders=[data.leadership?.mainLeader,...(data.leadership?.otherLeaders||[])].filter(Boolean),ids=leaders.map(l=>l.id).filter(Boolean);
   if(new Set(ids).size!==ids.length) throw new HttpError(400,'INVALID_LEADER','Los identificadores de representantes deben ser únicos.');
   for(const m of data.media||[])if(m.frame&&((m.category==='representatives'&&!['circle','square'].includes(m.frame))||(m.category==='banner'&&!['wide','landscape'].includes(m.frame))))throw new HttpError(400,'INVALID_FRAME','El marco no corresponde al tipo de recurso.');
+  for(const m of data.media||[])if(m.section==='representatives'&&(!m.leaderId||m.category!=='representatives'))throw new HttpError(400,'INVALID_LEADER','Para mostrar un retrato en Representantes, selecciona la persona asociada.');
   for(const m of data.media||[])if(m.leaderId&&(m.category!=='representatives'||!leaders.some(l=>l.id===m.leaderId&&l.name)))throw new HttpError(400,'INVALID_LEADER','La foto debe asociarse a un representante de esta ficha.');
 
   for (const [group, detail, legacy] of [['location', 'parkingAvailability', 'parking'], ['location', 'accessibilityLevel', 'accessibility'], ['firstVisit', 'welcomeSupport', 'newVisitorSupport']]) {
@@ -139,3 +142,5 @@ exports.requestPublication=async(req,res)=>{
 };
 
 exports.checklist=async(req,res)=>res.set('Cache-Control','no-store').json({data:require('../services/church-quality.service').checklist(await svc.managed(req,{includeInactive:true}))});
+
+exports.meetingIdentifiers=async(req,res)=>{const c=await svc.managed(req,{includeInactive:true});svc.checkVersion(req,c);let changed=false;for(const m of c.meetings||[])if(!m.id){m.id=require('node:crypto').randomUUID();changed=true;}if(changed){c.metadata.version+=1;await c.save();}res.set('ETag','"'+c.metadata.version+'"').json({data:c});};
