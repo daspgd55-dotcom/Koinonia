@@ -55,14 +55,14 @@ Base `/api`. Las consultas públicas no requieren autenticación. Los endpoints 
 | Método y ruta | Función |
 | --- | --- |
 | `POST /communities` | Crear borrador, respuesta 201 |
-| `GET /communities/manage` | Listar comunidades administrables |
+| `GET /communities/manage` | Listar comunidades administrables; cada fila incluye la referencia interna mínima `church: {_id,name}` de su iglesia de origen |
 | `GET /communities/manage/:id` | Ficha administrativa con versión y ETag |
 | `PATCH /communities/:id` | Editar campos de contenido, respuesta 200 |
 | `PATCH /communities/:id/status` | Cambiar publicación, respuesta 200 |
 | `GET /communities` | Listado público |
 | `GET /communities/:id` | Ficha pública, o 404 si no está disponible |
 
-Filtros de listado: `churchId`, `type`, `q` (nombre, búsqueda literal sin distinguir mayúsculas), `page` (1–10000, por defecto 1), `limit` (1–100, por defecto 20). Solo administración admite `status`. Orden estable por nombre e ID. Un filtro administrativo explícito de iglesia ajena responde 403; el listado sin filtro solo devuelve iglesias asignadas.
+Filtros de listado: `churchId`, `type`, `q` (nombre, búsqueda literal sin distinguir mayúsculas), `page` (1–10000, por defecto 1), `limit` (1–100, por defecto 20). Solo administración admite `status`. Orden estable por nombre e ID. Un filtro administrativo explícito de iglesia ajena responde 403; el listado sin filtro solo devuelve iglesias asignadas. En administración, la relación `church` contiene solo ID y nombre de la iglesia propietaria para contextualizar cada resultado; no se añade a la respuesta pública, que ya conserva su relación `church` pública.
 
 Listados: `{data:[...],pagination:{page,limit,total,pages}}`. Fichas y mutaciones: `{data:{...}}`.
 

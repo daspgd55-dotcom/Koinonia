@@ -56,7 +56,7 @@ async function list(req, res, management) {
   const scope = management ? (req.user.role === 'admin' ? {} : require('../services/church-permissions').scope(req.user,'content','parent.')) : Object.fromEntries(Object.entries(visible).map(([key, value]) => ['parent.' + key, value]));
   const [result] = await Community.aggregate([{ $match: filter }, { $lookup: { from: Church.collection.name, localField: 'churchId', foreignField: '_id', as: 'parent' } }, { $unwind: '$parent' }, { $match: scope },
     { $sort: { name: 1, _id: 1 } }, { $facet: { rows: [{ $skip: (q.page - 1) * q.limit }, { $limit: q.limit }], total: [{ $count: 'value' }] } }]);
-  const total = result.total[0]?.value || 0, data = result.rows.map(({ parent: church, ...row }) => management ? row : publicData(row, church));
+  const total = result.total[0]?.value || 0, data = result.rows.map(({ parent: church, ...row }) => management ? { ...row, church: { _id: church._id, name: church.identification.name } } : publicData(row, church));
   res.set('Cache-Control', 'no-store').json({ data, pagination: { page: q.page, limit: q.limit, total, pages: Math.ceil(total / q.limit) } });
 }
 exports.list = (req, res) => list(req, res, false);

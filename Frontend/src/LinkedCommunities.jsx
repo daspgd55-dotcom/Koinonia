@@ -18,11 +18,12 @@ const statuses={draft:'Borrador',published:'Publicada',archived:'Archivada'};
 const blank=()=>({name:'',type:'youth',description:'',audience:[],leaders:[],contact:{},privateFields:{email:false,phone:false},location:{mode:'none'},schedules:{mode:'none'},media:[]});
 const editable=c=>Object.fromEntries(Object.keys(blank()).map(k=>[k,structuredClone(c[k]??blank()[k])]));
 const nonempty=obj=>Object.fromEntries(Object.entries(obj).filter(([,v])=>v!==''&&v!==undefined));
-export default function LinkedCommunities({token,church,onBack,onEvents}){
+export default function LinkedCommunities({token,church,onBack,onEvents,initialCommunityId}){
  const [parent,setParent]=useState(church),[rows,setRows]=useState(null),[query,setQuery]=useState({q:'',type:'',status:''}),[filter,setFilter]=useState(query),[page,setPage]=useState(1),[revision,setRevision]=useState(0),[selected,setSelected]=useState(null),[draft,setDraft]=useState(null),[dirty,setDirty]=useState(false),[busy,setBusy]=useState(false),[loading,setLoading]=useState(false),[error,setError]=useState(''),[message,setMessage]=useState(''),[preview,setPreview]=useState(false),[file,setFile]=useState(null),[frame,setFrame]=useState('landscape'),[category,setCategory]=useState('facilities'),[conflict,setConflict]=useState(false);
- const input=useRef(null),heading=useRef(null),unsaved=dirty||!!file;
+ const input=useRef(null),heading=useRef(null),initialOpened=useRef(false),unsaved=dirty||!!file;
  const reason=!parent.active?'La iglesia está inactiva. Un administrador debe restaurarla.':!parent.metadata?.firstPublishedByAdminAt?'La iglesia necesita su primera publicación autorizada por un administrador.':!['published','verified'].includes(parent.metadata?.dataStatus)?'Publica primero la ficha de la iglesia para publicar esta comunidad.':'';
  useEffect(()=>{let alive=true;setLoading(true);setError('');const params=new URLSearchParams({...nonempty(filter),churchId:church._id,page,limit:12});Promise.all([api('/communities/manage?'+params,{token}),api('/churches/manage/'+church._id,{token})]).then(async([r,c])=>{if(c.data.meetings?.some(m=>!m.id))c=await api('/churches/'+church._id+'/meeting-identifiers',{token,method:'POST',headers:{'If-Match':'"'+c.data.metadata.version+'"'}});if(alive){setRows(r);setParent(c.data);}}).catch(e=>{if(alive){setRows(null);setError(e.message);}}).finally(()=>{if(alive)setLoading(false);});return()=>{alive=false;};},[token,church._id,filter,page,revision]);
+ useEffect(()=>{if(!initialCommunityId||initialOpened.current)return;initialOpened.current=true;open({_id:initialCommunityId});},[initialCommunityId]);
  useUnsavedChanges(unsaved);
  useEffect(()=>{if(draft)heading.current?.focus();},[!!draft]);
  function report(e){setError(e.message+(e.details?.length?' · '+e.details.map(d=>d.path+': '+d.message).join(' · '):''));if(e.code==='STALE_VERSION')setConflict(true);}
