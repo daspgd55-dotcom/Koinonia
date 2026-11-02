@@ -1,0 +1,28 @@
+{
+  "sourceRows": 508,
+  "consolidatedRecords": 507,
+  "mergedExactRepeats": 1,
+  "missingNames": 240,
+  "importReady": 0,
+  "images": 583,
+  "withEmail": 33,
+  "withPhone": 139,
+  "files": [
+    {
+      "file": "dataset_crawler-google-places_2026-11-02_15-36-08-851.xlsx",
+      "sha256": "2f80b3384f9957805628a9d12ff0673765d2315ea8ee120f66e87de160fc144a"
+    },
+    {
+      "file": "dataset_crawler-google-places_2026-11-02_15-47-49-135.xlsx",
+      "sha256": "6b6323f77d23751e77ce008a3662ce02d2eb280074efdebab21f2e068d859507"
+    },
+    {
+      "file": "dataset_crawler-google-places_2026-11-02_16-06-10-222.xlsx",
+      "sha256": "f09119b15b90d22963a9924b686c8d1c9ad06bc6d8ead6c3a04148ed90a51840"
+    },
+    {
+      "file": "dataset_crawler-google-places_2026-11-02_16-13-30-226.xlsx",
+      "sha256": "8c320f462bc1a8810747115389ca1949317df470e3a68506c4bcf94e12b44ebf"
+    }
+  ]
+}

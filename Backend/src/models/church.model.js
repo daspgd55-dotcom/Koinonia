@@ -6,6 +6,7 @@ const Point = embedded({ type: { type: String, enum: ['Point'], default: 'Point'
 const Leader = embedded({ id: String, name: String, role: String });
 // Modelo de Iglesia
 const ChurchSchema = new Schema({
+  registrationSources: {type:[embedded({request:{type:Schema.Types.ObjectId,ref:'ChurchRegistrationRequest'},at:Date,fields:[String],actor:{type:Schema.Types.ObjectId,ref:'User'}})],select:false,default:undefined},
   identification: { name: { type: String, required: true, trim: true }, abbreviation: String, description: String, yearFounded: Number, distinctiveFeatures: String },
   verification: { representativeName: String, representativeRole: String, authorized: { type: Boolean, default: false }, source: String, lastUpdated: Date },
   location: { address: String, commune: { type: String, required: true }, city: String, region: String, postalCode: String, countryCode: String, coordinates: { type: Point, required: true }, parkingAvailability: { type: String, enum: ['yes', 'no', 'nearby', 'unknown'] }, accessibilityLevel: { type: String, enum: ['yes', 'no', 'partial', 'unknown'] }, parking: Boolean, accessibility: Boolean, accessNotes: String },

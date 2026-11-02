@@ -13,10 +13,11 @@ function open(value,id,cfg){const [key,iv,tag,data]=value.split('.'),d=crypto.cr
 function entry(cfg,email,subject,text,guard=null){const id=crypto.randomUUID(),expiresAt=new Date(Math.min(guard?.expiresAt?.getTime()||Infinity,Date.now()+23*3600000));return {id,createdAt:new Date(),payload:seal({email,subject,text,from:cfg.mail.from,guard},id,cfg),expiresAt};}
 function notice(cfg,email){return entry(cfg,email,'Tu contraseña de Koinonía cambió','Se cambió tu contraseña y se cerraron las sesiones anteriores. Si no reconoces este cambio, utiliza Recuperar contraseña desde Koinonía.');}
 async function reconcile(){
- for(const Model of [User,require('../models/visit.model')]){
+ for(const Model of [User,require('../models/visit.model'),require('../models/church-registration.model')]){
  const users=await Model.find({'mailOutbox.0':{$exists:true}}).select('+mailOutbox').limit(100);
  for(const u of users)for(const item of u.mailOutbox){
-  try{await Job.updateOne({_id:item.id},{$setOnInsert:{payload:item.payload,expiresAt:item.expiresAt,createdAt:item.createdAt||new Date(),state:'pending',attempts:0,nextAttemptAt:new Date()}},{upsert:true});}catch(e){if(e.code!==11000)throw e;}
+  if(Model.modelName==='ChurchRegistrationRequest'&&!await Model.exists({_id:u._id,noContact:{$ne:true},anonymizedAt:{$exists:false}})){await Model.updateOne({_id:u._id},{$pull:{mailOutbox:{id:item.id}}});continue;}
+  try{await Job.updateOne({_id:item.id},{$setOnInsert:{...(Model.modelName==='ChurchRegistrationRequest'?{registrationRequest:u._id}:{}),payload:item.payload,expiresAt:item.expiresAt,createdAt:item.createdAt||new Date(),state:'pending',attempts:0,nextAttemptAt:new Date()}},{upsert:true});}catch(e){if(e.code!==11000)throw e;}
   await Model.updateOne({_id:u._id},{$pull:{mailOutbox:{id:item.id}}});
  }
  }
@@ -36,10 +37,10 @@ async function runOne(cfg,{send=deliver,random=Math.random}={}){
  if(job.expiresAt<=now){await finish('obsolete','expired');return true;}
  if(job.attempts>=6){await finish('failed','attempts_exhausted');return true;}
  let data;try{data=open(job.payload,job._id,cfg);}catch{await finish('retry','encryption_unavailable',{nextAttemptAt:new Date(Date.now()+300000)});return true;}
- if(data.guard){const g=data.guard;if(!await User.exists({_id:g.user,active:true,[g.field+'.hash']:g.hash,[g.field+'.expiresAt']:{$gt:new Date()}})){await finish('obsolete','link_replaced_or_consumed');return true;}}
+ if(data.guard){const g=data.guard;if(!(g.registration?await require('./church-registration.service').validMailGuard(g):await User.exists({_id:g.user,active:true,[g.field+'.hash']:g.hash,[g.field+'.expiresAt']:{$gt:new Date()}}))){await finish('obsolete','link_replaced_or_consumed');return true;}}
  try{await require('./account-security.service').quota(cfg,'mail-global','all',100,3600000);}catch{await finish('retry','delivery_quota_unavailable',{nextAttemptAt:new Date(Date.now()+3600000)});return true;}
  if(job.expiresAt<=new Date()){await finish('obsolete','expired');return true;}
- if(data.guard){const g=data.guard;if(!await User.exists({_id:g.user,active:true,[g.field+'.hash']:g.hash,[g.field+'.expiresAt']:{$gt:new Date()}})){await finish('obsolete','link_replaced_or_consumed');return true;}}
+ if(data.guard){const g=data.guard;if(!(g.registration?await require('./church-registration.service').validMailGuard(g):await User.exists({_id:g.user,active:true,[g.field+'.hash']:g.hash,[g.field+'.expiresAt']:{$gt:new Date()}}))){await finish('obsolete','link_replaced_or_consumed');return true;}}
  evidence=await providerConfirmed();if(evidence){await finish('accepted','provider_status_available',{source:evidence.source});return true;}
  const owned=await Job.updateOne({_id:job._id,owner,state:'processing',leaseUntil:{$gt:new Date()}},{$inc:{attempts:1},$set:{source:send===deliver?'provider':'simulated'}});if(!owned.modifiedCount)return true;
  let result;try{result=await send(cfg,data,job._id);}catch{result={ok:false,temporary:true,reason:'network_or_timeout',delay:0};}

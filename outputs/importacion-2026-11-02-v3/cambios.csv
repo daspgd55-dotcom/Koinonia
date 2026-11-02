@@ -1,0 +1,31 @@
+﻿ID,Campo,Valor,Evidencia,Estado
+NOV02-0020,location.commune,La Florida,"{""postalPrefix"": ""824"", ""supportingRows"": 31, ""address"": ""Exequiel Fernández 1144, 8241298 Ñuñoa, La Florida, Región Metropolitana, Chile""}",inferred
+NOV02-0020,christianIdentity.denomination,Presbiteriana,"[""title"", ""Décima Iglesia Presbiteriana La Paz de Cristo""]",inferred
+NOV02-0027,christianIdentity.denomination,Pentecostal,"[""title"", ""Ministerio Evangelistico Pentecostal Adonay""]",inferred
+NOV02-0031,christianIdentity.denomination,Pentecostal,"[""title"", ""IGLESIA CRISTIANA PENTECOSTAL DE CHILE""]",inferred
+NOV02-0079,christianIdentity.denomination,Pentecostal,"[""title"", ""Iglesia Pentecostal Apostolica""]",inferred
+NOV02-0121,location.commune,La Granja,"{""postalPrefix"": ""878"", ""supportingRows"": 4, ""address"": ""Av. Punta Arenas 6329, 8780021 La Florida, La Granja, Región Metropolitana, Chile""}",inferred
+NOV02-0124,location.commune,La Florida,"{""postalPrefix"": ""827"", ""supportingRows"": 29, ""address"": ""Av. Departamental 3301, 8271775 La Florida, Peñalolén, Región Metropolitana, Chile""}",inferred
+NOV02-0126,contact.facebook,https://www.facebook.com/IpunjeChileOficial,"{""externalProfile.links"": ""https://www.facebook.com/IpunjeChileOficial""}",extracted_unverified_association
+NOV02-0126,contact.instagram,https://www.instagram.com/ipunjechile,"{""externalProfile.links"": ""https://www.instagram.com/ipunjechile""}",extracted_unverified_association
+NOV02-0127,contact.email,informaciones@bellavistatuhogar.cl,"{""externalProfileField"": ""email"", ""value"": ""informaciones@bellavistatuhogar.cl""}",extracted_unverified_association
+NOV02-0127,contact.facebook,https://www.facebook.com/profile.php?id=100064789985789,"{""externalProfile.links"": ""https://www.facebook.com/profile.php?id=100064789985789""}",extracted_unverified_association
+NOV02-0127,contact.instagram,https://www.instagram.com/bellavistatuhogar,"{""externalProfile.links"": ""https://www.instagram.com/bellavistatuhogar""}",extracted_unverified_association
+NOV02-0152,location.commune,La Granja,"{""postalPrefix"": ""879"", ""supportingRows"": 6, ""address"": ""Lo Ovalle 391, 8790042 La Granja, San Miguel, Región Metropolitana, Chile""}",inferred
+NOV02-0183,christianIdentity.denomination,Pentecostal,"[""title"", ""Iglesia Pentecostal""]",inferred
+NOV02-0242,christianIdentity.denomination,Pentecostal,"[""title"", ""IGLESIA PENTECOSTAL LA ÚLTIMA LLAMADA""]",inferred
+NOV02-0243,christianIdentity.denomination,Pentecostal,"[""title"", ""Iglesia Pentecostal Evangelica ISAJ""]",inferred
+NOV02-0243,christianIdentity.branch,Evangélica,"[""title"", ""Iglesia Pentecostal Evangelica ISAJ""]",inferred
+NOV02-0256,christianIdentity.denomination,Bautista,"[""title"", ""IGLESIA BAUTISTA DE AV GABRIELA""]",inferred
+NOV02-0259,christianIdentity.denomination,Bautista,"[""title"", ""IGLESIA BAUTISTA LIBERTAD""]",inferred
+NOV02-0266,contact.instagram,https://www.instagram.com/iecpa.cl,"{""externalProfile.links"": ""https://www.instagram.com/iecpa.cl""}",extracted_unverified_association
+NOV02-0298,christianIdentity.denomination,Bautista,"[""title"", ""Iglesia Bíblica Bautista Cordillera""]",inferred
+NOV02-0323,christianIdentity.denomination,Pentecostal,"[""title"", ""IGLESIA PENTECOSTAL CENTRO MISIONERO CRISTIANO""]",inferred
+NOV02-0330,contact.email,mellamario@hotmail.com,"{""externalProfileField"": ""email"", ""value"": ""mellamario@hotmail.com""}",extracted_unverified_association
+NOV02-0338,christianIdentity.denomination,Asambleas de Dios,"[""title"", ""IGLESIA EVANGELICA ASAMBLEA DE DIOS""]",inferred
+NOV02-0338,christianIdentity.branch,Evangélica,"[""title"", ""IGLESIA EVANGELICA ASAMBLEA DE DIOS""]",inferred
+NOV02-0368,christianIdentity.denomination,Bautista,"[""title"", ""REY DE PAZ IGLESIA BAUTISTA""]",inferred
+NOV02-0397,location.commune,Macul,"{""postalPrefix"": ""781"", ""supportingRows"": 37, ""address"": ""Ramón Cruz Montt 1965, 7810010 Ñuñoa, Macul, Región Metropolitana, Chile""}",inferred
+NOV02-0408,location.commune,Macul,"{""postalPrefix"": ""782"", ""supportingRows"": 34, ""address"": ""Tecnóloga Médica Reinalda del Carmen Pereira Pl. 6089, 7820869 Macul, La Florida, Región Metropolitana, Chile""}",inferred
+NOV02-0408,christianIdentity.branch,Evangélica,"[""title"", ""Iglesia Evangelica""]",inferred
+NOV02-0432,location.commune,Macul,"{""postalPrefix"": ""782"", ""supportingRows"": 34, ""address"": ""Tecnóloga Médica Reinalda del Carmen Pereira Pl. 6089, 7821036 Macul, La Florida, Región Metropolitana, Chile""}",inferred

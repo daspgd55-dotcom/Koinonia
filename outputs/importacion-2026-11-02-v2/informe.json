@@ -1,0 +1,18 @@
+{
+  "originalRecords": 507,
+  "newMapsRows": 542,
+  "matched": 489,
+  "unmatchedOriginal": 18,
+  "unmatchedMaps": 53,
+  "importCandidates": 375,
+  "review": 130,
+  "missingNames": 15,
+  "namesFromSocial": 0,
+  "classifications": {
+    "explicit_church_category": 370,
+    "missing_or_ambiguous_maps_match": 18,
+    "missing_or_ambiguous_commune": 11,
+    "ambiguous_name_or_category": 101,
+    "named_christian_worship_place": 7
+  }
+}

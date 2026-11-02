@@ -1,0 +1,7 @@
+V3 - SIN IMPORTAR A MONGODB
+409 registros compatibles con koinonia.church-import.v1: 375 anteriores y 34 incorporaciones. Las 130 fichas pendientes fueron revisadas usando exclusivamente evidencia de los Excel suministrados.
+30 campos completados en el conjunto revisado; algunos pertenecen a fichas aun pendientes. cambios.csv y cambios.ndjson contienen campo, valor y evidencia. evidencias.ndjson conserva todas las decisiones.
+Las 7 comunas son inferencias: prefijo postal con al menos 3 observaciones y una unica comuna en el conjunto, corroborada en la direccion. No se utilizaron poligonos oficiales. Las denominaciones son inferencias por palabras explicitas, no declaraciones verificadas. Las etiquetas genericamente pentecostal o bautista no acreditan pertenencia a una organizacion especifica.
+La procedencia del lote lleva marcas inferred_pending_representative_review para persistir advertencias. El detalle por campo permanece en los archivos de auditoria, no como un campo nuevo de MongoDB. Usar importacion como borradores; authorized permanece false. No activar demo-publish para este lote.
+96 pendientes: 18 identidades Maps ambiguas, 4 comunas no resueltas, 74 sin evidencia suficiente de comunidad local. La denominacion es opcional y su ausencia no bloquea por si sola el contrato. No se inventaron nombres o Place ID. No se interpretaron horarios de apertura como cultos ni perfiles sociales como comunidades vinculadas confirmadas.
+La comparacion previa con Koinonia_pilot corresponde a V2; antes de aplicar V3 se debe regenerar la conciliacion.

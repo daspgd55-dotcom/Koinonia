@@ -1,0 +1,20 @@
+{
+  "reviewed": 130,
+  "previousReady": 375,
+  "added": 34,
+  "totalReady": 409,
+  "remaining": 96,
+  "fieldsCompleted": {
+    "location.commune": 7,
+    "christianIdentity.denomination": 13,
+    "contact.facebook": 2,
+    "contact.instagram": 3,
+    "contact.email": 2,
+    "christianIdentity.branch": 3
+  },
+  "remainingReasons": {
+    "missing_or_ambiguous_maps_match": 18,
+    "community_identity_not_established": 74,
+    "commune_unresolved": 4
+  }
+}

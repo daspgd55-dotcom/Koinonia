@@ -1,0 +1,4838 @@
+{
+  "database": "Koinonia_pilot",
+  "checkedAt": "2026-11-02T17:19:57.866Z",
+  "writes": 0,
+  "existing": 2,
+  "existingChurches": [
+    {
+      "id": "6ac9b9225017eda79d91466c",
+      "name": "Iglesia Bíblica Alma",
+      "address": "Av. Perú 9065",
+      "active": true,
+      "status": "verified"
+    },
+    {
+      "id": "6acea311257d49e4fbd58865",
+      "name": "Iglesia Viña Ágape",
+      "address": "Campo de Deportes 817",
+      "active": true,
+      "status": "draft"
+    }
+  ],
+  "active": 2,
+  "validatedBatch": {
+    "potential_new": 375
+  },
+  "pendingInput": {
+    "potential_new": 130
+  },
+  "actions": [
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJyUoHOZPRYpYRy0_5CaKem7E",
+      "name": "IGLESIA PENTECOSTAL DESPERTANDO CON CRISTO",
+      "address": "Jacaranda 2032, 8270171 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJoR3HYxbRYpYR9sYayExy_a8",
+      "name": "Iglesia Pentecostal",
+      "address": "Lago Chungará 9089, 8271714 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJKwVQL1DQYpYRgXQB9D_H2a0",
+      "name": "Iglesia Evangelica Pentecostal",
+      "address": "Los Paltos 5934, 8270019 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJl2lpvFbQYpYRQiKAXHyLwaA",
+      "name": "Iglesia Pentecostal De Chile",
+      "address": "Los Cactus 1935, 8270445 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJBf3Yor3QYpYRcMpsOH_n6EE",
+      "name": "Iglesia Pentecostal Unida De Chile, La Florida",
+      "address": "C. Uno 1396, 8251215 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJYWgWHADRYpYR1ZWzvJ1ohVE",
+      "name": "Iglesia Vida en Fe (Asambleas de Dios)",
+      "address": "Las Chilcas Sur 8533, 8280498 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ12BgwALRYpYRYAoNuSFGUbk",
+      "name": "Iglesia Peñalolen",
+      "address": "Peñalolén, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJef7lIQDRYpYR-Q6NQdv5ntQ",
+      "name": "Iglesia Adventista Del Séptimo Día - Lo Cañas",
+      "address": "Las Chilcas Nte. 7998, 8280377 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJkXLHvGfQYpYRzuzE7y9u98E",
+      "name": "Iglesia Evangelica Luterana",
+      "address": "Froilán Roa 6665, 8241578 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJafRHl7jQYpYRWfBVpCI6h5s",
+      "name": "Corp Iglesia Evangelica Luterana Congregacion",
+      "address": "8251762 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJXfzqA5_RYpYRr-KJLZEobZw",
+      "name": "Iglesia Mision Cristiana",
+      "address": "Av. Departamental 5756, Peñalolén, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJr_eHegDRYpYRe5S_-0Pse9Q",
+      "name": "Iglesia Evangélica UCB Monteverde",
+      "address": "Sta. Inés, 8290833 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJaYDbKQDRYpYRMZT-CeTihWE",
+      "name": "Libertad Iglesia Santiago",
+      "address": "Walker Martínez 2295, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ1V6HiTvRYpYRh-I3lnNpiJQ",
+      "name": "Iglesia Bautista El Faro",
+      "address": "San Marcelino 3356, 8290782 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJCy8_evHQYpYR9nVx2pNcJcw",
+      "name": "Corp Anglicana de Chile",
+      "address": "Perpetua Freire 250, 8240898 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ59C1i2jQYpYRZm93brl7md0",
+      "name": "Iglesia Anglicana San Lucas Evangelista",
+      "address": "Froilán Roa 6350, 8241496 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJO4DTwsLQYpYRZstpsDcDrk4",
+      "name": "Iglesia Bíblica El Sembrador",
+      "address": "Carlos Meza 119, 8300282 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJpQpqHe7QYpYRgU2jRh3s_TU",
+      "name": "Iglesia Tu Enlace Familiar Chile",
+      "address": "Las Tinajas 6000, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJa-PIZ77RYpYR1i8I4N5IFx0",
+      "name": "Iglesia Presbiteriana Independiente de Nuevo Amanecer",
+      "address": "Las Higueras 3071, 8240000 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJldKsuXbRYpYRF3-DzMa5YZg",
+      "name": "Iglesia Príncipe de Paz",
+      "address": "Sta. Inés 2372, 8290423 Santiago, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ0XHeGybRYpYRzvJ785BZvLw",
+      "name": "Iglesia Pentecostal de Chile La Florida",
+      "address": "Javiera Carrera 10231, 8300582 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJn-29DADRYpYRyXLaI6lMMKw",
+      "name": "Iglesia Unida Metodista Pentecostal 4° de la Florida",
+      "address": "P.o Los Damascos 3661, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJXyqwBWHQYpYRl0ZnHpG2Xsc",
+      "name": "Iglesia Pentecostal Naciente",
+      "address": "Av. Vicuña Mackenna Poniente 7261, 8260183 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJew3GofDQYpYR17hYjXt08Mc",
+      "name": "Iglesia Evangelica Pentecostal",
+      "address": "Gerónimo de Alderete 879, 8241796 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJlWO2sh_RYpYRaz2QZAPDlL8",
+      "name": "Iglesia Cristiana La Casa Del Señor, La Florida",
+      "address": "Av. La Florida 9354, 8301913 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJW7_ObgDRYpYRVInFjY9fc6E",
+      "name": "Iglesia Unida Metodista Pentecostal La Florida Costa Rica",
+      "address": "Costa Rica 9460, 8242101 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJafQzIADRYpYRBjSZYgH0yrY",
+      "name": "Iglesia Unida Metodista Pentecostal 1° de la Florida",
+      "address": "Rojas Magallanes 870, A, 8251919 Santiago, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJne3pVADRYpYRF2pTpF3cQ6Y",
+      "name": "Iglesia Unida Metodista Pentecostal La Florida Nuevo Amanecer",
+      "address": "Punitaqui 5830, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ8d-nwmTQYpYR9Vx3AlBbgv4",
+      "name": "IEP La Florida",
+      "address": "Fresia 6891, 8261828 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJzbCH2ZLQYpYRZQLc2w4mtcE",
+      "name": "Iglesia Pentecostal",
+      "address": "Limache 476, 8252003 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJZcp8R1PQYpYRRimqT8TeZAo",
+      "name": "Iglesia Metodista Pentecostal Clase Los Castaños",
+      "address": "Punitaqui 5874, 8270220 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJJxONutrXYpYRdQK2cel5hxA",
+      "name": "Iglesia Luterana \"La Cruz de Cristo\"",
+      "address": "Los Peumos 4265, 8311144 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ27Ptf-LQYpYRRYWO6VnxX60",
+      "name": "Congregacion del Verbo Divino",
+      "address": "Av. La Florida 8882, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJt9xFhr7QYpYR-keM-AHSP2s",
+      "name": "Iglesia Bautista Eben Ezer",
+      "address": "Sta Raquel 10177, 8250765 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJV5u7F_nQYpYRbjhi0hir_mY",
+      "name": "Templo Bautista",
+      "address": "La Montaña 7751, 8240659 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJkVTjLubQYpYROAxHwoL3noA",
+      "name": "Iglesia Biblica Bautista la Florida",
+      "address": "Perú 9065, 8242065 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJzReZXtXRYpYRyXAyS4xSuXM",
+      "name": "Iglesia Bíblica Bautista Renacer",
+      "address": "Sta. Victoria 9588, 8290035 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJCwmBuNTQYpYRBAtxlNZTp_A",
+      "name": "Ministerio Jesus Señor Y Rey La Florida",
+      "address": "Av. Diego Portales 770, 8301592 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJbZqoRCvRYpYRxKavNLXw2gk",
+      "name": "Congregacion Misioneras Catequista de la Sagrada Familia",
+      "address": "Av. Diego Portales 1385, 8301674 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJA5JTxOnQYpYRB98LXNdWCDw",
+      "name": "Iglesia Catedral de la Alabanza Asambleas de Dios",
+      "address": "Sta. Amalia 85, 8250301 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJcytvnMjQYpYRaroXE28lpEk",
+      "name": "Iglesia Metodista Pentecostal",
+      "address": "Pje Tres 655, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJX3AARQDRYpYRlv9EqkBzCEY",
+      "name": "Iglesia Pentecostal Naciente Maria Elena",
+      "address": "Progreso 4639, 8310770 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ-96O5tPQYpYR5p5LFOw9zT8",
+      "name": "IEP San Jorge",
+      "address": "San Jorge 368, 8301559 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJvV4EKQDRYpYRPKHmpVpGXaA",
+      "name": "Iglesia Union Pentecostal El Triunfo: La Florida",
+      "address": "Unión 4555, 8310893 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJTURvcHjRYpYRq2-hib-So7M",
+      "name": "Iglesia Pentecostal La Alborada IPLA",
+      "address": "Av. Diego Portales 774, 8301562 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ1UPGuavRYpYRyiz-Bc0D99w",
+      "name": "Iglesia Cuadrangular, Nuevo Amanecer",
+      "address": "Volcán Hornopirén 5927, 8270401 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJxVABdEzRYpYRLB5xZmQb7sM",
+      "name": "Local Alonso de Ercilla IEP La Florida",
+      "address": "Gerónimo de Alderete 879, B, 8241796 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ15SNdgDRYpYRs5g3Ojn2dpg",
+      "name": "Iglesia Cristiana CDA de las asambleas de Dios",
+      "address": "Los Rayos del Sol 1906, 8270612 Santiago, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJYQ9z3vnQYpYRW-7eY_t4SxQ",
+      "name": "Iglesia Casa De Oracion",
+      "address": "Alonso de Ercilla 7833, 8241694 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJV_3339DQYpYRuHBiLhzHxIA",
+      "name": "Iglesia Bautista Filadelfia",
+      "address": "San Pedro 352, 8301013 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJPZNIBOLQYpYReh_Q1a1q4oM",
+      "name": "Iglesia Bautista Misionera La Florida",
+      "address": "Honduras 9102, 8242032 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJU2ICA8_RYpYRvLb88zHy0Ro",
+      "name": "Iglesia",
+      "address": "Los Rayos del Sol 1982-1912, 8270687 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJCx_w7BzRYpYRgUh_XK1BuNU",
+      "name": "Capilla Laura Vicuña",
+      "address": "Las Calas 2301, 8270624 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ2WDQV1DQYpYRMQLziTGAJLI",
+      "name": "Capilla Jesús de Nazareth",
+      "address": "Los Poncianos 1960, 8270129 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJU5UXPfnQYpYRfWh1AlISQ-Q",
+      "name": "Iglesia El Lirio de los valles",
+      "address": "Los Valles 7751, 8240661 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJm5n-7VLRYpYRJEjfhd8dujs",
+      "name": "Iglesia La Mision",
+      "address": "Salamanca 6690, 8240437 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJT_ivzf_QYpYRy_v0NtGCq9c",
+      "name": "Capilla Familia De Nazareth",
+      "address": "Walker Martínez 2480, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJvXcArarRYpYRXgEOUn3G-Q0",
+      "name": "Iglesia Bautista Cordillera",
+      "address": "Palena 2609, 8270816 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJgwGprfvQYpYRuWWktTpc-xc",
+      "name": "Iglesia Familiar de Adoración",
+      "address": "García Hurtado de Mendoza 8240, 8241801 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJZz95mSvdYpYRN3kucWOSFHI",
+      "name": "Iglesia Bautista Casa de Restauración",
+      "address": "Fukushima 1443, 9253001 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJeXmCHP_RYpYR-6WyrSYG9Lc",
+      "name": "Iglesia Jesuscristo Bet-el",
+      "address": "Miguel Mujica 11700, 8310970 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJtWgWdK3QYpYRS3lNb1sy7D4",
+      "name": "Iglesia Metodista Pentecostal Los Navios",
+      "address": "Esmeralda 1901, 8311205 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJXVxBTADRYpYRTUBZoSahs2I",
+      "name": "Iglesia Adventista del Séptimo Día - Villa el Concierto",
+      "address": "Las Quinchas 10938, 8310840 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJW1ZaMK7QYpYR2b_KgLBGwhg",
+      "name": "Iglesia Pentecostal El Triunfo",
+      "address": "Bahía Catalina 10920, 8310764 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJVwaszq_QYpYRN75sa4IeZjA",
+      "name": "Iglesia Evangelica",
+      "address": "Bahía Catalina 10854, 8310661 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJYWZ9xtzRYpYRis_CWu9wRg0",
+      "name": "Iglesia maranatha",
+      "address": "Mesana 11301-11303, 8311023 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJEZseGgDRYpYRB2pjQJKE0P8",
+      "name": "Iglesia Adventista Renuevo",
+      "address": "Julio Cesar 10982, 8310804 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJISiIK67QYpYRoGCfX6omlFU",
+      "name": "Iglesia C.C.Evang La Florida",
+      "address": "Las Quinchas 10892, 8310710 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJc69br7LQYpYRd2Q4h8OwpIo",
+      "name": "Iglesia Gloria De Dios",
+      "address": "Piélago del Sur 1693, 8311342 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJOdI5ZgbRYpYRdMhhvNm935g",
+      "name": "Iglesia Evangélica \"VEN Y VE\"",
+      "address": "Río Huasco 1312, 8310837 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJF1Pw-63QYpYROFB_uzq48SM",
+      "name": "Iglesia Corporacion Cristiana",
+      "address": "Bahía Catalina 11195, 8310993 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ_TfzBq7QYpYRgHUpXHks6aQ",
+      "name": "Iglesia Bahia Catalina Con Psj Timon",
+      "address": "Bahía Catalina 11145, 8310977 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJfaKX3bXQYpYRLw_GHbFGjwo",
+      "name": "Capilla San Francisco De Asis",
+      "address": "Maria Elena 1049, 8310811 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJuWzuNgDRYpYRAikomrjhyW0",
+      "name": "Iglesia del Señor Las Araucarias",
+      "address": "Los Ñirres 2092, 8270175 Santiago, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJY-PNrzHRYpYRRNfNKfLlpAI",
+      "name": "Iglesia bíblica bautista betel",
+      "address": "Los Copihues 60, 8311013 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJDadWLQDRYpYR9q5IjRny38k",
+      "name": "EDGAR SANCHEZ",
+      "address": "Corredor transporte público Vicuña Mackenna 6447, 8260032 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJJ7jLjFvQYpYRLBpgjVPCWIE",
+      "name": "Iglesia Hogar De Maria",
+      "address": "Sta Julia 1150, 8241937 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ07X2lhfRYpYRY9Rd87Xznbw",
+      "name": "Iglesia Bautista La Florida",
+      "address": "Roditex 10544, 8310017 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ3x2oTzPRYpYRl1K8mOlVBLQ",
+      "name": "Iglesia La Gloria Postrera",
+      "address": "Reina Luisa 6121, 8270124 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJybETaADRYpYR79nEvGvuRYs",
+      "name": "ICMP María Elena",
+      "address": "Maria Elena 697, 8310591 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJqYv-kMPRYpYRKZCtl0aLjUc",
+      "name": "Misión Pentecostal Nueva Jerusalén",
+      "address": "Tongoy 10500, 8800901 Santiago, La Granja, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJhT3-QADRYpYRrENh_gIeDo8",
+      "name": "Iglesia Unida Metodista Pentecostal 2° de La Florida - Dios Proveerá",
+      "address": "Las Flautas 10742, 8830090 Santiago, La Pintana, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJqwmVFsrQYpYRS38n8eGwsnY",
+      "name": "iglesia metodista pentecostal",
+      "address": "Maria Elena 830, 8310890 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJnUqXfF_QYpYRfXuvBoEwEx8",
+      "name": "Congregacion Schoenstatt",
+      "address": "Walker Martínez 355, 8240400 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJG3j9wILRYpYR1UO9_KE_Oro",
+      "name": "Capilla Maria Santisima",
+      "address": "Grum Tapia 8091, 8261170 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJmQSGZwDRYpYRGzoXxZL1t8o",
+      "name": "Iglesia de Dios Vision de Conquista",
+      "address": "Jacaranda 2151, 8270195 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJQcXxPVjRYpYRygseVNAJ2ZM",
+      "name": "Iglesia El Arca Del Señor Jesucristo",
+      "address": "Av. Punta Arenas 7981, 8780678 La Granja, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJERxQgl_QYpYRQUlcYoNpHfE",
+      "name": "Iglesia Adventista del Séptimo Día - LA FLORIDA",
+      "address": "Walker Martínez 320, 8240400 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJFbg0DIvQYpYRJAAFYPX-F6g",
+      "name": "Iglesia Santa Maria De Los Angeles",
+      "address": "La Serena, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJlRlSALTQYpYRTtDFuQH7uNQ",
+      "name": "Iglesia Internacional Guerreros De Oración",
+      "address": "Maria Elena 1365, 8310940 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJfTSoNIzQYpYR11QSVnwQRUU",
+      "name": "Iglesia La Florida",
+      "address": "Sta. Julia 833, 8251772 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJxWITCgDRYpYRx2Xu6lWKg84",
+      "name": "Clase La Florida, PRIMP CATEDRAL EVANGELICA",
+      "address": "Tronador 1212, 8261810 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJJ-wXW3_RYpYR3mvY9le7LUI",
+      "name": "Iglesia Universal del Reino de Dios",
+      "address": "Av. Vicuña Mackenna 8250, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ1aO5KQnRYpYRXgK5Ubt5ZPI",
+      "name": "Capilla Santa Irene",
+      "address": "Walker Martínez 3522, 8270705 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJteRrNADRYpYR38EtjS3YSgw",
+      "name": "Iglesia Unida Metodista Pentecostal La Granja Villa La Serena",
+      "address": "Coronel 10583, 8800984 La Granja, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJz3wKxDHRYpYRQ3NLQK5ILFY",
+      "name": "Iglesia Adventista del Séptimo Día - SIÓN",
+      "address": "Av. Diego Portales 373, 8301701 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJoxGxxj3XYpYR9yevyDJygLw",
+      "name": "iglesia catolica",
+      "address": "Salvador Sanfuentes 432, 8311259 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJw_UeivfRYpYRi5EC7HYLG1k",
+      "name": "Iglesia Bíblica Bautista Renuevo",
+      "address": "Av. Central 248, 8301548 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJx5srCwDRYpYRvmF0BLxvX74",
+      "name": "Ministerio Iglesia Apostólica Internacional La Florida",
+      "address": "Lientur 4441, 8311032 Santiago, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ7ROVJdLQYpYROjtbBHAMcng",
+      "name": "Iglesia de Dios \"Voz En El Desierto\"",
+      "address": "San Jorge 65, 8301584 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ3wRHDlPQYpYRV0tHgxkGOlQ",
+      "name": "Corp Iglesia de Jesucristo de los Santos de los Ultimos Dias",
+      "address": "Los Cerezos 5821, 8270199 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJLYixFADRYpYRHgFRtO4ZHZA",
+      "name": "Iglesia IAR SANTIAGO",
+      "address": "Volcán Descabezado Grande, 8270239 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJjeRzcwDRYpYRhJEXfs2IOaE",
+      "name": "Iglesia Evangélica del Mediador",
+      "address": "Quebrada de Macul 5895, 8270324 Santiago, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJR1suew_RYpYRR4e7sqf2EEg",
+      "name": "Parroquia Nuestra Señora del Jardin",
+      "address": "Francisco de Miranda 7920, 8271120 La Florida, Santiago, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJrcOPYgDRYpYRJBX3Ww8g0N4",
+      "name": "Iglesia Evangélica Mets",
+      "address": "Sta Raquel 9765, 8250437 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJtSJdHwDRYpYRx7Ia6bZ-cys",
+      "name": "Iglesia",
+      "address": "Apolo 9375, 8250154 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJyaZZk5nQYpYRN3q4yaImF4E",
+      "name": "Iglesia Pentecostal",
+      "address": "Isla Morelos 8684, 8790876 La Granja, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ_-wYyt7RYpYRXcnRQyENSek",
+      "name": "Iglesia Cristiana Pentecostal Getsemani Templo Jehova Elohim",
+      "address": "Los Quilos 1213, 213, 8251699 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJJ_GrzpHQYpYR29nWvt20HeM",
+      "name": "Iglesia Adventista Del Septimo Dia",
+      "address": "Los Clarines 9029, 8251968 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJyzy2Sr3QYpYRQVSK2nawN-Y",
+      "name": "IMPCH EL CONQUISTADOR",
+      "address": "C. Uno 1548, 8250791 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ8UqD9aXRYpYR1frIE37s0NE",
+      "name": "Iglesia Evangélica",
+      "address": "Padre Juan Meyer 8217, 8790267 La Granja, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJp9cZkI3RYpYR1H7AV_vyCzs",
+      "name": "Iglesia El León de Judá",
+      "address": "Sta Raquel 8588, 8251809 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ6e07QADRYpYRyXV1reDxx38",
+      "name": "Capilla Jesús de Nazaret",
+      "address": "Cobquecura 9360, 8250092 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJT-PmSgDRYpYR3ziY9nfrW_E",
+      "name": "Iglesia Fuego de Dios",
+      "address": "Av. Punta Arenas 8283, La Granja, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJD7kKkpnQYpYRNNtMwrFkY-U",
+      "name": "manantial de vida eterna los rosales",
+      "address": "Isla Morelos 8671, 8790851 La Granja, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJBbazspDQYpYR4k7xnYrkxkE",
+      "name": "Iglesia El Conquistador",
+      "address": "Patria Vieja 9311, 8250221 Santiago, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJwwIL4ZLQYpYRjPkKWNg-1y0",
+      "name": "Iglesia del Señor de La Florida",
+      "address": "Chaitén 8945, 8252002 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJl9Uo1pTQYpYRiGhDl0uoqKs",
+      "name": "Parroquia María Madre de la Iglesia",
+      "address": "Sta. Amalia 0575, 8250318 Santiago, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ2WHkvDTXYpYRLLiTkMumS7g",
+      "name": "Iglesia Evangélica Unión de Centros Bíblicos Los Quillayes",
+      "address": "Salvador Sanfuentes 699, 8311179 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJo5HWVMjQYpYRA-Wu8MS1mOM",
+      "name": "Iglesia PDD",
+      "address": "Gral Arriagada 767, 8310492 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJUZ2FfADRYpYRwwiRjmytOtw",
+      "name": "Clase Los Castaños, PRIMP CATEDRAL EVANGELICA",
+      "address": "8270220 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJeRhGWwDRYpYRjxHiXqJXXXQ",
+      "name": "Ministerio Evangelista León de Judá",
+      "address": "Punitaqui 5922, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ52dV94jRYpYRhca4rYcnVFg",
+      "name": "Iglesia Dulce Refugio",
+      "address": "San Jorge 135, 8301559 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJk5d0Qz3RYpYRs04GmyCITEU",
+      "name": "Parroquia Jesús Maestro",
+      "address": "Enrique Olivares 2570, 8290759 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJVfChj73QYpYRG3bRYbCLKi4",
+      "name": "Iglesia Bautista Trinidad",
+      "address": "Av. Trinidad 1398, 8250642 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJI-1XLK3RYpYRy8dBm8-OAT4",
+      "name": "Iglesia Wesleyana La Florida",
+      "address": "Rojas Magallanes 642-590, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJkRaB2EzQYpYReX4FAIT_we8",
+      "name": "Congregacion Salesiana Inspectoria Salesiana",
+      "address": "Los Cerezos 5845, 8270199 La Florida, Santiago, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJQR3Ub8XRYpYR77D0zGoZ5GA",
+      "name": "Iglesia Adventista del Séptimo Día - SAN GREGORIO",
+      "address": "Tome 948, La Granja, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJxbbD0yvRYpYRoCQhy7X4DOk",
+      "name": "Iglesia Biblica Bautista Cordillera",
+      "address": "El Salitre 1168, 8301395 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJF28KAqXQYpYRNfcgjLKRhO0",
+      "name": "Iglesia Evangelica",
+      "address": "Bahía Catalina 10583, 8800984 La Granja, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJKf8l3kvRYpYRcwTngPxIfV0",
+      "name": "Iglesia trinidad",
+      "address": "Av. Trinidad 1534, 8250635 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJZfhwa6LQYpYRslqyCf33jR8",
+      "name": "Iglesia Padre Bueno",
+      "address": "8250753 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJEdObRwDRYpYRc0AfWQLW1bM",
+      "name": "Iglesia Tiempos De Cambio Chile",
+      "address": "Sta Raquel 10258, 8251028 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJb5cHBwDRYpYRQEpavm0oq7E",
+      "name": "Iglesia jorgito y memito valdy",
+      "address": "Combarbalá 873, 8780703 La Granja, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJxcrpIjPRYpYR3qVhzQCWI6g",
+      "name": "Capilla Cristo Resucitado",
+      "address": "Av. Departamental 3959, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJmZbLe4fQYpYRLRvWNA1KuVk",
+      "name": "Iglesia Bautista Renacer En Cristo",
+      "address": "Cañete 7800, 8780620 La Granja, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJN2B7VKPQYpYRL1PFaZ7Q6pA",
+      "name": "Iglesia de Dios Varones Territorio Centro",
+      "address": "Cerro Calan, 8251197 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJx9ppcQDRYpYRnNFR5wbyM5s",
+      "name": "Iglesia Casa Palabra y Vida",
+      "address": "Osorno 0891, 8780575 La Granja, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ6_5ZEkLRYpYRhR0gPBVi_to",
+      "name": "Local Rinconada de Tobalaba IEP La Florida",
+      "address": "Av. Tobalaba 9690-9510, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJyWPB0-PQYpYRDJuXu0V1U0Q",
+      "name": "Iglesia Mayor Gracia",
+      "address": "Rojas Magallanes 1122, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ4Y03ue_RYpYRQUhzNxnAmmo",
+      "name": "ICT Chile",
+      "address": "Lago Riñihue 426, 8310417 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJT9YTluTQYpYR71458OJuD7w",
+      "name": "Iglesia Renacimiento",
+      "address": "Ecuador 9139, 8242085 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJE0ByQwDRYpYRg0xspaLXT4E",
+      "name": "Iglesia Casa Sión Santiago",
+      "address": "C. Dr. Sotero del Rio 77, 8261101 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJTy0YFe7QYpYR6ySrKeBa6cs",
+      "name": "Iglesia Casa Del Padre",
+      "address": "Estados Unidos 8724, 8241985 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJgfv1rx_RYpYREzP4O7OcSOA",
+      "name": "Iglesia Metodista",
+      "address": "Mexico 9412, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJaRoD1OnQYpYR1BOVbc5R8O0",
+      "name": "Ministerio Comunicacional Limitada",
+      "address": "Av. Vicuña Mackenna 9405, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJxw8nQY3RYpYRWrNRN8s5zUg",
+      "name": "IMPCH PUENTE ALTO Clase San Pedro",
+      "address": "San Pedro, Bacteriológico &, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJQWopwNbQYpYR5zrmTaxs7Zs",
+      "name": "Iglesia Del Centro Misionero De Chile",
+      "address": "San Pablo 10808, 8301245 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJB0_VHTrRYpYR647u99ZJ5I0",
+      "name": "Local Trinidad Oriente IEP La Florida",
+      "address": "Av. Trinidad Ote. 989, 8300563 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJm6BtetjQYpYRuFI8jfwiHaI",
+      "name": "Iglesia Metodista de La Florida",
+      "address": "José Miguel Carrera 1076, 8250973 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJx8CP8NvQYpYRND4WTD_OFSs",
+      "name": "Iglesia Evangelica",
+      "address": "Central Ote. 551, 8300556 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ0dFGTQDRYpYRlA6T8A6AikU",
+      "name": "IMPCH Clase Mexico",
+      "address": "El Libertador 10711, 8301115 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJT5nZc8bQYpYRqs3gefRIBLc",
+      "name": "Iglesia Evangelica",
+      "address": "Manutara 10384, 8250927 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJnXiGXADRYpYRsEKgxJ8sjPs",
+      "name": "Iglesia Misión Iglesia del Señor “Templo Adulam”",
+      "address": "Av. San José de la Estrella 470, 8310021 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJez-SdgDRYpYRXZuWV7s1PL0",
+      "name": "IMPCH Clase San pedro",
+      "address": "C. San Juan 10676, 8301015 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJIXISZKDRYpYRrtJHvtWrzS4",
+      "name": "Iglesia de Cristo La Villa",
+      "address": "Martín Luther King 10565, Código Postal 8301007 Santiago, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ51esxkjRYpYR-rvG2YvioZk",
+      "name": "MNT - Ministério Nuevo Tiempo",
+      "address": "San Jorge 747, 8240000 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJG4hLb93QYpYRqyTAtg6RYag",
+      "name": "Capilla Sagrados Estigmas (Parroquia María Madre de la Iglesia)",
+      "address": "Sta. Amalia 377, 8300304 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJCbAtGaXQYpYRX9ZG7T7cySI",
+      "name": "Parroquia Santa Margarita De Escocia",
+      "address": "Punta Arenas 10500, 8831295 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJF3ljPsXQYpYRvnIQv3rvWPE",
+      "name": "Parroquia Divino Redentor",
+      "address": "Av. Vicuña Mackenna 10281, 8250948 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJn2oWofDWYpYRZ18zzEjzfCU",
+      "name": "Iglesia de Dios Ministerial de Jesucristo Internacional - IDMJI - CGMJI -- CL SANTIAGO PUENTE ALTO",
+      "address": "Av. Trinidad 32, 8250736 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ53wUIADRYpYR4CU9q9bXjqU",
+      "name": "Iglesia de Dios Camino a la Victoria",
+      "address": "Av. San José de la Estrella 1677, 8251274 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJA1QvzuTXYpYRUfkylDpBqqY",
+      "name": "Clase Las Brisas",
+      "address": "Av. Eyzaguirre, Av. Ejército Libertador, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJSeTxIEHXYpYRTIL95mpn62c",
+      "name": "Iglesia Unificada Metodista Pentecostal",
+      "address": "Luis Pezoa Véliz, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJPwq44qLXYpYR8PhVgHZLbrU",
+      "name": "Iglesia Evangélica Pentecostal de la Comunión de los Santos Puente Alto",
+      "address": "Huasco 0226, 5090000 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJT8dsNwDXYpYRBTIcVrPWxIM",
+      "name": "Iglesia Unida Metodista Pentecostal Puente Alto Casas Viejas - Refugio de Adulam",
+      "address": "Los Espinos 203, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJY-l07yLVYpYRIdiOKxFiaWI",
+      "name": "JSR Church (Iglesia Jesus Señor y Rey)",
+      "address": "Camino A San José del Maipo 7920, 8150000 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJLUXGYlTXYpYRmzeiN7M5w_o",
+      "name": "IMPCH PUENTE ALTO Clase Poblacion Los Andes",
+      "address": "Las Tórtolas, 8190571 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ3fICV_HXYpYRPC9SjwwQEL4",
+      "name": "IUMP Quinta Puente Alto",
+      "address": "El Capataz 1646, 8165490 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ5bjktvbXYpYRCseFyIi6BqQ",
+      "name": "Cruzada de Poder Puente Alto",
+      "address": "Av. Concha y Toro 120, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJOXVIvUnXYpYR8Qr8uZSWPDU",
+      "name": "impch clase pedro duarte",
+      "address": "La Mosqueta 1817, 8210769 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJBaP-byfXYpYR313qhfadF7I",
+      "name": "CUPSB IGLESIA PUENTE ALTO",
+      "address": "Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJHX9sjsTWYpYRX65wTkoXaZM",
+      "name": "Iglesia Protestante Bautista",
+      "address": "Av. Las Nieves Ote. 3329, 8207282 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJRS0ek0DXYpYRMKhZcOSg-DQ",
+      "name": "Iglesia Bautista",
+      "address": "De Los Metales 1520, 8150640 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ_9GcEQDXYpYRNjuWSVEE2SI",
+      "name": "Iglesia Bautista Piedra Angular",
+      "address": "Nemesio Vicuña 3572, 8221509 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ_-n45q_XYpYREwzMgLj3HUA",
+      "name": "Mision Evang.Bautista \"Palabra Viva\"",
+      "address": "Sgto. Menadier 952, 8163317 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJuZ_hEgDVYpYRyS4NY1aa77Y",
+      "name": "Iglesia Bíblica Bautista \"El Camino\"",
+      "address": "Cl. los Suspiros 0197, 8190094 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJq_ZoCQfXYpYRkVNNl2JXp9o",
+      "name": "Iglesia Bautista",
+      "address": "Coquimbo 699, 8210198 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJl0cu3wbXYpYRNpZ12oBVgy4",
+      "name": "Iglesia Bautista comunidad de la Gracia",
+      "address": "Diag. Nte. 751, 8150215 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJzV2hBQDXYpYR1Xt3XTsiWE8",
+      "name": "IGLESIA Bautista El Porvenir",
+      "address": "Millantu 271, 8190922 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJX51CZQDXYpYR5gaYSLkrkRo",
+      "name": "Primera Iglesia Evangélica Bautista de Puente Alto",
+      "address": "Sto Domingo 200, 8210625 Cordillera, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJnXPhwk3WYpYRbLCsCX7cH-Q",
+      "name": "IUMP 3ra. Puente Alto",
+      "address": "Circunvalación 470, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJH9xnn5rXYpYR3M9Zn-DuNaI",
+      "name": "Templo EvangélicoHumberto Ruben Salas Gonzalez",
+      "address": "Petorca 2890, 8164922 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ6ajZs9DVYpYRuYWHEl1S54U",
+      "name": "IMPCH PUENTE ALTO Clase Casas Viejas",
+      "address": "Veintisiete de Septiembre 5017, 8190050 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ04wdDwDXYpYRpsUP00aVyAk",
+      "name": "Iglesia Pentecostal Filadelfia Primera de Chile Puente Alto",
+      "address": "Abate Molina 201, 8163177 Cordillera, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJqRv9srrXYpYRMwkupeDqFtU",
+      "name": "Iglesia Unida Metodista Pentecostal 2° de Puente Alto",
+      "address": "Marcos Pérez 1089, 8163346 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJg2qYUADXYpYRl_hLOGgsUdQ",
+      "name": "Iglesia evangélica pentecostal",
+      "address": "Marcos Pérez 728, 8164279 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJNToAEA3XYpYRLBv3_BIJ52M",
+      "name": "Iglesia evangélica pentecostal encuentro con Cristo",
+      "address": "Las Alismas 148, 8162905 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJvyK0EpDXYpYR1WKTCK5D16w",
+      "name": "IUP - Iglesia Unión Pentecostal",
+      "address": "La Capilla 509, 8163916 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJL3ysV__WYpYRmeKy1egt1oE",
+      "name": "Iglesia Bautista Misionera de Puente Alto",
+      "address": "Eduardo Cordero 552, 8180686 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ51d7nLrXYpYRt6HYHi2w0Kw",
+      "name": "Iglesia Pentecostal El Yo Soy",
+      "address": "San Guillermo 0281, 8163181 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJN5trfU7WYpYRHBXDcr_wfP0",
+      "name": "Ipechi Puente Alto - Iglesia Pentecostal de Chile",
+      "address": "German Ebbinghauss 0524, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJw8qaTgDXYpYR6vYJiFEsgZ0",
+      "name": "Ministerio Evangelístico y Pentecostal Alcanzando su Gloria",
+      "address": "8162829 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJm6f7AtbXYpYRwtBsyomiGJA",
+      "name": "Iglesia Voz en el Desierto Monte Sión",
+      "address": "Cerro Castillo 1481, 8166649 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ7ekG-mXXYpYRq6oAlapapfk",
+      "name": "Iglesia Pentecostal Unida de Chile \"Los Andes\"",
+      "address": "Los Canarios 01146, 8190600 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJdWD3ErDXYpYRX6T1l_kOZ34",
+      "name": "Iglesia Pentecostal Nazareth Puente Alto",
+      "address": "Marmaduque Grove 857, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJfTVGAZ7XYpYR5UYzXeiIOsE",
+      "name": "Iglesia Pentecostal Unida, IPU Esperanza",
+      "address": "Marcos Pérez 060, 8163179 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ1wDTBdrXYpYRFyy18SGZ5ZU",
+      "name": "Iglesia Pentecostal La Nueva Jerusalén Del Volcán",
+      "address": "8164099 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJIQ_xXuPWYpYRV8aUQqoJeXQ",
+      "name": "IMPCH PUENTE ALTO Clase San Carlos",
+      "address": "Av. Las Nieves Ote. 0812, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJYcF0CbHXYpYRQ5LLwtzpHFY",
+      "name": "Ipunje Puente Alto",
+      "address": "Av. Concha y Toro 498, 8190749 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJSUCtX6jXYpYRZt1kYszmx6U",
+      "name": "Iglesia",
+      "address": "Andalién 466, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJbfmuMKPXYpYRknP2v0WTcYU",
+      "name": "Iglesia Pentecostal Unida de Chile Tabernaculo Pentecostal",
+      "address": "Pje. Aconcagua 0330, 8164455 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJOeIaAwDXYpYRDOfVayWU0KA",
+      "name": "Iglesia Pentecostal Naciente Clase Gabriela",
+      "address": "Luis Frez Magallanes 3332, 8150218 Cordillera, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJTwpKitXWYpYRTonIBwJf_p4",
+      "name": "Iglesia Pentecostal",
+      "address": "Lago Lanalhue 891, 8220448 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJxV88VwDXYpYR8gDVrFtdGYM",
+      "name": "Iglesia Pentecostal Unida IPU",
+      "address": "Pto Los Angeles 3723, 8220959 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJjwYGdNvWYpYRVkvBCUZwG-c",
+      "name": "Iglesia Protestante Pentecostal",
+      "address": "Av. Gabriela Ote. 01533, 8207366 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJmUSzdADXYpYRTMhWUMdUUZk",
+      "name": "Iglesia Unida Metodista Pentecostal Puente Alto El Peñón",
+      "address": "Luis Matte Larraín 02258, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJXbaCb8vWYpYRqXDfU3esemA",
+      "name": "Casa de Dios La Frontera",
+      "address": "Icalma 5718, 8170298 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJTa8qZFPXYpYR5yUR3mSpr0k",
+      "name": "Iglesia Unida Metodista Pentecostal 3° de la Florida - Cristo Esperanza Viva",
+      "address": "Icalma 06076, 8170298 Cordillera, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJT_EZEQDXYpYRAIVXr3qOv-I",
+      "name": "Iglesia Father's House Chile",
+      "address": "Cam. Vecinal 5626, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJzayHcwDXYpYRFOmhiPSChII",
+      "name": "Iglesia Presbiteriana Puente de Vida",
+      "address": "German Ebbinghauss 2558, 8207714 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJU6mFfCXXYpYRQhLhM58at98",
+      "name": "Iglesia Maac Reformada",
+      "address": "Nemesio Vicuña 257, 8180901 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJHf7OskXXYpYRW1ykM0B_tjE",
+      "name": "Templo Casa de Oración Puente Alto ICPCH",
+      "address": "Aníbal Pinto 426, 8210569 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJi-2YKwDXYpYRQt87rGBDOAU",
+      "name": "Iglesia Evangélica TEMPLO CASA DEL ALFARERO",
+      "address": "San Enrique 06, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJCwAJ0zPXYpYRFDGTZwjk74Q",
+      "name": "Ministerio Evangelistico Pentecostal Montecalvario Templo Central",
+      "address": "José Manuel Irarrázaval 0694, 8150000 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJuwxlfrXWYpYR1XtPvR7nQ7U",
+      "name": "Parroquia Natividad Del Señor",
+      "address": "Av. Parque del Este 4469, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJk5mCaADXYpYRVhxwY1gWuXo",
+      "name": "Casa Do Pai Iglesia",
+      "address": "El Abanico, Canela Alta, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJZfjJxpHWYpYR6AvJb92G1p8",
+      "name": "Iglesia sublime gracia chile",
+      "address": "815000 - Av. Camilo Henríquez 1060, 8150000 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJDwhU6efWYpYRUumaCTN4-o4",
+      "name": "San Francisco de Asís",
+      "address": "Av. México 2877, 8207231 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJOWnM8efWYpYR8bmBmO8Qvvw",
+      "name": "Iglesia Católica",
+      "address": "Los Salesianos 1653, 8207231 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJbfU8HCjVYpYR8QLKywi-_h4",
+      "name": "Capilla del Cristo de Vista hermosa",
+      "address": "El Quisco, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJv0KxidLVYpYRmgRIJwtEb9o",
+      "name": "Iglesia de Dios Varones Territorio Centro",
+      "address": "El Volcán 0307, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJSyD0bnrWYpYRjk3lgd6a440",
+      "name": "Iglesia Evangelica",
+      "address": "Los Espinos 155, 8190112 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ58Ed1nnWYpYRC5n5EONsoe0",
+      "name": "IEP Puente Alto Oriente",
+      "address": "C. El Maiten 139, 183, 8190123 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJIer-X4DWYpYR0T6F_nbyI7E",
+      "name": "Virgen De Las Vizcachas",
+      "address": "Av. Camilo Henríquez 11660, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJpUKYi3nWYpYROnL5hO4K1Tc",
+      "name": "Parroquia Nuestra Señora del Carmen",
+      "address": "Veintisiete de Septiembre 3392, 3902, 8190029 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJnapED3PXYpYRXt_1Acbk4wo",
+      "name": "IGLESIA EVANGELICA EN PUENTE ALTO",
+      "address": "German Ebbinghauss 0258, 8150000 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJhXi7UfHWYpYREszwImCJIWk",
+      "name": "Parroquia San Carlos Borromeo",
+      "address": "Av. San Carlos 01613, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJFUR0PADXYpYR54znDwbj3Nc",
+      "name": "Iglesia conectados",
+      "address": "Av. Camilo Henríquez 3910, 8170307 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJjwyqMQDXYpYR_wE1o04d-sw",
+      "name": "Iglesia T.E.C.A. Puente Alto",
+      "address": "Pje. Padre Larrañaga 2020, parad.27, 8150215 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ8b_aJiHXYpYRzTLwJlSD1I8",
+      "name": "Iglesia Mormona",
+      "address": "3107, El Peñoncito 3089, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJGQ5GwxnXYpYROdInElibtLw",
+      "name": "Iglesia Evangélica La Fe Apostólica de Chile - Local La Foresta",
+      "address": "Los Abetos 2423, 8151530 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJs3kBpcvXYpYRkDx4slp3SJA",
+      "name": "Iglesia Hastem Reina Santiago",
+      "address": "Av. Camilo Henríquez 13000, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJb4YWSQDXYpYR7RUlafLywEs",
+      "name": "Iglesia Unida Metodista Pentecostal 4° de Puente Alto - Santidad a Jehová",
+      "address": "Valle Central 0966, 8205495 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJhU4Y2fjXYpYRCtAhtRDW3uU",
+      "name": "Barrio Los Cántaros - La Iglesia de Jesucristo de los Santos de los Ultimos Dias",
+      "address": "El Peñoncito 3089, 8150215 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJy_DdUgDXYpYRVRhHs0jZasE",
+      "name": "Iglesia",
+      "address": "Luis Matte Larraín 1000, 8150215 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJvZeKfDLXYpYRPCWQcWmj9k8",
+      "name": "Iglesia Evangélica Poder de Dios",
+      "address": "Av. Gabriela 1260, 8150215 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJhY8w1sDWYpYRZEw02Dheq1I",
+      "name": "Iglesia Adventista Jerusalen",
+      "address": "Av. Camilo Henríquez 2685, 8170356 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJjQDDujbXYpYRBX-BskFXB88",
+      "name": "Iglesia Adventista del Séptimo Día - GABRIELA",
+      "address": "Mallarmé 656, 8150215 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJRSfSj27XYpYR_WgBFw-OUtw",
+      "name": "Iglesia Apostolica de Jesucristo",
+      "address": "Pto Aysén 2106, 8150215 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJKbZnorLXYpYRbmJIeq-fHMY",
+      "name": "Iglesia",
+      "address": "Marcos Pérez 46, 8163179 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ4cSSvyTXYpYRjyWGZUT6i3g",
+      "name": "Iglesia Sendas Antiguas - Misión Pentecostal Nueva Jerusalén",
+      "address": "Estación La Obra 3465, 8164078 Cordillera, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJYVwxXYPXYpYRRyh4szGt_2Q",
+      "name": "Iglesia Cristiana",
+      "address": "Del Arquitecto 58, 8163184 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ34BIiqXXYpYRcw93dMmx8-k",
+      "name": "Iglesia Evangelica",
+      "address": "Colombia 71, 8150000 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJdaXwOQDXYpYRLVnNV-zCBh0",
+      "name": "Iglesia \"Luz De La Aurora\"",
+      "address": "María Rosa 1674, 8164108 Santiago, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJFyfsOQDZYpYRBlZ8rV8Cdhg",
+      "name": "Iglesia Metodista Pentecostal",
+      "address": "Pedro Córdova 3851, 8167531 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJIbWUX3XZYpYR_IW1ylAROrE",
+      "name": "Iglesia Adventista Villa Chiloé",
+      "address": "Ancud 1067, 8165982 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJky2gZ07XYpYRvjMFtdNdoTg",
+      "name": "Iglesia Pentecostal Puente Alto \"Paz a Vosotros\"",
+      "address": "El Nogal 0128, 8191038 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJQwvzB7DXYpYR_7l4wglnND4",
+      "name": "Iglesia",
+      "address": "Juanita Aguirre 430, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJSYkoirLXYpYRBxErd3xtqKU",
+      "name": "Iglesia",
+      "address": "Abate Molina 175, 8163177 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJz_jUUADXYpYRhouio_91v4c",
+      "name": "Iglesia Alfa y Omega",
+      "address": "Av. Ejército Libertador, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJdw5DOlPZYpYRlPI4mFBM9Ik",
+      "name": "Iglesia IMPCH Villa Mourguez",
+      "address": "Pedro Córdova 3552, parad.48, 8167536 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ9XY2BbHXYpYRaiAq8OlYy8o",
+      "name": "Iglesia Apostolica",
+      "address": "José Victorino Lastarria 630, 8164808 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJnTrxQ47XYpYR164OQe4q4Nc",
+      "name": "Iglesia Apostolica",
+      "address": "El Silo 3103, 8163616 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJkWIMFgDXYpYRqC08s_6et6Q",
+      "name": "IGLESIA EL REINO DE DIOS",
+      "address": "José Manuel Irarrázaval 0160, 8180870 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJaZmcOMHXYpYRuZAIKYaCJPU",
+      "name": "Iglesia Tabernáculo de adoración",
+      "address": "C. Tte. Bello 748, 8150215 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJN48NegDXYpYR6zggoV4oN5I",
+      "name": "Iglesia TDG_Santiago",
+      "address": "Av. Concha y Toro 1865, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJSRaXGQDXYpYRqXPMn8qerto",
+      "name": "Ictue iglesia",
+      "address": "Ciclón 2764, 8163104 Cordillera, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJk2TFi6_XYpYRlZkiaGtTy8g",
+      "name": "Iglesia",
+      "address": "Janequeo 1015, 8163111 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJrzQ3xB_XYpYRUyrHvXs21u4",
+      "name": "Iglesia Evangélica Refidim Kemuel, Templo Adonai",
+      "address": "Ecuador 6, 8210766 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJmelJewDXYpYRwg3imnGbr68",
+      "name": "Iglesia C.A.P Chile generación de avivamiento",
+      "address": "Luis Valdés 2923, 8205881 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJXyN3LtDXYpYRo06aBorgy0k",
+      "name": "Iglesia Cristiana Reencuentro",
+      "address": "Diag. Nte. 314, 8150215 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJGf4oFADXYpYRAPup_1zSqWc",
+      "name": "Iglesia Elohim",
+      "address": "Av. Concha y Toro 693, 8180801 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ_dL2XyfXYpYRBaMfdBSZzYU",
+      "name": "Iglesia Evangélica",
+      "address": "Sta. Elena 181, 8180923 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ3RaeSFXZYpYRM6n4cSkVD4M",
+      "name": "Iglesia Rescatados Por Cristo",
+      "address": "Juan Francisco González 0844, 8150000 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJd-INrrrXYpYRrDRg_XzsVVw",
+      "name": "Iglesia El Séptimo Sello",
+      "address": "Marcos Pérez 958, 8164357 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ0yVka1vWYpYROrg9dJyU1wE",
+      "name": "Parroquia San Esteban",
+      "address": "Nonato Coo 0200, 8190473 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJQ32FjarXYpYRgEgmRwtLc4s",
+      "name": "Iglesia Universal del Reino de Dios",
+      "address": "Av. Concha y Toro 482, P 2 Puente Alt, 8190748 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJyUDqAqzXYpYRnjvu1be5Y7s",
+      "name": "Iglesia de Cristo",
+      "address": "Ramón Núñez 25, 8162839 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJI2H9TXPZYpYRausvjbxnseo",
+      "name": "Primera iglesia del Señor...local puente alto",
+      "address": "Río Volcán 3832, 8167444 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJQ7wSoTPXYpYRnCKxgLX500Y",
+      "name": "Iglesia Dios para todos Puente Alto",
+      "address": "Independencia 1295, 8167008 Cordillera, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJgZ7TO47XYpYRxsP7HI7dniA",
+      "name": "Iglesia Rebaño De Jesucristo",
+      "address": "El Álamo 713, 8163626 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJg803RADXYpYRhtSRFQqYc3g",
+      "name": "Iglesia De Villa Horizonte de Chile",
+      "address": "La Arena 1668, 8163298 Cordillera, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJBR-03vPXYpYRjMLgkaoB86k",
+      "name": "Ministerio Ciudad de Dios",
+      "address": "Pje. Gamuza 2040, 8150215 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJZyPQQwDXYpYRHMgw__WznqM",
+      "name": "Iglesia Nuevos Diseños de Vida (NDV) ministerio UPC",
+      "address": "Nemesio Vicuña 511, 8150000 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJkW8MF9_WYpYRcUekz40AB0A",
+      "name": "Iglesia Adventista del Séptimo Día - MAHANAIM",
+      "address": "El Peñón 0809, 8207394 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJd5_Ep9HWYpYRySV3z6HQlMc",
+      "name": "Iglesia Adventista del 7o día, Andes del Sur",
+      "address": "C. Puerto Valparaíso 3838, 8220795 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ-cPrfx_XYpYRJ7DSHcBXDU8",
+      "name": "Iglesia Evangelica",
+      "address": "Carlos Aguirre Luco 2845, 8205873 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJWR5OPgDXYpYRG6yAlPG2lRM",
+      "name": "Iglesia Pozo de Jacob",
+      "address": "Río Yeso 3619, 8167481 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJrRIZFQDZYpYRqRFUMS7jN30",
+      "name": "Iglesia Ictue sector sur",
+      "address": "Los Plátanos 0379, 8840092 Santiago, La Pintana, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJQ680MRzZYpYR_XA8EklLqnA",
+      "name": "Primera iglesia del Señor..local puente alto",
+      "address": "Río Las Leñas 335, 425, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJIVXucy_ZYpYRYPNYJyPHS5k",
+      "name": "Iglesia de Dios Maranatha",
+      "address": "C. Castro 4308, 8163733 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJGY06uQrXYpYRea1Ku9mGIwc",
+      "name": "Iglesia Evangélica La Fe Apostólica de Chile - Local Rios de Agua Viva",
+      "address": "Pje. Once 1306, 8150215 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJYRjzeQDXYpYRnmczLJ61r7M",
+      "name": "Iglesia Puente Alto",
+      "address": "Av. Ejército Libertador 236, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJizDdlSvYYpYR21SrYpVwRsQ",
+      "name": "Iglesia Nazarenos del Nuevo Pacto",
+      "address": "Av. Sta. Rosa, parad.48, 8167542 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJIR_oi-HXYpYRmoDpBnaXaiM",
+      "name": "Iglesia Saboreando A Jesús (Templo Arturo Pratt",
+      "address": "Calle Arturo Prat, esquina, Venezuela #097, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJuU4kaAnXYpYRh9bA47mCQAo",
+      "name": "Iglesia De Dios Palabra Divina",
+      "address": "Domingo Tocornal 1292, Las Lilas, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJu-94SRfQYpYRYB3CVK_6nGo",
+      "name": "Mision Iglesia Pentecostal De Dios Santiago",
+      "address": "Los Cometas 2865, 7821114 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJISmrcdbPYpYRY4Ny0mbbAQI",
+      "name": "Iglesia Pentecostal",
+      "address": "Historiador Jaime Eyzaguirre Gutiérrez 2190, 7810125 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJt_eWwyfQYpYRYug6iFPXeCM",
+      "name": "Iglesia Pentecostal",
+      "address": "Irán 2742, 7810717 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJh2lLxfbPYpYRDrAdJPH-w8Q",
+      "name": "Local Jaime Eyzaguirre IEP Ñuñoa",
+      "address": "Amanda Labarca Huberston 4554, 7811144 Santiago, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJdxqV3tjPYpYReEsGBCznYxc",
+      "name": "Iglesia Evengelica",
+      "address": "Chinchorro 2393, 7810000 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJm6fyjf3PYpYRpnjRxaOMkB0",
+      "name": "Iglesia Mision Evangelica Nacional, Santa Julia",
+      "address": "Chislluma 4070D, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ2Y8eQQDPYpYRq1Wg6Iu5BsU",
+      "name": "Ministerio Evangelístico Misionero Jehová-Rohi",
+      "address": "Manuel Sánchez 3684, 7810066 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJM4gSrd3PYpYRvx9UlUjE__Q",
+      "name": "Iglesia Misión Mundial Asamblea De Dios",
+      "address": "Brown Sur 1911, 7800211 Ñuñoa, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ57ITiJ7RYpYRMxsHUJSNMhc",
+      "name": "Capilla Maria Medianera",
+      "address": "Juana de Aguirre Cerda 4465, 7810580 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJKZ8-IADPYpYRAokgrKtjPrs",
+      "name": "Iglesia M. P. Macul - Simon Bolivar",
+      "address": "Historiador Jaime Eyzaguirre Gutiérrez 2190, 7810125 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJIZm5JCzPYpYR378FHapvl7Y",
+      "name": "Iglesia Unida Metodista Pentecostal Macul",
+      "address": "Mercedes Marín del Solar 4784, 7811066 Santiago, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJWVxahePPYpYReiM_31lK8VE",
+      "name": "Iglesia Antioquía",
+      "address": "Los Espinos 2485, 7810358 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJYeChQNfPYpYRxJv5eTwhZxg",
+      "name": "Parroquia",
+      "address": "Alejandro Avalos Davidson 2060, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ3-GbROfPYpYRzd1ONBNYD3c",
+      "name": "Iglesia El Buen Pastor",
+      "address": "7810031 Santiago, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJKTPcjN7PYpYRpZDNfw5wSHU",
+      "name": "Inmaculada Concepción",
+      "address": "Aucopujo 2281, 7810000 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJA0uL5n7RYpYRhhA2tQHx0JA",
+      "name": "Iglesia Misión Evangelica Nacional, Macul",
+      "address": "Blanco Encalada 2203, 7820062 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJQycH8iHQYpYRVBBhseqY2rA",
+      "name": "Iglesia Bíblica Bautista Jesús es la Roca",
+      "address": "Premio Nobel 3321, 7810949 Macul, Santiago, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJQbd79-LPYpYRdWX-3rxR2O8",
+      "name": "Iglesia Bautista Macul",
+      "address": "Joaquín Rodríguez 2800, 7810632 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJc-m4j-bPYpYR03nzhrb659M",
+      "name": "Iglesia Biblica Bautista",
+      "address": "Av. Rodrigo de Araya 2780, 7780359 Ñuñoa, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJi2hr7dbPYpYRGh8q_Feefws",
+      "name": "Capilla Espíritu Santo",
+      "address": "Amanda Labarca Hubertson 4601, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJT9WR3dPPYpYRMPF5j-vFiAc",
+      "name": "IMP ÑUÑOA",
+      "address": "5086, Av. Rodrigo de Araya, Ñuñoa, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJhwIoTQDRYpYRW-YJ7RhquFs",
+      "name": "Local Las Lomas de Macul IEP Ñuñoa",
+      "address": "Las Codornices 3527, 7820807 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJJZQDOUDQYpYRUbebhwpD2mU",
+      "name": "Iglesia Internacional Del Evangelico Cuadrangular",
+      "address": "Las Torcazas 5569, 7820687 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ133a9GnQYpYRdRk4DH5G8z0",
+      "name": "Capilla",
+      "address": "Los Tucanes 6055, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJy1sUTwDRYpYRQBzYiPojnnU",
+      "name": "Capilla San Viator",
+      "address": "Froilán Roa 5845, 7820740 Santiago, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJywU9dR_QYpYRLrHPTVpJjaM",
+      "name": "Parroquia San Luis Gonzaga",
+      "address": "Av. Macul 3163, 7810942 Santiago, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJz_VD6NfPYpYRPuGCZYvP5rk",
+      "name": "Iglesia Cristiana Renovacion Y Milagros",
+      "address": "Capitán Ignacio Carrera Pinto 4488, 7810295 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJJX1JdQDPYpYRP4o3w8CWIEo",
+      "name": "Primp Clase Simón Bolívar",
+      "address": "Volcán Guallatiri 3890, 7810270 Macul, Santiago, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJqfEM3NjPYpYRA115TUiZ1ek",
+      "name": "Local Santa Julia IEP Ñuñoa",
+      "address": "Chinchorro 2393, 7810000 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJDyGFG0LPYpYRmAbqDwsuF0g",
+      "name": "Iglesia los Olmos CIEV",
+      "address": "Sorrento 3676, 7810475 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ7bAzrkbQYpYRMlvtgOkIirU",
+      "name": "Parroquia Salesiana Sagrada Familia",
+      "address": "Av. Macul 5950, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJn3KCQB_QYpYRBUru3PoaHPI",
+      "name": "Capilla Macul Asambleas de Dios",
+      "address": "Av. Macul 3341, 8320000 Santiago, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ0e086CbQYpYRqCSUsLD5Zco",
+      "name": "Iglesia Adventista del Séptimo Día - MACUL CENTRAL",
+      "address": "Los Plátanos 4017, 7810910 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJE939bA7QYpYRrJLAqWUmMmU",
+      "name": "Iglesia del Sagrado Corazón del Campus San Joaquín",
+      "address": "Santiago, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJLzvhk8HPYpYRW2IueT-CXhQ",
+      "name": "Iglesia Bíblica Gracia Inagotable",
+      "address": "José Ananías 152, 7810163 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ15dQEgDPYpYR8C4BIVLCtAY",
+      "name": "Iglesia IMC MACUL",
+      "address": "Las Dalias 2263, 7810094 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJZSL3BePPYpYR0oxZdOGUJTo",
+      "name": "Capilla Santa Cruz",
+      "address": "Joaquín Rodríguez 2680, 7811244 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJXSPVYADPYpYRtHc2rMpqyjU",
+      "name": "Iglesia Universal de Cristo Ñuñoa",
+      "address": "Av. Rodrigo de Araya 2444, 7780383 Ñuñoa, Santiago, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJI6-hefXQYpYRKMptomm0jOI",
+      "name": "Congregacion Clerigos de San Viator",
+      "address": "Froilán Roa 5745, 7820773 Santiago, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJFYY8xhjQYpYRYJpceQIIKSk",
+      "name": "Iglesia Catedral del Espíritu Santo",
+      "address": "Av. Macul 3547, 7820981 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJN69ICDDQYpYRnqPsNwh_BrM",
+      "name": "Iglesia Metodista",
+      "address": "Los Evangelistas 3768, 7830117 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJYyTl6iPQYpYRtZSDt5VWH3E",
+      "name": "Nuestra Señora del Carmen",
+      "address": "Av. Quilín 3675, 7830021 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJixGzNSPQYpYRWkLEnp_8DqU",
+      "name": "Parroquia María Reina",
+      "address": "Poeta Augusto Winter 3928-3978, 7830127 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJPwM0wi7QYpYRmxsIz7LIn9I",
+      "name": "Capilla Jesús Esperanza del Mundo",
+      "address": "TEMPLO: - Cardenal Carlos Oviedo Cavada 4853, 7810806 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJU8P1JgDRYpYRlDrjJuWze60",
+      "name": "Iglesia San Sebastián",
+      "address": "San Vicente de Paul 4107, 7830172 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJyYOETVXbYpYRF5Zj0i7Wj84",
+      "name": "Iglesia Casa de Luz",
+      "address": "Exequiel Fernández 2249, 7810055 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJm63keA3QYpYRcqJKjCa6ke4",
+      "name": "Congregacion Del Verbo Divino",
+      "address": "Benito Rebolledo 2101, 7820641 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJwXYXRwDRYpYRxGYra3CZuME",
+      "name": "Capilla San Norberto",
+      "address": "Padre Luis Querbes 2925, Macul, Santiago, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJa1tY7XHRYpYRaEhxidKKG0k",
+      "name": "Capilla Nuestra Señora de los Milagros",
+      "address": "Padre Luis Querbes 2941, 7820499 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJlwgRauDPYpYRe8QLYaKRFfY",
+      "name": "Iglesia Manantial de Vida Chile",
+      "address": "Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJj7PFQ-fPYpYR1y8oboggroE",
+      "name": "De La Iglesia Ruiz Jacint",
+      "address": "Av. Macul 2127, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJFce1AXPQYpYRe1QwJ2tC9f0",
+      "name": "Iglesia UCB Villa Santa Elena",
+      "address": "Guillermo Blest Gana 1902, 7820860 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJBau4nR_QYpYREjARk6xe9ss",
+      "name": "Ministerio Apostólico Pleroma",
+      "address": "Madreselvas 3234, 7810872 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJi5gTAvbRYpYRSCGhcrG2jVw",
+      "name": "Iglesia Asamblea Evangelica Pentecostal",
+      "address": "Coipué 2904, 7820039 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJT_LelB_QYpYRNBRfFk2CInk",
+      "name": "Congregacion Hijas de la Divina Providencia",
+      "address": "Av. Macul 2996, 7810664 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJjW6nLADPYpYR6eyji0FXdWM",
+      "name": "iglesia",
+      "address": "Los Olmos 3160, 7810467 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJAwDQ4D_QYpYRLhomxMAffHQ",
+      "name": "Templo Lomas De Macul",
+      "address": "Juan Baginka Evanisch 3460, 7820554 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJezKhaeDPYpYRKNenqZ-WeWU",
+      "name": "Iglesia Avanza",
+      "address": "Av. Macul 2645, 7810467 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJDbW3TgDRYpYRGzM_tJinkUk",
+      "name": "Primera Iglesia Metodista Pentcostal",
+      "address": "Pje. Ocho 4018, 7830461 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJd79wJxjQYpYRCx7udCg3s3U",
+      "name": "Congregacion Vicentina",
+      "address": "San Vicente De Paul 4107, 7821019 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ7T79eWTRYpYRVZ78lh8S0_w",
+      "name": "Iglesia mady",
+      "address": "Los Industriales 2811, 7821153 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJX70AXADRYpYRpTs84NN9uFE",
+      "name": "Local La Agrícola IEP Ñuñoa",
+      "address": "Sta. María 6900, 7820047 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJGzlyXhvQYpYRUIm8-2y9oMk",
+      "name": "Capilla Santa María de la Esperanza",
+      "address": "Nva Joaquín Rodríguez 3585, 7820083 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJdaAJYW3QYpYRJsULfJJqfYo",
+      "name": "Capilla Santa Elena",
+      "address": "Jorge Quevedo 5459, 7820821 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJmbIE3MHPYpYRTUXHu0SoLww",
+      "name": "Ministerio Visión y Misión Casa Macul",
+      "address": "Av. Rodrigo de Araya 2991, 8320000 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJw2vhwxjQYpYRZePRKzpi-Pg",
+      "name": "capilla anexa IES",
+      "address": "Av. Macul 3579, 7830005 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJPWiDOB_QYpYRbHxxNQFNMio",
+      "name": "Iglesia Jesus Joven",
+      "address": "Av. Macul 3407, 7820981 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJgSKdgBvRYpYRNrFRqXB4AY4",
+      "name": "Ministerio Apostolico y profetico Elohim",
+      "address": "Exequiel Fernández 3263, 7810863 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJOyz31DLRYpYRs0kQsC_EIk0",
+      "name": "Parroquia San Lorenzo",
+      "address": "7810950 Macul, arica, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ8UQRyhvQYpYRacWHXJnopt0",
+      "name": "Capilla Sta Rosa De Macul",
+      "address": "Cerro Guacate 2971, 7820130 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJBbiPRADRYpYRx1quy_VCFvo",
+      "name": "Iglesia en Santiago",
+      "address": "Los Industriales 2811, 7821153 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ86UyOADRYpYRQPsfO0dSefU",
+      "name": "Local Chacarilla IEP Ñuñoa",
+      "address": "San Vicente de Paul 3988, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJoYjWcBDQYpYRnPmC-vpPnxc",
+      "name": "Iglesia Adventista del Séptimo Día Pedro de Valdivia",
+      "address": "Joaquín Rodríguez 7420, 7820215 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJITXGiRnQYpYR62sPAxxAd6k",
+      "name": "Parroquia San Norberto",
+      "address": "Av. Escuela Agrícola 2771, 7820225 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJg9EoBAXQYpYR2oc_4MqpUi4",
+      "name": "Capilla santa teresita",
+      "address": "7820254 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJy5fWNiPQYpYRotppKSJ8Z4E",
+      "name": "Capilla Santa Maria",
+      "address": "Poeta Augusto Winter 3941, 7830127 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJfz38Li3RYpYRFwgHwDmnDbM",
+      "name": "Iglesia Cristiana La Viña Roble",
+      "address": "Av. Macul 4232, 7830365 Santiago, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJLytJnq3PYpYR45lmH9UEtFQ",
+      "name": "Epes Plenitud",
+      "address": "Salón Norte, metro Manuel Montt - Dr Manuel Barros Borgoño Reg 160, Providencia, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ2do-kDfFYpYRlAsPbRLeLZs",
+      "name": "Capilla INGER",
+      "address": "José Manuel Infante 424, 7500720 Providencia, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ06l_9ofFYpYR4-KqcFp_Tu0",
+      "name": "Asoc Ayuda A la Iglesia Que Sufre",
+      "address": "Román Díaz 97, 7500617 Providencia, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJz6s-e4TFYpYRhpXbSJlVGRA",
+      "name": "Parroquia de los Santos Angeles Custodios",
+      "address": "Obispo Pérez de Espinoza &, Santiago, Providencia, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJA_jZVELFYpYRmUsEHJQf_GU",
+      "name": "Fraternidad Misionera Verbum Dei",
+      "address": "Av. Providencia 1001, Iglesia del Carmen Santiago, Providencia, Santiago, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJyVeZ4IfFYpYRWGPgtuL_C_A",
+      "name": "Capilla Nuestra Señora del Carmen - VERBUM DEI",
+      "address": "Av. Providencia 1001, 7500620 Providencia, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJ0bEapn7PYpYRudLEcZolZJk",
+      "name": "Parroquia Jesús Nazareno",
+      "address": "Manuel Montt 797, 7500978 Providencia, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJqzktZADPYpYR3-GO967BRVQ",
+      "name": "Clase Chile España, PRIMP CATEDRAL EVANGELICA",
+      "address": "Pje. Alberto 3534, 7511208 Providencia, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJPeM7GmXPYpYRlcqnwCOnLBg",
+      "name": "Iglesia Cristiana La Casa del Señor, Providencia",
+      "address": "Alfredo Barros Errázuriz 1957, 7500550 Providencia, Santiago, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJdR9UjpjPYpYRwHaf2_lr8so",
+      "name": "Iglesia Evangelica Bautista de Ñuñoa",
+      "address": "General José Artigas 2862 Ñuñoa, 7770008 Santiago, Ñuñoa, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    },
+    {
+      "scope": "validated_batch",
+      "key": "google_maps:ChIJSyVjxG7PYpYR0aGWRTJqWi0",
+      "name": "Iglesia Evangelica Luterana el Redentor ILCH",
+      "address": "Providencia, Lota 2330, Santiago, Providencia, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": []
+    }
+  ],
+  "pending": [
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-16",
+      "name": "",
+      "address": "Froilán Roa 6350, 8241496 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0015",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJbXUFHwDRYpYR-bznMrjBu6k",
+      "name": "Décima Iglesia Presbiteriana La Paz de Cristo",
+      "address": "Exequiel Fernández 1144, 8241298 Ñuñoa, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0020",
+      "inputReason": "missing_or_ambiguous_commune"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJVQyZ6IXQYpYR0kNMBIaqMjQ",
+      "name": "Ministerio Evangelistico Pentecostal Adonay",
+      "address": "Cinco Nte. 966-988, 8790005 La Granja, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0027",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-30",
+      "name": "",
+      "address": "Los Nogales 6329, 8280010 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0029",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-31",
+      "name": "",
+      "address": "La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0030",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJLwW44ZXQYpYRhwKt0FDo6lg",
+      "name": "IGLESIA CRISTIANA PENTECOSTAL DE CHILE",
+      "address": "Sta Raquel 9831, 8250437 Santiago, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0031",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJa4ujLADRYpYRGyQHqsvQtfo",
+      "name": "Iglesia Apostólica Jesucristo es la vida",
+      "address": "Mariano Sánchez Fontecilla 9690, 8290292 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0039",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-49",
+      "name": "",
+      "address": "José Miguel Carrera 1284, 8300609 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0048",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJWzX3Qf_QYpYRGtO0m7JHD_w",
+      "name": "Iglesia Misionera El Es El Primero Y El Ultimo",
+      "address": "Las Malvas 1832, 8271921 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0055",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJe5lLXlXQYpYRzbZNIfrlO50",
+      "name": "Iglesias Cespedes Luz Marcela",
+      "address": "Sta. Isabel 2440, 8270807 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0056",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJlUQoEv3QYpYRAqxzZelC7RI",
+      "name": "Fernandez Izquierdo Daniel Pastor",
+      "address": "Departamental 8250, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0063",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ-_J2KFnQYpYRJhcPK7H6o3Y",
+      "name": "Corporacion Cristo Para Todas Naciones Mejor Vivir",
+      "address": "Froilán Roa 6665, Santiago, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0064",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ8-MXOvbQYpYRz3u5Bzu7v_M",
+      "name": "Padres de Schoenstatt (Casa Provincial). Entrada preferida",
+      "address": "Colombia 7605, La Florida, Santiago, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0065",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJrfC8WwDRYpYRV3XN70z2go8",
+      "name": "Local Cooperativa IEP San Luis de Macul",
+      "address": "Donatello 6999, 7051, 8270637 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0066",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJb5kIfsHQYpYRWT4hvdHexlo",
+      "name": "Iglesia de Dios Sociedad Misionera Mundial",
+      "address": "Av. Trinidad 286, 8240000 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0073",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJY4yXwnfRYpYR-GkDI8OTww8",
+      "name": "Romina Fernanda Castillo Bautista Soluciones Comunicacionales E.I.R.L.",
+      "address": "Las Religiosas 5910, 8280412 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0075",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJD58DqsrQYpYRmjUzwpRXqO4",
+      "name": "Iglesia Pentecostal Apostolica",
+      "address": "Los Quillayes, 8311215 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0079",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJV1k5mbHQYpYR3kmfx5sP1uI",
+      "name": "Iglesia De Jehova",
+      "address": "Larrain 7418, La Reina, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0082",
+      "inputReason": "missing_or_ambiguous_commune"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJOaM3YGjQYpYR8H6aKqts-bs",
+      "name": "Sta. Teresita",
+      "address": "Callao 958, 8242133 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0094",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJCUeTR1zQYpYRPT3fy0GLOt4",
+      "name": "Santa Bernardita",
+      "address": "El Ulmo 1174, 8241594 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0096",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJBx9wEQDRYpYRWj-hgr3Z31A",
+      "name": "Local Las Araucarias IEP San Luis de Macul",
+      "address": "Queñoa 2092, 8270131 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0097",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJcTXdNADRYpYROVgVgGefV4s",
+      "name": "Chacon zamorano 6748 la florida",
+      "address": "Metrosivero 6748, 8270437 Santiago, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0099",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJKcF0BWHQYpYRANowKZbV3CQ",
+      "name": "Asociacion Chilena De Proteccion A La Fa",
+      "address": "Av. Vicuña Mackenna Poniente 7255, 8260183 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0106",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJqyPdkfPQYpYRt8j6m9fzwog",
+      "name": "Fund Tierra De Esperanza",
+      "address": "Luis Cruz Martínez 162, 8241829 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0107",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJwx5LEGHQYpYRG_9bN8vxuZI",
+      "name": "Rifo Bazan Christian Alfredo",
+      "address": "Av. Vicuña Mackenna Poniente 7205, 8260183 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0108",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-111",
+      "name": "",
+      "address": "La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0110",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJYegKvYvQYpYRGUJKKsAAciM",
+      "name": "Santa Teresa",
+      "address": "Grumete Cortés 518, 8260429 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0111",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJNY8JOfTQYpYR-IloZLbhSPU",
+      "name": "Instituto De Nuestra Señora De Schoenstatt",
+      "address": "Vicente Valdés 348, 8240586 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0112",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ7S8UyoTQYpYRr10hPOou3-U",
+      "name": "Corporacion Evengelica Pentecostal Senda del Amor de Dios",
+      "address": "Angol 8266, 8790372 La Granja, Santiago, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0113",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ1Qc4o4nQYpYRyb3vV_U-sJY",
+      "name": "Santa Rita",
+      "address": "Gerónimo de Alderete, 8261833 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0114",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-117",
+      "name": "",
+      "address": "Av. Vicuña Mackenna 8250, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0116",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ9w0st1rRYpYR_K9noCW0lws",
+      "name": "Iglesia Hope Santiago",
+      "address": "Av. Punta Arenas 6329, 8780021 La Florida, La Granja, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0121",
+      "inputReason": "missing_or_ambiguous_commune"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-124",
+      "name": "",
+      "address": "Los Nogales 6329, 8280010 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0123",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ43_kSgDRYpYRxeIh-NdTYVU",
+      "name": "Iglesia Comunidad Emanuel",
+      "address": "Av. Departamental 3301, 8271775 La Florida, Peñalolén, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0124",
+      "inputReason": "missing_or_ambiguous_commune"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJhaWWKwDRYpYRFhPR9wLlC2w",
+      "name": "IPUNJE La Florida",
+      "address": "Perpetua Freire 90, 8241908 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0126",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJhcGOofXQYpYRzyYFQtsdJK4",
+      "name": "Santuario Nacional de Schoenstatt - Cenáculo de Bellavista",
+      "address": "La Concepción, Av. Vicuña Mackenna 7626, Paradero 14, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0127",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJw4Jd75DQYpYRZkJqjRMlyDU",
+      "name": "Veguer Ulloa Laura de la Luz J",
+      "address": "Ancud 1508, 8240000 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0146",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJdWAls_LQYpYR61qlCltsogw",
+      "name": "Pastor Meneses Evelyn Marcela",
+      "address": "Williams King 8568, 8261261 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0148",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ2ZFe243QYpYRmQWYPv_KEII",
+      "name": "Iglesia de Jesucristo Luz del Mundo",
+      "address": "Sta Raquel 8628, 8251816 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0149",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ_2uLso_QYpYRP9KL2DirHJo",
+      "name": "Emmanuel",
+      "address": "Av. Américo Vespucio 8678, 8251853 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0150",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJe796hoXQYpYR71WYH9sZ4d0",
+      "name": "Santa Barbara",
+      "address": "Lo Ovalle 391, 8790042 La Granja, San Miguel, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0152",
+      "inputReason": "missing_or_ambiguous_commune"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJkYXXWpDQYpYRGMG8Gjde6Mc",
+      "name": "Santa Barbara",
+      "address": "Calama 9011, 8252006 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0153",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-158",
+      "name": "",
+      "address": "La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0157",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJqdZ2PQDRYpYRQPUUVLjfFac",
+      "name": "Iglesia de Dios Templo Adonai",
+      "address": "Tres Nte. 0886, 8790157 La Granja, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0159",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ1ZHE-qjRYpYRX0WnP22CTr8",
+      "name": "Santa Rosa",
+      "address": "Volcán Lonquimay 5636, 8270408 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0166",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJh7hHWQDRYpYRAdWiBVZJQF0",
+      "name": "Cristo luz a tu vida",
+      "address": "Quebrada de Macul 5899, 8150215 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0167",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJodfiXsDRYpYRzFbPOnhcDbQ",
+      "name": "IPU ALTO REFUGIO",
+      "address": "Quebrada de Macul 5897, 8270324 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0168",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJV1k5mbHQYpYRDH3FM5me3jI",
+      "name": "Hermanas Carmelitas Teresas De San Jose",
+      "address": "Echenique 6186, La Reina, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0174",
+      "inputReason": "missing_or_ambiguous_commune"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJYQSoNwDRYpYRNo3YIiwM_xo",
+      "name": "Local María Elena IEP San Jorge",
+      "address": "Mesana 11274, 8311023 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0175",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJP3T0nc7QYpYRnudO-6eGMFI",
+      "name": "Antonia",
+      "address": "Av. Ejercito Libertador 4186, 8150215 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0176",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJV1k5mbHQYpYRrLSuk1dSQus",
+      "name": "Laguna Abarca Adoracion Eugenia",
+      "address": "Larrain 6284, La Reina, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0177",
+      "inputReason": "missing_or_ambiguous_commune"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJieUrPgDRYpYRUYZL2LtMfIY",
+      "name": "Nuevo amanecer en Cristo",
+      "address": "Volcán Tolhuaca 5825, 8270117 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0179",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJF5FrzHPQYpYRFwrRJR1tHFY",
+      "name": "Congregacion Pias Discipulas Del Divino",
+      "address": "Av. Vicuña Mackenna Poniente 5769, La Florida, San Joaquín, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0180",
+      "inputReason": "missing_or_ambiguous_commune"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJr0LaIcDQYpYRTkG6Ln8og1s",
+      "name": "Duarte Veliz Juan Bautista",
+      "address": "8250484 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0181",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJo0Jgg0PRYpYRcjFF-4zqxoc",
+      "name": "Iglesia Corporación Pentecostés Luz y Vida",
+      "address": "Las Gardenias 9769, 8250490 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0182",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ5_MaYzLRYpYRwtZFJhuTykg",
+      "name": "Iglesia Pentecostal",
+      "address": "Cordillera 11310, 8301332 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0183",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJCa9jHSnRYpYRWz_8IyNumeI",
+      "name": "Juan Bautista Vidal Barrientos",
+      "address": "San Pedro 1778, 8301047 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0185",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-188",
+      "name": "",
+      "address": "Camilo Henríquez 10169, 8250978 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0187",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-190",
+      "name": "",
+      "address": "José Miguel Carrera 1566, 8320000 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0189",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-192",
+      "name": "",
+      "address": "Camilo Henríquez 10197, 8250978 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0191",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-193",
+      "name": "",
+      "address": "José Miguel Carrera 1566, 8320000 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0192",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ5YFx_p7RYpYRLWAsAsecTdg",
+      "name": "Casa De Oracion Carmelo Monasterio De La S Carmelitas",
+      "address": "Av. Departamental 6200, Santiago, Peñalolén, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0196",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-201",
+      "name": "",
+      "address": "Camilo Henríquez 10197, 8250978 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0200",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-202",
+      "name": "",
+      "address": "Camilo Henríquez 10197, 8250978 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0201",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-204",
+      "name": "",
+      "address": "José Miguel Carrera 1284, 8300609 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0203",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJH3HI8sLQYpYRntazOcH13qA",
+      "name": "Devia Aravena Christian Alex",
+      "address": "Av. Vicuña Mackenna Ote. 9616, 8300278 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0211",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJf7PCMQDRYpYRHLjsxntaOcI",
+      "name": "Valeska",
+      "address": "Venezuela 8842, 8242015 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0213",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJx-5o7_HQYpYRGRgNo2va664",
+      "name": "Guajardo Pena Christian Alfredo",
+      "address": "Sta. Julia 350, 8241966 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0214",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJmdVWb-bQYpYRLrD9mTNg8l0",
+      "name": "Salles Ubilla Christian Hernan",
+      "address": "Colombia 9143, 8242389 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0215",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ74ndKSTRYpYRk5HHSF8BAvc",
+      "name": "Santa Raquel",
+      "address": "Av. La Florida 9871, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0220",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJs3WU7MTQYpYRRaEa4zmDJ4o",
+      "name": "Seymour Navarro Jonathan Jacob",
+      "address": "José Miguel Carrera 44, 8252474 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0222",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJteA-uMTWYpYR3xVdNwd4oPY",
+      "name": "Paradero 22 Av.Vicuña Mackenna",
+      "address": "Paradero 22 - Av. Vicuña Mackenna - José Miguel Carrera, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0223",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJk1eqEcTQYpYRau1Gj7ORYJc",
+      "name": "Comunidad Papa Juan Xxiii",
+      "address": "La Mañana 10185, 8250717 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0224",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJfxBUEADRYpYRESLX81_RzMU",
+      "name": "Pdte. Bulnes9940 La Florida Región Metropolitana",
+      "address": "Pdte. Bulnes 9940, 8250709 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0225",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJh1yektfQYpYRXCTT3R0LQW8",
+      "name": "Buenas Nuevas",
+      "address": "Av. San José de la Estrella 846 A, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0226",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJCZLQp9DQYpYRmu1jBk-t5to",
+      "name": "Quinteros Alamos Carlos Pastor",
+      "address": "Av. San José de la Estrella 501, 8300968 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0227",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJL2BOP8_QYpYRwthKM1-96O4",
+      "name": "Quezada Campos Christian Ivan",
+      "address": "8310019 La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0228",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJbT7BzsPQYpYRk77ZgLeZtv0",
+      "name": "Navarro Gonzalez Ester Filadelfia",
+      "address": "La Mañana 9927, 8250714 Santiago, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0233",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJtWB8w6_XYpYRny50uRfZXAo",
+      "name": "IGLESIA PENTECOSTAL LA ÚLTIMA LLAMADA",
+      "address": "Brasil 295, 8163205 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0242",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ3R-Wo6XXYpYRqHn0SvCikOc",
+      "name": "Iglesia Pentecostal Evangelica ISAJ",
+      "address": "Venezuela, 8163029 Puente Alto, Santiago, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0243",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJB6n1FUfXYpYR9fNiu8_JWQs",
+      "name": "IGLESIA BAUTISTA DE AV GABRIELA",
+      "address": "8150215 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0256",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJKdY4AIXXYpYReEMfULpy0c8",
+      "name": "IGLESIA BAUTISTA LIBERTAD",
+      "address": "Av. Juanita 354, 8163447 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0259",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJpyerJATXYpYRwrxtyJOxmm4",
+      "name": "IECPA",
+      "address": "Independencia 380, 8167384 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0266",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJIWHXLanWYpYRB_0B8mfY0LM",
+      "name": "Iglesia Bíblica Bautista Cordillera",
+      "address": "El Boldo 21, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0298",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-80",
+      "name": "Iglesia templo ararat",
+      "address": "Flor de - Pje. Quillon 01631, 9320000 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0319",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ_5ZQBz7XYpYRt2qhHQoesCQ",
+      "name": "IGLESIA PENTECOSTAL CENTRO MISIONERO CRISTIANO",
+      "address": "Luis Matte Larraín 1003, 8150923 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0323",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ5fNbU__XYpYRYOqLyOlwPZQ",
+      "name": "Iglesia COCEDEIN puente alto",
+      "address": "Abate Molina 24, 8163283 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0328",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJMYfuIADZYpYRNLoExsFIzwc",
+      "name": "Basural de la iglesia",
+      "address": "8170634 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0329",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJqZbD6ijXYpYRCXxnMKnbI_I",
+      "name": "Congregación Cristiana el Renuevo",
+      "address": "Pasaje, Punta Drao 3835, 8152183 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0330",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJARyyqFLWYpYRAir_3lvMThw",
+      "name": "IGLESIA UNIVERSAL DE CRISTO",
+      "address": "Sgto. Menadier 075, 8190610 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0332",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJraU-YlTWYpYR7UKvaQaQee0",
+      "name": "IGLESIA EVANGELICA ASAMBLEA DE DIOS",
+      "address": "Manuel Rodríguez 350, 8180906 Cordillera, Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0338",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJBQDrX0HXYpYRF0VjSuTljJM",
+      "name": "REY DE PAZ IGLESIA BAUTISTA",
+      "address": "Cartago, 8150725 Puente Alto, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0368",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJB90OHabPYpYRMpSs2QHLQQQ",
+      "name": "Movimiento Misionero Mundial-Campo blanco Macul",
+      "address": "Tignamar 3622, 7810049 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0393",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJc83WM9HPYpYRVig59LTVwTQ",
+      "name": "Iglesia El Redentor",
+      "address": "Ramón Cruz Montt 1965, 7810010 Ñuñoa, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0397",
+      "inputReason": "missing_or_ambiguous_commune"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJP_xfXEPPYpYRwHE4V0McowQ",
+      "name": "Alcanzando el Reino de Dios",
+      "address": "Alcalde Jorge Monckeberg 2398, 7810382 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0403",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJa6RBckLQYpYR5ZOEX8fTj28",
+      "name": "Iglesia Evangelica",
+      "address": "Tecnóloga Médica Reinalda del Carmen Pereira Pl. 6089, 7820869 Macul, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0408",
+      "inputReason": "missing_or_ambiguous_commune"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJjdBtYmnQYpYR_VEF6J_xi1g",
+      "name": "Sant Li",
+      "address": "Froilán Roa 5961, 7820929 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0409",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJz2YSqUbQYpYRJsx10kuCYOU",
+      "name": "Polla Chilena",
+      "address": "Av. Macul 5983, 7820846 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0410",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJqS-5QiXQYpYRo4cwjA1OQPw",
+      "name": "Pastor Ordenes Gonzalo",
+      "address": "Andrés Silva Humeres 4437, 7830068 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0427",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJa6RBckLQYpYR0P11xxed4gI",
+      "name": "Iglesia JVL",
+      "address": "Tecnóloga Médica Reinalda del Carmen Pereira Pl. 6089, 7821036 Macul, La Florida, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0432",
+      "inputReason": "missing_or_ambiguous_commune"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJbSfodwDRYpYRrDNgPg5qeBw",
+      "name": "CCint",
+      "address": "Av. Vicuña Mackenna 3737, 8940900 San Joaquín, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0435",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJNWyJnBLQYpYRJcl4YTrKBDI",
+      "name": "Suazo Cobos Christian Raul Thomas",
+      "address": "Pje. Max Jara 3 5108, 7820646 Santiago, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0437",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJde3dqA3QYpYRJ8kHWfSogto",
+      "name": "Sda",
+      "address": "Benito Rebolledo, 7820627 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0438",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJeaIf_jzQYpYRDWznecV_eDg",
+      "name": "Astete Vallejos Christian P",
+      "address": "7830239 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0453",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJzQaFtBfQYpYRM68FqF_xNaw",
+      "name": "Santa Ines",
+      "address": "San Vicente De Paul 4425, 7830373 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0454",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJve-ybxfQYpYRW9SByt2tzSM",
+      "name": "Costa De La Osa Eduardo Jesus",
+      "address": "Exequiel Fernández 4240, 7810000 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0455",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJVRqcEjvQYpYRfq5cwSEweW0",
+      "name": "Cia de las Hijas de la Caridad de San Vicente de Paul",
+      "address": "El Líbano 4352, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0457",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-79",
+      "name": "MCF Ministerio Caminos de Fe",
+      "address": "Av. Marathón 3559, 7820033 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0459",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:invalid-row-80",
+      "name": "MCF Ministerio Caminos de Fe",
+      "address": "Av. Marathón 3559, 7820033 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0460",
+      "inputReason": "missing_or_ambiguous_maps_match"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJpWlRiXLQYpYRt8fy9xX695c",
+      "name": "Nuestra Senora De Paris",
+      "address": "Jorge Quevedo 2116, Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0462",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJT7b-XwfPYpYRixuI2QvdeME",
+      "name": "APOQUINDO 7228",
+      "address": "Av. Macul 2470, 7810000 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0465",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ1xoSWSLPYpYRTVqqsvqfEPU",
+      "name": "Local Santa Carolina IEP Ñuñoa",
+      "address": "Castillo Urizar 2351, 2431, 7810332 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0466",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJUQR5fgDRYpYRC9aJdz6b-OI",
+      "name": "cbh",
+      "address": "Av. Macul 3334, 7810946 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0468",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJX3i4wBjQYpYRE2u82ezZolg",
+      "name": "Clinica Del Alma",
+      "address": "Queltehues 3574, 7820511 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0470",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ_fV-tCLRYpYRaWTgL9PhpZY",
+      "name": "ISECH MACUL",
+      "address": "Obispo Arturo Espinoza Campos 3876, 7820104 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0474",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJCfSXKUHQYpYRSCQxwEZa8HE",
+      "name": "Noviciado Salesiano",
+      "address": "Av. Macul 5660, 7830488 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0477",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJSzd8JxjQYpYRIW3HSKOfFjA",
+      "name": "Seminario San Vicente De Paul",
+      "address": "San Vicente de Paul 4111, 7830172 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0478",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJOUufijrQYpYRyPIwKFroNgM",
+      "name": "Cia de las Hijas de la Caridad de San Vicente de Paul",
+      "address": "Los Evangelistas 3990, 7810000 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0479",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJP0nByQXQYpYRBw6ydAfwBGc",
+      "name": "Sociedad Espiritual Grupo Alcancil Limitada",
+      "address": "7820250 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0480",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ701YGhrQYpYRcaunMyRrbdY",
+      "name": "Obreque Palma Christian Alejandro",
+      "address": "Los Astros 4009, Macul, Santiago, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0482",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJC813nwXQYpYRhDWl5lu5sLI",
+      "name": "Santa Bernardita",
+      "address": "Aníbal Pinto 4239, 7820245 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0484",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJvX2Wyd3PYpYRXJMd7qX-4bI",
+      "name": "Feliciano De Jesus Aceituno Torres",
+      "address": "Av. Rodrigo de Araya 3504, 7800211 Ñuñoa, Santiago, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0486",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJr9iozt3PYpYRiQebItKnREg",
+      "name": "Santa Rosa",
+      "address": "Av. Rodrigo de Araya 3512, 7800211 Ñuñoa, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0487",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJZ4BUVRnQYpYRDSykPTA4ORs",
+      "name": "Hirane Galdames Rodolfo",
+      "address": "Los Industriales 2811, 7821153 Macul, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0489",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJNxZ72GLPYpYRqgBxF0Ve6G4",
+      "name": "Celula Group Sa",
+      "address": "7500589 Providencia, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0494",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJLSmE9ofFYpYREcVTIBJA2yM",
+      "name": "Fundación Pontificia Ayuda a la Iglesia que Sufre",
+      "address": "Román Díaz 97, 7500618 Providencia, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0495",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJiaJJl4fFYpYRonIdDl_qEb4",
+      "name": "Padres de Schoenstatt",
+      "address": "Rafael Cañas 149, 7500640 Providencia, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0496",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJ020gkXnPYpYRf7hAOVq0KVg",
+      "name": "Corporacion Bautista Internacional",
+      "address": "Silvina Hurtado 1807, 7500000 Providencia, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0497",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJq8HWpH7PYpYRnbK-iBTfnaU",
+      "name": "Santa lucia",
+      "address": "Manuel Montt 823, 7500978 Providencia, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0498",
+      "inputReason": "ambiguous_name_or_category"
+    },
+    {
+      "scope": "pending_input",
+      "key": "google_maps:ChIJOUrqdX7PYpYR5Xg5d3tH8rE",
+      "name": "Jensen Iglesias Fernando",
+      "address": "Valenzuela Castillo 1078, 7500722 Providencia, Región Metropolitana, Chile",
+      "action": "potential_new",
+      "reason": "new_identity",
+      "postalCandidates": [],
+      "stagingId": "NOV02-0499",
+      "inputReason": "ambiguous_name_or_category"
+    }
+  ]
+}

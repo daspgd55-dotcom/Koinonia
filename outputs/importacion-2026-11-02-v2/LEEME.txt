@@ -1,0 +1,12 @@
+PREPARACION V2 - SIN IMPORTAR
+
+churches.import.ndjson: 375 identidades Google unicas, validadas por el importador local, sin conexion a MongoDB. Corresponden a 377 fichas previas; dos identidades repetidas se unieron. No se ha conciliado contra la base existente: usar plan merge antes de aplicar.
+consolidado-completo.ndjson: 507 fichas originales con evidencia, nombres recuperados y asociaciones auditables. sourceObservations conserva 508 filas originales; mapsObservation conserva la fila adicional asignada.
+revision.ndjson y revision-resumen.csv: 130 fichas pendientes: 18 por asociacion Maps ambigua, 11 por comuna ausente/ambigua y 101 por clasificacion conservadora. No significan iglesias invalidas.
+maps-sin-asociar.ndjson: 53 filas adicionales sin correspondencia unica; conservadas sin inventar coordenadas ni contactos.
+
+Metodo: comparar dentro del lote de origen direccion normalizada, calle, titulo, postal, web y nombres de perfiles. Nunca asignar por posicion. Las nuevas hojas no contienen coordenadas para desempatar. Se recuperaron 225 nombres desde titulos Maps; las 15 fichas aun sin nombre tampoco poseen profileName util. No se infirieron nombres adicionales. No se mezclan iglesias por compartir direccion ni se elige arbitrariamente entre Place ID distintos.
+
+Se conservan imagenes y perfiles adicionales; las comunidades vinculadas requieren confirmar asociacion. El contrato limita medios a 30 por ficha: evidencia completa permanece en el consolidado. Los horarios de apertura no se convierten en cultos. Los datos externos no acreditan autorizacion institucional. La fecha del archivo se mantiene como provisional.
+
+Excel: mantiene las 507 fichas para trazabilidad, incluidos pendientes y repeticiones que el lote importable une por identidad. Solo cinco columnas solicitadas; contactos de perfiles externos requieren verificar pertenencia.

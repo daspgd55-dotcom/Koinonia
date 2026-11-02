@@ -1,0 +1,14 @@
+import fs from 'node:fs/promises';
+import {Workbook,SpreadsheetFile} from '@oai/artifact-tool';
+const dir=new URL('../importacion-2026-11-02-v2/',import.meta.url),rows=JSON.parse(await fs.readFile(new URL('contacts.json',dir),'utf8'));
+const wb=Workbook.create(),s=wb.worksheets.add('Contactos');
+s.getRange(`A1:E${rows.length+1}`).values=[['Nombre de iglesia','Correos','Telefonos','Redes sociales','Paginas web'],...rows];
+s.getRange(`A1:E${rows.length+1}`).format.font={name:'Arial',size:10};
+s.getRange(`A1:E${rows.length+1}`).format.wrapText=true;
+s.getRange('A:E').format.columnWidth=48;
+s.getRange(`A2:E${rows.length+1}`).format.rowHeight=90;
+s.getRange('A1:E1').format={fill:'#176B65',font:{bold:true,color:'#FFFFFF'},rowHeight:28};
+s.freezePanes.freezeRows(1);s.tables.add(`A1:E${rows.length+1}`,true,'Contactos');
+await (await SpreadsheetFile.exportXlsx(wb)).save(new URL('contactos-iglesias.xlsx',dir).pathname.replace(/^\/([A-Za-z]:)/,'$1'));
+const preview=await wb.render({sheetName:'Contactos',range:'A1:E5',scale:1});await fs.writeFile(new URL('preview.png',dir),new Uint8Array(await preview.arrayBuffer()));
+console.log('Exported '+rows.length+' rows');

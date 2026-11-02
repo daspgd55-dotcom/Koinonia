@@ -1,0 +1,30 @@
+{"id": "NOV02-0020", "field": "location.commune", "value": "La Florida", "evidence": {"postalPrefix": "824", "supportingRows": 31, "address": "Exequiel Fernández 1144, 8241298 Ñuñoa, La Florida, Región Metropolitana, Chile"}, "status": "inferred"}
+{"id": "NOV02-0020", "field": "christianIdentity.denomination", "value": "Presbiteriana", "evidence": ["title", "Décima Iglesia Presbiteriana La Paz de Cristo"], "status": "inferred"}
+{"id": "NOV02-0027", "field": "christianIdentity.denomination", "value": "Pentecostal", "evidence": ["title", "Ministerio Evangelistico Pentecostal Adonay"], "status": "inferred"}
+{"id": "NOV02-0031", "field": "christianIdentity.denomination", "value": "Pentecostal", "evidence": ["title", "IGLESIA CRISTIANA PENTECOSTAL DE CHILE"], "status": "inferred"}
+{"id": "NOV02-0079", "field": "christianIdentity.denomination", "value": "Pentecostal", "evidence": ["title", "Iglesia Pentecostal Apostolica"], "status": "inferred"}
+{"id": "NOV02-0121", "field": "location.commune", "value": "La Granja", "evidence": {"postalPrefix": "878", "supportingRows": 4, "address": "Av. Punta Arenas 6329, 8780021 La Florida, La Granja, Región Metropolitana, Chile"}, "status": "inferred"}
+{"id": "NOV02-0124", "field": "location.commune", "value": "La Florida", "evidence": {"postalPrefix": "827", "supportingRows": 29, "address": "Av. Departamental 3301, 8271775 La Florida, Peñalolén, Región Metropolitana, Chile"}, "status": "inferred"}
+{"id": "NOV02-0126", "field": "contact.facebook", "value": "https://www.facebook.com/IpunjeChileOficial", "evidence": {"externalProfile.links": "https://www.facebook.com/IpunjeChileOficial"}, "status": "extracted_unverified_association"}
+{"id": "NOV02-0126", "field": "contact.instagram", "value": "https://www.instagram.com/ipunjechile", "evidence": {"externalProfile.links": "https://www.instagram.com/ipunjechile"}, "status": "extracted_unverified_association"}
+{"id": "NOV02-0127", "field": "contact.email", "value": "informaciones@bellavistatuhogar.cl", "evidence": {"externalProfileField": "email", "value": "informaciones@bellavistatuhogar.cl"}, "status": "extracted_unverified_association"}
+{"id": "NOV02-0127", "field": "contact.facebook", "value": "https://www.facebook.com/profile.php?id=100064789985789", "evidence": {"externalProfile.links": "https://www.facebook.com/profile.php?id=100064789985789"}, "status": "extracted_unverified_association"}
+{"id": "NOV02-0127", "field": "contact.instagram", "value": "https://www.instagram.com/bellavistatuhogar", "evidence": {"externalProfile.links": "https://www.instagram.com/bellavistatuhogar"}, "status": "extracted_unverified_association"}
+{"id": "NOV02-0152", "field": "location.commune", "value": "La Granja", "evidence": {"postalPrefix": "879", "supportingRows": 6, "address": "Lo Ovalle 391, 8790042 La Granja, San Miguel, Región Metropolitana, Chile"}, "status": "inferred"}
+{"id": "NOV02-0183", "field": "christianIdentity.denomination", "value": "Pentecostal", "evidence": ["title", "Iglesia Pentecostal"], "status": "inferred"}
+{"id": "NOV02-0242", "field": "christianIdentity.denomination", "value": "Pentecostal", "evidence": ["title", "IGLESIA PENTECOSTAL LA ÚLTIMA LLAMADA"], "status": "inferred"}
+{"id": "NOV02-0243", "field": "christianIdentity.denomination", "value": "Pentecostal", "evidence": ["title", "Iglesia Pentecostal Evangelica ISAJ"], "status": "inferred"}
+{"id": "NOV02-0243", "field": "christianIdentity.branch", "value": "Evangélica", "evidence": ["title", "Iglesia Pentecostal Evangelica ISAJ"], "status": "inferred"}
+{"id": "NOV02-0256", "field": "christianIdentity.denomination", "value": "Bautista", "evidence": ["title", "IGLESIA BAUTISTA DE AV GABRIELA"], "status": "inferred"}
+{"id": "NOV02-0259", "field": "christianIdentity.denomination", "value": "Bautista", "evidence": ["title", "IGLESIA BAUTISTA LIBERTAD"], "status": "inferred"}
+{"id": "NOV02-0266", "field": "contact.instagram", "value": "https://www.instagram.com/iecpa.cl", "evidence": {"externalProfile.links": "https://www.instagram.com/iecpa.cl"}, "status": "extracted_unverified_association"}
+{"id": "NOV02-0298", "field": "christianIdentity.denomination", "value": "Bautista", "evidence": ["title", "Iglesia Bíblica Bautista Cordillera"], "status": "inferred"}
+{"id": "NOV02-0323", "field": "christianIdentity.denomination", "value": "Pentecostal", "evidence": ["title", "IGLESIA PENTECOSTAL CENTRO MISIONERO CRISTIANO"], "status": "inferred"}
+{"id": "NOV02-0330", "field": "contact.email", "value": "mellamario@hotmail.com", "evidence": {"externalProfileField": "email", "value": "mellamario@hotmail.com"}, "status": "extracted_unverified_association"}
+{"id": "NOV02-0338", "field": "christianIdentity.denomination", "value": "Asambleas de Dios", "evidence": ["title", "IGLESIA EVANGELICA ASAMBLEA DE DIOS"], "status": "inferred"}
+{"id": "NOV02-0338", "field": "christianIdentity.branch", "value": "Evangélica", "evidence": ["title", "IGLESIA EVANGELICA ASAMBLEA DE DIOS"], "status": "inferred"}
+{"id": "NOV02-0368", "field": "christianIdentity.denomination", "value": "Bautista", "evidence": ["title", "REY DE PAZ IGLESIA BAUTISTA"], "status": "inferred"}
+{"id": "NOV02-0397", "field": "location.commune", "value": "Macul", "evidence": {"postalPrefix": "781", "supportingRows": 37, "address": "Ramón Cruz Montt 1965, 7810010 Ñuñoa, Macul, Región Metropolitana, Chile"}, "status": "inferred"}
+{"id": "NOV02-0408", "field": "location.commune", "value": "Macul", "evidence": {"postalPrefix": "782", "supportingRows": 34, "address": "Tecnóloga Médica Reinalda del Carmen Pereira Pl. 6089, 7820869 Macul, La Florida, Región Metropolitana, Chile"}, "status": "inferred"}
+{"id": "NOV02-0408", "field": "christianIdentity.branch", "value": "Evangélica", "evidence": ["title", "Iglesia Evangelica"], "status": "inferred"}
+{"id": "NOV02-0432", "field": "location.commune", "value": "Macul", "evidence": {"postalPrefix": "782", "supportingRows": 34, "address": "Tecnóloga Médica Reinalda del Carmen Pereira Pl. 6089, 7821036 Macul, La Florida, Región Metropolitana, Chile"}, "status": "inferred"}

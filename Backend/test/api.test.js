@@ -502,9 +502,9 @@ test('Fotos: permisos, validación, proveedor, persistencia y concurrencia', asy
     assert.equal((await Church.findById(c.id)).media.length,1);
     app.locals.mediaFetch=async(url,options)=>{if(url.endsWith('/destroy')){cleanup++;return {ok:true};}await Church.updateOne({_id:c.id},{$inc:{'metadata.version':1}});const id=options.body.get('public_id');return {ok:true,json:async()=>({public_id:id,secure_url:'https://res.cloudinary.com/test-cloud/image/upload/'+id+'.webp'})};};
     await send(repToken,2).expect(409);assert.equal(cleanup,1);assert.equal((await Church.findById(c.id)).media.length,1);
-    await Church.updateOne({_id:c.id},{$set:{media:Array.from({length:5},()=>({type:'image',url:'https://example.org/photo.jpg',source:'test'}))}});
+    await Church.updateOne({_id:c.id},{$set:{media:Array.from({length:8},()=>({type:'image',url:'https://example.org/photo.jpg',source:'test'}))}});
     app.locals.mediaFetch=async(url,options)=>{const id=options.body.get('public_id');return {ok:true,json:async()=>({public_id:id,secure_url:'https://res.cloudinary.com/test-cloud/image/upload/'+id+'.webp'})};};
-    await send(repToken,3).expect(201);const seventh=await send(repToken,4).expect(201);assert.equal(seventh.body.data.media.length,7);
+    await send(repToken,3).expect(201);const tenth=await send(repToken,4).expect(201);assert.equal(tenth.body.data.media.length,10);
     await send(repToken,5).expect(400);
   } finally {delete config.cloudinary;delete app.locals.mediaFetch;await Church.deleteOne({_id:c.id});}
 });

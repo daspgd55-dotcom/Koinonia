@@ -1,0 +1,5 @@
+CONSOLIDADO PREVIO A IMPORTACION - NO IMPORTADO
+
+Estos archivos no contienen Place ID ni URL Maps. El primer Excel tampoco contiene title. No se inventaron identidades. El NDJSON es un formato staging, NO compatible directamente con import:churches. Se debe recuperar la identidad externa, resolver nombres y validar/clasificar antes de generar koinonia.church-import.v1.
+
+Solo se consolidan filas con nombre, direccion y coordenadas exactamente iguales. Otros posibles duplicados se conservan. No se consulto MongoDB. Todas las columnas originales se conservan en sourceObservations, incluidas descripciones y perfiles potencialmente relacionados. No se atribuyen comunidades vinculadas sin evidencia de pertenencia. La fecha del nombre del archivo no acredita hora de captura. Los contactos sociales necesitan comprobar asociacion. El Excel contiene todas las fichas, incluidas las sin nombre y las de clasificacion pendiente; una fila no certifica que sea una iglesia.

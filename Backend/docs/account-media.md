@@ -19,7 +19,7 @@ Tres tarjetas de resumen coinciden con la encuesta: identidad, tradición y ubic
 
 ## Fotos
 
-Se pueden subir imágenes a comunidades activas, incluso borradores. Guardar previamente nombre, comuna y coordenadas permite crear la ficha. Subir o eliminar una foto conserva los demás cambios pendientes. Una foto local se puede descartar antes de subirla; un enlace aún no guardado se elimina localmente.
+Se pueden subir hasta 10 imágenes por iglesia, en fichas activas e incluso borradores. Guardar previamente nombre, comuna y coordenadas permite crear la ficha. Subir o eliminar una foto conserva los demás cambios pendientes. Una foto local se puede descartar antes de subirla; un enlace aún no guardado se elimina localmente.
 
 - DELETE `/api/churches/:id/media/:index`, Bearer admin/representante asignado y `If-Match` obligatorio: retira el recurso e incrementa versión conservando visibilidad. El índice empieza en cero. Solo intenta borrar en Cloudinary URLs del cloud configurado, generadas por nuestra aplicación para esa misma comunidad. Enlaces externos se retiran sin borrar archivos de terceros. Si Cloudinary falla, devuelve `warning` y registra MEDIA_CLEANUP_FAILED; requiere limpieza manual en Cloudinary. La retirada de la ficha sí queda guardada.
 - Arrastrar miniaturas (ratón o pantalla táctil) reordena el arreglo media mediante el PUT existente al guardar. También admite flechas izquierda/derecha con foco en la miniatura. La primera imagen es portada.
