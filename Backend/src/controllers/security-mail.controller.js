@@ -2,7 +2,7 @@ const Job=require('../models/mail-job.model'),Event=require('../models/mail-even
 async function eligible(job,cfg){
  if(!queue.enabled(cfg)||job.transport==='direct'||job.state!=='retry'||job.attempts>=6||job.manualRetries>=3||job.expiresAt<=new Date()||job.nextAttemptAt>new Date()||job.lastManualRetryAt>Date.now()-60000||!job.payload)return false;
  if(job.providerId&&await Event.exists({providerId:job.providerId}))return false;
- try{const data=queue.open(job.payload,job._id,cfg),g=data.guard;return !g||!!await User.exists({_id:g.user,active:true,[g.field+'.hash']:g.hash,[g.field+'.expiresAt']:{$gt:new Date()}});}catch{return false;}
+ try{const data=queue.open(job.payload,job._id,cfg),g=data.guard;return await queue.guardValid(g,cfg);}catch{return false;}
 }
 exports.list=async(req,res)=>{
  res.set('Cache-Control','no-store');const cfg=req.app.locals.config,page=Math.max(1,Math.min(10000,parseInt(req.query.page)||1)),filter={};

@@ -53,3 +53,7 @@ No es un SIEM, una alerta automática ni un informe histórico permanente. No im
 Backend: `node --test --test-concurrency=1 test/mail-observability.test.js test/mail-queue.test.js test/email-security.test.js test/security-policy.test.js`.
 Frontend: `node test/security-mail.cjs`, `npm run build`.
 Cubren firmas válidas/incorrectas/vencidas, cuerpo original, duplicados concurrentes, desorden, fallos de almacenamiento/reentrega, asociación tardía, confirmación tras timeout, permisos, privacidad, métricas simuladas, auditoría y reintentos inválidos. Navegador móvil: admin, representante denegado, filtro vacío y solicitud de reintento sin ejecutar worker. No usan producción ni llaman a Resend.
+
+## Integración institucional, etapa 6
+
+Plantillas, lotes explícitos, simulación y cola institucional implementados, con OUTREACH_MAIL_ENABLED=false por defecto. La activación del proveedor y las pruebas siguen pendientes. Esta etapa reemplaza las menciones anteriores a transporte institucional no implementado; no altera las políticas del piloto. Contrato vigente: [Correo institucional](church-outreach-mail.md).

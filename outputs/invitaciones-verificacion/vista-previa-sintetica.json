@@ -1,0 +1,35 @@
+{
+  "notice": "EJEMPLO AISLADO: iglesia y correo ficticios; sin token y sin envío",
+  "items": [
+    {
+      "selection": {
+        "invitation": "6aea2a19235e93fa94fb411d",
+        "kind": "institutional",
+        "reminder": false
+      },
+      "sender": "Koinonia QA <qa@example.test>",
+      "frontendOrigin": "https://example.test",
+      "invitationVersion": 2,
+      "churchId": "6aea2a19235e93fa94fb411c",
+      "churchName": "QA Pilot · Vista previa ficticia",
+      "email": "pilot@example.test",
+      "sourceRevision": "initial",
+      "sequence": 1,
+      "eligible": true,
+      "reasons": [],
+      "content": {
+        "version": "institutional-mail-1",
+        "subject": "Invitación a completar la información de QA Pilot · Vista previa ficticia · Koinonía",
+        "text": "Hola:\n\nSomos Koinonía, una aplicación desarrollada como proyecto académico para descubrir iglesias, comunidades cristianas y eventos y facilitar el encuentro con sus comunidades.\n\nContactamos a QA Pilot · Vista previa ficticia (Santiago, Santiago) porque su ficha ya existe en nuestra base y queremos revisar y enriquecer su información con colaboración de la propia iglesia. Este correo procede de un contacto obtenido de forma directa; ese antecedente puede necesitar corrección y no acredita autoridad institucional.\n\nBuscamos completar información como ubicación, horarios de reuniones, actividades, comunidades vinculadas y condiciones de accesibilidad, además de mantener actualizados los datos públicos de contacto.\n\nLos pasos son: reconocer la iglesia precargada, proponer personas y funciones para su equipo, y revisar la propuesta y las declaraciones del trámite. Quien coordina la respuesta no necesita convertirse en representante. Después, un administrador revisará los antecedentes; cada persona aprobada deberá aceptar su invitación con su propia cuenta antes de activar acceso.\n\nEnlace personal para este contacto: [ENLACE PERSONAL GENERADO AL CONFIRMAR]\n\nAbrirlo no acepta ni registra una respuesta. No lo compartas: recibirlo no concede permisos. Para informar una iglesia incorrecta, rechazar o pedir que no volvamos a contactar este correo por esta iglesia, inicia el trámite y abre «La iglesia no corresponde u otro problema». No tendrás que elegir otra iglesia ni aceptar términos para retirarte.\n\nEsta comunicación corresponde únicamente al trámite de colaboración, no suscribe a publicidad. Si el enlace venció, solicita revisión al equipo que te contactó.\n\nEquipo Koinonía"
+      }
+    }
+  ],
+  "digest": "a376b839e5450fb6b59284b88528a1359cbb66626e6cb7eed11c4fd7376c7477",
+  "capabilities": {
+    "enabled": false,
+    "queueEnabled": true,
+    "configured": true,
+    "manualUrl": null,
+    "scheduled": false
+  }
+}

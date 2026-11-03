@@ -12,6 +12,9 @@ async function webhook(req,res){
  try{await Event.updateOne({_id:id},{$setOnInsert:{providerId,type:event.type,occurredAt:date,source:cfg.mailWebhookSource||'provider',purgeAt:require('../config/retention').after(cfg,'eventDays')}},{upsert:true});}catch(e){if(e.code!==11000)throw e;}
  const tag=Array.isArray(event.data.tags)?event.data.tags.find(t=>t.name==='koinonia_message')?.value:event.data.tags?.koinonia_message;
  if(typeof tag==='string'&&/^[a-f0-9-]{36}$/.test(tag))await Job.updateOne({_id:tag,$or:[{providerId:{$exists:false}},{providerId}]},{$set:{providerId}});
+ const OutreachMail=require('../models/church-outreach-mail.model');
+ if(typeof tag==='string'&&/^[a-f0-9-]{36}$/.test(tag))await OutreachMail.updateOne({jobId:tag,$or:[{providerId:{$exists:false}},{providerId}]},{$set:{providerId}});
+ const related=await OutreachMail.find({providerId}).select('jobId');for(const mail of related)await require('./church-outreach-mail-tracking.service').sync(mail.jobId);
  res.status(204).end();
 }
 async function recordDirect(id,patch,cfg={}){try{await Job.updateOne({_id:id},{$set:{transport:'direct',...(['accepted','failed'].includes(patch.state)?{purgeAt:require('../config/retention').after(cfg,'mailDays')} : {}),...patch}},{upsert:true});}catch{console.error('MAIL_OBSERVATION_UNAVAILABLE');}}

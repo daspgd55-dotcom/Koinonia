@@ -1,0 +1,2 @@
+function load(env){const flag=env.OUTREACH_MAIL_ENABLED||'false';if(!['true','false'].includes(flag))throw Error('OUTREACH_MAIL_ENABLED debe ser true o false');const manualUrl=env.OUTREACH_MANUAL_URL?.trim()||null;if(manualUrl){let u;try{u=new URL(manualUrl);}catch{throw Error('OUTREACH_MANUAL_URL inválida');}if(u.protocol!=='https:'||u.username||u.password)throw Error('El manual requiere una URL HTTPS sin credenciales');}return {enabled:flag==='true',manualUrl};}
+module.exports={load};

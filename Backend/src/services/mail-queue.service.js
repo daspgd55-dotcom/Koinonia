@@ -13,14 +13,15 @@ function open(value,id,cfg){const [key,iv,tag,data]=value.split('.'),d=crypto.cr
 function entry(cfg,email,subject,text,guard=null){const id=crypto.randomUUID(),expiresAt=new Date(Math.min(guard?.expiresAt?.getTime()||Infinity,Date.now()+23*3600000));return {id,createdAt:new Date(),payload:seal({email,subject,text,from:cfg.mail.from,guard},id,cfg),expiresAt};}
 function notice(cfg,email){return entry(cfg,email,'Tu contraseña de Koinonía cambió','Se cambió tu contraseña y se cerraron las sesiones anteriores. Si no reconoces este cambio, utiliza Recuperar contraseña desde Koinonía.');}
 async function reconcile(){
- for(const Model of [User,require('../models/visit.model'),require('../models/church-registration.model')]){
+ for(const Model of [User,require('../models/visit.model'),require('../models/church-registration.model'),require('../models/church-outreach-mail.model')]){
  const users=await Model.find({'mailOutbox.0':{$exists:true}}).select('+mailOutbox').limit(100);
  for(const u of users)for(const item of u.mailOutbox){
   if(Model.modelName==='ChurchRegistrationRequest'&&!await Model.exists({_id:u._id,noContact:{$ne:true},anonymizedAt:{$exists:false}})){await Model.updateOne({_id:u._id},{$pull:{mailOutbox:{id:item.id}}});continue;}
-  try{await Job.updateOne({_id:item.id},{$setOnInsert:{...(Model.modelName==='ChurchRegistrationRequest'?{registrationRequest:u._id}:{}),payload:item.payload,expiresAt:item.expiresAt,createdAt:item.createdAt||new Date(),state:'pending',attempts:0,nextAttemptAt:new Date()}},{upsert:true});}catch(e){if(e.code!==11000)throw e;}
+  try{await Job.updateOne({_id:item.id},{$setOnInsert:{...(Model.modelName==='ChurchRegistrationRequest'?{registrationRequest:u._id}:Model.modelName==='ChurchOutreachMail'?{outreachMail:u._id}:{}),payload:item.payload,expiresAt:item.expiresAt,createdAt:item.createdAt||new Date(),state:'pending',attempts:0,nextAttemptAt:new Date()}},{upsert:true});}catch(e){if(e.code!==11000)throw e;}
   await Model.updateOne({_id:u._id},{$pull:{mailOutbox:{id:item.id}}});
  }
  }
+ const pending=await require('../models/church-outreach-mail.model').find({state:'queued','mailOutbox.0':{$exists:false}}).sort({updatedAt:1}).select('jobId').limit(100);for(const mail of pending)await require('./church-outreach-mail-tracking.service').sync(mail.jobId);
 }
 function retryAfter(value,now=Date.now()){if(!value)return 0;const n=Number(value);return Number.isFinite(n)?Math.max(0,n*1000):Math.max(0,Date.parse(value)-now)||0;}
 async function deliver(cfg,data,id,fetcher=fetch){
@@ -28,19 +29,20 @@ async function deliver(cfg,data,id,fetcher=fetch){
  if(r.ok){const body=await r.json().catch(()=>({}));return {ok:true,providerId:typeof body.id==='string'?body.id:undefined};}const body=await r.json().catch(()=>({}));
  return {ok:false,temporary:r.status===429||r.status===408||r.status>=500||(r.status===409&&body.name==='concurrent_idempotent_requests'),reason:r.status===429?'provider_rate_limit':r.status>=500?'provider_temporary':'provider_rejected',delay:retryAfter(r.headers?.get('retry-after'))};
 }
+async function guardValid(g,cfg){if(!g)return true;if(g.outreach)return require('./church-outreach-mail.service').validGuard(g,cfg);if(g.registration)return require('./church-registration.service').validMailGuard(g);return !!await User.exists({_id:g.user,active:true,[g.field+'.hash']:g.hash,[g.field+'.expiresAt']:{$gt:new Date()}});}
 async function runOne(cfg,{send=deliver,random=Math.random}={}){
  if(!enabled(cfg))return false;validate(cfg);const owner=crypto.randomUUID(),now=new Date();
- const job=await Job.findOneAndUpdate({transport:{$ne:'direct'},$or:[{state:{$in:['pending','retry']},nextAttemptAt:{$lte:now}},{state:'processing',leaseUntil:{$lte:now}}]},{$set:{state:'processing',owner,leaseUntil:new Date(Date.now()+60000)}},{sort:{nextAttemptAt:1},returnDocument:'after'}).select('+payload');if(!job)return false;
- const finish=async(state,failure,extra={})=>Job.updateOne({_id:job._id,owner,state:'processing'},{$set:{state,failure,...extra,...(['accepted','failed','obsolete'].includes(state)?{purgeAt:require('../config/retention').after(cfg,'mailDays')}:{})},$unset:{owner:1,leaseUntil:1,...(['accepted','failed','obsolete'].includes(state)?{payload:1}:{})}});
+ const job=await Job.findOneAndUpdate({transport:{$ne:'direct'},...(!cfg.outreachMail?.enabled?{outreachMail:{$exists:false}}:{}),$or:[{state:{$in:['pending','retry']},nextAttemptAt:{$lte:now}},{state:'processing',leaseUntil:{$lte:now}}]},{$set:{state:'processing',owner,leaseUntil:new Date(Date.now()+60000)}},{sort:{nextAttemptAt:1},returnDocument:'after'}).select('+payload');if(!job)return false;
+ const finish=async(state,failure,extra={})=>{await Job.updateOne({_id:job._id,owner,state:'processing'},{$set:{state,failure,...extra,...(['accepted','failed','obsolete'].includes(state)?{purgeAt:require('../config/retention').after(cfg,'mailDays')}:{})},$unset:{owner:1,leaseUntil:1,...(['accepted','failed','obsolete'].includes(state)?{payload:1}:{})}});if(job.outreachMail)await require('./church-outreach-mail-tracking.service').sync(job._id);};
  const providerConfirmed=async()=>{const current=await Job.findById(job._id).select('providerId');return current?.providerId&&await require('../models/mail-event.model').findOne({providerId:current.providerId}).select('source');};
  let evidence=await providerConfirmed();if(evidence){await finish('accepted','provider_status_available',{source:evidence.source});return true;}
  if(job.expiresAt<=now){await finish('obsolete','expired');return true;}
  if(job.attempts>=6){await finish('failed','attempts_exhausted');return true;}
  let data;try{data=open(job.payload,job._id,cfg);}catch{await finish('retry','encryption_unavailable',{nextAttemptAt:new Date(Date.now()+300000)});return true;}
- if(data.guard){const g=data.guard;if(!(g.registration?await require('./church-registration.service').validMailGuard(g):await User.exists({_id:g.user,active:true,[g.field+'.hash']:g.hash,[g.field+'.expiresAt']:{$gt:new Date()}}))){await finish('obsolete','link_replaced_or_consumed');return true;}}
+ if(data.guard){const g=data.guard;if(!(await guardValid(g,cfg))){await finish('obsolete','link_replaced_or_consumed');return true;}}
  try{await require('./account-security.service').quota(cfg,'mail-global','all',100,3600000);}catch{await finish('retry','delivery_quota_unavailable',{nextAttemptAt:new Date(Date.now()+3600000)});return true;}
  if(job.expiresAt<=new Date()){await finish('obsolete','expired');return true;}
- if(data.guard){const g=data.guard;if(!(g.registration?await require('./church-registration.service').validMailGuard(g):await User.exists({_id:g.user,active:true,[g.field+'.hash']:g.hash,[g.field+'.expiresAt']:{$gt:new Date()}}))){await finish('obsolete','link_replaced_or_consumed');return true;}}
+ if(data.guard){const g=data.guard;if(!(await guardValid(g,cfg))){await finish('obsolete','link_replaced_or_consumed');return true;}}
  evidence=await providerConfirmed();if(evidence){await finish('accepted','provider_status_available',{source:evidence.source});return true;}
  const owned=await Job.updateOne({_id:job._id,owner,state:'processing',leaseUntil:{$gt:new Date()}},{$inc:{attempts:1},$set:{source:send===deliver?'provider':'simulated'}});if(!owned.modifiedCount)return true;
  let result;try{result=await send(cfg,data,job._id);}catch{result={ok:false,temporary:true,reason:'network_or_timeout',delay:0};}
@@ -48,4 +50,4 @@ async function runOne(cfg,{send=deliver,random=Math.random}={}){
  const delay=Math.max(result.delay||0,Math.min(3600000,30000*2**job.attempts)*(0.5+random())),next=new Date(Date.now()+Math.min(delay,7*86400000));
  await finish(!result.temporary||job.attempts+1>=6?'failed':next>=job.expiresAt?'obsolete':'retry',result.reason,{nextAttemptAt:next});return true;
 }
-module.exports={enabled,configFromEnv,validate,entry,notice,reconcile,runOne,deliver,retryAfter,open};
+module.exports={guardValid,enabled,configFromEnv,validate,entry,notice,reconcile,runOne,deliver,retryAfter,open};

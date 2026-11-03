@@ -1,0 +1,18 @@
+{
+  "checks": [
+    "Desktop: teclado, coordinador externo, correo compartido, duplicados, retroceso, error recuperable y recepción",
+    "Mobile 390px: participación propia, correo destinatario, casillas legibles, teclado y reduced-motion",
+    "Admin desktop: revisión concurrente, borrador conservado, aprobación sin acceso, selección y simulación sin envío",
+    "Admin móvil: bandeja, contadores y correos sin desbordamiento",
+    "Representante: registro habitual, aceptación con cuenta, relogin y administración dirigida",
+    "Piloto dirigido en inicio; inscripción anterior accesible por ruta conservada; legales pendientes bloquean envío"
+  ],
+  "errors": [],
+  "viewports": [
+    "1440x1000",
+    "390x844",
+    "1280x900"
+  ],
+  "mailJobs": 0,
+  "externalNetwork": "blocked"
+}

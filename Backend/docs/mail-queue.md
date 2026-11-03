@@ -53,3 +53,7 @@ Registro con verificación requerida y reenvío/recuperación responden de forma
 `node --test --test-concurrency=1 test/mail-queue.test.js test/security-policy.test.js test/email-security.test.js test/verification-pause.test.js`
 
 MongoMemoryServer y transportes simulados: reinicio lógico antes/después de reconciliar, duplicados de outbox, concurrencia, recuperación de lease, timeout tras aceptación, clave estable, reenvío/consumo/vencimiento, Retry-After, máximo de intentos, rechazo permanente, privacidad y contraseña conservada ante fallo de aviso. `npm run build` en Frontend verifica compilación. No sustituyen pruebas con el proveedor en staging ni pruebas de disponibilidad del alojamiento.
+
+## Integración institucional, etapa 6
+
+Plantillas, lotes explícitos, simulación y cola institucional implementados, con OUTREACH_MAIL_ENABLED=false por defecto. La activación del proveedor y las pruebas siguen pendientes. Esta etapa reemplaza las menciones anteriores a transporte institucional no implementado; no altera las políticas del piloto. Contrato vigente: [Correo institucional](church-outreach-mail.md).

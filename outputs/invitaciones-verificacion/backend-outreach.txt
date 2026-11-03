@@ -1,0 +1,34 @@
+✔ No contacto posterior al encolado impide llamar al transporte (2579.9607ms)
+✔ GET/scanners no consumen; manipulación de token, propósito y destino se rechaza (300.1182ms)
+✔ Renovación invalida enlace y sesión; caducidad y revocación son efectivas (410.0834ms)
+✔ Contacto equivocado y no contacto no cambian iglesia; la supresión sobrevive a otro ciclo (840.7429ms)
+✔ Inicio simultáneo genera una sola sesión; admin exclusivo y cuotas (677.0416ms)
+✔ Coordinador no representante, correo inicial compartido y validación de duplicados/consentimiento (424.0645ms)
+✔ Textos pendientes bloquean propuesta pero no retirada (381.3931ms)
+✔ Doble aprobación idempotente prepara una invitación y no crea cuentas ni equipos (511.0408ms)
+✔ Sin administrador se rechaza aprobación; cambio concurrente obliga revisar y no concede nada (456.9219ms)
+✔ Acepta primero administrador, luego nueva cuenta; idempotencia y Church conservan relaciones (1397.4466ms)
+✔ Equipo existente conserva función previa y no duplica relaciones (682.5579ms)
+✔ Funciones individuales explícitas y cambio deliberado no degradan el último administrador (652.6448ms)
+✔ Verificación, MFA inscrito y exigencia MFA administrativa no se eluden (638.7564ms)
+✔ Aceptación individual concurrente asigna una sola vez (625.9607ms)
+✔ Lote preview/simulación sin tokens ni trabajos; huella estable tras persistencia e idempotencia de encolado (506.755ms)
+✔ Cola reintenta con la misma clave, conserva hash, y distingue proveedor/entrega/apertura (766.7218ms)
+✔ Exclusiones, configuración deshabilitada y cancelación impiden llamadas al transporte (355.1739ms)
+✔ Recordatorios: cooldown, máximo dos, respuesta y no contacto en ficha fusionada (413.4779ms)
+✔ Manual omitido por defecto, texto no filtra evidencia interna y simulación no desbloquea recordatorios (248.046ms)
+✔ Vencimiento, revocación y rechazo individual bloquean el acceso; rechazo repetido es idempotente (1533.9162ms)
+✔ Límite de veinte se exige antes de preparar una nueva persona (488.121ms)
+✔ Dos revisiones distintas concurrentes no sobrescriben la primera (460.6704ms)
+✔ Sesión limitada vencida no registra respuestas y la iglesia no puede reasignarse (394.0411ms)
+✔ Recordatorios se limitan a dos y los datos marcados de prueba se excluyen (271.6575ms)
+✔ Token revocado cancela trabajos; el sexto fallo no se reintenta (675.874ms)
+✔ Correo individual usa función aprobada, token cifrado y no crea acceso al entregar (712.9364ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 19878.9901
