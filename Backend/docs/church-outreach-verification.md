@@ -59,3 +59,6 @@ También se ejecutó `git diff --check` desde la raíz: salida vacía, código 0
 ## Evidencias
 
 `outputs/invitaciones-verificacion/ui-results.json` contiene los seis recorridos. Las capturas en esa carpeta muestran formulario, revisión móvil, administración, simulación, aceptación y bloqueo legal. `vista-previa-sintetica.json` contiene el correo inicial renderizado, exclusiones y capacidades; no contiene token utilizable ni destinatario real. Las capturas son evidencia de pruebas con textos ficticios, no textos legales para publicar.
+
+## Corrección posterior del recorrido público
+Por aclaración del usuario, se restauró el apartado público de inscripción. Las invitaciones dirigidas quedan sin enlace en el inicio. Se actualizó la expectativa correspondiente del recorrido de navegador; no se volvió a ejecutar la suite en esta corrección. Los resultados anteriores describen la versión verificada antes de esta aclaración.

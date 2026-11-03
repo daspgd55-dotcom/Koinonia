@@ -32,4 +32,4 @@ Revisar cada persona y función con motivo. Mantener los representantes anterior
 
 Evaluar el piloto por respuestas válidas, errores de contacto, solicitudes de retiro, incidencias de aceptación y campos efectivamente enriquecidos. No usar aperturas como indicador de autoridad ni éxito. Ante destino incorrecto o permisos inesperados, revocar el ciclo y detener el lote pendiente para revisar.
 
-La inscripción anterior sigue disponible por su ruta directa y en administración, pero el inicio público ya orienta al piloto dirigido. No se migra ni elimina su información.
+La inscripción anterior sigue disponible desde el apartado «Inscribe tu iglesia» al final del inicio, por su ruta directa y en administración. Las invitaciones dirigidas no tienen entrada pública: se accede mediante el enlace personal enviado al contacto, cuya iglesia y destinatario se resuelven en el servidor. No se migra ni elimina información de inscripción.

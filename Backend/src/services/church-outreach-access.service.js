@@ -36,7 +36,8 @@ async function respond(token,answer,submission){return Invitation.db.transaction
   if(!legal.enabled)throw new HttpError(409,'LEGAL_PENDING','La recepción de solicitudes está pendiente de los textos definitivos de términos y privacidad. Tus respuestas no se han enviado.');
   if(!submission||submission.consent.revision!==legal.revision)throw new HttpError(409,'LEGAL_CHANGED','Los documentos cambiaron. Solicita un nuevo enlace para revisarlos; conserva tus respuestas antes de salir.');
   row.review={state:'pending'};row.response.respondent=submission.respondent;row.respondentParticipates=submission.participates;row.proposedRepresentatives=submission.representatives;
-  row.consent={acceptedAt:now,revision:legal.revision,termsVersion:legal.terms.version,privacyVersion:legal.privacy.version,termsText:legal.terms.text,privacyText:legal.privacy.text,authorized:true,communications:true,advertising:false,purpose:row.purpose};
+  if(!legal.testBypass&&(!submission.consent.terms||!submission.consent.privacy))throw new HttpError(400,'CONSENT_REQUIRED','Acepta los términos y la política de privacidad.');
+  row.consent={acceptedAt:now,revision:legal.revision,testBypass:!!legal.testBypass,termsVersion:legal.terms?.version,privacyVersion:legal.privacy?.version,termsText:legal.terms?.text,privacyText:legal.privacy?.text,authorized:true,communications:true,advertising:false,purpose:row.purpose};
  }
  row.response.state=answer==='no_contact'?'declined':answer;row.response.submittedAt=now;
  row.lifecycle=answer==='received'?'ready':answer==='no_contact'?'revoked':'closed';row.active=answer==='received';if(!row.active)row.closedAt=now;

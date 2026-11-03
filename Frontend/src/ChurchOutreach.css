@@ -9,3 +9,7 @@
 @media(prefers-reduced-motion:reduce){.outreach-page *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 .outreach-page .outreach-header{background:transparent;color:#17232d}.outreach-steps span{width:28px;min-width:28px}
+
+.outreach-page .outreach-person-fold{padding:0;margin:14px 0;overflow:hidden}.outreach-person-fold summary{padding:16px 20px;list-style-position:inside}.outreach-person-fold summary>span{display:block;margin:6px 0;color:#4d605d;font-size:14px}.outreach-person-fields{padding:0 20px 20px;border-top:1px solid #d4ddd4}.outreach-person-fields>button{margin:8px 12px 0 0}.outreach-page .outreach-problem-panel{margin-top:40px;padding:28px;border:1px solid #d8c59e;border-radius:16px;background:#faf7ef}.outreach-problem-panel h2{margin-top:0}.outreach-page .outreach-review{padding-bottom:24px;margin-bottom:24px;border-bottom:1px solid #d4ddd4}.outreach-page .outreach-actions{border-top:1px solid #d4ddd4;padding-top:24px}.outreach-page .outreach-note{margin:24px 0}.outreach-person-fold summary:focus-visible{outline-offset:-4px}@media(max-width:700px){.outreach-page .outreach-problem-panel{padding:20px 18px}.outreach-person-fields{padding:0 16px 16px}}
+
+.outreach-team-list{max-height:620px;max-height:min(620px,70dvh);overflow:auto;overscroll-behavior:contain;padding:4px 8px 4px 4px;margin-bottom:20px;scrollbar-gutter:stable}.outreach-team-count{font-weight:600;color:#286b66}

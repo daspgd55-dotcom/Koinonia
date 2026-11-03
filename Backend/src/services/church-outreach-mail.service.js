@@ -15,7 +15,7 @@ async function plan(selection,cfg,session=null){
  if(selection.kind==='institutional'){
   if(!['awaiting_response','needs_clarification'].includes(row.response.state))reasons.push('already_responded');
   if(selection.reminder&&row.response.state!=='awaiting_response')reasons.push('reminder_after_response');
-  if(!require('../config/church-outreach-legal').current().enabled)reasons.push('legal_texts_pending');
+  const legal=require('../config/church-outreach-legal').current();if(!legal.enabled||legal.testBypass)reasons.push('legal_texts_pending');
  }else if(!member||!member.active||!['prepared','pending'].includes(member.state)||member.expiresAt<=new Date()||row.proposedRepresentatives.find(p=>p.email===email)?.reviewState!=='approved')reasons.push('member_not_pending');
  const sourceRevision=selection.kind==='member'?member?.approvedAt?.toISOString():row.response.state==='needs_clarification'?row.communications?.at(-1)?.at?.toISOString():'initial';
  const history=await Mail.find({invitation:row._id,kind:selection.kind,...(member?{member:member._id}:{}),sourceRevision}).sort({createdAt:1}).session(session).lean(),last=history.at(-1);
@@ -51,7 +51,7 @@ async function validGuard(g,cfg){
  const row=await Invitation.findById(mail.invitation);if(!row||!row.active||row.expiresAt<=new Date()||row.noContact?.requested||await suppressed(row.church,mail.email)||await suppressed(row.church,row.recipient.email))return false;
  const target=await base.inspectTarget(row.church);if(!base.readiness(row,target,await Contact.findById(row.contactKey)).preparationReady)return false;
  if(g.member)return !!await Member.exists({_id:g.member,invitation:row._id,email:mail.email,state:'pending',active:true,tokenHash:g.hash,expiresAt:{$gt:new Date()}})&&row.proposedRepresentatives.some(p=>p.email===mail.email&&p.reviewState==='approved');
- if(!['awaiting_response','needs_clarification'].includes(row.response.state)||(g.reminder&&row.response.state!=='awaiting_response')||!require('../config/church-outreach-legal').current().enabled)return false;
+ if(!['awaiting_response','needs_clarification'].includes(row.response.state)||(g.reminder&&row.response.state!=='awaiting_response')||!require('../config/church-outreach-legal').current().enabled||require('../config/church-outreach-legal').current().testBypass)return false;
  return !!await Access.exists({_id:g.access,invitation:row._id,tokenHash:g.hash,purpose:'institutional_link',consumedAt:null,revokedAt:null,expiresAt:{$gt:new Date()}});
 }
 module.exports={capabilities,plans,prepare,enqueue,cancel,validGuard,contactKey};
