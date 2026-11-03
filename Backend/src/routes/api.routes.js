@@ -25,6 +25,7 @@ router.post('/church-registrations',registrations.create);
 router.post('/church-registrations/confirm',registrations.confirm);
 router.post('/church-registrations/recover',registrations.recover);
 router.get('/church-registrations/track',registrations.track);
+router.get('/church-registrations/lookup',registrations.lookup);
 router.post('/church-registrations/respond',registrations.respond);
 router.post('/church-registrations/invitation',registrations.invitation);
 router.post('/church-registrations/decline',registrations.decline);

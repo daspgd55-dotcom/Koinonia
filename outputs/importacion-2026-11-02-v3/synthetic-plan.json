@@ -1,0 +1,4008 @@
+{
+  "database": "koinonia_synthetic_test_v2",
+  "before": 338,
+  "actors": [
+    {
+      "_id": "000000000000000000000201",
+      "active": false
+    },
+    {
+      "_id": "6ac9a1f6898ae28f50236730",
+      "active": true
+    }
+  ],
+  "counts": {
+    "insert": 409
+  },
+  "actions": [
+    {
+      "key": "google_maps:ChIJyUoHOZPRYpYRy0_5CaKem7E",
+      "name": "IGLESIA PENTECOSTAL DESPERTANDO CON CRISTO",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJoR3HYxbRYpYR9sYayExy_a8",
+      "name": "Iglesia Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJKwVQL1DQYpYRgXQB9D_H2a0",
+      "name": "Iglesia Evangelica Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJl2lpvFbQYpYRQiKAXHyLwaA",
+      "name": "Iglesia Pentecostal De Chile",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJBf3Yor3QYpYRcMpsOH_n6EE",
+      "name": "Iglesia Pentecostal Unida De Chile, La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJYWgWHADRYpYR1ZWzvJ1ohVE",
+      "name": "Iglesia Vida en Fe (Asambleas de Dios)",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ12BgwALRYpYRYAoNuSFGUbk",
+      "name": "Iglesia Peñalolen",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJef7lIQDRYpYR-Q6NQdv5ntQ",
+      "name": "Iglesia Adventista Del Séptimo Día - Lo Cañas",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJkXLHvGfQYpYRzuzE7y9u98E",
+      "name": "Iglesia Evangelica Luterana",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJafRHl7jQYpYRWfBVpCI6h5s",
+      "name": "Corp Iglesia Evangelica Luterana Congregacion",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJXfzqA5_RYpYRr-KJLZEobZw",
+      "name": "Iglesia Mision Cristiana",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJr_eHegDRYpYRe5S_-0Pse9Q",
+      "name": "Iglesia Evangélica UCB Monteverde",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJaYDbKQDRYpYRMZT-CeTihWE",
+      "name": "Libertad Iglesia Santiago",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ1V6HiTvRYpYRh-I3lnNpiJQ",
+      "name": "Iglesia Bautista El Faro",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJCy8_evHQYpYR9nVx2pNcJcw",
+      "name": "Corp Anglicana de Chile",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "6973c999acabadc3d1a96f3d",
+          "name": "Corp Anglicana de Chile"
+        },
+        {
+          "id": "554143f619ce1fdb52b108af",
+          "name": "Corp Anglicana de Chile"
+        }
+      ],
+      "locations": [
+        {
+          "id": "6973c999acabadc3d1a96f3d",
+          "address": "Victoria Subercaseaux 41, Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6421067,
+            -33.4405176
+          ]
+        },
+        {
+          "id": "554143f619ce1fdb52b108af",
+          "address": "José Miguel de la Barra 480, 8320110 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.643671,
+            -33.4368761
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJ59C1i2jQYpYRZm93brl7md0",
+      "name": "Iglesia Anglicana San Lucas Evangelista",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJO4DTwsLQYpYRZstpsDcDrk4",
+      "name": "Iglesia Bíblica El Sembrador",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJpQpqHe7QYpYRgU2jRh3s_TU",
+      "name": "Iglesia Tu Enlace Familiar Chile",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJa-PIZ77RYpYR1i8I4N5IFx0",
+      "name": "Iglesia Presbiteriana Independiente de Nuevo Amanecer",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJldKsuXbRYpYRF3-DzMa5YZg",
+      "name": "Iglesia Príncipe de Paz",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ0XHeGybRYpYRzvJ785BZvLw",
+      "name": "Iglesia Pentecostal de Chile La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJn-29DADRYpYRyXLaI6lMMKw",
+      "name": "Iglesia Unida Metodista Pentecostal 4° de la Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJXyqwBWHQYpYRl0ZnHpG2Xsc",
+      "name": "Iglesia Pentecostal Naciente",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJew3GofDQYpYR17hYjXt08Mc",
+      "name": "Iglesia Evangelica Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJlWO2sh_RYpYRaz2QZAPDlL8",
+      "name": "Iglesia Cristiana La Casa Del Señor, La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJW7_ObgDRYpYRVInFjY9fc6E",
+      "name": "Iglesia Unida Metodista Pentecostal La Florida Costa Rica",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJafQzIADRYpYRBjSZYgH0yrY",
+      "name": "Iglesia Unida Metodista Pentecostal 1° de la Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJne3pVADRYpYRF2pTpF3cQ6Y",
+      "name": "Iglesia Unida Metodista Pentecostal La Florida Nuevo Amanecer",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ8d-nwmTQYpYR9Vx3AlBbgv4",
+      "name": "IEP La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJzbCH2ZLQYpYRZQLc2w4mtcE",
+      "name": "Iglesia Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJZcp8R1PQYpYRRimqT8TeZAo",
+      "name": "Iglesia Metodista Pentecostal Clase Los Castaños",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJJxONutrXYpYRdQK2cel5hxA",
+      "name": "Iglesia Luterana \"La Cruz de Cristo\"",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ27Ptf-LQYpYRRYWO6VnxX60",
+      "name": "Congregacion del Verbo Divino",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "bf350d396a69a0100d422f93",
+          "name": "Congregacion Del Verbo Divino"
+        },
+        {
+          "id": "ee42507b0402641080c6d1e7",
+          "name": "Congregacion Del Verbo Divino"
+        }
+      ],
+      "locations": [
+        {
+          "id": "bf350d396a69a0100d422f93",
+          "address": "Virginia Opazo 65, 8370042 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.669148,
+            -33.4497131
+          ]
+        },
+        {
+          "id": "ee42507b0402641080c6d1e7",
+          "address": "Av Portales 2957, 8350528 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6759741,
+            -33.443181
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJt9xFhr7QYpYR-keM-AHSP2s",
+      "name": "Iglesia Bautista Eben Ezer",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJV5u7F_nQYpYRbjhi0hir_mY",
+      "name": "Templo Bautista",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJkVTjLubQYpYROAxHwoL3noA",
+      "name": "Iglesia Biblica Bautista la Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJzReZXtXRYpYRyXAyS4xSuXM",
+      "name": "Iglesia Bíblica Bautista Renacer",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJCwmBuNTQYpYRBAtxlNZTp_A",
+      "name": "Ministerio Jesus Señor Y Rey La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJbZqoRCvRYpYRxKavNLXw2gk",
+      "name": "Congregacion Misioneras Catequista de la Sagrada Familia",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "0f77f0f1f1b11d352c0a74d5",
+          "name": "Congregacion Misioneras Catequista de la Sagrada Familia"
+        }
+      ],
+      "locations": [
+        {
+          "id": "0f77f0f1f1b11d352c0a74d5",
+          "address": "Maturana 745, 8340241 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6671906,
+            -33.4357491
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJA5JTxOnQYpYRB98LXNdWCDw",
+      "name": "Iglesia Catedral de la Alabanza Asambleas de Dios",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJcytvnMjQYpYRaroXE28lpEk",
+      "name": "Iglesia Metodista Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJX3AARQDRYpYRlv9EqkBzCEY",
+      "name": "Iglesia Pentecostal Naciente Maria Elena",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ-96O5tPQYpYR5p5LFOw9zT8",
+      "name": "IEP San Jorge",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJvV4EKQDRYpYRPKHmpVpGXaA",
+      "name": "Iglesia Union Pentecostal El Triunfo: La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJTURvcHjRYpYRq2-hib-So7M",
+      "name": "Iglesia Pentecostal La Alborada IPLA",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ1UPGuavRYpYRyiz-Bc0D99w",
+      "name": "Iglesia Cuadrangular, Nuevo Amanecer",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJxVABdEzRYpYRLB5xZmQb7sM",
+      "name": "Local Alonso de Ercilla IEP La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ15SNdgDRYpYRs5g3Ojn2dpg",
+      "name": "Iglesia Cristiana CDA de las asambleas de Dios",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJYQ9z3vnQYpYRW-7eY_t4SxQ",
+      "name": "Iglesia Casa De Oracion",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJV_3339DQYpYRuHBiLhzHxIA",
+      "name": "Iglesia Bautista Filadelfia",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJPZNIBOLQYpYReh_Q1a1q4oM",
+      "name": "Iglesia Bautista Misionera La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJU2ICA8_RYpYRvLb88zHy0Ro",
+      "name": "Iglesia",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "name": "Iglesia"
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "name": "Iglesia"
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "name": "Iglesia"
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "name": "Iglesia"
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "name": "Iglesia"
+        }
+      ],
+      "locations": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "address": "Moneda 2454, 8350581 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6704356,
+            -33.4442865
+          ]
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "address": "Gral Mackenna 1923, 8360428 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6563136,
+            -33.4626935
+          ]
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "address": "Eleuterio Ramírez 864, 8330392 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6479667,
+            -33.448756
+          ]
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "address": "Rogelio Ugarte 1115, 8360029 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.635249,
+            -33.457095
+          ]
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "address": "Nueva de Valdés 957, 8330892 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6454844,
+            -33.4534333
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJCx_w7BzRYpYRgUh_XK1BuNU",
+      "name": "Capilla Laura Vicuña",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ2WDQV1DQYpYRMQLziTGAJLI",
+      "name": "Capilla Jesús de Nazareth",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJU5UXPfnQYpYRfWh1AlISQ-Q",
+      "name": "Iglesia El Lirio de los valles",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJm5n-7VLRYpYRJEjfhd8dujs",
+      "name": "Iglesia La Mision",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJT_ivzf_QYpYRy_v0NtGCq9c",
+      "name": "Capilla Familia De Nazareth",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJvXcArarRYpYRXgEOUn3G-Q0",
+      "name": "Iglesia Bautista Cordillera",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJgwGprfvQYpYRuWWktTpc-xc",
+      "name": "Iglesia Familiar de Adoración",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJZz95mSvdYpYRN3kucWOSFHI",
+      "name": "Iglesia Bautista Casa de Restauración",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJeXmCHP_RYpYR-6WyrSYG9Lc",
+      "name": "Iglesia Jesuscristo Bet-el",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJtWgWdK3QYpYRS3lNb1sy7D4",
+      "name": "Iglesia Metodista Pentecostal Los Navios",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJXVxBTADRYpYRTUBZoSahs2I",
+      "name": "Iglesia Adventista del Séptimo Día - Villa el Concierto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJW1ZaMK7QYpYR2b_KgLBGwhg",
+      "name": "Iglesia Pentecostal El Triunfo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJVwaszq_QYpYRN75sa4IeZjA",
+      "name": "Iglesia Evangelica",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "name": "Iglesia evangelica"
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "name": "Iglesia Evangelica"
+        }
+      ],
+      "locations": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "address": "Almte. Barroso 915, 8340112 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.66284,
+            -33.43294
+          ]
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "address": "Mario Kreutzberger 1546, 8340267 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.659261,
+            -33.4359468
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJYWZ9xtzRYpYRis_CWu9wRg0",
+      "name": "Iglesia maranatha",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJEZseGgDRYpYRB2pjQJKE0P8",
+      "name": "Iglesia Adventista Renuevo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJISiIK67QYpYRoGCfX6omlFU",
+      "name": "Iglesia C.C.Evang La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJc69br7LQYpYRd2Q4h8OwpIo",
+      "name": "Iglesia Gloria De Dios",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJOdI5ZgbRYpYRdMhhvNm935g",
+      "name": "Iglesia Evangélica \"VEN Y VE\"",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJF1Pw-63QYpYROFB_uzq48SM",
+      "name": "Iglesia Corporacion Cristiana",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ_TfzBq7QYpYRgHUpXHks6aQ",
+      "name": "Iglesia Bahia Catalina Con Psj Timon",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJfaKX3bXQYpYRLw_GHbFGjwo",
+      "name": "Capilla San Francisco De Asis",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJuWzuNgDRYpYRAikomrjhyW0",
+      "name": "Iglesia del Señor Las Araucarias",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJY-PNrzHRYpYRRNfNKfLlpAI",
+      "name": "Iglesia bíblica bautista betel",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJDadWLQDRYpYR9q5IjRny38k",
+      "name": "EDGAR SANCHEZ",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJJ7jLjFvQYpYRLBpgjVPCWIE",
+      "name": "Iglesia Hogar De Maria",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ07X2lhfRYpYRY9Rd87Xznbw",
+      "name": "Iglesia Bautista La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ3x2oTzPRYpYRl1K8mOlVBLQ",
+      "name": "Iglesia La Gloria Postrera",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJybETaADRYpYR79nEvGvuRYs",
+      "name": "ICMP María Elena",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJqYv-kMPRYpYRKZCtl0aLjUc",
+      "name": "Misión Pentecostal Nueva Jerusalén",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJhT3-QADRYpYRrENh_gIeDo8",
+      "name": "Iglesia Unida Metodista Pentecostal 2° de La Florida - Dios Proveerá",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJqwmVFsrQYpYRS38n8eGwsnY",
+      "name": "iglesia metodista pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJnUqXfF_QYpYRfXuvBoEwEx8",
+      "name": "Congregacion Schoenstatt",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJG3j9wILRYpYR1UO9_KE_Oro",
+      "name": "Capilla Maria Santisima",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJmQSGZwDRYpYRGzoXxZL1t8o",
+      "name": "Iglesia de Dios Vision de Conquista",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJQcXxPVjRYpYRygseVNAJ2ZM",
+      "name": "Iglesia El Arca Del Señor Jesucristo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJERxQgl_QYpYRQUlcYoNpHfE",
+      "name": "Iglesia Adventista del Séptimo Día - LA FLORIDA",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJFbg0DIvQYpYRJAAFYPX-F6g",
+      "name": "Iglesia Santa Maria De Los Angeles",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJlRlSALTQYpYRTtDFuQH7uNQ",
+      "name": "Iglesia Internacional Guerreros De Oración",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJfTSoNIzQYpYR11QSVnwQRUU",
+      "name": "Iglesia La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJxWITCgDRYpYRx2Xu6lWKg84",
+      "name": "Clase La Florida, PRIMP CATEDRAL EVANGELICA",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJJ-wXW3_RYpYR3mvY9le7LUI",
+      "name": "Iglesia Universal del Reino de Dios",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ1aO5KQnRYpYRXgK5Ubt5ZPI",
+      "name": "Capilla Santa Irene",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJteRrNADRYpYR38EtjS3YSgw",
+      "name": "Iglesia Unida Metodista Pentecostal La Granja Villa La Serena",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJz3wKxDHRYpYRQ3NLQK5ILFY",
+      "name": "Iglesia Adventista del Séptimo Día - SIÓN",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJoxGxxj3XYpYR9yevyDJygLw",
+      "name": "iglesia catolica",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJw_UeivfRYpYRi5EC7HYLG1k",
+      "name": "Iglesia Bíblica Bautista Renuevo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJx5srCwDRYpYRvmF0BLxvX74",
+      "name": "Ministerio Iglesia Apostólica Internacional La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ7ROVJdLQYpYROjtbBHAMcng",
+      "name": "Iglesia de Dios \"Voz En El Desierto\"",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ3wRHDlPQYpYRV0tHgxkGOlQ",
+      "name": "Corp Iglesia de Jesucristo de los Santos de los Ultimos Dias",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJLYixFADRYpYRHgFRtO4ZHZA",
+      "name": "Iglesia IAR SANTIAGO",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJjeRzcwDRYpYRhJEXfs2IOaE",
+      "name": "Iglesia Evangélica del Mediador",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJR1suew_RYpYRR4e7sqf2EEg",
+      "name": "Parroquia Nuestra Señora del Jardin",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJrcOPYgDRYpYRJBX3Ww8g0N4",
+      "name": "Iglesia Evangélica Mets",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJtSJdHwDRYpYRx7Ia6bZ-cys",
+      "name": "Iglesia",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "name": "Iglesia"
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "name": "Iglesia"
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "name": "Iglesia"
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "name": "Iglesia"
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "name": "Iglesia"
+        }
+      ],
+      "locations": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "address": "Moneda 2454, 8350581 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6704356,
+            -33.4442865
+          ]
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "address": "Gral Mackenna 1923, 8360428 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6563136,
+            -33.4626935
+          ]
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "address": "Eleuterio Ramírez 864, 8330392 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6479667,
+            -33.448756
+          ]
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "address": "Rogelio Ugarte 1115, 8360029 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.635249,
+            -33.457095
+          ]
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "address": "Nueva de Valdés 957, 8330892 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6454844,
+            -33.4534333
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJyaZZk5nQYpYRN3q4yaImF4E",
+      "name": "Iglesia Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ_-wYyt7RYpYRXcnRQyENSek",
+      "name": "Iglesia Cristiana Pentecostal Getsemani Templo Jehova Elohim",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJJ_GrzpHQYpYR29nWvt20HeM",
+      "name": "Iglesia Adventista Del Septimo Dia",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJyzy2Sr3QYpYRQVSK2nawN-Y",
+      "name": "IMPCH EL CONQUISTADOR",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ8UqD9aXRYpYR1frIE37s0NE",
+      "name": "Iglesia Evangélica",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "name": "Iglesia evangelica"
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "name": "Iglesia Evangelica"
+        }
+      ],
+      "locations": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "address": "Almte. Barroso 915, 8340112 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.66284,
+            -33.43294
+          ]
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "address": "Mario Kreutzberger 1546, 8340267 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.659261,
+            -33.4359468
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJp9cZkI3RYpYR1H7AV_vyCzs",
+      "name": "Iglesia El León de Judá",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ6e07QADRYpYRyXV1reDxx38",
+      "name": "Capilla Jesús de Nazaret",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJT-PmSgDRYpYR3ziY9nfrW_E",
+      "name": "Iglesia Fuego de Dios",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJD7kKkpnQYpYRNNtMwrFkY-U",
+      "name": "manantial de vida eterna los rosales",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJBbazspDQYpYR4k7xnYrkxkE",
+      "name": "Iglesia El Conquistador",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJwwIL4ZLQYpYRjPkKWNg-1y0",
+      "name": "Iglesia del Señor de La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJl9Uo1pTQYpYRiGhDl0uoqKs",
+      "name": "Parroquia María Madre de la Iglesia",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ2WHkvDTXYpYRLLiTkMumS7g",
+      "name": "Iglesia Evangélica Unión de Centros Bíblicos Los Quillayes",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJo5HWVMjQYpYRA-Wu8MS1mOM",
+      "name": "Iglesia PDD",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJUZ2FfADRYpYRwwiRjmytOtw",
+      "name": "Clase Los Castaños, PRIMP CATEDRAL EVANGELICA",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJeRhGWwDRYpYRjxHiXqJXXXQ",
+      "name": "Ministerio Evangelista León de Judá",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ52dV94jRYpYRhca4rYcnVFg",
+      "name": "Iglesia Dulce Refugio",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJk5d0Qz3RYpYRs04GmyCITEU",
+      "name": "Parroquia Jesús Maestro",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJVfChj73QYpYRG3bRYbCLKi4",
+      "name": "Iglesia Bautista Trinidad",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJI-1XLK3RYpYRy8dBm8-OAT4",
+      "name": "Iglesia Wesleyana La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJkRaB2EzQYpYReX4FAIT_we8",
+      "name": "Congregacion Salesiana Inspectoria Salesiana",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "a60096d6285e8f5d1f21f489",
+          "name": "Congregacion Salesiana Inspectoria Salesiana"
+        }
+      ],
+      "locations": [
+        {
+          "id": "a60096d6285e8f5d1f21f489",
+          "address": "Coquimbo 585, Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6414318,
+            -33.4553367
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJQR3Ub8XRYpYR77D0zGoZ5GA",
+      "name": "Iglesia Adventista del Séptimo Día - SAN GREGORIO",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJxbbD0yvRYpYRoCQhy7X4DOk",
+      "name": "Iglesia Biblica Bautista Cordillera",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJF28KAqXQYpYRNfcgjLKRhO0",
+      "name": "Iglesia Evangelica",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "name": "Iglesia evangelica"
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "name": "Iglesia Evangelica"
+        }
+      ],
+      "locations": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "address": "Almte. Barroso 915, 8340112 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.66284,
+            -33.43294
+          ]
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "address": "Mario Kreutzberger 1546, 8340267 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.659261,
+            -33.4359468
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJKf8l3kvRYpYRcwTngPxIfV0",
+      "name": "Iglesia trinidad",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJZfhwa6LQYpYRslqyCf33jR8",
+      "name": "Iglesia Padre Bueno",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJEdObRwDRYpYRc0AfWQLW1bM",
+      "name": "Iglesia Tiempos De Cambio Chile",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJb5cHBwDRYpYRQEpavm0oq7E",
+      "name": "Iglesia jorgito y memito valdy",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJxcrpIjPRYpYR3qVhzQCWI6g",
+      "name": "Capilla Cristo Resucitado",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJmZbLe4fQYpYRLRvWNA1KuVk",
+      "name": "Iglesia Bautista Renacer En Cristo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJN2B7VKPQYpYRL1PFaZ7Q6pA",
+      "name": "Iglesia de Dios Varones Territorio Centro",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJx9ppcQDRYpYRnNFR5wbyM5s",
+      "name": "Iglesia Casa Palabra y Vida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ6_5ZEkLRYpYRhR0gPBVi_to",
+      "name": "Local Rinconada de Tobalaba IEP La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJyWPB0-PQYpYRDJuXu0V1U0Q",
+      "name": "Iglesia Mayor Gracia",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ4Y03ue_RYpYRQUhzNxnAmmo",
+      "name": "ICT Chile",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJT9YTluTQYpYR71458OJuD7w",
+      "name": "Iglesia Renacimiento",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJE0ByQwDRYpYRg0xspaLXT4E",
+      "name": "Iglesia Casa Sión Santiago",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJTy0YFe7QYpYR6ySrKeBa6cs",
+      "name": "Iglesia Casa Del Padre",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJgfv1rx_RYpYREzP4O7OcSOA",
+      "name": "Iglesia Metodista",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJaRoD1OnQYpYR1BOVbc5R8O0",
+      "name": "Ministerio Comunicacional Limitada",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJxw8nQY3RYpYRWrNRN8s5zUg",
+      "name": "IMPCH PUENTE ALTO Clase San Pedro",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJQWopwNbQYpYR5zrmTaxs7Zs",
+      "name": "Iglesia Del Centro Misionero De Chile",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJB0_VHTrRYpYR647u99ZJ5I0",
+      "name": "Local Trinidad Oriente IEP La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJm6BtetjQYpYRuFI8jfwiHaI",
+      "name": "Iglesia Metodista de La Florida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJx8CP8NvQYpYRND4WTD_OFSs",
+      "name": "Iglesia Evangelica",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "name": "Iglesia evangelica"
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "name": "Iglesia Evangelica"
+        }
+      ],
+      "locations": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "address": "Almte. Barroso 915, 8340112 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.66284,
+            -33.43294
+          ]
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "address": "Mario Kreutzberger 1546, 8340267 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.659261,
+            -33.4359468
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJ0dFGTQDRYpYRlA6T8A6AikU",
+      "name": "IMPCH Clase Mexico",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJT5nZc8bQYpYRqs3gefRIBLc",
+      "name": "Iglesia Evangelica",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "name": "Iglesia evangelica"
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "name": "Iglesia Evangelica"
+        }
+      ],
+      "locations": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "address": "Almte. Barroso 915, 8340112 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.66284,
+            -33.43294
+          ]
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "address": "Mario Kreutzberger 1546, 8340267 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.659261,
+            -33.4359468
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJnXiGXADRYpYRsEKgxJ8sjPs",
+      "name": "Iglesia Misión Iglesia del Señor “Templo Adulam”",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJez-SdgDRYpYRXZuWV7s1PL0",
+      "name": "IMPCH Clase San pedro",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJIXISZKDRYpYRrtJHvtWrzS4",
+      "name": "Iglesia de Cristo La Villa",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ51esxkjRYpYR-rvG2YvioZk",
+      "name": "MNT - Ministério Nuevo Tiempo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJG4hLb93QYpYRqyTAtg6RYag",
+      "name": "Capilla Sagrados Estigmas (Parroquia María Madre de la Iglesia)",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJCbAtGaXQYpYRX9ZG7T7cySI",
+      "name": "Parroquia Santa Margarita De Escocia",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJF3ljPsXQYpYRvnIQv3rvWPE",
+      "name": "Parroquia Divino Redentor",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJn2oWofDWYpYRZ18zzEjzfCU",
+      "name": "Iglesia de Dios Ministerial de Jesucristo Internacional - IDMJI - CGMJI -- CL SANTIAGO PUENTE ALTO",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ53wUIADRYpYR4CU9q9bXjqU",
+      "name": "Iglesia de Dios Camino a la Victoria",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJA1QvzuTXYpYRUfkylDpBqqY",
+      "name": "Clase Las Brisas",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJSeTxIEHXYpYRTIL95mpn62c",
+      "name": "Iglesia Unificada Metodista Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJPwq44qLXYpYR8PhVgHZLbrU",
+      "name": "Iglesia Evangélica Pentecostal de la Comunión de los Santos Puente Alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJT8dsNwDXYpYRBTIcVrPWxIM",
+      "name": "Iglesia Unida Metodista Pentecostal Puente Alto Casas Viejas - Refugio de Adulam",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJY-l07yLVYpYRIdiOKxFiaWI",
+      "name": "JSR Church (Iglesia Jesus Señor y Rey)",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJLUXGYlTXYpYRmzeiN7M5w_o",
+      "name": "IMPCH PUENTE ALTO Clase Poblacion Los Andes",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ3fICV_HXYpYRPC9SjwwQEL4",
+      "name": "IUMP Quinta Puente Alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ5bjktvbXYpYRCseFyIi6BqQ",
+      "name": "Cruzada de Poder Puente Alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJOXVIvUnXYpYR8Qr8uZSWPDU",
+      "name": "impch clase pedro duarte",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJBaP-byfXYpYR313qhfadF7I",
+      "name": "CUPSB IGLESIA PUENTE ALTO",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJHX9sjsTWYpYRX65wTkoXaZM",
+      "name": "Iglesia Protestante Bautista",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJRS0ek0DXYpYRMKhZcOSg-DQ",
+      "name": "Iglesia Bautista",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ_9GcEQDXYpYRNjuWSVEE2SI",
+      "name": "Iglesia Bautista Piedra Angular",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ_-n45q_XYpYREwzMgLj3HUA",
+      "name": "Mision Evang.Bautista \"Palabra Viva\"",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJuZ_hEgDVYpYRyS4NY1aa77Y",
+      "name": "Iglesia Bíblica Bautista \"El Camino\"",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJq_ZoCQfXYpYRkVNNl2JXp9o",
+      "name": "Iglesia Bautista",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJl0cu3wbXYpYRNpZ12oBVgy4",
+      "name": "Iglesia Bautista comunidad de la Gracia",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJzV2hBQDXYpYR1Xt3XTsiWE8",
+      "name": "IGLESIA Bautista El Porvenir",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJX51CZQDXYpYR5gaYSLkrkRo",
+      "name": "Primera Iglesia Evangélica Bautista de Puente Alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJnXPhwk3WYpYRbLCsCX7cH-Q",
+      "name": "IUMP 3ra. Puente Alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJH9xnn5rXYpYR3M9Zn-DuNaI",
+      "name": "Templo EvangélicoHumberto Ruben Salas Gonzalez",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ6ajZs9DVYpYRuYWHEl1S54U",
+      "name": "IMPCH PUENTE ALTO Clase Casas Viejas",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ04wdDwDXYpYRpsUP00aVyAk",
+      "name": "Iglesia Pentecostal Filadelfia Primera de Chile Puente Alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJqRv9srrXYpYRMwkupeDqFtU",
+      "name": "Iglesia Unida Metodista Pentecostal 2° de Puente Alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJg2qYUADXYpYRl_hLOGgsUdQ",
+      "name": "Iglesia evangélica pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJNToAEA3XYpYRLBv3_BIJ52M",
+      "name": "Iglesia evangélica pentecostal encuentro con Cristo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJvyK0EpDXYpYR1WKTCK5D16w",
+      "name": "IUP - Iglesia Unión Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJL3ysV__WYpYRmeKy1egt1oE",
+      "name": "Iglesia Bautista Misionera de Puente Alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ51d7nLrXYpYRt6HYHi2w0Kw",
+      "name": "Iglesia Pentecostal El Yo Soy",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJN5trfU7WYpYRHBXDcr_wfP0",
+      "name": "Ipechi Puente Alto - Iglesia Pentecostal de Chile",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJw8qaTgDXYpYR6vYJiFEsgZ0",
+      "name": "Ministerio Evangelístico y Pentecostal Alcanzando su Gloria",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJm6f7AtbXYpYRwtBsyomiGJA",
+      "name": "Iglesia Voz en el Desierto Monte Sión",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ7ekG-mXXYpYRq6oAlapapfk",
+      "name": "Iglesia Pentecostal Unida de Chile \"Los Andes\"",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJdWD3ErDXYpYRX6T1l_kOZ34",
+      "name": "Iglesia Pentecostal Nazareth Puente Alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJfTVGAZ7XYpYR5UYzXeiIOsE",
+      "name": "Iglesia Pentecostal Unida, IPU Esperanza",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ1wDTBdrXYpYRFyy18SGZ5ZU",
+      "name": "Iglesia Pentecostal La Nueva Jerusalén Del Volcán",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJIQ_xXuPWYpYRV8aUQqoJeXQ",
+      "name": "IMPCH PUENTE ALTO Clase San Carlos",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJYcF0CbHXYpYRQ5LLwtzpHFY",
+      "name": "Ipunje Puente Alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJSUCtX6jXYpYRZt1kYszmx6U",
+      "name": "Iglesia",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "name": "Iglesia"
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "name": "Iglesia"
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "name": "Iglesia"
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "name": "Iglesia"
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "name": "Iglesia"
+        }
+      ],
+      "locations": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "address": "Moneda 2454, 8350581 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6704356,
+            -33.4442865
+          ]
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "address": "Gral Mackenna 1923, 8360428 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6563136,
+            -33.4626935
+          ]
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "address": "Eleuterio Ramírez 864, 8330392 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6479667,
+            -33.448756
+          ]
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "address": "Rogelio Ugarte 1115, 8360029 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.635249,
+            -33.457095
+          ]
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "address": "Nueva de Valdés 957, 8330892 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6454844,
+            -33.4534333
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJbfmuMKPXYpYRknP2v0WTcYU",
+      "name": "Iglesia Pentecostal Unida de Chile Tabernaculo Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJOeIaAwDXYpYRDOfVayWU0KA",
+      "name": "Iglesia Pentecostal Naciente Clase Gabriela",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJTwpKitXWYpYRTonIBwJf_p4",
+      "name": "Iglesia Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJxV88VwDXYpYR8gDVrFtdGYM",
+      "name": "Iglesia Pentecostal Unida IPU",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJjwYGdNvWYpYRVkvBCUZwG-c",
+      "name": "Iglesia Protestante Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJmUSzdADXYpYRTMhWUMdUUZk",
+      "name": "Iglesia Unida Metodista Pentecostal Puente Alto El Peñón",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJXbaCb8vWYpYRqXDfU3esemA",
+      "name": "Casa de Dios La Frontera",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJTa8qZFPXYpYR5yUR3mSpr0k",
+      "name": "Iglesia Unida Metodista Pentecostal 3° de la Florida - Cristo Esperanza Viva",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJT_EZEQDXYpYRAIVXr3qOv-I",
+      "name": "Iglesia Father's House Chile",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJzayHcwDXYpYRFOmhiPSChII",
+      "name": "Iglesia Presbiteriana Puente de Vida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJU6mFfCXXYpYRQhLhM58at98",
+      "name": "Iglesia Maac Reformada",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJHf7OskXXYpYRW1ykM0B_tjE",
+      "name": "Templo Casa de Oración Puente Alto ICPCH",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJi-2YKwDXYpYRQt87rGBDOAU",
+      "name": "Iglesia Evangélica TEMPLO CASA DEL ALFARERO",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJCwAJ0zPXYpYRFDGTZwjk74Q",
+      "name": "Ministerio Evangelistico Pentecostal Montecalvario Templo Central",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJuwxlfrXWYpYR1XtPvR7nQ7U",
+      "name": "Parroquia Natividad Del Señor",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJk5mCaADXYpYRVhxwY1gWuXo",
+      "name": "Casa Do Pai Iglesia",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJZfjJxpHWYpYR6AvJb92G1p8",
+      "name": "Iglesia sublime gracia chile",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJDwhU6efWYpYRUumaCTN4-o4",
+      "name": "San Francisco de Asís",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJOWnM8efWYpYR8bmBmO8Qvvw",
+      "name": "Iglesia Católica",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJbfU8HCjVYpYR8QLKywi-_h4",
+      "name": "Capilla del Cristo de Vista hermosa",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJv0KxidLVYpYRmgRIJwtEb9o",
+      "name": "Iglesia de Dios Varones Territorio Centro",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJSyD0bnrWYpYRjk3lgd6a440",
+      "name": "Iglesia Evangelica",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "name": "Iglesia evangelica"
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "name": "Iglesia Evangelica"
+        }
+      ],
+      "locations": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "address": "Almte. Barroso 915, 8340112 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.66284,
+            -33.43294
+          ]
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "address": "Mario Kreutzberger 1546, 8340267 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.659261,
+            -33.4359468
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJ58Ed1nnWYpYRC5n5EONsoe0",
+      "name": "IEP Puente Alto Oriente",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJIer-X4DWYpYR0T6F_nbyI7E",
+      "name": "Virgen De Las Vizcachas",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJpUKYi3nWYpYROnL5hO4K1Tc",
+      "name": "Parroquia Nuestra Señora del Carmen",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJnapED3PXYpYRXt_1Acbk4wo",
+      "name": "IGLESIA EVANGELICA EN PUENTE ALTO",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJhXi7UfHWYpYREszwImCJIWk",
+      "name": "Parroquia San Carlos Borromeo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJFUR0PADXYpYR54znDwbj3Nc",
+      "name": "Iglesia conectados",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJjwyqMQDXYpYR_wE1o04d-sw",
+      "name": "Iglesia T.E.C.A. Puente Alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ8b_aJiHXYpYRzTLwJlSD1I8",
+      "name": "Iglesia Mormona",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJGQ5GwxnXYpYROdInElibtLw",
+      "name": "Iglesia Evangélica La Fe Apostólica de Chile - Local La Foresta",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJs3kBpcvXYpYRkDx4slp3SJA",
+      "name": "Iglesia Hastem Reina Santiago",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJb4YWSQDXYpYR7RUlafLywEs",
+      "name": "Iglesia Unida Metodista Pentecostal 4° de Puente Alto - Santidad a Jehová",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJhU4Y2fjXYpYRCtAhtRDW3uU",
+      "name": "Barrio Los Cántaros - La Iglesia de Jesucristo de los Santos de los Ultimos Dias",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJy_DdUgDXYpYRVRhHs0jZasE",
+      "name": "Iglesia",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "name": "Iglesia"
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "name": "Iglesia"
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "name": "Iglesia"
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "name": "Iglesia"
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "name": "Iglesia"
+        }
+      ],
+      "locations": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "address": "Moneda 2454, 8350581 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6704356,
+            -33.4442865
+          ]
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "address": "Gral Mackenna 1923, 8360428 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6563136,
+            -33.4626935
+          ]
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "address": "Eleuterio Ramírez 864, 8330392 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6479667,
+            -33.448756
+          ]
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "address": "Rogelio Ugarte 1115, 8360029 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.635249,
+            -33.457095
+          ]
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "address": "Nueva de Valdés 957, 8330892 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6454844,
+            -33.4534333
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJvZeKfDLXYpYRPCWQcWmj9k8",
+      "name": "Iglesia Evangélica Poder de Dios",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJhY8w1sDWYpYRZEw02Dheq1I",
+      "name": "Iglesia Adventista Jerusalen",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJjQDDujbXYpYRBX-BskFXB88",
+      "name": "Iglesia Adventista del Séptimo Día - GABRIELA",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJRSfSj27XYpYR_WgBFw-OUtw",
+      "name": "Iglesia Apostolica de Jesucristo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJKbZnorLXYpYRbmJIeq-fHMY",
+      "name": "Iglesia",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "name": "Iglesia"
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "name": "Iglesia"
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "name": "Iglesia"
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "name": "Iglesia"
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "name": "Iglesia"
+        }
+      ],
+      "locations": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "address": "Moneda 2454, 8350581 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6704356,
+            -33.4442865
+          ]
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "address": "Gral Mackenna 1923, 8360428 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6563136,
+            -33.4626935
+          ]
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "address": "Eleuterio Ramírez 864, 8330392 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6479667,
+            -33.448756
+          ]
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "address": "Rogelio Ugarte 1115, 8360029 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.635249,
+            -33.457095
+          ]
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "address": "Nueva de Valdés 957, 8330892 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6454844,
+            -33.4534333
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJ4cSSvyTXYpYRjyWGZUT6i3g",
+      "name": "Iglesia Sendas Antiguas - Misión Pentecostal Nueva Jerusalén",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJYVwxXYPXYpYRRyh4szGt_2Q",
+      "name": "Iglesia Cristiana",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "cab51ad65cc554025babd615",
+          "name": "Iglesia cristiana"
+        }
+      ],
+      "locations": [
+        {
+          "id": "cab51ad65cc554025babd615",
+          "address": "Pedro Lagos 1009, 8360688 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6472209,
+            -33.4658663
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJ34BIiqXXYpYRcw93dMmx8-k",
+      "name": "Iglesia Evangelica",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "name": "Iglesia evangelica"
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "name": "Iglesia Evangelica"
+        }
+      ],
+      "locations": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "address": "Almte. Barroso 915, 8340112 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.66284,
+            -33.43294
+          ]
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "address": "Mario Kreutzberger 1546, 8340267 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.659261,
+            -33.4359468
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJdaXwOQDXYpYRLVnNV-zCBh0",
+      "name": "Iglesia \"Luz De La Aurora\"",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJFyfsOQDZYpYRBlZ8rV8Cdhg",
+      "name": "Iglesia Metodista Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJIbWUX3XZYpYR_IW1ylAROrE",
+      "name": "Iglesia Adventista Villa Chiloé",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJky2gZ07XYpYRvjMFtdNdoTg",
+      "name": "Iglesia Pentecostal Puente Alto \"Paz a Vosotros\"",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJQwvzB7DXYpYR_7l4wglnND4",
+      "name": "Iglesia",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "name": "Iglesia"
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "name": "Iglesia"
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "name": "Iglesia"
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "name": "Iglesia"
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "name": "Iglesia"
+        }
+      ],
+      "locations": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "address": "Moneda 2454, 8350581 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6704356,
+            -33.4442865
+          ]
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "address": "Gral Mackenna 1923, 8360428 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6563136,
+            -33.4626935
+          ]
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "address": "Eleuterio Ramírez 864, 8330392 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6479667,
+            -33.448756
+          ]
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "address": "Rogelio Ugarte 1115, 8360029 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.635249,
+            -33.457095
+          ]
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "address": "Nueva de Valdés 957, 8330892 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6454844,
+            -33.4534333
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJSYkoirLXYpYRBxErd3xtqKU",
+      "name": "Iglesia",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "name": "Iglesia"
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "name": "Iglesia"
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "name": "Iglesia"
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "name": "Iglesia"
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "name": "Iglesia"
+        }
+      ],
+      "locations": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "address": "Moneda 2454, 8350581 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6704356,
+            -33.4442865
+          ]
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "address": "Gral Mackenna 1923, 8360428 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6563136,
+            -33.4626935
+          ]
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "address": "Eleuterio Ramírez 864, 8330392 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6479667,
+            -33.448756
+          ]
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "address": "Rogelio Ugarte 1115, 8360029 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.635249,
+            -33.457095
+          ]
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "address": "Nueva de Valdés 957, 8330892 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6454844,
+            -33.4534333
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJz_jUUADXYpYRhouio_91v4c",
+      "name": "Iglesia Alfa y Omega",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJdw5DOlPZYpYRlPI4mFBM9Ik",
+      "name": "Iglesia IMPCH Villa Mourguez",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ9XY2BbHXYpYRaiAq8OlYy8o",
+      "name": "Iglesia Apostolica",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJnTrxQ47XYpYR164OQe4q4Nc",
+      "name": "Iglesia Apostolica",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJkWIMFgDXYpYRqC08s_6et6Q",
+      "name": "IGLESIA EL REINO DE DIOS",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJaZmcOMHXYpYRuZAIKYaCJPU",
+      "name": "Iglesia Tabernáculo de adoración",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJN48NegDXYpYR6zggoV4oN5I",
+      "name": "Iglesia TDG_Santiago",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJSRaXGQDXYpYRqXPMn8qerto",
+      "name": "Ictue iglesia",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJk2TFi6_XYpYRlZkiaGtTy8g",
+      "name": "Iglesia",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "name": "Iglesia"
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "name": "Iglesia"
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "name": "Iglesia"
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "name": "Iglesia"
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "name": "Iglesia"
+        }
+      ],
+      "locations": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "address": "Moneda 2454, 8350581 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6704356,
+            -33.4442865
+          ]
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "address": "Gral Mackenna 1923, 8360428 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6563136,
+            -33.4626935
+          ]
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "address": "Eleuterio Ramírez 864, 8330392 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6479667,
+            -33.448756
+          ]
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "address": "Rogelio Ugarte 1115, 8360029 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.635249,
+            -33.457095
+          ]
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "address": "Nueva de Valdés 957, 8330892 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6454844,
+            -33.4534333
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJrzQ3xB_XYpYRUyrHvXs21u4",
+      "name": "Iglesia Evangélica Refidim Kemuel, Templo Adonai",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJmelJewDXYpYRwg3imnGbr68",
+      "name": "Iglesia C.A.P Chile generación de avivamiento",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJXyN3LtDXYpYRo06aBorgy0k",
+      "name": "Iglesia Cristiana Reencuentro",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJGf4oFADXYpYRAPup_1zSqWc",
+      "name": "Iglesia Elohim",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ_dL2XyfXYpYRBaMfdBSZzYU",
+      "name": "Iglesia Evangélica",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "name": "Iglesia evangelica"
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "name": "Iglesia Evangelica"
+        }
+      ],
+      "locations": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "address": "Almte. Barroso 915, 8340112 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.66284,
+            -33.43294
+          ]
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "address": "Mario Kreutzberger 1546, 8340267 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.659261,
+            -33.4359468
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJ3RaeSFXZYpYRM6n4cSkVD4M",
+      "name": "Iglesia Rescatados Por Cristo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJd-INrrrXYpYRrDRg_XzsVVw",
+      "name": "Iglesia El Séptimo Sello",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ0yVka1vWYpYROrg9dJyU1wE",
+      "name": "Parroquia San Esteban",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJQ32FjarXYpYRgEgmRwtLc4s",
+      "name": "Iglesia Universal del Reino de Dios",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJyUDqAqzXYpYRnjvu1be5Y7s",
+      "name": "Iglesia de Cristo",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "5f39d578d58fbce5c0009483",
+          "name": "Iglesia de Cristo"
+        },
+        {
+          "id": "4a470065b4cc8d23e4ca458c",
+          "name": "Iglesia de Cristo"
+        }
+      ],
+      "locations": [
+        {
+          "id": "5f39d578d58fbce5c0009483",
+          "address": "Nueva de Valdés 957, 8330892 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6448064,
+            -33.4567579
+          ]
+        },
+        {
+          "id": "4a470065b4cc8d23e4ca458c",
+          "address": "Madrid 956, 8330737 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6360668,
+            -33.4551311
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJI2H9TXPZYpYRausvjbxnseo",
+      "name": "Primera iglesia del Señor...local puente alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJQ7wSoTPXYpYRnCKxgLX500Y",
+      "name": "Iglesia Dios para todos Puente Alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJgZ7TO47XYpYRxsP7HI7dniA",
+      "name": "Iglesia Rebaño De Jesucristo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJg803RADXYpYRhtSRFQqYc3g",
+      "name": "Iglesia De Villa Horizonte de Chile",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJBR-03vPXYpYRjMLgkaoB86k",
+      "name": "Ministerio Ciudad de Dios",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJZyPQQwDXYpYRHMgw__WznqM",
+      "name": "Iglesia Nuevos Diseños de Vida (NDV) ministerio UPC",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJkW8MF9_WYpYRcUekz40AB0A",
+      "name": "Iglesia Adventista del Séptimo Día - MAHANAIM",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJd5_Ep9HWYpYRySV3z6HQlMc",
+      "name": "Iglesia Adventista del 7o día, Andes del Sur",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ-cPrfx_XYpYRJ7DSHcBXDU8",
+      "name": "Iglesia Evangelica",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "name": "Iglesia evangelica"
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "name": "Iglesia Evangelica"
+        }
+      ],
+      "locations": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "address": "Almte. Barroso 915, 8340112 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.66284,
+            -33.43294
+          ]
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "address": "Mario Kreutzberger 1546, 8340267 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.659261,
+            -33.4359468
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJWR5OPgDXYpYRG6yAlPG2lRM",
+      "name": "Iglesia Pozo de Jacob",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJrRIZFQDZYpYRqRFUMS7jN30",
+      "name": "Iglesia Ictue sector sur",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJQ680MRzZYpYR_XA8EklLqnA",
+      "name": "Primera iglesia del Señor..local puente alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJIVXucy_ZYpYRYPNYJyPHS5k",
+      "name": "Iglesia de Dios Maranatha",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJGY06uQrXYpYRea1Ku9mGIwc",
+      "name": "Iglesia Evangélica La Fe Apostólica de Chile - Local Rios de Agua Viva",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJYRjzeQDXYpYRnmczLJ61r7M",
+      "name": "Iglesia Puente Alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJizDdlSvYYpYR21SrYpVwRsQ",
+      "name": "Iglesia Nazarenos del Nuevo Pacto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJIR_oi-HXYpYRmoDpBnaXaiM",
+      "name": "Iglesia Saboreando A Jesús (Templo Arturo Pratt",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJuU4kaAnXYpYRh9bA47mCQAo",
+      "name": "Iglesia De Dios Palabra Divina",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJu-94SRfQYpYRYB3CVK_6nGo",
+      "name": "Mision Iglesia Pentecostal De Dios Santiago",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJISmrcdbPYpYRY4Ny0mbbAQI",
+      "name": "Iglesia Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJt_eWwyfQYpYRYug6iFPXeCM",
+      "name": "Iglesia Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJh2lLxfbPYpYRDrAdJPH-w8Q",
+      "name": "Local Jaime Eyzaguirre IEP Ñuñoa",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJdxqV3tjPYpYReEsGBCznYxc",
+      "name": "Iglesia Evengelica",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJm6fyjf3PYpYRpnjRxaOMkB0",
+      "name": "Iglesia Mision Evangelica Nacional, Santa Julia",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ2Y8eQQDPYpYRq1Wg6Iu5BsU",
+      "name": "Ministerio Evangelístico Misionero Jehová-Rohi",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJM4gSrd3PYpYRvx9UlUjE__Q",
+      "name": "Iglesia Misión Mundial Asamblea De Dios",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ57ITiJ7RYpYRMxsHUJSNMhc",
+      "name": "Capilla Maria Medianera",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJKZ8-IADPYpYRAokgrKtjPrs",
+      "name": "Iglesia M. P. Macul - Simon Bolivar",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJIZm5JCzPYpYR378FHapvl7Y",
+      "name": "Iglesia Unida Metodista Pentecostal Macul",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJWVxahePPYpYReiM_31lK8VE",
+      "name": "Iglesia Antioquía",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "871fb5c06895bbc472da216c",
+          "name": "Iglesia Antioquia"
+        }
+      ],
+      "locations": [
+        {
+          "id": "871fb5c06895bbc472da216c",
+          "address": "Av. Alameda Libertador Bernardo O'Higgins 2485, 8350657 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6701691,
+            -33.4481683
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJYeChQNfPYpYRxJv5eTwhZxg",
+      "name": "Parroquia",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ3-GbROfPYpYRzd1ONBNYD3c",
+      "name": "Iglesia El Buen Pastor",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJKTPcjN7PYpYRpZDNfw5wSHU",
+      "name": "Inmaculada Concepción",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJA0uL5n7RYpYRhhA2tQHx0JA",
+      "name": "Iglesia Misión Evangelica Nacional, Macul",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJQycH8iHQYpYRVBBhseqY2rA",
+      "name": "Iglesia Bíblica Bautista Jesús es la Roca",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJQbd79-LPYpYRdWX-3rxR2O8",
+      "name": "Iglesia Bautista Macul",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJc-m4j-bPYpYR03nzhrb659M",
+      "name": "Iglesia Biblica Bautista",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJi2hr7dbPYpYRGh8q_Feefws",
+      "name": "Capilla Espíritu Santo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJT9WR3dPPYpYRMPF5j-vFiAc",
+      "name": "IMP ÑUÑOA",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJhwIoTQDRYpYRW-YJ7RhquFs",
+      "name": "Local Las Lomas de Macul IEP Ñuñoa",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJJZQDOUDQYpYRUbebhwpD2mU",
+      "name": "Iglesia Internacional Del Evangelico Cuadrangular",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ133a9GnQYpYRdRk4DH5G8z0",
+      "name": "Capilla",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "306c02d8ba5fde003056f434",
+          "name": "Capilla"
+        }
+      ],
+      "locations": [
+        {
+          "id": "306c02d8ba5fde003056f434",
+          "address": "Simon Bolivar 2843, Nunoa, Santiago, Región Metropolitana, Chile",
+          "commune": "Ñuñoa",
+          "coordinates": [
+            -70.6563136,
+            -33.4626935
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJy1sUTwDRYpYRQBzYiPojnnU",
+      "name": "Capilla San Viator",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJywU9dR_QYpYRLrHPTVpJjaM",
+      "name": "Parroquia San Luis Gonzaga",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJz_VD6NfPYpYRPuGCZYvP5rk",
+      "name": "Iglesia Cristiana Renovacion Y Milagros",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJJX1JdQDPYpYRP4o3w8CWIEo",
+      "name": "Primp Clase Simón Bolívar",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJqfEM3NjPYpYRA115TUiZ1ek",
+      "name": "Local Santa Julia IEP Ñuñoa",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJDyGFG0LPYpYRmAbqDwsuF0g",
+      "name": "Iglesia los Olmos CIEV",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ7bAzrkbQYpYRMlvtgOkIirU",
+      "name": "Parroquia Salesiana Sagrada Familia",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJn3KCQB_QYpYRBUru3PoaHPI",
+      "name": "Capilla Macul Asambleas de Dios",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ0e086CbQYpYRqCSUsLD5Zco",
+      "name": "Iglesia Adventista del Séptimo Día - MACUL CENTRAL",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJE939bA7QYpYRrJLAqWUmMmU",
+      "name": "Iglesia del Sagrado Corazón del Campus San Joaquín",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJLzvhk8HPYpYRW2IueT-CXhQ",
+      "name": "Iglesia Bíblica Gracia Inagotable",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ15dQEgDPYpYR8C4BIVLCtAY",
+      "name": "Iglesia IMC MACUL",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJZSL3BePPYpYR0oxZdOGUJTo",
+      "name": "Capilla Santa Cruz",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJXSPVYADPYpYRtHc2rMpqyjU",
+      "name": "Iglesia Universal de Cristo Ñuñoa",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJI6-hefXQYpYRKMptomm0jOI",
+      "name": "Congregacion Clerigos de San Viator",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJFYY8xhjQYpYRYJpceQIIKSk",
+      "name": "Iglesia Catedral del Espíritu Santo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJN69ICDDQYpYRnqPsNwh_BrM",
+      "name": "Iglesia Metodista",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJYyTl6iPQYpYRtZSDt5VWH3E",
+      "name": "Nuestra Señora del Carmen",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJixGzNSPQYpYRWkLEnp_8DqU",
+      "name": "Parroquia María Reina",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJPwM0wi7QYpYRmxsIz7LIn9I",
+      "name": "Capilla Jesús Esperanza del Mundo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJU8P1JgDRYpYRlDrjJuWze60",
+      "name": "Iglesia San Sebastián",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJyYOETVXbYpYRF5Zj0i7Wj84",
+      "name": "Iglesia Casa de Luz",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJm63keA3QYpYRcqJKjCa6ke4",
+      "name": "Congregacion Del Verbo Divino",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "bf350d396a69a0100d422f93",
+          "name": "Congregacion Del Verbo Divino"
+        },
+        {
+          "id": "ee42507b0402641080c6d1e7",
+          "name": "Congregacion Del Verbo Divino"
+        }
+      ],
+      "locations": [
+        {
+          "id": "bf350d396a69a0100d422f93",
+          "address": "Virginia Opazo 65, 8370042 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.669148,
+            -33.4497131
+          ]
+        },
+        {
+          "id": "ee42507b0402641080c6d1e7",
+          "address": "Av Portales 2957, 8350528 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6759741,
+            -33.443181
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJwXYXRwDRYpYRxGYra3CZuME",
+      "name": "Capilla San Norberto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJa1tY7XHRYpYRaEhxidKKG0k",
+      "name": "Capilla Nuestra Señora de los Milagros",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJlwgRauDPYpYRe8QLYaKRFfY",
+      "name": "Iglesia Manantial de Vida Chile",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJj7PFQ-fPYpYR1y8oboggroE",
+      "name": "De La Iglesia Ruiz Jacint",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJFce1AXPQYpYRe1QwJ2tC9f0",
+      "name": "Iglesia UCB Villa Santa Elena",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJBau4nR_QYpYREjARk6xe9ss",
+      "name": "Ministerio Apostólico Pleroma",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJi5gTAvbRYpYRSCGhcrG2jVw",
+      "name": "Iglesia Asamblea Evangelica Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJT_LelB_QYpYRNBRfFk2CInk",
+      "name": "Congregacion Hijas de la Divina Providencia",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJjW6nLADPYpYR6eyji0FXdWM",
+      "name": "iglesia",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "name": "Iglesia"
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "name": "Iglesia"
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "name": "Iglesia"
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "name": "Iglesia"
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "name": "Iglesia"
+        }
+      ],
+      "locations": [
+        {
+          "id": "c3c1808eb2def60de1efd7b6",
+          "address": "Moneda 2454, 8350581 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6704356,
+            -33.4442865
+          ]
+        },
+        {
+          "id": "b93daede679fedc688291c46",
+          "address": "Gral Mackenna 1923, 8360428 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6563136,
+            -33.4626935
+          ]
+        },
+        {
+          "id": "208011bb51d4bd393712fd4f",
+          "address": "Eleuterio Ramírez 864, 8330392 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6479667,
+            -33.448756
+          ]
+        },
+        {
+          "id": "7e23379976b124cffa1ae8a5",
+          "address": "Rogelio Ugarte 1115, 8360029 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.635249,
+            -33.457095
+          ]
+        },
+        {
+          "id": "8fa98e50ff7cdc70eb8b0584",
+          "address": "Nueva de Valdés 957, 8330892 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.6454844,
+            -33.4534333
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJAwDQ4D_QYpYRLhomxMAffHQ",
+      "name": "Templo Lomas De Macul",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJezKhaeDPYpYRKNenqZ-WeWU",
+      "name": "Iglesia Avanza",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJDbW3TgDRYpYRGzM_tJinkUk",
+      "name": "Primera Iglesia Metodista Pentcostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJd79wJxjQYpYRCx7udCg3s3U",
+      "name": "Congregacion Vicentina",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ7T79eWTRYpYRVZ78lh8S0_w",
+      "name": "Iglesia mady",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJX70AXADRYpYRpTs84NN9uFE",
+      "name": "Local La Agrícola IEP Ñuñoa",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJGzlyXhvQYpYRUIm8-2y9oMk",
+      "name": "Capilla Santa María de la Esperanza",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJdaAJYW3QYpYRJsULfJJqfYo",
+      "name": "Capilla Santa Elena",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJmbIE3MHPYpYRTUXHu0SoLww",
+      "name": "Ministerio Visión y Misión Casa Macul",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJw2vhwxjQYpYRZePRKzpi-Pg",
+      "name": "capilla anexa IES",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJPWiDOB_QYpYRbHxxNQFNMio",
+      "name": "Iglesia Jesus Joven",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJgSKdgBvRYpYRNrFRqXB4AY4",
+      "name": "Ministerio Apostolico y profetico Elohim",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJOyz31DLRYpYRs0kQsC_EIk0",
+      "name": "Parroquia San Lorenzo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ8UQRyhvQYpYRacWHXJnopt0",
+      "name": "Capilla Sta Rosa De Macul",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJBbiPRADRYpYRx1quy_VCFvo",
+      "name": "Iglesia en Santiago",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ86UyOADRYpYRQPsfO0dSefU",
+      "name": "Local Chacarilla IEP Ñuñoa",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJoYjWcBDQYpYRnPmC-vpPnxc",
+      "name": "Iglesia Adventista del Séptimo Día Pedro de Valdivia",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJITXGiRnQYpYR62sPAxxAd6k",
+      "name": "Parroquia San Norberto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJg9EoBAXQYpYR2oc_4MqpUi4",
+      "name": "Capilla santa teresita",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJy5fWNiPQYpYRotppKSJ8Z4E",
+      "name": "Capilla Santa Maria",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJfz38Li3RYpYRFwgHwDmnDbM",
+      "name": "Iglesia Cristiana La Viña Roble",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJLytJnq3PYpYR45lmH9UEtFQ",
+      "name": "Epes Plenitud",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ2do-kDfFYpYRlAsPbRLeLZs",
+      "name": "Capilla INGER",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ06l_9ofFYpYR4-KqcFp_Tu0",
+      "name": "Asoc Ayuda A la Iglesia Que Sufre",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJz6s-e4TFYpYRhpXbSJlVGRA",
+      "name": "Parroquia de los Santos Angeles Custodios",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJA_jZVELFYpYRmUsEHJQf_GU",
+      "name": "Fraternidad Misionera Verbum Dei",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJyVeZ4IfFYpYRWGPgtuL_C_A",
+      "name": "Capilla Nuestra Señora del Carmen - VERBUM DEI",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ0bEapn7PYpYRudLEcZolZJk",
+      "name": "Parroquia Jesús Nazareno",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJqzktZADPYpYR3-GO967BRVQ",
+      "name": "Clase Chile España, PRIMP CATEDRAL EVANGELICA",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJPeM7GmXPYpYRlcqnwCOnLBg",
+      "name": "Iglesia Cristiana La Casa del Señor, Providencia",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJdR9UjpjPYpYRwHaf2_lr8so",
+      "name": "Iglesia Evangelica Bautista de Ñuñoa",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJSyVjxG7PYpYR0aGWRTJqWi0",
+      "name": "Iglesia Evangelica Luterana el Redentor ILCH",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJbXUFHwDRYpYR-bznMrjBu6k",
+      "name": "Décima Iglesia Presbiteriana La Paz de Cristo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJVQyZ6IXQYpYR0kNMBIaqMjQ",
+      "name": "Ministerio Evangelistico Pentecostal Adonay",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJLwW44ZXQYpYRhwKt0FDo6lg",
+      "name": "IGLESIA CRISTIANA PENTECOSTAL DE CHILE",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJa4ujLADRYpYRGyQHqsvQtfo",
+      "name": "Iglesia Apostólica Jesucristo es la vida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJWzX3Qf_QYpYRGtO0m7JHD_w",
+      "name": "Iglesia Misionera El Es El Primero Y El Ultimo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJrfC8WwDRYpYRV3XN70z2go8",
+      "name": "Local Cooperativa IEP San Luis de Macul",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJD58DqsrQYpYRmjUzwpRXqO4",
+      "name": "Iglesia Pentecostal Apostolica",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJBx9wEQDRYpYRWj-hgr3Z31A",
+      "name": "Local Las Araucarias IEP San Luis de Macul",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ9w0st1rRYpYR_K9noCW0lws",
+      "name": "Iglesia Hope Santiago",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ43_kSgDRYpYRxeIh-NdTYVU",
+      "name": "Iglesia Comunidad Emanuel",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJhcGOofXQYpYRzyYFQtsdJK4",
+      "name": "Santuario Nacional de Schoenstatt - Cenáculo de Bellavista",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ2ZFe243QYpYRmQWYPv_KEII",
+      "name": "Iglesia de Jesucristo Luz del Mundo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJqdZ2PQDRYpYRQPUUVLjfFac",
+      "name": "Iglesia de Dios Templo Adonai",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJYQSoNwDRYpYRNo3YIiwM_xo",
+      "name": "Local María Elena IEP San Jorge",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJo0Jgg0PRYpYRcjFF-4zqxoc",
+      "name": "Iglesia Corporación Pentecostés Luz y Vida",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ5_MaYzLRYpYRwtZFJhuTykg",
+      "name": "Iglesia Pentecostal",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJtWB8w6_XYpYRny50uRfZXAo",
+      "name": "IGLESIA PENTECOSTAL LA ÚLTIMA LLAMADA",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ3R-Wo6XXYpYRqHn0SvCikOc",
+      "name": "Iglesia Pentecostal Evangelica ISAJ",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJB6n1FUfXYpYR9fNiu8_JWQs",
+      "name": "IGLESIA BAUTISTA DE AV GABRIELA",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJKdY4AIXXYpYReEMfULpy0c8",
+      "name": "IGLESIA BAUTISTA LIBERTAD",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJpyerJATXYpYRwrxtyJOxmm4",
+      "name": "IECPA",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJIWHXLanWYpYRB_0B8mfY0LM",
+      "name": "Iglesia Bíblica Bautista Cordillera",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ_5ZQBz7XYpYRt2qhHQoesCQ",
+      "name": "IGLESIA PENTECOSTAL CENTRO MISIONERO CRISTIANO",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ5fNbU__XYpYRYOqLyOlwPZQ",
+      "name": "Iglesia COCEDEIN puente alto",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJqZbD6ijXYpYRCXxnMKnbI_I",
+      "name": "Congregación Cristiana el Renuevo",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJARyyqFLWYpYRAir_3lvMThw",
+      "name": "IGLESIA UNIVERSAL DE CRISTO",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJraU-YlTWYpYR7UKvaQaQee0",
+      "name": "IGLESIA EVANGELICA ASAMBLEA DE DIOS",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJBQDrX0HXYpYRF0VjSuTljJM",
+      "name": "REY DE PAZ IGLESIA BAUTISTA",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJB90OHabPYpYRMpSs2QHLQQQ",
+      "name": "Movimiento Misionero Mundial-Campo blanco Macul",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJc83WM9HPYpYRVig59LTVwTQ",
+      "name": "Iglesia El Redentor",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJP_xfXEPPYpYRwHE4V0McowQ",
+      "name": "Alcanzando el Reino de Dios",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJa6RBckLQYpYR5ZOEX8fTj28",
+      "name": "Iglesia Evangelica",
+      "action": "insert",
+      "reason": "same_name_distinct_location_over_1km",
+      "target": null,
+      "candidates": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "name": "Iglesia evangelica"
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "name": "Iglesia Evangelica"
+        }
+      ],
+      "locations": [
+        {
+          "id": "59c19230a609ebc8616726e9",
+          "address": "Almte. Barroso 915, 8340112 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.66284,
+            -33.43294
+          ]
+        },
+        {
+          "id": "1a518652ebdb255ebe8063dd",
+          "address": "Mario Kreutzberger 1546, 8340267 Santiago, Región Metropolitana, Chile",
+          "commune": "Santiago",
+          "coordinates": [
+            -70.659261,
+            -33.4359468
+          ]
+        }
+      ]
+    },
+    {
+      "key": "google_maps:ChIJa6RBckLQYpYR0P11xxed4gI",
+      "name": "Iglesia JVL",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    },
+    {
+      "key": "google_maps:ChIJ1xoSWSLPYpYRTVqqsvqfEPU",
+      "name": "Local Santa Carolina IEP Ñuñoa",
+      "action": "insert",
+      "reason": "new_identity",
+      "target": null
+    }
+  ]
+}

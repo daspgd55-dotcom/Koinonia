@@ -4,7 +4,7 @@ Implementación local de la primera versión. No se ejecutaron pruebas, comproba
 
 ## Recorrido
 
-`#/inscribe-tu-iglesia` reúne cuatro pasos: iglesia, solicitante, equipo y revisión/consentimientos. La búsqueda pública usa el catálogo existente; no revela borradores ni fichas inactivas. Los correos propuestos son privados. No crea cuentas ni concede permisos al enviar.
+`#/inscribe-tu-iglesia` reúne cuatro pasos: iglesia, solicitante, equipo y revisión/consentimientos. La búsqueda de inscripción usa GET /lookup y permite identificar fichas publicadas, borradores e inactivas, por petición expresa del usuario. Solo devuelve ID, nombre, dirección, comuna y ciudad; no devuelve estado interno, contactos, equipo, anotaciones ni la ficha completa. Omite registros fusionados. No amplía los permisos de consulta del catálogo público habitual. Los correos propuestos son privados. El solicitante puede figurar también como representante con el mismo correo; solo se rechazan filas repetidas dentro del equipo. La corrección del correo del solicitante antes de confirmar también admite coincidencia con un representante. No crea cuentas ni concede permisos al enviar.
 
 La solicitud separada recibe una referencia aleatoria y un enlace de confirmación de 24 horas, consumido mediante POST explícito. La confirmación es independiente de EMAIL_VERIFICATION_REQUIRED. Una sesión privada de seguimiento de dos horas queda solo en memoria del navegador; se recupera mediante referencia y correo, con respuesta genérica. Corregir correo solo es posible antes de confirmarlo. La corrección invalida enlaces anteriores. Se admiten enlaces de confirmación de la primera entrega mientras sigan vigentes.
 
@@ -12,7 +12,7 @@ La persona puede responder aclaraciones, retirar el trámite, pedir no contacto 
 
 ## Administración
 
-`#/administracion/inscripciones`, exclusivo del administrador global, ofrece bandeja paginada, filtro de estado, historial, mensajes visibles al solicitante y peticiones de privacidad.
+`#/administracion/inscripciones`, exclusivo del administrador global, ofrece una bandeja con búsqueda por iglesia/correo/referencia, contadores globales por estado, paginación y filtros. El detalle se organiza en Revisión, Aprobación, Equipo y contacto, e Historial y privacidad; las pestañas admiten flechas, Inicio y Fin, y conservan los formularios al alternarlas. Al abrir una solicitud se consultan coincidencias automáticamente.
 
 La convalidación busca nombres, direcciones, comunas y enlaces en registros públicos, borradores e inactivos. Sugiere coincidencias con señales y discrepancias explícitas, sin resolver identidad automáticamente. Muestra hasta 100 candidatos: si se alcanza el límite, refinar manualmente. Las sugerencias se recalculan; la decisión y su fundamento quedan persistidos.
 
@@ -63,6 +63,7 @@ Todas las rutas bajo `/api/church-registrations`; respuestas privadas con Cache-
 | POST / | Público, cuotas | Crear solicitud y sesión inicial |
 | POST /confirm | Token de un uso | Confirmar/abrir seguimiento |
 | POST /recover | Referencia + correo, respuesta genérica | Renovar enlace |
+| GET /lookup?q=... | Público, cuotas | Buscar registros para inscribir; incluye borradores e inactivos con proyección mínima |
 | GET /track | X-Registration-Session | Seguimiento privado |
 | POST /respond | Sesión privada + versión | Responder, corregir correo, retirar o pedir privacidad |
 | POST /invitation | Token | Consultar función y destinatario de la invitación |
@@ -84,3 +85,14 @@ Las rutas no permiten que el navegador establezca un rol global, falsee confirma
 ## Estado de validación
 
 Implementación incorporada al checkout; sin pruebas ejecutadas por instrucción del usuario. No se afirma que el recorrido, las transacciones, el worker o la interfaz estén verificados en ejecución. Antes de un despliegue deben comprobarse en un entorno aislado, incluyendo concurrencia, conservación de equipos, flujo de registro/login/MFA, no contacto, cola y errores de proveedor. No se configuraron proveedores ni se hicieron escrituras de producción.
+
+## Refinamiento de interfaz — 2026-11-03
+
+- Formulario en cuatro pasos con progreso, ayuda breve, tarjetas de datos y resumen editable; sitio web/redes opcionales plegables.
+- Búsqueda independiente con estados de carga, error, sin coincidencias y resultados; consulta desde tres caracteres, insensible a mayúsculas y tildes del nombre. Máximo diez resultados y aviso para refinar cuando hay más. Cancela respuestas obsoletas al cambiar la consulta. Seleccionar una ficha completa campos vacíos sin sobrescribir texto editado por la persona.
+- Casillas y radios con ancho fijo de 20 px, sin heredar width:100% de los inputs generales. Declaraciones en dos columnas: casilla y texto flexible; diseño adaptable y sin animaciones adicionales.
+- Botón para incluir al solicitante en el equipo con su mismo correo. La asignación final sigue pasando por aprobación y aceptación, sin crear dos representantes para el mismo correo.
+- Textos de consentimiento de nuevas solicitudes versionados como 2: «Estoy autorizado para presentar esta solicitud. Declaro que cuento con autorización de la iglesia para realizar su inscripción» y «Acepto las comunicaciones sobre la inscripción. Incluyen confirmación de correo, revisión y resolución de la solicitud. No incluyen publicidad». Los registros anteriores conservan su versión.
+- Lookup: 60 consultas por IP en 15 minutos, además de la cuota general. Exige q de 3 a 120 caracteres, escapa expresiones regulares y no permite listar todos los registros con una consulta vacía. La selección de sugerencias acepta fichas que todavía no están publicadas.
+
+No se ejecutaron pruebas, compilación ni verificación visual en navegador en este refinamiento, siguiendo la instrucción vigente del usuario. La revisión realizada fue por lectura del código; no certifica el resultado desplegado.
