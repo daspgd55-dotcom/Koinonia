@@ -4,4 +4,6 @@ exports.issue=async(req,res)=>{res.set('Cache-Control','no-store');const body=pa
 exports.revoke=async(req,res)=>{const body=parse(z.strictObject({email,reason:z.string().trim().max(2000).default('')}),req.body);reply(res,await svc.revoke(parse(id,req.params.id),body.email,expectedVersion(req),body.reason,req.user));};
 exports.limit=async(req,res,next)=>{res.set('Cache-Control','no-store');await quota(req.app.locals.config,'outreach-member-ip',req.ip,40,900000);await quota(req.app.locals.config,'outreach-member-user',String(req.user._id),30,900000);next();};
 exports.inspect=async(req,res)=>{const body=parse(z.strictObject({token}),req.body);reply(res,await svc.inspect(body.token,req.user,req.app.locals.config));};
-exports.respond=async(req,res)=>{const body=parse(z.strictObject({token,answer:z.enum(['accept','decline'])}),req.body);await quota(req.app.locals.config,'outreach-member-token',hash(body.token),15,900000);reply(res,await svc.respond(body.token,body.answer,req.user,req.app.locals.config));};
+exports.respond=async(req,res)=>{const body=parse(z.strictObject({token,answer:z.enum(['accept','decline'])}),req.body);await quota(req.app.locals.config,'outreach-member-token',hash(body.token),15,900000);const {directNotice,...result}=await svc.respond(body.token,body.answer,req.user,req.app.locals.config);
+ if(directNotice){try{await require('../services/account-security.service').send(req,directNotice.email,directNotice.subject,directNotice.text);result.confirmationMail='accepted';}catch{result.confirmationMail='unconfirmed';}}
+ reply(res,result);};

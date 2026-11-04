@@ -65,4 +65,4 @@ async function validGuard(g,cfg){
  if(!['awaiting_response','needs_clarification'].includes(row.response.state)||(g.reminder&&row.response.state!=='awaiting_response')||!require('../config/church-outreach-legal').current().enabled||require('../config/church-outreach-legal').current().testBypass)return false;
  return !!await Access.exists({_id:g.access,invitation:row._id,tokenHash:g.hash,purpose:'institutional_link',consumedAt:null,revokedAt:null,expiresAt:{$gt:new Date()}});
 }
-module.exports={capabilities,plans,prepare,enqueue,cancel,validGuard,contactKey};
+module.exports={suppressed,capabilities,plans,prepare,enqueue,cancel,validGuard,contactKey};

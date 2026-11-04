@@ -29,7 +29,14 @@ async function deliver(cfg,data,id,fetcher=fetch){
  if(r.ok){const body=await r.json().catch(()=>({}));return {ok:true,providerId:typeof body.id==='string'?body.id:undefined};}const body=await r.json().catch(()=>({}));
  return {ok:false,temporary:r.status===429||r.status===408||r.status>=500||(r.status===409&&body.name==='concurrent_idempotent_requests'),reason:r.status===429?'provider_rate_limit':r.status>=500?'provider_temporary':'provider_rejected',delay:retryAfter(r.headers?.get('retry-after'))};
 }
-async function guardValid(g,cfg){if(!g)return true;if(g.outreach)return require('./church-outreach-mail.service').validGuard(g,cfg);if(g.registration)return require('./church-registration.service').validMailGuard(g);return !!await User.exists({_id:g.user,active:true,[g.field+'.hash']:g.hash,[g.field+'.expiresAt']:{$gt:new Date()}});}
+async function guardValid(g,cfg){if(!g)return true;if(g.outreachConfirmation){
+  if(!cfg.outreachMail?.enabled)return false;
+  const member=await require('../models/church-outreach-member.model').findOne({_id:g.outreachConfirmation,state:'accepted'});
+  if(!member)return false;
+  const row=await require('../models/church-outreach-invitation.model').findById(member.invitation);
+  const {suppressed}=require('./church-outreach-mail.service');
+  return !!row&&!row.noContact?.requested&&!await suppressed(member.church,member.email)&&!await suppressed(member.church,row.recipient.email);
+ }if(g.outreach)return require('./church-outreach-mail.service').validGuard(g,cfg);if(g.registration)return require('./church-registration.service').validMailGuard(g);return !!await User.exists({_id:g.user,active:true,[g.field+'.hash']:g.hash,[g.field+'.expiresAt']:{$gt:new Date()}});}
 async function runOne(cfg,{send=deliver,random=Math.random}={}){
  if(!enabled(cfg))return false;validate(cfg);const owner=crypto.randomUUID(),now=new Date();
  const job=await Job.findOneAndUpdate({transport:{$ne:'direct'},...(!cfg.outreachMail?.enabled?{outreachMail:{$exists:false}}:{}),$or:[{state:{$in:['pending','retry']},nextAttemptAt:{$lte:now}},{state:'processing',leaseUntil:{$lte:now}}]},{$set:{state:'processing',owner,leaseUntil:new Date(Date.now()+60000)}},{sort:{nextAttemptAt:1},returnDocument:'after'}).select('+payload');if(!job)return false;
