@@ -4,12 +4,14 @@ function capabilities(cfg){return {enabled:cfg.outreachMail?.enabled===true,queu
 // Resolve reverse aliases too: a suppression on an older merged card must survive the merge.
 async function family(id,session=null){const ids=[id];let frontier=[id];for(let depth=0;frontier.length&&depth<50;depth++){const rows=await Church.find({mergedInto:{$in:frontier}}).select('_id').session(session).lean();frontier=rows.map(r=>r._id).filter(v=>!ids.some(id=>String(id)===String(v)));ids.push(...frontier);if(ids.length>1000)throw conflict('La identidad de iglesia requiere revisar sus fusiones.');}if(frontier.length)throw conflict('La cadena de fusiones excede el límite operativo.');return ids;}
 async function suppressed(church,email,session=null){const ids=await family(church,session);return !!await Contact.exists({church:{$in:ids},email,$or:[{noContact:true},{deliveryBlocked:true}]}).session(session);}
+function excludesTestChurch(church,kind){
+ const isTestChurch=church?.metadata?.testData||church?.testOnly||church?.importInfo?.batchId?.includes('synthetic');
+ return isTestChurch && !(kind==='member' && Invitation.db.name==='koinonia_synthetic_test_v2');
+}
 async function plan(selection,cfg,session=null){
  const row=await Invitation.findById(selection.invitation).session(session),reasons=[];if(!row)return {selection,reasons:['invitation_missing'],eligible:false};
  const member=selection.kind==='member'?await Member.findOne({invitation:row._id,email:selection.email}).session(session):null,church=await Church.findById(row.church).session(session).lean(),email=selection.kind==='member'?member?.email:row.recipient.email;
- if(!church||church.mergedInto)reasons.push('church_missing_or_merged');const synthetic=church?.metadata?.testData||church?.testOnly||church?.importInfo?.batchId?.includes('synthetic');
- const allowedDemoMember=selection.kind==='member'&&Invitation.db.name==='koinonia_synthetic_test_v2'&&cfg.outreachMail?.testRecipients?.includes(email);
- if(synthetic&&!allowedDemoMember)reasons.push('test_data');
+ if(!church||church.mergedInto)reasons.push('church_missing_or_merged');if(excludesTestChurch(church,selection.kind))reasons.push('test_data');
  if(!row.active||row.expiresAt<=new Date()||row.noContact?.requested)reasons.push('cycle_closed_expired_or_suppressed');
  if(email&&await suppressed(row.church,email,session))reasons.push('no_contact_or_permanent_delivery_failure');
  if(row.noContact?.requested||await suppressed(row.church,row.recipient.email,session))reasons.push('institutional_contact_stopped');
@@ -64,7 +66,7 @@ async function validGuard(g,cfg){
  const row=await Invitation.findById(mail.invitation);if(!row||!row.active||row.expiresAt<=new Date()||row.noContact?.requested||await suppressed(row.church,mail.email)||await suppressed(row.church,row.recipient.email))return false;
  const target=await base.inspectTarget(row.church);if(!base.readiness(row,target,await Contact.findById(row.contactKey)).preparationReady)return false;
  if(g.member){const church=await Church.findById(row.church).select('metadata.testData testOnly importInfo.batchId').lean();
-  if((church?.metadata?.testData||church?.testOnly||church?.importInfo?.batchId?.includes('synthetic'))&&!(Invitation.db.name==='koinonia_synthetic_test_v2'&&cfg.outreachMail?.testRecipients?.includes(mail.email)))return false;
+  if(excludesTestChurch(church,'member'))return false;
   return !!await Member.exists({_id:g.member,invitation:row._id,email:mail.email,state:'pending',active:true,tokenHash:g.hash,expiresAt:{$gt:new Date()}})&&row.proposedRepresentatives.some(p=>p.email===mail.email&&p.reviewState==='approved');}
  if(!['awaiting_response','needs_clarification'].includes(row.response.state)||(g.reminder&&row.response.state!=='awaiting_response')||!require('../config/church-outreach-legal').current().enabled||require('../config/church-outreach-legal').current().testBypass)return false;
  return !!await Access.exists({_id:g.access,invitation:row._id,tokenHash:g.hash,purpose:'institutional_link',consumedAt:null,revokedAt:null,expiresAt:{$gt:new Date()}});

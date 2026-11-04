@@ -1,24 +1,44 @@
 const {createHash}=require('node:crypto');
-const version='1.0 · 2026-11-04';
+const version='2.0', footer='Versión '+version+' · 4 de noviembre de 2026';
 const documents={
- terms:{version,text:`Participación en Koinonía
+ terms:{version,text:`Condiciones de participación
 
-Koinonía es un proyecto académico que invita a iglesias a revisar y completar su ficha. Esta invitación corresponde a la iglesia que aparece en pantalla. El enlace es personal. Si la ficha o el destinatario son incorrectos, puedes informarlo en la sección de problemas. También puedes declinar la invitación sin aceptar estas condiciones.
+Koinonía es una iniciativa personal para facilitar el encuentro entre personas, iglesias y comunidades cristianas. Su desarrollo también forma parte de un proyecto de titulación. Con esta invitación te proponemos colaborar en la actualización de la ficha de la iglesia que aparece en pantalla.
 
-Al enviar la propuesta declaras que tienes autorización para coordinar esta respuesta. Puedes hacerlo sin formar parte del equipo. Antes de incluir a otra persona, explícale para qué se usarán su nombre, correo y función propuesta y obtén su permiso para compartirlos con Koinonía y para que reciba la invitación individual. Comprueba su dirección de correo antes de enviar.
+Quién puede responder
 
-El administrador de Koinonía revisará la propuesta y podrá solicitar aclaraciones, aprobar personas y funciones o rechazar la solicitud. La propuesta por sí sola no concede acceso. Cada persona aprobada decide si acepta desde una cuenta con su propio correo destinatario. Su acceso queda limitado a la iglesia y la función asignadas.
+Puedes coordinar la respuesta aunque no quieras formar parte del equipo. Al enviar la propuesta, declaras que tienes autorización de la iglesia para presentarla. Si el mensaje llegó al contacto equivocado o la ficha corresponde a otra iglesia, puedes comunicarlo en la sección de problemas. También puedes rechazar la invitación sin aceptar estas condiciones.
 
-Quien acepte una función debe usar los permisos para las tareas de esa iglesia, cuidar los datos a los que tenga acceso y mantener sus credenciales personales. La presentación de la propuesta no publica ni verifica automáticamente la ficha.`},
- privacy:{version,text:`Datos y finalidad de esta invitación
+Cómo proponer al equipo
 
-El equipo de Koinonía gestiona este trámite. La invitación vincula una ficha existente con un correo de contacto y registra cómo se obtuvo. Al responder, se guardan tu nombre, tu vínculo con la iglesia, la respuesta y, cuando propones un equipo, los nombres, correos y funciones indicados. Esa vinculación puede revelar una relación con una comunidad religiosa. Incluye únicamente los datos solicitados y evita incorporar antecedentes personales adicionales.
+Antes de incluir a alguien, explícale qué función propones, qué datos compartirás con Koinonía y que podría recibir una invitación personal. Obtén su permiso y comprueba su correo. Utiliza únicamente el nombre, el correo y la función necesarios para la propuesta.
 
-Koinonía usa estos datos para revisar la propuesta, contactar a las personas aprobadas, gestionar su aceptación y asignar o retirar acceso a la iglesia. El administrador global puede consultar el expediente. Los servicios de alojamiento, base de datos y correo intervienen para operar el trámite. El proveedor de correo procesa el destinatario y el contenido de los mensajes. La propuesta no se publica en el catálogo de iglesias.
+Revisión y acceso
 
-El expediente conserva las fechas, las decisiones, las versiones de los documentos aceptados y los eventos necesarios para seguir la invitación y resolver incidencias. Cuando una persona acepta, su cuenta se vincula con la iglesia y la función aprobada. Las comunicaciones se limitan a esta gestión y no implican una suscripción a publicidad.
+La administración de Koinonía revisa cada propuesta y puede pedir aclaraciones, ajustar funciones, aprobarla o rechazarla. Cada persona aprobada decide si acepta con una cuenta asociada al correo invitado. En iglesias sin administrador activo, la persona designada como administradora debe aceptar primero.
 
-Puedes solicitar acceso, corrección o eliminación de tus datos al equipo de Koinonía mediante el canal institucional que te hizo llegar esta invitación, indicando la iglesia y el correo afectado. En el trámite también puedes elegir «No contactar más este correo por esta iglesia». Koinonía conserva el registro necesario para respetar esa solicitud. Esta opción detiene el contacto para esa iglesia y correo, pero no elimina automáticamente el historial.`}
+Al aceptar, te comprometes a usar tus permisos para las tareas de tu iglesia, cuidar la información a la que accedas y mantener en privado tus credenciales y enlaces personales. La aprobación de una propuesta no publica ni verifica automáticamente la ficha.
+
+${footer}`},
+ privacy:{version,text:`Política de privacidad de la invitación
+
+Información que se registra
+
+Koinonía vincula la ficha de la iglesia con el correo al que se dirige la invitación y registra la procedencia del contacto. Si respondes, se registra tu respuesta. Si presentas una propuesta, se guardan tu nombre, tu vínculo con la iglesia y los nombres, correos y funciones de las personas propuestas. Estos datos pueden revelar una vinculación con una comunidad cristiana. Evita incluir antecedentes personales ajenos a la invitación.
+
+Finalidad y acceso
+
+La administración de Koinonía utiliza esta información para revisar la propuesta, contactar a las personas aprobadas y gestionar sus permisos. Cuando una persona acepta, se vincula su cuenta con la iglesia y la función asignada. El administrador global puede consultar el expediente. La propuesta y los correos de sus integrantes no se publican en el catálogo de iglesias.
+
+Los servicios de alojamiento y almacenamiento procesan la información necesaria para operar la aplicación. El proveedor de correo recibe la dirección de cada destinatario y el contenido del mensaje que debe enviar. Las comunicaciones se limitan a la invitación, su revisión y la activación del acceso. Aceptarlas no implica suscribirse a publicidad.
+
+Registro y consultas
+
+Koinonía conserva las fechas, decisiones, eventos de envío y versiones de los documentos aceptados para dar seguimiento a la invitación y resolver incidencias. Puedes solicitar acceso, corrección o eliminación de tus datos mediante el canal de contacto del equipo de Koinonía que te hizo llegar la invitación. Indica la iglesia y el correo asociado para que el equipo pueda localizar tu solicitud.
+
+Si eliges «No contactar más este correo por esta iglesia», Koinonía conserva el registro necesario para respetar tu decisión. Si además deseas solicitar la eliminación de tus datos, puedes indicarlo al equipo por el mismo canal.
+
+${footer}`}
 };
 const revision=createHash('sha256').update(JSON.stringify(documents)).digest('hex');
 function current(){return {enabled:true,...documents,revision};}
