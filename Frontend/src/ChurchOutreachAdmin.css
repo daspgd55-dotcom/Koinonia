@@ -5,3 +5,5 @@
 .oa-mail-preview,.oa-mail-batch{border:1px solid #ccd8d0;padding:18px;border-radius:10px;margin:18px 0}.oa-mail-preview pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.7}.oa-mail-selection{padding-left:20px}.oa-mail-selection li{margin:20px 0}
 
 .oa-page>header{background:transparent;color:#17232d}
+
+.oa-page .oa-fold{background:#f7f9f5;border:1px solid #ccd8cf;border-radius:12px;margin:16px 0;padding:0 18px}.oa-fold>summary{font-weight:650;color:#245851}.oa-fold[open]{padding-bottom:16px}

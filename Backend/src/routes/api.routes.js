@@ -23,6 +23,7 @@ const outreach=require('../controllers/church-outreach.controller');
 const outreachAdmin=require('../controllers/church-outreach-admin.controller');
 const outreachMember=require('../controllers/church-outreach-member.controller');
 const outreachMail=require('../controllers/church-outreach-mail.controller');
+router.post('/church-outreach-invitations/:id/send-members',auth,admin,outreachMail.sendMembers);
 router.get('/church-outreach-mail-batches',auth,admin,outreachMail.list);
 router.post('/church-outreach-mail-batches/preview',auth,admin,outreachMail.preview);
 router.post('/church-outreach-mail-batches',auth,admin,outreachMail.prepare);

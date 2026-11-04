@@ -1,6 +1,6 @@
 const {randomBytes}=require('node:crypto'),Batch=require('../models/church-outreach-mail-batch.model'),Mail=require('../models/church-outreach-mail.model'),Invitation=require('../models/church-outreach-invitation.model'),Member=require('../models/church-outreach-member.model'),Access=require('../models/church-outreach-access.model'),Contact=require('../models/church-outreach-contact.model'),Church=require('../models/church.model'),Job=require('../models/mail-job.model'),Event=require('../models/church-outreach-event.model'),base=require('./church-outreach.service'),queue=require('./mail-queue.service'),{hash,quota}=require('./account-security.service'),templates=require('./church-outreach-mail-templates'),{HttpError}=require('../utils/errors');
 const conflict=message=>new HttpError(409,'OUTREACH_MAIL_CONFLICT',message),identity=s=>[String(s.invitation),s.kind,s.email||''].join(':'),contactKey=(church,email)=>hash(String(church)+'\n'+email);
-function capabilities(cfg){return {enabled:cfg.outreachMail?.enabled===true,queueEnabled:queue.enabled(cfg),configured:!!(cfg.mail&&cfg.mailQueue),manualUrl:cfg.outreachMail?.manualUrl||null,scheduled:false};}
+function capabilities(cfg){return {enabled:cfg.outreachMail?.enabled===true,queueEnabled:queue.enabled(cfg),configured:!!(cfg.mail&&(!queue.enabled(cfg)||cfg.mailQueue)),manualUrl:cfg.outreachMail?.manualUrl||null,scheduled:false};}
 // Resolve reverse aliases too: a suppression on an older merged card must survive the merge.
 async function family(id,session=null){const ids=[id];let frontier=[id];for(let depth=0;frontier.length&&depth<50;depth++){const rows=await Church.find({mergedInto:{$in:frontier}}).select('_id').session(session).lean();frontier=rows.map(r=>r._id).filter(v=>!ids.some(id=>String(id)===String(v)));ids.push(...frontier);if(ids.length>1000)throw conflict('La identidad de iglesia requiere revisar sus fusiones.');}if(frontier.length)throw conflict('La cadena de fusiones excede el límite operativo.');return ids;}
 async function suppressed(church,email,session=null){const ids=await family(church,session);return !!await Contact.exists({church:{$in:ids},email,$or:[{noContact:true},{deliveryBlocked:true}]}).session(session);}
@@ -27,11 +27,11 @@ async function plan(selection,cfg,session=null){
 }
 async function plans(selections,cfg,session=null){const items=[];for(const selection of selections)items.push(await plan(selection,cfg,session));return {items,digest:hash(JSON.stringify(items)),capabilities:capabilities(cfg)};}
 async function prepare(selections,key,actor,cfg){const requestKey=hash(String(actor._id)+':'+key),requestHash=hash(JSON.stringify(selections)),prior=await Batch.findOne({requestKey});if(prior){if(prior.requestHash!==requestHash)throw conflict('La clave de preparación ya tiene otros destinatarios.');return prior;}const preview=await plans(selections,cfg);try{return await Batch.create({createdBy:actor._id,requestKey,requestHash,digest:preview.digest,selections,preview,expiresAt:new Date(Date.now()+86400000)});}catch(e){if(e.code!==11000)throw e;const row=await Batch.findOne({requestKey});if(row?.requestHash!==requestHash)throw conflict('La clave de preparación ya se utilizó.');return row;}}
-async function enqueue(id,version,actor,cfg){
- const caps=capabilities(cfg);if(!caps.enabled||!caps.queueEnabled||!caps.configured)throw conflict('Envío deshabilitado. Requiere habilitación explícita del flujo y la cola cifrada configurada.');
+async function enqueue(id,version,actor,cfg,fetcher){
+ const caps=capabilities(cfg);if(!caps.enabled||!caps.configured)throw conflict('Configura el transporte de correo y habilita OUTREACH_MAIL_ENABLED en el backend.');
  await quota(cfg,'outreach-batch-admin',String(actor._id),5,3600000);
- return Batch.db.transaction(async session=>{
-  const batch=await Batch.findById(id).session(session);if(!batch)throw conflict('Lote no disponible.');if(batch.state==='queued')return batch;
+ const direct=[];const result=await Batch.db.transaction(async session=>{
+  direct.length=0;const batch=await Batch.findById(id).session(session);if(!batch)throw conflict('Lote no disponible.');if(batch.state==='queued')return batch;
   if(batch.state!=='prepared'||batch.version!==version||batch.expiresAt<=new Date())throw conflict('El lote cambió, venció o fue cancelado.');const preview=await plans(batch.selections,cfg,session);if(preview.digest!==batch.digest)throw conflict('Cambió el contexto o la vista previa. Prepara y revisa otro lote.');if(preview.items.some(p=>!p.eligible))throw conflict('El lote contiene exclusiones. Prepara otro con destinatarios habilitados.');
   for(const item of preview.items){
    await quota(cfg,'outreach-mail-recipient',item.email,3,86400000);
@@ -39,11 +39,22 @@ async function enqueue(id,version,actor,cfg){
    if(member){member.tokenHash=tokenHash;member.expiresAt=expiresAt;member.issuedAt=now;member.state='pending';member.version++;await member.save({session});}else{await Access.updateMany({invitation:row._id,revokedAt:null},{$set:{revokedAt:now}},{session});[access]=await Access.create([{invitation:row._id,tokenHash,purpose:'institutional_link',expiresAt}],{session});row.lastLinkIssuedAt=now;}
    const church=await Church.findById(row.church).session(session),link=cfg.mail.appUrl+'/#/'+(member?'invitacion-equipo':'invitacion-iglesia')+'?token='+raw,content=templates.render({kind:item.selection.kind,church,role:member?.subrole,source:row.contactSource.kind,clarification:row.response.state==='needs_clarification'?row.communications?.at(-1)?.text:null,reminder:item.selection.reminder,link,manualUrl:cfg.outreachMail?.manualUrl});
    const mail=new Mail({batch:batch._id,invitation:row._id,church:row.church,email:item.email,kind:item.selection.kind,member:member?._id,reminder:item.selection.reminder,sourceRevision:item.sourceRevision,templateVersion:templates.version,logicalKey:hash(identity(item.selection)+':'+item.sourceRevision+':'+(item.selection.reminder?'reminder-'+item.sequence:'initial'))});
-   const entry=queue.entry(cfg,item.email,content.subject,content.text,{outreach:true,mail:String(mail._id),access:access?._id?.toString(),member:member?._id?.toString(),hash:tokenHash,expiresAt,reminder:item.selection.reminder});mail.jobId=entry.id;mail.mailOutbox=[entry];await mail.save({session});
+   const guard={outreach:true,mail:String(mail._id),access:access?._id?.toString(),member:member?._id?.toString(),hash:tokenHash,expiresAt,reminder:item.selection.reminder};
+   if(caps.queueEnabled){const entry=queue.entry(cfg,item.email,content.subject,content.text,guard);mail.jobId=entry.id;mail.mailOutbox=[entry];}
+   else{mail.jobId=require('node:crypto').randomUUID();direct.push({id:mail._id,jobId:mail.jobId,guard,data:{from:cfg.mail.from,email:item.email,subject:content.subject,text:content.text}});}
+   await mail.save({session});
    if(member){member.lastMail=mail._id;await member.save({session});}else{row.lastMail=mail._id;row.delivery={state:'queued',updatedAt:now,attempts:0};}row.version++;await row.save({session});await Event.create([{invitation:row._id,actor:actor._id,actorType:'admin',action:'mail_queued',memberEmail:member?.email,reason:'Lote '+batch._id+'; '+(item.selection.reminder?'recordatorio':'invitación')+' preparado sin afirmar entrega.',invitationVersion:row.version}],{session});
   }
   batch.state='queued';batch.queuedBy=actor._id;batch.queuedAt=new Date();batch.version++;await batch.save({session});return batch;
  });
+ for(const item of direct){
+  const allowed=await validGuard(item.guard,cfg);
+  let outcome={ok:false};if(allowed){try{outcome=await queue.deliver(cfg,item.data,item.jobId,fetcher);}catch{/* Resultado incierto, no duplicar automáticamente. */}}
+  const state=!allowed?'cancelled':outcome.ok?'accepted':'failed',now=new Date();
+  await Mail.updateOne({_id:item.id,state:'queued'},{$set:{state,attempts:allowed?1:0,source:fetcher?'simulated':'provider',providerId:outcome.providerId,acceptedAt:outcome.ok?now:undefined}});
+  if(!item.guard.member)await Invitation.updateOne({lastMail:item.id},{$set:{'delivery.state':state,'delivery.updatedAt':now,'delivery.attempts':allowed?1:0}});
+ }
+ return result;
 }
 async function cancel(id,version,actor){return Batch.db.transaction(async session=>{const batch=await Batch.findById(id).session(session);if(!batch||batch.version!==version)throw conflict('El lote cambió.');if(batch.state==='cancelled')return batch;batch.state='cancelled';batch.cancelledBy=actor._id;batch.cancelledAt=new Date();batch.version++;await batch.save({session});await Mail.updateMany({batch:id,state:'queued'},{$set:{state:'cancelled',stoppedAt:new Date(),mailOutbox:[]}},{session});const rows=await Mail.find({batch:id}).select('jobId state').session(session);await Invitation.updateMany({lastMail:{$in:rows.filter(m=>m.state==='cancelled').map(m=>m._id)}},{$set:{'delivery.state':'cancelled','delivery.updatedAt':new Date()}},{session});await Job.updateMany({_id:{$in:rows.map(m=>m.jobId)},state:{$in:['pending','retry','processing']}},{$set:{state:'obsolete',failure:'outreach_batch_cancelled'},$unset:{payload:1,owner:1,leaseUntil:1}},{session});return batch;});}
 async function validGuard(g,cfg){

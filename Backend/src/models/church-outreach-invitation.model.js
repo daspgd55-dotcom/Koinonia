@@ -7,8 +7,8 @@ const schema=new Schema({
  contactKey:{type:String,required:true,immutable:true},
  contactSource:{
   kind:{type:String,required:true,enum:['institutional_website','institutional_social','direct_contact','administrative_record']},
-  url:{type:String,maxlength:500},collectedAt:{type:Date,required:true},
-  evidence:{type:String,required:true,maxlength:2000},recordedBy:ref('User',{required:true})
+  url:{type:String,maxlength:500},collectedAt:Date,
+  evidence:{type:String,maxlength:2000},recordedBy:ref('User',{required:true})
  },
  purpose:{type:String,enum:['church_profile_enrichment'],default:function(){return this.isNew?'church_profile_enrichment':undefined;},immutable:true},
  createdBy:ref('User',{required:true,immutable:true}),updatedBy:ref('User'),

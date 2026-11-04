@@ -27,8 +27,8 @@ function readiness(row,target,contact){
  if(row.targetReview?.state!=='confirmed')reasons.push('target_not_reviewed');else if(target.fingerprint!==row.targetReview.fingerprint)reasons.push('target_changed');
  return {effectiveLifecycle,requiresTargetReview:target.state!=='available'||row.targetReview?.state!=='confirmed'||target.fingerprint!==row.targetReview?.fingerprint,blockedReasons:reasons,preparationReady:effectiveLifecycle==='ready'&&reasons.length===0,canSend:false};
 }
-async function create(data,actor){admin(actor);const now=new Date(),expiresAt=new Date(data.expiresAt),collectedAt=new Date(data.contactSource.collectedAt);
- if(expiresAt<=now||expiresAt>new Date(now.getTime()+90*86400000))throw new HttpError(400,'INVALID_EXPIRY','La vigencia debe ser futura y no superar 90 días.');
+async function create(data,actor){admin(actor);const now=new Date(),expiresAt=new Date(data.expiresAt||now.getTime()+30*86400000),collectedAt=data.contactSource.collectedAt?new Date(data.contactSource.collectedAt):undefined;
+ if(expiresAt<=now)throw new HttpError(400,'INVALID_EXPIRY','La vigencia debe ser futura.');
  if(collectedAt>now)throw new HttpError(400,'INVALID_SOURCE_DATE','La fecha de obtención del contacto no puede ser futura.');
  return Invitation.db.transaction(async session=>{
   const target=await inspectTarget(data.churchId,session);if(target.state!=='available')throw conflict(target.reason);

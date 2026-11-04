@@ -16,7 +16,7 @@ export const fields = {
   branches: { label: 'Rama cristiana', multiple: true, single: true, emptyLabel: 'Ninguna de las anteriores', options: catalog.branches },
   denominations: { label: 'Denominación', multiple: true, custom: true, emptyLabel: 'Sin una denominación específica', options: catalog.denominations },
   commune: { label: 'Comuna de interés', text: true, emptyLabel: 'Aún no sé dónde buscar', placeholder: 'Por ejemplo, Providencia', options: catalog.communes },
-  address: { label: 'Dirección (opcional)', context: true, text: true, emptyLabel: 'Prefiero no indicar una dirección', placeholder: 'Una dirección de referencia' },
+  address: { label: 'Dirección (opcional)', context: true, text: true, placeholder: 'Una dirección de referencia' },
   location: { label: 'Tu punto de partida', location: true },
   locationSource: {context:true,internal:true},
   addressSelection: {context:true,internal:true},
@@ -77,6 +77,7 @@ export function displayValue(key, draft) {
   if (draft.states[key] !== 'answered' || !hasValue(value)) return draft.states[key] === 'no_preference' ? fields[key].emptyLabel || 'Sin preferencia' : stateLabels[draft.states[key]] || 'Sin responder';
   if (Array.isArray(value)) return value.join(' · ');
   if (key === 'location') return validLocation(value) ? 'Ubicación aproximada activada' : 'Sin ubicación';
+  if (key === 'address') return value+(draft.values.addressSelection?' · Confirmada':' · No verificada');
   if (key === 'radiusKm') return `${value} km`;
   return fields[key].options?.find(o => Array.isArray(o) && o[0] === value)?.[1] || value;
 }

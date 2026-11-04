@@ -119,6 +119,7 @@ function App() {
       setUser(result.data);setDraft({...fromUser(result.data),step:nextStep});setConflict(false);
       if(action==='complete'||action==='later') {setMessage(action==='complete'?'Tu perfil inicial está listo. Puedes ajustar tus preferencias de búsqueda desde Mi perfil.':'Guardamos tus respuestas. Puedes continuar cuando quieras.');go('/descubrir');}
       else setMessage(action==='settings'?'Configuración guardada.':'Avance guardado.');
+      if(prepared.addressNotice)setMessage(prepared.addressNotice);
       return true;
     } catch(e) {if(e.status===401)expire();else {setError(e.message);if(e.status===409)setConflict(true);}return false;} finally {setBusy(false);}
   }

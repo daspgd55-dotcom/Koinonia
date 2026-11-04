@@ -1,8 +1,8 @@
 const Invitation=require('../models/church-outreach-invitation.model'),Church=require('../models/church.model'),{z,id,parse}=require('../validation/schemas'),{expectedVersion}=require('../utils/resource-version'),svc=require('../services/church-outreach-admin.service');
 const text=z.string().trim().min(1).max(2000),email=z.string().trim().toLowerCase().email().max(254),roles=z.enum(['administrator','editor','moderator','welcome']);
 const reviews=z.discriminatedUnion('action',[
- z.strictObject({action:z.literal('clarify'),reason:text,message:text}),z.strictObject({action:z.literal('reject'),reason:text}),
- z.strictObject({action:z.literal('people'),reason:text,targetFingerprint:z.string().length(64),people:z.array(z.strictObject({email,state:z.enum(['approved','rejected']),subrole:roles,changeExistingRole:z.boolean().default(false)})).min(1).max(20).refine(p=>new Set(p.map(x=>x.email)).size===p.length,'No repitas personas')})
+ z.strictObject({action:z.literal('clarify'),reason:z.string().trim().max(2000).default(''),message:text}),z.strictObject({action:z.literal('reject'),reason:z.string().trim().max(2000).default('')}),
+ z.strictObject({action:z.literal('people'),reason:z.string().trim().max(2000).default(''),targetFingerprint:z.string().length(64),people:z.array(z.strictObject({email,state:z.enum(['approved','rejected']),subrole:roles,changeExistingRole:z.boolean().default(false)})).min(1).max(20).refine(p=>new Set(p.map(x=>x.email)).size===p.length,'No repitas personas')})
 ]);
 const reply=(res,result)=>res.set('Cache-Control','no-store').set('ETag','"'+result.data.version+'"').json(result);
 exports.detail=async(req,res)=>reply(res,await svc.context(parse(id,req.params.id)));
