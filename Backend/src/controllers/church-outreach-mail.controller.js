@@ -20,5 +20,6 @@ exports.sendMembers=async(req,res)=>{
  if(!selections.length)return reply(res,{processed:0,excluded});
  const batch=await svc.prepare(selections,require('node:crypto').randomUUID(),req.user,cfg);
  await svc.enqueue(batch.id,batch.version,req.user,cfg,req.app.locals.mailFetch);
- reply(res,{processed:selections.length,excluded,queued:svc.capabilities(cfg).queueEnabled});
+ const messages=await Mail.find({batch:batch._id}).select('email state -_id').lean();
+ reply(res,{processed:selections.length,excluded,queued:svc.capabilities(cfg).queueEnabled,messages});
 };
