@@ -11,7 +11,7 @@ export const catalog = {
     Protestante: ['Bautista', 'Luterana', 'Metodista', 'Presbiteriana', 'Pentecostal', 'Adventista', 'Anglicana', 'Asamblea de Dios', 'Evangélica', 'No Denominacional'],
     'Rama Independiente': ['Evangélica', 'No Denominacional']
   },
-  doctrinalTags: ['Autoridad de las Escrituras', 'Sacramentos / ordenanzas', 'Bautismo infantil', 'Bautismo de creyentes', 'Santa Cena', 'Eucaristía', 'Predicación', 'Culto litúrgico', 'Culto contemporáneo', 'Prácticas carismáticas', 'Evangelización', 'Misiones', 'Formación bíblica'],
+  doctrinalTags: ['Diezmo', 'Dones espirituales', 'Separación de Iglesia y Estado', 'Santa Trinidad', 'Sola Scriptura', 'Autoridad de las Escrituras', 'Sacramentos / ordenanzas', 'Bautismo infantil', 'Bautismo de creyentes', 'Santa Cena', 'Eucaristía', 'Predicación', 'Culto litúrgico', 'Culto contemporáneo', 'Prácticas carismáticas', 'Evangelización', 'Misiones', 'Formación bíblica'],
   ministries: ['Jóvenes', 'Niños', 'Matrimonios', 'Familias', 'Adultos mayores', 'Música / alabanza', 'Misiones', 'Evangelismo', 'Acción social', 'Ayuda comunitaria', 'Formación bíblica', 'Consejería', 'Deportes', 'Streaming', 'Oración'],
   activities: ['Reuniones de Alabanza', 'Campamentos', 'Retiros', 'Evangelismo', 'Voluntariado', 'Ayuda social', 'Cursos / institutos', 'Conferencias', 'Eventos familiares', 'Actividades deportivas', 'Confraternidades', 'Obras Audiovisuales', 'Bautismos'],
   targetGroups: ['Niños', 'Adolescentes', 'Jóvenes', 'Adultos', 'Adultos mayores', 'Familias intergeneracionales'],

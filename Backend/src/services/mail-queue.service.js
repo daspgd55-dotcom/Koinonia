@@ -10,7 +10,7 @@ function configFromEnv(env){
 function validate(cfg){if(enabled(cfg)&&(!cfg.mail||!cfg.mailQueue))throw Error('Configura correo y cifrado antes de activar la cola');}
 function seal(data,id,cfg){const k=cfg.mailQueue,iv=crypto.randomBytes(12),c=crypto.createCipheriv('aes-256-gcm',Buffer.from(k.keys[k.activeKeyId],'base64'),iv);c.setAAD(Buffer.from(id));const encrypted=Buffer.concat([c.update(JSON.stringify(data)),c.final()]);return [k.activeKeyId,iv.toString('base64'),c.getAuthTag().toString('base64'),encrypted.toString('base64')].join('.');}
 function open(value,id,cfg){const [key,iv,tag,data]=value.split('.'),d=crypto.createDecipheriv('aes-256-gcm',Buffer.from(cfg.mailQueue.keys[key],'base64'),Buffer.from(iv,'base64'));d.setAAD(Buffer.from(id));d.setAuthTag(Buffer.from(tag,'base64'));return JSON.parse(Buffer.concat([d.update(Buffer.from(data,'base64')),d.final()]).toString());}
-function entry(cfg,email,subject,text,guard=null){const id=crypto.randomUUID(),expiresAt=new Date(Math.min(guard?.expiresAt?.getTime()||Infinity,Date.now()+23*3600000));return {id,createdAt:new Date(),payload:seal({email,subject,text,from:cfg.mail.from,guard},id,cfg),expiresAt};}
+function entry(cfg,email,subject,text,guard=null,html){const id=crypto.randomUUID(),expiresAt=new Date(Math.min(guard?.expiresAt?.getTime()||Infinity,Date.now()+23*3600000));return {id,createdAt:new Date(),payload:seal({email,subject,text,...(html?{html}:{}),from:cfg.mail.from,guard},id,cfg),expiresAt};}
 function notice(cfg,email){return entry(cfg,email,'Tu contraseña de Koinonía cambió','Se cambió tu contraseña y se cerraron las sesiones anteriores. Si no reconoces este cambio, utiliza Recuperar contraseña desde Koinonía.');}
 async function reconcile(){
  for(const Model of [User,require('../models/visit.model'),require('../models/church-registration.model'),require('../models/church-outreach-mail.model')]){
@@ -25,7 +25,7 @@ async function reconcile(){
 }
 function retryAfter(value,now=Date.now()){if(!value)return 0;const n=Number(value);return Number.isFinite(n)?Math.max(0,n*1000):Math.max(0,Date.parse(value)-now)||0;}
 async function deliver(cfg,data,id,fetcher=fetch){
- const r=await fetcher('https://api.resend.com/emails',{method:'POST',headers:{Authorization:'Bearer '+cfg.mail.key,'Content-Type':'application/json','Idempotency-Key':id},body:JSON.stringify({from:data.from,to:[data.email],subject:data.subject,text:data.text,tags:[{name:"koinonia_message",value:id}]}),signal:AbortSignal.timeout(10000)});
+ const r=await fetcher('https://api.resend.com/emails',{method:'POST',headers:{Authorization:'Bearer '+cfg.mail.key,'Content-Type':'application/json','Idempotency-Key':id},body:JSON.stringify({from:data.from,to:[data.email],subject:data.subject,text:data.text,...(data.html?{html:data.html}:{}),tags:[{name:"koinonia_message",value:id}]}),signal:AbortSignal.timeout(10000)});
  if(r.ok){const body=await r.json().catch(()=>({}));return {ok:true,providerId:typeof body.id==='string'?body.id:undefined};}const body=await r.json().catch(()=>({}));
  return {ok:false,temporary:r.status===429||r.status===408||r.status>=500||(r.status===409&&body.name==='concurrent_idempotent_requests'),reason:r.status===429?'provider_rate_limit':r.status>=500?'provider_temporary':'provider_rejected',delay:retryAfter(r.headers?.get('retry-after'))};
 }

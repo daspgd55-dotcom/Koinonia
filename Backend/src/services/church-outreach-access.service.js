@@ -35,6 +35,7 @@ async function respond(token,answer,submission){return Invitation.db.transaction
   const legal=require('../config/church-outreach-legal').current();
   if(!legal.enabled)throw new HttpError(409,'LEGAL_PENDING','La recepción de solicitudes está pendiente de los textos definitivos de términos y privacidad. Tus respuestas no se han enviado.');
   if(!submission||submission.consent.revision!==legal.revision)throw new HttpError(409,'LEGAL_CHANGED','Los documentos cambiaron. Solicita un nuevo enlace para revisarlos; conserva tus respuestas antes de salir.');
+  if(!submission.representatives?.some(p=>p.proposedSubrole==='administrator'))throw new HttpError(400,'ADMINISTRATOR_REQUIRED','Incluye un representante administrador antes de enviar la propuesta.');
   row.review={state:'pending'};row.response.respondent=submission.respondent;row.respondentParticipates=submission.participates;row.proposedRepresentatives=submission.representatives;
   if(!legal.testBypass&&(!submission.consent.terms||!submission.consent.privacy))throw new HttpError(400,'CONSENT_REQUIRED','Acepta los términos y la política de privacidad.');
   row.consent={acceptedAt:now,revision:legal.revision,testBypass:!!legal.testBypass,termsVersion:legal.terms?.version,privacyVersion:legal.privacy?.version,termsText:legal.terms?.text,privacyText:legal.privacy?.text,authorized:true,communications:true,advertising:false,purpose:row.purpose};

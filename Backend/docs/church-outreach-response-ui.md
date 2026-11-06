@@ -22,7 +22,7 @@ POST `/api/church-outreach-access/response`, cabecera `X-Outreach-Session`:
   "submission": {
     "respondent": {"name": "Nombre", "relationship": "Vínculo declarado"},
     "participates": false,
-    "representatives": [{"name": "Nombre representante", "email": "persona@example.org", "proposedSubrole": "editor"}],
+    "representatives": [{"name": "Nombre representante", "email": "persona@example.org", "proposedSubrole": "administrator"}],
     "consent": {"revision": "hash recibido del servidor", "terms": true, "privacy": true, "authorized": true, "communications": true}
   }
 }
@@ -45,3 +45,7 @@ Con configuración completa, el servidor entrega textos/versiones y una revisió
 Fuente: `Backend/src/services/church-permissions.js` y `Frontend/src/ChurchTeam.jsx`. Administrator administra ficha, contenido, moderación, visitas y equipo; su designación corresponde a admin global. Editor solo contenido de comunidades vinculadas/eventos, no ficha principal ni visitas. Moderator experiencias y visitas. Welcome visitas. Las restricciones adicionales de encargados de visitas siguen aplicándose. No se sustituye automáticamente ningún equipo existente.
 
 Sin pruebas, build, servidor, envíos, cambios de producción, commit ni despliegue. La validación de ejecución y accesibilidad manual queda pendiente por instrucción del usuario.
+
+### Administrador obligatorio en nuevas propuestas
+
+Primero se completa una persona administradora (también puede ser quien responde). Solo entonces se permite añadir otros integrantes. Quitar al administrador conserva los demás datos, pero exige registrar un reemplazo para continuar o enviar. El servidor rechaza propuestas sin subrol `administrator`, incluso si se omite la interfaz. No modifica propuestas anteriores ni reemplaza equipos existentes; la revisión y aceptación siguen siendo necesarias. Los títulos desplegables y casillas legales no muestran versión; esta permanece al final del contenido y en el registro de consentimiento.

@@ -1,0 +1,13 @@
+{
+  "input": 785,
+  "approvedUnique": 632,
+  "dispositions": {
+    "accepted": 632,
+    "rejected": 20,
+    "review": 132,
+    "duplicate": 1
+  },
+  "inferredDenominations": 169,
+  "newContactRows": 630,
+  "contactsTotal": 1041
+}

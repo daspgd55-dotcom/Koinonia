@@ -9,12 +9,12 @@ async function quota(config,scope,key,max,windowMs){
  let row;try{row=await Limit.findOneAndUpdate({_id:id},{$inc:{count:1},$setOnInsert:{expiresAt:new Date((bucket+2)*windowMs),purgeAt:require('../config/retention').after(config,'counterHours',(bucket+2)*windowMs)}},{upsert:true,returnDocument:'after'});}catch(e){if(e.code!==11000)throw e;row=await Limit.findOneAndUpdate({_id:id},{$inc:{count:1}},{returnDocument:'after'});}
  if(row.count>max)throw new HttpError(429,'RATE_LIMIT','Has realizado varios intentos. Espera un momento antes de volver a intentarlo.');
 }
-async function send(req,email,subject,text){
+async function send(req,email,subject,text,html){
  const config=req.app.locals.config;mailReady(config);await quota(config,'mail-global','all',100,3600000);
  const id=require('node:crypto').randomUUID(),observe=require('./mail-observability.service'),source=req.app.locals.mailFetch?'simulated':'provider';
  const record=patch=>observe.recordDirect(id,patch,config);
  await record({transport:'direct',source,state:'direct_pending',attempts:1});
- try{const r=await(req.app.locals.mailFetch||fetch)('https://api.resend.com/emails',{method:'POST',headers:{Authorization:'Bearer '+config.mail.key,'Content-Type':'application/json'},body:JSON.stringify({from:config.mail.from,to:[email],subject,text,tags:[{name:"koinonia_message",value:id}]}),signal:AbortSignal.timeout(10000)});
+ try{const r=await(req.app.locals.mailFetch||fetch)('https://api.resend.com/emails',{method:'POST',headers:{Authorization:'Bearer '+config.mail.key,'Content-Type':'application/json'},body:JSON.stringify({from:config.mail.from,to:[email],subject,text,...(html?{html}:{}),tags:[{name:"koinonia_message",value:id}]}),signal:AbortSignal.timeout(10000)});
  if(!r.ok)throw Error('MAIL_DELIVERY_FAILED');const result=await r.json?.().catch(()=>({}))||{};
  await record({source,state:'accepted',acceptedAt:new Date(),...(typeof result.id==='string'?{providerId:result.id}:{})});
  }catch(e){await record({source,state:'failed',failure:'direct_delivery_unconfirmed'});throw e;}

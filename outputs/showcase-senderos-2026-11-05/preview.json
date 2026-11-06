@@ -1,0 +1,838 @@
+{
+  "database": "koinonia_synthetic_test_v2",
+  "batchId": "showcase-senderos-2026-11-05",
+  "church": {
+    "identification": {
+      "name": "Iglesia Evangélica Senderos de Gracia",
+      "abbreviation": "IESG",
+      "description": "Somos una iglesia cristiana evangélica en Providencia, formada por personas de distintas edades e historias que desean seguir a Jesús y compartir su esperanza en la vida cotidiana. Nos reunimos para conocer la Biblia, orar, celebrar nuestra fe y acompañarnos con cercanía. Creemos que una comunidad sana se construye con relaciones honestas, servicio generoso y espacio para hacer preguntas.\n\nNuestra historia comenzó en 2008 con un pequeño grupo de familias que compartía estudios bíblicos y apoyo vecinal. Hoy mantenemos ese espíritu de casa abierta: recibir a quien llega, cuidar a quienes atraviesan dificultades y servir al barrio con constancia. Puedes venir aunque nunca hayas participado en una iglesia o estés retomando tu camino de fe.",
+      "yearFounded": 2008,
+      "distinctiveFeatures": "Predicación bíblica explicada con ejemplos cotidianos; comunidad intergeneracional; grupos pequeños durante la semana; acompañamiento para primeras visitas; formación progresiva para nuevos creyentes; servicio vecinal y participación de familias. Las actividades de niños cuentan con inscripción presencial y entrega a su adulto responsable."
+    },
+    "verification": {
+      "authorized": false,
+      "source": "Creación editorial sintética autorizada por el propietario; showcase-senderos-2026-11-05"
+    },
+    "location": {
+      "address": "Pasaje Senderos del Encuentro 184",
+      "commune": "Providencia",
+      "city": "Santiago",
+      "region": "Región Metropolitana de Santiago",
+      "countryCode": "CL",
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -70.609,
+          -33.435
+        ]
+      },
+      "parkingAvailability": "nearby",
+      "accessibilityLevel": "partial",
+      "parking": false,
+      "accessibility": false,
+      "accessNotes": "Acceso principal a nivel de vereda y salón de reuniones en primer piso. Baño accesible y espacio reservado para personas con movilidad reducida. Algunas salas de talleres se encuentran en un segundo piso sin ascensor; el equipo puede coordinar actividades en el salón principal. No contamos con estacionamiento propio ni con interpretación permanente en lengua de señas."
+    },
+    "christianIdentity": {
+      "branch": "Protestante",
+      "denomination": "Evangélica",
+      "associatedTradition": "Evangélica congregacional",
+      "network": "Fraternidad Cristiana Caminos de Esperanza",
+      "languages": [
+        "Español"
+      ]
+    },
+    "doctrine": {
+      "officialStatement": "Creemos en un solo Dios, Padre, Hijo y Espíritu Santo, creador y sustentador de toda vida. Reconocemos la Biblia como autoridad para nuestra fe y conducta, y buscamos comprenderla responsablemente en su contexto.\n\nConfesamos a Jesucristo como Señor y Salvador: su vida, muerte y resurrección nos anuncian el amor de Dios y la reconciliación que recibimos por gracia mediante la fe. El Espíritu Santo nos guía a una vida de oración, santidad, servicio y amor al prójimo.\n\nPracticamos el bautismo de creyentes por inmersión y celebramos la Santa Cena el primer domingo de cada mes. Entendemos la iglesia como una comunidad de discípulos que aprende, adora y sirve. Afirmamos la esperanza de la resurrección y el regreso de Cristo, sin fijar fechas ni convertir las diferencias secundarias en barreras para la comunión.",
+      "characteristics": [
+        "Autoridad de las Escrituras",
+        "Bautismo de creyentes",
+        "Santa Cena",
+        "Predicación",
+        "Culto contemporáneo",
+        "Evangelización",
+        "Misiones",
+        "Formación bíblica"
+      ],
+      "soteriology": "Arminianismo",
+      "eschatology": "Sin postura definida"
+    },
+    "privateFields": {
+      "musicalStyles": false,
+      "culturalStyle": false,
+      "accessibilityLevel": false,
+      "soteriology": false,
+      "eschatology": false,
+      "email": false,
+      "phone": false
+    },
+    "sectionOrder": [
+      "intro",
+      "visit",
+      "meetings",
+      "doctrine",
+      "life",
+      "contact"
+    ],
+    "meetingTypes": [
+      "Culto principal",
+      "Estudio bíblico",
+      "Reunión de oración",
+      "Reunión de jóvenes",
+      "Escuela dominical",
+      "Grupo pequeño / célula"
+    ],
+    "meetings": [
+      {
+        "id": "f483bd96-d732-4709-9ba2-000000000001",
+        "type": "Culto principal",
+        "audience": "Familias intergeneracionales",
+        "modality": "Presencial",
+        "addressOrUrl": "Pasaje Senderos del Encuentro 184",
+        "frequencyNotes": "Cada semana",
+        "frequency": "weekly",
+        "visitsEnabled": false,
+        "schedule": [
+          {
+            "day": "Domingo",
+            "startTime": "11:00",
+            "durationMinutes": 90
+          }
+        ]
+      },
+      {
+        "id": "f483bd96-d732-4709-9ba2-000000000002",
+        "type": "Escuela dominical",
+        "audience": "Niños de 4 a 12 años",
+        "modality": "Presencial",
+        "addressOrUrl": "Pasaje Senderos del Encuentro 184",
+        "frequencyNotes": "Cada semana",
+        "frequency": "weekly",
+        "visitsEnabled": false,
+        "schedule": [
+          {
+            "day": "Domingo",
+            "startTime": "11:20",
+            "durationMinutes": 60
+          }
+        ]
+      },
+      {
+        "id": "f483bd96-d732-4709-9ba2-000000000003",
+        "type": "Estudio bíblico",
+        "audience": "Adultos y jóvenes",
+        "modality": "Presencial",
+        "addressOrUrl": "Pasaje Senderos del Encuentro 184",
+        "frequencyNotes": "Cada semana",
+        "frequency": "weekly",
+        "visitsEnabled": false,
+        "schedule": [
+          {
+            "day": "Miércoles",
+            "startTime": "19:30",
+            "durationMinutes": 75
+          }
+        ]
+      },
+      {
+        "id": "f483bd96-d732-4709-9ba2-000000000004",
+        "type": "Reunión de oración",
+        "audience": "Toda la comunidad",
+        "modality": "Presencial",
+        "addressOrUrl": "Pasaje Senderos del Encuentro 184",
+        "frequencyNotes": "Cada semana",
+        "frequency": "weekly",
+        "visitsEnabled": false,
+        "schedule": [
+          {
+            "day": "Martes",
+            "startTime": "19:30",
+            "durationMinutes": 60
+          }
+        ]
+      },
+      {
+        "id": "f483bd96-d732-4709-9ba2-000000000005",
+        "type": "Reunión de jóvenes",
+        "audience": "Adolescentes y jóvenes de 15 a 29 años",
+        "modality": "Presencial",
+        "addressOrUrl": "Pasaje Senderos del Encuentro 184",
+        "frequencyNotes": "Cada semana",
+        "frequency": "weekly",
+        "visitsEnabled": false,
+        "schedule": [
+          {
+            "day": "Viernes",
+            "startTime": "19:00",
+            "durationMinutes": 120
+          }
+        ]
+      },
+      {
+        "id": "f483bd96-d732-4709-9ba2-000000000006",
+        "type": "Encuentro de mujeres",
+        "audience": "Mujeres adultas",
+        "modality": "Presencial",
+        "addressOrUrl": "Pasaje Senderos del Encuentro 184",
+        "frequencyNotes": "Segundo sábado de cada mes",
+        "frequency": "monthly",
+        "visitsEnabled": false,
+        "schedule": [
+          {
+            "day": "Sábado",
+            "startTime": "10:30",
+            "durationMinutes": 90
+          }
+        ]
+      },
+      {
+        "id": "f483bd96-d732-4709-9ba2-000000000007",
+        "type": "Encuentro de hombres",
+        "audience": "Hombres adultos",
+        "modality": "Presencial",
+        "addressOrUrl": "Pasaje Senderos del Encuentro 184",
+        "frequencyNotes": "Tercer sábado de cada mes",
+        "frequency": "monthly",
+        "visitsEnabled": false,
+        "schedule": [
+          {
+            "day": "Sábado",
+            "startTime": "09:00",
+            "durationMinutes": 90
+          }
+        ]
+      },
+      {
+        "id": "f483bd96-d732-4709-9ba2-000000000008",
+        "type": "Encuentro de adultos mayores",
+        "audience": "Adultos mayores y acompañantes",
+        "modality": "Presencial",
+        "addressOrUrl": "Pasaje Senderos del Encuentro 184",
+        "frequencyNotes": "Primer y tercer jueves de cada mes",
+        "frequency": "fortnightly",
+        "visitsEnabled": false,
+        "schedule": [
+          {
+            "day": "Jueves",
+            "startTime": "16:00",
+            "durationMinutes": 90
+          }
+        ]
+      },
+      {
+        "id": "f483bd96-d732-4709-9ba2-000000000009",
+        "type": "Servicio comunitario",
+        "audience": "Adultos y jóvenes acompañados",
+        "modality": "Presencial",
+        "addressOrUrl": "Pasaje Senderos del Encuentro 184",
+        "frequencyNotes": "Cuarto sábado de cada mes",
+        "frequency": "monthly",
+        "visitsEnabled": false,
+        "schedule": [
+          {
+            "day": "Sábado",
+            "startTime": "10:00",
+            "durationMinutes": 150
+          }
+        ]
+      },
+      {
+        "id": "f483bd96-d732-4709-9ba2-000000000010",
+        "type": "Grupo pequeño / célula",
+        "audience": "Matrimonios y familias",
+        "modality": "Presencial",
+        "addressOrUrl": "Pasaje Senderos del Encuentro 184",
+        "frequencyNotes": "Primer sábado de cada mes",
+        "frequency": "monthly",
+        "visitsEnabled": false,
+        "schedule": [
+          {
+            "day": "Sábado",
+            "startTime": "17:00",
+            "durationMinutes": 90
+          }
+        ]
+      }
+    ],
+    "community": {
+      "musicalStyles": [
+        "Himnodia Clásica",
+        "Música Cristiana Contemporánea (MCC) / Worship"
+      ],
+      "culturalStyle": "Estilo Moderado",
+      "targetGroups": [
+        "Niños",
+        "Adolescentes",
+        "Jóvenes",
+        "Adultos",
+        "Adultos mayores",
+        "Familias intergeneracionales"
+      ],
+      "ministries": [
+        "Jóvenes",
+        "Niños",
+        "Matrimonios",
+        "Familias",
+        "Adultos mayores",
+        "Música / alabanza",
+        "Misiones",
+        "Evangelismo",
+        "Acción social",
+        "Ayuda comunitaria",
+        "Formación bíblica",
+        "Consejería",
+        "Oración"
+      ],
+      "activities": [
+        "Reuniones de Alabanza",
+        "Campamentos",
+        "Retiros",
+        "Voluntariado",
+        "Ayuda social",
+        "Cursos / institutos",
+        "Eventos familiares",
+        "Actividades deportivas",
+        "Confraternidades",
+        "Bautismos"
+      ],
+      "description": "Nuestra vida comunitaria continúa más allá del domingo. Ofrecemos espacios de conversación, lectura bíblica y oración para distintas etapas de la vida, junto con jornadas de apoyo vecinal y encuentros familiares. El equipo de alabanza combina himnos y canciones contemporáneas con participación congregacional.\n\nLa formación incluye un recorrido de fundamentos de la fe, preparación para el bautismo y talleres de servicio. El acompañamiento pastoral ofrece escucha y orientación espiritual; no sustituye la atención psicológica o médica profesional. Las iniciativas solidarias se coordinan con discreción, cuidando la dignidad y privacidad de quienes participan.",
+      "memberRange": "100-200"
+    },
+    "leadership": {
+      "mainLeader": {
+        "id": "f483bd96-d732-4709-9ba2-000000000101",
+        "name": "Matías Arancibia Salcedo",
+        "role": "Pastor principal"
+      },
+      "otherLeaders": [
+        {
+          "id": "f483bd96-d732-4709-9ba2-000000000102",
+          "name": "Elisa Valdés Montecinos",
+          "role": "Pastora de formación y acompañamiento"
+        },
+        {
+          "id": "f483bd96-d732-4709-9ba2-000000000103",
+          "name": "Tomás Leiva Cifuentes",
+          "role": "Coordinador de jóvenes"
+        },
+        {
+          "id": "f483bd96-d732-4709-9ba2-000000000104",
+          "name": "Daniela Riquelme Olivares",
+          "role": "Coordinadora de infancia y familias"
+        },
+        {
+          "id": "f483bd96-d732-4709-9ba2-000000000105",
+          "name": "Gabriel Mella Saavedra",
+          "role": "Coordinador de alabanza"
+        },
+        {
+          "id": "f483bd96-d732-4709-9ba2-000000000106",
+          "name": "Claudia Farías Robledo",
+          "role": "Coordinadora de servicio comunitario"
+        }
+      ]
+    },
+    "visitSettings": {
+      "accessMode": "all",
+      "representativeIds": [],
+      "emailEnabled": false,
+      "emailRecipients": []
+    },
+    "firstVisit": {
+      "requestsEnabled": false,
+      "welcomeSupport": "yes",
+      "instructions": "Puedes llegar unos 15 minutos antes de la reunión del domingo. El equipo de bienvenida te orientará sobre el salón, los baños y los espacios para niños. No necesitas vestimenta especial: ven con ropa cómoda. La participación en cantos y ofrendas es voluntaria. Puedes asistir sin conocer previamente a alguien y quedarte después para conversar.",
+      "newVisitorSupport": true,
+      "welcomeProcess": "Al llegar encontrarás un equipo de bienvenida que puede acompañarte hasta tu asiento y explicarte cómo se desarrolla la reunión. Las familias pueden conocer primero el espacio infantil y permanecer con sus hijos si lo prefieren. Al finalizar compartimos un momento de conversación. Si deseas acompañamiento posterior, puedes solicitarlo personalmente; no incorporamos a nadie a grupos de comunicación sin su consentimiento."
+    },
+    "media": [],
+    "importInfo": {
+      "batchId": "showcase-senderos-2026-11-05",
+      "sourceFile": "Backend/scripts/create-showcase-church.js",
+      "importedAt": "2026-11-05T04:15:23.805Z",
+      "issues": [
+        "Contenido editorial sintético, incluidos líderes, asociación, dirección y coordenadas aproximadas. Sin verificación institucional."
+      ]
+    },
+    "metadata": {
+      "dataStatus": "published",
+      "testData": true,
+      "version": 1
+    },
+    "representatives": [],
+    "createdBy": "000000000000000000000201",
+    "updatedBy": "000000000000000000000201",
+    "reviewImport": {
+      "externalKeys": []
+    },
+    "active": true,
+    "_id": "ecf847447c3510c9841b862b",
+    "representativeRoles": [],
+    "teamAudit": []
+  },
+  "communities": [
+    {
+      "churchId": "ecf847447c3510c9841b862b",
+      "name": "Senderos Joven",
+      "type": "youth",
+      "description": "Un espacio para construir amistades, conversar sobre fe y vida cotidiana, y aprender a servir. Cada encuentro combina bienvenida, música, reflexión bíblica y conversación en grupos pequeños. Durante el año realizamos actividades deportivas, retiros y jornadas solidarias. Los menores participan con conocimiento de sus adultos responsables.",
+      "audience": [
+        "Adolescentes",
+        "Jóvenes"
+      ],
+      "leaders": [
+        {
+          "name": "Tomás Leiva Cifuentes",
+          "role": "Coordinador de jóvenes"
+        }
+      ],
+      "privateFields": {
+        "email": false,
+        "phone": false
+      },
+      "schedules": {
+        "mode": "church",
+        "meetingIds": [
+          "f483bd96-d732-4709-9ba2-000000000005"
+        ],
+        "meetings": []
+      },
+      "location": {
+        "mode": "church"
+      },
+      "media": [],
+      "status": "published",
+      "version": 1,
+      "createdBy": "000000000000000000000201",
+      "updatedBy": "000000000000000000000201",
+      "_id": "53addbdc543c08e0d7a0ecbe"
+    },
+    {
+      "churchId": "ecf847447c3510c9841b862b",
+      "name": "Semillas de Gracia",
+      "type": "ministry",
+      "description": "Acompañamos a niños de 4 a 12 años con historias bíblicas, actividades creativas y juegos adecuados a su edad. El equipo recibe a cada familia, registra la asistencia presencial y entrega a los niños únicamente al adulto responsable. Las familias pueden conocer el espacio antes de decidir su participación.",
+      "audience": [
+        "Niños",
+        "Familias"
+      ],
+      "leaders": [
+        {
+          "name": "Daniela Riquelme Olivares",
+          "role": "Coordinadora de infancia"
+        }
+      ],
+      "privateFields": {
+        "email": false,
+        "phone": false
+      },
+      "schedules": {
+        "mode": "church",
+        "meetingIds": [
+          "f483bd96-d732-4709-9ba2-000000000002"
+        ],
+        "meetings": []
+      },
+      "location": {
+        "mode": "church"
+      },
+      "media": [],
+      "status": "published",
+      "version": 1,
+      "createdBy": "000000000000000000000201",
+      "updatedBy": "000000000000000000000201",
+      "_id": "342d488550f439a0b833c015"
+    },
+    {
+      "churchId": "ecf847447c3510c9841b862b",
+      "name": "Mujeres en Camino",
+      "type": "ministry",
+      "description": "Encuentros de lectura bíblica, oración y apoyo entre mujeres en distintas etapas de la vida. Compartimos experiencias con respeto, sin exigir relatos personales. También organizamos talleres prácticos y colaboramos en las iniciativas de servicio de la iglesia.",
+      "audience": [
+        "Adultos"
+      ],
+      "leaders": [
+        {
+          "name": "Elisa Valdés Montecinos",
+          "role": "Coordinadora"
+        }
+      ],
+      "privateFields": {
+        "email": false,
+        "phone": false
+      },
+      "schedules": {
+        "mode": "church",
+        "meetingIds": [
+          "f483bd96-d732-4709-9ba2-000000000006"
+        ],
+        "meetings": []
+      },
+      "location": {
+        "mode": "church"
+      },
+      "media": [],
+      "status": "published",
+      "version": 1,
+      "createdBy": "000000000000000000000201",
+      "updatedBy": "000000000000000000000201",
+      "_id": "2487691477152447367c15f2"
+    },
+    {
+      "churchId": "ecf847447c3510c9841b862b",
+      "name": "Hombres de Buen Ánimo",
+      "type": "ministry",
+      "description": "Un espacio de amistad, formación y responsabilidad cotidiana. Conversamos sobre familia, trabajo, fe y cuidado mutuo a la luz de la Biblia. Los encuentros incluyen desayuno compartido y planificación de tareas de servicio para la comunidad.",
+      "audience": [
+        "Adultos"
+      ],
+      "leaders": [
+        {
+          "name": "Sebastián Orellana Véliz",
+          "role": "Coordinador"
+        }
+      ],
+      "privateFields": {
+        "email": false,
+        "phone": false
+      },
+      "schedules": {
+        "mode": "church",
+        "meetingIds": [
+          "f483bd96-d732-4709-9ba2-000000000007"
+        ],
+        "meetings": []
+      },
+      "location": {
+        "mode": "church"
+      },
+      "media": [],
+      "status": "published",
+      "version": 1,
+      "createdBy": "000000000000000000000201",
+      "updatedBy": "000000000000000000000201",
+      "_id": "1f8b0f936162af2413710927"
+    },
+    {
+      "churchId": "ecf847447c3510c9841b862b",
+      "name": "Raíces y Esperanza",
+      "type": "ministry",
+      "description": "Reuniones de conversación, música, lectura bíblica y actividades de memoria para adultos mayores. Valoramos sus historias y participación en la vida de la iglesia. Los acompañantes son bienvenidos y las actividades se realizan en el primer piso.",
+      "audience": [
+        "Adultos mayores"
+      ],
+      "leaders": [
+        {
+          "name": "Inés Sepúlveda Rojas",
+          "role": "Coordinadora"
+        }
+      ],
+      "privateFields": {
+        "email": false,
+        "phone": false
+      },
+      "schedules": {
+        "mode": "church",
+        "meetingIds": [
+          "f483bd96-d732-4709-9ba2-000000000008"
+        ],
+        "meetings": []
+      },
+      "location": {
+        "mode": "church"
+      },
+      "media": [],
+      "status": "published",
+      "version": 1,
+      "createdBy": "000000000000000000000201",
+      "updatedBy": "000000000000000000000201",
+      "_id": "525b9efd2b45643bea2d9cf3"
+    },
+    {
+      "churchId": "ecf847447c3510c9841b862b",
+      "name": "Manos al Barrio",
+      "type": "volunteering",
+      "description": "Organizamos apoyo vecinal mediante clasificación de alimentos, preparación de aportes solidarios y jornadas de colaboración práctica. Cada participante recibe una orientación previa. No publicamos fotografías ni historias de las personas acompañadas sin autorización, y el apoyo no exige participar en reuniones de la iglesia.",
+      "audience": [
+        "Adultos",
+        "Jóvenes"
+      ],
+      "leaders": [
+        {
+          "name": "Claudia Farías Robledo",
+          "role": "Coordinadora de voluntariado"
+        }
+      ],
+      "privateFields": {
+        "email": false,
+        "phone": false
+      },
+      "schedules": {
+        "mode": "church",
+        "meetingIds": [
+          "f483bd96-d732-4709-9ba2-000000000009"
+        ],
+        "meetings": []
+      },
+      "location": {
+        "mode": "church"
+      },
+      "media": [],
+      "status": "published",
+      "version": 1,
+      "createdBy": "000000000000000000000201",
+      "updatedBy": "000000000000000000000201",
+      "_id": "8d77c88a8d67d816e6a98651"
+    },
+    {
+      "churchId": "ecf847447c3510c9841b862b",
+      "name": "Hogares que Acompañan",
+      "type": "ministry",
+      "description": "Un encuentro mensual para fortalecer vínculos familiares mediante conversación, oración y herramientas prácticas de comunicación. Recibimos matrimonios, personas que crían solas y familias en distintas etapas. El espacio busca acompañar sin juzgar y orientar hacia apoyo profesional cuando corresponde.",
+      "audience": [
+        "Familias intergeneracionales"
+      ],
+      "leaders": [
+        {
+          "name": "Elisa Valdés Montecinos",
+          "role": "Coordinadora de familias"
+        }
+      ],
+      "privateFields": {
+        "email": false,
+        "phone": false
+      },
+      "schedules": {
+        "mode": "church",
+        "meetingIds": [
+          "f483bd96-d732-4709-9ba2-000000000010"
+        ],
+        "meetings": []
+      },
+      "location": {
+        "mode": "church"
+      },
+      "media": [],
+      "status": "published",
+      "version": 1,
+      "createdBy": "000000000000000000000201",
+      "updatedBy": "000000000000000000000201",
+      "_id": "b8395b181ab8ddab734d189f"
+    }
+  ],
+  "checklist": {
+    "sections": [
+      {
+        "title": "Identificación",
+        "items": [
+          {
+            "key": "name",
+            "label": "Nombre",
+            "complete": true,
+            "required": true
+          },
+          {
+            "key": "description",
+            "label": "Descripción",
+            "complete": true,
+            "required": false
+          }
+        ],
+        "completed": 2,
+        "total": 2
+      },
+      {
+        "title": "Ubicación",
+        "items": [
+          {
+            "key": "commune",
+            "label": "Comuna",
+            "complete": true,
+            "required": true
+          },
+          {
+            "key": "address",
+            "label": "Dirección",
+            "complete": true,
+            "required": true
+          },
+          {
+            "key": "coordinates",
+            "label": "Ubicación en mapa",
+            "complete": true,
+            "required": true
+          }
+        ],
+        "completed": 3,
+        "total": 3
+      },
+      {
+        "title": "Identidad cristiana",
+        "items": [
+          {
+            "key": "denomination",
+            "label": "Denominación",
+            "complete": true,
+            "required": true
+          },
+          {
+            "key": "branch",
+            "label": "Rama",
+            "complete": true,
+            "required": false
+          },
+          {
+            "key": "languages",
+            "label": "Idiomas",
+            "complete": true,
+            "required": false
+          }
+        ],
+        "completed": 3,
+        "total": 3
+      },
+      {
+        "title": "Doctrina",
+        "items": [
+          {
+            "key": "doctrine",
+            "label": "Declaración de creencias",
+            "complete": true,
+            "required": true
+          },
+          {
+            "key": "characteristics",
+            "label": "Creencias y prácticas",
+            "complete": true,
+            "required": false
+          }
+        ],
+        "completed": 2,
+        "total": 2
+      },
+      {
+        "title": "Reuniones",
+        "items": [
+          {
+            "key": "meetings",
+            "label": "Tipos de reuniones",
+            "complete": true,
+            "required": true
+          },
+          {
+            "key": "schedule",
+            "label": "Horarios de reuniones",
+            "complete": true,
+            "required": false
+          }
+        ],
+        "completed": 2,
+        "total": 2
+      },
+      {
+        "title": "Comunidad",
+        "items": [
+          {
+            "key": "activities",
+            "label": "Actividades",
+            "complete": true,
+            "required": false
+          },
+          {
+            "key": "ministries",
+            "label": "Ministerios",
+            "complete": true,
+            "required": false
+          },
+          {
+            "key": "targetGroups",
+            "label": "Públicos",
+            "complete": true,
+            "required": false
+          }
+        ],
+        "completed": 3,
+        "total": 3
+      },
+      {
+        "title": "Liderazgo y contacto",
+        "items": [
+          {
+            "key": "leader",
+            "label": "Representante principal",
+            "complete": true,
+            "required": true
+          },
+          {
+            "key": "contact",
+            "label": "Canal oficial",
+            "complete": false,
+            "required": false
+          }
+        ],
+        "completed": 1,
+        "total": 2
+      },
+      {
+        "title": "Primera visita",
+        "items": [
+          {
+            "key": "instructions",
+            "label": "Indicaciones de bienvenida",
+            "complete": true,
+            "required": false
+          }
+        ],
+        "completed": 1,
+        "total": 1
+      },
+      {
+        "title": "Validación y multimedia",
+        "items": [
+          {
+            "key": "source",
+            "label": "Fuente interna",
+            "complete": true,
+            "required": true
+          },
+          {
+            "key": "authorized",
+            "label": "Autorización",
+            "complete": false,
+            "required": true
+          },
+          {
+            "key": "media",
+            "label": "Recurso multimedia",
+            "complete": false,
+            "required": false
+          }
+        ],
+        "completed": 1,
+        "total": 3
+      }
+    ],
+    "missing": [
+      {
+        "key": "authorized",
+        "label": "Autorización",
+        "complete": false,
+        "required": true
+      }
+    ],
+    "ready": false,
+    "percent": 86
+  },
+  "provenance": {
+    "kind": "synthetic",
+    "scope": "Todos los textos, personas, asociación, dirección y coordenadas son inventados; comuna y ciudad son referencias geográficas.",
+    "excluded": [
+      "imágenes",
+      "redes",
+      "sitios web",
+      "enlaces",
+      "experiencias",
+      "contactos reales"
+    ],
+    "institutionalAuthorization": false
+  }
+}

@@ -6,6 +6,7 @@ const submission=z.strictObject({
  participates:z.boolean(),representatives:z.array(representative).min(1).max(20),
  consent:z.strictObject({revision:z.string().length(64),terms:z.boolean(),privacy:z.boolean(),authorized:z.literal(true),communications:z.literal(true)})
 }).superRefine((v,ctx)=>{
+ if(!v.representatives.some(p=>p.proposedSubrole==='administrator'))ctx.addIssue({code:'custom',path:['representatives'],message:'Incluye un representante administrador antes de enviar la propuesta.'});
  if(new Set(v.representatives.map(p=>p.email)).size!==v.representatives.length)ctx.addIssue({code:'custom',path:['representatives'],message:'No repitas el mismo correo en el equipo.'});
  if(v.participates&&!v.representatives.some(p=>p.email===v.respondent.email&&p.name===v.respondent.name))ctx.addIssue({code:'custom',path:['respondent'],message:'Incluye tus datos una sola vez en el equipo.'});
  if(!v.participates&&v.respondent.email)ctx.addIssue({code:'custom',path:['respondent','email'],message:'No se necesita tu correo si solo coordinas.'});

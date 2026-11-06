@@ -1,0 +1,6 @@
+LOTE PREPARADO, NO IMPORTADO
+632 identidades Google unicas validadas. 785 filas originales conservadas en evidencia-completa.ndjson; 152 pendientes y una repeticion unida por Place ID.
+169 inferencias de denominacion por palabras explicitas del nombre, marcadas para revision. No se inventan doctrinas ni se convierten horarios de apertura en cultos. Perfiles externos requieren comprobar asociacion.
+Los archivos no incluyen fecha de captura: capturedAt usa 2026-11-05T00:00:00Z exclusivamente como fecha tecnica provisional de preparacion, con alerta capture_date_unknown_preparation_date_placeholder. NO representa fecha comprobada de scraping.
+El Excel parte del snapshot de 411 fichas Pilot del 2 de noviembre, suma 630 fichas aprobadas nuevas por Place ID y conserva las dos coincidencias anteriores. Total 1041. No es una consulta actual de MongoDB. Las nuevas figuran Pendiente de importar.
+Antes de cargar: conciliar contra la base destino; nombres/direcciones semejantes con distinto Place ID no se fusionan automaticamente. Los casos de comuna ambigua requieren resolver ubicacion; el nombre del archivo no prueba comuna real.

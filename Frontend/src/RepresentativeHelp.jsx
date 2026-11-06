@@ -7,7 +7,7 @@ const tips={
   4:['Tipos de reunión y horarios','Marca los tipos de reuniones que existen, aunque no tengas todos sus horarios. Luego añade los que conozcas: por ejemplo, Culto · Domingo · 11:00. No es necesario registrar cada célula para indicar que hay grupos pequeños.'],
   5:['Así se vive la comunidad','Puedes elegir varios estilos musicales y las actividades que realmente ofrecen. Por ejemplo: Himnodia Clásica y Góspel; campamentos y ayuda social. Las casillas de privacidad controlan si los estilos se muestran públicamente.'],
   6:['Personas y canales de contacto','Escribe el nombre y cargo de cada líder: por ejemplo, Ana Pérez · Líder de jóvenes. Guarda antes de asociarle una foto en multimedia. Estos datos de presentación no crean cuentas ni conceden permisos de administración.'],
-  8:['Cada foto tiene su lugar','Elige la categoría antes de subir: instalaciones, reuniones, actividades, representantes o banner. Para un retrato, selecciona un líder ya guardado y ajusta el recorte. Puedes subir hasta 7 fotos. En fuente, indica de dónde viene la información, por ejemplo: Secretaría de la iglesia.']
+  8:['Cada foto tiene su lugar','Selecciona primero una foto y después elige su presentación: instalaciones, reuniones, actividades, representantes o banner. Para un retrato, selecciona un líder ya guardado y ajusta el recorte. Puedes subir hasta 10 fotos. En fuente, indica de dónde viene la información, por ejemplo: Secretaría de la iglesia.']
 };
 const fallback=new Map(),keyFor=id=>'koinonia-representative-help-v1-'+id;
 function read(key){try{return JSON.parse(localStorage.getItem(key))||fallback.get(key)||{};}catch{return fallback.get(key)||{};}}
