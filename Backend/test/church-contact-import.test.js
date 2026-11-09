@@ -64,3 +64,16 @@ test('cola Make cifra enlace, conserva token en reintentos y admite solicitud de
  await svc.renew(token);await svc.renew(token);assert.equal(await Message.countDocuments({kind:'renewal',invitation:first.invitation}),1);
  const listed=await f.api(env.app,'get','/church-make-messages',undefined,admin).expect(200);assert.ok(!JSON.stringify(listed.body).includes(first.payload));
 });
+
+test('Make autentica, reserva sin duplicar, autoriza una vez y confirma idempotentemente',async()=>{
+ const svc=require('../src/services/make-outreach.service'),Message=require('../src/models/church-make-message.model'),crypto=require('node:crypto');
+ env.app.locals.config.makeOutreach={enabled:true,keyHash:crypto.createHash('sha256').update('isolated-make-key').digest('hex')};
+ await f.api(env.app,'post','/integrations/make/outreach/claim',{}).expect(401);
+ const a=await svc.claim(f.cfg);assert.equal(a.messages.length,1);const m=a.messages[0],input={dispatchId:m.dispatchId,reservationToken:m.reservationToken};
+ const other=await svc.claim(f.cfg);assert.ok(other.messages.every(x=>x.dispatchId!==m.dispatchId));
+ assert.equal((await svc.check({...input,reservationToken:'0'.repeat(64)})).allowed,false);
+ assert.equal((await svc.check(input)).allowed,true);assert.equal((await svc.check(input)).allowed,false);
+ const result={...input,status:'accepted',providerId:'gmail-isolated'};assert.equal((await svc.result(result)).state,'accepted');assert.equal((await svc.result(result)).state,'accepted');
+ assert.equal((await Message.findById(m.dispatchId)).state,'accepted');
+ const r=await f.api(env.app,'post','/integrations/make/outreach/claim',{},null,{'X-Make-Key':'isolated-make-key'}).expect(200);assert.ok(r.body.messages.every(x=>x.dispatchId!==m.dispatchId));
+});

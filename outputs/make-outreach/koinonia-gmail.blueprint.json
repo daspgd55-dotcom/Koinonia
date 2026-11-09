@@ -1,0 +1,231 @@
+{
+  "name": "Koinonia - invitaciones Make Gmail",
+  "flow": [
+    {
+      "id": 1,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": {
+        "handleErrors": true,
+        "useNewZLibDeCompress": true
+      },
+      "mapper": {
+        "url": "https://david-07tv.onrender.com/api/integrations/make/outreach/claim",
+        "method": "post",
+        "headers": [
+          {
+            "name": "X-Make-Key",
+            "value": "REEMPLAZAR_CLAVE_MAKE"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "bodyType": "raw",
+        "contentType": "application/json",
+        "data": "{}",
+        "parseResponse": true,
+        "followRedirect": false,
+        "rejectUnauthorized": true,
+        "timeout": 40
+      },
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0,
+          "name": "claim"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "module": "builtin:BasicFeeder",
+      "version": 1,
+      "parameters": {},
+      "mapper": {
+        "array": "{{1.data.messages}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 300,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 3,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": {
+        "handleErrors": true,
+        "useNewZLibDeCompress": true
+      },
+      "mapper": {
+        "url": "https://david-07tv.onrender.com/api/integrations/make/outreach/check",
+        "method": "post",
+        "headers": [
+          {
+            "name": "X-Make-Key",
+            "value": "REEMPLAZAR_CLAVE_MAKE"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "bodyType": "raw",
+        "contentType": "application/json",
+        "data": "{\"dispatchId\": \"{{2.dispatchId}}\", \"reservationToken\": \"{{2.reservationToken}}\"}",
+        "parseResponse": true,
+        "followRedirect": false,
+        "rejectUnauthorized": true,
+        "timeout": 40
+      },
+      "metadata": {
+        "designer": {
+          "x": 600,
+          "y": 0,
+          "name": "check"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "module": "google-email:ActionSendEmail",
+      "version": 2,
+      "parameters": {},
+      "filter": {
+        "name": "Solo reserva autorizada",
+        "conditions": [
+          [
+            {
+              "a": "{{3.data.allowed}}",
+              "o": "boolean:equal",
+              "b": true
+            }
+          ]
+        ]
+      },
+      "mapper": {
+        "to": [
+          "{{2.to}}"
+        ],
+        "subject": "{{2.subject}}",
+        "html": "{{2.html}}",
+        "attachments": []
+      },
+      "metadata": {
+        "designer": {
+          "x": 900,
+          "y": 0,
+          "name": "Gmail: conectar tu cuenta"
+        }
+      },
+      "onerror": [
+        {
+          "id": 6,
+          "module": "http:ActionSendData",
+          "version": 3,
+          "parameters": {
+            "handleErrors": true,
+            "useNewZLibDeCompress": true
+          },
+          "mapper": {
+            "url": "https://david-07tv.onrender.com/api/integrations/make/outreach/result",
+            "method": "post",
+            "headers": [
+              {
+                "name": "X-Make-Key",
+                "value": "REEMPLAZAR_CLAVE_MAKE"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "raw",
+            "contentType": "application/json",
+            "data": "{\"dispatchId\": \"{{2.dispatchId}}\", \"reservationToken\": \"{{2.reservationToken}}\", \"status\": \"uncertain\"}",
+            "parseResponse": true,
+            "followRedirect": false,
+            "rejectUnauthorized": true,
+            "timeout": 40
+          },
+          "metadata": {
+            "designer": {
+              "x": 1500,
+              "y": 0,
+              "name": "result"
+            }
+          }
+        },
+        {
+          "id": 7,
+          "module": "builtin:Ignore",
+          "version": 1,
+          "metadata": {
+            "designer": {
+              "x": 1500,
+              "y": 300
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": {
+        "handleErrors": true,
+        "useNewZLibDeCompress": true
+      },
+      "mapper": {
+        "url": "https://david-07tv.onrender.com/api/integrations/make/outreach/result",
+        "method": "post",
+        "headers": [
+          {
+            "name": "X-Make-Key",
+            "value": "REEMPLAZAR_CLAVE_MAKE"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "bodyType": "raw",
+        "contentType": "application/json",
+        "data": "{\"dispatchId\": \"{{2.dispatchId}}\", \"reservationToken\": \"{{2.reservationToken}}\", \"status\": \"accepted\", \"providerId\": \"{{4.id}}\"}",
+        "parseResponse": true,
+        "followRedirect": false,
+        "rejectUnauthorized": true,
+        "timeout": 40
+      },
+      "metadata": {
+        "designer": {
+          "x": 1200,
+          "y": 0,
+          "name": "result"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "instant": false,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 1,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": true,
+      "confidential": true,
+      "dataloss": false,
+      "dlq": false
+    },
+    "designer": {
+      "orphans": []
+    }
+  }
+}

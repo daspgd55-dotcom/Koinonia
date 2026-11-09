@@ -19,6 +19,8 @@ router.get('/friends/:id/messages',auth,social.messages);
 router.post('/friends/:id/messages',auth,social.send);
 router.post('/friends/:id/read',auth,social.read);
 const managers = roles('representative', 'admin'), admin = roles('admin');
+const makeIntegration=require('../controllers/make-outreach.controller');
+for(const op of ['claim','check','result'])router.post('/integrations/make/outreach/'+op,makeIntegration.auth,makeIntegration[op]);
 const makeQueue=require('../controllers/church-make-queue.controller');
 router.post('/church-make-messages/sync',auth,admin,makeQueue.sync);
 router.get('/church-make-messages',auth,admin,makeQueue.list);

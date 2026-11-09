@@ -30,4 +30,4 @@ async function renew(token){
  await Message.updateOne({key:'renewal:'+access.id},{$setOnInsert:{invitation:row._id,kind:'renewal',state:'pending'}},{upsert:true,session});
  });return response;
 }
-module.exports={prepare,renew};
+module.exports={prepare,renew,eligible};

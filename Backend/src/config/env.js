@@ -39,7 +39,8 @@ function loadConfig(env=process.env) {
   const mailWebhookSecret=env.RESEND_WEBHOOK_SECRET||null,mailWebhookSource=env.MAIL_WEBHOOK_SOURCE||'provider';
   if(mailWebhookSecret){try{if(!/^whsec_[A-Za-z0-9+/]+={0,2}$/.test(mailWebhookSecret)||Buffer.from(mailWebhookSecret.slice(6),'base64').length<16)throw Error();new (require('svix').Webhook)(mailWebhookSecret);}catch{throw Error('RESEND_WEBHOOK_SECRET inválido');}}
   if(!['provider','simulated'].includes(mailWebhookSource)||(production&&mailWebhookSource==='simulated'))throw Error('MAIL_WEBHOOK_SOURCE inválido');
-  return { outreachMail:require('./church-outreach-mail').load(env), retention:require('./retention').load(env), mailWebhookSecret, mailWebhookSource, mailQueue, captcha, mfa, mongoUri: MONGO_URI, jwtSecret: JWT_SECRET, port,
+  if(env.MAKE_OUTREACH_KEY_HASH&&!/^[a-f0-9]{64}$/.test(env.MAKE_OUTREACH_KEY_HASH))throw Error('MAKE_OUTREACH_KEY_HASH inv�lido');
+  return { makeOutreach:{enabled:env.MAKE_OUTREACH_ENABLED==='true',keyHash:env.MAKE_OUTREACH_KEY_HASH||null}, outreachMail:require('./church-outreach-mail').load(env), retention:require('./retention').load(env), mailWebhookSecret, mailWebhookSource, mailQueue, captcha, mfa, mongoUri: MONGO_URI, jwtSecret: JWT_SECRET, port,
     enableTestUi: env.NODE_ENV !== 'production' && env.ENABLE_TEST_UI !== 'false',
     geocoding:env.GEOAPIFY_API_KEY?{apiKey:env.GEOAPIFY_API_KEY}:null,
     requireVerifiedEmail:true, verificationPaused:!emailRequired, enforceLegacyVerification:legacyRequired, securityPolicy,
