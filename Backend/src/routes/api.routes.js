@@ -22,6 +22,7 @@ const managers = roles('representative', 'admin'), admin = roles('admin');
 const outreach=require('../controllers/church-outreach.controller');
 const contactImport=require('../controllers/church-contact-import.controller');
 router.post('/church-contact-imports/preview',auth,admin,contactImport.preview);
+router.post('/church-contact-imports/resolve',auth,admin,contactImport.resolve);
 router.post('/church-contact-imports/confirm',auth,admin,contactImport.confirm);
 router.get('/church-contact-imports',auth,admin,contactImport.list);
 const outreachAdmin=require('../controllers/church-outreach-admin.controller');

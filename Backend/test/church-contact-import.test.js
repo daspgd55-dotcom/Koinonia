@@ -23,3 +23,23 @@ test('API exige admin, vista previa no escribe, confirmación repetida es idempo
  const fresh={...input,source:'otro.xlsx'},p=await f.api(env.app,'post','/church-contact-imports/preview',fresh,admin).expect(200);await f.Church.updateOne({_id:church.id},{$set:{'contact.phone':'123456789'}});await f.api(env.app,'post','/church-contact-imports/confirm',{...fresh,digest:p.body.digest,selectedRows:[2]},admin).expect(409);
  await f.api(env.app,'get','/church-contact-imports',undefined,admin).expect(200);
 });
+
+test('resolver actualiza campos elegidos y crea iglesia con asociación atómica e idempotente',async()=>{
+ const input={source:'resolver.xlsx',rows:[{row:7,name:church.identification.name,email:'nuevo@example.org',phone:'912345678'}]};
+ const p=await f.api(env.app,'post','/church-contact-imports/preview',input,admin).expect(200),candidate=p.body.rows[0].candidates[0];
+ const body={source:input.source,row:input.rows[0],mode:'update',churchId:church.id,fingerprint:candidate.fingerprint,fields:['phone']};
+ const before=await f.Church.findById(church.id).lean();
+ const result=await f.api(env.app,'post','/church-contact-imports/resolve',body,admin).expect(200);
+ const updated=await f.Church.findById(church.id).lean();assert.equal(updated.contact.phone,'912345678');assert.equal(updated.contact.email,before.contact.email);
+ const again=await f.api(env.app,'post','/church-contact-imports/resolve',body,admin).expect(200);assert.equal(result.body.id,again.body.id);
+ await f.api(env.app,'post','/church-contact-imports/resolve',{...body,fields:['email']},admin).expect(409);
+ const row={row:8,name:'Iglesia nueva real de prueba aislada',commune:'Santiago',email:'nueva@example.org'},source='crear.xlsx';
+ const preview=await f.api(env.app,'post','/church-contact-imports/preview',{source,rows:[row]},admin).expect(200);
+ const create={source,row,mode:'create',fields:['email','commune'],digest:preview.body.digest,latitude:-33.4,longitude:-70.6};
+ await f.api(env.app,'post','/church-contact-imports/resolve',{...create,latitude:undefined},admin).expect(400);
+ const created=await f.api(env.app,'post','/church-contact-imports/resolve',create,admin).expect(200);
+ const repeat=await f.api(env.app,'post','/church-contact-imports/resolve',create,admin).expect(200);assert.equal(created.body.churchId,repeat.body.churchId);
+ const c=await f.Church.findById(created.body.churchId);assert.equal(c.active,false);assert.equal(c.metadata.dataStatus,'draft');assert.equal(c.contact.email,'nueva@example.org');
+ const batch=await require('../src/models/church-contact-import.model').findById(created.body.id);assert.deepEqual([...batch.associations[0].recipients],['nueva@example.org']);assert.equal(String(batch.associations[0].church),c.id);
+ const bad={...create,source:'invalid.xlsx',row:{...row,name:'No guardar'},latitude:Infinity};await f.api(env.app,'post','/church-contact-imports/resolve',bad,admin).expect(400);assert.equal(await f.Church.countDocuments({'identification.name':'No guardar'}),0);
+});
