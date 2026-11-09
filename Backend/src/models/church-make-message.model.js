@@ -1,0 +1,3 @@
+const {Schema,model}=require('mongoose');
+const schema=new Schema({invitation:{type:Schema.Types.ObjectId,ref:'ChurchOutreachInvitation',required:true},key:{type:String,unique:true,required:true},kind:{type:String,enum:['initial','renewal'],required:true},state:{type:String,enum:['pending','prepared','reserved','accepted','failed','uncertain','cancelled'],default:'pending'},payload:{type:String,select:false},payloadId:String,expiresAt:Date,access:{type:Schema.Types.ObjectId,ref:'ChurchOutreachAccess'},reason:String},{timestamps:true,strict:'throw'});
+schema.index({state:1,createdAt:1});module.exports=model('ChurchMakeMessage',schema);

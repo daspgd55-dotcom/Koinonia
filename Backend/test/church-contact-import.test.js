@@ -43,3 +43,24 @@ test('resolver actualiza campos elegidos y crea iglesia con asociaciÃ³n atÃ³mica
  const batch=await require('../src/models/church-contact-import.model').findById(created.body.id);assert.deepEqual([...batch.associations[0].recipients],['nueva@example.org']);assert.equal(String(batch.associations[0].church),c.id);
  const bad={...create,source:'invalid.xlsx',row:{...row,name:'No guardar'},latitude:Infinity};await f.api(env.app,'post','/church-contact-imports/resolve',bad,admin).expect(400);assert.equal(await f.Church.countDocuments({'identification.name':'No guardar'}),0);
 });
+
+test('campaña deduplica asociaciones y reserva Make sin correo Resend',async()=>{
+ const Import=require('../src/models/church-contact-import.model'),svc=require('../src/services/church-campaign.service'),Invitation=require('../src/models/church-outreach-invitation.model');
+ const batches=await Import.find();const ids=batches.map(b=>b.id),p=await svc.preview(ids),rows=p.rows.filter(r=>r.eligible);assert.ok(rows.length);
+ const result=await svc.prepare({imports:ids,digest:p.digest,keys:rows.map(r=>r.key),reviewed:rows.map(r=>r.key)},admin);assert.equal(result.count,rows.length);
+ const row=await Invitation.findById(result.ids[0]);assert.equal(row.initialChannel,'make');
+ const preview=await require('../src/services/church-outreach-mail.service').plans([{invitation:row.id,kind:'institutional',reminder:false}],f.cfg);assert.ok(preview.items[0].reasons.includes('reserved_for_make'));
+ const again=await svc.preview(ids);assert.equal(again.rows.filter(r=>r.eligible).length,0);
+});
+
+test('cola Make cifra enlace, conserva token en reintentos y admite solicitud de renovación sin exponerlo',async()=>{
+ const Message=require('../src/models/church-make-message.model'),Access=require('../src/models/church-outreach-access.model'),svc=require('../src/services/church-make-queue.service');await Message.init();
+ const message=await Message.findOne({state:'pending'});assert.ok(message);
+ await svc.prepare(message.id,f.cfg);const first=await Message.findById(message.id).select('+payload');assert.equal(first.state,'prepared');assert.ok(!first.payload.includes('token='));assert.ok(!first.payload.includes('@'));
+ await svc.prepare(message.id,f.cfg);const second=await Message.findById(message.id).select('+payload');assert.equal(first.payload,second.payload);assert.equal(String(first.access),String(second.access));
+ const content=require('../src/services/mail-queue.service').open(first.payload,first.payloadId,f.cfg),token=content.text.match(/token=([a-f0-9]{64})/)[1];
+ assert.ok(!(await svc.renew(token)).message.includes(token));assert.equal(await Message.countDocuments({kind:'renewal'}),0);
+ await Access.updateOne({_id:first.access},{$set:{expiresAt:new Date(Date.now()-1000)}});await Message.updateOne({_id:first.id},{$set:{expiresAt:new Date(Date.now()-1000)}});
+ await svc.renew(token);await svc.renew(token);assert.equal(await Message.countDocuments({kind:'renewal',invitation:first.invitation}),1);
+ const listed=await f.api(env.app,'get','/church-make-messages',undefined,admin).expect(200);assert.ok(!JSON.stringify(listed.body).includes(first.payload));
+});

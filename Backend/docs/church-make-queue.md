@@ -1,0 +1,9 @@
+# Cola exclusiva Make
+
+La preparación de campaña crea ChurchMakeMessage pending en la misma transacción que la invitación. Actualizar cola Make incorpora invitaciones Make anteriores sin duplicar (key única). El listado administrativo devuelve hasta 100 mensajes recientes y nunca payload. Preparar mensaje y enlace exige claves MAIL_QUEUE_ENCRYPTION_KEYS/MAIL_QUEUE_ACTIVE_KEY_ID y APP_PUBLIC_URL HTTPS mediante la configuración de correo existente.
+
+POST /api/church-make-messages/:id/prepare revalida ficha, supresiones, canal y vigencia, genera token aleatorio, conserva hash en Access y mensaje cifrado en la colección Make. No entra en MailJob ni en el reconciliador Resend. Mensaje válido hasta 23 horas; enlace hasta siete días limitado por el ciclo. Preparación repetida conserva payload. Preparados vencidos o invalidados se cancelan al revisarlos. La futura entrega deberá volver a validar antes de enviar.
+
+POST /api/church-outreach-access/renew recibe solo token. Solo admite enlaces institucionales vencidos no revocados de ciclos Make vigentes, con destino revisado y sin supresión ni respuesta final. Registra un pending renewal por enlace anterior, nunca retorna secreto/correo/iglesia ni amplía el ciclo. Respuesta genérica y cuotas IP/token. Botón público tras fallo de inicio con token presente. Enlaces de ciclos Resend, usados todavía vigentes, revocados o ciclos vencidos requieren atención administrativa. No recupera sesiones perdidas sin enlace original.
+
+Pendiente: consumidor Make, reservas y transiciones reserved/accepted/failed/uncertain, reconciliación de resultados, limpieza/cancelación periódica de vencidos y entrega real. Los estados están definidos pero no hay worker ni envíos. El administrador prepara explícitamente cada mensaje; conviene hacerlo cuando se vaya a enviar. La solicitud de renovación informa expresamente que aún no se ha enviado correo.

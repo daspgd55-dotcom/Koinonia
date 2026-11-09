@@ -17,6 +17,7 @@ async function plan(selection,cfg,session=null){
  if(row.noContact?.requested||await suppressed(row.church,row.recipient.email,session))reasons.push('institutional_contact_stopped');
  const target=await base.inspectTarget(row.church,session);if(!base.readiness(row,target,await Contact.findById(row.contactKey).session(session)).preparationReady)reasons.push('target_review_required');
  if(selection.kind==='institutional'){
+  if(row.initialChannel==='make')reasons.push('reserved_for_make');
   if(!['awaiting_response','needs_clarification'].includes(row.response.state))reasons.push('already_responded');
   if(selection.reminder&&row.response.state!=='awaiting_response')reasons.push('reminder_after_response');
   const legal=require('../config/church-outreach-legal').current();if(!legal.enabled||legal.testBypass)reasons.push('legal_texts_pending');
