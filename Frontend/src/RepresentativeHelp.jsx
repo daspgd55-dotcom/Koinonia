@@ -2,6 +2,8 @@ import React,{useEffect,useState} from 'react';
 
 const tips={
   0:['Tu primera edición','Completa la ficha por secciones y guarda tus cambios. La vista previa permite revisar cómo se verá. Si aún no se ha publicado, solicita su publicación al terminar.'],
+  1:['Ubicación y accesibilidad','Comprueba la dirección y el punto del mapa. Indica los apoyos disponibles y sus limitaciones; deja sin información aquello que no hayas confirmado.'],
+  7:['Preparar la bienvenida','Activa las visitas, revisa los horarios semanales y elige integrantes con permiso para atenderlas. Las cuentas activas de bienvenida autorizadas pueden recibir avisos de nuevas visitas por correo.'],
   2:['Rama, denominación y red','La rama es la tradición general; la denominación es más específica. Por ejemplo: Protestante → Bautista. En red, indica la asociación a la que pertenece la iglesia, si corresponde.'],
   3:['Creencias sin adivinar','Usa la declaración oficial de tu comunidad. Soteriología se refiere a la salvación; escatología, a los acontecimientos finales. Si no conoces una postura, déjala vacía. “Ocultar del perfil público” evita mostrar ese dato.'],
   4:['Tipos de reunión y horarios','Marca los tipos de reuniones que existen, aunque no tengas todos sus horarios. Luego añade los que conozcas: por ejemplo, Culto · Domingo · 11:00. No es necesario registrar cada célula para indicar que hay grupos pequeños.'],
@@ -18,6 +20,6 @@ export default function RepresentativeHelp({userId,section}){
  useEffect(()=>{if(open)remember(key,section);},[key,section,open]);
  useEffect(()=>{const visibility=()=>setHidden(document.hidden);document.addEventListener('visibilitychange',visibility);return()=>document.removeEventListener('visibilitychange',visibility);},[]);
  useEffect(()=>{if(!open||paused||hovered||pinned||hidden)return;const timer=setTimeout(()=>setOpen(false),25000);return()=>clearTimeout(timer);},[open,paused,hovered,pinned,hidden]);
- if(!open||!tip)return null;
+ if(!tip)return null;if(!open)return <button type="button" className="secondary" onClick={()=>{setPinned(true);setOpen(true);}}>Consultar ayuda de esta sección</button>;
  return <aside className="representative-help" aria-label="Ayuda de primera visita" onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)} onFocusCapture={()=>setPaused(true)} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget))setPaused(false);}}><div className="help-copy" role="status"><strong>{tip[0]}</strong><p>{tip[1]}</p></div><div className="help-actions"><button type="button" className="secondary" onClick={()=>setOpen(false)}>Entendido</button><button type="button" className="text-button" aria-pressed={pinned} onClick={()=>setPinned(v=>!v)}>{pinned?'Cerrar automáticamente':'Mantener visible'}</button><button type="button" className="text-button" onClick={()=>{remember(key,section,true);setOpen(false);}}>No mostrar más ayudas</button></div></aside>;
 }

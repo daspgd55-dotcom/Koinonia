@@ -31,7 +31,7 @@ exports.detail = async (req, res) => {
   const permissions=require('../services/church-permissions').permissions(church,req.user);
   if(!permissions.includes('church'))return res.set('Cache-Control','no-store').json({data:{...svc.publicChurch(church),permissions,metadata:{dataStatus:church.metadata.dataStatus,firstPublishedByAdminAt:church.metadata.firstPublishedByAdminAt,version:church.metadata.version},active:church.active},assignedAccounts:[]});
   const assignedAccounts = await User.find({ _id: { $in: church.representatives },active:true }).select(req.user.role==='admin'?'_id name email role':'_id name role').lean();
-  res.set('ETag', '"' + church.metadata.version + '"').json({ data: {...church.toObject(),permissions}, ...(assignedAccounts ? { assignedAccounts } : {}) });
+  res.set('ETag', '"' + church.metadata.version + '"').json({ data: {...church.toObject(),permissions}, ...(assignedAccounts ? { assignedAccounts:assignedAccounts.map(u=>({...u,visitEligible:require('../services/church-permissions').permissions(church,u).includes('visits'),subrole:require('../services/church-permissions').subrole(church,u)})) } : {}) });
 };
 // Reparación explícita de identificadores antiguos, sin guardar la ficha ni cambiar su publicación.
 exports.leaderIdentifiers = async (req, res) => {
@@ -43,7 +43,7 @@ exports.leaderIdentifiers = async (req, res) => {
   if(changed){church.metadata.version+=1;await church.save();}
   res.set('ETag','"'+church.metadata.version+'"').json({data:church});
 };
-async function validateVisitSettings(data,assigned){if(!data.visitSettings)return;const ids=[...new Set(data.visitSettings.representativeIds)];if(ids.some(id=>!assigned.map(String).includes(id)))throw new HttpError(400,'INVALID_VISIT_STAFF','Selecciona representantes actualmente asociados a esta iglesia.');const count=await User.countDocuments({_id:{$in:ids},active:true,role:{$in:['representative','admin']}});if(count!==ids.length)throw new HttpError(400,'INVALID_VISIT_STAFF','Las cuentas seleccionadas deben estar activas y tener un rol autorizado.');data.visitSettings.representativeIds=ids;data.visitSettings.emailRecipients=[...new Set(data.visitSettings.emailRecipients)];if(data.visitSettings.emailEnabled&&!data.visitSettings.emailRecipients.length)throw new HttpError(400,'VISIT_EMAIL_REQUIRED','Añade al menos un correo para activar los avisos.');}
+async function validateVisitSettings(data,assigned,church){if(!data.visitSettings)return;const ids=[...new Set(data.visitSettings.representativeIds)];if(ids.some(id=>!assigned.map(String).includes(id)))throw new HttpError(400,'INVALID_VISIT_STAFF','Selecciona representantes actualmente asociados a esta iglesia.');const count=await User.countDocuments({_id:{$in:ids},active:true,role:{$in:['representative','admin']}});if(count!==ids.length)throw new HttpError(400,'INVALID_VISIT_STAFF','Las cuentas seleccionadas deben estar activas y tener un rol autorizado.');if(church){const users=await User.find({_id:{$in:ids}}).select('_id role').lean();if(users.some(u=>!require('../services/church-permissions').permissions(church,u).includes('visits')))throw new HttpError(400,'INVALID_VISIT_STAFF','Selecciona integrantes con permiso para gestionar visitas.',[{path:'visitSettings.representativeIds',message:'Los editores no pueden atender visitas.'}]);}data.visitSettings.representativeIds=ids;data.visitSettings.emailRecipients=[...new Set(data.visitSettings.emailRecipients)];if(data.visitSettings.emailEnabled&&!data.visitSettings.emailRecipients.length)throw new HttpError(400,'VISIT_EMAIL_REQUIRED','Añade al menos un correo para activar los avisos.');}
 exports.create = async (req, res) => {
   const data = normalizeDetails(v.parse(v.church, req.body));
   await validateVisitSettings(data,[req.user._id]);
@@ -55,7 +55,7 @@ exports.update = async (req, res) => {
   const church = await svc.managed(req);
   svc.checkVersion(req, church);
   const data = normalizeDetails(v.parse(v.church, req.body));
-  await validateVisitSettings(data,church.representatives);
+  await validateVisitSettings(data,church.representatives,church);
   // PUT reemplaza la ficha editable, preservando identidad, permisos y metadatos técnicos.
   for (const key of Object.keys(v.church.shape)) {
     if (['privateFields','meetingTypes','visitSettings','sectionOrder'].includes(key) && data[key] === undefined) continue;

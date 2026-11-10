@@ -7,7 +7,7 @@ const schema = new Schema({
   name: { type: String, required: true, trim: true, maxlength: 200 }, type: { type: String, enum: types, required: true },
   description: { type: String, default: '', maxlength: 10000 }, audience: [String],
   leaders: [embedded({ name: { type: String, required: true }, role: { type: String, required: true } })],
-  contact: { website: String, instagram: String, facebook: String, youtube: String, email: String, phone: String },
+  contact: { website: String, instagram: String, facebook: String, youtube: String, email: String, phone: String, whatsapp: String, officeHours: String },
   privateFields: { email: { type: Boolean, default: false }, phone: { type: Boolean, default: false } },
   schedules:{mode:{type:String,enum:['none','church','custom'],default:'none'},meetingIds:{type:[String],default:undefined},meetings:[Church.schema.path('meetings').schema]},
   location: { mode: { type: String, enum: ['none', 'church', 'custom'], default: 'none' }, custom: embedded({ address: String, commune: { type: String, required: true }, city: String, region: String, postalCode: String, countryCode: String, coordinates: { type: Church.schema.path('location.coordinates').schema, default: undefined } }) },
