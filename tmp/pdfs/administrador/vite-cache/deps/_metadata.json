@@ -1,0 +1,43 @@
+{
+  "hash": "6e89103f",
+  "configHash": "d92075d5",
+  "lockfileHash": "e3b0c442",
+  "browserHash": "caf8e86b",
+  "optimized": {
+    "react": {
+      "src": "../../../../../Frontend/node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "175935ab",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../../../../Frontend/node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "7ed8a1c6",
+      "needsInterop": true
+    },
+    "leaflet": {
+      "src": "../../../../../Frontend/node_modules/leaflet/dist/leaflet-src.js",
+      "file": "leaflet.js",
+      "fileHash": "e0faa7cf",
+      "needsInterop": true
+    },
+    "react-dom": {
+      "src": "../../../../../Frontend/node_modules/react-dom/index.js",
+      "file": "react-dom.js",
+      "fileHash": "59139ee3",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-PC3KQE7N": {
+      "file": "chunk-PC3KQE7N.js"
+    },
+    "chunk-PTQ5YO77": {
+      "file": "chunk-PTQ5YO77.js"
+    },
+    "chunk-Q4AC2O6Z": {
+      "file": "chunk-Q4AC2O6Z.js"
+    }
+  }
+}

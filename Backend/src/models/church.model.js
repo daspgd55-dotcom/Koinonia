@@ -12,7 +12,7 @@ const ChurchSchema = new Schema({
   location: { address: String, commune: { type: String, required: true }, city: String, region: String, postalCode: String, countryCode: String, coordinates: { type: Point, required: true }, parkingAvailability: { type: String, enum: ['yes', 'no', 'nearby', 'unknown'] }, accessibilityLevel: { type: String, enum: ['yes', 'no', 'partial', 'unknown'] }, parking: Boolean, accessibility: Boolean, accessibilityDetails: { ramp: {type:String,enum:['yes','no','partial','unknown']}, accessibleRestroom: {type:String,enum:['yes','no','partial','unknown']}, elevator: {type:String,enum:['yes','no','partial','unknown']}, signLanguage: {type:String,enum:['yes','no','partial','unknown']}, additionalSupport: String }, accessNotes: String },
   christianIdentity: { branch: String, denomination: String, associatedTradition: String, network: String, languages: [String] },
   doctrine: { officialStatement: String, characteristics: [String], soteriology: String, eschatology: String },
-  privateFields: { musicalStyles: Boolean, culturalStyle: Boolean, accessibilityLevel: Boolean, soteriology: Boolean, eschatology: Boolean, email: Boolean, phone: Boolean },
+  privateFields: { musicalStyles: Boolean, culturalStyle: Boolean, accessibilityLevel: Boolean, accessibilityDetails: Boolean, soteriology: Boolean, eschatology: Boolean, email: Boolean, phone: Boolean },
   sectionOrder: {type:[String],default:undefined,enum:['intro','visit','meetings','doctrine','life','contact']},
   meetingTypes: [String],
   meetings: [embedded({ id:String, type: String, audience: String, modality: String, addressOrUrl: String, frequencyNotes: String, frequency: {type:String,enum:["weekly","fortnightly","monthly","occasional"]}, visitsEnabled: Boolean,
