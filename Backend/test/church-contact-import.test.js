@@ -46,7 +46,8 @@ test('resolver actualiza campos elegidos y crea iglesia con asociación atómica
 
 test('campa�a deduplica asociaciones y reserva Make sin correo Resend',async()=>{
  const Import=require('../src/models/church-contact-import.model'),svc=require('../src/services/church-campaign.service'),Invitation=require('../src/models/church-outreach-invitation.model');
- const batches=await Import.find();const ids=batches.map(b=>b.id),p=await svc.preview(ids),rows=p.rows.filter(r=>r.eligible);assert.ok(rows.length);
+ await f.Church.updateOne({_id:church.id},{$set:{'metadata.testData':true}});
+ const batches=await Import.find();const ids=batches.map(b=>b.id),p=await svc.preview(ids),rows=p.rows.filter(r=>r.eligible);assert.ok(rows.length);assert.ok(rows.some(r=>r.churchId===church.id&&r.testData));
  const result=await svc.prepare({imports:ids,digest:p.digest,keys:rows.map(r=>r.key),reviewed:rows.map(r=>r.key)},admin);assert.equal(result.count,rows.length);
  const row=await Invitation.findById(result.ids[0]);assert.equal(row.initialChannel,'make');
  const preview=await require('../src/services/church-outreach-mail.service').plans([{invitation:row.id,kind:'institutional',reminder:false}],f.cfg);assert.ok(preview.items[0].reasons.includes('reserved_for_make'));

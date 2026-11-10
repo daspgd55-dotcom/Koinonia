@@ -1,7 +1,7 @@
 const {randomBytes}=require('node:crypto'),Message=require('../models/church-make-message.model'),Invitation=require('../models/church-outreach-invitation.model'),Access=require('../models/church-outreach-access.model'),Church=require('../models/church.model'),base=require('./church-outreach.service'),mail=require('./church-outreach-mail.service'),queue=require('./mail-queue.service'),{hash}=require('./account-security.service'),{HttpError}=require('../utils/errors');
 async function eligible(row,session){
  if(!row||row.initialChannel!=='make'||row.lifecycle!=='ready'||row.expiresAt<=new Date()||row.noContact?.requested||!['awaiting_response','needs_clarification'].includes(row.response.state))return false;
- const c=await Church.findById(row.church).session(session).lean();if(!c||c.mergedInto||c.metadata?.testData||c.testOnly||c.importInfo?.batchId?.includes('synthetic')||await mail.suppressed(row.church,row.recipient.email,session))return false;
+ const c=await Church.findById(row.church).session(session).lean();if(!c||c.mergedInto||await mail.suppressed(row.church,row.recipient.email,session))return false;
  const target=await base.inspectTarget(row.church,session),contact=await base.lockContact(row,session);return base.readiness(row,target,contact).preparationReady;
 }
 async function prepare(id,cfg){

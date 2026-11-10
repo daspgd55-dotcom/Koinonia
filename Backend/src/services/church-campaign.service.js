@@ -7,11 +7,11 @@ async function preview(ids,session=null){
   const c=await Church.findById(r.churchId).session(session).lean(),prior=await Invitation.findOne({church:r.churchId,'recipient.email':r.email}).sort({createdAt:-1}).session(session).lean(),reasons=[];
   if(!z.string().email().safeParse(r.email).success)reasons.push('Correo inválido');
   if(!c||c.mergedInto)reasons.push('Ficha ausente o fusionada');
-  if(c?.metadata?.testData||c?.testOnly||c?.importInfo?.batchId?.includes('synthetic'))reasons.push('Datos de prueba');
+  const testData=!!(c?.metadata?.testData||c?.testOnly||c?.importInfo?.batchId?.includes('synthetic'));
   if(await mail.suppressed(r.churchId,r.email,session))reasons.push('Contacto detenido');
   if(prior)reasons.push('Ya existe una invitación: revisar su ciclo');
   const target=c&&!c.mergedInto?await base.inspectTarget(c._id,session):null;
-  rows.push({...r,name:c?.identification?.name||'Ficha ausente',reasons,eligible:!reasons.length,reviewRequired:!!c&&(!c.active||c.metadata?.dataStatus==='draft'||!!c.representatives?.length),fingerprint:target?.fingerprint||null});
+  rows.push({...r,testData,name:c?.identification?.name||'Ficha ausente',reasons,eligible:!reasons.length,reviewRequired:!!c&&(!c.active||c.metadata?.dataStatus==='draft'||!!c.representatives?.length),fingerprint:target?.fingerprint||null});
  }
  return {rows,digest:hash(rows)};
 }
