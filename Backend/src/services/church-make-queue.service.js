@@ -9,7 +9,7 @@ async function prepare(id,cfg){
  return Message.db.transaction(async session=>{
  const m=await Message.findById(id).session(session);if(!m)throw new HttpError(404,'NOT_FOUND','Mensaje no encontrado');
  const row=await Invitation.findById(m.invitation).session(session);
- if(!await eligible(row,session)){m.state='cancelled';m.payload=undefined;m.reason='Invitación no disponible';await m.save({session});return m;}
+ if(!await eligible(row,session)){m.state='cancelled';m.payload=undefined;m.reason='InvitaciÃ³n no disponible';await m.save({session});return m;}
  if(m.state==='prepared'&&(m.expiresAt<=new Date()||!await Access.exists({_id:m.access,revokedAt:null,consumedAt:null,expiresAt:{$gt:new Date()}}).session(session))){m.state='cancelled';m.payload=undefined;m.reason='Mensaje vencido o enlace no disponible';await m.save({session});return m;}
  if(m.state!=='pending')return m;
  const raw=randomBytes(32).toString('hex'),expiresAt=new Date(Math.min(Date.now()+7*86400000,row.expiresAt.getTime()));
@@ -20,14 +20,19 @@ async function prepare(id,cfg){
  m.payload=entry.payload;m.payloadId=entry.id;m.expiresAt=entry.expiresAt;m.access=access._id;m.state='prepared';await m.save({session});row.lastLinkIssuedAt=new Date();row.version++;await row.save({session});return m;
  });
 }
-const response={message:'Si el enlace vencido permite renovación, la solicitud quedó registrada para el correo original. No se ha enviado un correo todavía.'};
+const unavailable={recorded:false,message:'No se puede renovar este enlace. Contacta a quien te invitó para revisar la invitación.'};
 async function renew(token){
- if(!/^[a-f0-9]{64}$/.test(token))return response;
- await Message.db.transaction(async session=>{
- const access=await Access.findOne({tokenHash:hash(token),purpose:'institutional_link',revokedAt:null,expiresAt:{$lte:new Date()}}).session(session);if(!access)return;
- const row=await Invitation.findById(access.invitation).session(session);if(!await eligible(row,session))return;
- if(await Message.exists({invitation:row._id,state:{$in:['pending','prepared','reserved','uncertain']},$or:[{expiresAt:{$gt:new Date()}},{expiresAt:{$exists:false}}]}).session(session))return;
- await Message.updateOne({key:'renewal:'+access.id},{$setOnInsert:{invitation:row._id,kind:'renewal',state:'pending'}},{upsert:true,session});
- });return response;
+ if(!/^[a-f0-9]{64}$/.test(token))return unavailable;
+ return Message.db.transaction(async session=>{
+ const access=await Access.findOne({tokenHash:hash(token),purpose:'institutional_link',revokedAt:null}).session(session);if(!access)return unavailable;
+ if(access.expiresAt>new Date()&&!access.consumedAt)return {recorded:false,message:'Este enlace todavía está vigente. Pulsa Comenzar para continuar.'};
+ const row=await Invitation.findById(access.invitation).session(session);if(!await eligible(row,session))return unavailable;
+ const key='renewal:'+access.id,prior=await Message.findOne({key}).session(session);
+ if(prior)return {recorded:true,message:prior.reason||'La solicitud ya está registrada. Revisa el correo original; no se duplicó el envío.'};
+ const existing=await Message.findOne({invitation:row._id,state:{$in:['pending','prepared','reserved','uncertain']},$or:[{state:{$in:['reserved','uncertain']}},{expiresAt:{$gt:new Date()}},{expiresAt:{$exists:false}}]}).session(session);
+ const reason=existing?'Solicitud registrada sin crear otro envío: ya existe un mensaje pendiente o en revisión. El administrador debe revisar la cola de esta invitación.':undefined;
+ await Message.create([{key,invitation:row._id,kind:'renewal',state:existing?'cancelled':'pending',reason}],{session});
+ return {recorded:true,message:reason||'Solicitud registrada. Make enviará el nuevo enlace al correo original en una próxima ejecución. Aún no se ha enviado.'};
+ });
 }
 module.exports={prepare,renew,eligible};

@@ -6,7 +6,8 @@ const stages={initial:'Invitación inicial',clarification:'Solicitud de aclaraci
 const church={identification:{name:'Iglesia de ejemplo'},location:{commune:'Providencia',city:'Santiago'}};
 fs.mkdirSync(output,{recursive:true});
 for(const stage of Object.keys(stages)) {
- const result=render({stage,church,role:'administrator',source:'institutional_website',clarification:'Por favor, confirma quién asumirá la función de representante administrador y revisa su correo antes de volver a enviar la propuesta.',link:'https://example.test/invitacion-de-muestra'});
+ const link=stage==='activated'?'https://example.test/#/login?iglesia=000000000000000000000000':'https://example.test/invitacion-de-muestra';
+ const result=render({stage,church,role:'administrator',source:'institutional_website',clarification:'Por favor, confirma quién asumirá la función de representante administrador y revisa su correo antes de volver a enviar la propuesta.',link});
  fs.writeFileSync(path.join(output,stage+'.html'),result.html,'utf8');
  fs.writeFileSync(path.join(output,stage+'.txt'),result.subject+'\n\n'+result.text,'utf8');
 }

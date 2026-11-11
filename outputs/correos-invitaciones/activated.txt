@@ -1,4 +1,4 @@
-Tu acceso a Iglesia de ejemplo está activo · Koinonía
+Tu participación en Iglesia de ejemplo está confirmada · Koinonía
 
 Gracias por sumarte al equipo.
 
@@ -12,13 +12,13 @@ Representante administrador
 
 Puedes gestionar la ficha de la iglesia, sus comunidades vinculadas y eventos, las experiencias, las visitas y el equipo.
 
-Inicia sesión nuevamente para cargar tus permisos. Si tu cuenta utiliza verificación de correo o segundo factor, completa esos pasos. Los permisos de visitas también pueden depender de los encargados que haya elegido la iglesia.
+Por seguridad, las sesiones anteriores dejaron de ser válidas. Usa el botón para iniciar sesión nuevamente y abrir la iglesia. En el panel de administración encontrarás el manual correspondiente a tu función, con información sobre sus alcances. Completa la verificación de correo o el segundo factor si se solicitan.
 
-Entrar a la administración
-https://example.test/invitacion-de-muestra
+Ir a Koinonía
+https://example.test/#/login?iglesia=000000000000000000000000
 
-Conserva tus credenciales de forma personal. Para consultar un cambio de función, contacta a la administración de tu iglesia o al equipo de Koinonía.
+Cuida tus credenciales y no compartas el enlace personal de invitación. Si la función indicada no coincide con lo acordado, contacta a la administración de tu iglesia.
 
-Equipo Koinonía
+Koinonía
 
 Recibes este mensaje por una invitación relacionada con esta iglesia. Las comunicaciones de participación son independientes de la publicidad.

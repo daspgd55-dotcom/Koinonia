@@ -34,6 +34,6 @@ Los archivos HTML usan tablas de presentación, estilos en línea, fuentes del s
 
 ## Manuales
 
-Estos correos omiten adjuntos y enlaces a manuales. `OUTREACH_MANUAL_URL` ya no se inserta en las plantillas. La descarga por rol desde el panel queda para una implementación posterior, usando la iglesia seleccionada y el rol efectivo de la cuenta.
+Los correos no adjuntan manuales. Tras aceptar una invitación, el panel de administración muestra la descarga del manual que corresponde al rol efectivo de la cuenta. La confirmación de acceso informa esta opción.
 
 La galería permite revisar el aspecto en navegador. La apariencia en Gmail, Outlook y otros clientes y la entrega real requieren una comprobación posterior con buzones controlados.

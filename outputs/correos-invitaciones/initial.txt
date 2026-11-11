@@ -1,16 +1,22 @@
-Una invitación para Iglesia de ejemplo · Koinonía
+Invitación a revisar la ficha de Iglesia de ejemplo en Koinonía
 
-Ayudemos a las personas a encontrarse.
+Una invitación para Iglesia de ejemplo
 
 Iglesia de ejemplo
 
 Providencia, Santiago
 
-Hola, equipo de la iglesia. Somos Koinonía, una iniciativa personal que busca facilitar el encuentro entre personas, iglesias y comunidades cristianas.
+Hola, equipo de la iglesia:
 
-Iglesia de ejemplo ya tiene una ficha en nuestra plataforma. Queremos invitarles a revisarla y completarla con información que la propia iglesia pueda confirmar.
+Soy David, creador de Koinonía. Estoy desarrollando una plataforma para que las personas puedan conocer iglesias y comunidades cristianas, explorar información útil y acercarse a una comunidad que pueda ser adecuada para ellas.
 
-Obtuvimos este correo desde el sitio institucional de la iglesia. Si corresponde a otra persona, puedes informarlo desde la invitación.
+Koinonía comenzó como una iniciativa personal y hoy también forma parte de un proyecto académico que me ha permitido darle estructura y formalizar su desarrollo.
+
+Como parte del piloto, estamos preparando la plataforma para presentarla prontamente a un grupo de personas que buscan una iglesia o comunidad cristiana. Y esta podría ser una oportunidad para que su iglesia pueda ser elegida por una de estas personas.
+
+Se ha reservado una ficha administrable para Iglesia de ejemplo. Su contenido aún no ha sido aprobado ni se ha autorizado su publicación. La invitación es para que una persona autorizada pueda revisar los datos y, si les interesa, proponer quiénes podrían colaborar en mantenerlos actualizados.
+
+Conseguí esta dirección de correo mediante un servicio automatizado de recopilación de información pública de Google Maps. Las iglesias consideradas para este piloto están ubicadas en Santiago de Chile. Si el dato no corresponde o prefieren que no volvamos a escribir a esta dirección por este motivo, pueden indicarlo desde el enlace de la invitación.
 
 ¿Cómo pueden colaborar?
 
@@ -22,13 +28,13 @@ Revisando la ubicación, los horarios de reunión, los datos de contacto, las ac
 
 3. Envía la propuesta para que la administración de Koinonía la revise.
 
-Puedes coordinar la respuesta sin formar parte del equipo. Si la iglesia aún no tiene administrador, incluye una persona con la función Representante administrador. Después de la aprobación, esa persona deberá aceptar primero.
+La participación es voluntaria. La información y cualquier propuesta quedan sujetas a revisión. También les invitamos a explorar la página y conocer los alcances y oportunidades que esta plataforma podría ofrecer a su iglesia.
 
-Conocer la invitación
+Revisar la invitación
 https://example.test/invitacion-de-muestra
 
 Este enlace es personal para el correo que recibió la invitación. Para informar una iglesia incorrecta, rechazar la invitación o pedir que dejemos de contactar este correo por esta iglesia, abre el enlace, pulsa «Comenzar» y usa la sección de problemas. Si el enlace venció, contacta al equipo por el canal que te hizo llegar la invitación.
 
-Equipo Koinonía
+David | Koinonía
 
 Recibes este mensaje por una invitación relacionada con esta iglesia. Las comunicaciones de participación son independientes de la publicidad.

@@ -8,42 +8,47 @@ const roles = {
 const sources = {institutional_website:'el sitio institucional de la iglesia',institutional_social:'una red social institucional de la iglesia',direct_contact:'un contacto directo registrado por Koinonía',administrative_record:'los antecedentes de contacto registrados por Koinonía'};
 const invitationHelp = 'Este enlace es personal para el correo que recibió la invitación. Para informar una iglesia incorrecta, rechazar la invitación o pedir que dejemos de contactar este correo por esta iglesia, abre el enlace, pulsa «Comenzar» y usa la sección de problemas. Si el enlace venció, contacta al equipo por el canal que te hizo llegar la invitación.';
 const memberHelp = 'Usa una cuenta del correo que recibió esta invitación. Si tienes otra sesión abierta, pulsa «Cambiar de cuenta para esta invitación». Puedes rechazar la asignación desde la misma página. Si el enlace venció, solicita uno nuevo al administrador.';
+const institutionalHelp='El enlace es personal para el correo que recibió la invitación. Desde la página puedes revisar la iglesia, responder, informar que el contacto o la iglesia son incorrectos, o pedir que no volvamos a escribir a esta dirección por esta iglesia. Si venció, solicita a Koinonía que revise el caso.';
 
 function initial({name,source}) {
  return {
-  subject:`Una invitación para ${name} · Koinonía`, preheader:'Ayuda a las personas a conocer tu iglesia con información actualizada.',
-  eyebrow:'INVITACIÓN A TU IGLESIA', title:'Ayudemos a las personas a encontrarse.',
+  subject:`Invitación a revisar la ficha de ${name} en Koinonía`, preheader:'Estamos preparando un piloto para ayudar a las personas a conocer iglesias y comunidades cristianas.',
+  eyebrow:'INVITACIÓN A TU IGLESIA', title:`Una invitación para ${name}`,
+  signature:'David | Koinonía',
   paragraphs:[
-   'Hola, equipo de la iglesia. Somos Koinonía, una iniciativa personal que busca facilitar el encuentro entre personas, iglesias y comunidades cristianas.',
-   `${name} ya tiene una ficha en nuestra plataforma. Queremos invitarles a revisarla y completarla con información que la propia iglesia pueda confirmar.`,
-   `Obtuvimos este correo desde ${sources[source]||'un contacto institucional registrado'}. Si corresponde a otra persona, puedes informarlo desde la invitación.`
+   'Hola, equipo de la iglesia:',
+   'Soy David, creador de Koinonía. Estoy desarrollando una plataforma para que las personas puedan conocer iglesias y comunidades cristianas, explorar información útil y acercarse a una comunidad que pueda ser adecuada para ellas.',
+   'Koinonía comenzó como una iniciativa personal y hoy también forma parte de un proyecto académico que me ha permitido darle estructura y formalizar su desarrollo.',
+   'Como parte del piloto, estamos preparando la plataforma para presentarla prontamente a un grupo de personas que buscan una iglesia o comunidad cristiana. Y esta podría ser una oportunidad para que su iglesia pueda ser elegida por una de estas personas.',
+   `Se ha reservado una ficha administrable para ${name}. Su contenido aún no ha sido aprobado ni se ha autorizado su publicación. La invitación es para que una persona autorizada pueda revisar los datos y, si les interesa, proponer quiénes podrían colaborar en mantenerlos actualizados.`,
+   `Conseguí esta dirección de correo mediante un servicio automatizado de recopilación de información pública de Google Maps. Las iglesias consideradas para este piloto están ubicadas en Santiago de Chile. Si el dato no corresponde o prefieren que no volvamos a escribir a esta dirección por este motivo, pueden indicarlo desde el enlace de la invitación.`
   ],
   sectionTitle:'¿Cómo pueden colaborar?', sectionText:'Revisando la ubicación, los horarios de reunión, los datos de contacto, las actividades y las condiciones de accesibilidad. Así, quienes busquen una iglesia podrán conocerla mejor antes de visitarla.',
   steps:['Reconoce la iglesia que aparece en la invitación.','Propón a las personas que colaborarán y sus funciones.','Envía la propuesta para que la administración de Koinonía la revise.'],
-  note:'Puedes coordinar la respuesta sin formar parte del equipo. Si la iglesia aún no tiene administrador, incluye una persona con la función Representante administrador. Después de la aprobación, esa persona deberá aceptar primero.',
-  cta:'Conocer la invitación', help:invitationHelp
+  note:'La participación es voluntaria. La información y cualquier propuesta quedan sujetas a revisión. También les invitamos a explorar la página y conocer los alcances y oportunidades que esta plataforma podría ofrecer a su iglesia.',
+  cta:'Revisar la invitación', help:invitationHelp
  };
 }
 function clarification({name,clarification}) {
  return {
-  subject:`Una aclaración sobre la propuesta de ${name} · Koinonía`, preheader:'Tu respuesta nos ayudará a continuar con la revisión.',
-  eyebrow:'REVISIÓN DE LA PROPUESTA', title:'Necesitamos un poco más de información.',
-  paragraphs:[`Gracias por colaborar con ${name}. Al revisar la propuesta encontramos un punto que necesitamos aclarar antes de continuar.`],
-  sectionTitle:'Mensaje de la administración', sectionText:clarification||'Revisa la aclaración disponible al abrir tu invitación.',
-  note:'Abre el enlace para leer la solicitud y presentar la información actualizada. La asignación de funciones continúa sujeta a revisión.',
-  cta:'Responder la aclaración', help:invitationHelp
+  subject:`Aclaración sobre la propuesta de ${name} · Koinonía`, preheader:'Revisa la solicitud y, si lo deseas, actualiza la propuesta.',
+  eyebrow:'ACLARACIÓN SOLICITADA', title:'Hay un punto que necesitamos aclarar.',
+  paragraphs:[`Gracias por enviar una propuesta para ${name}. Para poder continuar con su revisión, necesitamos la siguiente aclaración:`],
+  sectionTitle:'Solicitud de aclaración', sectionText:clarification||'Abre la invitación para consultar la aclaración.',
+  note:'Abre tu enlace personal para revisar la solicitud y, si lo deseas, volver a enviar la propuesta completa. La propuesta y las funciones sugeridas siguen pendientes de revisión.',
+  cta:'Revisar y responder', help:institutionalHelp
  };
 }
 function member({name,role}) {
  const assigned=roles[role];
  if(!assigned)throw Error('Función de representante desconocida');
  return {
-  subject:`Te invitaron al equipo de ${name} · Koinonía`, preheader:`Tu función propuesta ya fue aprobada. Revisa y acepta tu participación como ${assigned.name.toLowerCase()}.`,
-  eyebrow:'INVITACIÓN PERSONAL AL EQUIPO', title:'Tu colaboración tiene un lugar.',
-  paragraphs:[`La administración de Koinonía aprobó tu incorporación al equipo de ${name}. Te invitamos a revisar la función y decidir si quieres asumirla.`],
+  subject:`Invitación para colaborar con ${name} · Koinonía`, preheader:`Revisa la función aprobada para ti y decide si deseas aceptarla.`,
+  eyebrow:'INVITACIÓN PERSONAL AL EQUIPO', title:`Invitación para sumarte al equipo de ${name}`,
+  paragraphs:[`La administración de Koinonía aprobó la función propuesta para ti en el equipo de ${name}. Revisa sus alcances y decide si deseas aceptar la invitación.`],
   sectionTitle:assigned.name, sectionText:assigned.scope,
-  steps:['Abre tu invitación personal.','Inicia sesión o crea una cuenta con este mismo correo.','Acepta la participación y vuelve a iniciar sesión para cargar tus permisos.'],
-  note:role==='administrator'?'Si la iglesia está formando su primer equipo, acepta tu invitación primero para que los demás representantes puedan incorporarse.':'Si la iglesia todavía no tiene un administrador activo, esa persona debe aceptar primero. Después podrás continuar con este mismo enlace.',
+  steps:['Abre la invitación personal.','Inicia sesión o crea una cuenta con la misma dirección de correo que recibió este mensaje.','Revisa la función y acepta si estás de acuerdo.'],
+  note:role==='administrator'?'Si se está formando el primer equipo de la iglesia, la persona con función de Representante administrador debe aceptar primero.':'La persona con función de Representante administrador debe aceptar primero si aún no hay una administración activa para esta iglesia.',
   cta:'Revisar y aceptar mi participación', help:memberHelp
  };
 }
@@ -51,23 +56,23 @@ function activated({name,role}) {
  const assigned=roles[role];
  if(!assigned)throw Error('Función de representante desconocida');
  return {
-  subject:`Tu acceso a ${name} está activo · Koinonía`, preheader:`Ya puedes colaborar como ${assigned.name.toLowerCase()}.`,
+  subject:`Tu participación en ${name} está confirmada · Koinonía`, preheader:`Tu función de ${assigned.name.toLowerCase()} ya está activa.`,
   eyebrow:'PARTICIPACIÓN CONFIRMADA', title:'Gracias por sumarte al equipo.',
   paragraphs:[`Aceptaste tu participación en ${name}. Tu cuenta ya está vinculada a esta iglesia con la función indicada a continuación.`],
   sectionTitle:assigned.name, sectionText:assigned.scope,
-  note:'Inicia sesión nuevamente para cargar tus permisos. Si tu cuenta utiliza verificación de correo o segundo factor, completa esos pasos. Los permisos de visitas también pueden depender de los encargados que haya elegido la iglesia.',
-  cta:'Entrar a la administración', help:'Conserva tus credenciales de forma personal. Para consultar un cambio de función, contacta a la administración de tu iglesia o al equipo de Koinonía.'
+  note:'Por seguridad, las sesiones anteriores dejaron de ser válidas. Usa el botón para iniciar sesión nuevamente y abrir la iglesia. En el panel de administración encontrarás el manual correspondiente a tu función, con información sobre sus alcances. Completa la verificación de correo o el segundo factor si se solicitan.',
+  cta:'Ir a Koinonía', help:'Cuida tus credenciales y no compartas el enlace personal de invitación. Si la función indicada no coincide con lo acordado, contacta a la administración de tu iglesia.'
  };
 }
 // Preparadas para futuras notificaciones al contacto inicial. No activan nuevos envíos.
 const updates = {
- received: ({name})=>({subject:`Recibimos la propuesta de ${name} · Koinonía`,preheader:'La propuesta está disponible para revisión.',eyebrow:'PROPUESTA RECIBIDA',title:'Gracias por compartir tu propuesta.',paragraphs:[`Registramos la propuesta del equipo de ${name}. La administración de Koinonía revisará las personas y funciones indicadas. Si se necesita una aclaración, podrá solicitarla por este canal.`],note:'Cada persona aprobada recibirá una invitación individual cuando la administración confirme su envío. El acceso se activa al aceptar esa invitación.'}),
- approved: ({name})=>({subject:`La revisión del equipo de ${name} está lista · Koinonía`,preheader:'La administración terminó de revisar la propuesta.',eyebrow:'PROPUESTA REVISADA',title:'El equipo puede dar el siguiente paso.',paragraphs:[`La administración de Koinonía terminó de revisar la propuesta de ${name}. Las personas aprobadas podrán aceptar su participación mediante una invitación individual, una vez que se confirme el envío de esos correos.`],note:'En equipos nuevos, la persona administradora debe aceptar primero. Quien coordinó esta respuesta puede seguir colaborando sin asumir una función en el equipo.'}),
- rejected: ({name})=>({subject:`Resultado de la propuesta de ${name} · Koinonía`,preheader:'La revisión de esta propuesta ha finalizado.',eyebrow:'RESULTADO DE LA REVISIÓN',title:'Gracias por tu disposición a colaborar.',paragraphs:[`La administración de Koinonía decidió no aprobar esta propuesta para ${name}. Si necesitas conocer el motivo o corregir los antecedentes, contacta al equipo por el canal que te hizo llegar la invitación.`]})
+ received: ({name})=>({subject:`Recibimos la propuesta para ${name} · Koinonía`,preheader:'La propuesta quedó registrada para revisión.',eyebrow:'PROPUESTA RECIBIDA',title:'Gracias por enviar la propuesta.',paragraphs:[`La propuesta para colaborar con ${name} quedó registrada. Koinonía revisará la información y las funciones sugeridas. Si se necesita alguna aclaración, se solicitará mediante la invitación institucional.`],note:'El envío de la propuesta no concede acceso ni activa funciones. Las personas aprobadas recibirán invitaciones individuales para que decidan si aceptan.'}),
+ approved: ({name})=>({subject:`La propuesta para ${name} fue revisada · Koinonía`,preheader:'Consulta el resultado de la revisión de las personas propuestas.',eyebrow:'REVISIÓN COMPLETADA',title:'La revisión de la propuesta está lista.',paragraphs:[`Koinonía terminó de revisar la propuesta para ${name}. Las personas aprobadas podrán recibir una invitación individual para revisar la función y decidir si la aceptan.`],note:'La aprobación de una propuesta no activa por sí sola el acceso. Cada persona debe aceptar su invitación individual; en equipos nuevos, la persona administradora debe aceptar primero.'}),
+ rejected: ({name})=>({subject:`Actualización sobre la propuesta para ${name} · Koinonía`,preheader:'La propuesta fue revisada.',eyebrow:'ACTUALIZACIÓN DE LA PROPUESTA',title:'Gracias por presentar la propuesta.',paragraphs:[`Koinonía revisó la propuesta para ${name}, pero no aprobó las funciones sugeridas en esta revisión. Esta decisión se refiere a la propuesta recibida; no cambia la ficha de la iglesia ni concede o revoca accesos existentes.`]})
 };
 function content(stage,data) {
- if(stage==='institutional-reminder')return {...initial(data),subject:`Tu invitación a colaborar con ${data.name} sigue pendiente · Koinonía`,preheader:'Puedes responder, declinar o informar un problema desde tu enlace personal.',eyebrow:'RECORDATORIO DE INVITACIÓN',title:'¿Pudieron revisar la invitación?',paragraphs:[`Hace un tiempo invitamos a ${data.name} a colaborar en la actualización de su ficha. Aún esperamos una respuesta y te compartimos el acceso para que puedan revisarlo cuando les resulte conveniente.`]};
- if(stage==='member-reminder')return {...member(data),subject:`Tu participación en ${data.name} espera tu respuesta · Koinonía`,preheader:'Revisa tu función y decide si quieres incorporarte.',eyebrow:'RECORDATORIO PERSONAL',title:'Tu invitación sigue pendiente.'};
+ if(stage==='institutional-reminder')return {...initial(data),subject:`Recordatorio: invitación para revisar la ficha de ${data.name} · Koinonía`,preheader:'Si les interesa participar, pueden revisar la invitación desde su enlace personal.',eyebrow:'RECORDATORIO DE INVITACIÓN',title:'¿Pudieron revisar la invitación?',paragraphs:[`Hace un tiempo enviamos una invitación para revisar la ficha administrable de ${data.name}. Si desean participar, pueden continuar desde el enlace personal incluido abajo.`],help:institutionalHelp};
+ if(stage==='member-reminder')return {...member(data),subject:`Recordatorio: invitación para colaborar con ${data.name} · Koinonía`,preheader:'Revisa la función aprobada y decide si deseas aceptarla.',eyebrow:'RECORDATORIO PERSONAL',title:'Tu invitación sigue pendiente.'};
  const factory={initial,clarification,member,activated,...updates}[stage];
  if(!factory)throw Error('Plantilla de invitación desconocida');
  return factory(data);

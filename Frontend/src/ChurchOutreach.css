@@ -15,3 +15,5 @@
 .outreach-team-list{max-height:620px;max-height:min(620px,70dvh);overflow:auto;overscroll-behavior:contain;padding:4px 8px 4px 4px;margin-bottom:20px;scrollbar-gutter:stable}.outreach-team-count{font-weight:600;color:#286b66}
 
 .outreach-role-guide{margin:20px 0;padding:20px;background:#f1f6f4;border:1px solid #d4ddd4;border-radius:12px}.outreach-role-guide h3{margin-top:0}.outreach-role-guide dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0}.outreach-role-guide dl>div{padding:16px;background:#fff;border-radius:8px}.outreach-role-guide dt{font-weight:700;color:#286b66}.outreach-role-guide dd{margin:8px 0 0;line-height:1.6}@media(max-width:700px){.outreach-role-guide dl{grid-template-columns:1fr}.outreach-role-guide{padding:16px}}
+
+.outreach-page .outreach-renewal{display:block;margin-top:32px;padding-top:24px;border-top:1px solid #d4ddd4}.outreach-renewal h3{margin:0 0 12px}.outreach-renewal>button{margin-top:12px}

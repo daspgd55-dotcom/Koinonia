@@ -79,3 +79,14 @@ test('Make autentica, reserva sin duplicar, autoriza una vez y confirma idempote
  assert.equal((await Message.findById(m.dispatchId)).state,'accepted');
  const r=await f.api(env.app,'post','/integrations/make/outreach/claim',{},null,{'X-Make-Key':'isolated-make-key'}).expect(200);assert.ok(r.body.messages.every(x=>x.dispatchId!==m.dispatchId));
 });
+
+
+test('renovacion de enlace usado registra el bloqueo por otro envio sin duplicarlo',async()=>{
+ const Message=require('../src/models/church-make-message.model'),Access=require('../src/models/church-outreach-access.model'),svc=require('../src/services/church-make-queue.service'),crypto=require('node:crypto');
+ const message=await Message.findOne({state:'accepted'}),token=crypto.randomBytes(32).toString('hex');
+ const access=await Access.create({invitation:message.invitation,tokenHash:crypto.createHash('sha256').update(token).digest('hex'),purpose:'institutional_link',expiresAt:new Date(Date.now()+60000),consumedAt:new Date()});
+ await Message.create({invitation:message.invitation,key:'test-pending-renewal',kind:'initial',state:'pending'});
+ const result=await svc.renew(token);assert.equal(result.recorded,true);
+ const request=await Message.findOne({key:'renewal:'+access.id});assert.equal(request.kind,'renewal');assert.equal(request.state,'cancelled');assert.ok(request.reason);
+ await svc.renew(token);assert.equal(await Message.countDocuments({key:'renewal:'+access.id}),1);
+});
