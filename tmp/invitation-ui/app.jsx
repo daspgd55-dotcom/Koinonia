@@ -1,0 +1,1 @@
+import React from 'react';import{createRoot}from'react-dom/client';import Admin from '/Frontend/src/ChurchOutreachAdmin.jsx';import '/Frontend/src/styles.css';createRoot(document.getElementById('root')).render(<Admin token="fixture" user={{role:'admin'}}/>);

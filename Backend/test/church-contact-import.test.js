@@ -64,6 +64,7 @@ test('cola Make cifra enlace, conserva token en reintentos y admite solicitud de
  await Access.updateOne({_id:first.access},{$set:{expiresAt:new Date(Date.now()-1000)}});await Message.updateOne({_id:first.id},{$set:{expiresAt:new Date(Date.now()-1000)}});
  await svc.renew(token);await svc.renew(token);assert.equal(await Message.countDocuments({kind:'renewal',invitation:first.invitation}),1);
  const listed=await f.api(env.app,'get','/church-make-messages',undefined,admin).expect(200);assert.ok(!JSON.stringify(listed.body).includes(first.payload));
+ const renewals=await f.api(env.app,'get','/church-make-messages?kind=renewal&page=1',undefined,admin).expect(200);assert.equal(renewals.body.total,1);assert.equal(renewals.body.data[0].kind,'renewal');assert.ok(renewals.body.data[0].invitation.recipient.email);assert.ok(renewals.body.data[0].invitation.church.identification.name);assert.equal(renewals.body.data[0].payload,undefined);assert.equal(renewals.body.data[0].reservationHash,undefined);await f.api(env.app,'get','/church-make-messages?page=0',undefined,admin).expect(400);
 });
 
 test('Make autentica, reserva sin duplicar, autoriza una vez y confirma idempotentemente',async()=>{
