@@ -62,6 +62,7 @@ router.get('/church-outreach-invitations',auth,admin,outreach.list);
 router.post('/church-outreach-invitations',auth,admin,outreach.create);
 router.get('/church-outreach-invitations/:id',auth,admin,outreachAdmin.detail);
 router.get('/church-outreach-invitations/:id/events',auth,admin,outreach.events);
+router.post('/church-outreach-invitations/:id/trash',auth,admin,outreachAdmin.trash);
 router.post('/church-outreach-invitations/:id/actions',auth,admin,outreach.action);
 const registrations=require('../controllers/church-registration.controller');
 router.use('/church-registrations',async(req,res,next)=>{res.set('Cache-Control','no-store');await require('../services/account-security.service').quota(req.app.locals.config,'registration-requests',req.ip,90,900000);next();});

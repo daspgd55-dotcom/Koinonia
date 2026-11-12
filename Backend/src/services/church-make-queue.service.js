@@ -1,6 +1,6 @@
 const {randomBytes}=require('node:crypto'),Message=require('../models/church-make-message.model'),Invitation=require('../models/church-outreach-invitation.model'),Access=require('../models/church-outreach-access.model'),Church=require('../models/church.model'),base=require('./church-outreach.service'),mail=require('./church-outreach-mail.service'),queue=require('./mail-queue.service'),{hash}=require('./account-security.service'),{HttpError}=require('../utils/errors');
 async function eligible(row,session){
- if(!row||row.initialChannel!=='make'||row.lifecycle!=='ready'||row.expiresAt<=new Date()||row.noContact?.requested||!['awaiting_response','needs_clarification'].includes(row.response.state))return false;
+ if(!row||row.trashedAt||row.initialChannel!=='make'||row.lifecycle!=='ready'||row.expiresAt<=new Date()||row.noContact?.requested||!['awaiting_response','needs_clarification'].includes(row.response.state))return false;
  const c=await Church.findById(row.church).session(session).lean();if(!c||c.mergedInto||await mail.suppressed(row.church,row.recipient.email,session))return false;
  const target=await base.inspectTarget(row.church,session),contact=await base.lockContact(row,session);return base.readiness(row,target,contact).preparationReady;
 }
@@ -11,6 +11,12 @@ async function prepare(id,cfg){
  const row=await Invitation.findById(m.invitation).session(session);
  if(!await eligible(row,session)){m.state='cancelled';m.payload=undefined;m.reason='InvitaciÃ³n no disponible';await m.save({session});return m;}
  if(m.state==='prepared'&&(m.expiresAt<=new Date()||!await Access.exists({_id:m.access,revokedAt:null,consumedAt:null,expiresAt:{$gt:new Date()}}).session(session))){m.state='cancelled';m.payload=undefined;m.reason='Mensaje vencido o enlace no disponible';await m.save({session});return m;}
+ if(m.kind==='renewal'&&['blocked','cancelled'].includes(m.state)){
+  const others=await Message.find({invitation:row._id,_id:{$ne:m._id}}).session(session);
+  if(others.some(x=>['reserved','uncertain'].includes(x.state)||(x.state==='accepted'&&x.resultAt>=m.createdAt)))throw new HttpError(409,'DELIVERY_REVIEW_REQUIRED','Revisa Gmail: hay un envío reservado, incierto o aceptado después de esta solicitud. No se preparó otro correo.');
+  await Message.updateMany({invitation:row._id,_id:{$ne:m._id},state:{$in:['pending','prepared']}},{$set:{state:'cancelled',reason:'Reemplazado por la renovación solicitada'},$unset:{payload:1}},{session});
+  m.state='pending';m.reason=undefined;
+ }
  if(m.state!=='pending')return m;
  const raw=randomBytes(32).toString('hex'),expiresAt=new Date(Math.min(Date.now()+7*86400000,row.expiresAt.getTime()));
  await Access.updateMany({invitation:row._id,revokedAt:null},{$set:{revokedAt:new Date()}},{session});
@@ -31,7 +37,7 @@ async function renew(token){
  if(prior)return {recorded:true,message:prior.reason||'Solicitud Enviada. Espere a que le envíen otra vez el enlace'};
  const existing=await Message.findOne({invitation:row._id,state:{$in:['pending','prepared','reserved','uncertain']},$or:[{state:{$in:['reserved','uncertain']}},{expiresAt:{$gt:new Date()}},{expiresAt:{$exists:false}}]}).session(session);
  const reason=existing?'Solicitud registrada sin crear otro envío: ya existe un mensaje pendiente o en revisión. El administrador debe revisar la cola de esta invitación.':undefined;
- await Message.create([{key,invitation:row._id,kind:'renewal',state:existing?'cancelled':'pending',reason}],{session});
+ await Message.create([{key,invitation:row._id,kind:'renewal',state:existing?'blocked':'pending',reason}],{session});
  return {recorded:true,message:reason||'Solicitud Enviada. Espere a que le envíen otra vez el enlace'};
  });
 }

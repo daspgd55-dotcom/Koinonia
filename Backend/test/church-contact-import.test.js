@@ -64,7 +64,7 @@ test('cola Make cifra enlace, conserva token en reintentos y admite solicitud de
  await Access.updateOne({_id:first.access},{$set:{expiresAt:new Date(Date.now()-1000)}});await Message.updateOne({_id:first.id},{$set:{expiresAt:new Date(Date.now()-1000)}});
  await svc.renew(token);await svc.renew(token);assert.equal(await Message.countDocuments({kind:'renewal',invitation:first.invitation}),1);
  const listed=await f.api(env.app,'get','/church-make-messages',undefined,admin).expect(200);assert.ok(!JSON.stringify(listed.body).includes(first.payload));
- const renewals=await f.api(env.app,'get','/church-make-messages?kind=renewal&page=1',undefined,admin).expect(200);assert.equal(renewals.body.total,1);assert.equal(renewals.body.data[0].kind,'renewal');assert.ok(renewals.body.data[0].invitation.recipient.email);assert.ok(renewals.body.data[0].invitation.church.identification.name);assert.equal(renewals.body.data[0].payload,undefined);assert.equal(renewals.body.data[0].reservationHash,undefined);await f.api(env.app,'get','/church-make-messages?page=0',undefined,admin).expect(400);
+ const renewals=await f.api(env.app,'get','/church-make-messages?kind=renewal&page=1',undefined,admin).expect(200);assert.equal(renewals.body.total,1);assert.equal(renewals.body.data[0].kind,'renewal');assert.equal(typeof renewals.body.data[0].invitation,'string');assert.equal(renewals.body.data[0].invitation,renewals.body.data[0].invitationDetails._id);assert.ok(renewals.body.data[0].invitationDetails.recipient.email);assert.ok(renewals.body.data[0].invitationDetails.church.identification.name);assert.equal(renewals.body.data[0].payload,undefined);assert.equal(renewals.body.data[0].reservationHash,undefined);await f.api(env.app,'get','/church-make-messages?page=0',undefined,admin).expect(400);
 });
 
 test('Make autentica, reserva sin duplicar, autoriza una vez y confirma idempotentemente',async()=>{
@@ -87,6 +87,21 @@ test('renovacion de enlace usado registra el bloqueo por otro envio sin duplicar
  const access=await Access.create({invitation:message.invitation,tokenHash:crypto.createHash('sha256').update(token).digest('hex'),purpose:'institutional_link',expiresAt:new Date(Date.now()+60000),consumedAt:new Date()});
  await Message.create({invitation:message.invitation,key:'test-pending-renewal',kind:'initial',state:'pending'});
  const result=await svc.renew(token);assert.equal(result.recorded,true);
- const request=await Message.findOne({key:'renewal:'+access.id});assert.equal(request.kind,'renewal');assert.equal(request.state,'cancelled');assert.ok(request.reason);
+ const request=await Message.findOne({key:'renewal:'+access.id});assert.equal(request.kind,'renewal');assert.equal(request.state,'blocked');assert.ok(request.reason);
  await svc.renew(token);assert.equal(await Message.countDocuments({key:'renewal:'+access.id}),1);
+ await svc.prepare(request.id,f.cfg);assert.equal((await Message.findById(request.id)).state,'prepared');assert.equal((await Message.findOne({key:'test-pending-renewal'})).state,'cancelled');
+ const blocked=await Message.create({invitation:message.invitation,key:'another-blocked',kind:'renewal',state:'blocked'});await Message.create({invitation:message.invitation,key:'reserved-other',kind:'initial',state:'reserved'});await assert.rejects(()=>svc.prepare(blocked.id,f.cfg),e=>e.code==='DELIVERY_REVIEW_REQUIRED');
+});
+
+
+test('papelera solo admite ciclos cerrados y restaurar conserva cierre e historial',async()=>{
+ const base=require('../src/services/church-outreach.service'),Event=require('../src/models/church-outreach-event.model'),{row}=await f.seed(admin,{name:'Papelera aislada',email:'trash@example.test'}),url='/church-outreach-invitations/'+row.id+'/trash',headers={'If-Match':'"'+row.version+'"'};
+ await f.api(env.app,'post',url,{restore:false}).expect(401);
+ await f.api(env.app,'post',url,{restore:false},admin,headers).expect(409);
+ const closed=await base.act(row.id,row.version,{action:'close',reason:'Prueba de papelera'},admin);
+ const trashed=await f.api(env.app,'post',url,{restore:false},admin,{'If-Match':'"'+closed.version+'"'}).expect(200);assert.ok(trashed.body.data.trashedAt);
+ const inbox=await f.api(env.app,'get','/church-outreach-invitations/inbox?q=Papelera',undefined,admin).expect(200);assert.equal(inbox.body.total,0);
+ const trash=await f.api(env.app,'get','/church-outreach-invitations/inbox?trash=true&q=Papelera',undefined,admin).expect(200);assert.equal(trash.body.total,1);
+ await f.api(env.app,'post',url,{restore:true},admin,headers).expect(409);
+ const restored=await f.api(env.app,'post',url,{restore:true},admin,{'If-Match':'"'+trashed.body.data.version+'"'}).expect(200);assert.equal(restored.body.data.lifecycle,'closed');assert.equal(restored.body.data.active,false);assert.ok(!restored.body.data.trashedAt);assert.equal(await Event.countDocuments({invitation:row.id,action:{$in:['trashed','restored']}}),2);
 });

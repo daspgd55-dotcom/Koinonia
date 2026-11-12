@@ -1,6 +1,7 @@
 const {Schema,model}=require('mongoose');
 const ref=(name,extra={})=>({type:Schema.Types.ObjectId,ref:name,...extra}),embedded=fields=>new Schema(fields,{_id:false,strict:'throw'});
 const schema=new Schema({
+ trashedAt:Date,trashedBy:ref('User'),
  initialChannel:{type:String,enum:['resend','make'],default:function(){return this.isNew?'resend':undefined;},immutable:true},
  reference:{type:String,required:true,unique:true,immutable:true},
  church:ref('Church',{required:true,immutable:true}),

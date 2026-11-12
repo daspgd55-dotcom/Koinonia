@@ -1,0 +1,1 @@
+import React from 'react';import{createRoot}from'react-dom/client';import Outreach from '/Frontend/src/ChurchOutreach.jsx';import '/Frontend/src/styles.css';createRoot(document.getElementById('root')).render(<Outreach route={'/invitacion-iglesia?token='+ 'a'.repeat(64)}/>);
