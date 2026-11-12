@@ -15,6 +15,7 @@ Los mensajes ya preparados contienen una copia del contenido. Después de editar
 | Clave | Uso | Integración actual |
 | --- | --- | --- |
 | `initial` | Invitación al contacto institucional | Lote institucional confirmado por admin |
+| `renewal` | Nuevo enlace solicitado por el contacto institucional | Cola de renovaciones de Make |
 | `clarification` | Solicitud de aclaración con el mensaje del admin | Nuevo envío institucional al pedir aclaraciones |
 | `institutional-reminder` | Recordatorio al contacto | Lote de recordatorio seleccionado por admin |
 | `member` | Invitación individual con rol aprobado | Envío de representantes aprobados |

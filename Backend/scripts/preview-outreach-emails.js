@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path');
 const {render}=require('../src/services/church-outreach-mail-templates');
 const output=path.resolve(__dirname,'../../outputs/correos-invitaciones');
-const stages={initial:'Invitación inicial',clarification:'Solicitud de aclaración','institutional-reminder':'Recordatorio al contacto',member:'Invitación al representante','member-reminder':'Recordatorio al representante',activated:'Confirmación de acceso',received:'Propuesta recibida',approved:'Propuesta revisada',rejected:'Propuesta rechazada'};
+const stages={initial:'Invitación inicial',renewal:'Renovación de enlace',clarification:'Solicitud de aclaración','institutional-reminder':'Recordatorio al contacto',member:'Invitación al representante','member-reminder':'Recordatorio al representante',activated:'Confirmación de acceso',received:'Propuesta recibida',approved:'Propuesta revisada',rejected:'Propuesta rechazada'};
 const church={identification:{name:'Iglesia de ejemplo'},location:{commune:'Providencia',city:'Santiago'}};
 fs.mkdirSync(output,{recursive:true});
 for(const stage of Object.keys(stages)) {

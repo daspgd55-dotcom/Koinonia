@@ -4,6 +4,7 @@ async function valid(m,session){const row=await Invitation.findById(m.invitation
 async function claim(cfg){
  await Message.updateMany({state:'reserved',reservedUntil:{$lte:new Date()}},{$set:{state:'uncertain',reason:'Reserva vencida: comprobar Gmail antes de reenviar'}});
  const pending=await Message.findOne({trashedAt:null,state:'pending'}).sort({createdAt:1});if(pending)try{await base.prepare(pending.id,cfg);}catch(e){if(e.code!=='INVITATION_UNAVAILABLE')throw e;await Message.updateOne({_id:pending.id,state:'pending'},{$set:{state:'cancelled',reason:e.message},$unset:{payload:1}});}
+ const currentTemplateVersion=require('./church-outreach-mail-templates').version,stalePrepared=await Message.findOne({trashedAt:null,state:'prepared',templateVersion:{$ne:currentTemplateVersion},expiresAt:{$gt:new Date()}}).sort({createdAt:1});if(stalePrepared)try{await base.prepare(stalePrepared.id,cfg);}catch(e){if(e.code!=='INVITATION_UNAVAILABLE')throw e;await Message.updateOne({_id:stalePrepared.id,state:'prepared'},{$set:{state:'cancelled',reason:e.message},$unset:{payload:1}});}
  return Message.db.transaction(async session=>{
  const m=await Message.findOne({trashedAt:null,state:'prepared',expiresAt:{$gt:new Date()}}).sort({createdAt:1}).select('+payload').session(session);if(!m)return {messages:[]};
  if(!await valid(m,session)){m.state='cancelled';m.payload=undefined;await m.save({session});return {messages:[]};}

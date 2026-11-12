@@ -24,7 +24,7 @@ async function issue(id,version,actor){
 }
 async function begin(token){return Invitation.db.transaction(async session=>{
  const {access,row}=await credential(token,'institutional_link',session),target=await usable(row,session);
- access.consumedAt=new Date();await access.save({session});const result=await mint(row,'institutional_session',30*60000,session);
+ access.consumedAt=new Date();await access.save({session});const result=await mint(row,'institutional_session',60*60000,session);
  row.version++;await row.save({session});await audit(row,'access_started',session);
  // Explicit allowlist: no contacts, coordinates, internal notes or team.
  return {sessionToken:result.token,expiresAt:result.expiresAt,church:{name:target.name,location:target.location},legal:require('../config/church-outreach-legal').current(),clarification:row.response.state==='needs_clarification'?row.communications?.at(-1)?.text:undefined};

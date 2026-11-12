@@ -8,7 +8,7 @@ Providencia, Santiago
 
 Hola, equipo de la iglesia:
 
-Soy David, creador de Koinonía. Estoy desarrollando una plataforma para que las personas puedan conocer iglesias y comunidades cristianas, explorar información útil y acercarse a una comunidad que pueda ser adecuada para ellas.
+Soy David, creador de Koinonía. Estoy desarrollando una plataforma para que las personas puedan conocer iglesias y comunidades cristianas, explorar información y acercarse a una comunidad que pueda ser adecuada para ellas.
 
 Koinonía comenzó como una iniciativa personal y hoy también forma parte de un proyecto académico que me ha permitido darle estructura y formalizar su desarrollo.
 
@@ -18,9 +18,9 @@ Se ha reservado una ficha administrable para Iglesia de ejemplo. Su contenido a�
 
 Conseguí esta dirección de correo mediante un servicio automatizado de recopilación de información pública de Google Maps. Las iglesias consideradas para este piloto están ubicadas en Santiago de Chile. Si el dato no corresponde o prefieren que no volvamos a escribir a esta dirección por este motivo, pueden indicarlo desde el enlace de la invitación.
 
-Puedes conocer un ejemplo de perfil de iglesia en Koinonía y visualizar cómo podría presentarse el de ustedes:
+Puedes conocer un ejemplo de perfil de iglesia en Koinonía y visualizar cómo podría presentarse la iglesia de ustedes:
 
-Ver perfil de Iglesia Evangélica Senderos de Gracia
+Ver perfil de Iglesia de Ejemplo.
 https://koinoniapp.cl/#/iglesia/ecf847447c3510c9841b862b?origen=descubrir
 
 ¿Cómo pueden colaborar?
@@ -43,6 +43,6 @@ https://koinoniapp.cl/
 
 Este enlace es personal para el correo que recibió la invitación. Para informar una iglesia incorrecta, rechazar la invitación o pedir que dejemos de contactar este correo por esta iglesia, abre el enlace, pulsa «Comenzar» y usa la sección de problemas. Si el enlace venció, contacta al equipo por el canal que te hizo llegar la invitación.
 
-David | Koinonía
+Koinonía
 
 Recibes este mensaje por una invitación relacionada con esta iglesia. Las comunicaciones de participación son independientes de la publicidad.

@@ -23,11 +23,20 @@ function initial({name,source}) {
    `Se ha reservado una ficha administrable para ${name}. Su contenido aún no ha sido aprobado ni se ha autorizado su publicación. La invitación es para que una persona autorizada pueda revisar los datos y, si les interesa, proponer quiénes podrían colaborar en mantenerlos actualizados.`,
    `Conseguí esta dirección de correo mediante un servicio automatizado de recopilación de información pública de Google Maps. Las iglesias consideradas para este piloto están ubicadas en Santiago de Chile. Si el dato no corresponde o prefieren que no volvamos a escribir a esta dirección por este motivo, pueden indicarlo desde el enlace de la invitación.`
   ],
-  example:{text:'Puedes conocer un ejemplo de perfil de iglesia en Koinonía y visualizar cómo podría presentarse el de ustedes:',label:'Ver perfil de Iglesia de Ejemplo.',url:'https://koinoniapp.cl/#/iglesia/ecf847447c3510c9841b862b?origen=descubrir'},
+  example:{text:'Puedes conocer un ejemplo de perfil de iglesia en Koinonía y visualizar cómo podría presentarse la iglesia de ustedes:',label:'Ver perfil de Iglesia de Ejemplo.',url:'https://koinoniapp.cl/#/iglesia/ecf847447c3510c9841b862b?origen=descubrir'},
   sectionTitle:'¿Cómo pueden colaborar?', sectionText:'Revisando la ubicación, los horarios de reunión, los datos de contacto, las actividades y las condiciones de accesibilidad. Así, quienes busquen una iglesia podrán conocerla mejor antes de visitarla.',
   steps:['Reconoce la iglesia que aparece en la invitación.','Propón a las personas que colaborarán y sus funciones.','Envía la propuesta para que la administración de Koinonía la revise.'],
   note:'La participación es voluntaria. La información y cualquier propuesta quedan sujetas a revisión. También les invitamos a explorar la página y conocer los alcances y oportunidades que esta plataforma podría ofrecer a su iglesia.',
   cta:'Revisar la invitación', secondaryCta:'Explorar Koinonía',secondaryLink:'https://koinoniapp.cl/',help:invitationHelp
+ };
+}
+function renewal({name}) {
+ return {
+  subject:`Tu nuevo enlace para la invitación de ${name} · Koinonía`, preheader:'Solicitaste un nuevo enlace para revisar la invitación de esta iglesia.',
+  eyebrow:'NUEVO ENLACE DE INVITACIÓN', title:'Aquí tienes un nuevo enlace.',
+  paragraphs:[`Se generó un nuevo enlace personal para revisar la invitación de ${name}.`,'Usa el botón para continuar con la invitación. Este enlace está dirigido al correo que recibió este mensaje.'],
+  cta:'Abrir la invitación',
+  help:'Si no solicitaste este enlace, puedes ignorar este correo. Recibirlo no concede permisos ni envía una respuesta a la invitación.'
  };
 }
 function clarification({name,clarification}) {
@@ -74,7 +83,7 @@ const updates = {
 function content(stage,data) {
  if(stage==='institutional-reminder')return {...initial(data),subject:`Recordatorio: invitación para revisar la ficha de ${data.name} · Koinonía`,preheader:'Si les interesa participar, pueden revisar la invitación desde su enlace personal.',eyebrow:'RECORDATORIO DE INVITACIÓN',title:'¿Pudieron revisar la invitación?',paragraphs:[`Hace un tiempo enviamos una invitación para revisar la ficha administrable de ${data.name}. Si desean participar, pueden continuar desde el enlace personal incluido abajo.`],help:institutionalHelp};
  if(stage==='member-reminder')return {...member(data),subject:`Recordatorio: invitación para colaborar con ${data.name} · Koinonía`,preheader:'Revisa la función aprobada y decide si deseas aceptarla.',eyebrow:'RECORDATORIO PERSONAL',title:'Tu invitación sigue pendiente.'};
- const factory={initial,clarification,member,activated,...updates}[stage];
+ const factory={initial,renewal,clarification,member,activated,...updates}[stage];
  if(!factory)throw Error('Plantilla de invitación desconocida');
  return factory(data);
 }

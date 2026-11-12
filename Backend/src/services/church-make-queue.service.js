@@ -6,6 +6,7 @@ async function eligible(row,session,lock=true){
 }
 async function prepare(id,cfg){
  if(!cfg.mailQueue||!cfg.mail?.appUrl||!/^https:\/\//.test(cfg.mail.appUrl))throw new HttpError(409,'QUEUE_CONFIG','Configura el cifrado de cola y el origen HTTPS del frontend');
+ const templates=require('./church-outreach-mail-templates');
  return Message.db.transaction(async session=>{
  const m=await Message.findById(id).session(session);if(!m)throw new HttpError(404,'NOT_FOUND','Mensaje no encontrado');
  const row=await Invitation.findById(m.invitation).session(session);
@@ -18,14 +19,15 @@ async function prepare(id,cfg){
   await Message.updateMany({invitation:row._id,_id:{$ne:m._id},state:{$in:['pending','prepared']}},{$set:{state:'cancelled',reason:'Reemplazado por la renovación solicitada'},$unset:{payload:1}},{session});
   m.state='pending';m.reason=undefined;
  }
- if(m.state==='prepared')return m;
+ if(m.state==='prepared'&&m.templateVersion===templates.version)return m;
+ if(m.state==='prepared'){m.state='pending';m.payload=undefined;}
  if(m.state!=='pending')throw new HttpError(409,'MESSAGE_NOT_PREPARABLE','Este mensaje ya fue enviado o requiere revisar su entrega en Gmail.');
  const raw=randomBytes(32).toString('hex'),expiresAt=new Date(Math.min(Date.now()+7*86400000,row.expiresAt.getTime()));
  await Access.updateMany({invitation:row._id,revokedAt:null},{$set:{revokedAt:new Date()}},{session});
  const [access]=await Access.create([{invitation:row._id,tokenHash:hash(raw),purpose:'institutional_link',expiresAt}],{session});
- const church=await Church.findById(row.church).session(session),content=require('./church-outreach-mail-templates').render({kind:'institutional',church,source:row.contactSource.kind,link:cfg.mail.appUrl.replace(/\/$/,'')+'/#/invitacion-iglesia?token='+raw,reminder:false});
+ const church=await Church.findById(row.church).session(session),content=templates.render({kind:m.kind==='renewal'?'renewal':'institutional',church,source:row.contactSource.kind,link:cfg.mail.appUrl.replace(/\/$/,'')+'/#/invitacion-iglesia?token='+raw,reminder:false});
  const entry=queue.entry(cfg,row.recipient.email,content.subject,content.text,{expiresAt},content.html);
- m.payload=entry.payload;m.payloadId=entry.id;m.expiresAt=entry.expiresAt;m.access=access._id;m.state='prepared';await m.save({session});row.lastLinkIssuedAt=new Date();row.version++;await row.save({session});return m;
+ m.payload=entry.payload;m.payloadId=entry.id;m.templateVersion=templates.version;m.expiresAt=entry.expiresAt;m.access=access._id;m.state='prepared';await m.save({session});row.lastLinkIssuedAt=new Date();row.version++;await row.save({session});return m;
  });
 }
 const unavailable={recorded:false,message:'No se puede renovar este enlace. Contacta a quien te invitó para revisar la invitación.'};
