@@ -1,4 +1,4 @@
-Invitación a revisar la ficha de Iglesia de ejemplo en Koinonía
+Invitación para que Iglesia de ejemplo participe en Koinonía
 
 Una invitación para Iglesia de ejemplo
 
@@ -18,6 +18,11 @@ Se ha reservado una ficha administrable para Iglesia de ejemplo. Su contenido a�
 
 Conseguí esta dirección de correo mediante un servicio automatizado de recopilación de información pública de Google Maps. Las iglesias consideradas para este piloto están ubicadas en Santiago de Chile. Si el dato no corresponde o prefieren que no volvamos a escribir a esta dirección por este motivo, pueden indicarlo desde el enlace de la invitación.
 
+Puedes conocer un ejemplo de perfil de iglesia en Koinonía y visualizar cómo podría presentarse el de ustedes:
+
+Ver perfil de Iglesia Evangélica Senderos de Gracia
+https://koinoniapp.cl/#/iglesia/ecf847447c3510c9841b862b?origen=descubrir
+
 ¿Cómo pueden colaborar?
 
 Revisando la ubicación, los horarios de reunión, los datos de contacto, las actividades y las condiciones de accesibilidad. Así, quienes busquen una iglesia podrán conocerla mejor antes de visitarla.
@@ -32,6 +37,9 @@ La participación es voluntaria. La información y cualquier propuesta quedan su
 
 Revisar la invitación
 https://example.test/invitacion-de-muestra
+
+Explorar Koinonía
+https://koinoniapp.cl/
 
 Este enlace es personal para el correo que recibió la invitación. Para informar una iglesia incorrecta, rechazar la invitación o pedir que dejemos de contactar este correo por esta iglesia, abre el enlace, pulsa «Comenzar» y usa la sección de problemas. Si el enlace venció, contacta al equipo por el canal que te hizo llegar la invitación.
 

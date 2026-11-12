@@ -8,6 +8,11 @@ Providencia, Santiago
 
 Hace un tiempo enviamos una invitación para revisar la ficha administrable de Iglesia de ejemplo. Si desean participar, pueden continuar desde el enlace personal incluido abajo.
 
+Puedes conocer un ejemplo de perfil de iglesia en Koinonía y visualizar cómo podría presentarse el de ustedes:
+
+Ver perfil de Iglesia Evangélica Senderos de Gracia
+https://koinoniapp.cl/#/iglesia/ecf847447c3510c9841b862b?origen=descubrir
+
 ¿Cómo pueden colaborar?
 
 Revisando la ubicación, los horarios de reunión, los datos de contacto, las actividades y las condiciones de accesibilidad. Así, quienes busquen una iglesia podrán conocerla mejor antes de visitarla.
@@ -22,6 +27,9 @@ La participación es voluntaria. La información y cualquier propuesta quedan su
 
 Revisar la invitación
 https://example.test/invitacion-de-muestra
+
+Explorar Koinonía
+https://koinoniapp.cl/
 
 El enlace es personal para el correo que recibió la invitación. Desde la página puedes revisar la iglesia, responder, informar que el contacto o la iglesia son incorrectos, o pedir que no volvamos a escribir a esta dirección por esta iglesia. Si venció, solicita a Koinonía que revise el caso.
 

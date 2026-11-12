@@ -28,11 +28,11 @@ async function renew(token){
  if(access.expiresAt>new Date()&&!access.consumedAt)return {recorded:false,message:'Este enlace todavía está vigente. Pulsa Comenzar para continuar.'};
  const row=await Invitation.findById(access.invitation).session(session);if(!await eligible(row,session))return unavailable;
  const key='renewal:'+access.id,prior=await Message.findOne({key}).session(session);
- if(prior)return {recorded:true,message:prior.reason||'La solicitud ya está registrada. Revisa el correo original; no se duplicó el envío.'};
+ if(prior)return {recorded:true,message:prior.reason||'Solicitud Enviada. Espere a que le envíen otra vez el enlace'};
  const existing=await Message.findOne({invitation:row._id,state:{$in:['pending','prepared','reserved','uncertain']},$or:[{state:{$in:['reserved','uncertain']}},{expiresAt:{$gt:new Date()}},{expiresAt:{$exists:false}}]}).session(session);
  const reason=existing?'Solicitud registrada sin crear otro envío: ya existe un mensaje pendiente o en revisión. El administrador debe revisar la cola de esta invitación.':undefined;
  await Message.create([{key,invitation:row._id,kind:'renewal',state:existing?'cancelled':'pending',reason}],{session});
- return {recorded:true,message:reason||'Solicitud registrada. Make enviará el nuevo enlace al correo original en una próxima ejecución. Aún no se ha enviado.'};
+ return {recorded:true,message:reason||'Solicitud Enviada. Espere a que le envíen otra vez el enlace'};
  });
 }
 module.exports={prepare,renew,eligible};
