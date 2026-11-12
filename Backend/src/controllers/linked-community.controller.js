@@ -55,7 +55,7 @@ async function list(req, res, management) {
   if (q.q) filter.name = new RegExp(escape(q.q), 'i');
   const scope = management ? (req.user.role === 'admin' ? {} : require('../services/church-permissions').scope(req.user,'content','parent.')) : Object.fromEntries(Object.entries(visible).map(([key, value]) => ['parent.' + key, value]));
   const [result] = await Community.aggregate([{ $match: filter }, { $lookup: { from: Church.collection.name, localField: 'churchId', foreignField: '_id', as: 'parent' } }, { $unwind: '$parent' }, { $match: scope },
-    { $sort: { name: 1, _id: 1 } }, { $facet: { rows: [{ $skip: (q.page - 1) * q.limit }, { $limit: q.limit }], total: [{ $count: 'value' }] } }]);
+    { $addFields: { displayOrder: { $ifNull: ['$displayOrder', 1000] } } }, { $sort: q.churchId ? { displayOrder: 1, name: 1, _id: 1 } : { name: 1, _id: 1 } }, { $facet: { rows: [{ $skip: (q.page - 1) * q.limit }, { $limit: q.limit }], total: [{ $count: 'value' }] } }]);
   const total = result.total[0]?.value || 0, data = result.rows.map(({ parent: church, ...row }) => management ? { ...row, church: { _id: church._id, name: church.identification.name } } : publicData(row, church));
   res.set('Cache-Control', 'no-store').json({ data, pagination: { page: q.page, limit: q.limit, total, pages: Math.ceil(total / q.limit) } });
 }
@@ -65,3 +65,13 @@ exports.managedCommunity = managedCommunity;
 exports.expectedVersion = expectedVersion;
 
 function validateSchedules(body,church){const ids=body.schedules?.meetingIds;if(ids&&ids.some(id=>!church.meetings.some(m=>m.id===id)))throw new HttpError(400,'INVALID_MEETING','Alguna reunión ya no pertenece a la iglesia. Revisa los horarios seleccionados.');}
+
+exports.remove=async(req,res)=>{
+ const version=expectedVersion(req),{data}=await managedCommunity(req);
+ await Community.db.transaction(async session=>{
+  if(await require('../models/event.model').exists({communityId:data._id}).session(session))throw new HttpError(409,'COMMUNITY_HAS_EVENTS','Esta comunidad tiene eventos asociados. Edita esos eventos para quitar o cambiar su comunidad organizadora antes de eliminarla.');
+  const deleted=await Community.findOneAndDelete({_id:data._id,version}).session(session);
+  if(!deleted)throw new HttpError(409,'STALE_VERSION','La comunidad cambió en otra sesión. Recarga antes de eliminar.');
+ });
+ res.set('Cache-Control','no-store').json({message:'Comunidad eliminada definitivamente.'});
+};

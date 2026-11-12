@@ -124,6 +124,7 @@ router.get('/communities', linkedCommunity.list);
 router.post('/communities', auth, managers, linkedCommunity.create);
 router.get('/communities/:id', linkedCommunity.get);
 router.patch('/communities/:id', auth, managers, linkedCommunity.update);
+router.delete('/communities/:id', auth, managers, linkedCommunity.remove);
 router.patch('/communities/:id/status', auth, managers, linkedCommunity.status);
 const media = require('../controllers/media.controller');
 const eventCover = require('../controllers/event-cover.controller');

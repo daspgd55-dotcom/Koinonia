@@ -5,7 +5,7 @@ const text = z.string().trim().min(1).max(200);
 const ownLocation = church.shape.location.pick({ address: true, commune: true, city: true, region: true, postalCode: true, countryCode: true, coordinates: true }).partial({ coordinates: true });
 const location = z.discriminatedUnion('mode', [z.strictObject({ mode: z.literal('none') }), z.strictObject({ mode: z.literal('church') }), z.strictObject({ mode: z.literal('custom'), custom: ownLocation })]);
 const fields = z.strictObject({
-  name: text, type: z.enum(types), description: z.string().trim().max(10000).default(''),
+  displayOrder:z.number().int().min(0).max(9999).default(1000), name: text, type: z.enum(types), description: z.string().trim().max(10000).default(''),
   audience: z.array(text).max(50).default([]), leaders: z.array(z.strictObject({ name: text, role: text })).max(50).default([]),
   contact: church.shape.contact.unwrap().default({}),
   privateFields: z.strictObject({ email: z.boolean().default(false), phone: z.boolean().default(false) }).default({ email: false, phone: false }),

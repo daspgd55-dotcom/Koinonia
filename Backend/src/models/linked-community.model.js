@@ -4,6 +4,7 @@ const { types, statuses } = require('../validation/linked-community');
 const embedded = fields => new Schema(fields, { _id: false, strict: 'throw' });
 const schema = new Schema({
   churchId: { type: Schema.Types.ObjectId, ref: 'Church', required: true, immutable: true },
+  displayOrder:{type:Number,min:0,max:9999,default:1000},
   name: { type: String, required: true, trim: true, maxlength: 200 }, type: { type: String, enum: types, required: true },
   description: { type: String, default: '', maxlength: 10000 }, audience: [String],
   leaders: [embedded({ name: { type: String, required: true }, role: { type: String, required: true } })],
