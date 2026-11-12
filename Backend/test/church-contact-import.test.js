@@ -105,3 +105,19 @@ test('papelera solo admite ciclos cerrados y restaurar conserva cierre e histori
  await f.api(env.app,'post',url,{restore:true},admin,headers).expect(409);
  const restored=await f.api(env.app,'post',url,{restore:true},admin,{'If-Match':'"'+trashed.body.data.version+'"'}).expect(200);assert.equal(restored.body.data.lifecycle,'closed');assert.equal(restored.body.data.active,false);assert.ok(!restored.body.data.trashedAt);assert.equal(await Event.countDocuments({invitation:row.id,action:{$in:['trashed','restored']}}),2);
 });
+
+
+test('preparacion masiva selecciona inicial cancelada y papelera evita envios',async()=>{
+ const {row}=await f.seed(admin,{email:'bulk-trash@example.test',name:'Bulk aislado'}),Invitation=require('../src/models/church-outreach-invitation.model'),Message=require('../src/models/church-make-message.model'),svc=require('../src/services/church-make-queue.service');
+ await Invitation.collection.updateOne({_id:row._id},{$set:{initialChannel:'make'}});
+ const m=await Message.create({invitation:row.id,key:'bulk-initial',kind:'initial',state:'cancelled'});
+ const candidates=await f.api(env.app,'get','/church-make-messages/preparable',undefined,admin).expect(200);assert.ok(candidates.body.ids.includes(m.id));
+ await f.api(env.app,'post','/church-make-messages/'+m.id+'/prepare',{},admin).expect(200);assert.equal((await Message.findById(m.id)).state,'prepared');
+ await f.api(env.app,'post','/church-make-messages/'+m.id+'/trash',{restore:false},admin).expect(200);
+ const hidden=await Message.findById(m.id).select('+payload');assert.equal(hidden.state,'cancelled');assert.ok(hidden.trashedAt);assert.ok(!hidden.payload);assert.equal(await svc.canPrepare(hidden),false);
+ await f.api(env.app,'post','/church-make-messages/'+m.id+'/prepare',{},admin).expect(409);
+ const trash=await f.api(env.app,'get','/church-make-messages?trash=true',undefined,admin).expect(200);assert.ok(trash.body.data.some(x=>x._id===m.id));
+ await f.api(env.app,'post','/church-make-messages/'+m.id+'/trash',{restore:true},admin).expect(200);assert.equal(await svc.canPrepare(await Message.findById(m.id)),true);
+ await Invitation.updateOne({_id:row.id},{$set:{expiresAt:new Date(Date.now()-1000)}});
+ await f.api(env.app,'post','/church-make-messages/'+m.id+'/prepare',{},admin).expect(409);
+});

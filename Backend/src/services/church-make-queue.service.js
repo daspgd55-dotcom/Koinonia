@@ -1,23 +1,25 @@
 const {randomBytes}=require('node:crypto'),Message=require('../models/church-make-message.model'),Invitation=require('../models/church-outreach-invitation.model'),Access=require('../models/church-outreach-access.model'),Church=require('../models/church.model'),base=require('./church-outreach.service'),mail=require('./church-outreach-mail.service'),queue=require('./mail-queue.service'),{hash}=require('./account-security.service'),{HttpError}=require('../utils/errors');
-async function eligible(row,session){
+async function eligible(row,session,lock=true){
  if(!row||row.trashedAt||row.initialChannel!=='make'||row.lifecycle!=='ready'||row.expiresAt<=new Date()||row.noContact?.requested||!['awaiting_response','needs_clarification'].includes(row.response.state))return false;
  const c=await Church.findById(row.church).session(session).lean();if(!c||c.mergedInto||await mail.suppressed(row.church,row.recipient.email,session))return false;
- const target=await base.inspectTarget(row.church,session),contact=await base.lockContact(row,session);return base.readiness(row,target,contact).preparationReady;
+ const target=await base.inspectTarget(row.church,session),contact=lock?await base.lockContact(row,session):await require('../models/church-outreach-contact.model').findById(row.contactKey).session(session);return base.readiness(row,target,contact).preparationReady;
 }
 async function prepare(id,cfg){
  if(!cfg.mailQueue||!cfg.mail?.appUrl||!/^https:\/\//.test(cfg.mail.appUrl))throw new HttpError(409,'QUEUE_CONFIG','Configura el cifrado de cola y el origen HTTPS del frontend');
  return Message.db.transaction(async session=>{
  const m=await Message.findById(id).session(session);if(!m)throw new HttpError(404,'NOT_FOUND','Mensaje no encontrado');
  const row=await Invitation.findById(m.invitation).session(session);
- if(!await eligible(row,session)){m.state='cancelled';m.payload=undefined;m.reason='InvitaciÃ³n no disponible';await m.save({session});return m;}
+ if(m.trashedAt)throw new HttpError(409,'MESSAGE_TRASHED','Restaura el mensaje desde la papelera antes de prepararlo.');
+ if(!await eligible(row,session))throw new HttpError(409,'INVITATION_UNAVAILABLE','No se puede preparar: el ciclo venció, está cerrado, requiere revisión o el contacto está detenido. Abre la invitación para revisar su estado.');
  if(m.state==='prepared'&&(m.expiresAt<=new Date()||!await Access.exists({_id:m.access,revokedAt:null,consumedAt:null,expiresAt:{$gt:new Date()}}).session(session))){m.state='cancelled';m.payload=undefined;m.reason='Mensaje vencido o enlace no disponible';await m.save({session});return m;}
- if(m.kind==='renewal'&&['blocked','cancelled'].includes(m.state)){
+ if(['pending','blocked','cancelled'].includes(m.state)){
   const others=await Message.find({invitation:row._id,_id:{$ne:m._id}}).session(session);
   if(others.some(x=>['reserved','uncertain'].includes(x.state)||(x.state==='accepted'&&x.resultAt>=m.createdAt)))throw new HttpError(409,'DELIVERY_REVIEW_REQUIRED','Revisa Gmail: hay un envío reservado, incierto o aceptado después de esta solicitud. No se preparó otro correo.');
   await Message.updateMany({invitation:row._id,_id:{$ne:m._id},state:{$in:['pending','prepared']}},{$set:{state:'cancelled',reason:'Reemplazado por la renovación solicitada'},$unset:{payload:1}},{session});
   m.state='pending';m.reason=undefined;
  }
- if(m.state!=='pending')return m;
+ if(m.state==='prepared')return m;
+ if(m.state!=='pending')throw new HttpError(409,'MESSAGE_NOT_PREPARABLE','Este mensaje ya fue enviado o requiere revisar su entrega en Gmail.');
  const raw=randomBytes(32).toString('hex'),expiresAt=new Date(Math.min(Date.now()+7*86400000,row.expiresAt.getTime()));
  await Access.updateMany({invitation:row._id,revokedAt:null},{$set:{revokedAt:new Date()}},{session});
  const [access]=await Access.create([{invitation:row._id,tokenHash:hash(raw),purpose:'institutional_link',expiresAt}],{session});
@@ -41,4 +43,9 @@ async function renew(token){
  return {recorded:true,message:reason||'Solicitud Enviada. Espere a que le envíen otra vez el enlace'};
  });
 }
-module.exports={prepare,renew,eligible};
+async function canPrepare(m){
+ if(m.trashedAt||!['pending','blocked','cancelled'].includes(m.state))return false;
+ const row=await Invitation.findById(m.invitation);if(!await eligible(row,null,false))return false;
+ return !await Message.exists({invitation:m.invitation,_id:{$ne:m._id},$or:[{state:{$in:['reserved','uncertain']}},{state:'accepted',resultAt:{$gte:m.createdAt}}]});
+}
+module.exports={prepare,renew,eligible,canPrepare};

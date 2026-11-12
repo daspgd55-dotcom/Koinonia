@@ -14,16 +14,16 @@ function initial({name,source}) {
  return {
   subject:`Invitación para que ${name} participe en Koinonía`, preheader:'Estamos preparando un piloto para ayudar a las personas a conocer iglesias y comunidades cristianas.',
   eyebrow:'INVITACIÓN A TU IGLESIA', title:`Una invitación para ${name}`,
-  signature:'David | Koinonía',
+  signature:'Koinonía',
   paragraphs:[
    'Hola, equipo de la iglesia:',
-   'Soy David, creador de Koinonía. Estoy desarrollando una plataforma para que las personas puedan conocer iglesias y comunidades cristianas, explorar información útil y acercarse a una comunidad que pueda ser adecuada para ellas.',
+   'Soy David, creador de Koinonía. Estoy desarrollando una plataforma para que las personas puedan conocer iglesias y comunidades cristianas, explorar información y acercarse a una comunidad que pueda ser adecuada para ellas.',
    'Koinonía comenzó como una iniciativa personal y hoy también forma parte de un proyecto académico que me ha permitido darle estructura y formalizar su desarrollo.',
    'Como parte del piloto, estamos preparando la plataforma para presentarla prontamente a un grupo de personas que buscan una iglesia o comunidad cristiana. Y esta podría ser una oportunidad para que su iglesia pueda ser elegida por una de estas personas.',
    `Se ha reservado una ficha administrable para ${name}. Su contenido aún no ha sido aprobado ni se ha autorizado su publicación. La invitación es para que una persona autorizada pueda revisar los datos y, si les interesa, proponer quiénes podrían colaborar en mantenerlos actualizados.`,
    `Conseguí esta dirección de correo mediante un servicio automatizado de recopilación de información pública de Google Maps. Las iglesias consideradas para este piloto están ubicadas en Santiago de Chile. Si el dato no corresponde o prefieren que no volvamos a escribir a esta dirección por este motivo, pueden indicarlo desde el enlace de la invitación.`
   ],
-  example:{text:'Puedes conocer un ejemplo de perfil de iglesia en Koinonía y visualizar cómo podría presentarse el de ustedes:',label:'Ver perfil de Iglesia Evangélica Senderos de Gracia',url:'https://koinoniapp.cl/#/iglesia/ecf847447c3510c9841b862b?origen=descubrir'},
+  example:{text:'Puedes conocer un ejemplo de perfil de iglesia en Koinonía y visualizar cómo podría presentarse el de ustedes:',label:'Ver perfil de Iglesia de Ejemplo.',url:'https://koinoniapp.cl/#/iglesia/ecf847447c3510c9841b862b?origen=descubrir'},
   sectionTitle:'¿Cómo pueden colaborar?', sectionText:'Revisando la ubicación, los horarios de reunión, los datos de contacto, las actividades y las condiciones de accesibilidad. Así, quienes busquen una iglesia podrán conocerla mejor antes de visitarla.',
   steps:['Reconoce la iglesia que aparece en la invitación.','Propón a las personas que colaborarán y sus funciones.','Envía la propuesta para que la administración de Koinonía la revise.'],
   note:'La participación es voluntaria. La información y cualquier propuesta quedan sujetas a revisión. También les invitamos a explorar la página y conocer los alcances y oportunidades que esta plataforma podría ofrecer a su iglesia.',

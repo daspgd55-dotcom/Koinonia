@@ -23,6 +23,8 @@ const makeIntegration=require('../controllers/make-outreach.controller');
 for(const op of ['claim','check','result'])router.post('/integrations/make/outreach/'+op,makeIntegration.auth,makeIntegration[op]);
 const makeQueue=require('../controllers/church-make-queue.controller');
 router.post('/church-make-messages/sync',auth,admin,makeQueue.sync);
+router.get('/church-make-messages/preparable',auth,admin,makeQueue.preparable);
+router.post('/church-make-messages/:id/trash',auth,admin,makeQueue.trash);
 router.get('/church-make-messages',auth,admin,makeQueue.list);
 router.post('/church-make-messages/:id/prepare',auth,admin,makeQueue.prepare);
 router.post('/church-outreach-access/renew',makeQueue.renew);
