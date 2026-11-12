@@ -12,7 +12,7 @@ const location = z.strictObject({ lat, lng });
 const password = z.string().min(8).refine(v => Buffer.byteLength(v, 'utf8') <= 72, 'Máximo 72 bytes UTF-8');
 const username = z.string().trim().toLowerCase().regex(/^[a-z][a-z0-9_]{2,23}$/, 'Usa 3 a 24 caracteres: empieza por una letra; solo letras, números y guion bajo').refine(v=>!['admin','administrator','administrador','root','soporte','support','koinonia','moderador'].includes(v),'Este nombre de usuario está reservado');
 const register = z.strictObject({ email: z.string().trim().email().max(254).toLowerCase(), name: text.max(100).optional(), username: username.optional(), password });
-const login = z.strictObject({ email: register.shape.email, password: z.string().min(1).max(200) });
+const login = z.strictObject({ identifier: z.string().trim().min(1).max(254), password: z.string().min(1).max(200) });
 const preferences = z.strictObject({
   commune: text.optional(), denominations: list.optional(), branches: list.optional(), doctrinalTags: list.optional(),
   activities: list.optional(), ministries: list.optional(), targetGroups: list.optional(), languages: list.optional(), meetingDay: days.optional(), meetingDays: z.array(days).max(7).optional(),

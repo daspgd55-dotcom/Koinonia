@@ -24,8 +24,9 @@ exports.register = async (req, res) => {
 };
 exports.login = async (req, res) => {
   const data = v.parse(v.login, req.body);
-  if(security.enabled(req.app.locals.config))await security.quota(req.app.locals.config,'login-email',data.email,20,900000);
-  const user = await User.findOne({ email: data.email }).select('+password +sessionVersion');
+  const identifier=data.identifier.toLowerCase().replace(/^@/,''),isEmail=identifier.includes('@');
+  if(security.enabled(req.app.locals.config))await security.quota(req.app.locals.config,'login-identifier',identifier,20,900000);
+  const user = await User.findOne(isEmail?{email:identifier}:{username:identifier}).select('+password +sessionVersion');
   // Evita que una cuenta inexistente tome una ruta sin el coste de bcrypt.
   const hash = user?.password || '$2b$12$R9h/cIPz0gi.URNNX3kh2OPST9/PgBkqquzi.Ss7KIUgO2t0jWMUW';
   const valid = await bcrypt.compare(data.password, hash);

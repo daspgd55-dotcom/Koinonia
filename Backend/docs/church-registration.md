@@ -96,3 +96,14 @@ Implementación incorporada al checkout; sin pruebas ejecutadas por instrucción
 - Lookup: 60 consultas por IP en 15 minutos, además de la cuota general. Exige q de 3 a 120 caracteres, escapa expresiones regulares y no permite listar todos los registros con una consulta vacía. La selección de sugerencias acepta fichas que todavía no están publicadas.
 
 No se ejecutaron pruebas, compilación ni verificación visual en navegador en este refinamiento, siguiendo la instrucción vigente del usuario. La revisión realizada fue por lectura del código; no certifica el resultado desplegado.
+
+
+## Ajustes del 12 de noviembre de 2026
+
+- POST /church-registrations exige textos descriptivos: mínimo 3 caracteres para nombres, comuna, ciudad y vínculos; 5 para dirección; al menos dos letras distintas y exclusión de relleno evidente. No es validación semántica ni prueba de existencia; la revisión humana sigue siendo necesaria.
+- Nuevo objeto obligatorio `church.authorityContact`: `name`, `role`, `authorized: true` y al menos uno de `email` o `phone`. Email normalizado; teléfono de 8 a 15 dígitos con formato permitido y rechazo de repetición evidente. Se registra permiso de contacto en consentimientos v3 y procedencia declarada. No se envían mensajes automáticamente a esta autoridad ni se incorpora su contacto al perfil público. El objeto se elimina con la anonimización de la solicitud.
+- Las solicitudes anteriores siguen disponibles sin migración; administración muestra que falta el antecedente y debe obtenerlo antes de aprobar. No se certifica automáticamente la autoridad por tener un correo o teléfono.
+- Seguimiento: estado y siguiente paso visibles; corrección de correo, equipo, referencia y privacidad plegados. Sin formulario duplicado de recuperación mientras hay sesión de seguimiento.
+- Solicitante sin confirmar: permanece pendiente, no se aprueba ni se confirma manualmente. Administración puede reenviar (cuotas existentes) o cerrar expresamente con motivo registrado. No hay eliminación automática. Contador «Esperando correo» filtra estos casos.
+- Representantes: confirmación independiente al aceptar o rechazar invitación. Tras aprobación se pueden enviar/renovar o revocar las invitaciones pendientes; solo aceptar con la cuenta destinataria concede permisos. Confirmar el buzón no acredita autoridad institucional ni cambia automáticamente User.emailVerifiedAt.
+- No se ejecutaron pruebas ni compilación en esta modificación; no se enviaron correos ni se realizaron cambios en bases de datos.

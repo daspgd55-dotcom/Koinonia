@@ -1,7 +1,7 @@
 const {Schema,model}=require('mongoose');
 const schema=new Schema({
  reference:{type:String,required:true,unique:true},
- church:{name:String,address:String,commune:String,city:String,website:String,socialLinks:[String]},
+ church:{name:String,address:String,commune:String,city:String,website:String,socialLinks:[String],authorityContact:{name:String,role:String,email:String,phone:String,authorized:Boolean}},
  applicant:{name:String,email:String,relationship:String,confirmedAt:Date,userId:{type:Schema.Types.ObjectId,ref:'User'}},
  representatives:[{email:String,proposedSubrole:String,approvedSubrole:String,confirmationStatus:{type:String,default:'pending'},confirmedAt:Date,userId:{type:Schema.Types.ObjectId,ref:'User'},invitationStatus:{type:String,default:'not_sent'},assignedAt:Date,acceptanceConsent:{purpose:String,textVersion:String,acceptedAt:Date},noContact:{type:Boolean,default:false},delivery:String}],
  comments:String,source:{type:String,default:'public_registration_v2'},

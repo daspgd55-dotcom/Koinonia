@@ -40,7 +40,7 @@ async function renew(token){
  const key='renewal:'+access.id,prior=await Message.findOne({key}).session(session);
  if(prior)return {recorded:true,message:prior.reason||'Solicitud Enviada. Espere a que le envíen otra vez el enlace'};
  const existing=await Message.findOne({invitation:row._id,state:{$in:['pending','prepared','reserved','uncertain']},$or:[{state:{$in:['reserved','uncertain']}},{expiresAt:{$gt:new Date()}},{expiresAt:{$exists:false}}]}).session(session);
- const reason=existing?'Solicitud registrada sin crear otro envío: ya existe un mensaje pendiente o en revisión. El administrador debe revisar la cola de esta invitación.':undefined;
+ const reason=existing?'Solicitud registrada: ya existe un mensaje pendiente o en revisión. El administrador revisará el estado de esta invitación.':undefined;
  await Message.create([{key,invitation:row._id,kind:'renewal',state:existing?'blocked':'pending',reason}],{session});
  return {recorded:true,message:reason||'Solicitud Enviada. Espere a que le envíen otra vez el enlace'};
  });
