@@ -121,3 +121,17 @@ test('preparacion masiva selecciona inicial cancelada y papelera evita envios',a
  await Invitation.updateOne({_id:row.id},{$set:{expiresAt:new Date(Date.now()-1000)}});
  await f.api(env.app,'post','/church-make-messages/'+m.id+'/prepare',{},admin).expect(409);
 });
+
+
+test('campana permite otro ciclo tras cerrar o enviar a papelera sin omitir no contacto',async()=>{
+ const campaign=require('../src/services/church-campaign.service'),base=require('../src/services/church-outreach.service'),Import=require('../src/models/church-contact-import.model'),Invitation=require('../src/models/church-outreach-invitation.model');
+ const batches=await Import.find(),ids=batches.map(b=>b.id),first=await campaign.preview(ids),candidate=first.rows.find(r=>r.email==='new@example.org');assert.ok(candidate);assert.equal(candidate.eligible,false);
+ let row=await Invitation.findOne({church:candidate.churchId,'recipient.email':candidate.email,active:true});row=await base.act(row.id,row.version,{action:'close',reason:'Nuevo ciclo de prueba'},admin);
+ let plan=await campaign.preview(ids);assert.equal(plan.rows.find(r=>r.key===candidate.key).eligible,true);
+ await f.api(env.app,'post','/church-outreach-invitations/'+row.id+'/trash',{restore:false},admin,{'If-Match':'"'+row.version+'"'}).expect(200);
+ plan=await campaign.preview(ids);assert.equal(plan.rows.find(r=>r.key===candidate.key).eligible,true);
+ const created=await campaign.prepare({imports:ids,digest:plan.digest,keys:[candidate.key],reviewed:[candidate.key]},admin);assert.equal(created.count,1);assert.notEqual(created.ids[0],row.id);assert.ok(await Invitation.findById(row.id));
+ plan=await campaign.preview(ids);assert.equal(plan.rows.find(r=>r.key===candidate.key).eligible,false);
+ const fresh=await Invitation.findById(created.ids[0]);await base.act(fresh.id,fresh.version,{action:'no_contact',reason:'No contactar'},admin);
+ plan=await campaign.preview(ids);assert.ok(plan.rows.find(r=>r.key===candidate.key).reasons.includes('Contacto detenido'));
+});

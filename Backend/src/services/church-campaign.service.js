@@ -4,12 +4,12 @@ async function preview(ids,session=null){
  const batches=await Import.find({_id:{$in:ids}}).sort({_id:1}).session(session).lean(),map=new Map();
  for(const b of batches)for(const a of b.associations)for(const raw of a.recipients){const email=raw.trim().toLowerCase(),key=String(a.church)+'|'+email;if(!map.has(key))map.set(key,{key,churchId:String(a.church),email,sources:[]});map.get(key).sources.push({batch:String(b._id),source:b.source,row:a.sourceRow});}
  const rows=[];for(const r of map.values()){
-  const c=await Church.findById(r.churchId).session(session).lean(),prior=await Invitation.findOne({church:r.churchId,'recipient.email':r.email}).sort({createdAt:-1}).session(session).lean(),reasons=[];
+  const c=await Church.findById(r.churchId).session(session).lean(),prior=await Invitation.findOne({church:r.churchId,'recipient.email':r.email,active:true,lifecycle:{$in:['draft','ready']}}).sort({createdAt:-1}).session(session).lean(),reasons=[];
   if(!z.string().email().safeParse(r.email).success)reasons.push('Correo inválido');
   if(!c||c.mergedInto)reasons.push('Ficha ausente o fusionada');
   const testData=!!(c?.metadata?.testData||c?.testOnly||c?.importInfo?.batchId?.includes('synthetic'));
   if(await mail.suppressed(r.churchId,r.email,session))reasons.push('Contacto detenido');
-  if(prior)reasons.push('Ya existe una invitación: revisar su ciclo');
+  if(prior)reasons.push(prior.expiresAt<=new Date()?'El ciclo anterior venció: ciérralo antes de preparar otro':'Ya existe una invitación vigente: revisa o cierra su ciclo');
   const target=c&&!c.mergedInto?await base.inspectTarget(c._id,session):null;
   rows.push({...r,testData,name:c?.identification?.name||'Ficha ausente',reasons,eligible:!reasons.length,reviewRequired:!!c&&(!c.active||c.metadata?.dataStatus==='draft'||!!c.representatives?.length),fingerprint:target?.fingerprint||null});
  }
