@@ -234,3 +234,9 @@ El directorio usa recomendaciones por pertenencia, seguimiento y popularidad; lo
 
 ### Interés independiente de asistencia
 Los registros anteriores conservan su significado sin migración destructiva. `both` cuenta una vez en cada total; el ranking suma ese interés una sola vez. GET/PUT y Mis eventos incluyen booleanos `interested` y `going`. Me interesa expresa afinidad, no asistencia ni inscripción. Se conservan avisos de cambios para cualquiera de las opciones activas, sin duplicarlos por activar ambas. La ficha permite desactivar cada botón al pulsarlo de nuevo; la eliminación conjunta queda en Mis eventos.
+
+
+### Fechas separadas y festividades
+La categoría `festivities` se muestra como «Festividades». La edición separa fecha y hora de inicio y término; por defecto el término usa el día de inicio, con «Termina otro día» para indicar una fecha distinta. Si se indica una fecha se exige su hora; no se inventa medianoche. La API conserva startsAt/endsAt y la zona fija UTC-3 del piloto, con término posterior al inicio. No cambia la política de finalización sin término explícito.
+
+Los recursos de iglesias, comunidades y eventos añaden marcos classic (4:3), cinema (21:9), banner (3:1), poster (2:3) y story (9:16), además de los existentes. La foto de perfil sigue circular y no recibe nuevas opciones. No se ejecutaron pruebas, compilación ni envíos en esta entrega.

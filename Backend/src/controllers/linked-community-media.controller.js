@@ -4,7 +4,7 @@ exports.authorize=async(req,res,next)=>{const {data}=await managedCommunity(req)
 exports.upload=async(req,res)=>{
  const c=req.community,cfg=req.app.locals.config.cloudinary,category=req.query.category||'facilities',frame=req.query.frame||(category==='logo'?'square':'landscape');
  if(!['facilities','logo'].includes(category))throw new HttpError(400,'INVALID_CATEGORY','Categoría inválida.');
- if(!['landscape','wide','square','circle','portrait'].includes(frame))throw new HttpError(400,'INVALID_FRAME','Marco inválido.');
+ if(!['landscape','wide','square','circle','portrait','classic','cinema','banner','poster','story'].includes(frame))throw new HttpError(400,'INVALID_FRAME','Marco inválido.');
  if(c.media.length>=7)throw new HttpError(400,'MEDIA_LIMIT','Esta comunidad ya tiene 7 recursos.');
  const b=req.body,type=req.get('Content-Type'),valid=Buffer.isBuffer(b)&&((type==='image/jpeg'&&b.subarray(0,3).equals(Buffer.from([255,216,255])))||(type==='image/png'&&b.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10])))||(type==='image/webp'&&b.toString('ascii',0,4)==='RIFF'&&b.toString('ascii',8,12)==='WEBP'));
  if(!valid)throw new HttpError(400,'INVALID_IMAGE','Selecciona una imagen JPEG, PNG o WebP válida.');

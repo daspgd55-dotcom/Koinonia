@@ -50,6 +50,7 @@ exports.get = async (req, res) => {
 async function list(req, res, management) {
   const q = parse(management ? v.managedQuery : v.query, req.query), filter = {};
   if (q.churchId) { filter.churchId = objectId(q.churchId); if (management) await parent(req, q.churchId); }
+  if(!management&&!q.churchId)filter.churchId={$ne:require('../services/church.service').showcaseId};
   if (!management) filter.status = 'published'; else if (q.status) filter.status = q.status;
   if (q.type) filter.type = q.type;
   if (q.q) filter.name = new RegExp(escape(q.q), 'i');
@@ -74,4 +75,17 @@ exports.remove=async(req,res)=>{
   if(!deleted)throw new HttpError(409,'STALE_VERSION','La comunidad cambió en otra sesión. Recarga antes de eliminar.');
  });
  res.set('Cache-Control','no-store').json({message:'Comunidad eliminada definitivamente.'});
+};
+
+exports.move=async(req,res)=>{
+ const {direction}=parse(require('../validation/schemas').z.strictObject({direction:require('../validation/schemas').z.enum(['up','down'])}),req.body),version=expectedVersion(req),{data}=await managedCommunity(req);
+ const position=await Community.db.transaction(async session=>{
+  const rows=await Community.find({churchId:data.churchId}).session(session).lean();rows.sort((a,b)=>(a.displayOrder??1000)-(b.displayOrder??1000)||(a.name<b.name?-1:a.name>b.name?1:0)||String(a._id).localeCompare(String(b._id)));
+  const index=rows.findIndex(c=>String(c._id)===String(data._id));if(index<0||rows[index].version!==version)throw new HttpError(409,'STALE_VERSION','La comunidad cambió. Recarga la lista antes de ordenar.');
+  const next=index+(direction==='up'?-1:1);if(next<0||next>=rows.length)return index;
+  if(rows.length>10000)throw new HttpError(409,'ORDER_LIMIT','El listado excede el límite de ordenación.');
+  [rows[index],rows[next]]=[rows[next],rows[index]];
+  for(let i=0;i<rows.length;i++){const result=await Community.updateOne({_id:rows[i]._id,version:rows[i].version},{$set:{displayOrder:i,updatedBy:req.user._id},$inc:{version:1}},{session});if(result.modifiedCount!==1)throw new HttpError(409,'STALE_VERSION','La lista cambió en otra sesión. Recarga antes de ordenar.');}
+  return next;
+ });res.set('Cache-Control','no-store').json({position,message:'Orden actualizado.'});
 };

@@ -1,0 +1,10 @@
+import './EventDateFields.css';
+import React,{useState} from 'react';
+export default function EventDateFields({draft,onChange}){
+ const [otherDay,setOtherDay]=useState(()=>!!draft.endsAt&&draft.endsAt.split('T')[0]!==draft.startsAt.split('T')[0]);
+ const [startDate='',startTime='']=(draft.startsAt||'').split('T'),[endDate='',endTime='']=(draft.endsAt||'').split('T');
+ const combine=(date,time)=>date||time?date+'T'+time:'';
+ function start(part,value){const date=part==='date'?value:startDate,time=part==='time'?value:startTime;onChange('startsAt',combine(date,time));if(!otherDay&&endTime)onChange('endsAt',combine(date,endTime));}
+ function toggle(value){setOtherDay(value);onChange('endsAt',value?combine(endDate||startDate,endTime):endTime?combine(startDate,endTime):'');}
+ return <fieldset className="event-date-fields"><legend>Inicio y término</legend><div className="event-date-columns"><label>Fecha de inicio<input id="event-startsAt" type="date" value={startDate} required={!!startTime||!!draft.endsAt} onChange={e=>start('date',e.target.value)}/></label><label>Hora de inicio<input type="time" step="60" value={startTime} required={!!startDate} onChange={e=>start('time',e.target.value)}/></label></div><label className="check-option"><input type="checkbox" checked={otherDay} onChange={e=>toggle(e.target.checked)}/>Termina otro día</label><div className="event-date-columns">{otherDay&&<label>Fecha de término<input type="date" min={startDate||undefined} value={endDate} required={!!endTime} onChange={e=>onChange('endsAt',combine(e.target.value,endTime))}/></label>}<label>Hora de término (opcional)<input id="event-endsAt" type="time" step="60" value={endTime} required={otherDay&&!!endDate} onChange={e=>onChange('endsAt',otherDay?combine(endDate,e.target.value):e.target.value?combine(startDate,e.target.value):'')}/></label></div><p>{otherDay?'Indica la fecha y la hora de término.':'La hora de término corresponde al mismo día del inicio.'} Si no indicas término, el evento se considera finalizado al terminar el día de inicio. Horarios del piloto: UTC−3.</p></fieldset>;
+}

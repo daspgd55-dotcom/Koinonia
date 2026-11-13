@@ -2,6 +2,10 @@ const Church = require('../models/church.model');
 const { HttpError } = require('../utils/errors');
 const { id, parse } = require('../validation/schemas');
 const visible = { active: true, 'metadata.dataStatus': { $in: ['published', 'verified'] } };
+// Ficha editorial de ejemplo: accesible por URL, excluida del descubrimiento.
+const showcaseBatch='showcase-senderos-2026-11-05',showcaseId=new (require('mongoose').Types.ObjectId)(require('node:crypto').createHash('sha256').update(showcaseBatch+'church').digest('hex').slice(0,24));
+const discoveryExclusions={$nor:[{_id:showcaseId},{'importInfo.batchId':showcaseBatch}]};
+const discoverable={...visible,...discoveryExclusions};
 const escape = text => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const exact = value => new RegExp('^' + escape(value) + '$', 'i');
 
@@ -61,7 +65,7 @@ function filters(q) {
 const cardProjection={'identification.name':1,'location.address':1,'location.commune':1,'location.coordinates':1,'christianIdentity.denomination':1,'community.activities':1,'meetings.type':1,'meetings.schedule':1,media:1,'metadata.dataStatus':1,'metadata.testData':1,distanceMeters:1};
 function cardChurch(c){const images=(c.media||[]).filter(m=>m.type==='image'&&/^https?:\/\//i.test(m.url||'')),photo=images.find(m=>m.section==='recommendation')||images.find(m=>!m.section&&['banner','logo'].includes(m.category))||images.find(m=>!m.section&&(!m.category||m.category==='facilities')),meeting=(c.meetings||[]).flatMap(m=>(m.schedule||[]).map(t=>({...t,type:m.type}))).find(t=>t.day&&t.startTime);return {_id:c._id,identification:{name:c.identification?.name},location:c.location,christianIdentity:{denomination:c.christianIdentity?.denomination},community:{activities:(c.community?.activities||[]).slice(0,2)},media:photo?[photo]:[],meetings:meeting?[{type:meeting.type,schedule:[{day:meeting.day,startTime:meeting.startTime}]}]:[],metadata:{dataStatus:c.metadata?.dataStatus,testData:c.metadata?.testData},...(c.distanceMeters!==undefined?{distanceMeters:c.distanceMeters}:{})};}
 async function search(q, excluded = [], cap) {
-  const filter = filters(q);
+  const filter = {...filters(q),...discoveryExclusions};
   if (excluded.length) filter._id = { $nin: excluded };
   const limit = cap || q.limit || 20, page = q.page || 1;
   let rows, total;
@@ -80,4 +84,4 @@ async function search(q, excluded = [], cap) {
   return { data: rows.map(q.view==='card'?cardChurch:publicChurch), pagination: { page, limit, total, pages: Math.ceil(total / limit) } };
 }
 
-module.exports = { visible, publicChurch, managed, filters, search, exact, checkVersion };
+module.exports = { visible, discoverable, discoveryExclusions, showcaseId, publicChurch, managed, filters, search, exact, checkVersion };

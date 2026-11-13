@@ -42,7 +42,7 @@ function rank(church, preferences, modes = {}) {
   const groups={doctrine:['denominations','branches','doctrinalTags'],distance:['radiusKm','commune'],activities:['activities','ministries','targetGroups'],availability:['languages','meetingDays']},weights={doctrine:.4,distance:.25,activities:.2,availability:.1};
   const active=Object.keys(groups).filter(k=>groups[k].some(f=>scores[f]!==undefined)),weight=active.reduce((sum,k)=>sum+weights[k],0);
   const affinity=weight?active.reduce((sum,k)=>sum+weights[k]*components[k],0)/weight:0;
-  const score=Number((weight ? .95*affinity+.05*components.quality:components.quality).toFixed(6));
+  const score=Number((weight ? .92*affinity+.05*components.quality+.03*informationQuality.completeness:components.quality).toFixed(6));
   const evidence={activeCriteria:Object.keys(criteria).length,knownCriteria:Object.values(criteria).filter(x=>x.status!=='unknown').length,informationQuality};
 
   return { churchId: String(church._id), score, components, criteria, evidence, church,

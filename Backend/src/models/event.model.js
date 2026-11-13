@@ -7,7 +7,7 @@ const schema=new Schema({
  startsAt:{type:Date,default:null},endsAt:{type:Date,default:null},effectiveEndsAt:{type:Date,default:null},
  modality:{type:String,enum:['in_person','online','hybrid'],default:'in_person'},venue:{type:String,default:null},
  location:{type:embedded({address:String,commune:{type:String,required:true},city:String,region:String,countryCode:String,coordinates:{type:Church.schema.path('location.coordinates').schema,default:undefined}}),default:null},onlineUrl:{type:String,default:null},
- audience:[String],cover:{type:embedded({url:{type:String,required:true},source:{type:String,required:true},title:String,frame:{type:String,enum:['landscape','wide','square','circle','portrait']},focalX:{type:Number,min:0,max:100},focalY:{type:Number,min:0,max:100}}),default:null},
+ audience:[String],cover:{type:embedded({url:{type:String,required:true},source:{type:String,required:true},title:String,frame:{type:String,enum:['landscape','wide','square','circle','portrait','classic','cinema','banner','poster','story']},focalX:{type:Number,min:0,max:100},focalY:{type:Number,min:0,max:100}}),default:null},
  participation:{type:String,enum:['free','registration','invitation'],default:'free'},participationConditions:{type:String,default:''},registrationInstructions:{type:String,default:''},registrationUrl:{type:String,default:null},
  contact:{website:String,instagram:String,facebook:String,youtube:String,email:String,phone:String},privateFields:{email:{type:Boolean,default:false},phone:{type:Boolean,default:false}},
  publicationStatus:{type:String,enum:publicationStatuses,default:'draft'},eventStatus:{type:String,enum:eventStatuses,default:'scheduled'},cancellationReason:{type:String,default:''},

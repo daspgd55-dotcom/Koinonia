@@ -1,0 +1,2 @@
+const {Schema,model}=require('mongoose');
+module.exports=model('RepresentativeWelcome',new Schema({_id:{type:Schema.Types.ObjectId,ref:'User'},church:{type:Schema.Types.ObjectId,ref:'Church'},sender:{type:Schema.Types.ObjectId,ref:'User'},friendship:{type:Schema.Types.ObjectId,ref:'Friendship'},status:{type:String,enum:['sent','skipped'],required:true},reason:String},{timestamps:true,strict:'throw'}));

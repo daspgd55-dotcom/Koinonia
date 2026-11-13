@@ -68,3 +68,9 @@ La API pública acepta `criterionModes` y reutiliza preferencias guardadas, seg�
 `POST /api/recommendations` admite `mode: "traditional"` opcional. Cuando se envía, calcula candidatos/ranking y devuelve modo `deterministic` sin invocar el proveedor externo, incluso si está configurado. Sin `mode`, se conserva el contrato anterior de enriquecimiento. No acepta modo semantic: ese motor no está implementado.
 
 `GET /api/recommendations/capabilities`, público, devuelve `{traditional:true,semantic:false,semanticStatus:"not_implemented"}`. La pestaña semántica del frontend es una interfaz preparada y explícitamente pendiente de integración. No interpreta ni transmite consultas al LLM.
+
+
+## Ficha de ejemplo no listada y completitud (12-11-2026)
+Senderos de Gracia se excluye del descubrimiento por el ID determinístico del script create-showcase-church.js y por su batch showcase-senderos-2026-11-05. No se usa una comparación por nombre ni se excluyen todas las fichas sintéticas. La búsqueda (incluida geográfica), recomendaciones, selección pública de inscripción e iglesias del inicio aplican la exclusión antes de paginar. Administración y GET directo de la iglesia conservan el criterio de publicación existente. Es una URL pública no listada, no un enlace privado o exclusivo del correo; puede compartirse. No requiere migración ni escrituras en la base.
+
+Con criterios activos, ranking = 0.92 afinidad + 0.05 calidad existente + 0.03 completitud pública. Antes era 0.95 afinidad + 0.05 calidad. Dado que calidad incluye 60% completitud, el aporte máximo de completitud pasa de 3 a 6 puntos porcentuales. Sin criterios activos se conserva la calidad existente. No cambia filtros indispensables ni premia revelar campos privados. Sin pruebas, compilación ni despliegue en esta modificación.

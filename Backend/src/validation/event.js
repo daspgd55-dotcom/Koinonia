@@ -1,5 +1,5 @@
 const {z,id,church}=require('./schemas');
-const categories=['gathering','community_service','evangelism','retreat','workshop','cultural','other'];
+const categories=['gathering','community_service','evangelism','retreat','workshop','cultural','festivities','other'];
 const publicationStatuses=['draft','published','archived'],eventStatuses=['scheduled','cancelled'];
 const text=z.string().trim().min(1).max(200),long=z.string().trim().max(10000),url=z.string().url().max(2000).refine(v=>/^https?:\/\//i.test(v),'Solo URLs HTTP/HTTPS');
 const day=z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine(v=>{const d=new Date(v+'T00:00:00Z');return Number.isFinite(+d)&&d.toISOString().slice(0,10)===v;},'Fecha de calendario inválida');

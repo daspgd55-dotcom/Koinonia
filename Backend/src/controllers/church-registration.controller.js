@@ -10,7 +10,7 @@ function searchPattern(value){return value.normalize('NFD').replace(/[\u0300-\u0
 exports.lookup=async(req,res)=>{
  const d=parse(z.strictObject({q:z.string().trim().min(3).max(120),commune:z.string().trim().max(100).optional()}),req.query);
  await s.quota(req.app.locals.config,'registration-lookup',req.ip,60,900000);
- const filter={mergedInto:null,$and:searchPattern(d.q).map(pattern=>({'identification.name':pattern}))};if(d.commune)filter['location.commune']=new RegExp('^'+escapeSearch(d.commune)+'$','i');
+ const filter={...require('../services/church.service').discoveryExclusions,mergedInto:null,$and:searchPattern(d.q).map(pattern=>({'identification.name':pattern}))};if(d.commune)filter['location.commune']=new RegExp('^'+escapeSearch(d.commune)+'$','i');
  const found=await Church.find(filter).select('_id identification.name location.address location.commune location.city').sort({'identification.name':1,_id:1}).limit(11).lean();
  reply(res,{data:found.slice(0,10).map(c=>({_id:c._id,name:c.identification?.name,address:c.location?.address||'',commune:c.location?.commune||'',city:c.location?.city||''})),hasMore:found.length>10});
 };

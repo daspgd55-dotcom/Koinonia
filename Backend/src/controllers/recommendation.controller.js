@@ -1,5 +1,5 @@
 const Interaction = require('../models/interaction.model'), Church = require('../models/church.model');
-const { visible, exact, publicChurch } = require('../services/church.service');
+const { discoverable, exact, publicChurch } = require('../services/church.service');
 const { rank, enrich } = require('../services/recommendation.service');
 const { validateCriteria, plain } = require('../services/profile.service');
 const v = require('../validation/schemas');
@@ -14,7 +14,7 @@ exports.recommend = async (req, res) => {
   for (const [key, value] of Object.entries(input.preferences || {})) if (Array.isArray(value) && !value.length && !input.criterionModes?.[key]) modes[key] = 'disabled';
   validateCriteria({ ...preferences, location, meetingDay: undefined, meetingDays: days }, modes);
   const required = key => !modes[key] || modes[key] === 'required';
-  const filter = { ...visible };
+  const filter = { ...discoverable };
   if (preferences.commune && required('commune')) filter['location.commune'] = exact(preferences.commune);
   for (const [key, path, operator] of [
     ['denominations', 'christianIdentity.denomination', '$in'], ['branches', 'christianIdentity.branch', '$in'],

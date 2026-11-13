@@ -27,6 +27,7 @@ async function list(req,res,management){
  const q=parse(management?v.managedQuery:v.query,req.query),filter={},now=new Date();
  for(const k of ['churchId','communityId'])if(q[k])filter[k]=objectId(q[k]);
  if(management&&q.churchId)await svc.parent(req,q.churchId);
+ if(!management&&!q.churchId&&!q.communityId&&!q.associatedChurchId)filter.churchId={$ne:require('../services/church.service').showcaseId};
  if(q.q)filter.title=new RegExp(q.q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i');
  if(q.category)filter.category=q.category;if(q.commune)filter['location.commune']=exact(q.commune);if(q.audience)filter.audience=exact(q.audience);
  for(const k of ['publicationStatus','eventStatus'])if(q[k])filter[k]=q[k];

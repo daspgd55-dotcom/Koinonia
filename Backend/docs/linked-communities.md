@@ -195,3 +195,11 @@ Sin `section`, los recursos antiguos conservan su ubicación por categoría y la
 - Si existe cualquier evento asociado, responde 409 `COMMUNITY_HAS_EVENTS`: hay que quitar o cambiar la comunidad organizadora desde el editor de eventos. No se borran eventos. La creación/edición de eventos con organizadora bloquea el documento de comunidad dentro de su transacción para evitar asociaciones concurrentes a una comunidad eliminada. Esto incrementa su versión y puede exigir recargar su editor.
 - Las fotos y enlaces dejan de formar parte de la ficha, pero los archivos remotos no se destruyen (mismo alcance que la eliminación de referencias multimedia existente). Una URL de comunidad eliminada devuelve 404. No hay recuperación de esta acción en la interfaz.
 - Sin pruebas, compilación, envíos ni operaciones sobre datos de producción en esta entrega.
+
+
+### Orden mediante flechas
+La interfaz reemplaza los campos numéricos por Subir/Bajar. `POST /communities/:id/move` recibe `{direction:"up"|"down"}` y `If-Match`. Verifica permiso de contenido y mueve una posición dentro de toda la iglesia, incluidos borradores y archivadas. Normaliza posiciones y versiones en una transacción; admite cruces entre páginas. Las flechas se deshabilitan con filtros para no confundir el orden parcial con el completo. El catálogo público conserva el orden relativo de las publicadas. `displayOrder` sigue siendo un dato interno compatible con el contrato previo.
+
+
+### Fotos antes de completar la ficha
+La selección y el recorte están habilitados en comunidades nuevas. Al confirmar el recorte, si todavía no existe ID, se crea un borrador mínimo con el nombre escrito (o «Comunidad sin nombre») y tipo; luego se utiliza la subida autenticada existente. No se publica. Los campos locales se conservan y se guardan por separado; si falla la subida, el ID creado se conserva para reintentar sin duplicarlo. Se mantienen cuotas, permisos y límite de siete recursos.

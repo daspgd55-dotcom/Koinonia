@@ -11,8 +11,7 @@ exports.upload = async (req, res) => {
   const category = req.query.category || 'facilities';
   if (!['facilities','meetings','activities','representatives','banner','logo'].includes(category)) throw new HttpError(400, 'INVALID_CATEGORY', 'Categoría multimedia inválida.');
   const frame=req.query.frame||({banner:'wide',representatives:'circle',logo:'square'}[category]||'landscape'),leaderId=req.query.leaderId;
-  if(!['landscape','wide','square','circle','portrait'].includes(frame))throw new HttpError(400,'INVALID_FRAME','Marco inválido.');
-  if((category==='representatives'&&!['circle','square'].includes(frame))||(category==='banner'&&!['wide','landscape'].includes(frame)))throw new HttpError(400,'INVALID_FRAME','El marco no corresponde al tipo de recurso.');
+  if(!['landscape','wide','square','circle','portrait','classic','cinema','banner','poster','story'].includes(frame))throw new HttpError(400,'INVALID_FRAME','Marco inválido.');
   if(category==='representatives'&&(!leaderId||![c.leadership?.mainLeader,...(c.leadership?.otherLeaders||[])].some(l=>l?.id===leaderId&&l.name)))throw new HttpError(400,'INVALID_LEADER','Guarda primero el representante en Liderazgo y contacto y selecciona su nombre.');
   if(leaderId&&category!=='representatives')throw new HttpError(400,'INVALID_LEADER','La asociación solo corresponde a representantes.');
   const b = req.body, type = req.get('Content-Type');
