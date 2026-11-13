@@ -7,10 +7,12 @@ async function claim(cfg,{membersOnly=false}={}){
  const pending=await Message.findOne({trashedAt:null,state:'pending',...kindFilter}).sort({createdAt:1});if(pending)try{await base.prepare(pending.id,cfg);}catch(e){if(e.code!=='INVITATION_UNAVAILABLE')throw e;await Message.updateOne({_id:pending.id,state:'pending'},{$set:{state:'cancelled',reason:e.message},$unset:{payload:1}});}
  const currentTemplateVersion=require('./church-outreach-mail-templates').version,stalePrepared=await Message.findOne({trashedAt:null,state:'prepared',...kindFilter,templateVersion:{$ne:currentTemplateVersion},expiresAt:{$gt:new Date()}}).sort({createdAt:1});if(stalePrepared)try{await base.prepare(stalePrepared.id,cfg);}catch(e){if(e.code!=='INVITATION_UNAVAILABLE')throw e;await Message.updateOne({_id:stalePrepared.id,state:'prepared'},{$set:{state:'cancelled',reason:e.message},$unset:{payload:1}});}
  return Message.db.transaction(async session=>{
- const m=await Message.findOne({trashedAt:null,state:'prepared',expiresAt:{$gt:new Date()},...kindFilter}).sort({createdAt:1}).select('+payload +memberTokenHash').session(session);if(!m)return {messages:[]};
- if(!await valid(m,session)){m.state='cancelled';m.payload=undefined;await m.save({session});return {messages:[]};}
- const content=queue.open(m.payload,m.payloadId,cfg),token=randomBytes(32).toString('hex');m.state='reserved';m.reservationHash=hash(token);m.reservedUntil=new Date(Date.now()+10*60000);await m.save({session});
- return {messages:[{dispatchId:m.id,reservationToken:token,to:content.email,subject:content.subject,text:content.text,html:content.html||content.text,expiresAt:m.reservedUntil}]};
+ const rows=await Message.find({trashedAt:null,state:'prepared',expiresAt:{$gt:new Date()},...kindFilter}).sort({createdAt:1,_id:1}).limit(150).select('+payload +memberTokenHash').session(session),messages=[];
+ for(const m of rows){if(!await valid(m,session)){m.state='cancelled';m.payload=undefined;await m.save({session});continue;}
+  const content=queue.open(m.payload,m.payloadId,cfg),token=randomBytes(32).toString('hex');m.state='reserved';m.reservationHash=hash(token);m.reservedUntil=new Date(Date.now()+60*60000);await m.save({session});
+  messages.push({dispatchId:m.id,reservationToken:token,to:content.email,subject:content.subject,text:content.text,html:content.html||content.text,expiresAt:m.reservedUntil});
+ }
+ return {messages};
  });
 }
 async function check(input){return Message.db.transaction(async session=>{
