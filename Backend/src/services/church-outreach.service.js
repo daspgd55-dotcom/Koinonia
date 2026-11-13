@@ -14,6 +14,9 @@ async function inspectTarget(churchId,session=null){
   for(let hop=0;hop<50;hop++){if(seen.has(String(next)))return {state:'merge_conflict',reason:'La cadena de fusiones contiene un ciclo.'};seen.add(String(next));const c=await Church.findById(next).select('mergedInto').session(session).lean();if(!c)return {state:'merge_conflict',reason:'No se encontró la ficha principal.'};if(!c.mergedInto)return {state:'merged',reason:'La iglesia fue fusionada. Revoca esta invitación y revisa una nueva para la ficha principal.',suggestedChurchId:c._id};next=c.mergedInto;}
   return {state:'merge_conflict',reason:'La cadena de fusiones requiere revisión administrativa.'};
  }
+ return targetFromChurch(church);
+}
+function targetFromChurch(church){
  const team=(church.representatives||[]).map(id=>({user:String(id),subrole:church.representativeRoles?.find(p=>String(p.user)===String(id))?.subrole||'administrator'})).sort((a,b)=>a.user.localeCompare(b.user));
  const snapshot={id:String(church._id),name:church.identification?.name||'',location:church.location,active:church.active,metadata:church.metadata,version:church.__v,updatedAt:church.updatedAt,team};
  return {state:'available',churchVersion:church.metadata?.version||0,name:snapshot.name,location:{address:church.location?.address,commune:church.location?.commune,city:church.location?.city},active:!!church.active,teamSize:team.length,fingerprint:createHash('sha256').update(JSON.stringify(snapshot)).digest('hex')};
@@ -67,4 +70,4 @@ async function act(id,version,data,actor){admin(actor);
  });
 }
 async function detail(id){const row=await Invitation.findById(id);if(!row)throw new HttpError(404,'NOT_FOUND','Invitación institucional no encontrada');const [target,contact]=await Promise.all([inspectTarget(row.church),Contact.findById(row.contactKey)]);return {data:row,target,readiness:readiness(row,target,contact)};}
-module.exports={create,act,detail,inspectTarget,readiness,transitions,lockContact};
+module.exports={create,act,detail,inspectTarget,targetFromChurch,readiness,transitions,lockContact};

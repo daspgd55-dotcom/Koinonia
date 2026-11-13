@@ -4,6 +4,18 @@ function capabilities(cfg){return {enabled:cfg.outreachMail?.enabled===true,queu
 // Resolve reverse aliases too: a suppression on an older merged card must survive the merge.
 async function family(id,session=null){const ids=[id];let frontier=[id];for(let depth=0;frontier.length&&depth<50;depth++){const rows=await Church.find({mergedInto:{$in:frontier}}).select('_id').session(session).lean();frontier=rows.map(r=>r._id).filter(v=>!ids.some(id=>String(id)===String(v)));ids.push(...frontier);if(ids.length>1000)throw conflict('La identidad de iglesia requiere revisar sus fusiones.');}if(frontier.length)throw conflict('La cadena de fusiones excede el límite operativo.');return ids;}
 async function suppressed(church,email,session=null){const ids=await family(church,session);return !!await Contact.exists({church:{$in:ids},email,$or:[{noContact:true},{deliveryBlocked:true}]}).session(session);}
+async function suppressedMany(pairs,session=null){
+ const unique=[...new Map(pairs.map(p=>[String(p.church)+'|'+p.email,{church:String(p.church),email:p.email}])).values()],roots=[...new Set(unique.map(p=>p.church))],emails=[...new Set(unique.map(p=>p.email))],rootsByChurch=new Map(roots.map(id=>[id,new Set([id])])),families=new Map(roots.map(id=>[id,new Set([id])]));let frontier=roots;
+ for(let depth=0;frontier.length&&depth<50;depth++){
+  const rows=await Church.find({mergedInto:{$in:frontier}}).select('_id mergedInto').session(session).lean(),next=new Set();
+  for(const row of rows){const id=String(row._id),parent=String(row.mergedInto),owners=rootsByChurch.get(parent);if(!owners?.size)continue;let target=rootsByChurch.get(id);if(!target){target=new Set();rootsByChurch.set(id,target);}for(const root of owners){target.add(root);const family=families.get(root);family.add(id);if(family.size>1000)throw conflict('La identidad de iglesia requiere revisar sus fusiones.');}next.add(id);}
+  frontier=[...next];
+ }
+ if(frontier.length)throw conflict('La cadena de fusiones excede el límite operativo.');
+ const ids=[...rootsByChurch.keys()],blocked=await Contact.find({church:{$in:ids},email:{$in:emails},$or:[{noContact:true},{deliveryBlocked:true}]}).select('church email').session(session).lean(),set=new Set();
+ for(const row of blocked)for(const root of rootsByChurch.get(String(row.church))||[])set.add(root+'|'+row.email);
+ return new Map(unique.map(p=>[p.church+'|'+p.email,set.has(p.church+'|'+p.email)]));
+}
 async function plan(selection,cfg,session=null){
  const row=await Invitation.findById(selection.invitation).session(session),reasons=[];if(!row)return {selection,reasons:['invitation_missing'],eligible:false};
  const member=selection.kind==='member'?await Member.findOne({invitation:row._id,email:selection.email}).session(session):null,church=await Church.findById(row.church).session(session).lean(),email=selection.kind==='member'?member?.email:row.recipient.email;
@@ -69,4 +81,4 @@ async function validGuard(g,cfg){
  if(!['awaiting_response','needs_clarification'].includes(row.response.state)||(g.reminder&&row.response.state!=='awaiting_response')||!require('../config/church-outreach-legal').current().enabled||require('../config/church-outreach-legal').current().testBypass)return false;
  return !!await Access.exists({_id:g.access,invitation:row._id,tokenHash:g.hash,purpose:'institutional_link',consumedAt:null,revokedAt:null,expiresAt:{$gt:new Date()}});
 }
-module.exports={suppressed,capabilities,plans,prepare,enqueue,cancel,validGuard,contactKey};
+module.exports={suppressed,suppressedMany,capabilities,plans,prepare,enqueue,cancel,validGuard,contactKey};

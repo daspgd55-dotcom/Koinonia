@@ -1,9 +1,9 @@
 import {requestCaptcha} from './Captcha';
 import {beginRequest} from './requestActivity';
 const base = (import.meta.env.VITE_API_BASE_URL || '/api').replace(/\/$/, '');
-async function request(path, { token, body, method = 'GET', headers = {}, raw = false, captchaAttempts=0, background=false, signal } = {}) {
+async function request(path, { token, body, method = 'GET', headers = {}, raw = false, captchaAttempts=0, background=false, signal, timeoutMs } = {}) {
   const finish=background?()=>{}:beginRequest();
-  const controller = new AbortController(), timeout = setTimeout(() => controller.abort(), raw ? 60000 : 90000);
+  const controller = new AbortController(), timeout = setTimeout(() => controller.abort(), timeoutMs ?? (raw ? 60000 : 90000));
   const abort=()=>controller.abort();if(signal?.aborted)abort();else signal?.addEventListener('abort',abort,{once:true});
   try {
     const response = await fetch(base + path, { method, signal: controller.signal, headers: { ...(body && !raw ? { 'Content-Type': 'application/json' } : {}), ...(token ? { Authorization: 'Bearer ' + token } : {}), ...headers }, body: body ? (raw ? body : JSON.stringify(body)) : undefined });
