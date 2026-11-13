@@ -13,7 +13,7 @@ async function request(path, { token, body, method = 'GET', headers = {}, raw = 
         clearTimeout(timeout);
         finish();
         const proof=await requestCaptcha(data.error.details.captcha);
-        return api(path,{token,body,method,raw,background,signal,headers:{...headers,'X-Captcha-Token':proof},captchaAttempts:captchaAttempts+1});
+        return api(path,{token,body,method,raw,background,signal,timeoutMs,headers:{...headers,'X-Captcha-Token':proof},captchaAttempts:captchaAttempts+1});
       }
       const error = Error(data.error?.message || 'No pudimos completar la solicitud. Intenta nuevamente.');
       error.details = data.error?.details; error.status = response.status; error.code = data.error?.code; throw error;

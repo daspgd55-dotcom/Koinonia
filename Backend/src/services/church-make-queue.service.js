@@ -50,4 +50,21 @@ async function canPrepare(m){
  const row=await Invitation.findById(m.invitation);if(!await eligible(row,null,false))return false;
  return !await Message.exists({invitation:m.invitation,_id:{$ne:m._id},$or:[{state:{$in:['reserved','uncertain']}},{state:'accepted',resultAt:{$gte:m.createdAt}}]});
 }
-module.exports={prepare,renew,eligible,canPrepare};
+async function canPrepareMany(messages){
+ const candidates=messages.filter(m=>!m.trashedAt&&['pending','blocked','cancelled'].includes(m.state));if(!candidates.length)return new Map();
+ const invitationIds=[...new Set(candidates.map(m=>String(m.invitation)))],rows=await Invitation.find({_id:{$in:invitationIds}}).lean(),rowById=new Map(rows.map(r=>[String(r._id),r]));
+ const churchIds=[...new Set(rows.map(r=>String(r.church)))],contactIds=[...new Set(rows.map(r=>r.contactKey))],emailPairs=rows.map(r=>({church:String(r.church),email:r.recipient.email}));
+ const [churches,contacts,blocked,conflicts]=await Promise.all([
+  Church.find({_id:{$in:churchIds}}).select('identification.name location active metadata mergedInto representatives representativeRoles updatedAt __v').lean(),
+  require('../models/church-outreach-contact.model').find({_id:{$in:contactIds}}).select('_id noContact').lean(),
+  mail.suppressedMany(emailPairs),
+  Message.find({invitation:{$in:invitationIds},$or:[{state:{$in:['reserved','uncertain']}},{state:'accepted'}]}).select('invitation _id state resultAt createdAt').lean()
+ ]);
+ const churchById=new Map(churches.map(c=>[String(c._id),c])),contactById=new Map(contacts.map(c=>[c._id,c])),blockedMap=blocked,conflictByInvitation=new Map();
+ for(const x of conflicts){const key=String(x.invitation),arr=conflictByInvitation.get(key)||[];arr.push(x);conflictByInvitation.set(key,arr);}
+ const result=new Map(),now=new Date();for(const m of candidates){const row=rowById.get(String(m.invitation)),church=row&&churchById.get(String(row.church)),contact=row&&contactById.get(row.contactKey),other=(conflictByInvitation.get(String(m.invitation))||[]).some(x=>String(x._id)!==String(m._id)&&(x.state==='reserved'||x.state==='uncertain'||x.resultAt>=m.createdAt)),ok=!!row&&row.initialChannel==='make'&&row.lifecycle==='ready'&&row.expiresAt>now&&!row.trashedAt&&!row.noContact?.requested&&['awaiting_response','needs_clarification'].includes(row.response?.state)&&!!church&&!church.mergedInto&&!contact?.noContact&&!blockedMap.get(String(row.church)+'|'+row.recipient.email)&&base.readiness(row,base.targetFromChurch(church),contact).preparationReady&&!other;
+  result.set(String(m._id),ok);
+ }
+ return result;
+}
+module.exports={prepare,renew,eligible,canPrepare,canPrepareMany};

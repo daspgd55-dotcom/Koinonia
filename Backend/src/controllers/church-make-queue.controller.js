@@ -9,8 +9,8 @@ exports.prepare=async(req,res)=>{parse(z.strictObject({}),req.body);const m=awai
 exports.renew=async(req,res)=>{const {token}=parse(z.strictObject({token:z.string().max(256)}),req.body),cfg=req.app.locals.config;await quota(cfg,'make-renew-ip',req.ip,10,3600000);await quota(cfg,'make-renew-token',hash(token),3,86400000);res.set('Cache-Control','no-store').json(await svc.renew(token));};
 exports.sync=async(req,res)=>{parse(z.strictObject({}),req.body);const rows=await require('../models/church-outreach-invitation.model').find({initialChannel:'make',lifecycle:'ready','response.state':'awaiting_response','delivery.state':'not_sent'}).select('_id');for(const r of rows)await Message.updateOne({key:'initial:'+r.id},{$setOnInsert:{invitation:r._id,kind:'initial',state:'pending'}},{upsert:true});res.set('Cache-Control','no-store').json({count:rows.length});};
 exports.preparable=async(req,res)=>{
- const q=parse(z.object({kind:z.enum(['initial','renewal','member']).optional()}),req.query),rows=await Message.find({trashedAt:null,state:{$in:['pending','blocked','cancelled']},kind:{$ne:'member'},...(q.kind?{kind:q.kind}:{})}).sort({createdAt:-1}).lean(),ids=[],seen=new Set();
- for(const m of rows)if(!seen.has(String(m.invitation))&&await svc.canPrepare(m)){ids.push(m._id);seen.add(String(m.invitation));}
+ const q=parse(z.object({kind:z.enum(['initial','renewal','member']).optional()}),req.query),rows=await Message.find({trashedAt:null,state:{$in:['pending','blocked','cancelled']},kind:{$ne:'member'},...(q.kind?{kind:q.kind}:{})}).select('_id invitation kind state createdAt').sort({createdAt:-1,_id:-1}).lean(),eligible=await svc.canPrepareMany(rows),ids=[],seen=new Set();
+ for(const m of rows)if(!seen.has(String(m.invitation))&&eligible.get(String(m._id))){ids.push(m._id);seen.add(String(m.invitation));}
  res.set('Cache-Control','no-store').json({ids});
 };
 exports.trash=async(req,res)=>{
