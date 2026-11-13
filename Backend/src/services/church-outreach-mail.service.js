@@ -48,11 +48,13 @@ async function enqueue(id,version,actor,cfg,fetcher){
   }
   batch.state='queued';batch.queuedBy=actor._id;batch.queuedAt=new Date();batch.version++;await batch.save({session});return batch;
  });
- for(const item of direct){
+ let providerFailure=false;for(const item of direct){
+  if(providerFailure){await Mail.updateOne({_id:item.id,state:'queued'},{$set:{state:'failed',source:'provider_stopped',stoppedAt:new Date()}});continue;}
   const allowed=await validGuard(item.guard,cfg);
   let outcome={ok:false};if(allowed){try{outcome=await queue.deliver(cfg,item.data,item.jobId,fetcher);}catch{/* Resultado incierto, no duplicar automáticamente. */}}
   const state=!allowed?'cancelled':outcome.ok?'accepted':'failed',now=new Date();
   await Mail.updateOne({_id:item.id,state:'queued'},{$set:{state,attempts:allowed?1:0,source:fetcher?'simulated':'provider',providerId:outcome.providerId,acceptedAt:outcome.ok?now:undefined}});
+  if(allowed&&!outcome.ok)providerFailure=true;
   if(!item.guard.member)await Invitation.updateOne({lastMail:item.id},{$set:{'delivery.state':state,'delivery.updatedAt':now,'delivery.attempts':allowed?1:0}});
  }
  return result;

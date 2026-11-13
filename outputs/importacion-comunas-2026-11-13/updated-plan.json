@@ -1,0 +1,1330 @@
+[
+  {
+    "key": "google_maps:ChIJ6-nDGLfaYpYR_yN3s8rs2lA",
+    "name": "Iglesia Unida Metodista Pentecostal 2° de San Miguel",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJrdf0PALbYpYRa6oe5NM9NaA",
+    "name": "Iglesia Evangélica Pentecostal Presencia de Dios Central",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ3V4lOwDFYpYRLWB9khzl5hE",
+    "name": "Local San Francisco IEP Sargento Aldea",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJNXWugNjFYpYRfC_rMT8C7-Y",
+    "name": "Templo UMIN",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ_8ZsPNHaYpYRByDbSXpdoyY",
+    "name": "Iglesia Evangelica Bautista",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJo8psSUjFYpYRRJVMBS42LC8",
+    "name": "Iglesia Evangelica",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJcTr2yNjaYpYR2UvMl_o_gHQ",
+    "name": "Iglesia Cristiána la Ultima Llamada",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJ4R2msDPbYpYRmPup9hsDkdg",
+    "name": "Ministerio Puertas de Adoracion MIDAP",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJkwjcf8zaYpYR0siWvmt1Kfk",
+    "name": "Parroquia San Antonio María Claret",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJN10Vdt7aYpYREKyd6h4tbD8",
+    "name": "Corporacion Iglesia Evangelica Betesda",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJVT3nQdvFYpYRoIFVT5olaG0",
+    "name": "Iglesia misión palabra de vida Santiago",
+    "action": "update",
+    "id": "776450e4f91a75d10a0e1f18",
+    "status": "published",
+    "reason": "address_and_name"
+  },
+  {
+    "key": "google_maps:ChIJU1GWKwDbYpYRnp15JF_xFsQ",
+    "name": "Local Departamental IEP Sargento Aldea",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJzZGdCtHaYpYR1w4aActLZFM",
+    "name": "Iglesia",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJBW_IV7rbYpYR4yCzJ8xOn1k",
+    "name": "Iglesia Universal del Reino de Dios",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJGU7HkpHaYpYRah4VEEJcyxc",
+    "name": "Primera Iglesia Evangelica Wesleyana en Santiago",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJydy5HgDbYpYRo-r0A9DSScU",
+    "name": "Casa del buen pastor iglesia católica",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJCxJiA9raYpYREPI6YTU01Kk",
+    "name": "Parroquia Santa María de la Esperanza",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJAWSPTMPaYpYR2RRTly2UHTc",
+    "name": "Iglesia de Cristo \"CIADAL\"",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJF0mcSTDFYpYRbt8YeNSeMuo",
+    "name": "Corp Iglesia Metodista Libre de Chile",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJAeKg7z3bYpYR8EjqukMnFuc",
+    "name": "Iglesia pentecostal Eben ezer",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ7y-o2cHaYpYRZRLOPaWUtsw",
+    "name": "Iglesia Ministerio Familiar Cristiano",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ8wZsagDbYpYR7KfDTWzO5gg",
+    "name": "Iglesia Unida Metodista Pentecostal Nueva Atacama",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJmdkg5gLbYpYReEMl3zQ7yIM",
+    "name": "Iglesia Nueva Apostólica",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJGber_b_aYpYRq-DB6TF5N8s",
+    "name": "IMPCH SAN MIGUEL",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJY9W0ESHbYpYRItj4zCZs2rM",
+    "name": "Iglesia Viña San Miguel",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJo652dwDbYpYRxWT900R8Bao",
+    "name": "IGLESIA ACTUAL",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ8-GLTADbYpYR53jzPHgaADQ",
+    "name": "Iglesia Ortodoxa San Sabas",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJZ4bAAgDbYpYR9_dnDbryBic",
+    "name": "Iglesia San Miguel Arcángel san José de la Montaña",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJPWUVzt7aYpYRPz0p3SipWj8",
+    "name": "Iglesia Bautista El Tabernaculo San Miguel",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJQwvBKwDbYpYRNFNewXlm2Xo",
+    "name": "Iglesia De Dios Ministerial De Jesucristo Internacional - Comuna San Miguel, Santiago, Chile",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJO_Y2BhnPYpYRw0zQTZdLQpE",
+    "name": "Iglesia Arde chile",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJA04GRw7OYpYRdWLbN1GHIL4",
+    "name": "Parroquia San Juan Bautista",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJKUUxjl3OYpYR7Ny6dCKimXk",
+    "name": "Iglesia San Andres",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJnTyulXbPYpYRJUKohH2wnPE",
+    "name": "Iglesia El Camino Asambleas de Dios",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJu4TzJEfOYpYRZ-ehu8siYaM",
+    "name": "Iglesia Bautista Trinidad",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJT8k_gEzOYpYR3PADjjvG4-Q",
+    "name": "Parroquia de la Natividad del Señor",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJnxqj-UrOYpYRYLFGyzt8vSI",
+    "name": "Encuentro con Cristo Ñuñoa",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJwUdrvjfOYpYRpmIDqTjnza0",
+    "name": "Iglesia Adventista Blest Gana",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJt1-VZjnOYpYR6Nvy_KgI0Gk",
+    "name": "Iglesia Alianza Cristiana y Misionera La Reina",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJObQ8AgDPYpYREubiKBL6t9A",
+    "name": "Iglesia Unida Metodista Pentecostal La Reina",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJm7s-JTvOYpYRx_Z_gorHuO0",
+    "name": "Iglesia Bautista Betania",
+    "action": "update",
+    "id": "6aebf9401f4bf3f7e13bcde9",
+    "status": "published",
+    "reason": "place_id"
+  },
+  {
+    "key": "google_maps:ChIJteuN4F7OYpYRfv2k07-YO2I",
+    "name": "Congregacion San Juan Bautista",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJFcwkHwDPYpYRt-R__QSOUSM",
+    "name": "Templo Restauración de Las Asambleas de Dios",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJTfoHDEDOYpYRCk_oREOEwDc",
+    "name": "Parroquia - Santuario de Santa Rita",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ18imOAnOYpYR3fkuPIoAfn8",
+    "name": "Iglesia Adventista de la Reina",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJayOrvAXPYpYR8j69d_oHnl4",
+    "name": "Iglesia Metodista Pentecostal De Chile - Iglesia La Reina",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJy2xboZfPYpYRh0iX7g9S9mo",
+    "name": "Clase La Reina, PRIMP CATEDRAL EVANGELICA",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ-RYnLXfOYpYRL_nWpQUF0XY",
+    "name": "Parroquia San José Patrono de la Iglesia",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ-WvLZwDPYpYR5YMu45orKHw",
+    "name": "Iglesia institucional del Ejército de Chile “Nuestra Señora del Carmen”",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJrT6AIWXFYpYRdgj-eM6NwxM",
+    "name": "Iglesia Adventista del Séptimo Día en Santiago",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJjTPfRwDPYpYRLzcQBaLhNF4",
+    "name": "iglesia san jose",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJAQBAVFXOYpYRVmpFP3mp_9o",
+    "name": "Templo Biblico Bautista Av. Ossa",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJn7inWPXOYpYRHEN337evIJA",
+    "name": "Iglesia Asamblea de Dios Las Condes",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJSeyEdAbNYpYRQYRT4_cCUz8",
+    "name": "Iglesia Cristiana la Viña Abba",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJj2iJJEfOYpYR1Q4V4VYJsJY",
+    "name": "Iglesia Bíblica Bautista La Reina",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJe0ETUBDOYpYRBQvONLjsFDo",
+    "name": "Local La Reina IEP Peñalolén",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ-5yP8DzOYpYRXvE5sfUGfEY",
+    "name": "Capilla Santa Rosa de Las Campanas",
+    "action": "update",
+    "id": "6aebf9401f4bf3f7e13bce50",
+    "status": "published",
+    "reason": "place_id"
+  },
+  {
+    "key": "google_maps:ChIJIaBufhPOYpYRILH79T-Nd74",
+    "name": "Centro Evangelistico ARDE",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJCfGQ0VrOYpYRnvPNKvQejwM",
+    "name": "Parroquia San Carlos Borromeo",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJy4aHnuLNYpYR55SkyMC7RDY",
+    "name": "Capilla Ave María, La Reina",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJJQ_-eA7OYpYRTenJFRpdKwI",
+    "name": "Congregacion Siervas De San Jose",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJqfsv5YTaYpYRMZWXV-G5sYs",
+    "name": "Iglesia Metodista Pentecostal de Chile",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJxQe_Ip3QYpYRWO-Aads-RTU",
+    "name": "iglesia Pentecostal Pequeño Remanente",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJnca-gyrbYpYRlsh46YgNpjo",
+    "name": "MEP A LOS PIES DE LA CRUZ",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ6yZ1MQDRYpYR4DFOSL5cd88",
+    "name": "Ministerio Pentecostal Palabra de Vida. La granja",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJu4NmmnfaYpYRAw-vlkFDSjI",
+    "name": "Iglesia Pentecostal Naciente San Gregorio",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ9wCDEQDbYpYRco2G5rN13cs",
+    "name": "Iglesia pentecostal misión sol de justicia",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ__w80PHRYpYRRkr3kPXNBHE",
+    "name": "ITEMFA MISION PENTECOSTAL",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJMxBb95vRYpYRajJPLP9Y59U",
+    "name": "Iglesia Metodista Pentecostal de Chile - Local San Gregorio",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJz4sfd2LRYpYRfEO2AoruMck",
+    "name": "Iglesia Cristiana Remanente Pentecostal",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ7fx4S37aYpYRqCIc2EBdQic",
+    "name": "Iglesia Evangelica",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJIatL3mHRYpYRX6v069rd-Ik",
+    "name": "Iglesia Evangélica",
+    "action": "review",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJt3dbfQfRYpYRBj-FAoHLeyA",
+    "name": "Fundación Cristiana Sublime Gracia, Mi Iglesia Mi casa",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJsa4xTYbQYpYRAA17LTEX68w",
+    "name": "Iglesia Evangélica Asamblea De Dios MM La Granja",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJf9J9XGzRYpYR_zz3ZB43CXk",
+    "name": "IGLESIA PENTECOSTAL UNIDA LA GRANJA",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJt2ScCX_aYpYRWzKvirY71IQ",
+    "name": "iglesia casa de dios y puerta del cielo",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ5V7NF4LQYpYRf4IOcJ_Glx4",
+    "name": "Templo Betesda - ICPCH",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJmZbLe4fQYpYRLRvWNA1KuVk",
+    "name": "Iglesia Bautista Renacer En Cristo",
+    "action": "update",
+    "id": "6ae940fce2ded43275043ec0",
+    "status": "published",
+    "reason": "place_id"
+  },
+  {
+    "key": "google_maps:ChIJK9J0_wHRYpYRDcwpfdxtVxo",
+    "name": "Iglesia Unida Metodista Pentecostal Templo Renacer para Cristo",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJlXK1Vp_QYpYR40DEU5ZGSdE",
+    "name": "Iglesia Metodista Pentecostal",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJL9UnJwDRYpYRGqBl4pdf1YY",
+    "name": "Iglesia Unida Metodista Pentecostal La Granja Porvenir",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJSR3Lt4XaYpYR0m4mHaV61pw",
+    "name": "Iglesia Unida Metodista Pentecostal, Segunda La Granja",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJs3IEuk3bYpYRp2dZuLC4Sts",
+    "name": "Templo Jehova Jireh",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJsR8-qzDbYpYRZaE2VbgelxA",
+    "name": "Iglesia universal de Cristo",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJW84Ug3faYpYR8pew9jegqNQ",
+    "name": "Iglesia MIP - San Gregorio",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJxXGANXvaYpYRjQYqza_wWU4",
+    "name": "Capilla Los Misioneros",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ-WrGnYPbYpYRJNY6gMTjXN4",
+    "name": "Iglesia Pentecostal unida de San Joaquin",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJxfvS83raYpYRsCWphCmHDj4",
+    "name": "Templo",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJlU8N33vaYpYRU-I0npASV1E",
+    "name": "Casa De La Comunidad Padre Juan Meyer Parroquia San Gregorio",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJjU8CQFTbYpYRwgOZ6of6Nnk",
+    "name": "Primera Iglesia Metodista Pentecostal Clase Malaquías Concha",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJdxKPoHDaYpYRuRg8M6M0fTo",
+    "name": "IMP Los Vilos",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJWbqa4KzbYpYRZH1ALGfjva0",
+    "name": "Casa de la mujer",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJW-KgiWHQYpYRWx_vbjPmzoQ",
+    "name": "Iglesia Bautista Gracia Soberana",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJc7W3tYfbYpYRoZUbKnj50mg",
+    "name": "2 Iglesia Evangélica Aliancista de Santiago",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJzQoCbADRYpYRRoTlerttGGM",
+    "name": "Iglesia Renacer En Cristo",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJWbKzQpzQYpYRPgWvYg-fltQ",
+    "name": "Iglesia C.C.Evang La Granja",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ2UDHj4LbYpYRlfQ1N2aLITw",
+    "name": "iglesia evangelica puerta del cielo",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJu-55DgDRYpYRnUPPSXb1SW0",
+    "name": "E.P.E.S Templo La Granja",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJN_nfhoLQYpYRXGh9oE6ceRA",
+    "name": "Parroquia San Gregorio",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJox4NpTPRYpYRTT3cgGnBqNM",
+    "name": "Iglesia Casa de Dios La Granja",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJF28KAqXQYpYRNfcgjLKRhO0",
+    "name": "Iglesia Evangelica",
+    "action": "update",
+    "id": "6ae940fce2ded43275043eba",
+    "status": "published",
+    "reason": "place_id"
+  },
+  {
+    "key": "google_maps:ChIJqYv-kMPRYpYRKZCtl0aLjUc",
+    "name": "Misión Pentecostal Nueva Jerusalén",
+    "action": "update",
+    "id": "6ae940fce2ded43275043e89",
+    "status": "published",
+    "reason": "place_id"
+  },
+  {
+    "key": "google_maps:ChIJX4vLRp3QYpYRefArfKRb2wE",
+    "name": "Iglesia Bautista El Resplandor",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJteRrNADRYpYR38EtjS3YSgw",
+    "name": "Iglesia Unida Metodista Pentecostal La Granja Villa La Serena",
+    "action": "update",
+    "id": "6ae940fce2ded43275043e97",
+    "status": "published",
+    "reason": "place_id"
+  },
+  {
+    "key": "google_maps:ChIJR3PoWwvaYpYRbArmQq_VOVc",
+    "name": "IMP LA GRANJA",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJzy1DzAvaYpYRtHaeTWX2Pnc",
+    "name": "Iglesia Del Dios Viviente La Granja",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJxds3lW_RYpYRw-vxq-75G2c",
+    "name": "Ministerio Evangelistico Mi Dios Vive",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJPZGVTwDRYpYRvv7LSTLo1Hk",
+    "name": "IPUNJE La Granja",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJwd1UA5DaYpYRcwZqnLfS2Lg",
+    "name": "Iglesia Bautista La Castrina",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJzRQulIPRYpYRY-KHnhX-r7k",
+    "name": "IMP Nueva la granja",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJMejaKu3RYpYRxZqCnY6cdtc",
+    "name": "Iglesia Bíblica Bautista Yungay",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJm6OcWQDbYpYRZbMkT0-z9ww",
+    "name": "Iglesia apasionados por cristo",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJFx_iD4LaYpYRvB8lpKen2_g",
+    "name": "Iglesia Buenas Nuevas",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJDVNFFADRYpYR9_QRNUpgiT8",
+    "name": "iglesia templo belen",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJJRpkNADRYpYRHuvUByzxHLM",
+    "name": "Local Américo Vespucio IEP La Cisterna",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJc6zcD5jbYpYRMkA1VKU8_MY",
+    "name": "Iglesia Hermandad Pentecostal \"La Granja\"",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJB2tPnZvQYpYRp7jR3dbidVQ",
+    "name": "IGLESIA MACFREM",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJBQhIBwDRYpYRiCh0qSglUIs",
+    "name": "Iglesia Bethesda Bajo la Unción",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJZdhP_tDRYpYRmmerLAdseGg",
+    "name": "Capilla Virgen de los Pobres",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJZfhwa6LQYpYRslqyCf33jR8",
+    "name": "Iglesia Padre Bueno",
+    "action": "update",
+    "id": "6ae940fce2ded43275043ebc",
+    "status": "published",
+    "reason": "place_id"
+  },
+  {
+    "key": "google_maps:ChIJzVRwPwDRYpYR4_xwoBsjx1I",
+    "name": "Iglesia Espíritu Santo del Dios Viviente",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ6ffi0Z7QYpYRqS6dTzfDRNk",
+    "name": "Capilla Cristo Resucitado",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJk3iNDADRYpYR88vh-VBn7dk",
+    "name": "Los Redimidos de Jehová San gregorio",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJV3I2fnXaYpYRp6crUb43AbM",
+    "name": "Capilla María Misionera",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ9w0st1rRYpYR_K9noCW0lws",
+    "name": "Iglesia Hope Santiago",
+    "action": "update",
+    "id": "6ae940fce2ded43275043fb8",
+    "status": "published",
+    "reason": "place_id"
+  },
+  {
+    "key": "google_maps:ChIJkdR4x4baYpYR8SEu9lBZEpY",
+    "name": "IGLESIA CRISTIANA Jehová Jireh",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJCcnrE33aYpYRqW04tBBcsLE",
+    "name": "Capilla San Damián De Molokai",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ3UoZ-qHQYpYRgf2fvHODsLY",
+    "name": "IGLESIA PENTECOSTAL NAZARETH",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJBZT7JHDaYpYR9y5rcaIrdYk",
+    "name": "Capilla San Luis",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJpSQE4dDbYpYRZ198w3xMK0s",
+    "name": "Capilla San José",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJtwZvFADbYpYR_rxQ_yu1xe4",
+    "name": "Iglesia La Bandera Templo Evangélico Misionero",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJA6VXRurbYpYRm8VH7B-1Q0c",
+    "name": "Iglesia",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJdbrrOsTbYpYRVEsKvg19-qU",
+    "name": "IMP SAN MARTIN",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJnWg1Ul3XYpYRKvDSxaJWEm0",
+    "name": "Iglesia Centro de Formación Cristiana",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJxSa3OADbYpYR_79BNFawTjY",
+    "name": "Local San José de la Estrella IEP La Cisterna",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJJ5sHFI_aYpYRRcYZrKLjLKA",
+    "name": "Iglesia Adventista del Séptimo Día - BERMAN",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJsdghgITaYpYRGNNCx0AqwLY",
+    "name": "Parroquia San Pedro y San Pablo",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJqdZ2PQDRYpYRQPUUVLjfFac",
+    "name": "Iglesia de Dios Templo Adonai",
+    "action": "update",
+    "id": "6ae940fce2ded43275043fbc",
+    "status": "published",
+    "reason": "place_id"
+  },
+  {
+    "key": "google_maps:ChIJS3VVOYfQYpYR3fEBymiPuHI",
+    "name": "Iglesia La Granja",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ9djVhKfQYpYRX9mvnZIAVjM",
+    "name": "Templo El Señor Proveerá",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJW6szXwDRYpYRFaoRPRcNl7o",
+    "name": "Iglesia Red de Vida",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJTXWcviXRYpYRUmqmurLjr4c",
+    "name": "Los Caracoles",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ67U5fYfQYpYRNGyykHXpH78",
+    "name": "Capilla Católica Cristo Resucitado",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJG6KOtLrRYpYRNorDvE9BK8Q",
+    "name": "Kangery romani Santiago",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJLWNFeoDaYpYRw93lOSaA55o",
+    "name": "Parroquia Maria De La Esperanza",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJq43TcADbYpYR-dfF9H2gNz4",
+    "name": "IMPCH - Clase La Castrina.",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ554zBYLaYpYRX7tdJGarf4M",
+    "name": "Templo Evangelico",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "same_name_different_or_missing_address"
+  },
+  {
+    "key": "google_maps:ChIJx6vN5pjQYpYRR_sHltD-DJA",
+    "name": "Iglesia \"Hechos Dos\"",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ3XbJhpzQYpYReGqNVBZMECo",
+    "name": "Vision Internacional Apostolica Templo Betesda",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJk20K-4XbYpYR3qoJn2gQsGo",
+    "name": "Iglesia nueva la granja",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJ53wUIADRYpYR4CU9q9bXjqU",
+    "name": "Iglesia de Dios Camino a la Victoria",
+    "action": "update",
+    "id": "6ae940fce2ded43275043eda",
+    "status": "published",
+    "reason": "place_id"
+  },
+  {
+    "key": "google_maps:ChIJc0P7LX_QYpYR1QhHMpG7NQQ",
+    "name": "IGLESIA DEL EVANGELIO DE JESUCRISTO",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJASOJ6fPRYpYRPtcT2fOCoyw",
+    "name": "Local Guillermo El Conquistador IEP La Florida",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJj6vzDcrRYpYR0RcvUI28gFs",
+    "name": "Iglesia Bíblica de Cristo",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJrTaAXwDRYpYRo-nOEgPloDw",
+    "name": "Tabernáculo Zoe",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJSX3MWADRYpYRrjEhdPWc2gc",
+    "name": "Iglesia Testigos de Cristo",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJx9ppcQDRYpYRnNFR5wbyM5s",
+    "name": "Iglesia Casa Palabra y Vida",
+    "action": "update",
+    "id": "6ae940fce2ded43275043ec2",
+    "status": "draft",
+    "reason": "place_id"
+  },
+  {
+    "key": "google_maps:ChIJOaR6fQDRYpYRDaa9QJge_w8",
+    "name": "Iglesia de jesus",
+    "action": "review",
+    "id": null,
+    "status": "published",
+    "reason": "shared_address_requires_review"
+  },
+  {
+    "key": "google_maps:ChIJb5cHBwDRYpYRQEpavm0oq7E",
+    "name": "Iglesia jorgito y memito valdy",
+    "action": "update",
+    "id": "6ae940fce2ded43275043ebe",
+    "status": "published",
+    "reason": "place_id"
+  },
+  {
+    "key": "google_maps:ChIJ80G1WwzaYpYRlMZhesCuUA4",
+    "name": "Capilla Sagrado Corazón De Jesús",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJcxecOknbYpYRwSSN6ozWEI4",
+    "name": "Templo monte de los olivos",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJr3MMPHPaYpYR69fOjPoaJbQ",
+    "name": "Parroquia Doce Apostoles",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJa8cKXgzaYpYRyNrgdSnjUSo",
+    "name": "Templo Israel Santiago",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJSfeHHaHRYpYRmnzcdvz_bY8",
+    "name": "Movimiento Misionero Mundial Chile - Yungay",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJV6n1QwDRYpYRESQSB9Wpla0",
+    "name": "Templo Familia en la Misión",
+    "action": "insert",
+    "id": null,
+    "status": "published",
+    "reason": "new_identity"
+  },
+  {
+    "key": "google_maps:ChIJZZuItoXaYpYRPFbCJiuXfiI",
+    "name": "Templo Jireh",
+    "action": "insert",
+    "id": null,
+    "status": "draft",
+    "reason": "new_identity"
+  }
+]

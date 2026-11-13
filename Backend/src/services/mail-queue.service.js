@@ -42,7 +42,9 @@ async function runOne(cfg,{send=deliver,random=Math.random}={}){
  const job=await Job.findOneAndUpdate({transport:{$ne:'direct'},...(!cfg.outreachMail?.enabled?{outreachMail:{$exists:false}}:{}),$or:[{state:{$in:['pending','retry']},nextAttemptAt:{$lte:now}},{state:'processing',leaseUntil:{$lte:now}}]},{$set:{state:'processing',owner,leaseUntil:new Date(Date.now()+60000)}},{sort:{nextAttemptAt:1},returnDocument:'after'}).select('+payload');if(!job)return false;
  const finish=async(state,failure,extra={})=>{await Job.updateOne({_id:job._id,owner,state:'processing'},{$set:{state,failure,...extra,...(['accepted','failed','obsolete'].includes(state)?{purgeAt:require('../config/retention').after(cfg,'mailDays')}:{})},$unset:{owner:1,leaseUntil:1,...(['accepted','failed','obsolete'].includes(state)?{payload:1}:{})}});if(job.outreachMail)await require('./church-outreach-mail-tracking.service').sync(job._id);};
  const providerConfirmed=async()=>{const current=await Job.findById(job._id).select('providerId');return current?.providerId&&await require('../models/mail-event.model').findOne({providerId:current.providerId}).select('source');};
+ const outreachMail=job.outreachMail?await require('../models/church-outreach-mail.model').findById(job.outreachMail).select('invitation kind'):null;
  let evidence=await providerConfirmed();if(evidence){await finish('accepted','provider_status_available',{source:evidence.source});return true;}
+ if(outreachMail?.kind==='member'&&await require('../models/church-outreach-mail.model').exists({invitation:outreachMail.invitation,kind:'member',state:'failed',_id:{$ne:job.outreachMail}})){await finish('failed','resend_circuit_open');return true;}
  if(job.expiresAt<=now){await finish('obsolete','expired');return true;}
  if(job.attempts>=6){await finish('failed','attempts_exhausted');return true;}
  let data;try{data=open(job.payload,job._id,cfg);}catch{await finish('retry','encryption_unavailable',{nextAttemptAt:new Date(Date.now()+300000)});return true;}
@@ -54,6 +56,7 @@ async function runOne(cfg,{send=deliver,random=Math.random}={}){
  const owned=await Job.updateOne({_id:job._id,owner,state:'processing',leaseUntil:{$gt:new Date()}},{$inc:{attempts:1},$set:{source:send===deliver?'provider':'simulated'}});if(!owned.modifiedCount)return true;
  let result;try{result=await send(cfg,data,job._id);}catch{result={ok:false,temporary:true,reason:'network_or_timeout',delay:0};}
  if(result.ok){await finish('accepted','',{acceptedAt:new Date(),...(result.providerId?{providerId:result.providerId}:{})});return true;}
+ if(outreachMail?.kind==='member'){await finish('failed',result.reason||'resend_member_failure');return true;}
  const delay=Math.max(result.delay||0,Math.min(3600000,30000*2**job.attempts)*(0.5+random())),next=new Date(Date.now()+Math.min(delay,7*86400000));
  await finish(!result.temporary||job.attempts+1>=6?'failed':next>=job.expiresAt?'obsolete':'retry',result.reason,{nextAttemptAt:next});return true;
 }

@@ -1,0 +1,5 @@
+CONSOLIDACION 13-11-2026. SIN IMPORTAR
+201 filas originales, 166 fichas importables, 35 en revision. CSV independiente de 44 contactos con las nueve columnas solicitadas, UTF-8 con BOM y separador coma. Solo incluye fichas con correo, sitio web o redes. No se inventan contactos.
+La denominacion Por confirmar es un marcador de desconocimiento, no una denominacion institucional. Las etiquetas deducidas del nombre no son verificadas. Las comunas completadas desde el nombre del archivo son inferencias pendientes de revision geografica. capturedAt 2026-11-13T00:00:00Z es fecha tecnica provisional, no fecha comprobada de scraping.
+Presencia web permite incluir candidatos segun instruccion del usuario, sin acreditar que sean comunidades locales. La evidencia original completa y cambios estan en evidencia.ndjson e inferencias.ndjson. Imagenes y perfiles externos requieren validacion de pertenencia.
+Las 35 fichas en revision no tienen evidencia suficiente bajo los criterios ni presencia online para excepcion. No se inventaron Place ID ni coordenadas. No se consulto MongoDB: conciliar contra base destino antes de cargar.
