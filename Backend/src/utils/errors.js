@@ -9,7 +9,7 @@ function errorHandler(error, req, res, next) {
   if (error.type === 'entity.parse.failed') error = new HttpError(400, 'INVALID_JSON', 'JSON inválido');
   if (error.type === 'entity.too.large') error = new HttpError(413, 'PAYLOAD_TOO_LARGE', 'Solicitud demasiado grande');
   const status = error.status || 500;
-  if (status >= 500) console.error(error.code || error.name);
+  if (status >= 500) console.error('HTTP_INTERNAL_ERROR', error.stack || error.code || error.name);
   res.status(status).json({ error: { code: error.code || 'INTERNAL_ERROR', message: status === 500 ? 'Error interno del servidor' : error.message,
     ...(error.details ? { details: error.details } : {}) } });
 }
