@@ -1,0 +1,12 @@
+.representative-content-preview{border-top:1px solid var(--line);padding-top:10px}
+.representative-content-preview>summary{min-height:40px;cursor:pointer;color:var(--teal);font-size:13px;font-weight:600}
+.representative-content-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding-top:12px}
+.representative-content-grid>section{min-width:0}
+.representative-content-grid h3{margin:0 0 8px;font-size:15px}
+.representative-content-grid p{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:7px 0;font-size:13px}
+.representative-content-grid p strong{min-width:0;overflow-wrap:anywhere}
+.representative-content-grid .status-pill{flex:none;font-size:10px}
+.representative-content-grid .text-button{min-height:38px}
+@media(max-width:700px){
+.representative-content-grid{grid-template-columns:1fr;gap:14px}
+}

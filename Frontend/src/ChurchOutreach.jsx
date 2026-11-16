@@ -1,7 +1,8 @@
+import {roles as roleCatalog} from './representativeRoles';
 import React,{useEffect,useRef,useState,useId} from 'react';
 import {api} from './api';
 import './ChurchOutreach.css';
-const roles={administrator:['Representante administrador','Administra la ficha, comunidades, eventos, experiencias, visitas y equipo. Su designación corresponde al administrador global.'],editor:['Editor','Edita comunidades vinculadas y eventos. No edita la ficha principal ni accede a visitas.'],moderator:['Moderador','Modera experiencias y gestiona visitas. No edita la ficha ni el equipo.'],welcome:['Bienvenida','Gestiona visitas. No edita contenido ni modera experiencias.']};
+const roles=Object.fromEntries(Object.entries(roleCatalog).map(([key,role])=>[key,[role.label,role.description]]));
 const emptyPerson=()=>({id:crypto.randomUUID(),name:'',email:'',proposedSubrole:'editor'}),normalize=s=>s.trim().toLowerCase();
 function Role({value,onChange,locked=false}){const id=useId();return <div><label htmlFor={id}>Función propuesta</label><select disabled={locked} id={id} aria-describedby={id+'-help'} value={value} onChange={e=>onChange(e.target.value)}>{Object.entries(roles).map(([k,v])=><option key={k} value={k}>{v[0]}</option>)}</select><small id={id+'-help'}>{roles[value][1]}</small></div>;}
 function Documents({legal}){return <><details><summary>Términos y condiciones</summary><p className="outreach-legal">{legal.terms.text}</p></details><details><summary>Política de privacidad</summary><p className="outreach-legal">{legal.privacy.text}</p></details></>;}

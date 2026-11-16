@@ -1,7 +1,8 @@
+import {roles,roleFromPermissions} from './representativeRoles';
 import React,{useEffect,useId,useRef,useState} from 'react';
 import './ManualDownload.css';
-const manuals={administrator:['Administrador','administrador'],editor:['Editor','editor'],moderator:['Moderador','moderador'],welcome:['Bienvenida','bienvenida']};
-export function manualRole(permissions=[]){return permissions.includes('church')?'administrator':permissions.includes('moderation')?'moderator':permissions.includes('content')?'editor':permissions.includes('visits')?'welcome':null;}
+const manuals=Object.fromEntries(Object.entries(roles).map(([key,role])=>[key,[role.manual,{administrator:'administrador',editor:'editor',moderator:'moderador',welcome:'bienvenida'}[key]]]));
+export const manualRole=roleFromPermissions;
 const href=key=>`${import.meta.env.BASE_URL}manuales/koinonia-manual-representante-${manuals[key][1]}.pdf`;
 export default function ManualDownload({role}){
  const [open,setOpen]=useState(false),root=useRef(null),toggle=useRef(null),id=useId();

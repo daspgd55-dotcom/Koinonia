@@ -1,7 +1,8 @@
+import {memberRoleLabels as roles} from './representativeRoles';
 import React,{useState} from 'react';
 import {api} from './api';
 import './ChurchOutreach.css';
-const roles={administrator:'Representante administrador: ficha, contenido, experiencias, visitas y equipo',editor:'Editor: comunidades vinculadas y eventos',moderator:'Moderador: experiencias y visitas',welcome:'Bienvenida: visitas'};
+
 export default function ChurchOutreachMember({route,token,user,onRelogin,onSwitchAccount}){
  const raw=new URLSearchParams(route.split('?')[1]||'').get('token')||'',[info,setInfo]=useState(null),[result,setResult]=useState(null),[busy,setBusy]=useState(false),[error,setError]=useState('');
  async function run(fn){setBusy(true);setError('');try{await fn();}catch(e){setError(e.message);}finally{setBusy(false);}}

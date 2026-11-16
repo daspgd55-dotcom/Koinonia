@@ -31,3 +31,7 @@
  .site-navigation .navigation-login{font-size:12px;padding:8px}
 }
 @media(max-width:350px){.site-navigation .compact-navigation>.brand{font-size:17px}.site-navigation .compact-navigation>.brand img{width:25px;height:25px}.site-navigation .compact-navigation{padding-left:8px;padding-right:8px}.site-navigation .profile-nav-toggle{gap:3px}}
+
+.site-navigation .navigation-mobile-login{display:none}
+@media(max-width:800px){.site-navigation .navigation-mobile-login{display:inline-flex}.site-navigation .secondary-navigation>.navigation-menu-login{display:none}.navigation-guest .navigation-account{gap:4px}.navigation-mobile-login[aria-current=page]{color:#D7B56D}}
+@media(max-width:350px){.navigation-guest .navigation-account{grid-row:2;grid-column:1/-1;justify-content:flex-end}.navigation-guest .primary-navigation,.navigation-guest .mobile-nav-toggle{grid-row:3}.site-navigation.navigation-guest .compact-navigation{min-height:144px}}

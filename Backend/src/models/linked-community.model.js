@@ -13,6 +13,7 @@ const schema = new Schema({
   schedules:{mode:{type:String,enum:['none','church','custom'],default:'none'},meetingIds:{type:[String],default:undefined},meetings:[Church.schema.path('meetings').schema]},
   location: { mode: { type: String, enum: ['none', 'church', 'custom'], default: 'none' }, custom: embedded({ address: String, commune: { type: String, required: true }, city: String, region: String, postalCode: String, countryCode: String, coordinates: { type: Church.schema.path('location.coordinates').schema, default: undefined } }) },
   media: [embedded({ section:{type:String,enum:['logo','banner','facilities','meetings','activities','representatives','recommendation','gallery']}, category:{type:String,enum:['facilities','logo']}, type: { type: String, enum: ['image', 'video'], required: true }, url: { type: String, required: true }, source: { type: String, required: true }, title: String, frame: { type: String, enum: ['landscape', 'wide', 'square', 'circle', 'portrait', 'classic', 'cinema', 'banner', 'poster', 'story'] }, focalX: { type: Number, min: 0, max: 100 }, focalY: { type: Number, min: 0, max: 100 } })],
+  relationRevision:{type:Number,default:0,select:false},
   status: { type: String, enum: statuses, default: 'draft' }, version: { type: Number, default: 1 },
   createdBy: { type: Schema.Types.ObjectId, ref: 'User', required: true }, updatedBy: { type: Schema.Types.ObjectId, ref: 'User', required: true }
 }, { timestamps: true, strict: 'throw', optimisticConcurrency: true });

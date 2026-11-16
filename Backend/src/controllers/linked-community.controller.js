@@ -57,7 +57,7 @@ async function list(req, res, management) {
   const scope = management ? (req.user.role === 'admin' ? {} : require('../services/church-permissions').scope(req.user,'content','parent.')) : Object.fromEntries(Object.entries(visible).map(([key, value]) => ['parent.' + key, value]));
   const [result] = await Community.aggregate([{ $match: filter }, { $lookup: { from: Church.collection.name, localField: 'churchId', foreignField: '_id', as: 'parent' } }, { $unwind: '$parent' }, { $match: scope },
     { $addFields: { displayOrder: { $ifNull: ['$displayOrder', 1000] } } }, { $sort: q.churchId ? { displayOrder: 1, name: 1, _id: 1 } : { name: 1, _id: 1 } }, { $facet: { rows: [{ $skip: (q.page - 1) * q.limit }, { $limit: q.limit }], total: [{ $count: 'value' }] } }]);
-  const total = result.total[0]?.value || 0, data = result.rows.map(({ parent: church, ...row }) => management ? { ...row, church: { _id: church._id, name: church.identification.name } } : publicData(row, church));
+  const total = result.total[0]?.value || 0, data = result.rows.map(({ parent: church, ...row }) => management ? { ...Object.fromEntries(Object.entries(row).filter(([key])=>key!=='relationRevision')), church: { _id: church._id, name: church.identification.name } } : publicData(row, church));
   res.set('Cache-Control', 'no-store').json({ data, pagination: { page: q.page, limit: q.limit, total, pages: Math.ceil(total / q.limit) } });
 }
 exports.list = (req, res) => list(req, res, false);
@@ -80,12 +80,15 @@ exports.remove=async(req,res)=>{
 exports.move=async(req,res)=>{
  const {direction}=parse(require('../validation/schemas').z.strictObject({direction:require('../validation/schemas').z.enum(['up','down'])}),req.body),version=expectedVersion(req),{data}=await managedCommunity(req);
  const position=await Community.db.transaction(async session=>{
-  const rows=await Community.find({churchId:data.churchId}).session(session).lean();rows.sort((a,b)=>(a.displayOrder??1000)-(b.displayOrder??1000)||(a.name<b.name?-1:a.name>b.name?1:0)||String(a._id).localeCompare(String(b._id)));
+  const rows=await Community.aggregate([{$match:{churchId:data.churchId}},{$project:{name:1,version:1,displayOrder:{$ifNull:['$displayOrder',1000]}}},{$sort:{displayOrder:1,name:1,_id:1}},{$limit:10001}]).session(session);
   const index=rows.findIndex(c=>String(c._id)===String(data._id));if(index<0||rows[index].version!==version)throw new HttpError(409,'STALE_VERSION','La comunidad cambió. Recarga la lista antes de ordenar.');
   const next=index+(direction==='up'?-1:1);if(next<0||next>=rows.length)return index;
   if(rows.length>10000)throw new HttpError(409,'ORDER_LIMIT','El listado excede el límite de ordenación.');
-  [rows[index],rows[next]]=[rows[next],rows[index]];
-  for(let i=0;i<rows.length;i++){const result=await Community.updateOne({_id:rows[i]._id,version:rows[i].version},{$set:{displayOrder:i,updatedBy:req.user._id},$inc:{version:1}},{session});if(result.modifiedCount!==1)throw new HttpError(409,'STALE_VERSION','La lista cambió en otra sesión. Recarga antes de ordenar.');}
+  const unique=new Set(rows.map(c=>c.displayOrder)).size===rows.length,changes=[];
+  if(unique){changes.push({row:rows[index],order:rows[next].displayOrder},{row:rows[next],order:rows[index].displayOrder});}
+  else{[rows[index],rows[next]]=[rows[next],rows[index]];rows.forEach((row,i)=>{if(row.displayOrder!==i)changes.push({row,order:i});});}
+  const result=await Community.bulkWrite(changes.map(({row,order})=>({updateOne:{filter:{_id:row._id,version:row.version},update:{$set:{displayOrder:order,updatedBy:req.user._id},$inc:{version:1}}}})),{session});
+  if(result.matchedCount!==changes.length)throw new HttpError(409,'STALE_VERSION','La lista cambió en otra sesión. Recarga antes de ordenar.');
   return next;
  });res.set('Cache-Control','no-store').json({position,message:'Orden actualizado.'});
 };

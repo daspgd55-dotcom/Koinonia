@@ -1,10 +1,11 @@
+import {outreachRoleLabels as roles} from './representativeRoles';
 import ChurchMakeQueue from './ChurchMakeQueue';
 import ChurchContactImport from './ChurchContactImport';
 import ChurchOutreachMailAdmin,{reasons as mailReasons} from './ChurchOutreachMailAdmin';
 import React,{useEffect,useRef,useState} from 'react';
 import {api} from './api';
 import './ChurchOutreachAdmin.css';
-const root='/church-outreach-invitations',stages={all:'Todas',contact:'Por contactar',waiting:'Esperando respuesta',proposals:'Propuestas recibidas',activation:'Activación del equipo',closed:'Cerradas / no contactar'},roles={administrator:'Representante administrador',editor:'Editor · comunidades y eventos',moderator:'Moderador · experiencias y visitas',welcome:'Bienvenida · visitas'};
+const root='/church-outreach-invitations',stages={all:'Todas',contact:'Por contactar',waiting:'Esperando respuesta',proposals:'Propuestas recibidas',activation:'Activación del equipo',closed:'Cerradas / no contactar'};
 const labels={not_sent:'Sin enviar',queued:'En cola',accepted:'Aceptado por proveedor',delivered:'Entregado',failed:'Fallido',bounced:'Rebotado',cancelled:'Cancelado',pending:'Pendiente',not_requested:'No solicitada',not_started:'Sin iniciar',active:'Activo',approved:'Aprobada',rejected:'Rechazada',partial:'Parcial',clarification:'Aclaración pendiente',awaiting_response:'Sin respuesta',received:'Recibida',needs_clarification:'Requiere aclaración',closed:'Cerrada',declined:'Rechazada por contacto',wrong_church:'Iglesia incorrecta',wrong_contact:'Contacto incorrecto',draft:'Borrador',ready:'Preparada',revoked:'Revocada',expired:'Vencida',prepared:'Preparada · sin enviar'};
 const label=v=>labels[v]||v||'Pendiente',date=v=>v?new Date(v).toLocaleString('es-CL'):'—',location=c=>[c?.location?.address,c?.location?.commune,c?.location?.city].filter(Boolean).join(', ');
 const empty=()=>({email:'',name:'',kind:'direct_contact',url:'',evidence:'',collectedAt:'',expiresAt:'',note:'',acknowledgeRelated:false});

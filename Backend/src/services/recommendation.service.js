@@ -2,6 +2,8 @@ const Source = require('../models/source.model');
 const { z } = require('zod');
 const { HttpError } = require('../utils/errors');
 const normalize = value => String(value).trim().toLocaleLowerCase('es');
+// Campos de rank y church-quality; las fichas completas se recuperan solo para los resultados.
+const rankingProjection = { 'location.commune':1,'location.address':1,'christianIdentity.denomination':1,'christianIdentity.branch':1,'christianIdentity.languages':1,'doctrine.characteristics':1,'doctrine.officialStatement':1,'community.activities':1,'community.ministries':1,'community.targetGroups':1,'meetings.schedule.day':1,'identification.description':1,'leadership.mainLeader.name':1,'media.type':1,'metadata.dataStatus':1,'verification.lastUpdated':1,privateFields:1,distanceMeters:1 };
 
 // Función para calcular la compatibilidad de una iglesia con las preferencias de un usuario
 function overlap(wanted = [], actual = []) {
@@ -99,4 +101,4 @@ async function enrich(config, query, preferences, ranked) {
   return { results: ranked, mode: body.engine === 'rag' ? 'rag-enriched' : 'external-baseline', queryInterpreted: false };
 }
 
-module.exports = { rank, satisfies, enrich };
+module.exports = { rank, satisfies, enrich, rankingProjection };

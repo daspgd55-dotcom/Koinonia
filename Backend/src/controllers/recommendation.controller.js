@@ -1,6 +1,6 @@
 const Interaction = require('../models/interaction.model'), Church = require('../models/church.model');
 const { discoverable, exact, publicChurch } = require('../services/church.service');
-const { rank, enrich } = require('../services/recommendation.service');
+const { rank, enrich, rankingProjection } = require('../services/recommendation.service');
 const { validateCriteria, plain } = require('../services/profile.service');
 const v = require('../validation/schemas');
 exports.recommend = async (req, res) => {
@@ -29,11 +29,11 @@ exports.recommend = async (req, res) => {
   if (location?.lat !== undefined && location?.lng !== undefined) {
     const geo = { near: { type: 'Point', coordinates: [location.lng, location.lat] }, key: 'location.coordinates', distanceField: 'distanceMeters', spherical: true, query: filter };
     if (required('radiusKm')) geo.maxDistance = (preferences.radiusKm || 5) * 1000;
-    const pipeline = [{ $geoNear: geo }, { $sort: { distanceMeters: 1, _id: 1 } }];
+    const pipeline = [{ $geoNear: geo }, { $project: rankingProjection }, { $sort: { distanceMeters: 1, _id: 1 } }];
     if (!personalized) pipeline.push({ $limit: 101 });
     cursor = Church.aggregate(pipeline).cursor({ batchSize: 100 });
-  } else cursor = (personalized ? Church.find(filter).sort({ _id: 1 }) : Church.find(filter).sort({ _id: 1 }).limit(101)).lean().cursor();
-  const ranked = []; let evaluated = 0, truncated = false;
+  } else cursor = (personalized ? Church.find(filter).sort({ _id: 1 }) : Church.find(filter).sort({ _id: 1 }).limit(101)).select(rankingProjection).lean().cursor();
+  let ranked = [], evaluated = 0, truncated = false;
   try {
     for await (const candidate of cursor) {
       if (!personalized && evaluated === 100) { truncated = true; break; }
@@ -43,6 +43,10 @@ exports.recommend = async (req, res) => {
       if (ranked.length > input.limit) ranked.pop();
     }
   } finally { await cursor.close(); }
+  if(ranked.length){
+    const documents=await Church.find({$and:[filter,{_id:{$in:ranked.map(r=>r.churchId)}}]}).lean(),byId=new Map(documents.map(c=>[String(c._id),c]));
+    ranked=ranked.filter(row=>{const doc=byId.get(row.churchId);if(!doc)return false;const distance=row.church.distanceMeters;row.church=publicChurch(doc);if(distance!==undefined)row.church.distanceMeters=distance;return true;});
+  }
   const saved=new Set((await Interaction.find({user:req.user._id,type:'saved',church:{$in:ranked.map(r=>r.churchId)}}).distinct('church')).map(String));
   for(const row of ranked)row.saved=saved.has(row.churchId);
   delete preferences.location;
