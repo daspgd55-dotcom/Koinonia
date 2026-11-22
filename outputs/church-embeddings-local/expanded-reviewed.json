@@ -1,0 +1,728 @@
+{
+  "sourceHash": "a406606b1f0e1a0a24a82fc11ed2d4d95ffd4dea7f0dbfd7228cd561e39303b1",
+  "baseCreatedAt": "2026-11-18T05:21:16.806Z",
+  "churches": 20,
+  "fragments": 45,
+  "items": [
+    {
+      "_id": "e6d7e42e79ea95ae9e831496:community.ministries:0",
+      "churchId": "e6d7e42e79ea95ae9e831496",
+      "title": "Corporacion Metodista Libre De Chile",
+      "text": "Iglesia: Corporacion Metodista Libre De Chile · Santiago · Santiago\nMinisterios: Formación bíblica",
+      "textHash": "4aa6323680fae7be1a256686c29097dfb6e4c3f7fe5a121b4baaa9a38e4a36f3",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "e6d7e42e79ea95ae9e831496:community.activities:0",
+      "churchId": "e6d7e42e79ea95ae9e831496",
+      "title": "Corporacion Metodista Libre De Chile",
+      "text": "Iglesia: Corporacion Metodista Libre De Chile · Santiago · Santiago\nActividades: Conferencias, Cursos / institutos",
+      "textHash": "5375d65d014a8b1a79c29a94233048e8beff3ac1f432a4f88e4dcd502ba3965f",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "e6d7e42e79ea95ae9e831496:doctrine.characteristics:0",
+      "churchId": "e6d7e42e79ea95ae9e831496",
+      "title": "Corporacion Metodista Libre De Chile",
+      "text": "Iglesia: Corporacion Metodista Libre De Chile · Santiago · Santiago\nDoctrinas y prácticas: Sacramentos / ordenanzas, Misiones, Predicación, Prácticas carismáticas",
+      "textHash": "ae0e08c062fb0322053e8c78a87ed1b40c2f931ca1d67ebd63ccdadc29eedc49",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "doctrine.characteristics",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "155555f8b883bb7066754b67:community.ministries:0",
+      "churchId": "155555f8b883bb7066754b67",
+      "title": "Iglesia Corpus Domini",
+      "text": "Iglesia: Iglesia Corpus Domini · Santiago · Santiago\nMinisterios: Deportes",
+      "textHash": "e3ae8d9ea631bace39701e3bb3a84cbad7796db2d82b748e78a9da5822560256",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "155555f8b883bb7066754b67:community.activities:0",
+      "churchId": "155555f8b883bb7066754b67",
+      "title": "Iglesia Corpus Domini",
+      "text": "Iglesia: Iglesia Corpus Domini · Santiago · Santiago\nActividades: Actividades deportivas",
+      "textHash": "f54176477d1069fa0fed6cc43a0173b89ceb3fc83cdec53a28902b27a8f8857c",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "155555f8b883bb7066754b67:doctrine.characteristics:0",
+      "churchId": "155555f8b883bb7066754b67",
+      "title": "Iglesia Corpus Domini",
+      "text": "Iglesia: Iglesia Corpus Domini · Santiago · Santiago\nDoctrinas y prácticas: Culto litúrgico, Eucaristía",
+      "textHash": "921fdccdcc5d757f3da1a3a8c78b31f35ee0fa9131af1fb4dfbd00cd2a4d65ca",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "doctrine.characteristics",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "1298af8033c6eb4a402bf5a3:community.ministries:0",
+      "churchId": "1298af8033c6eb4a402bf5a3",
+      "title": "Iglesia Cristiana AR chile",
+      "text": "Iglesia: Iglesia Cristiana AR chile · Ñuñoa · Santiago\nMinisterios: Streaming, Formación bíblica, Familias",
+      "textHash": "d98315ce6ea26b5e4a29a340cbe00410404fb0cf566c19d4ce145f89e65f2a74",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "1298af8033c6eb4a402bf5a3:community.activities:0",
+      "churchId": "1298af8033c6eb4a402bf5a3",
+      "title": "Iglesia Cristiana AR chile",
+      "text": "Iglesia: Iglesia Cristiana AR chile · Ñuñoa · Santiago\nActividades: Cursos / institutos, Conferencias",
+      "textHash": "5fb2b26c6afea04730cebb61e60d39396d73e48e99491b87f02ae58e565ef298",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "1298af8033c6eb4a402bf5a3:doctrine.characteristics:0",
+      "churchId": "1298af8033c6eb4a402bf5a3",
+      "title": "Iglesia Cristiana AR chile",
+      "text": "Iglesia: Iglesia Cristiana AR chile · Ñuñoa · Santiago\nDoctrinas y prácticas: Formación bíblica, Sacramentos / ordenanzas",
+      "textHash": "8d95b7e6d4752440faf6b9de2f2ba9928b13908a4314131f8726dee1d5e2f080",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "doctrine.characteristics",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "6ac9b9225017eda79d91466c:identification.description:0",
+      "churchId": "6ac9b9225017eda79d91466c",
+      "title": "Iglesia Bíblica Alma",
+      "text": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nSobre la iglesia: A: Amar a otros como Cristo nos ama L: Liderando hacia la madurez Espiritual M: Movernos hacia los de afuera, para que juntos A: Adoremos a Dios con nuestras vidas Una comunidad que busca crear una revolución de amor. Con el amor que Dios ha derramado para todo el mundo.",
+      "textHash": "d260b99ff3593d2dceeebefc525479cea7b7bef37c048f86296ca8780658e3fb",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "identification.description",
+        "part": 0,
+        "updatedAt": "2026-11-15T19:14:26.208Z",
+        "churchVersion": 64
+      },
+      "testData": false
+    },
+    {
+      "_id": "6ac9b9225017eda79d91466c:identification.distinctiveFeatures:0",
+      "churchId": "6ac9b9225017eda79d91466c",
+      "title": "Iglesia Bíblica Alma",
+      "text": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nCaracterísticas: Predicas enfocadas en la practicalidad en nuestro camino con cristo en la vida cotidiana, Se enfoca en la comodidad de las visitas",
+      "textHash": "fceb9ff8ab44319e8d166a1428c95a1ac9bce0e23247fc21a204eb27f6bd3890",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "identification.distinctiveFeatures",
+        "part": 0,
+        "updatedAt": "2026-11-15T19:14:26.208Z",
+        "churchVersion": 64
+      },
+      "testData": false
+    },
+    {
+      "_id": "6ac9b9225017eda79d91466c:doctrine.characteristics:0",
+      "churchId": "6ac9b9225017eda79d91466c",
+      "title": "Iglesia Bíblica Alma",
+      "text": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nDoctrinas y prácticas: Autoridad de las Escrituras, Predicación, Culto contemporáneo, Evangelización, Formación bíblica, Bautismo de creyentes, Misiones",
+      "textHash": "fce17958038109142a984f2143dafc3be6c90b9f5a32d14b85a89687b1a2a5ac",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "doctrine.characteristics",
+        "part": 0,
+        "updatedAt": "2026-11-15T19:14:26.208Z",
+        "churchVersion": 64
+      },
+      "testData": false
+    },
+    {
+      "_id": "6ac9b9225017eda79d91466c:community.description:0",
+      "churchId": "6ac9b9225017eda79d91466c",
+      "title": "Iglesia Bíblica Alma",
+      "text": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nVida en comunidad: Vamos a Hogares de Adultos mayores y de Niños",
+      "textHash": "042f06af44111ae7bff500b30674c958184aa4d62f5f6910f8c2133b4b3f52a2",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.description",
+        "part": 0,
+        "updatedAt": "2026-11-15T19:14:26.208Z",
+        "churchVersion": 64
+      },
+      "testData": false
+    },
+    {
+      "_id": "6ac9b9225017eda79d91466c:community.activities:0",
+      "churchId": "6ac9b9225017eda79d91466c",
+      "title": "Iglesia Bíblica Alma",
+      "text": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nActividades: Reuniones de Alabanza, Retiros, Voluntariado, Cursos / institutos, Eventos familiares, Bautismos, Campamentos, Evangelismo, Ayuda social, Actividades deportivas, Obras Audiovisuales",
+      "textHash": "e0160626f8460e222d86c6fce84df44b46e956d4797bc74e66fe23af5af5adfe",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": "2026-11-15T19:14:26.208Z",
+        "churchVersion": 64
+      },
+      "testData": false
+    },
+    {
+      "_id": "28f6ea99cc25a2cd1462203d:identification.description:0",
+      "churchId": "28f6ea99cc25a2cd1462203d",
+      "title": "Church of the Blessed Sacrament",
+      "text": "Iglesia: Church of the Blessed Sacrament · Santiago · Santiago\nSobre la iglesia: Inspired by Paris’ Basilique du Sacré-Cœur, this grand Catholic church houses historic sculptures.",
+      "textHash": "d827c1b9239bbc5e59d987a8374a37ef411b0f02df9ab9905e382ccaef0c1749",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "identification.description",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "54eaade8ff61c196a91f9f1e:community.ministries:0",
+      "churchId": "54eaade8ff61c196a91f9f1e",
+      "title": "Augustinians Monastery",
+      "text": "Iglesia: Augustinians Monastery · Providencia · Providencia\nMinisterios: Jóvenes",
+      "textHash": "1a9503f942b056625b40218c7aa9ef16bbe8ec6f859e2794f978cc3838821073",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "54eaade8ff61c196a91f9f1e:community.activities:0",
+      "churchId": "54eaade8ff61c196a91f9f1e",
+      "title": "Augustinians Monastery",
+      "text": "Iglesia: Augustinians Monastery · Providencia · Providencia\nActividades: Actividades deportivas, Retiros, Campamentos",
+      "textHash": "b3f09254ee2dc85bbd3e5b7fee255d099dd7c00d22e496cf0696ddbc9efcce07",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "bdf3e30b6d86b7deb95138e2:community.ministries:0",
+      "churchId": "bdf3e30b6d86b7deb95138e2",
+      "title": "Gratitud nacional",
+      "text": "Iglesia: Gratitud nacional · Pedro Aguirre Cerda · Santiago\nMinisterios: Acción social, Evangelismo",
+      "textHash": "3ed1a4d6e15e5db819bdd3fc15e73b0e298396b1f6d21f47a8a79e70c1202de1",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "bdf3e30b6d86b7deb95138e2:community.activities:0",
+      "churchId": "bdf3e30b6d86b7deb95138e2",
+      "title": "Gratitud nacional",
+      "text": "Iglesia: Gratitud nacional · Pedro Aguirre Cerda · Santiago\nActividades: Evangelismo, Voluntariado, Ayuda social",
+      "textHash": "859a5f6343920795503fb73f0780503faca24b8040bcd7306b9dfca7e7399ac5",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "fac395e6fb5d97b60d812249:community.ministries:0",
+      "churchId": "fac395e6fb5d97b60d812249",
+      "title": "Primera Iglesia Metodista Pentecostal de Tiltil",
+      "text": "Iglesia: Primera Iglesia Metodista Pentecostal de Tiltil · Tiltil · Tiltil\nMinisterios: Streaming, Misiones, Música / alabanza, Jóvenes, Formación bíblica",
+      "textHash": "9ad2d8cf7a982a0e712b23f85e01ebca52bb1c0a04d1d51fd6570e625033d1ff",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "fac395e6fb5d97b60d812249:community.activities:0",
+      "churchId": "fac395e6fb5d97b60d812249",
+      "title": "Primera Iglesia Metodista Pentecostal de Tiltil",
+      "text": "Iglesia: Primera Iglesia Metodista Pentecostal de Tiltil · Tiltil · Tiltil\nActividades: Campamentos, Evangelismo, Reuniones de Alabanza, Conferencias",
+      "textHash": "2adf85c9bec05563c435d5690f9408249206a21762223fbd19fa65e0277798a6",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "186c21a71a29a8fa20363ab9:community.ministries:0",
+      "churchId": "186c21a71a29a8fa20363ab9",
+      "title": "ARM Santiago",
+      "text": "Iglesia: ARM Santiago · Ñuñoa · Santiago\nMinisterios: Ayuda comunitaria, Jóvenes",
+      "textHash": "ddf96f0183db4d9890e192e7056089eb4d6ca5d0d0c3a26827d78333463d2d23",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "186c21a71a29a8fa20363ab9:community.activities:0",
+      "churchId": "186c21a71a29a8fa20363ab9",
+      "title": "ARM Santiago",
+      "text": "Iglesia: ARM Santiago · Ñuñoa · Santiago\nActividades: Ayuda social, Actividades deportivas, Campamentos",
+      "textHash": "24db2941ed18926416c76da59fc74f8a73bc5dae77352d5f38e24d69e5dd8752",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "306c02d8ba5fde003056f434:community.ministries:0",
+      "churchId": "306c02d8ba5fde003056f434",
+      "title": "Capilla",
+      "text": "Iglesia: Capilla · Ñuñoa · Santiago\nMinisterios: Acción social, Niños, Música / alabanza",
+      "textHash": "dd2015095d8fb9c4f91ff17253b5d8955d2949bd9fa932a01280041bec9e6dcf",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "306c02d8ba5fde003056f434:community.activities:0",
+      "churchId": "306c02d8ba5fde003056f434",
+      "title": "Capilla",
+      "text": "Iglesia: Capilla · Ñuñoa · Santiago\nActividades: Voluntariado, Eventos familiares, Reuniones de Alabanza",
+      "textHash": "8841951f491aa03c7105f37c11b13578ff767e71717831908e8ed123c7912a51",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "0082f785ddcba9887af730be:community.ministries:0",
+      "churchId": "0082f785ddcba9887af730be",
+      "title": "Ministerío Misionero el Avivamiento y las Misericordias de J",
+      "text": "Iglesia: Ministerío Misionero el Avivamiento y las Misericordias de J · Santiago · Santiago\nMinisterios: Misiones, Streaming, Adultos mayores, Familias",
+      "textHash": "cf7aa791c859f04dd5186729315c6bcd6601c6debf0807fdedd68a4a6ec773f9",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "0082f785ddcba9887af730be:community.activities:0",
+      "churchId": "0082f785ddcba9887af730be",
+      "title": "Ministerío Misionero el Avivamiento y las Misericordias de J",
+      "text": "Iglesia: Ministerío Misionero el Avivamiento y las Misericordias de J · Santiago · Santiago\nActividades: Evangelismo, Obras Audiovisuales, Eventos familiares",
+      "textHash": "4e3eb7b668fbf35f0d9db87ba5c3cd061207f2e57475486645a279e9600f1f7c",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "495446dcdd84fdaf0d4f4fa9:community.ministries:0",
+      "churchId": "495446dcdd84fdaf0d4f4fa9",
+      "title": "Hnas Terciarias Misioneras Franciscanas",
+      "text": "Iglesia: Hnas Terciarias Misioneras Franciscanas · Ñuñoa · Santiago\nMinisterios: Música / alabanza, Misiones, Deportes, Oración, Adultos mayores, Formación bíblica",
+      "textHash": "f66d431da87eafed2841234f412f824072677c87c560985ed01fc3730cba07ff",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "495446dcdd84fdaf0d4f4fa9:community.activities:0",
+      "churchId": "495446dcdd84fdaf0d4f4fa9",
+      "title": "Hnas Terciarias Misioneras Franciscanas",
+      "text": "Iglesia: Hnas Terciarias Misioneras Franciscanas · Ñuñoa · Santiago\nActividades: Reuniones de Alabanza, Evangelismo, Confraternidades, Cursos / institutos",
+      "textHash": "a0fe04efeb8e0eb7e4512114effd717117904f105b07f2b6dc54497913499f5e",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "0095bb2897ed6a7ed6655c50:community.ministries:0",
+      "churchId": "0095bb2897ed6a7ed6655c50",
+      "title": "Jesucristo",
+      "text": "Iglesia: Jesucristo · Santiago · Santiago\nMinisterios: Ayuda comunitaria, Familias, Evangelismo",
+      "textHash": "423ca07cf9967d6f26d9208a04d910389b38a395a823014bd8bb4d022e8fc55e",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "0095bb2897ed6a7ed6655c50:community.activities:0",
+      "churchId": "0095bb2897ed6a7ed6655c50",
+      "title": "Jesucristo",
+      "text": "Iglesia: Jesucristo · Santiago · Santiago\nActividades: Voluntariado, Evangelismo, Eventos familiares, Ayuda social",
+      "textHash": "8ac5f889f96fa97e5743507da36c80ca3072df1c17f6dbb2b4c45b5c9e9ca639",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "6929f24fbc5d1ab14dacaf7d:community.ministries:0",
+      "churchId": "6929f24fbc5d1ab14dacaf7d",
+      "title": "Congregacion Padres Pasionistas",
+      "text": "Iglesia: Congregacion Padres Pasionistas · Ñuñoa · Santiago\nMinisterios: Streaming",
+      "textHash": "8123e0c8de8e75fd0d2bcd0566438205b6c2e9a260c31a580dd1c1bf794c5263",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "6929f24fbc5d1ab14dacaf7d:community.activities:0",
+      "churchId": "6929f24fbc5d1ab14dacaf7d",
+      "title": "Congregacion Padres Pasionistas",
+      "text": "Iglesia: Congregacion Padres Pasionistas · Ñuñoa · Santiago\nActividades: Obras Audiovisuales",
+      "textHash": "04f7b7d2b35e898626943ea2568e633184f49c50cd52babf01a413042719fd9e",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "00b5fc37b835eedfb5eb2916:community.ministries:0",
+      "churchId": "00b5fc37b835eedfb5eb2916",
+      "title": "Centro de Espiritualidad Ignaciana - CEI Chile",
+      "text": "Iglesia: Centro de Espiritualidad Ignaciana - CEI Chile · Santiago · Santiago\nMinisterios: Ayuda comunitaria",
+      "textHash": "017d587b1a624c1237d08e644407ea7fbc9259bbf68606594edb34e884e23f0d",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "00b5fc37b835eedfb5eb2916:community.activities:0",
+      "churchId": "00b5fc37b835eedfb5eb2916",
+      "title": "Centro de Espiritualidad Ignaciana - CEI Chile",
+      "text": "Iglesia: Centro de Espiritualidad Ignaciana - CEI Chile · Santiago · Santiago\nActividades: Voluntariado, Ayuda social",
+      "textHash": "19892843ef4a2ba65187b21f36eb2484b7808ecb5a2bac6f44ea9628ee12d3e5",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "00cdd861c45a77a672bba28d:community.ministries:0",
+      "churchId": "00cdd861c45a77a672bba28d",
+      "title": "Iglesia San Miguel Arcángel",
+      "text": "Iglesia: Iglesia San Miguel Arcángel · Santiago · Santiago\nMinisterios: Familias, Acción social, Jóvenes, Oración, Streaming",
+      "textHash": "7eb0cf89d9cb4861ac11c521a97e59b9cbb96befe5de02352c4e80bb78847c07",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "00cdd861c45a77a672bba28d:community.activities:0",
+      "churchId": "00cdd861c45a77a672bba28d",
+      "title": "Iglesia San Miguel Arcángel",
+      "text": "Iglesia: Iglesia San Miguel Arcángel · Santiago · Santiago\nActividades: Voluntariado, Ayuda social, Eventos familiares, Obras Audiovisuales, Confraternidades",
+      "textHash": "bdfc1dd7f664cc0a19c66041d2511e4b565c51ec23a15251acfd79d741a98f59",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "00e256bfdb4df05e5765c871:community.ministries:0",
+      "churchId": "00e256bfdb4df05e5765c871",
+      "title": "Primera Iglesia Metodista",
+      "text": "Iglesia: Primera Iglesia Metodista · Santiago · Santiago\nMinisterios: Misiones, Jóvenes, Oración, Formación bíblica",
+      "textHash": "c68ae2cefbbaaa375e19bf2e6b9f79fdefd9380100b72301f492456ab20e370c",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "00e256bfdb4df05e5765c871:community.activities:0",
+      "churchId": "00e256bfdb4df05e5765c871",
+      "title": "Primera Iglesia Metodista",
+      "text": "Iglesia: Primera Iglesia Metodista · Santiago · Santiago\nActividades: Cursos / institutos, Retiros",
+      "textHash": "98c0b6392852260f46d7e5be390bdbb49a669702206f3c59814c125415f36e9d",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "01c14fb15d8b9735dc988189:community.ministries:0",
+      "churchId": "01c14fb15d8b9735dc988189",
+      "title": "CEDIN Coquimbo",
+      "text": "Iglesia: CEDIN Coquimbo · Santiago · Santiago\nMinisterios: Streaming, Oración",
+      "textHash": "2c55c10048bc41685c7f3cff7d3faa47a9a486aba172c4386bbcb7900e77759c",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "01c14fb15d8b9735dc988189:community.activities:0",
+      "churchId": "01c14fb15d8b9735dc988189",
+      "title": "CEDIN Coquimbo",
+      "text": "Iglesia: CEDIN Coquimbo · Santiago · Santiago\nActividades: Obras Audiovisuales, Confraternidades, Retiros",
+      "textHash": "10bcacc42b9217f3d0f5e62d309416b6d0d408ebb3f60429ea37d49bda2ad19a",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "02defa0c5de6a6057b2bbabe:community.ministries:0",
+      "churchId": "02defa0c5de6a6057b2bbabe",
+      "title": "Vineyard church dowtown",
+      "text": "Iglesia: Vineyard church dowtown · Santiago · Santiago\nMinisterios: Formación bíblica, Matrimonios, Consejería",
+      "textHash": "064f0ce9bdca2b2577b7a647564e9f9ee1a6b71090f5d3ae3c058de7393ebd64",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "02defa0c5de6a6057b2bbabe:community.activities:0",
+      "churchId": "02defa0c5de6a6057b2bbabe",
+      "title": "Vineyard church dowtown",
+      "text": "Iglesia: Vineyard church dowtown · Santiago · Santiago\nActividades: Cursos / institutos, Retiros",
+      "textHash": "55c4257ee476655e96dd5f7effe84178ea55e3c0102a106814a62ee3e4d5c262",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "03218dbdd2818ed870a2ec54:community.ministries:0",
+      "churchId": "03218dbdd2818ed870a2ec54",
+      "title": "Parroquia San Andrés",
+      "text": "Iglesia: Parroquia San Andrés · Santiago · Santiago\nMinisterios: Deportes, Streaming, Adultos mayores, Familias, Música / alabanza",
+      "textHash": "6736554c953d389b7733a9a29bcc90375e8773c491236f0d955ca793fde180a4",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": "2026-10-21T17:52:49.384Z",
+        "churchVersion": 2
+      },
+      "testData": true
+    },
+    {
+      "_id": "03218dbdd2818ed870a2ec54:community.activities:0",
+      "churchId": "03218dbdd2818ed870a2ec54",
+      "title": "Parroquia San Andrés",
+      "text": "Iglesia: Parroquia San Andrés · Santiago · Santiago\nActividades: Confraternidades, Reuniones de Alabanza, Obras Audiovisuales, Actividades deportivas",
+      "textHash": "e160661ae98123f798d2c339d101240691696f44de1b0d425c3ca314f93feaf3",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": "2026-10-21T17:52:49.384Z",
+        "churchVersion": 2
+      },
+      "testData": true
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "model": "qwen2.5:1.5b",
+  "endpoint": "http://127.0.0.1:11435",
+  "createdAt": "2026-11-17T03:39:41.046Z",
+  "passed": 5,
+  "total": 10,
+  "rows": [
+    {
+      "id": "unknown_field",
+      "passed": true
+    },
+    {
+      "id": "wrong_catalog",
+      "passed": true
+    },
+    {
+      "id": "invented_evidence",
+      "passed": true
+    },
+    {
+      "id": "extra_property",
+      "passed": true
+    },
+    {
+      "id": "youth",
+      "passed": false,
+      "error": "INVALID_EVIDENCE_OR_VALUE"
+    },
+    {
+      "id": "negative",
+      "passed": false,
+      "error": "INVALID_EVIDENCE_OR_VALUE"
+    },
+    {
+      "id": "ambiguous",
+      "passed": false,
+      "error": "INVALID_EVIDENCE_OR_VALUE"
+    },
+    {
+      "id": "unspecified",
+      "query": "En Providencia, sin preferencia de denominación.",
+      "passed": true,
+      "proposal": {
+        "criteria": [
+          {
+            "field": "commune",
+            "value": "Providencia",
+            "polarity": "include",
+            "evidence": "En Providencia, sin preferencia de denominación."
+          }
+        ],
+        "unresolved": [
+          "En Providencia, sin preferencia de denominación."
+        ]
+      },
+      "requiresReview": true,
+      "applied": false,
+      "metrics": {
+        "elapsedMs": 5171,
+        "outputTokens": 79
+      }
+    },
+    {
+      "id": "missing_location",
+      "passed": false,
+      "error": "INVALID_EVIDENCE_OR_VALUE"
+    },
+    {
+      "id": "injection",
+      "passed": false,
+      "error": "INCOMPLETE_MODEL_OUTPUT"
+    }
+  ]
+}

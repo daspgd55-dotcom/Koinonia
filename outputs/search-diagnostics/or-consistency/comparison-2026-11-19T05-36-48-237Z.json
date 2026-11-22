@@ -1,0 +1,228 @@
+{
+  "createdAt": "2026-11-19T05:36:48.237Z",
+  "database": "koinonia_synthetic_test_v2_local",
+  "readCount": 20,
+  "validFragments": 45,
+  "snapshotHash": "7fbf68b8023daf8a763f01c959c40ec42a9f2298867b8c9e26dbf2d10c0d73eb",
+  "live": [
+    [
+      {
+        "query": "Busco una iglesia en Ñuñoa con retiros.",
+        "accepted": [],
+        "pending": [
+          "1298af8033c6eb4a402bf5a3",
+          "186c21a71a29a8fa20363ab9",
+          "306c02d8ba5fde003056f434",
+          "495446dcdd84fdaf0d4f4fa9",
+          "6929f24fbc5d1ab14dacaf7d"
+        ],
+        "excluded": [
+          "0082f785ddcba9887af730be",
+          "0095bb2897ed6a7ed6655c50",
+          "00b5fc37b835eedfb5eb2916",
+          "00cdd861c45a77a672bba28d",
+          "00e256bfdb4df05e5765c871",
+          "01c14fb15d8b9735dc988189",
+          "02defa0c5de6a6057b2bbabe",
+          "03218dbdd2818ed870a2ec54",
+          "155555f8b883bb7066754b67",
+          "28f6ea99cc25a2cd1462203d",
+          "54eaade8ff61c196a91f9f1e",
+          "6ac9b9225017eda79d91466c",
+          "bdf3e30b6d86b7deb95138e2",
+          "e6d7e42e79ea95ae9e831496",
+          "fac395e6fb5d97b60d812249"
+        ]
+      },
+      {
+        "query": "Busco una iglesia en Macul con retiros.",
+        "accepted": [],
+        "pending": [],
+        "excluded": [
+          "0082f785ddcba9887af730be",
+          "0095bb2897ed6a7ed6655c50",
+          "00b5fc37b835eedfb5eb2916",
+          "00cdd861c45a77a672bba28d",
+          "00e256bfdb4df05e5765c871",
+          "01c14fb15d8b9735dc988189",
+          "02defa0c5de6a6057b2bbabe",
+          "03218dbdd2818ed870a2ec54",
+          "1298af8033c6eb4a402bf5a3",
+          "155555f8b883bb7066754b67",
+          "186c21a71a29a8fa20363ab9",
+          "28f6ea99cc25a2cd1462203d",
+          "306c02d8ba5fde003056f434",
+          "495446dcdd84fdaf0d4f4fa9",
+          "54eaade8ff61c196a91f9f1e",
+          "6929f24fbc5d1ab14dacaf7d",
+          "6ac9b9225017eda79d91466c",
+          "bdf3e30b6d86b7deb95138e2",
+          "e6d7e42e79ea95ae9e831496",
+          "fac395e6fb5d97b60d812249"
+        ]
+      },
+      {
+        "query": "Busco una iglesia en Ñuñoa o Macul con retiros.",
+        "accepted": [],
+        "pending": [
+          "1298af8033c6eb4a402bf5a3",
+          "186c21a71a29a8fa20363ab9",
+          "306c02d8ba5fde003056f434",
+          "495446dcdd84fdaf0d4f4fa9",
+          "6929f24fbc5d1ab14dacaf7d"
+        ],
+        "excluded": [
+          "0082f785ddcba9887af730be",
+          "0095bb2897ed6a7ed6655c50",
+          "00b5fc37b835eedfb5eb2916",
+          "00cdd861c45a77a672bba28d",
+          "00e256bfdb4df05e5765c871",
+          "01c14fb15d8b9735dc988189",
+          "02defa0c5de6a6057b2bbabe",
+          "03218dbdd2818ed870a2ec54",
+          "155555f8b883bb7066754b67",
+          "28f6ea99cc25a2cd1462203d",
+          "54eaade8ff61c196a91f9f1e",
+          "6ac9b9225017eda79d91466c",
+          "bdf3e30b6d86b7deb95138e2",
+          "e6d7e42e79ea95ae9e831496",
+          "fac395e6fb5d97b60d812249"
+        ]
+      }
+    ],
+    [
+      {
+        "query": "Busco una iglesia en Ñuñoa.",
+        "accepted": [
+          "1298af8033c6eb4a402bf5a3",
+          "186c21a71a29a8fa20363ab9",
+          "306c02d8ba5fde003056f434",
+          "495446dcdd84fdaf0d4f4fa9",
+          "6929f24fbc5d1ab14dacaf7d"
+        ],
+        "pending": [],
+        "excluded": [
+          "0082f785ddcba9887af730be",
+          "0095bb2897ed6a7ed6655c50",
+          "00b5fc37b835eedfb5eb2916",
+          "00cdd861c45a77a672bba28d",
+          "00e256bfdb4df05e5765c871",
+          "01c14fb15d8b9735dc988189",
+          "02defa0c5de6a6057b2bbabe",
+          "03218dbdd2818ed870a2ec54",
+          "155555f8b883bb7066754b67",
+          "28f6ea99cc25a2cd1462203d",
+          "54eaade8ff61c196a91f9f1e",
+          "6ac9b9225017eda79d91466c",
+          "bdf3e30b6d86b7deb95138e2",
+          "e6d7e42e79ea95ae9e831496",
+          "fac395e6fb5d97b60d812249"
+        ]
+      },
+      {
+        "query": "Busco una iglesia en Macul.",
+        "accepted": [],
+        "pending": [],
+        "excluded": [
+          "0082f785ddcba9887af730be",
+          "0095bb2897ed6a7ed6655c50",
+          "00b5fc37b835eedfb5eb2916",
+          "00cdd861c45a77a672bba28d",
+          "00e256bfdb4df05e5765c871",
+          "01c14fb15d8b9735dc988189",
+          "02defa0c5de6a6057b2bbabe",
+          "03218dbdd2818ed870a2ec54",
+          "1298af8033c6eb4a402bf5a3",
+          "155555f8b883bb7066754b67",
+          "186c21a71a29a8fa20363ab9",
+          "28f6ea99cc25a2cd1462203d",
+          "306c02d8ba5fde003056f434",
+          "495446dcdd84fdaf0d4f4fa9",
+          "54eaade8ff61c196a91f9f1e",
+          "6929f24fbc5d1ab14dacaf7d",
+          "6ac9b9225017eda79d91466c",
+          "bdf3e30b6d86b7deb95138e2",
+          "e6d7e42e79ea95ae9e831496",
+          "fac395e6fb5d97b60d812249"
+        ]
+      },
+      {
+        "query": "Busco una iglesia en Ñuñoa o Macul.",
+        "accepted": [
+          "1298af8033c6eb4a402bf5a3",
+          "186c21a71a29a8fa20363ab9",
+          "306c02d8ba5fde003056f434",
+          "495446dcdd84fdaf0d4f4fa9",
+          "6929f24fbc5d1ab14dacaf7d"
+        ],
+        "pending": [],
+        "excluded": [
+          "0082f785ddcba9887af730be",
+          "0095bb2897ed6a7ed6655c50",
+          "00b5fc37b835eedfb5eb2916",
+          "00cdd861c45a77a672bba28d",
+          "00e256bfdb4df05e5765c871",
+          "01c14fb15d8b9735dc988189",
+          "02defa0c5de6a6057b2bbabe",
+          "03218dbdd2818ed870a2ec54",
+          "155555f8b883bb7066754b67",
+          "28f6ea99cc25a2cd1462203d",
+          "54eaade8ff61c196a91f9f1e",
+          "6ac9b9225017eda79d91466c",
+          "bdf3e30b6d86b7deb95138e2",
+          "e6d7e42e79ea95ae9e831496",
+          "fac395e6fb5d97b60d812249"
+        ]
+      }
+    ]
+  ],
+  "synthetic": [
+    {
+      "query": "Busco una iglesia en Ñuñoa con retiros.",
+      "accepted": [
+        "fixture-0-0"
+      ],
+      "pending": [
+        "fixture-0-1"
+      ],
+      "excluded": [
+        "fixture-1-0",
+        "fixture-1-1",
+        "fixture-2-0",
+        "fixture-2-1"
+      ]
+    },
+    {
+      "query": "Busco una iglesia en Macul con retiros.",
+      "accepted": [
+        "fixture-1-0"
+      ],
+      "pending": [
+        "fixture-1-1"
+      ],
+      "excluded": [
+        "fixture-0-0",
+        "fixture-0-1",
+        "fixture-2-0",
+        "fixture-2-1"
+      ]
+    },
+    {
+      "query": "Busco una iglesia en Ñuñoa o Macul con retiros.",
+      "accepted": [
+        "fixture-0-0",
+        "fixture-1-0"
+      ],
+      "pending": [
+        "fixture-0-1",
+        "fixture-1-1"
+      ],
+      "excluded": [
+        "fixture-2-0",
+        "fixture-2-1"
+      ]
+    }
+  ],
+  "passed": true,
+  "note": "Una sola lectura; mismos candidatos y fichas en todas las consultas. No ejecuta embeddings: comprueba conjuntos independientemente del orden."
+}

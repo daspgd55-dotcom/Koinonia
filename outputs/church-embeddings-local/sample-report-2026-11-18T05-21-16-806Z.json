@@ -1,0 +1,54 @@
+{
+  "createdAt": "2026-11-18T05:21:16.806Z",
+  "source": "plan-2026-11-18T05-13-40-909Z.json",
+  "sourceHash": "a406606b1f0e1a0a24a82fc11ed2d4d95ffd4dea7f0dbfd7228cd561e39303b1",
+  "selection": "five-churches-reviewed-v1",
+  "model": {
+    "model": "embeddinggemma:latest",
+    "digest": "85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1",
+    "dimensions": 768,
+    "formatVersion": "embeddinggemma-retrieval-v1"
+  },
+  "churches": 5,
+  "documents": 15,
+  "metrics": {
+    "elapsedMs": 5300,
+    "batches": [
+      {
+        "count": 4,
+        "elapsedMs": 3811,
+        "promptTokens": 158,
+        "loadNs": 3379580600
+      },
+      {
+        "count": 4,
+        "elapsedMs": 344,
+        "promptTokens": 144,
+        "loadNs": 13836300
+      },
+      {
+        "count": 4,
+        "elapsedMs": 628,
+        "promptTokens": 252,
+        "loadNs": 14384100
+      },
+      {
+        "count": 3,
+        "elapsedMs": 517,
+        "promptTokens": 162,
+        "loadNs": 11960000
+      }
+    ]
+  },
+  "checks": {
+    "reviewedManifestMatches": true,
+    "textHashesMatch": true,
+    "modelDigestStable": true,
+    "dimensionsAndFiniteValues": true
+  },
+  "limitations": [
+    "No retrieval evaluation",
+    "No current database visibility recheck",
+    "No remote writes"
+  ]
+}

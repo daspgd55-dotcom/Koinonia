@@ -1,0 +1,415 @@
+{
+  "version": "embedding-retrieval-v1",
+  "createdAt": "2026-11-17T04:31:04.204Z",
+  "model": {
+    "model": "embeddinggemma:latest",
+    "digest": "85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1",
+    "dimensions": 768,
+    "formatVersion": "embeddinggemma-retrieval-v1"
+  },
+  "baseUrl": "http://127.0.0.1:11435",
+  "fixtureHash": "6ba8c18f14f54c185451145c3fef6f5608528195786ae15431d167e1e776f7f8",
+  "guards": [
+    {
+      "id": "remote_endpoint",
+      "passed": true
+    },
+    {
+      "id": "url_credentials",
+      "passed": true
+    },
+    {
+      "id": "wrong_dimensions",
+      "passed": true
+    },
+    {
+      "id": "non_finite",
+      "passed": true
+    },
+    {
+      "id": "zero_vector",
+      "passed": true
+    },
+    {
+      "id": "empty_text",
+      "passed": true
+    },
+    {
+      "id": "cosine_identical",
+      "passed": true
+    }
+  ],
+  "summary": {
+    "queries": 10,
+    "hitAt1": 9,
+    "hitAt3": 10,
+    "mrr": 0.95
+  },
+  "metrics": {
+    "documents": {
+      "elapsedMs": 7104,
+      "batches": [
+        {
+          "count": 4,
+          "elapsedMs": 6552,
+          "promptTokens": 143,
+          "loadNs": 6222323300
+        },
+        {
+          "count": 4,
+          "elapsedMs": 272,
+          "promptTokens": 138,
+          "loadNs": 10267800
+        },
+        {
+          "count": 4,
+          "elapsedMs": 280,
+          "promptTokens": 137,
+          "loadNs": 10989400
+        }
+      ]
+    },
+    "queries": {
+      "elapsedMs": 682,
+      "batches": [
+        {
+          "count": 4,
+          "elapsedMs": 189,
+          "promptTokens": 85,
+          "loadNs": 10499200
+        },
+        {
+          "count": 4,
+          "elapsedMs": 230,
+          "promptTokens": 89,
+          "loadNs": 8815100
+        },
+        {
+          "count": 4,
+          "elapsedMs": 206,
+          "promptTokens": 83,
+          "loadNs": 11598800
+        },
+        {
+          "count": 1,
+          "elapsedMs": 57,
+          "promptTokens": 17,
+          "loadNs": 8676800
+        }
+      ]
+    }
+  },
+  "rows": [
+    {
+      "id": "q_youth",
+      "text": "Quiero que mi hijo adolescente conozca gente de su edad.",
+      "relevant": [
+        "youth"
+      ],
+      "top": [
+        {
+          "id": "youth",
+          "score": 0.4288416728851665
+        },
+        {
+          "id": "no_youth",
+          "score": 0.34987612205894514
+        },
+        {
+          "id": "no_children",
+          "score": 0.27151345586736875
+        }
+      ],
+      "firstRelevantRank": 1,
+      "hitAt1": true,
+      "hitAt3": true
+    },
+    {
+      "id": "q_service",
+      "text": "Me gustaría ayudar a personas necesitadas de mi barrio.",
+      "relevant": [
+        "service"
+      ],
+      "top": [
+        {
+          "id": "service",
+          "score": 0.5667980385388907
+        },
+        {
+          "id": "youth",
+          "score": 0.21173159241222328
+        },
+        {
+          "id": "welcome",
+          "score": 0.16742451515529866
+        }
+      ],
+      "firstRelevantRank": 1,
+      "hitAt1": true,
+      "hitAt3": true
+    },
+    {
+      "id": "q_children",
+      "text": "Busco enseñanza cristiana para mis hijos pequeños mientras asisto al culto.",
+      "relevant": [
+        "children"
+      ],
+      "top": [
+        {
+          "id": "no_children",
+          "score": 0.5590027832279527
+        },
+        {
+          "id": "children",
+          "score": 0.5331961410199656
+        },
+        {
+          "id": "study",
+          "score": 0.3934340383614991
+        }
+      ],
+      "firstRelevantRank": 2,
+      "hitAt1": false,
+      "hitAt3": true
+    },
+    {
+      "id": "q_access",
+      "text": "Uso silla de ruedas y necesito entrar sin subir escaleras.",
+      "relevant": [
+        "accessible"
+      ],
+      "top": [
+        {
+          "id": "accessible",
+          "score": 0.6183641846994994
+        },
+        {
+          "id": "stairs",
+          "score": 0.6061685998662086
+        },
+        {
+          "id": "welcome",
+          "score": 0.18575688592705195
+        }
+      ],
+      "firstRelevantRank": 1,
+      "hitAt1": true,
+      "hitAt3": true
+    },
+    {
+      "id": "q_study",
+      "text": "Quiero aprender a entender la Biblia desde lo básico.",
+      "relevant": [
+        "study"
+      ],
+      "top": [
+        {
+          "id": "study",
+          "score": 0.5283736493098875
+        },
+        {
+          "id": "children",
+          "score": 0.2919526143088488
+        },
+        {
+          "id": "no_children",
+          "score": 0.2718386736783945
+        }
+      ],
+      "firstRelevantRank": 1,
+      "hitAt1": true,
+      "hitAt3": true
+    },
+    {
+      "id": "q_music",
+      "text": "Toco guitarra y me gustaría acompañar los cantos de la congregación.",
+      "relevant": [
+        "music"
+      ],
+      "top": [
+        {
+          "id": "music",
+          "score": 0.4491177535082498
+        },
+        {
+          "id": "online",
+          "score": 0.2446263984712775
+        },
+        {
+          "id": "service",
+          "score": 0.2446197239091088
+        }
+      ],
+      "firstRelevantRank": 1,
+      "hitAt1": true,
+      "hitAt3": true
+    },
+    {
+      "id": "q_elderly",
+      "text": "Mi madre jubilada busca compañía y actividades con otras personas mayores.",
+      "relevant": [
+        "elderly"
+      ],
+      "top": [
+        {
+          "id": "elderly",
+          "score": 0.5225103136967866
+        },
+        {
+          "id": "youth",
+          "score": 0.25414753230197046
+        },
+        {
+          "id": "no_youth",
+          "score": 0.2499613137932259
+        }
+      ],
+      "firstRelevantRank": 1,
+      "hitAt1": true,
+      "hitAt3": true
+    },
+    {
+      "id": "q_online",
+      "text": "No puedo salir de casa, pero quiero seguir las reuniones por internet.",
+      "relevant": [
+        "online"
+      ],
+      "top": [
+        {
+          "id": "online",
+          "score": 0.5469648266635158
+        },
+        {
+          "id": "stairs",
+          "score": 0.34307786440538146
+        },
+        {
+          "id": "no_youth",
+          "score": 0.2556793964345443
+        }
+      ],
+      "firstRelevantRank": 1,
+      "hitAt1": true,
+      "hitAt3": true
+    },
+    {
+      "id": "q_welcome",
+      "text": "Nunca he ido y necesito que alguien me oriente al llegar.",
+      "relevant": [
+        "welcome"
+      ],
+      "top": [
+        {
+          "id": "welcome",
+          "score": 0.39170984588838165
+        },
+        {
+          "id": "stairs",
+          "score": 0.23456014470035846
+        },
+        {
+          "id": "accessible",
+          "score": 0.20015169358736656
+        }
+      ],
+      "firstRelevantRank": 1,
+      "hitAt1": true,
+      "hitAt3": true
+    },
+    {
+      "id": "q_service_paraphrase",
+      "text": "Busco dónde colaborar repartiendo comida a familias que lo necesitan.",
+      "relevant": [
+        "service"
+      ],
+      "top": [
+        {
+          "id": "service",
+          "score": 0.45597901759690834
+        },
+        {
+          "id": "no_children",
+          "score": 0.2318549030627283
+        },
+        {
+          "id": "youth",
+          "score": 0.2036948562802663
+        }
+      ],
+      "firstRelevantRank": 1,
+      "hitAt1": true,
+      "hitAt3": true
+    },
+    {
+      "id": "probe_absent",
+      "text": "Necesito una iglesia con clases de lengua de señas chilena.",
+      "relevant": [],
+      "probe": true,
+      "top": [
+        {
+          "id": "service",
+          "score": 0.26933952977889764
+        },
+        {
+          "id": "children",
+          "score": 0.2514922714678434
+        },
+        {
+          "id": "stairs",
+          "score": 0.2133497589609472
+        }
+      ],
+      "firstRelevantRank": null,
+      "hitAt1": false,
+      "hitAt3": false
+    },
+    {
+      "id": "probe_negative",
+      "text": "Busco una comunidad sin actividades juveniles.",
+      "relevant": [
+        "no_youth"
+      ],
+      "probe": true,
+      "top": [
+        {
+          "id": "no_youth",
+          "score": 0.49671725220689983
+        },
+        {
+          "id": "youth",
+          "score": 0.47161656880592306
+        },
+        {
+          "id": "elderly",
+          "score": 0.3353735947392898
+        }
+      ],
+      "firstRelevantRank": 1,
+      "hitAt1": true,
+      "hitAt3": true
+    },
+    {
+      "id": "probe_unrelated",
+      "text": "Quiero reparar el motor de mi automóvil.",
+      "relevant": [],
+      "probe": true,
+      "top": [
+        {
+          "id": "service",
+          "score": 0.1208997765872041
+        },
+        {
+          "id": "music",
+          "score": 0.10871630528222598
+        },
+        {
+          "id": "youth",
+          "score": 0.08562370889981687
+        }
+      ],
+      "firstRelevantRank": null,
+      "hitAt1": false,
+      "hitAt3": false
+    }
+  ]
+}

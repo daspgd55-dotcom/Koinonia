@@ -1,0 +1,139 @@
+{
+  "sourceHash": "3d532a16f84aa2d8818d1f875f6ded42ffd771bfb4c9378ec57db9d3c6f16131",
+  "queries": [
+    {
+      "id": "volunteers",
+      "text": "Quiero participar como voluntario en una comunidad cristiana.",
+      "field": "community.activities",
+      "tag": "Voluntariado",
+      "relevant": [
+        "6ac9b9225017eda79d91466c:community.activities:0",
+        "bdf3e30b6d86b7deb95138e2:community.activities:0",
+        "306c02d8ba5fde003056f434:community.activities:0",
+        "0095bb2897ed6a7ed6655c50:community.activities:0",
+        "00b5fc37b835eedfb5eb2916:community.activities:0",
+        "00cdd861c45a77a672bba28d:community.activities:0"
+      ]
+    },
+    {
+      "id": "camp",
+      "text": "Busco una congregación que organice campamentos.",
+      "field": "community.activities",
+      "tag": "Campamentos",
+      "relevant": [
+        "6ac9b9225017eda79d91466c:community.activities:0",
+        "54eaade8ff61c196a91f9f1e:community.activities:0",
+        "fac395e6fb5d97b60d812249:community.activities:0",
+        "186c21a71a29a8fa20363ab9:community.activities:0"
+      ]
+    },
+    {
+      "id": "counsel",
+      "text": "Me interesa un ministerio dedicado a la consejería.",
+      "field": "community.ministries",
+      "tag": "Consejería",
+      "relevant": [
+        "02defa0c5de6a6057b2bbabe:community.ministries:0"
+      ]
+    },
+    {
+      "id": "family",
+      "text": "Quisiera participar en eventos para familias.",
+      "field": "community.activities",
+      "tag": "Eventos familiares",
+      "relevant": [
+        "6ac9b9225017eda79d91466c:community.activities:0",
+        "306c02d8ba5fde003056f434:community.activities:0",
+        "0082f785ddcba9887af730be:community.activities:0",
+        "0095bb2897ed6a7ed6655c50:community.activities:0",
+        "00cdd861c45a77a672bba28d:community.activities:0"
+      ]
+    },
+    {
+      "id": "music",
+      "text": "Busco un ministerio de música y alabanza.",
+      "field": "community.ministries",
+      "tag": "Música / alabanza",
+      "relevant": [
+        "fac395e6fb5d97b60d812249:community.ministries:0",
+        "306c02d8ba5fde003056f434:community.ministries:0",
+        "495446dcdd84fdaf0d4f4fa9:community.ministries:0",
+        "03218dbdd2818ed870a2ec54:community.ministries:0"
+      ]
+    },
+    {
+      "id": "older",
+      "text": "Quiero conocer un ministerio para adultos mayores.",
+      "field": "community.ministries",
+      "tag": "Adultos mayores",
+      "relevant": [
+        "0082f785ddcba9887af730be:community.ministries:0",
+        "495446dcdd84fdaf0d4f4fa9:community.ministries:0",
+        "03218dbdd2818ed870a2ec54:community.ministries:0"
+      ]
+    },
+    {
+      "id": "retreat",
+      "text": "Me gustaría asistir a retiros organizados por una iglesia.",
+      "field": "community.activities",
+      "tag": "Retiros",
+      "relevant": [
+        "6ac9b9225017eda79d91466c:community.activities:0",
+        "54eaade8ff61c196a91f9f1e:community.activities:0",
+        "00e256bfdb4df05e5765c871:community.activities:0",
+        "01c14fb15d8b9735dc988189:community.activities:0",
+        "02defa0c5de6a6057b2bbabe:community.activities:0"
+      ]
+    },
+    {
+      "id": "audiovisual",
+      "text": "Me interesan comunidades que realicen obras audiovisuales.",
+      "field": "community.activities",
+      "tag": "Obras Audiovisuales",
+      "relevant": [
+        "6ac9b9225017eda79d91466c:community.activities:0",
+        "0082f785ddcba9887af730be:community.activities:0",
+        "6929f24fbc5d1ab14dacaf7d:community.activities:0",
+        "00cdd861c45a77a672bba28d:community.activities:0",
+        "01c14fb15d8b9735dc988189:community.activities:0",
+        "03218dbdd2818ed870a2ec54:community.activities:0"
+      ]
+    },
+    {
+      "id": "medical",
+      "text": "Me interesa una iglesia que brinde atención gratuita de neurología.",
+      "noEvidence": "Ningún fragmento declara atención neurológica.",
+      "relevant": []
+    },
+    {
+      "id": "pool",
+      "text": "Busco una iglesia con piscina temperada y clases de natación.",
+      "noEvidence": "Deportes no demuestra piscina ni clases de natación.",
+      "relevant": []
+    },
+    {
+      "id": "midnight",
+      "text": "Necesito una iglesia con reuniones a medianoche todos los miércoles.",
+      "noEvidence": "Los fragmentos no contienen horarios.",
+      "relevant": []
+    },
+    {
+      "id": "no_camps",
+      "text": "Busco una comunidad que no organice campamentos.",
+      "noEvidence": "Ningún fragmento declara explícitamente ausencia de campamentos.",
+      "relevant": []
+    },
+    {
+      "id": "wheelchair_transport",
+      "text": "Me interesa una iglesia con traslado a domicilio en vehículo adaptado para silla de ruedas.",
+      "noEvidence": "Ayuda social no prueba transporte adaptado.",
+      "relevant": []
+    },
+    {
+      "id": "bank",
+      "text": "Quiero refinanciar mi préstamo hipotecario con una tasa fija.",
+      "noEvidence": "Tema ajeno al corpus.",
+      "relevant": []
+    }
+  ]
+}

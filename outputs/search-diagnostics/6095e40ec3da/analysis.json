@@ -1,0 +1,129 @@
+{
+  "createdAt": "2026-11-18T16:54:49.307Z",
+  "sourceHash": "6095e40ec3da8e56340ad88dcf03472fda56d45d74775294db5e177bcc4be89f",
+  "records": 27,
+  "queries": 3,
+  "negativeRatings": 10,
+  "limitations": [
+    "Las valoraciones no definen automáticamente resultados esperados.",
+    "No se infieren errores de presentación desde el texto de los comentarios.",
+    "No se calcula precisión: faltan juicios de todos los candidatos y expectativas revisadas."
+  ],
+  "diagnoses": [
+    {
+      "id": "e17bcb7b158b6e05",
+      "query": "Me interesa una comunidad que sirva a su barrio.",
+      "ratings": {
+        "useful": 10,
+        "insufficient": 5,
+        "irrelevant": 5,
+        "unrated": 0
+      },
+      "priority": 10,
+      "signals": [
+        {
+          "category": "manual_review",
+          "certainty": "user_comment",
+          "record": "[\"0eee43ba-8e9d-4ca2-b75f-b1b04b6b73f0\",\"full\",\"6ac9b9225017eda79d91466c\",\"community.description\"]",
+          "detail": "Dice \"Vamos a Hogares de Adultos mayores y de Niños\" y \"Movernos hacia los de afuera\" ya cubre el dominio de un barrio local."
+        },
+        {
+          "category": "manual_review",
+          "certainty": "user_comment",
+          "record": "[\"0eee43ba-8e9d-4ca2-b75f-b1b04b6b73f0\",\"full\",\"186c21a71a29a8fa20363ab9\",\"community.ministries\"]",
+          "detail": "\"Ayuda comunitaria\" Es suficiente para aceptar ayuda en la localidad"
+        },
+        {
+          "category": "manual_review",
+          "certainty": "user_comment",
+          "record": "[\"0eee43ba-8e9d-4ca2-b75f-b1b04b6b73f0\",\"full\",\"00cdd861c45a77a672bba28d\",\"community.activities\"]",
+          "detail": "Voluntariado, Ayuda social, Eventos familiares Tambien es considerable ayuda a barrio"
+        },
+        {
+          "category": "retrieval",
+          "certainty": "hypothesis",
+          "record": "[\"0eee43ba-8e9d-4ca2-b75f-b1b04b6b73f0\",\"full\",\"02defa0c5de6a6057b2bbabe\",\"community.ministries\"]",
+          "detail": "Resultado valorado como insuficiente/no pertinente; revisar fragmento, interpretación y cobertura antes de atribuir causa."
+        },
+        {
+          "category": "retrieval",
+          "certainty": "hypothesis",
+          "record": "[\"0eee43ba-8e9d-4ca2-b75f-b1b04b6b73f0\",\"full\",\"03218dbdd2818ed870a2ec54\",\"community.ministries\"]",
+          "detail": "Resultado valorado como insuficiente/no pertinente; revisar fragmento, interpretación y cobertura antes de atribuir causa."
+        },
+        {
+          "category": "retrieval",
+          "certainty": "hypothesis",
+          "record": "[\"0eee43ba-8e9d-4ca2-b75f-b1b04b6b73f0\",\"full\",\"00e256bfdb4df05e5765c871\",\"community.ministries\"]",
+          "detail": "Resultado valorado como insuficiente/no pertinente; revisar fragmento, interpretación y cobertura antes de atribuir causa."
+        },
+        {
+          "category": "retrieval",
+          "certainty": "hypothesis",
+          "record": "[\"0eee43ba-8e9d-4ca2-b75f-b1b04b6b73f0\",\"full\",\"1298af8033c6eb4a402bf5a3\",\"community.ministries\"]",
+          "detail": "Resultado valorado como insuficiente/no pertinente; revisar fragmento, interpretación y cobertura antes de atribuir causa."
+        },
+        {
+          "category": "retrieval",
+          "certainty": "hypothesis",
+          "record": "[\"0eee43ba-8e9d-4ca2-b75f-b1b04b6b73f0\",\"full\",\"54eaade8ff61c196a91f9f1e\",\"community.ministries\"]",
+          "detail": "Resultado valorado como insuficiente/no pertinente; revisar fragmento, interpretación y cobertura antes de atribuir causa."
+        },
+        {
+          "category": "retrieval",
+          "certainty": "hypothesis",
+          "record": "[\"0eee43ba-8e9d-4ca2-b75f-b1b04b6b73f0\",\"full\",\"155555f8b883bb7066754b67\",\"community.ministries\"]",
+          "detail": "Resultado valorado como insuficiente/no pertinente; revisar fragmento, interpretación y cobertura antes de atribuir causa."
+        },
+        {
+          "category": "retrieval",
+          "certainty": "hypothesis",
+          "record": "[\"0eee43ba-8e9d-4ca2-b75f-b1b04b6b73f0\",\"full\",\"0082f785ddcba9887af730be\",\"community.ministries\"]",
+          "detail": "Resultado valorado como insuficiente/no pertinente; revisar fragmento, interpretación y cobertura antes de atribuir causa."
+        },
+        {
+          "category": "retrieval",
+          "certainty": "hypothesis",
+          "record": "[\"0eee43ba-8e9d-4ca2-b75f-b1b04b6b73f0\",\"full\",\"01c14fb15d8b9735dc988189\",\"community.ministries\"]",
+          "detail": "Resultado valorado como insuficiente/no pertinente; revisar fragmento, interpretación y cobertura antes de atribuir causa."
+        },
+        {
+          "category": "retrieval",
+          "certainty": "hypothesis",
+          "record": "[\"0eee43ba-8e9d-4ca2-b75f-b1b04b6b73f0\",\"full\",\"e6d7e42e79ea95ae9e831496\",\"community.ministries\"]",
+          "detail": "Resultado valorado como insuficiente/no pertinente; revisar fragmento, interpretación y cobertura antes de atribuir causa."
+        },
+        {
+          "category": "retrieval",
+          "certainty": "hypothesis",
+          "record": "[\"0eee43ba-8e9d-4ca2-b75f-b1b04b6b73f0\",\"full\",\"28f6ea99cc25a2cd1462203d\",\"identification.description\"]",
+          "detail": "Resultado valorado como insuficiente/no pertinente; revisar fragmento, interpretación y cobertura antes de atribuir causa."
+        }
+      ]
+    },
+    {
+      "id": "12331b220b99f308",
+      "query": "Necesito una iglesia en La Florida; me gustaría que se muevan hacia los de afuera.",
+      "ratings": {
+        "useful": 1,
+        "insufficient": 0,
+        "irrelevant": 0,
+        "unrated": 0
+      },
+      "priority": 0,
+      "signals": []
+    },
+    {
+      "id": "e7bb57a798b7e210",
+      "query": "Busco una iglesia con cursos; me interesa conocer su historia.",
+      "ratings": {
+        "useful": 6,
+        "insufficient": 0,
+        "irrelevant": 0,
+        "unrated": 0
+      },
+      "priority": 0,
+      "signals": []
+    }
+  ]
+}

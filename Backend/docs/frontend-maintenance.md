@@ -24,3 +24,18 @@ Se aplica a contadores de notificaciones/mensajes, errores inesperados del plani
 ## Alcance y validación
 
 Esta fase reorganiza las piezas indicadas, no supone una reescritura completa de `main.jsx`, formularios, administraciones ni estilos globales. Tampoco modifica transporte de correo, políticas operativas o credenciales. No se ejecutaron pruebas, compilación ni mediciones; se revisaron los cambios por lectura del código y diff. Queda pendiente comprobar visualmente los paneles y sus vistas móviles, manuales por rol, edición/guardado y diagnósticos antes de publicar.
+
+## Continuación: acceso, administración e invitaciones
+
+`main.jsx` delega el acceso/registro y desafío MFA en `Auth.jsx`, la navegación y permisos administrativos en `AdminArea.jsx`, y las piezas visuales reutilizadas en `Notice.jsx` y `Landscape.jsx`. Conserva la sesión, las rutas y el estado de preferencias. Las vistas administrativas siguen usando carga diferida. La consulta de permisos cancela su solicitud al cambiar de contexto y registra `admin.permissions` ante un fallo recuperable; mantiene la restricción de permisos por defecto.
+
+La bandeja `ChurchOutreachAdmin.jsx` mantiene los borradores de preparación y revisión, selección de destinatarios y navegación. Delega en:
+
+- `ChurchOutreachPreparation.jsx`: búsqueda de ficha existente, procedencia y preparación sin envío.
+- `ChurchOutreachDetail.jsx`: contexto institucional, revisión, concurrencia, historial y acciones explícitas.
+- `churchOutreachDelivery.js`: envío de representantes aprobados y compatibilidad mediante vista previa/lote cuando la ruta específica no existe. No se ejecuta al importar el módulo y no cambia cuotas, exclusiones ni claves de idempotencia existentes.
+- `churchOutreachAdminConfig.js`: rutas, etiquetas, formato de presentación y borrador vacío. Reúne la paginación de 20 filas y máximo de 25 destinatarios ya establecidos por la API; no configura ni modifica las políticas del servidor.
+
+`ChurchOutreachAdmin.css` conserva el punto de importación y carga explícitamente `ChurchOutreachAdminBase.css` y `ChurchOutreachAdminPanels.css`, en ese orden. Las reglas originales se distribuyen sin eliminar declaraciones ni invertir precedencias, incluidas las reglas móviles y de movimiento reducido.
+
+Esta continuación tampoco ejecutó pruebas, compilación, navegador, envíos o cambios externos. La revisión fue por lectura de código y diff, sin afirmar mejoras de velocidad medidas. Antes de publicar queda pendiente comprobar acceso/registro/MFA, navegación administrativa, conservación de borradores, revisión y simulación de envíos, y presentación móvil. El ZIP preexistente no fue modificado ni regenerado por esta tarea.

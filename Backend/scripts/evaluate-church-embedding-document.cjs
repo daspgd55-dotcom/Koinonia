@@ -1,0 +1,11 @@
+const assert=require('node:assert/strict');
+const {prepareChurch,planSync}=require('../src/services/church-embedding-document.lab');
+const church={_id:'synthetic',active:true,metadata:{dataStatus:'published',version:1},identification:{name:'Iglesia de prueba',description:'Comunidad cristiana'},location:{commune:'Providencia'},doctrine:{soteriology:'CONTENIDO_OCULTO'},privateFields:{soteriology:true},contact:{email:'PRIVADO'},representatives:['CUENTA_INTERNA']};
+const docs=prepareChurch(church);assert.ok(docs.length);assert.ok(!JSON.stringify(docs).match(/CONTENIDO_OCULTO|PRIVADO|CUENTA_INTERNA/));
+for(const change of [{active:false},{metadata:{dataStatus:'draft'}},{mergedInto:'otra'},{importInfo:{batchId:'showcase-senderos-2026-11-05'}}])assert.equal(prepareChurch({...church,...change}).length,0);
+assert.equal(planSync(docs,docs).upsert.length,0);assert.equal(planSync(docs,docs).unchanged,docs.length);
+assert.equal(planSync([],docs).remove.length,docs.length);
+const changed=prepareChurch({...church,identification:{...church.identification,description:'Descripción actualizada'}});assert.equal(planSync(changed,docs).upsert.length,1);
+const hidden=prepareChurch({...church,privateFields:{soteriology:false}});assert.equal(planSync(docs,hidden).remove.length,1);
+const long=prepareChurch({...church,identification:{name:'Prueba',description:'a'.repeat(7200)}}).filter(d=>d.source.field==='identification.description');assert.equal(long.length,3);assert.ok(long.every(d=>d.text.length<=4000));
+console.log('Correcto: privacidad, borrador, inactividad, fusión, ejemplo, idempotencia, retirada, actualización y fragmentación. Sin conexiones externas.');

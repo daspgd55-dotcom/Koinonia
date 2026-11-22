@@ -1,5 +1,5 @@
 import {diagnosticsConfig} from './clientConfig';
-const allowed=new Set(['notifications.refresh','chat.summary','polling.refresh','auth.capabilities','representative.welcome']),lastReported=new Map();
+const allowed=new Set(['notifications.refresh','chat.summary','polling.refresh','auth.capabilities','representative.welcome','admin.permissions']),lastReported=new Map();
 // Solo identificadores predefinidos: nunca mensajes de error, URL, cuerpos ni usuarios.
 export function reportRecoverable(operation){
  if(!allowed.has(operation))return;

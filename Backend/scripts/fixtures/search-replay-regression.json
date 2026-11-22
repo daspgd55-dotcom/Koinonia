@@ -1,0 +1,11 @@
+{
+  "schema": "koinonia-search-replay-v1",
+  "sourceHash": "developer-contract-regressions-v1",
+  "cases": [
+    {"id":"commune-or","query":"Busco una iglesia en Ñuñoa o Macul.","expectation":{"status":"reviewed","value":{"kind":"required","needsClarification":false,"criteria":[{"field":"location.commune","value":["Ñuñoa","Macul"],"polarity":"include"}],"interests":[]}},"recordedInterpretations":[],"judgments":[]},
+    {"id":"negative-sports","query":"Busco una iglesia sin actividades deportivas.","expectation":{"status":"reviewed","value":{"kind":"required","needsClarification":false,"criteria":[{"field":"community.activities","value":"Actividades deportivas","polarity":"exclude"}],"interests":[]}},"recordedInterpretations":[],"judgments":[]},
+    {"id":"mixed","query":"Necesito una iglesia en Macul; me interesa su historia.","expectation":{"status":"reviewed","value":{"kind":"mixed","needsClarification":false,"criteria":[{"field":"location.commune","value":"Macul","polarity":"include"}],"interests":["su historia"]}},"recordedInterpretations":[],"judgments":[]},
+    {"id":"unknown-requirement","query":"Necesito una iglesia que abra mañana; me interesa su historia.","expectation":{"status":"reviewed","value":{"kind":"unresolved","needsClarification":true,"criteria":[],"interests":["su historia"]}},"recordedInterpretations":[],"judgments":[]},
+    {"id":"contradiction","query":"Busco una iglesia con ascensor y sin ascensor.","expectation":{"status":"reviewed","value":{"kind":"unresolved","needsClarification":true,"criteria":[],"interests":[]}},"recordedInterpretations":[],"judgments":[]}
+  ]
+}

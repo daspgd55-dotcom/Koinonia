@@ -1,0 +1,302 @@
+{
+  "createdAt": "2026-11-17T14:38:23.981Z",
+  "database": "koinonia_synthetic_test_v2_local",
+  "collection": "rag_embeddings_lab_e2ee2abf4bb4",
+  "source": "vectors-2026-11-17T04-31-04-204Z.json",
+  "documents": 14,
+  "indexName": "embedding_cosine_v1",
+  "indexDefinition": {
+    "fields": [
+      {
+        "type": "vector",
+        "path": "embedding",
+        "numDimensions": 768,
+        "similarity": "cosine"
+      },
+      {
+        "type": "filter",
+        "path": "active"
+      },
+      {
+        "type": "filter",
+        "path": "dataStatus"
+      },
+      {
+        "type": "filter",
+        "path": "batch"
+      }
+    ]
+  },
+  "batch": "e2ee2abf4bb4d3f54b71d1ec742627c8ddf74c763cbc9886f7628f0eaf00a5f7",
+  "model": {
+    "model": "embeddinggemma:latest",
+    "digest": "85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1",
+    "dimensions": 768,
+    "formatVersion": "embeddinggemma-retrieval-v1"
+  },
+  "phase": "complete",
+  "serverVersion": "8.0.37",
+  "rows": [
+    {
+      "id": "q_youth",
+      "parity": true,
+      "visibility": true,
+      "elapsedMs": 112,
+      "top": [
+        {
+          "id": "youth",
+          "score": 0.7144207954406738
+        },
+        {
+          "id": "no_youth",
+          "score": 0.6749380826950073
+        },
+        {
+          "id": "no_children",
+          "score": 0.6357567310333252
+        }
+      ]
+    },
+    {
+      "id": "q_service",
+      "parity": true,
+      "visibility": true,
+      "elapsedMs": 72,
+      "top": [
+        {
+          "id": "service",
+          "score": 0.7833990454673767
+        },
+        {
+          "id": "youth",
+          "score": 0.6058657765388489
+        },
+        {
+          "id": "welcome",
+          "score": 0.5837122797966003
+        }
+      ]
+    },
+    {
+      "id": "q_children",
+      "parity": true,
+      "visibility": true,
+      "elapsedMs": 69,
+      "top": [
+        {
+          "id": "no_children",
+          "score": 0.7795013785362244
+        },
+        {
+          "id": "children",
+          "score": 0.766598105430603
+        },
+        {
+          "id": "study",
+          "score": 0.6967170238494873
+        }
+      ]
+    },
+    {
+      "id": "q_access",
+      "parity": true,
+      "visibility": true,
+      "elapsedMs": 70,
+      "top": [
+        {
+          "id": "accessible",
+          "score": 0.8091820478439331
+        },
+        {
+          "id": "stairs",
+          "score": 0.8030842542648315
+        },
+        {
+          "id": "welcome",
+          "score": 0.5928784608840942
+        }
+      ]
+    },
+    {
+      "id": "q_study",
+      "parity": true,
+      "visibility": true,
+      "elapsedMs": 70,
+      "top": [
+        {
+          "id": "study",
+          "score": 0.7641868591308594
+        },
+        {
+          "id": "children",
+          "score": 0.6459763050079346
+        },
+        {
+          "id": "no_children",
+          "score": 0.6359193325042725
+        }
+      ]
+    },
+    {
+      "id": "q_music",
+      "parity": true,
+      "visibility": true,
+      "elapsedMs": 70,
+      "top": [
+        {
+          "id": "music",
+          "score": 0.7245588898658752
+        },
+        {
+          "id": "online",
+          "score": 0.6223132014274597
+        },
+        {
+          "id": "service",
+          "score": 0.6223098635673523
+        }
+      ]
+    },
+    {
+      "id": "q_elderly",
+      "parity": true,
+      "visibility": true,
+      "elapsedMs": 69,
+      "top": [
+        {
+          "id": "elderly",
+          "score": 0.761255145072937
+        },
+        {
+          "id": "youth",
+          "score": 0.6270737648010254
+        },
+        {
+          "id": "no_youth",
+          "score": 0.624980628490448
+        }
+      ]
+    },
+    {
+      "id": "q_online",
+      "parity": true,
+      "visibility": true,
+      "elapsedMs": 70,
+      "top": [
+        {
+          "id": "online",
+          "score": 0.7734823822975159
+        },
+        {
+          "id": "stairs",
+          "score": 0.6715388894081116
+        },
+        {
+          "id": "no_youth",
+          "score": 0.6278396844863892
+        }
+      ]
+    },
+    {
+      "id": "q_welcome",
+      "parity": true,
+      "visibility": true,
+      "elapsedMs": 70,
+      "top": [
+        {
+          "id": "welcome",
+          "score": 0.695854902267456
+        },
+        {
+          "id": "stairs",
+          "score": 0.6172800660133362
+        },
+        {
+          "id": "accessible",
+          "score": 0.6000758409500122
+        }
+      ]
+    },
+    {
+      "id": "q_service_paraphrase",
+      "parity": true,
+      "visibility": true,
+      "elapsedMs": 70,
+      "top": [
+        {
+          "id": "service",
+          "score": 0.7279894948005676
+        },
+        {
+          "id": "no_children",
+          "score": 0.6159274578094482
+        },
+        {
+          "id": "youth",
+          "score": 0.6018474102020264
+        }
+      ]
+    },
+    {
+      "id": "probe_absent",
+      "parity": true,
+      "visibility": true,
+      "elapsedMs": 70,
+      "top": [
+        {
+          "id": "service",
+          "score": 0.6346697807312012
+        },
+        {
+          "id": "children",
+          "score": 0.6257461309432983
+        },
+        {
+          "id": "stairs",
+          "score": 0.6066749095916748
+        }
+      ]
+    },
+    {
+      "id": "probe_negative",
+      "parity": true,
+      "visibility": true,
+      "elapsedMs": 69,
+      "top": [
+        {
+          "id": "no_youth",
+          "score": 0.7483586072921753
+        },
+        {
+          "id": "youth",
+          "score": 0.735808253288269
+        },
+        {
+          "id": "elderly",
+          "score": 0.6676868200302124
+        }
+      ]
+    },
+    {
+      "id": "probe_unrelated",
+      "parity": true,
+      "visibility": true,
+      "elapsedMs": 69,
+      "top": [
+        {
+          "id": "service",
+          "score": 0.5604498982429504
+        },
+        {
+          "id": "music",
+          "score": 0.5543581247329712
+        },
+        {
+          "id": "youth",
+          "score": 0.5428118705749512
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

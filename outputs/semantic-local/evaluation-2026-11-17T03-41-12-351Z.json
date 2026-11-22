@@ -1,0 +1,78 @@
+{
+  "model": "qwen2.5:1.5b",
+  "endpoint": "http://127.0.0.1:11435",
+  "createdAt": "2026-11-17T03:41:12.351Z",
+  "passed": 5,
+  "total": 10,
+  "rows": [
+    {
+      "id": "unknown_field",
+      "passed": true
+    },
+    {
+      "id": "wrong_catalog",
+      "passed": true
+    },
+    {
+      "id": "invented_evidence",
+      "passed": true
+    },
+    {
+      "id": "extra_property",
+      "passed": true
+    },
+    {
+      "id": "youth",
+      "passed": false,
+      "error": "INVALID_EVIDENCE_OR_VALUE",
+      "rejectedOutput": "{\n  \"criteria\": [\n    {\n      \"evidence\": \"Jóvenes es targetGroups, no activities.\",\n      \"field\": \"activities\",\n      \"polarity\": \"include\",\n      \"value\": \"Actividades deportivas\"\n    },\n    {\n      \"evidence\": \"Jóvenes es targetGroups, no activities.\",\n      \"field\": \"targetGroups\",\n      \"polarity\": \"include\",\n      \"value\": \"Jóvenes\"\n    },\n    {\n      \"evidence\": \"Jóvenes es targetGroups, no activities.\",\n      \"field\": \"commune\",\n      \"polarity\": \"include\",\n      \"value\": \"Providencia\"\n    }\n  ],\n  \"unresolved\": [\n    \"No hay preferencia de denominación en este caso.\"\n  ]\n}"
+    },
+    {
+      "id": "negative",
+      "passed": false,
+      "error": "INVALID_EVIDENCE_OR_VALUE",
+      "rejectedOutput": "{\n  \"criteria\": [\n    {\n      \"evidence\": \"La iglesia no es Pentecostal\",\n      \"field\": \"denominations\",\n      \"polarity\": \"exclude\",\n      \"value\": \"Pentecostal\"\n    }\n  ],\n  \"unresolved\": [\n    \"La iglesia no es Pentecostal\"\n  ]\n}"
+    },
+    {
+      "id": "ambiguous",
+      "passed": false,
+      "error": "INVALID_EVIDENCE_OR_VALUE",
+      "rejectedOutput": "{\n  \"criteria\": [\n    {\n      \"evidence\": \"La iglesia debe ser tranquila y sin distracciones.\",\n      \"field\": \"commune\",\n      \"polarity\": \"include\",\n      \"value\": \"La Granja\"\n    },\n    {\n      \"evidence\": \"La iglesia debe ser tranquila y sin distracciones.\",\n      \"field\": \"denominations\",\n      \"polarity\": \"include\",\n      \"value\": \"Evangélica\"\n    },\n    {\n      \"evidence\": \"La iglesia debe ser tranquila y sin distracciones.\",\n      \"field\": \"activities\",\n      \"polarity\": \"include\",\n      \"value\": \"Cursos / institutos\"\n    },\n    {\n      \"evidence\": \"La iglesia debe ser tranquila y sin distracciones.\",\n      \"field\": \"targetGroups\",\n      \"polarity\": \"include\",\n      \"value\": \"Jóvenes\"\n    }\n  ],\n  \"unresolved\": [\n    \"La iglesia debe ser tranquila y sin distracciones.\"\n  ]\n}"
+    },
+    {
+      "id": "unspecified",
+      "query": "En Providencia, sin preferencia de denominación.",
+      "passed": true,
+      "proposal": {
+        "criteria": [
+          {
+            "field": "commune",
+            "value": "Providencia",
+            "polarity": "include",
+            "evidence": "En Providencia, sin preferencia de denominación."
+          }
+        ],
+        "unresolved": [
+          "En Providencia, sin preferencia de denominación."
+        ]
+      },
+      "requiresReview": true,
+      "applied": false,
+      "metrics": {
+        "elapsedMs": 5100,
+        "outputTokens": 79
+      }
+    },
+    {
+      "id": "missing_location",
+      "passed": false,
+      "error": "INVALID_EVIDENCE_OR_VALUE",
+      "rejectedOutput": "{\n  \"criteria\": [\n    {\n      \"evidence\": \"La iglesia está cerca de mi casa\",\n      \"field\": \"commune\",\n      \"polarity\": \"include\",\n      \"value\": \"Cerro Navia\"\n    },\n    {\n      \"evidence\": \"La iglesia es una iglesia\",\n      \"field\": \"denominations\",\n      \"polarity\": \"include\",\n      \"value\": \"Evangélica\"\n    },\n    {\n      \"evidence\": \"La iglesia tiene un grupo etario de jóvenes\",\n      \"field\": \"targetGroups\",\n      \"polarity\": \"include\",\n      \"value\": \"Jóvenes\"\n    }\n  ],\n  \"unresolved\": []\n}"
+    },
+    {
+      "id": "injection",
+      "passed": false,
+      "error": "INCOMPLETE_MODEL_OUTPUT"
+    }
+  ]
+}

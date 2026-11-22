@@ -1,0 +1,2227 @@
+{
+  "createdAt": "2026-11-18T05:37:36.259Z",
+  "database": "koinonia_synthetic_test_v2_local",
+  "sampleFile": "sample-vectors-2026-11-18T05-21-16-806Z.json",
+  "rankingFile": "query-report-2026-11-18T05-28-45-499Z.json",
+  "churchesRead": 5,
+  "staleFragments": [],
+  "summary": [
+    {
+      "query": "courses",
+      "mode": "automatic",
+      "accepted": [],
+      "held": {
+        "needs_clarification": 5
+      }
+    },
+    {
+      "query": "courses",
+      "mode": "manual_structured",
+      "accepted": [
+        "Corporacion Metodista Libre De Chile",
+        "Iglesia Cristiana AR chile"
+      ],
+      "held": {
+        "unknown": 3
+      }
+    },
+    {
+      "query": "sports",
+      "mode": "automatic",
+      "accepted": [],
+      "held": {
+        "needs_clarification": 5
+      }
+    },
+    {
+      "query": "sports",
+      "mode": "manual_structured",
+      "accepted": [
+        "Iglesia Corpus Domini",
+        "Iglesia Bíblica Alma"
+      ],
+      "held": {
+        "unknown": 3
+      }
+    },
+    {
+      "query": "liturgy",
+      "mode": "automatic",
+      "accepted": [],
+      "held": {
+        "needs_clarification": 5
+      }
+    },
+    {
+      "query": "liturgy",
+      "mode": "manual_structured",
+      "accepted": [
+        "Iglesia Corpus Domini"
+      ],
+      "held": {
+        "unknown": 4
+      }
+    },
+    {
+      "query": "streaming",
+      "mode": "automatic",
+      "accepted": [],
+      "held": {
+        "needs_clarification": 5
+      }
+    },
+    {
+      "query": "streaming",
+      "mode": "manual_structured",
+      "accepted": [
+        "Iglesia Cristiana AR chile"
+      ],
+      "held": {
+        "not_satisfied": 4
+      }
+    },
+    {
+      "query": "homes",
+      "mode": "automatic",
+      "accepted": [],
+      "held": {
+        "needs_clarification": 5
+      }
+    },
+    {
+      "query": "practical",
+      "mode": "automatic",
+      "accepted": [],
+      "held": {
+        "needs_clarification": 5
+      }
+    },
+    {
+      "query": "baptism",
+      "mode": "automatic",
+      "accepted": [],
+      "held": {
+        "needs_clarification": 5
+      }
+    },
+    {
+      "query": "baptism",
+      "mode": "manual_structured",
+      "accepted": [
+        "Iglesia Bíblica Alma"
+      ],
+      "held": {
+        "unknown": 4
+      }
+    },
+    {
+      "query": "cross_language",
+      "mode": "automatic",
+      "accepted": [],
+      "held": {
+        "needs_clarification": 5
+      }
+    },
+    {
+      "query": "absent_accessibility",
+      "mode": "automatic",
+      "accepted": [],
+      "held": {
+        "unknown": 5
+      }
+    },
+    {
+      "query": "absent_schedule",
+      "mode": "automatic",
+      "accepted": [],
+      "held": {
+        "needs_clarification": 5
+      }
+    },
+    {
+      "query": "unrelated",
+      "mode": "automatic",
+      "accepted": [],
+      "held": {
+        "needs_clarification": 5
+      }
+    },
+    {
+      "query": "negation",
+      "mode": "automatic",
+      "accepted": [],
+      "held": {
+        "not_satisfied": 2,
+        "unknown": 3
+      }
+    }
+  ],
+  "rows": [
+    {
+      "queryId": "courses",
+      "text": "Busco una iglesia que organice cursos y conferencias.",
+      "mode": "automatic",
+      "request": {
+        "criteria": [],
+        "unresolved": [
+          "Busco una iglesia que organice cursos y conferencias."
+        ]
+      },
+      "accepted": [],
+      "held": [
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.5105557245132251,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:community.activities:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una iglesia que organice cursos y conferencias."
+            ]
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.46671384291592066,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:community.activities:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una iglesia que organice cursos y conferencias."
+            ]
+          }
+        },
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.41826735527800246,
+          "fragmentId": "6ac9b9225017eda79d91466c:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una iglesia que organice cursos y conferencias."
+            ]
+          }
+        },
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.36280838207671645,
+          "fragmentId": "155555f8b883bb7066754b67:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una iglesia que organice cursos y conferencias."
+            ]
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.2611135260712561,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una iglesia que organice cursos y conferencias."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "courses",
+      "text": "Busco una iglesia que organice cursos y conferencias.",
+      "mode": "manual_structured",
+      "request": {
+        "criteria": [
+          {
+            "field": "community.activities",
+            "value": "Cursos / institutos",
+            "polarity": "include"
+          },
+          {
+            "field": "community.activities",
+            "value": "Conferencias",
+            "polarity": "include"
+          }
+        ],
+        "unresolved": []
+      },
+      "accepted": [
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.5105557245132251,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:community.activities:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Cursos / institutos",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.activities",
+                  "value": "Cursos / institutos",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              },
+              {
+                "field": "community.activities",
+                "value": "Conferencias",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.activities",
+                  "value": "Conferencias",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.46671384291592066,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:community.activities:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Cursos / institutos",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.activities",
+                  "value": "Cursos / institutos",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              },
+              {
+                "field": "community.activities",
+                "value": "Conferencias",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.activities",
+                  "value": "Conferencias",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ],
+      "held": [
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.41826735527800246,
+          "fragmentId": "6ac9b9225017eda79d91466c:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Cursos / institutos",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.activities",
+                  "value": "Cursos / institutos",
+                  "updatedAt": "2026-11-15T19:14:26.208Z",
+                  "churchVersion": 64
+                }
+              },
+              {
+                "field": "community.activities",
+                "value": "Conferencias",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.36280838207671645,
+          "fragmentId": "155555f8b883bb7066754b67:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Cursos / institutos",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              },
+              {
+                "field": "community.activities",
+                "value": "Conferencias",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.2611135260712561,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Cursos / institutos",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              },
+              {
+                "field": "community.activities",
+                "value": "Conferencias",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "sports",
+      "text": "Quiero participar en actividades deportivas de una iglesia.",
+      "mode": "automatic",
+      "request": {
+        "criteria": [],
+        "unresolved": [
+          "Quiero participar en actividades deportivas de una iglesia."
+        ]
+      },
+      "accepted": [],
+      "held": [
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.4601461617429617,
+          "fragmentId": "155555f8b883bb7066754b67:community.activities:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Quiero participar en actividades deportivas de una iglesia."
+            ]
+          }
+        },
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.3773062800880136,
+          "fragmentId": "6ac9b9225017eda79d91466c:community.activities:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Quiero participar en actividades deportivas de una iglesia."
+            ]
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.34692490907269463,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:community.activities:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Quiero participar en actividades deportivas de una iglesia."
+            ]
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.3333917517694128,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:community.activities:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Quiero participar en actividades deportivas de una iglesia."
+            ]
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.22364725334266042,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Quiero participar en actividades deportivas de una iglesia."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "sports",
+      "text": "Quiero participar en actividades deportivas de una iglesia.",
+      "mode": "manual_structured",
+      "request": {
+        "criteria": [
+          {
+            "field": "community.activities",
+            "value": "Actividades deportivas",
+            "polarity": "include"
+          }
+        ],
+        "unresolved": []
+      },
+      "accepted": [
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.4601461617429617,
+          "fragmentId": "155555f8b883bb7066754b67:community.activities:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Actividades deportivas",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.activities",
+                  "value": "Actividades deportivas",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.3773062800880136,
+          "fragmentId": "6ac9b9225017eda79d91466c:community.activities:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Actividades deportivas",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.activities",
+                  "value": "Actividades deportivas",
+                  "updatedAt": "2026-11-15T19:14:26.208Z",
+                  "churchVersion": 64
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ],
+      "held": [
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.34692490907269463,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:community.activities:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Actividades deportivas",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.3333917517694128,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:community.activities:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Actividades deportivas",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.22364725334266042,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Actividades deportivas",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "liturgy",
+      "text": "Busco una comunidad con culto litúrgico y eucaristía.",
+      "mode": "automatic",
+      "request": {
+        "criteria": [],
+        "unresolved": [
+          "Busco una comunidad con culto litúrgico y eucaristía."
+        ]
+      },
+      "accepted": [],
+      "held": [
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.42488692664924677,
+          "fragmentId": "155555f8b883bb7066754b67:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una comunidad con culto litúrgico y eucaristía."
+            ]
+          }
+        },
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.3666568196654091,
+          "fragmentId": "6ac9b9225017eda79d91466c:community.description:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una comunidad con culto litúrgico y eucaristía."
+            ]
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.342570610658312,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una comunidad con culto litúrgico y eucaristía."
+            ]
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.33407426772608934,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una comunidad con culto litúrgico y eucaristía."
+            ]
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.3250704289945006,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una comunidad con culto litúrgico y eucaristía."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "liturgy",
+      "text": "Busco una comunidad con culto litúrgico y eucaristía.",
+      "mode": "manual_structured",
+      "request": {
+        "criteria": [
+          {
+            "field": "doctrine.characteristics",
+            "value": "Culto litúrgico",
+            "polarity": "include"
+          },
+          {
+            "field": "doctrine.characteristics",
+            "value": "Eucaristía",
+            "polarity": "include"
+          }
+        ],
+        "unresolved": []
+      },
+      "accepted": [
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.42488692664924677,
+          "fragmentId": "155555f8b883bb7066754b67:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "doctrine.characteristics",
+                "value": "Culto litúrgico",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "doctrine.characteristics",
+                  "value": "Culto litúrgico",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              },
+              {
+                "field": "doctrine.characteristics",
+                "value": "Eucaristía",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "doctrine.characteristics",
+                  "value": "Eucaristía",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ],
+      "held": [
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.3666568196654091,
+          "fragmentId": "6ac9b9225017eda79d91466c:community.description:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "doctrine.characteristics",
+                "value": "Culto litúrgico",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              },
+              {
+                "field": "doctrine.characteristics",
+                "value": "Eucaristía",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.342570610658312,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "doctrine.characteristics",
+                "value": "Culto litúrgico",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              },
+              {
+                "field": "doctrine.characteristics",
+                "value": "Eucaristía",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.33407426772608934,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "doctrine.characteristics",
+                "value": "Culto litúrgico",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              },
+              {
+                "field": "doctrine.characteristics",
+                "value": "Eucaristía",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.3250704289945006,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "doctrine.characteristics",
+                "value": "Culto litúrgico",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              },
+              {
+                "field": "doctrine.characteristics",
+                "value": "Eucaristía",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "streaming",
+      "text": "Busco un ministerio de streaming en Ñuñoa.",
+      "mode": "automatic",
+      "request": {
+        "criteria": [],
+        "unresolved": [
+          "Busco un ministerio de streaming en Ñuñoa."
+        ]
+      },
+      "accepted": [],
+      "held": [
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.5900513560555919,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:community.ministries:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco un ministerio de streaming en Ñuñoa."
+            ]
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.35524640480141856,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:community.ministries:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco un ministerio de streaming en Ñuñoa."
+            ]
+          }
+        },
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.34291236127894553,
+          "fragmentId": "155555f8b883bb7066754b67:community.ministries:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco un ministerio de streaming en Ñuñoa."
+            ]
+          }
+        },
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.2913589857684853,
+          "fragmentId": "6ac9b9225017eda79d91466c:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco un ministerio de streaming en Ñuñoa."
+            ]
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.24817104884092733,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco un ministerio de streaming en Ñuñoa."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "streaming",
+      "text": "Busco un ministerio de streaming en Ñuñoa.",
+      "mode": "manual_structured",
+      "request": {
+        "criteria": [
+          {
+            "field": "community.ministries",
+            "value": "Streaming",
+            "polarity": "include"
+          },
+          {
+            "field": "location.commune",
+            "value": "Ñuñoa",
+            "polarity": "include"
+          }
+        ],
+        "unresolved": []
+      },
+      "accepted": [
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.5900513560555919,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:community.ministries:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "community.ministries",
+                "value": "Streaming",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.ministries",
+                  "value": "Streaming",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              },
+              {
+                "field": "location.commune",
+                "value": "Ñuñoa",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_single_value",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "Ñuñoa",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ],
+      "held": [
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.35524640480141856,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:community.ministries:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "not_satisfied",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "community.ministries",
+                "value": "Streaming",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              },
+              {
+                "field": "location.commune",
+                "value": "Ñuñoa",
+                "polarity": "include",
+                "status": "not_satisfied",
+                "reason": "explicit_single_value",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "Santiago",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.34291236127894553,
+          "fragmentId": "155555f8b883bb7066754b67:community.ministries:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "not_satisfied",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "community.ministries",
+                "value": "Streaming",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              },
+              {
+                "field": "location.commune",
+                "value": "Ñuñoa",
+                "polarity": "include",
+                "status": "not_satisfied",
+                "reason": "explicit_single_value",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "Santiago",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.2913589857684853,
+          "fragmentId": "6ac9b9225017eda79d91466c:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "not_satisfied",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "community.ministries",
+                "value": "Streaming",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.ministries",
+                  "value": "Streaming",
+                  "updatedAt": "2026-11-15T19:14:26.208Z",
+                  "churchVersion": 64
+                }
+              },
+              {
+                "field": "location.commune",
+                "value": "Ñuñoa",
+                "polarity": "include",
+                "status": "not_satisfied",
+                "reason": "explicit_single_value",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "La Florida",
+                  "updatedAt": "2026-11-15T19:14:26.208Z",
+                  "churchVersion": 64
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.24817104884092733,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "not_satisfied",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "community.ministries",
+                "value": "Streaming",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              },
+              {
+                "field": "location.commune",
+                "value": "Ñuñoa",
+                "polarity": "include",
+                "status": "not_satisfied",
+                "reason": "explicit_single_value",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "Santiago",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "homes",
+      "text": "Quiero conocer una iglesia que visite hogares de adultos mayores y de niños.",
+      "mode": "automatic",
+      "request": {
+        "criteria": [],
+        "unresolved": [
+          "Quiero conocer una iglesia que visite hogares de adultos mayores y de niños."
+        ]
+      },
+      "accepted": [],
+      "held": [
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.5229189517441427,
+          "fragmentId": "6ac9b9225017eda79d91466c:community.description:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Quiero conocer una iglesia que visite hogares de adultos mayores y de niños."
+            ]
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.37834459924364705,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:community.ministries:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Quiero conocer una iglesia que visite hogares de adultos mayores y de niños."
+            ]
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.3600856808161873,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:community.activities:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Quiero conocer una iglesia que visite hogares de adultos mayores y de niños."
+            ]
+          }
+        },
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.2958349052598233,
+          "fragmentId": "155555f8b883bb7066754b67:community.ministries:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Quiero conocer una iglesia que visite hogares de adultos mayores y de niños."
+            ]
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.28521966164985735,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Quiero conocer una iglesia que visite hogares de adultos mayores y de niños."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "practical",
+      "text": "Busco prédicas que ayuden a aplicar la fe en la vida cotidiana.",
+      "mode": "automatic",
+      "request": {
+        "criteria": [],
+        "unresolved": [
+          "Busco prédicas que ayuden a aplicar la fe en la vida cotidiana."
+        ]
+      },
+      "accepted": [],
+      "held": [
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.35125375485210975,
+          "fragmentId": "6ac9b9225017eda79d91466c:identification.distinctiveFeatures:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco prédicas que ayuden a aplicar la fe en la vida cotidiana."
+            ]
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.24485122179934918,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco prédicas que ayuden a aplicar la fe en la vida cotidiana."
+            ]
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.21942582657333914,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco prédicas que ayuden a aplicar la fe en la vida cotidiana."
+            ]
+          }
+        },
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.21532058006986515,
+          "fragmentId": "155555f8b883bb7066754b67:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco prédicas que ayuden a aplicar la fe en la vida cotidiana."
+            ]
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.10906635154080156,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco prédicas que ayuden a aplicar la fe en la vida cotidiana."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "baptism",
+      "text": "Busco una iglesia que practique el bautismo de creyentes.",
+      "mode": "automatic",
+      "request": {
+        "criteria": [],
+        "unresolved": [
+          "Busco una iglesia que practique el bautismo de creyentes."
+        ]
+      },
+      "accepted": [],
+      "held": [
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.4174064464213783,
+          "fragmentId": "6ac9b9225017eda79d91466c:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una iglesia que practique el bautismo de creyentes."
+            ]
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.4168225417171624,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una iglesia que practique el bautismo de creyentes."
+            ]
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.3522742181426385,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:community.ministries:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una iglesia que practique el bautismo de creyentes."
+            ]
+          }
+        },
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.3236673703704252,
+          "fragmentId": "155555f8b883bb7066754b67:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una iglesia que practique el bautismo de creyentes."
+            ]
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.3070279920737198,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una iglesia que practique el bautismo de creyentes."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "baptism",
+      "text": "Busco una iglesia que practique el bautismo de creyentes.",
+      "mode": "manual_structured",
+      "request": {
+        "criteria": [
+          {
+            "field": "doctrine.characteristics",
+            "value": "Bautismo de creyentes",
+            "polarity": "include"
+          }
+        ],
+        "unresolved": []
+      },
+      "accepted": [
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.4174064464213783,
+          "fragmentId": "6ac9b9225017eda79d91466c:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "doctrine.characteristics",
+                "value": "Bautismo de creyentes",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "doctrine.characteristics",
+                  "value": "Bautismo de creyentes",
+                  "updatedAt": "2026-11-15T19:14:26.208Z",
+                  "churchVersion": 64
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ],
+      "held": [
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.4168225417171624,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "doctrine.characteristics",
+                "value": "Bautismo de creyentes",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.3522742181426385,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:community.ministries:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "doctrine.characteristics",
+                "value": "Bautismo de creyentes",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.3236673703704252,
+          "fragmentId": "155555f8b883bb7066754b67:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "doctrine.characteristics",
+                "value": "Bautismo de creyentes",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.3070279920737198,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "doctrine.characteristics",
+                "value": "Bautismo de creyentes",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "cross_language",
+      "text": "Quiero conocer una iglesia inspirada en el Sagrado Corazón de París que tenga esculturas históricas.",
+      "mode": "automatic",
+      "request": {
+        "criteria": [],
+        "unresolved": [
+          "Quiero conocer una iglesia inspirada en el Sagrado Corazón de París que tenga esculturas históricas."
+        ]
+      },
+      "accepted": [],
+      "held": [
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.6319128532791523,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Quiero conocer una iglesia inspirada en el Sagrado Corazón de París que tenga esculturas históricas."
+            ]
+          }
+        },
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.30532269127882034,
+          "fragmentId": "155555f8b883bb7066754b67:community.activities:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Quiero conocer una iglesia inspirada en el Sagrado Corazón de París que tenga esculturas históricas."
+            ]
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.27532309323122567,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:community.activities:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Quiero conocer una iglesia inspirada en el Sagrado Corazón de París que tenga esculturas históricas."
+            ]
+          }
+        },
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.2616469924454631,
+          "fragmentId": "6ac9b9225017eda79d91466c:identification.description:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Quiero conocer una iglesia inspirada en el Sagrado Corazón de París que tenga esculturas históricas."
+            ]
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.25128971117145643,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:community.activities:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Quiero conocer una iglesia inspirada en el Sagrado Corazón de París que tenga esculturas históricas."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "absent_accessibility",
+      "text": "Necesito una iglesia con intérprete de lengua de señas y baño accesible.",
+      "mode": "automatic",
+      "request": {
+        "criteria": [
+          {
+            "field": "location.accessibilityDetails.signLanguage",
+            "value": "yes",
+            "polarity": "include"
+          },
+          {
+            "field": "location.accessibilityDetails.accessibleRestroom",
+            "value": "yes",
+            "polarity": "include"
+          }
+        ],
+        "unresolved": []
+      },
+      "accepted": [],
+      "held": [
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.2966601971591541,
+          "fragmentId": "6ac9b9225017eda79d91466c:identification.description:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "location.accessibilityDetails.signLanguage",
+                "value": "yes",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              },
+              {
+                "field": "location.accessibilityDetails.accessibleRestroom",
+                "value": "yes",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.2553464835858555,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:community.activities:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "location.accessibilityDetails.signLanguage",
+                "value": "yes",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              },
+              {
+                "field": "location.accessibilityDetails.accessibleRestroom",
+                "value": "yes",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.2349762808771704,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "location.accessibilityDetails.signLanguage",
+                "value": "yes",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              },
+              {
+                "field": "location.accessibilityDetails.accessibleRestroom",
+                "value": "yes",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.2308709036456383,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:community.ministries:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "location.accessibilityDetails.signLanguage",
+                "value": "yes",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              },
+              {
+                "field": "location.accessibilityDetails.accessibleRestroom",
+                "value": "yes",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.2208969314693024,
+          "fragmentId": "155555f8b883bb7066754b67:community.ministries:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "location.accessibilityDetails.signLanguage",
+                "value": "yes",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              },
+              {
+                "field": "location.accessibilityDetails.accessibleRestroom",
+                "value": "yes",
+                "polarity": "include",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "absent_schedule",
+      "text": "Busco una iglesia con reunión los martes a las ocho de la noche.",
+      "mode": "automatic",
+      "request": {
+        "criteria": [],
+        "unresolved": [
+          "Busco una iglesia con reunión los martes a las ocho de la noche."
+        ]
+      },
+      "accepted": [],
+      "held": [
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.3658519346989993,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:community.ministries:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una iglesia con reunión los martes a las ocho de la noche."
+            ]
+          }
+        },
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.3643986742726095,
+          "fragmentId": "6ac9b9225017eda79d91466c:identification.description:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una iglesia con reunión los martes a las ocho de la noche."
+            ]
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.3511142482712787,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:community.activities:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una iglesia con reunión los martes a las ocho de la noche."
+            ]
+          }
+        },
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.31916385933083957,
+          "fragmentId": "155555f8b883bb7066754b67:community.ministries:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una iglesia con reunión los martes a las ocho de la noche."
+            ]
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.26236935117065424,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Busco una iglesia con reunión los martes a las ocho de la noche."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "unrelated",
+      "text": "Necesito un taller para cambiar las pastillas de freno de mi automóvil.",
+      "mode": "automatic",
+      "request": {
+        "criteria": [],
+        "unresolved": [
+          "Necesito un taller para cambiar las pastillas de freno de mi automóvil."
+        ]
+      },
+      "accepted": [],
+      "held": [
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.12952502093093385,
+          "fragmentId": "6ac9b9225017eda79d91466c:identification.distinctiveFeatures:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Necesito un taller para cambiar las pastillas de freno de mi automóvil."
+            ]
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.11564445805607798,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Necesito un taller para cambiar las pastillas de freno de mi automóvil."
+            ]
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.10712944961408166,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:community.ministries:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Necesito un taller para cambiar las pastillas de freno de mi automóvil."
+            ]
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.08268985468981986,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Necesito un taller para cambiar las pastillas de freno de mi automóvil."
+            ]
+          }
+        },
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.08234988859230928,
+          "fragmentId": "155555f8b883bb7066754b67:doctrine.characteristics:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "needs_clarification",
+            "eligibleForResults": false,
+            "requirements": [],
+            "unresolved": [
+              "Necesito un taller para cambiar las pastillas de freno de mi automóvil."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "queryId": "negation",
+      "text": "Busco una iglesia que no realice actividades deportivas.",
+      "mode": "automatic",
+      "request": {
+        "criteria": [
+          {
+            "field": "community.activities",
+            "value": "Actividades deportivas",
+            "polarity": "exclude"
+          }
+        ],
+        "unresolved": []
+      },
+      "accepted": [],
+      "held": [
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "score": 0.4912748532037938,
+          "fragmentId": "155555f8b883bb7066754b67:community.activities:0",
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "not_satisfied",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Actividades deportivas",
+                "polarity": "exclude",
+                "status": "not_satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.activities",
+                  "value": "Actividades deportivas",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "score": 0.41325907586492067,
+          "fragmentId": "e6d7e42e79ea95ae9e831496:community.activities:0",
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Actividades deportivas",
+                "polarity": "exclude",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "score": 0.4112435061722229,
+          "fragmentId": "6ac9b9225017eda79d91466c:community.activities:0",
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "not_satisfied",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Actividades deportivas",
+                "polarity": "exclude",
+                "status": "not_satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.activities",
+                  "value": "Actividades deportivas",
+                  "updatedAt": "2026-11-15T19:14:26.208Z",
+                  "churchVersion": 64
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "score": 0.3916335054106052,
+          "fragmentId": "1298af8033c6eb4a402bf5a3:community.activities:0",
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Actividades deportivas",
+                "polarity": "exclude",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "score": 0.2873371958402359,
+          "fragmentId": "28f6ea99cc25a2cd1462203d:identification.description:0",
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "unknown",
+            "eligibleForResults": false,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Actividades deportivas",
+                "polarity": "exclude",
+                "status": "unknown",
+                "reason": "missing_evidence",
+                "evidence": null
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "database": "koinonia_synthetic_test_v2_local",
+  "collection": "rag_embeddings_lab_e2ee2abf4bb4",
+  "source": "vectors-2026-11-17T04-31-04-204Z.json",
+  "documents": 14,
+  "indexName": "embedding_cosine_v1",
+  "indexDefinition": {
+    "fields": [
+      {
+        "type": "vector",
+        "path": "embedding",
+        "numDimensions": 768,
+        "similarity": "cosine"
+      },
+      {
+        "type": "filter",
+        "path": "active"
+      },
+      {
+        "type": "filter",
+        "path": "dataStatus"
+      },
+      {
+        "type": "filter",
+        "path": "batch"
+      }
+    ]
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "source": "plan-2026-11-18T05-13-40-909Z.json",
+  "sourceHash": "a406606b1f0e1a0a24a82fc11ed2d4d95ffd4dea7f0dbfd7228cd561e39303b1",
+  "selection": "five-churches-reviewed-v1",
+  "reviewScope": "Text suitability only; not factual verification or current visibility certification",
+  "documents": [
+    {
+      "_id": "e6d7e42e79ea95ae9e831496:community.ministries:0",
+      "churchId": "e6d7e42e79ea95ae9e831496",
+      "title": "Corporacion Metodista Libre De Chile",
+      "text": "Iglesia: Corporacion Metodista Libre De Chile · Santiago · Santiago\nMinisterios: Formación bíblica",
+      "textHash": "4aa6323680fae7be1a256686c29097dfb6e4c3f7fe5a121b4baaa9a38e4a36f3",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "e6d7e42e79ea95ae9e831496:community.activities:0",
+      "churchId": "e6d7e42e79ea95ae9e831496",
+      "title": "Corporacion Metodista Libre De Chile",
+      "text": "Iglesia: Corporacion Metodista Libre De Chile · Santiago · Santiago\nActividades: Conferencias, Cursos / institutos",
+      "textHash": "5375d65d014a8b1a79c29a94233048e8beff3ac1f432a4f88e4dcd502ba3965f",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "e6d7e42e79ea95ae9e831496:doctrine.characteristics:0",
+      "churchId": "e6d7e42e79ea95ae9e831496",
+      "title": "Corporacion Metodista Libre De Chile",
+      "text": "Iglesia: Corporacion Metodista Libre De Chile · Santiago · Santiago\nDoctrinas y prácticas: Sacramentos / ordenanzas, Misiones, Predicación, Prácticas carismáticas",
+      "textHash": "ae0e08c062fb0322053e8c78a87ed1b40c2f931ca1d67ebd63ccdadc29eedc49",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "doctrine.characteristics",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "155555f8b883bb7066754b67:community.ministries:0",
+      "churchId": "155555f8b883bb7066754b67",
+      "title": "Iglesia Corpus Domini",
+      "text": "Iglesia: Iglesia Corpus Domini · Santiago · Santiago\nMinisterios: Deportes",
+      "textHash": "e3ae8d9ea631bace39701e3bb3a84cbad7796db2d82b748e78a9da5822560256",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "155555f8b883bb7066754b67:community.activities:0",
+      "churchId": "155555f8b883bb7066754b67",
+      "title": "Iglesia Corpus Domini",
+      "text": "Iglesia: Iglesia Corpus Domini · Santiago · Santiago\nActividades: Actividades deportivas",
+      "textHash": "f54176477d1069fa0fed6cc43a0173b89ceb3fc83cdec53a28902b27a8f8857c",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "155555f8b883bb7066754b67:doctrine.characteristics:0",
+      "churchId": "155555f8b883bb7066754b67",
+      "title": "Iglesia Corpus Domini",
+      "text": "Iglesia: Iglesia Corpus Domini · Santiago · Santiago\nDoctrinas y prácticas: Culto litúrgico, Eucaristía",
+      "textHash": "921fdccdcc5d757f3da1a3a8c78b31f35ee0fa9131af1fb4dfbd00cd2a4d65ca",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "doctrine.characteristics",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "1298af8033c6eb4a402bf5a3:community.ministries:0",
+      "churchId": "1298af8033c6eb4a402bf5a3",
+      "title": "Iglesia Cristiana AR chile",
+      "text": "Iglesia: Iglesia Cristiana AR chile · Ñuñoa · Santiago\nMinisterios: Streaming, Formación bíblica, Familias",
+      "textHash": "d98315ce6ea26b5e4a29a340cbe00410404fb0cf566c19d4ce145f89e65f2a74",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.ministries",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "1298af8033c6eb4a402bf5a3:community.activities:0",
+      "churchId": "1298af8033c6eb4a402bf5a3",
+      "title": "Iglesia Cristiana AR chile",
+      "text": "Iglesia: Iglesia Cristiana AR chile · Ñuñoa · Santiago\nActividades: Cursos / institutos, Conferencias",
+      "textHash": "5fb2b26c6afea04730cebb61e60d39396d73e48e99491b87f02ae58e565ef298",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "1298af8033c6eb4a402bf5a3:doctrine.characteristics:0",
+      "churchId": "1298af8033c6eb4a402bf5a3",
+      "title": "Iglesia Cristiana AR chile",
+      "text": "Iglesia: Iglesia Cristiana AR chile · Ñuñoa · Santiago\nDoctrinas y prácticas: Formación bíblica, Sacramentos / ordenanzas",
+      "textHash": "8d95b7e6d4752440faf6b9de2f2ba9928b13908a4314131f8726dee1d5e2f080",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "doctrine.characteristics",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    },
+    {
+      "_id": "6ac9b9225017eda79d91466c:identification.description:0",
+      "churchId": "6ac9b9225017eda79d91466c",
+      "title": "Iglesia Bíblica Alma",
+      "text": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nSobre la iglesia: A: Amar a otros como Cristo nos ama L: Liderando hacia la madurez Espiritual M: Movernos hacia los de afuera, para que juntos A: Adoremos a Dios con nuestras vidas Una comunidad que busca crear una revolución de amor. Con el amor que Dios ha derramado para todo el mundo.",
+      "textHash": "d260b99ff3593d2dceeebefc525479cea7b7bef37c048f86296ca8780658e3fb",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "identification.description",
+        "part": 0,
+        "updatedAt": "2026-11-15T19:14:26.208Z",
+        "churchVersion": 64
+      },
+      "testData": false
+    },
+    {
+      "_id": "6ac9b9225017eda79d91466c:identification.distinctiveFeatures:0",
+      "churchId": "6ac9b9225017eda79d91466c",
+      "title": "Iglesia Bíblica Alma",
+      "text": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nCaracterísticas: Predicas enfocadas en la practicalidad en nuestro camino con cristo en la vida cotidiana, Se enfoca en la comodidad de las visitas",
+      "textHash": "fceb9ff8ab44319e8d166a1428c95a1ac9bce0e23247fc21a204eb27f6bd3890",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "identification.distinctiveFeatures",
+        "part": 0,
+        "updatedAt": "2026-11-15T19:14:26.208Z",
+        "churchVersion": 64
+      },
+      "testData": false
+    },
+    {
+      "_id": "6ac9b9225017eda79d91466c:doctrine.characteristics:0",
+      "churchId": "6ac9b9225017eda79d91466c",
+      "title": "Iglesia Bíblica Alma",
+      "text": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nDoctrinas y prácticas: Autoridad de las Escrituras, Predicación, Culto contemporáneo, Evangelización, Formación bíblica, Bautismo de creyentes, Misiones",
+      "textHash": "fce17958038109142a984f2143dafc3be6c90b9f5a32d14b85a89687b1a2a5ac",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "doctrine.characteristics",
+        "part": 0,
+        "updatedAt": "2026-11-15T19:14:26.208Z",
+        "churchVersion": 64
+      },
+      "testData": false
+    },
+    {
+      "_id": "6ac9b9225017eda79d91466c:community.description:0",
+      "churchId": "6ac9b9225017eda79d91466c",
+      "title": "Iglesia Bíblica Alma",
+      "text": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nVida en comunidad: Vamos a Hogares de Adultos mayores y de Niños",
+      "textHash": "042f06af44111ae7bff500b30674c958184aa4d62f5f6910f8c2133b4b3f52a2",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.description",
+        "part": 0,
+        "updatedAt": "2026-11-15T19:14:26.208Z",
+        "churchVersion": 64
+      },
+      "testData": false
+    },
+    {
+      "_id": "6ac9b9225017eda79d91466c:community.activities:0",
+      "churchId": "6ac9b9225017eda79d91466c",
+      "title": "Iglesia Bíblica Alma",
+      "text": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nActividades: Reuniones de Alabanza, Retiros, Voluntariado, Cursos / institutos, Eventos familiares, Bautismos, Campamentos, Evangelismo, Ayuda social, Actividades deportivas, Obras Audiovisuales",
+      "textHash": "e0160626f8460e222d86c6fce84df44b46e956d4797bc74e66fe23af5af5adfe",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "community.activities",
+        "part": 0,
+        "updatedAt": "2026-11-15T19:14:26.208Z",
+        "churchVersion": 64
+      },
+      "testData": false
+    },
+    {
+      "_id": "28f6ea99cc25a2cd1462203d:identification.description:0",
+      "churchId": "28f6ea99cc25a2cd1462203d",
+      "title": "Church of the Blessed Sacrament",
+      "text": "Iglesia: Church of the Blessed Sacrament · Santiago · Santiago\nSobre la iglesia: Inspired by Paris’ Basilique du Sacré-Cœur, this grand Catholic church houses historic sculptures.",
+      "textHash": "d827c1b9239bbc5e59d987a8374a37ef411b0f02df9ab9905e382ccaef0c1749",
+      "documentVersion": "church-public-text-v1",
+      "source": {
+        "kind": "church-public-field",
+        "field": "identification.description",
+        "part": 0,
+        "updatedAt": null,
+        "churchVersion": 1
+      },
+      "testData": true
+    }
+  ]
+}

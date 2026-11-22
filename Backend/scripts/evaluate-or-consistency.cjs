@@ -1,0 +1,19 @@
+const fs=require('node:fs/promises'),path=require('node:path'),assert=require('node:assert/strict'),{createHash}=require('node:crypto');
+const {buildIntent,assessCandidates}=require('../src/services/search-intent.lab'),{prepareChurch}=require('../src/services/church-embedding-document.lab');
+async function main(){
+ const root=path.resolve(__dirname,'../..'),database='koinonia_synthetic_test_v2_local';require('node:dns').setServers(['1.1.1.1']);
+ const env=require('dotenv').parse(await fs.readFile(path.join(root,'Backend/.env'),'utf8')),uri=env.MONGO_URI;
+ if(!uri||!/^mongodb(?:\+srv)?:\/\//.test(uri)||decodeURIComponent(uri.slice(uri.indexOf('://')+3).split('/').slice(1).join('/').split('?')[0])!==database)throw Error('DATABASE_NOT_AUTHORIZED');
+ const sample=JSON.parse(await fs.readFile(path.join(root,'outputs/church-embeddings-local/expanded-vectors-v1.json'),'utf8')),ids=[...new Set(sample.items.map(x=>x.churchId))];assert.equal(ids.length,20);
+ const {MongoClient,ObjectId}=require('mongoose').mongo,client=new MongoClient(uri,{serverSelectionTimeoutMS:15000,connectTimeoutMS:15000,socketTimeoutMS:30000});let churches;
+ try{await client.connect();churches=await client.db(database).collection('churches').find({_id:{$in:ids.map(id=>new ObjectId(id))}},{projection:{_id:1,active:1,mergedInto:1,metadata:1,'importInfo.batchId':1,privateFields:1,identification:1,christianIdentity:1,doctrine:1,community:1,location:1,updatedAt:1}}).toArray();}finally{await client.close();}
+ const current=new Map(churches.flatMap(prepareChurch).map(d=>[d._id,d])),valid=sample.items.filter(d=>current.get(d._id)?.textHash===d.textHash),candidates=valid.map(d=>({churchId:d.churchId,title:d.title,field:d.source.field}));
+ function compare(sources,rows,suffix){const results=['Ñuñoa','Macul','Ñuñoa o Macul'].map(place=>{const query='Busco una iglesia en '+place+suffix+'.',input={requirementsText:query};assert.equal(buildIntent(input).needsClarification,false);const r=assessCandidates(rows,sources,input);return {query,accepted:r.accepted.map(x=>x.churchId).sort(),pending:r.held.filter(x=>x.validation.status==='unknown').map(x=>x.churchId).sort(),excluded:r.held.filter(x=>x.validation.status==='not_satisfied').map(x=>x.churchId).sort()};});
+ for(const key of ['accepted','pending'])assert.deepEqual(results[2][key],[...new Set([...results[0][key],...results[1][key]])].sort());return results;}
+ const live=[compare(churches,candidates,' con retiros'),compare(churches,candidates,'')];
+ const fixtures=['Ñuñoa','Macul','Santiago'].flatMap((commune,i)=>[true,false].map((retiros,j)=>({_id:'fixture-'+i+'-'+j,active:true,metadata:{dataStatus:'published'},identification:{name:'Fixture'},location:{commune},community:{activities:retiros?['Retiros']:[]}})));
+ const synthetic=compare(fixtures,fixtures.map(c=>({churchId:c._id})),' con retiros');assert.equal(synthetic[2].accepted.length,2);assert.equal(synthetic[2].pending.length,2);
+ const report={createdAt:new Date().toISOString(),database,readCount:churches.length,validFragments:valid.length,snapshotHash:createHash('sha256').update(JSON.stringify(churches)).digest('hex'),live,synthetic,passed:true,note:'Una sola lectura; mismos candidatos y fichas en todas las consultas. No ejecuta embeddings: comprueba conjuntos independientemente del orden.'};
+ const dir=path.join(root,'outputs/search-diagnostics/or-consistency');await fs.mkdir(dir,{recursive:true});const file=path.join(dir,'comparison-'+report.createdAt.replace(/[:.]/g,'-')+'.json');await fs.writeFile(file,JSON.stringify(report,null,2));console.log(JSON.stringify({file,passed:true,readCount:churches.length,live:live.map(set=>set.map(r=>({query:r.query,accepted:r.accepted.length,pending:r.pending.length,excluded:r.excluded.length}))),syntheticAccepted:2}));
+}
+main().catch(e=>{console.error(e.name==='AssertionError'?e.message:'OR_CHECK_FAILED');process.exitCode=1;});

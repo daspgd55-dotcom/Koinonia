@@ -1,0 +1,92 @@
+{
+  "schema": "koinonia-search-replay-report-v1",
+  "createdAt": "2026-11-18T16:55:34.410Z",
+  "mode": "offline-interpretation",
+  "suiteHash": "002e88945adad2df696a53b416c57af07a69fac71f769206752609067e11498b",
+  "versions": {
+    "free-search-intent.lab.js": "dbbff69b2475738a9fa16ffcaaa5316db60e290853306588d0f6916cc1acc4ab",
+    "requirement-interpretation.lab.js": "9f7186cbfd6b481791aeb0c34408feb891425edf9c48f2c8ad77e13cfea6b8ce",
+    "search-requirements.lab.js": "9ff262c4a877f7655d6c3564758d1195cd4c96a54db94ba83af1ca17a003555a",
+    "search-intent.lab.js": "cb68d6339cc879818ee92201bcf8e4f1dd201444e881f1c9b8fabcb5da2c8270"
+  },
+  "summary": {
+    "cases": 3,
+    "pass": 0,
+    "fail": 0,
+    "unreviewed": 3,
+    "errors": 0,
+    "improved": 0,
+    "regressed": 0
+  },
+  "rows": [
+    {
+      "id": "12331b220b99f308",
+      "query": "Necesito una iglesia en La Florida; me gustaría que se muevan hacia los de afuera.",
+      "queryHash": "12331b220b99f30896dbe24e3614a6fc0cd794a266c20c3b5c08f102aaf423b5",
+      "expectationHash": "18a469bf3e95b7c7c429cf3e001c825ce393dbb4802a0be0b41613ab10311b5e",
+      "status": "unreviewed",
+      "comparison": "not_comparable",
+      "error": null,
+      "actual": {
+        "kind": "mixed",
+        "needsClarification": false,
+        "criteria": [
+          {
+            "field": "location.commune",
+            "value": "La Florida",
+            "polarity": "include"
+          }
+        ],
+        "interests": [
+          "que se muevan hacia los de afuera"
+        ]
+      },
+      "recordedInterpretationChanged": false,
+      "observations": []
+    },
+    {
+      "id": "e7bb57a798b7e210",
+      "query": "Busco una iglesia con cursos; me interesa conocer su historia.",
+      "queryHash": "e7bb57a798b7e210d7c5a977bd8cd9762a85418de7c0d63559506a166039a2a8",
+      "expectationHash": "18a469bf3e95b7c7c429cf3e001c825ce393dbb4802a0be0b41613ab10311b5e",
+      "status": "unreviewed",
+      "comparison": "not_comparable",
+      "error": null,
+      "actual": {
+        "kind": "mixed",
+        "needsClarification": false,
+        "criteria": [
+          {
+            "field": "community.activities",
+            "value": "Cursos / institutos",
+            "polarity": "include"
+          }
+        ],
+        "interests": [
+          "conocer su historia"
+        ]
+      },
+      "recordedInterpretationChanged": false,
+      "observations": []
+    },
+    {
+      "id": "e17bcb7b158b6e05",
+      "query": "Me interesa una comunidad que sirva a su barrio.",
+      "queryHash": "e17bcb7b158b6e0531007aa1f0fc8afd1a9136ca7482504f0a7865f66cbe2a07",
+      "expectationHash": "18a469bf3e95b7c7c429cf3e001c825ce393dbb4802a0be0b41613ab10311b5e",
+      "status": "unreviewed",
+      "comparison": "not_comparable",
+      "error": null,
+      "actual": {
+        "kind": "descriptive",
+        "needsClarification": false,
+        "criteria": [],
+        "interests": [
+          "una comunidad que sirva a su barrio"
+        ]
+      },
+      "recordedInterpretationChanged": false,
+      "observations": []
+    }
+  ]
+}

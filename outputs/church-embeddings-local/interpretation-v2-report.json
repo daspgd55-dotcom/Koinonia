@@ -1,0 +1,153 @@
+{
+  "createdAt": "2026-11-18T16:49:03.072Z",
+  "newCases": 25,
+  "newCasesPassed": 25,
+  "previousResolved": 7,
+  "previousTotal": 12,
+  "rows": [
+    {
+      "id": "courses",
+      "text": "Busco una iglesia que organice cursos y conferencias.",
+      "criteria": [
+        {
+          "field": "community.activities",
+          "value": "Cursos / institutos",
+          "polarity": "include"
+        },
+        {
+          "field": "community.activities",
+          "value": "Conferencias",
+          "polarity": "include"
+        }
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "sports",
+      "text": "Quiero participar en actividades deportivas de una iglesia.",
+      "criteria": [
+        {
+          "field": "community.activities",
+          "value": "Actividades deportivas",
+          "polarity": "include"
+        }
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "liturgy",
+      "text": "Busco una comunidad con culto litúrgico y eucaristía.",
+      "criteria": [
+        {
+          "field": "doctrine.characteristics",
+          "value": "Culto litúrgico",
+          "polarity": "include"
+        },
+        {
+          "field": "doctrine.characteristics",
+          "value": "Eucaristía",
+          "polarity": "include"
+        }
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "streaming",
+      "text": "Busco un ministerio de streaming en Ñuñoa.",
+      "criteria": [
+        {
+          "field": "community.ministries",
+          "value": "Streaming",
+          "polarity": "include"
+        },
+        {
+          "field": "location.commune",
+          "value": "Ñuñoa",
+          "polarity": "include"
+        }
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "homes",
+      "text": "Quiero conocer una iglesia que visite hogares de adultos mayores y de niños.",
+      "criteria": [],
+      "unresolved": [
+        "Quiero conocer una iglesia que visite hogares de adultos mayores y de niños."
+      ]
+    },
+    {
+      "id": "practical",
+      "text": "Busco prédicas que ayuden a aplicar la fe en la vida cotidiana.",
+      "criteria": [],
+      "unresolved": [
+        "Busco prédicas que ayuden a aplicar la fe en la vida cotidiana."
+      ]
+    },
+    {
+      "id": "baptism",
+      "text": "Busco una iglesia que practique el bautismo de creyentes.",
+      "criteria": [
+        {
+          "field": "doctrine.characteristics",
+          "value": "Bautismo de creyentes",
+          "polarity": "include"
+        }
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "cross_language",
+      "text": "Quiero conocer una iglesia inspirada en el Sagrado Corazón de París que tenga esculturas históricas.",
+      "criteria": [],
+      "unresolved": [
+        "Quiero conocer una iglesia inspirada en el Sagrado Corazón de París que tenga esculturas históricas."
+      ]
+    },
+    {
+      "id": "absent_accessibility",
+      "text": "Necesito una iglesia con intérprete de lengua de señas y baño accesible.",
+      "criteria": [
+        {
+          "field": "location.accessibilityDetails.signLanguage",
+          "value": "yes",
+          "polarity": "include"
+        },
+        {
+          "field": "location.accessibilityDetails.accessibleRestroom",
+          "value": "yes",
+          "polarity": "include"
+        }
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "absent_schedule",
+      "text": "Busco una iglesia con reunión los martes a las ocho de la noche.",
+      "criteria": [],
+      "unresolved": [
+        "Busco una iglesia con reunión los martes a las ocho de la noche."
+      ]
+    },
+    {
+      "id": "unrelated",
+      "text": "Necesito un taller para cambiar las pastillas de freno de mi automóvil.",
+      "criteria": [],
+      "unresolved": [
+        "Necesito un taller para cambiar las pastillas de freno de mi automóvil."
+      ]
+    },
+    {
+      "id": "negation",
+      "text": "Busco una iglesia que no realice actividades deportivas.",
+      "criteria": [
+        {
+          "field": "community.activities",
+          "value": "Actividades deportivas",
+          "polarity": "exclude"
+        }
+      ],
+      "unresolved": []
+    }
+  ]
+}

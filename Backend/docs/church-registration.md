@@ -4,7 +4,7 @@ Implementación local de la primera versión. No se ejecutaron pruebas, comproba
 
 ## Recorrido
 
-`#/inscribe-tu-iglesia` reúne cuatro pasos: iglesia, solicitante, equipo y revisión/consentimientos. La búsqueda de inscripción usa GET /lookup y permite identificar fichas publicadas, borradores e inactivas, por petición expresa del usuario. Solo devuelve ID, nombre, dirección, comuna y ciudad; no devuelve estado interno, contactos, equipo, anotaciones ni la ficha completa. Omite registros fusionados. No amplía los permisos de consulta del catálogo público habitual. Los correos propuestos son privados. El solicitante puede figurar también como representante con el mismo correo; solo se rechazan filas repetidas dentro del equipo. La corrección del correo del solicitante antes de confirmar también admite coincidencia con un representante. No crea cuentas ni concede permisos al enviar.
+`#/inscribe-tu-iglesia` reúne cuatro pasos: iglesia, solicitante, equipo y revisión/consentimientos. El formulario público solicita directamente nombre y ubicación, sin buscador, selección de fichas ni avisos sobre cotejo con la base. La identificación y vinculación se realizan desde la revisión administrativa mediante `/candidates` y `/target`. El formulario no envía `suggestedChurchId`; el contrato opcional y los registros históricos se conservan por compatibilidad. Los correos propuestos son privados. El solicitante puede figurar también como representante con el mismo correo; solo se rechazan filas repetidas dentro del equipo. La corrección del correo del solicitante antes de confirmar también admite coincidencia con un representante. No crea cuentas ni concede permisos al enviar.
 
 La solicitud separada recibe una referencia aleatoria y un enlace de confirmación de 24 horas, consumido mediante POST explícito. La confirmación es independiente de EMAIL_VERIFICATION_REQUIRED. Una sesión privada de seguimiento de dos horas queda solo en memoria del navegador; se recupera mediante referencia y correo, con respuesta genérica. Corregir correo solo es posible antes de confirmarlo. La corrección invalida enlaces anteriores. Se admiten enlaces de confirmación de la primera entrega mientras sigan vigentes.
 
@@ -63,7 +63,7 @@ Todas las rutas bajo `/api/church-registrations`; respuestas privadas con Cache-
 | POST / | Público, cuotas | Crear solicitud y sesión inicial |
 | POST /confirm | Token de un uso | Confirmar/abrir seguimiento |
 | POST /recover | Referencia + correo, respuesta genérica | Renovar enlace |
-| GET /lookup?q=... | Público, cuotas | Buscar registros para inscribir; incluye borradores e inactivos con proyección mínima |
+| GET /lookup?q=... | Público, cuotas | Compatibilidad histórica; no se consulta desde el formulario actual. Incluye borradores e inactivos con proyección mínima |
 | GET /track | X-Registration-Session | Seguimiento privado |
 | POST /respond | Sesión privada + versión | Responder, corregir correo, retirar o pedir privacidad |
 | POST /invitation | Token | Consultar función y destinatario de la invitación |

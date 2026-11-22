@@ -1,0 +1,133 @@
+{
+  "schema": "koinonia-search-replay-report-v1",
+  "createdAt": "2026-11-18T16:55:37.730Z",
+  "mode": "offline-interpretation",
+  "suiteHash": "a1761e9733a6c93f8851eaa8a0d3761c5e7ced4fd7c05ac70cb2a3ac10464249",
+  "versions": {
+    "free-search-intent.lab.js": "dbbff69b2475738a9fa16ffcaaa5316db60e290853306588d0f6916cc1acc4ab",
+    "requirement-interpretation.lab.js": "9f7186cbfd6b481791aeb0c34408feb891425edf9c48f2c8ad77e13cfea6b8ce",
+    "search-requirements.lab.js": "9ff262c4a877f7655d6c3564758d1195cd4c96a54db94ba83af1ca17a003555a",
+    "search-intent.lab.js": "cb68d6339cc879818ee92201bcf8e4f1dd201444e881f1c9b8fabcb5da2c8270"
+  },
+  "summary": {
+    "cases": 5,
+    "pass": 5,
+    "fail": 0,
+    "unreviewed": 0,
+    "errors": 0,
+    "improved": 0,
+    "regressed": 0
+  },
+  "rows": [
+    {
+      "id": "commune-or",
+      "query": "Busco una iglesia en Ñuñoa o Macul.",
+      "queryHash": "f42f58fb4483c98901cf0c247fecf9821fd0f64d2cea920b4e73ed0afc4f025f",
+      "expectationHash": "ea40198e97d3461806d7bfcfc65479e9ed55a60653ebba7d43ae5cd018419299",
+      "status": "pass",
+      "comparison": "not_comparable",
+      "error": null,
+      "actual": {
+        "kind": "required",
+        "needsClarification": false,
+        "criteria": [
+          {
+            "field": "location.commune",
+            "value": [
+              "Macul",
+              "Ñuñoa"
+            ],
+            "polarity": "include"
+          }
+        ],
+        "interests": []
+      },
+      "recordedInterpretationChanged": true,
+      "observations": []
+    },
+    {
+      "id": "negative-sports",
+      "query": "Busco una iglesia sin actividades deportivas.",
+      "queryHash": "fe8cc9e07d722503b857d3efba143e232152eb65b4669cd3404a1be38417047d",
+      "expectationHash": "8cfa2affd73f9bf0780fbabdf82e250f2213bb9f3f4892634a7c77cefc114146",
+      "status": "pass",
+      "comparison": "not_comparable",
+      "error": null,
+      "actual": {
+        "kind": "required",
+        "needsClarification": false,
+        "criteria": [
+          {
+            "field": "community.activities",
+            "value": "Actividades deportivas",
+            "polarity": "exclude"
+          }
+        ],
+        "interests": []
+      },
+      "recordedInterpretationChanged": true,
+      "observations": []
+    },
+    {
+      "id": "mixed",
+      "query": "Necesito una iglesia en Macul; me interesa su historia.",
+      "queryHash": "caf361138565c854922e309be88cf0a85c5052ab92900daf7919988a49728ed0",
+      "expectationHash": "6eb1de6334f10ae2a1a213d12f437f10284d2aa906d9fbf0a8b386e5435f262e",
+      "status": "pass",
+      "comparison": "not_comparable",
+      "error": null,
+      "actual": {
+        "kind": "mixed",
+        "needsClarification": false,
+        "criteria": [
+          {
+            "field": "location.commune",
+            "value": "Macul",
+            "polarity": "include"
+          }
+        ],
+        "interests": [
+          "su historia"
+        ]
+      },
+      "recordedInterpretationChanged": true,
+      "observations": []
+    },
+    {
+      "id": "unknown-requirement",
+      "query": "Necesito una iglesia que abra mañana; me interesa su historia.",
+      "queryHash": "fed6392200671c4aafc174b311a53713994eb18bfe8f3b2e7c258afd7be307d6",
+      "expectationHash": "16ecc0614c37d35b6e16c761e275eb87638549b7cfd78577bf166197a832a5f7",
+      "status": "pass",
+      "comparison": "not_comparable",
+      "error": null,
+      "actual": {
+        "kind": "unresolved",
+        "needsClarification": true,
+        "criteria": [],
+        "interests": [
+          "su historia"
+        ]
+      },
+      "recordedInterpretationChanged": true,
+      "observations": []
+    },
+    {
+      "id": "contradiction",
+      "query": "Busco una iglesia con ascensor y sin ascensor.",
+      "queryHash": "a1774e1d975688dd881fc8b8c5af9ea8d11cd8ad1e782184a7fe2856af4fdb0a",
+      "expectationHash": "375b3cc1b22e07b2a6b3bbee46fa73f794ef681226801b91dd1d01d8229ef328",
+      "status": "pass",
+      "comparison": "not_comparable",
+      "error": null,
+      "actual": {
+        "kind": "unresolved",
+        "needsClarification": true,
+        "criteria": [],
+        "interests": []
+      },
+      "recordedInterpretationChanged": true,
+      "observations": []
+    }
+  ]
+}

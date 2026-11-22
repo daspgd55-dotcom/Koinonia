@@ -1,0 +1,348 @@
+{
+  "schema": "koinonia-search-replay-v1",
+  "sourceHash": "6095e40ec3da8e56340ad88dcf03472fda56d45d74775294db5e177bcc4be89f",
+  "cases": [
+    {
+      "id": "12331b220b99f308",
+      "query": "Necesito una iglesia en La Florida; me gustaría que se muevan hacia los de afuera.",
+      "expectation": {
+        "status": "pending_review",
+        "value": null
+      },
+      "recordedInterpretations": [
+        {
+          "kind": "mixed",
+          "needsClarification": false,
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": "La Florida",
+              "polarity": "include"
+            }
+          ],
+          "interests": [
+            "que se muevan hacia los de afuera"
+          ]
+        }
+      ],
+      "judgments": [
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "6ac9b9225017eda79d91466c",
+          "field": "identification.description",
+          "rating": "useful",
+          "comment": "",
+          "fragment": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nSobre la iglesia: A: Amar a otros como Cristo nos ama L: Liderando hacia la madurez Espiritual M: Movernos hacia los de afuera, para que juntos A: Adoremos a Dios con nuestras vidas Una comunidad que busca crear una revolución de amor. Con el amor que Dios ha derramado para todo el mundo.",
+          "score": 0.43808131227938424
+        }
+      ]
+    },
+    {
+      "id": "e7bb57a798b7e210",
+      "query": "Busco una iglesia con cursos; me interesa conocer su historia.",
+      "expectation": {
+        "status": "pending_review",
+        "value": null
+      },
+      "recordedInterpretations": [
+        {
+          "kind": "mixed",
+          "needsClarification": false,
+          "criteria": [
+            {
+              "field": "community.activities",
+              "value": "Cursos / institutos",
+              "polarity": "include"
+            }
+          ],
+          "interests": [
+            "conocer su historia"
+          ]
+        }
+      ],
+      "judgments": [
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "02defa0c5de6a6057b2bbabe",
+          "field": "community.activities",
+          "rating": "useful",
+          "comment": "",
+          "fragment": "Iglesia: Vineyard church dowtown · Santiago · Santiago\nActividades: Cursos / institutos, Retiros",
+          "score": 0.4224034236007776
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "00e256bfdb4df05e5765c871",
+          "field": "community.activities",
+          "rating": "useful",
+          "comment": "",
+          "fragment": "Iglesia: Primera Iglesia Metodista · Santiago · Santiago\nActividades: Cursos / institutos, Retiros",
+          "score": 0.42150562080008946
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "field": "community.activities",
+          "rating": "useful",
+          "comment": "",
+          "fragment": "Iglesia: Corporacion Metodista Libre De Chile · Santiago · Santiago\nActividades: Conferencias, Cursos / institutos",
+          "score": 0.4099529130849357
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "field": "community.activities",
+          "rating": "useful",
+          "comment": "",
+          "fragment": "Iglesia: Iglesia Cristiana AR chile · Ñuñoa · Santiago\nActividades: Cursos / institutos, Conferencias",
+          "score": 0.40647296509291814
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "6ac9b9225017eda79d91466c",
+          "field": "doctrine.characteristics",
+          "rating": "useful",
+          "comment": "",
+          "fragment": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nDoctrinas y prácticas: Autoridad de las Escrituras, Predicación, Culto contemporáneo, Evangelización, Formación bíblica, Bautismo de creyentes, Misiones",
+          "score": 0.37088852102497305
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "495446dcdd84fdaf0d4f4fa9",
+          "field": "community.activities",
+          "rating": "useful",
+          "comment": "",
+          "fragment": "Iglesia: Hnas Terciarias Misioneras Franciscanas · Ñuñoa · Santiago\nActividades: Reuniones de Alabanza, Evangelismo, Confraternidades, Cursos / institutos",
+          "score": 0.3389922566937431
+        }
+      ]
+    },
+    {
+      "id": "e17bcb7b158b6e05",
+      "query": "Me interesa una comunidad que sirva a su barrio.",
+      "expectation": {
+        "status": "pending_review",
+        "value": null
+      },
+      "recordedInterpretations": [
+        {
+          "kind": "descriptive",
+          "needsClarification": false,
+          "criteria": [],
+          "interests": [
+            "una comunidad que sirva a su barrio"
+          ]
+        }
+      ],
+      "judgments": [
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "6ac9b9225017eda79d91466c",
+          "field": "community.description",
+          "rating": "useful",
+          "comment": "Dice \"Vamos a Hogares de Adultos mayores y de Niños\" y \"Movernos hacia los de afuera\" ya cubre el dominio de un barrio local.",
+          "fragment": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nVida en comunidad: Vamos a Hogares de Adultos mayores y de Niños",
+          "score": 0.28223483363329743
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "186c21a71a29a8fa20363ab9",
+          "field": "community.ministries",
+          "rating": "useful",
+          "comment": "\"Ayuda comunitaria\" Es suficiente para aceptar ayuda en la localidad",
+          "fragment": "Iglesia: ARM Santiago · Ñuñoa · Santiago\nMinisterios: Ayuda comunitaria, Jóvenes",
+          "score": 0.227520768891684
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "00cdd861c45a77a672bba28d",
+          "field": "community.activities",
+          "rating": "useful",
+          "comment": "Voluntariado, Ayuda social, Eventos familiares Tambien es considerable ayuda a barrio",
+          "fragment": "Iglesia: Iglesia San Miguel Arcángel · Santiago · Santiago\nActividades: Voluntariado, Ayuda social, Eventos familiares, Obras Audiovisuales, Confraternidades",
+          "score": 0.21564334746717845
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "00b5fc37b835eedfb5eb2916",
+          "field": "community.ministries",
+          "rating": "useful",
+          "comment": "",
+          "fragment": "Iglesia: Centro de Espiritualidad Ignaciana - CEI Chile · Santiago · Santiago\nMinisterios: Ayuda comunitaria",
+          "score": 0.2119908877500704
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "0095bb2897ed6a7ed6655c50",
+          "field": "community.activities",
+          "rating": "useful",
+          "comment": "",
+          "fragment": "Iglesia: Jesucristo · Santiago · Santiago\nActividades: Voluntariado, Evangelismo, Eventos familiares, Ayuda social",
+          "score": 0.20940806452243732
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "306c02d8ba5fde003056f434",
+          "field": "community.activities",
+          "rating": "useful",
+          "comment": "",
+          "fragment": "Iglesia: Capilla · Ñuñoa · Santiago\nActividades: Voluntariado, Eventos familiares, Reuniones de Alabanza",
+          "score": 0.20682019837455337
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "bdf3e30b6d86b7deb95138e2",
+          "field": "community.activities",
+          "rating": "useful",
+          "comment": "",
+          "fragment": "Iglesia: Gratitud nacional · Pedro Aguirre Cerda · Santiago\nActividades: Evangelismo, Voluntariado, Ayuda social",
+          "score": 0.2042959314928885
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "495446dcdd84fdaf0d4f4fa9",
+          "field": "community.ministries",
+          "rating": "useful",
+          "comment": "",
+          "fragment": "Iglesia: Hnas Terciarias Misioneras Franciscanas · Ñuñoa · Santiago\nMinisterios: Música / alabanza, Misiones, Deportes, Oración, Adultos mayores, Formación bíblica",
+          "score": 0.20144278632460016
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "fac395e6fb5d97b60d812249",
+          "field": "community.ministries",
+          "rating": "useful",
+          "comment": "",
+          "fragment": "Iglesia: Primera Iglesia Metodista Pentecostal de Tiltil · Tiltil · Tiltil\nMinisterios: Streaming, Misiones, Música / alabanza, Jóvenes, Formación bíblica",
+          "score": 0.18761001079481107
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "6929f24fbc5d1ab14dacaf7d",
+          "field": "community.ministries",
+          "rating": "useful",
+          "comment": "",
+          "fragment": "Iglesia: Congregacion Padres Pasionistas · Ñuñoa · Santiago\nMinisterios: Streaming",
+          "score": 0.18537028005025366
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "02defa0c5de6a6057b2bbabe",
+          "field": "community.ministries",
+          "rating": "insufficient",
+          "comment": "",
+          "fragment": "Iglesia: Vineyard church dowtown · Santiago · Santiago\nMinisterios: Formación bíblica, Matrimonios, Consejería",
+          "score": 0.1842637282765643
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "03218dbdd2818ed870a2ec54",
+          "field": "community.ministries",
+          "rating": "insufficient",
+          "comment": "",
+          "fragment": "Iglesia: Parroquia San Andrés · Santiago · Santiago\nMinisterios: Deportes, Streaming, Adultos mayores, Familias, Música / alabanza",
+          "score": 0.17792346192062208
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "00e256bfdb4df05e5765c871",
+          "field": "community.ministries",
+          "rating": "insufficient",
+          "comment": "",
+          "fragment": "Iglesia: Primera Iglesia Metodista · Santiago · Santiago\nMinisterios: Misiones, Jóvenes, Oración, Formación bíblica",
+          "score": 0.17760803633207933
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "field": "community.ministries",
+          "rating": "insufficient",
+          "comment": "",
+          "fragment": "Iglesia: Iglesia Cristiana AR chile · Ñuñoa · Santiago\nMinisterios: Streaming, Formación bíblica, Familias",
+          "score": 0.16878241422444354
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "54eaade8ff61c196a91f9f1e",
+          "field": "community.ministries",
+          "rating": "irrelevant",
+          "comment": "",
+          "fragment": "Iglesia: Augustinians Monastery · Providencia · Providencia\nMinisterios: Jóvenes",
+          "score": 0.1657890738476149
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "155555f8b883bb7066754b67",
+          "field": "community.ministries",
+          "rating": "irrelevant",
+          "comment": "",
+          "fragment": "Iglesia: Iglesia Corpus Domini · Santiago · Santiago\nMinisterios: Deportes",
+          "score": 0.1641183905569184
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "0082f785ddcba9887af730be",
+          "field": "community.ministries",
+          "rating": "insufficient",
+          "comment": "",
+          "fragment": "Iglesia: Ministerío Misionero el Avivamiento y las Misericordias de J · Santiago · Santiago\nMinisterios: Misiones, Streaming, Adultos mayores, Familias",
+          "score": 0.16329387354618735
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "01c14fb15d8b9735dc988189",
+          "field": "community.ministries",
+          "rating": "irrelevant",
+          "comment": "",
+          "fragment": "Iglesia: CEDIN Coquimbo · Santiago · Santiago\nMinisterios: Streaming, Oración",
+          "score": 0.15395708857811025
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "field": "community.ministries",
+          "rating": "irrelevant",
+          "comment": "",
+          "fragment": "Iglesia: Corporacion Metodista Libre De Chile · Santiago · Santiago\nMinisterios: Formación bíblica",
+          "score": 0.15136964621404886
+        },
+        {
+          "mode": "full",
+          "kind": "result",
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "field": "identification.description",
+          "rating": "irrelevant",
+          "comment": "",
+          "fragment": "Iglesia: Church of the Blessed Sacrament · Santiago · Santiago\nSobre la iglesia: Inspired by Paris’ Basilique du Sacré-Cœur, this grand Catholic church houses historic sculptures.",
+          "score": 0.12659419642088363
+        }
+      ]
+    }
+  ]
+}

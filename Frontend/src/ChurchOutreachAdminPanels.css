@@ -1,0 +1,92 @@
+/* Paneles y ajustes finales. Mantener después de la base. */
+
+.oa-mail-preview,.oa-mail-batch{border:1px solid #ccd8d0;padding:18px;border-radius:10px;margin:18px 0}
+.oa-mail-preview pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.7}
+.oa-mail-selection{padding-left:20px}
+.oa-mail-selection li{margin:20px 0}
+
+
+.oa-page>header{background:transparent;color:#17232d}
+
+
+.oa-page .oa-fold{background:#f7f9f5;border:1px solid #ccd8cf;border-radius:12px;margin:16px 0;padding:0 18px}
+.oa-fold>summary{font-weight:650;color:#245851}
+.oa-fold[open]{padding-bottom:16px}
+
+
+/* Shared layout for invitation administration. */
+.oa-page{color:#17232d}
+.oa-page *{box-sizing:border-box}
+.oa-page>header{padding:0;margin-bottom:28px;max-width:800px}
+.oa-page>header>a{display:inline-block;margin-bottom:16px}
+.oa-page h1{margin:0 0 12px;line-height:1.15}
+.oa-page h2{margin:0 0 12px;line-height:1.3}
+.oa-page h3{margin:24px 0 12px;line-height:1.4}
+.oa-page h4{margin:0 0 12px;line-height:1.5}
+.oa-page p{margin:12px 0}
+.oa-page button{margin:0;padding:10px 16px;line-height:1.45;white-space:normal;max-width:100%;height:auto}
+.oa-page button+button{margin-left:8px}
+.oa-page fieldset{margin:0 0 24px}
+.oa-page label{margin:0 0 20px}
+.oa-page input:not([type=checkbox]):not([type=radio]),.oa-page select{min-height:44px;min-width:0;padding:10px 12px}
+.oa-page input[type=checkbox],.oa-page input[type=radio]{display:inline-block;width:20px;height:20px;min-width:20px;min-height:20px;margin:3px 10px 0 0;vertical-align:top;accent-color:#1c5951}
+.oa-page label:has(>input[type=checkbox]):not(:has(>input:not([type=checkbox]))){display:flex;align-items:flex-start;gap:12px;font-weight:400}
+.oa-page label:has(>input[type=checkbox])>input[type=checkbox]{flex:0 0 20px;margin:3px 0 0}
+.oa-page label>span{min-width:0}
+.oa-grid{gap:20px 24px}
+.oa-grid>label,.oa-filters>label{margin:0}
+.oa-filters{padding:20px;background:#f4f7f4;border:1px solid #d2dcd4;border-radius:12px;margin:24px 0;gap:16px}
+.oa-tabs{gap:8px;margin:20px 0 24px;padding-bottom:16px;border-bottom:1px solid #d2dcd4}
+.oa-tabs button+button,.oa-actions button+button{margin-left:0}
+.oa-actions{gap:12px;margin:24px 0;align-items:end}
+.oa-actions>label{margin:0;min-width:220px}
+.oa-card{padding:28px;margin:24px 0;min-width:0}
+.oa-card>:first-child{margin-top:0}
+.oa-card>:last-child{margin-bottom:0}
+.oa-card .oa-card,.oa-item{padding:20px;border:1px solid #d2dcd4;border-radius:12px;margin:16px 0;background:#fafcf9}
+.oa-card .oa-card>h3,.oa-item>h3{margin-top:0}
+.oa-section{border-top:1px solid #d2dcd4;padding-top:28px;margin-top:32px}
+.oa-status{gap:12px;margin:24px 0}
+.oa-status dd{line-height:1.5}
+.oa-cycles li,.oa-results li{padding:20px 0}
+.oa-cycles li>button,.oa-results li>button{margin-top:12px}
+.oa-page summary{padding:12px 4px;font-weight:600}
+.oa-page details[open]>summary{margin-bottom:12px}
+.oa-page details form{padding:12px 0}
+.oa-page .oa-check{margin:16px 0}
+.oa-table-wrap{max-width:100%;overflow-x:auto;margin:24px 0;border:1px solid #d2dcd4;border-radius:12px}
+.oa-page table{border-collapse:collapse;width:100%;min-width:760px;text-align:left}
+.oa-page th{background:#edf3ed;font-size:14px}
+.oa-page th,.oa-page td{padding:16px;vertical-align:top;border-bottom:1px solid #d2dcd4;line-height:1.6}
+.oa-page th:first-child{width:140px}
+.oa-page td:nth-child(2){min-width:180px}
+.oa-page td:last-child{min-width:300px}
+.oa-page table label{margin-bottom:12px}
+.oa-page table details{margin-top:12px}
+.oa-field{padding:16px;background:#f4f7f4;border-radius:10px;margin:16px 0}
+.oa-field>label:last-child{margin-bottom:0}
+.oa-page [role=status]:not(:empty){padding:14px 16px;background:#edf5f0;border-left:3px solid #327c74;border-radius:6px;margin:20px 0;line-height:1.6}
+.oa-page [role=status]:empty{display:none}
+.oa-mail-selection{padding:0;list-style:none}
+.oa-mail-selection li{padding:20px;background:#f4f7f4;border:1px solid #d2dcd4;border-radius:12px}
+.oa-mail-preview iframe{max-width:100%}
+.oa-footnote{border-top:1px solid #d2dcd4;padding-top:20px;margin-top:32px!important}
+.oa-badge{display:inline-block;padding:5px 10px;background:#e8f0ea;color:#244d47;border-radius:6px;font-size:14px;font-weight:600;line-height:1.5}
+
+@media(max-width:760px){.oa-page{padding:0 16px}
+.oa-page h2{font-size:23px}
+.oa-card{padding:20px 16px}
+.oa-card .oa-card,.oa-item{padding:16px}
+.oa-grid,.oa-filters,.oa-people{grid-template-columns:1fr;gap:18px}
+.oa-actions{align-items:stretch}
+.oa-actions>label{width:100%;min-width:0}
+.oa-actions>button{flex:1 1 180px}
+.oa-actions>span{width:100%;text-align:center;order:-1}
+.oa-page button+button{margin-left:0;margin-top:8px}
+.oa-tabs button+button,.oa-actions button+button{margin-top:0}
+.oa-tabs{gap:8px}
+.oa-tabs button{flex:1 1 145px}
+.oa-status{grid-template-columns:repeat(2,minmax(0,1fr))}
+.oa-page .oa-grid>label{margin:0}
+}
+
