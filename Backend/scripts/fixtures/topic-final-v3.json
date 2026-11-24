@@ -1,0 +1,32 @@
+[
+  [
+    "Ayudar a familias necesitadas",
+    "Apoyo social",
+    true
+  ],
+  [
+    "Hacer deportes",
+    "Actividades deportivas",
+    true
+  ],
+  [
+    "Ayuda comunitaria gratuita",
+    "Ayuda social",
+    false
+  ],
+  [
+    "Apoyo social",
+    "Planeamos ofrecer ayuda social",
+    false
+  ],
+  [
+    "Actividad deportiva",
+    "No hay actividades deportivas",
+    false
+  ],
+  [
+    "Santa Cena",
+    "Eucaristía",
+    false
+  ]
+]

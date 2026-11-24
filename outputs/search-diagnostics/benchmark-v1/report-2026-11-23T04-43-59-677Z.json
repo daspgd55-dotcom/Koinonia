@@ -1,0 +1,2912 @@
+{
+  "createdAt": "2026-11-23T04:43:59.677Z",
+  "suiteHash": "b144d72d6a98d1aa10853e1438476662549e26946e769d4aa26e9666eec729be",
+  "snapshotHash": "7fbf68b8023daf8a763f01c959c40ec42a9f2298867b8c9e26dbf2d10c0d73eb",
+  "readCount": 20,
+  "validFragments": 45,
+  "rows": [
+    {
+      "id": "new-01",
+      "split": "adjustment",
+      "category": "ubicacion",
+      "query": "Busco una iglesia en La Reina con conferencias.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia en La Reina con conferencias.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": "La Reina",
+              "polarity": "include"
+            },
+            {
+              "field": "community.activities",
+              "value": "Conferencias",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia en La Reina con conferencias.",
+            "start": 0,
+            "end": 47,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.commune",
+                "value": "La Reina",
+                "polarity": "include"
+              },
+              {
+                "field": "community.activities",
+                "value": "Conferencias",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia en La Reina con conferencias."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [],
+      "topicStatus": "not_requested",
+      "displayed": [],
+      "proxyRelevantIds": [],
+      "proxyHit3": null,
+      "abstentionPass": null,
+      "ms": 5543
+    },
+    {
+      "id": "new-02",
+      "split": "adjustment",
+      "category": "ubicacion",
+      "query": "Busco una iglesia con conferencias en La Reina.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia con conferencias en La Reina.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "community.activities",
+              "value": "Conferencias",
+              "polarity": "include"
+            },
+            {
+              "field": "location.commune",
+              "value": "La Reina",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia con conferencias en La Reina.",
+            "start": 0,
+            "end": 47,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "community.activities",
+                "value": "Conferencias",
+                "polarity": "include"
+              },
+              {
+                "field": "location.commune",
+                "value": "La Reina",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia con conferencias en La Reina."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [],
+      "topicStatus": "not_requested",
+      "displayed": [],
+      "proxyRelevantIds": [],
+      "proxyHit3": null,
+      "abstentionPass": null,
+      "ms": 78
+    },
+    {
+      "id": "new-03",
+      "split": "adjustment",
+      "category": "alternativas",
+      "query": "Necesito una iglesia en Renca o Quilicura con voluntariado.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Necesito una iglesia en Renca o Quilicura con voluntariado.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": [
+                "Renca",
+                "Quilicura"
+              ],
+              "polarity": "include"
+            },
+            {
+              "field": "community.activities",
+              "value": "Voluntariado",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Necesito una iglesia en Renca o Quilicura con voluntariado.",
+            "start": 0,
+            "end": 59,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.commune",
+                "value": [
+                  "Renca",
+                  "Quilicura"
+                ],
+                "polarity": "include"
+              },
+              {
+                "field": "community.activities",
+                "value": "Voluntariado",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Necesito una iglesia en Renca o Quilicura con voluntariado."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [],
+      "topicStatus": "not_requested",
+      "displayed": [],
+      "proxyRelevantIds": [],
+      "proxyHit3": null,
+      "abstentionPass": null,
+      "ms": 115
+    },
+    {
+      "id": "new-04",
+      "split": "adjustment",
+      "category": "alternativas",
+      "query": "Necesito una iglesia con voluntariado en Quilicura o Renca.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Necesito una iglesia con voluntariado en Quilicura o Renca.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "community.activities",
+              "value": "Voluntariado",
+              "polarity": "include"
+            },
+            {
+              "field": "location.commune",
+              "value": [
+                "Quilicura",
+                "Renca"
+              ],
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Necesito una iglesia con voluntariado en Quilicura o Renca.",
+            "start": 0,
+            "end": 59,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "community.activities",
+                "value": "Voluntariado",
+                "polarity": "include"
+              },
+              {
+                "field": "location.commune",
+                "value": [
+                  "Quilicura",
+                  "Renca"
+                ],
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Necesito una iglesia con voluntariado en Quilicura o Renca."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [],
+      "topicStatus": "not_requested",
+      "displayed": [],
+      "proxyRelevantIds": [],
+      "proxyHit3": null,
+      "abstentionPass": null,
+      "ms": 83
+    },
+    {
+      "id": "new-05",
+      "split": "adjustment",
+      "category": "negacion",
+      "query": "Busco una iglesia en Santiago sin retiros.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia en Santiago sin retiros.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": "Santiago",
+              "polarity": "include"
+            },
+            {
+              "field": "community.activities",
+              "value": "Retiros",
+              "polarity": "exclude"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia en Santiago sin retiros.",
+            "start": 0,
+            "end": 42,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.commune",
+                "value": "Santiago",
+                "polarity": "include"
+              },
+              {
+                "field": "community.activities",
+                "value": "Retiros",
+                "polarity": "exclude"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia en Santiago sin retiros."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [],
+      "topicStatus": "not_requested",
+      "displayed": [],
+      "proxyRelevantIds": [],
+      "proxyHit3": null,
+      "abstentionPass": null,
+      "ms": 76
+    },
+    {
+      "id": "new-06",
+      "split": "adjustment",
+      "category": "negacion",
+      "query": "Busco una iglesia sin retiros en Santiago.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia sin retiros en Santiago.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "community.activities",
+              "value": "Retiros",
+              "polarity": "exclude"
+            },
+            {
+              "field": "location.commune",
+              "value": "Santiago",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia sin retiros en Santiago.",
+            "start": 0,
+            "end": 42,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "community.activities",
+                "value": "Retiros",
+                "polarity": "exclude"
+              },
+              {
+                "field": "location.commune",
+                "value": "Santiago",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia sin retiros en Santiago."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [],
+      "topicStatus": "not_requested",
+      "displayed": [],
+      "proxyRelevantIds": [],
+      "proxyHit3": null,
+      "abstentionPass": null,
+      "ms": 79
+    },
+    {
+      "id": "new-07",
+      "split": "adjustment",
+      "category": "contradiccion",
+      "query": "Busco una iglesia con rampa sin rampa.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia con rampa sin rampa.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": [
+            "Busco una iglesia con rampa sin rampa."
+          ]
+        },
+        "interests": [],
+        "evidence": [],
+        "needsClarification": true,
+        "kind": "unresolved",
+        "retrievalText": "Busco una iglesia con rampa sin rampa."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "blocked",
+      "ms": 2
+    },
+    {
+      "id": "new-08",
+      "split": "adjustment",
+      "category": "contradiccion",
+      "query": "Necesito una iglesia sin rampa con rampa.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Necesito una iglesia sin rampa con rampa.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": [
+            "Necesito una iglesia sin rampa con rampa."
+          ]
+        },
+        "interests": [],
+        "evidence": [],
+        "needsClarification": true,
+        "kind": "unresolved",
+        "retrievalText": "Necesito una iglesia sin rampa con rampa."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "blocked",
+      "ms": 1
+    },
+    {
+      "id": "new-09",
+      "split": "adjustment",
+      "category": "desconocido",
+      "query": "Necesito una iglesia con guardería nocturna.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Necesito una iglesia con guardería nocturna.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": [
+            "Necesito una iglesia con guardería nocturna."
+          ]
+        },
+        "interests": [],
+        "evidence": [],
+        "needsClarification": true,
+        "kind": "unresolved",
+        "retrievalText": "Necesito una iglesia con guardería nocturna."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "blocked",
+      "ms": 1
+    },
+    {
+      "id": "new-10",
+      "split": "adjustment",
+      "category": "desconocido",
+      "query": "Busco una iglesia con estacionamiento subterráneo.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia con estacionamiento subterráneo.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": [
+            "Busco una iglesia con estacionamiento subterráneo."
+          ]
+        },
+        "interests": [],
+        "evidence": [],
+        "needsClarification": true,
+        "kind": "unresolved",
+        "retrievalText": "Busco una iglesia con estacionamiento subterráneo."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "blocked",
+      "ms": 1
+    },
+    {
+      "id": "new-11",
+      "split": "adjustment",
+      "category": "sinonimos",
+      "query": "Me interesa una comunidad con ayuda social.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una comunidad con ayuda social.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una comunidad con ayuda social",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 43,
+              "text": "Me interesa una comunidad con ayuda social."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una comunidad con ayuda social.",
+            "start": 0,
+            "end": 43,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una comunidad con ayuda social."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "fragment": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nVida en comunidad: Vamos a Hogares de Adultos mayores y de Niños",
+          "field": "community.description",
+          "score": 0.2774975348203221,
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "186c21a71a29a8fa20363ab9",
+          "title": "ARM Santiago",
+          "fragment": "Iglesia: ARM Santiago · Ñuñoa · Santiago\nActividades: Ayuda social, Actividades deportivas, Campamentos",
+          "field": "community.activities",
+          "score": 0.25462388270613967,
+          "validation": {
+            "churchId": "186c21a71a29a8fa20363ab9",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "0095bb2897ed6a7ed6655c50",
+          "title": "Jesucristo",
+          "fragment": "Iglesia: Jesucristo · Santiago · Santiago\nActividades: Voluntariado, Evangelismo, Eventos familiares, Ayuda social",
+          "field": "community.activities",
+          "score": 0.2529471915059043,
+          "validation": {
+            "churchId": "0095bb2897ed6a7ed6655c50",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        }
+      ],
+      "topicStatus": "textual_support",
+      "displayed": [
+        {
+          "id": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma"
+        },
+        {
+          "id": "186c21a71a29a8fa20363ab9",
+          "title": "ARM Santiago"
+        },
+        {
+          "id": "0095bb2897ed6a7ed6655c50",
+          "title": "Jesucristo"
+        },
+        {
+          "id": "00cdd861c45a77a672bba28d",
+          "title": "Iglesia San Miguel Arcángel"
+        },
+        {
+          "id": "bdf3e30b6d86b7deb95138e2",
+          "title": "Gratitud nacional"
+        },
+        {
+          "id": "00b5fc37b835eedfb5eb2916",
+          "title": "Centro de Espiritualidad Ignaciana - CEI Chile"
+        }
+      ],
+      "proxyRelevantIds": [
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "186c21a71a29a8fa20363ab9",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d"
+      ],
+      "proxyHit3": true,
+      "abstentionPass": null,
+      "ms": 71
+    },
+    {
+      "id": "new-12",
+      "split": "adjustment",
+      "category": "sinonimos",
+      "query": "Me interesa una comunidad que apoye a vecinos necesitados.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una comunidad que apoye a vecinos necesitados.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una comunidad que apoye a vecinos necesitados",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 58,
+              "text": "Me interesa una comunidad que apoye a vecinos necesitados."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una comunidad que apoye a vecinos necesitados.",
+            "start": 0,
+            "end": 58,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una comunidad que apoye a vecinos necesitados."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "fragment": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nVida en comunidad: Vamos a Hogares de Adultos mayores y de Niños",
+          "field": "community.description",
+          "score": 0.2966706340096407,
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "00cdd861c45a77a672bba28d",
+          "title": "Iglesia San Miguel Arcángel",
+          "fragment": "Iglesia: Iglesia San Miguel Arcángel · Santiago · Santiago\nActividades: Voluntariado, Ayuda social, Eventos familiares, Obras Audiovisuales, Confraternidades",
+          "field": "community.activities",
+          "score": 0.2627182456761109,
+          "validation": {
+            "churchId": "00cdd861c45a77a672bba28d",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "0095bb2897ed6a7ed6655c50",
+          "title": "Jesucristo",
+          "fragment": "Iglesia: Jesucristo · Santiago · Santiago\nActividades: Voluntariado, Evangelismo, Eventos familiares, Ayuda social",
+          "field": "community.activities",
+          "score": 0.25210122739736107,
+          "validation": {
+            "churchId": "0095bb2897ed6a7ed6655c50",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        }
+      ],
+      "topicStatus": "insufficient_evidence",
+      "displayed": [],
+      "proxyRelevantIds": [
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "186c21a71a29a8fa20363ab9",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d"
+      ],
+      "proxyHit3": true,
+      "abstentionPass": null,
+      "ms": 78
+    },
+    {
+      "id": "new-13",
+      "split": "adjustment",
+      "category": "sinonimos",
+      "query": "Me interesa una iglesia con actividades deportivas.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una iglesia con actividades deportivas.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una iglesia con actividades deportivas",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 51,
+              "text": "Me interesa una iglesia con actividades deportivas."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una iglesia con actividades deportivas.",
+            "start": 0,
+            "end": 51,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una iglesia con actividades deportivas."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "fragment": "Iglesia: Iglesia Corpus Domini · Santiago · Santiago\nActividades: Actividades deportivas",
+          "field": "community.activities",
+          "score": 0.5413672925873648,
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "54eaade8ff61c196a91f9f1e",
+          "title": "Augustinians Monastery",
+          "fragment": "Iglesia: Augustinians Monastery · Providencia · Providencia\nActividades: Actividades deportivas, Retiros, Campamentos",
+          "field": "community.activities",
+          "score": 0.4700903954492628,
+          "validation": {
+            "churchId": "54eaade8ff61c196a91f9f1e",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "186c21a71a29a8fa20363ab9",
+          "title": "ARM Santiago",
+          "fragment": "Iglesia: ARM Santiago · Ñuñoa · Santiago\nActividades: Ayuda social, Actividades deportivas, Campamentos",
+          "field": "community.activities",
+          "score": 0.4643689471631297,
+          "validation": {
+            "churchId": "186c21a71a29a8fa20363ab9",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        }
+      ],
+      "topicStatus": "textual_support",
+      "displayed": [
+        {
+          "id": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini"
+        },
+        {
+          "id": "54eaade8ff61c196a91f9f1e",
+          "title": "Augustinians Monastery"
+        },
+        {
+          "id": "186c21a71a29a8fa20363ab9",
+          "title": "ARM Santiago"
+        },
+        {
+          "id": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma"
+        },
+        {
+          "id": "03218dbdd2818ed870a2ec54",
+          "title": "Parroquia San Andrés"
+        }
+      ],
+      "proxyRelevantIds": [
+        "155555f8b883bb7066754b67",
+        "6ac9b9225017eda79d91466c",
+        "54eaade8ff61c196a91f9f1e",
+        "186c21a71a29a8fa20363ab9",
+        "03218dbdd2818ed870a2ec54"
+      ],
+      "proxyHit3": true,
+      "abstentionPass": null,
+      "ms": 68
+    },
+    {
+      "id": "new-14",
+      "split": "adjustment",
+      "category": "sinonimos",
+      "query": "Me interesa una iglesia donde practicar deportes.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una iglesia donde practicar deportes.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una iglesia donde practicar deportes",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 49,
+              "text": "Me interesa una iglesia donde practicar deportes."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una iglesia donde practicar deportes.",
+            "start": 0,
+            "end": 49,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una iglesia donde practicar deportes."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [
+        {
+          "churchId": "155555f8b883bb7066754b67",
+          "title": "Iglesia Corpus Domini",
+          "fragment": "Iglesia: Iglesia Corpus Domini · Santiago · Santiago\nActividades: Actividades deportivas",
+          "field": "community.activities",
+          "score": 0.5175837304159503,
+          "validation": {
+            "churchId": "155555f8b883bb7066754b67",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "54eaade8ff61c196a91f9f1e",
+          "title": "Augustinians Monastery",
+          "fragment": "Iglesia: Augustinians Monastery · Providencia · Providencia\nActividades: Actividades deportivas, Retiros, Campamentos",
+          "field": "community.activities",
+          "score": 0.44813309776540317,
+          "validation": {
+            "churchId": "54eaade8ff61c196a91f9f1e",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "186c21a71a29a8fa20363ab9",
+          "title": "ARM Santiago",
+          "fragment": "Iglesia: ARM Santiago · Ñuñoa · Santiago\nActividades: Ayuda social, Actividades deportivas, Campamentos",
+          "field": "community.activities",
+          "score": 0.42392805912027043,
+          "validation": {
+            "churchId": "186c21a71a29a8fa20363ab9",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        }
+      ],
+      "topicStatus": "insufficient_evidence",
+      "displayed": [],
+      "proxyRelevantIds": [
+        "155555f8b883bb7066754b67",
+        "6ac9b9225017eda79d91466c",
+        "54eaade8ff61c196a91f9f1e",
+        "186c21a71a29a8fa20363ab9",
+        "03218dbdd2818ed870a2ec54"
+      ],
+      "proxyHit3": true,
+      "abstentionPass": null,
+      "ms": 66
+    },
+    {
+      "id": "new-15",
+      "split": "adjustment",
+      "category": "sin_evidencia",
+      "query": "Me interesa una iglesia con clases de pilotaje de helicópteros.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una iglesia con clases de pilotaje de helicópteros.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una iglesia con clases de pilotaje de helicópteros",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 63,
+              "text": "Me interesa una iglesia con clases de pilotaje de helicópteros."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una iglesia con clases de pilotaje de helicópteros.",
+            "start": 0,
+            "end": 63,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una iglesia con clases de pilotaje de helicópteros."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [
+        {
+          "churchId": "02defa0c5de6a6057b2bbabe",
+          "title": "Vineyard church dowtown",
+          "fragment": "Iglesia: Vineyard church dowtown · Santiago · Santiago\nActividades: Cursos / institutos, Retiros",
+          "field": "community.activities",
+          "score": 0.33862719373442296,
+          "validation": {
+            "churchId": "02defa0c5de6a6057b2bbabe",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "fragment": "Iglesia: Corporacion Metodista Libre De Chile · Santiago · Santiago\nActividades: Conferencias, Cursos / institutos",
+          "field": "community.activities",
+          "score": 0.33652566074839807,
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "fragment": "Iglesia: Iglesia Cristiana AR chile · Ñuñoa · Santiago\nDoctrinas y prácticas: Formación bíblica, Sacramentos / ordenanzas",
+          "field": "doctrine.characteristics",
+          "score": 0.33114758215609374,
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        }
+      ],
+      "topicStatus": "insufficient_evidence",
+      "displayed": [],
+      "proxyRelevantIds": [],
+      "proxyHit3": null,
+      "abstentionPass": true,
+      "ms": 67
+    },
+    {
+      "id": "new-16",
+      "split": "adjustment",
+      "category": "sin_evidencia",
+      "query": "Me interesa una comunidad con fabricación de microprocesadores.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una comunidad con fabricación de microprocesadores.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una comunidad con fabricación de microprocesadores",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 63,
+              "text": "Me interesa una comunidad con fabricación de microprocesadores."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una comunidad con fabricación de microprocesadores.",
+            "start": 0,
+            "end": 63,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una comunidad con fabricación de microprocesadores."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [
+        {
+          "churchId": "00cdd861c45a77a672bba28d",
+          "title": "Iglesia San Miguel Arcángel",
+          "fragment": "Iglesia: Iglesia San Miguel Arcángel · Santiago · Santiago\nActividades: Voluntariado, Ayuda social, Eventos familiares, Obras Audiovisuales, Confraternidades",
+          "field": "community.activities",
+          "score": 0.18352740868183368,
+          "validation": {
+            "churchId": "00cdd861c45a77a672bba28d",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "fragment": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nVida en comunidad: Vamos a Hogares de Adultos mayores y de Niños",
+          "field": "community.description",
+          "score": 0.1786919505390535,
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "fac395e6fb5d97b60d812249",
+          "title": "Primera Iglesia Metodista Pentecostal de Tiltil",
+          "fragment": "Iglesia: Primera Iglesia Metodista Pentecostal de Tiltil · Tiltil · Tiltil\nActividades: Campamentos, Evangelismo, Reuniones de Alabanza, Conferencias",
+          "field": "community.activities",
+          "score": 0.16973802919525005,
+          "validation": {
+            "churchId": "fac395e6fb5d97b60d812249",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        }
+      ],
+      "topicStatus": "insufficient_evidence",
+      "displayed": [],
+      "proxyRelevantIds": [],
+      "proxyHit3": null,
+      "abstentionPass": true,
+      "ms": 77
+    },
+    {
+      "id": "new-17",
+      "split": "adjustment",
+      "category": "mixta",
+      "query": "Busco una iglesia en Santiago; me interesa voluntariado.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia en Santiago; me interesa voluntariado.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": "Santiago",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "voluntariado",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 31,
+              "end": 56,
+              "text": "me interesa voluntariado."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Busco una iglesia en Santiago",
+            "start": 0,
+            "end": 29,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.commune",
+                "value": "Santiago",
+                "polarity": "include"
+              }
+            ]
+          },
+          {
+            "text": "me interesa voluntariado.",
+            "start": 31,
+            "end": 56,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "mixed",
+        "retrievalText": "Busco una iglesia en Santiago; me interesa voluntariado."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "155555f8b883bb7066754b67",
+        "28f6ea99cc25a2cd1462203d",
+        "e6d7e42e79ea95ae9e831496"
+      ],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [
+        {
+          "churchId": "0095bb2897ed6a7ed6655c50",
+          "title": "Jesucristo",
+          "fragment": "Iglesia: Jesucristo · Santiago · Santiago\nActividades: Voluntariado, Evangelismo, Eventos familiares, Ayuda social",
+          "field": "community.activities",
+          "score": 0.2899321377837908,
+          "validation": {
+            "churchId": "0095bb2897ed6a7ed6655c50",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "location.commune",
+                "value": "Santiago",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_single_value",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "Santiago",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "00cdd861c45a77a672bba28d",
+          "title": "Iglesia San Miguel Arcángel",
+          "fragment": "Iglesia: Iglesia San Miguel Arcángel · Santiago · Santiago\nActividades: Voluntariado, Ayuda social, Eventos familiares, Obras Audiovisuales, Confraternidades",
+          "field": "community.activities",
+          "score": 0.26324971373513795,
+          "validation": {
+            "churchId": "00cdd861c45a77a672bba28d",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "location.commune",
+                "value": "Santiago",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_single_value",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "Santiago",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "00b5fc37b835eedfb5eb2916",
+          "title": "Centro de Espiritualidad Ignaciana - CEI Chile",
+          "fragment": "Iglesia: Centro de Espiritualidad Ignaciana - CEI Chile · Santiago · Santiago\nActividades: Voluntariado, Ayuda social",
+          "field": "community.activities",
+          "score": 0.2511803375612249,
+          "validation": {
+            "churchId": "00b5fc37b835eedfb5eb2916",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "location.commune",
+                "value": "Santiago",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_single_value",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "Santiago",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ],
+      "topicStatus": "textual_support",
+      "displayed": [
+        {
+          "id": "0095bb2897ed6a7ed6655c50",
+          "title": "Jesucristo"
+        },
+        {
+          "id": "00cdd861c45a77a672bba28d",
+          "title": "Iglesia San Miguel Arcángel"
+        },
+        {
+          "id": "00b5fc37b835eedfb5eb2916",
+          "title": "Centro de Espiritualidad Ignaciana - CEI Chile"
+        }
+      ],
+      "proxyRelevantIds": [
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "306c02d8ba5fde003056f434",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d"
+      ],
+      "proxyHit3": true,
+      "abstentionPass": null,
+      "ms": 74
+    },
+    {
+      "id": "new-18",
+      "split": "adjustment",
+      "category": "mixta",
+      "query": "Me interesa voluntariado; busco una iglesia en Santiago.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa voluntariado; busco una iglesia en Santiago.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": "Santiago",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "voluntariado",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 24,
+              "text": "Me interesa voluntariado"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa voluntariado",
+            "start": 0,
+            "end": 24,
+            "kind": "interest"
+          },
+          {
+            "text": "busco una iglesia en Santiago.",
+            "start": 26,
+            "end": 56,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.commune",
+                "value": "Santiago",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "mixed",
+        "retrievalText": "Me interesa voluntariado; busco una iglesia en Santiago."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "155555f8b883bb7066754b67",
+        "28f6ea99cc25a2cd1462203d",
+        "e6d7e42e79ea95ae9e831496"
+      ],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [
+        {
+          "churchId": "0095bb2897ed6a7ed6655c50",
+          "title": "Jesucristo",
+          "fragment": "Iglesia: Jesucristo · Santiago · Santiago\nActividades: Voluntariado, Evangelismo, Eventos familiares, Ayuda social",
+          "field": "community.activities",
+          "score": 0.2899321377837908,
+          "validation": {
+            "churchId": "0095bb2897ed6a7ed6655c50",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "location.commune",
+                "value": "Santiago",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_single_value",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "Santiago",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "00cdd861c45a77a672bba28d",
+          "title": "Iglesia San Miguel Arcángel",
+          "fragment": "Iglesia: Iglesia San Miguel Arcángel · Santiago · Santiago\nActividades: Voluntariado, Ayuda social, Eventos familiares, Obras Audiovisuales, Confraternidades",
+          "field": "community.activities",
+          "score": 0.26324971373513795,
+          "validation": {
+            "churchId": "00cdd861c45a77a672bba28d",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "location.commune",
+                "value": "Santiago",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_single_value",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "Santiago",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "00b5fc37b835eedfb5eb2916",
+          "title": "Centro de Espiritualidad Ignaciana - CEI Chile",
+          "fragment": "Iglesia: Centro de Espiritualidad Ignaciana - CEI Chile · Santiago · Santiago\nActividades: Voluntariado, Ayuda social",
+          "field": "community.activities",
+          "score": 0.2511803375612249,
+          "validation": {
+            "churchId": "00b5fc37b835eedfb5eb2916",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "location.commune",
+                "value": "Santiago",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_single_value",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "Santiago",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ],
+      "topicStatus": "textual_support",
+      "displayed": [
+        {
+          "id": "0095bb2897ed6a7ed6655c50",
+          "title": "Jesucristo"
+        },
+        {
+          "id": "00cdd861c45a77a672bba28d",
+          "title": "Iglesia San Miguel Arcángel"
+        },
+        {
+          "id": "00b5fc37b835eedfb5eb2916",
+          "title": "Centro de Espiritualidad Ignaciana - CEI Chile"
+        }
+      ],
+      "proxyRelevantIds": [
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "306c02d8ba5fde003056f434",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d"
+      ],
+      "proxyHit3": true,
+      "abstentionPass": null,
+      "ms": 73
+    },
+    {
+      "id": "new-19",
+      "split": "adjustment",
+      "category": "sinonimos_requisito",
+      "query": "Busco una iglesia con baño accesible.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia con baño accesible.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.accessibilityDetails.accessibleRestroom",
+              "value": "yes",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia con baño accesible.",
+            "start": 0,
+            "end": 37,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.accessibilityDetails.accessibleRestroom",
+                "value": "yes",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia con baño accesible."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [],
+      "topicStatus": "not_requested",
+      "displayed": [],
+      "proxyRelevantIds": [],
+      "proxyHit3": null,
+      "abstentionPass": null,
+      "ms": 76
+    },
+    {
+      "id": "new-20",
+      "split": "adjustment",
+      "category": "sinonimos_requisito",
+      "query": "Busco una iglesia con un sanitario adaptado.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia con un sanitario adaptado.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": [
+            "Busco una iglesia con un sanitario adaptado."
+          ]
+        },
+        "interests": [],
+        "evidence": [],
+        "needsClarification": true,
+        "kind": "unresolved",
+        "retrievalText": "Busco una iglesia con un sanitario adaptado."
+      },
+      "interpretationPass": false,
+      "expectedEligible": [],
+      "retrieval": "blocked",
+      "ms": 1
+    },
+    {
+      "id": "new-21",
+      "split": "final",
+      "category": "alternativas",
+      "query": "Busco una iglesia en La Florida o Santiago con cursos.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia en La Florida o Santiago con cursos.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": [
+                "La Florida",
+                "Santiago"
+              ],
+              "polarity": "include"
+            },
+            {
+              "field": "community.activities",
+              "value": "Cursos / institutos",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia en La Florida o Santiago con cursos.",
+            "start": 0,
+            "end": 54,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.commune",
+                "value": [
+                  "La Florida",
+                  "Santiago"
+                ],
+                "polarity": "include"
+              },
+              {
+                "field": "community.activities",
+                "value": "Cursos / institutos",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia en La Florida o Santiago con cursos."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "00e256bfdb4df05e5765c871",
+        "02defa0c5de6a6057b2bbabe",
+        "6ac9b9225017eda79d91466c",
+        "e6d7e42e79ea95ae9e831496"
+      ],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "fragment": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nActividades: Reuniones de Alabanza, Retiros, Voluntariado, Cursos / institutos, Eventos familiares, Bautismos, Campamentos, Evangelismo, Ayuda social, Actividades deportivas, Obras Audiovisuales",
+          "field": "community.activities",
+          "score": 0.5953794334235379,
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "location.commune",
+                "value": [
+                  "La Florida",
+                  "Santiago"
+                ],
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_any_of",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "La Florida",
+                  "updatedAt": "2026-11-15T19:14:26.208Z",
+                  "churchVersion": 64
+                }
+              },
+              {
+                "field": "community.activities",
+                "value": "Cursos / institutos",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.activities",
+                  "value": "Cursos / institutos",
+                  "updatedAt": "2026-11-15T19:14:26.208Z",
+                  "churchVersion": 64
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "fragment": "Iglesia: Corporacion Metodista Libre De Chile · Santiago · Santiago\nMinisterios: Formación bíblica",
+          "field": "community.ministries",
+          "score": 0.510623487685286,
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "location.commune",
+                "value": [
+                  "La Florida",
+                  "Santiago"
+                ],
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_any_of",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "Santiago",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              },
+              {
+                "field": "community.activities",
+                "value": "Cursos / institutos",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.activities",
+                  "value": "Cursos / institutos",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "00e256bfdb4df05e5765c871",
+          "title": "Primera Iglesia Metodista",
+          "fragment": "Iglesia: Primera Iglesia Metodista · Santiago · Santiago\nActividades: Cursos / institutos, Retiros",
+          "field": "community.activities",
+          "score": 0.509429884482336,
+          "validation": {
+            "churchId": "00e256bfdb4df05e5765c871",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "location.commune",
+                "value": [
+                  "La Florida",
+                  "Santiago"
+                ],
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_any_of",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "Santiago",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              },
+              {
+                "field": "community.activities",
+                "value": "Cursos / institutos",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.activities",
+                  "value": "Cursos / institutos",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ],
+      "topicStatus": "not_requested",
+      "displayed": [
+        {
+          "id": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma"
+        },
+        {
+          "id": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile"
+        },
+        {
+          "id": "00e256bfdb4df05e5765c871",
+          "title": "Primera Iglesia Metodista"
+        },
+        {
+          "id": "02defa0c5de6a6057b2bbabe",
+          "title": "Vineyard church dowtown"
+        }
+      ],
+      "proxyRelevantIds": [],
+      "proxyHit3": null,
+      "abstentionPass": null,
+      "ms": 85
+    },
+    {
+      "id": "new-22",
+      "split": "final",
+      "category": "alternativas",
+      "query": "Busco una iglesia con cursos en Santiago o La Florida.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia con cursos en Santiago o La Florida.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "community.activities",
+              "value": "Cursos / institutos",
+              "polarity": "include"
+            },
+            {
+              "field": "location.commune",
+              "value": [
+                "Santiago",
+                "La Florida"
+              ],
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia con cursos en Santiago o La Florida.",
+            "start": 0,
+            "end": 54,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "community.activities",
+                "value": "Cursos / institutos",
+                "polarity": "include"
+              },
+              {
+                "field": "location.commune",
+                "value": [
+                  "Santiago",
+                  "La Florida"
+                ],
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia con cursos en Santiago o La Florida."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "00e256bfdb4df05e5765c871",
+        "02defa0c5de6a6057b2bbabe",
+        "6ac9b9225017eda79d91466c",
+        "e6d7e42e79ea95ae9e831496"
+      ],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "fragment": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nDoctrinas y prácticas: Autoridad de las Escrituras, Predicación, Culto contemporáneo, Evangelización, Formación bíblica, Bautismo de creyentes, Misiones",
+          "field": "doctrine.characteristics",
+          "score": 0.582994832009884,
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Cursos / institutos",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.activities",
+                  "value": "Cursos / institutos",
+                  "updatedAt": "2026-11-15T19:14:26.208Z",
+                  "churchVersion": 64
+                }
+              },
+              {
+                "field": "location.commune",
+                "value": [
+                  "Santiago",
+                  "La Florida"
+                ],
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_any_of",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "La Florida",
+                  "updatedAt": "2026-11-15T19:14:26.208Z",
+                  "churchVersion": 64
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "fragment": "Iglesia: Corporacion Metodista Libre De Chile · Santiago · Santiago\nMinisterios: Formación bíblica",
+          "field": "community.ministries",
+          "score": 0.525825472436773,
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Cursos / institutos",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.activities",
+                  "value": "Cursos / institutos",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              },
+              {
+                "field": "location.commune",
+                "value": [
+                  "Santiago",
+                  "La Florida"
+                ],
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_any_of",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "Santiago",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        },
+        {
+          "churchId": "02defa0c5de6a6057b2bbabe",
+          "title": "Vineyard church dowtown",
+          "fragment": "Iglesia: Vineyard church dowtown · Santiago · Santiago\nActividades: Cursos / institutos, Retiros",
+          "field": "community.activities",
+          "score": 0.5245719375628146,
+          "validation": {
+            "churchId": "02defa0c5de6a6057b2bbabe",
+            "status": "satisfied",
+            "eligibleForResults": true,
+            "requirements": [
+              {
+                "field": "community.activities",
+                "value": "Cursos / institutos",
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_list_item",
+                "evidence": {
+                  "field": "community.activities",
+                  "value": "Cursos / institutos",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              },
+              {
+                "field": "location.commune",
+                "value": [
+                  "Santiago",
+                  "La Florida"
+                ],
+                "polarity": "include",
+                "status": "satisfied",
+                "reason": "explicit_any_of",
+                "evidence": {
+                  "field": "location.commune",
+                  "value": "Santiago",
+                  "updatedAt": null,
+                  "churchVersion": 1
+                }
+              }
+            ],
+            "unresolved": []
+          }
+        }
+      ],
+      "topicStatus": "not_requested",
+      "displayed": [
+        {
+          "id": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma"
+        },
+        {
+          "id": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile"
+        },
+        {
+          "id": "02defa0c5de6a6057b2bbabe",
+          "title": "Vineyard church dowtown"
+        },
+        {
+          "id": "00e256bfdb4df05e5765c871",
+          "title": "Primera Iglesia Metodista"
+        }
+      ],
+      "proxyRelevantIds": [],
+      "proxyHit3": null,
+      "abstentionPass": null,
+      "ms": 93
+    },
+    {
+      "id": "new-23",
+      "split": "final",
+      "category": "negacion",
+      "query": "Busco una iglesia sin ascensor en Macul.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia sin ascensor en Macul.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.accessibilityDetails.elevator",
+              "value": "yes",
+              "polarity": "exclude"
+            },
+            {
+              "field": "location.commune",
+              "value": "Macul",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia sin ascensor en Macul.",
+            "start": 0,
+            "end": 40,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.accessibilityDetails.elevator",
+                "value": "yes",
+                "polarity": "exclude"
+              },
+              {
+                "field": "location.commune",
+                "value": "Macul",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia sin ascensor en Macul."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [],
+      "topicStatus": "not_requested",
+      "displayed": [],
+      "proxyRelevantIds": [],
+      "proxyHit3": null,
+      "abstentionPass": null,
+      "ms": 89
+    },
+    {
+      "id": "new-24",
+      "split": "final",
+      "category": "negacion",
+      "query": "Busco una iglesia en Macul que no tenga ascensor.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia en Macul que no tenga ascensor.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": "Macul",
+              "polarity": "include"
+            },
+            {
+              "field": "location.accessibilityDetails.elevator",
+              "value": "yes",
+              "polarity": "exclude"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia en Macul que no tenga ascensor.",
+            "start": 0,
+            "end": 49,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.commune",
+                "value": "Macul",
+                "polarity": "include"
+              },
+              {
+                "field": "location.accessibilityDetails.elevator",
+                "value": "yes",
+                "polarity": "exclude"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia en Macul que no tenga ascensor."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [],
+      "topicStatus": "not_requested",
+      "displayed": [],
+      "proxyRelevantIds": [],
+      "proxyHit3": null,
+      "abstentionPass": null,
+      "ms": 89
+    },
+    {
+      "id": "new-25",
+      "split": "final",
+      "category": "sinonimos",
+      "query": "Me interesa una iglesia con formación bíblica.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una iglesia con formación bíblica.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una iglesia con formación bíblica",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 46,
+              "text": "Me interesa una iglesia con formación bíblica."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una iglesia con formación bíblica.",
+            "start": 0,
+            "end": 46,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una iglesia con formación bíblica."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "fragment": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nDoctrinas y prácticas: Autoridad de las Escrituras, Predicación, Culto contemporáneo, Evangelización, Formación bíblica, Bautismo de creyentes, Misiones",
+          "field": "doctrine.characteristics",
+          "score": 0.5327024789355701,
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "fragment": "Iglesia: Corporacion Metodista Libre De Chile · Santiago · Santiago\nMinisterios: Formación bíblica",
+          "field": "community.ministries",
+          "score": 0.45357522735131117,
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "fragment": "Iglesia: Iglesia Cristiana AR chile · Ñuñoa · Santiago\nDoctrinas y prácticas: Formación bíblica, Sacramentos / ordenanzas",
+          "field": "doctrine.characteristics",
+          "score": 0.43550174605136827,
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        }
+      ],
+      "topicStatus": "textual_support",
+      "displayed": [
+        {
+          "id": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma"
+        },
+        {
+          "id": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile"
+        },
+        {
+          "id": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile"
+        },
+        {
+          "id": "00e256bfdb4df05e5765c871",
+          "title": "Primera Iglesia Metodista"
+        },
+        {
+          "id": "fac395e6fb5d97b60d812249",
+          "title": "Primera Iglesia Metodista Pentecostal de Tiltil"
+        },
+        {
+          "id": "02defa0c5de6a6057b2bbabe",
+          "title": "Vineyard church dowtown"
+        },
+        {
+          "id": "495446dcdd84fdaf0d4f4fa9",
+          "title": "Hnas Terciarias Misioneras Franciscanas"
+        }
+      ],
+      "proxyRelevantIds": [
+        "e6d7e42e79ea95ae9e831496",
+        "1298af8033c6eb4a402bf5a3",
+        "6ac9b9225017eda79d91466c",
+        "fac395e6fb5d97b60d812249",
+        "495446dcdd84fdaf0d4f4fa9",
+        "00e256bfdb4df05e5765c871",
+        "02defa0c5de6a6057b2bbabe"
+      ],
+      "proxyHit3": true,
+      "abstentionPass": null,
+      "ms": 63
+    },
+    {
+      "id": "new-26",
+      "split": "final",
+      "category": "sinonimos",
+      "query": "Me interesa una comunidad que enseñe la Biblia.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una comunidad que enseñe la Biblia.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una comunidad que enseñe la Biblia",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 47,
+              "text": "Me interesa una comunidad que enseñe la Biblia."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una comunidad que enseñe la Biblia.",
+            "start": 0,
+            "end": 47,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una comunidad que enseñe la Biblia."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "fragment": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nSobre la iglesia: A: Amar a otros como Cristo nos ama L: Liderando hacia la madurez Espiritual M: Movernos hacia los de afuera, para que juntos A: Adoremos a Dios con nuestras vidas Una comunidad que busca crear una revolución de amor. Con el amor que Dios ha derramado para todo el mundo.",
+          "field": "identification.description",
+          "score": 0.4590907824196177,
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "fac395e6fb5d97b60d812249",
+          "title": "Primera Iglesia Metodista Pentecostal de Tiltil",
+          "fragment": "Iglesia: Primera Iglesia Metodista Pentecostal de Tiltil · Tiltil · Tiltil\nMinisterios: Streaming, Misiones, Música / alabanza, Jóvenes, Formación bíblica",
+          "field": "community.ministries",
+          "score": 0.30698028605476363,
+          "validation": {
+            "churchId": "fac395e6fb5d97b60d812249",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "e6d7e42e79ea95ae9e831496",
+          "title": "Corporacion Metodista Libre De Chile",
+          "fragment": "Iglesia: Corporacion Metodista Libre De Chile · Santiago · Santiago\nMinisterios: Formación bíblica",
+          "field": "community.ministries",
+          "score": 0.30577214862197766,
+          "validation": {
+            "churchId": "e6d7e42e79ea95ae9e831496",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        }
+      ],
+      "topicStatus": "insufficient_evidence",
+      "displayed": [],
+      "proxyRelevantIds": [
+        "e6d7e42e79ea95ae9e831496",
+        "1298af8033c6eb4a402bf5a3",
+        "6ac9b9225017eda79d91466c",
+        "fac395e6fb5d97b60d812249",
+        "495446dcdd84fdaf0d4f4fa9",
+        "00e256bfdb4df05e5765c871",
+        "02defa0c5de6a6057b2bbabe"
+      ],
+      "proxyHit3": true,
+      "abstentionPass": null,
+      "ms": 86
+    },
+    {
+      "id": "new-27",
+      "split": "final",
+      "category": "sin_evidencia",
+      "query": "Me interesa una comunidad con cirugía veterinaria.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una comunidad con cirugía veterinaria.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una comunidad con cirugía veterinaria",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 50,
+              "text": "Me interesa una comunidad con cirugía veterinaria."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una comunidad con cirugía veterinaria.",
+            "start": 0,
+            "end": 50,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una comunidad con cirugía veterinaria."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [
+        {
+          "churchId": "6ac9b9225017eda79d91466c",
+          "title": "Iglesia Bíblica Alma",
+          "fragment": "Iglesia: Iglesia Bíblica Alma · La Florida · Santiago\nVida en comunidad: Vamos a Hogares de Adultos mayores y de Niños",
+          "field": "community.description",
+          "score": 0.1770156425083223,
+          "validation": {
+            "churchId": "6ac9b9225017eda79d91466c",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "02defa0c5de6a6057b2bbabe",
+          "title": "Vineyard church dowtown",
+          "fragment": "Iglesia: Vineyard church dowtown · Santiago · Santiago\nActividades: Cursos / institutos, Retiros",
+          "field": "community.activities",
+          "score": 0.1556116049273845,
+          "validation": {
+            "churchId": "02defa0c5de6a6057b2bbabe",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "00b5fc37b835eedfb5eb2916",
+          "title": "Centro de Espiritualidad Ignaciana - CEI Chile",
+          "fragment": "Iglesia: Centro de Espiritualidad Ignaciana - CEI Chile · Santiago · Santiago\nMinisterios: Ayuda comunitaria",
+          "field": "community.ministries",
+          "score": 0.1532032374190522,
+          "validation": {
+            "churchId": "00b5fc37b835eedfb5eb2916",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        }
+      ],
+      "topicStatus": "insufficient_evidence",
+      "displayed": [],
+      "proxyRelevantIds": [],
+      "proxyHit3": null,
+      "abstentionPass": true,
+      "ms": 69
+    },
+    {
+      "id": "new-28",
+      "split": "final",
+      "category": "sin_evidencia",
+      "query": "Me interesa una iglesia con reparación de reactores nucleares.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una iglesia con reparación de reactores nucleares.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una iglesia con reparación de reactores nucleares",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 62,
+              "text": "Me interesa una iglesia con reparación de reactores nucleares."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una iglesia con reparación de reactores nucleares.",
+            "start": 0,
+            "end": 62,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una iglesia con reparación de reactores nucleares."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "executed",
+      "filterPass": true,
+      "top3": [
+        {
+          "churchId": "186c21a71a29a8fa20363ab9",
+          "title": "ARM Santiago",
+          "fragment": "Iglesia: ARM Santiago · Ñuñoa · Santiago\nActividades: Ayuda social, Actividades deportivas, Campamentos",
+          "field": "community.activities",
+          "score": 0.36115405260897165,
+          "validation": {
+            "churchId": "186c21a71a29a8fa20363ab9",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "28f6ea99cc25a2cd1462203d",
+          "title": "Church of the Blessed Sacrament",
+          "fragment": "Iglesia: Church of the Blessed Sacrament · Santiago · Santiago\nSobre la iglesia: Inspired by Paris’ Basilique du Sacré-Cœur, this grand Catholic church houses historic sculptures.",
+          "field": "identification.description",
+          "score": 0.3272197570776579,
+          "validation": {
+            "churchId": "28f6ea99cc25a2cd1462203d",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        },
+        {
+          "churchId": "1298af8033c6eb4a402bf5a3",
+          "title": "Iglesia Cristiana AR chile",
+          "fragment": "Iglesia: Iglesia Cristiana AR chile · Ñuñoa · Santiago\nActividades: Cursos / institutos, Conferencias",
+          "field": "community.activities",
+          "score": 0.3242314550646845,
+          "validation": {
+            "churchId": "1298af8033c6eb4a402bf5a3",
+            "status": "not_required",
+            "eligibleForResults": true,
+            "reason": "descriptive_candidate_only"
+          }
+        }
+      ],
+      "topicStatus": "insufficient_evidence",
+      "displayed": [],
+      "proxyRelevantIds": [],
+      "proxyHit3": null,
+      "abstentionPass": true,
+      "ms": 75
+    }
+  ],
+  "limits": {
+    "totalMs": 480000,
+    "requestMs": 180000
+  },
+  "versions": {
+    "free-search-intent.lab.js": "dbbff69b2475738a9fa16ffcaaa5316db60e290853306588d0f6916cc1acc4ab",
+    "requirement-interpretation.lab.js": "7e0d98e3916ec289c0a925f8c24e348ab3bd36ce5bb17439dbb65d9a168053f7",
+    "search-requirements.lab.js": "9ff262c4a877f7655d6c3564758d1195cd4c96a54db94ba83af1ca17a003555a",
+    "search-intent.lab.js": "bb86af992d09a906c876a5475db2cd308f8365ca9b577eabe86a4f7cadfbffc6",
+    "search-topic-evidence.lab.js": "35538d6744cc08b6d87695b3ae8682fd037f4923202691c4d0745aae9f9d7f72"
+  },
+  "pairs": [
+    {
+      "pair": "pair-1",
+      "ids": [
+        "new-01",
+        "new-02"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-2",
+      "ids": [
+        "new-03",
+        "new-04"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-3",
+      "ids": [
+        "new-05",
+        "new-06"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-4",
+      "ids": [
+        "new-07",
+        "new-08"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-6",
+      "ids": [
+        "new-11",
+        "new-12"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-7",
+      "ids": [
+        "new-13",
+        "new-14"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-9",
+      "ids": [
+        "new-17",
+        "new-18"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-10",
+      "ids": [
+        "new-19",
+        "new-20"
+      ],
+      "sameInterpretation": false,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-11",
+      "ids": [
+        "new-21",
+        "new-22"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-12",
+      "ids": [
+        "new-23",
+        "new-24"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-13",
+      "ids": [
+        "new-25",
+        "new-26"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    }
+  ],
+  "summary": [
+    {
+      "split": "adjustment",
+      "total": 20,
+      "interpretation": 19,
+      "executed": 15,
+      "filterFailures": 0,
+      "hit3": 6,
+      "topicCases": 6,
+      "abstentionFailures": 0
+    },
+    {
+      "split": "final",
+      "total": 8,
+      "interpretation": 8,
+      "executed": 8,
+      "filterFailures": 0,
+      "hit3": 2,
+      "topicCases": 2,
+      "abstentionFailures": 0
+    }
+  ],
+  "elapsedMs": 55688
+}

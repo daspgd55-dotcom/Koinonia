@@ -1,0 +1,512 @@
+[
+  {
+    "id": "new-01",
+    "split": "adjustment",
+    "category": "ubicacion",
+    "pair": "pair-1",
+    "equivalent": true,
+    "query": "Busco una iglesia en La Reina con conferencias.",
+    "expected": {
+      "criteria": [
+        {
+          "field": "location.commune",
+          "value": "La Reina",
+          "polarity": "include"
+        },
+        {
+          "field": "community.activities",
+          "value": "Conferencias",
+          "polarity": "include"
+        }
+      ],
+      "clarify": false,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-02",
+    "split": "adjustment",
+    "category": "ubicacion",
+    "pair": "pair-1",
+    "equivalent": true,
+    "query": "Busco una iglesia con conferencias en La Reina.",
+    "expected": {
+      "criteria": [
+        {
+          "field": "location.commune",
+          "value": "La Reina",
+          "polarity": "include"
+        },
+        {
+          "field": "community.activities",
+          "value": "Conferencias",
+          "polarity": "include"
+        }
+      ],
+      "clarify": false,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-03",
+    "split": "adjustment",
+    "category": "alternativas",
+    "pair": "pair-2",
+    "equivalent": true,
+    "query": "Necesito una iglesia en Renca o Quilicura con voluntariado.",
+    "expected": {
+      "criteria": [
+        {
+          "field": "location.commune",
+          "value": [
+            "Renca",
+            "Quilicura"
+          ],
+          "polarity": "include"
+        },
+        {
+          "field": "community.activities",
+          "value": "Voluntariado",
+          "polarity": "include"
+        }
+      ],
+      "clarify": false,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-04",
+    "split": "adjustment",
+    "category": "alternativas",
+    "pair": "pair-2",
+    "equivalent": true,
+    "query": "Necesito una iglesia con voluntariado en Quilicura o Renca.",
+    "expected": {
+      "criteria": [
+        {
+          "field": "location.commune",
+          "value": [
+            "Renca",
+            "Quilicura"
+          ],
+          "polarity": "include"
+        },
+        {
+          "field": "community.activities",
+          "value": "Voluntariado",
+          "polarity": "include"
+        }
+      ],
+      "clarify": false,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-05",
+    "split": "adjustment",
+    "category": "negacion",
+    "pair": "pair-3",
+    "equivalent": true,
+    "query": "Busco una iglesia en Santiago sin retiros.",
+    "expected": {
+      "criteria": [
+        {
+          "field": "location.commune",
+          "value": "Santiago",
+          "polarity": "include"
+        },
+        {
+          "field": "community.activities",
+          "value": "Retiros",
+          "polarity": "exclude"
+        }
+      ],
+      "clarify": false,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-06",
+    "split": "adjustment",
+    "category": "negacion",
+    "pair": "pair-3",
+    "equivalent": true,
+    "query": "Busco una iglesia sin retiros en Santiago.",
+    "expected": {
+      "criteria": [
+        {
+          "field": "location.commune",
+          "value": "Santiago",
+          "polarity": "include"
+        },
+        {
+          "field": "community.activities",
+          "value": "Retiros",
+          "polarity": "exclude"
+        }
+      ],
+      "clarify": false,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-07",
+    "split": "adjustment",
+    "category": "contradiccion",
+    "pair": "pair-4",
+    "equivalent": true,
+    "query": "Busco una iglesia con rampa sin rampa.",
+    "expected": {
+      "criteria": [],
+      "clarify": true,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-08",
+    "split": "adjustment",
+    "category": "contradiccion",
+    "pair": "pair-4",
+    "equivalent": true,
+    "query": "Necesito una iglesia sin rampa con rampa.",
+    "expected": {
+      "criteria": [],
+      "clarify": true,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-09",
+    "split": "adjustment",
+    "category": "desconocido",
+    "pair": "pair-5",
+    "equivalent": false,
+    "query": "Necesito una iglesia con guardería nocturna.",
+    "expected": {
+      "criteria": [],
+      "clarify": true,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-10",
+    "split": "adjustment",
+    "category": "desconocido",
+    "pair": "pair-5",
+    "equivalent": false,
+    "query": "Busco una iglesia con estacionamiento subterráneo.",
+    "expected": {
+      "criteria": [],
+      "clarify": true,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-11",
+    "split": "adjustment",
+    "category": "sinonimos",
+    "pair": "pair-6",
+    "equivalent": true,
+    "query": "Me interesa una comunidad con ayuda social.",
+    "expected": {
+      "criteria": [],
+      "clarify": false,
+      "topic": "Ayuda social"
+    }
+  },
+  {
+    "id": "new-12",
+    "split": "adjustment",
+    "category": "sinonimos",
+    "pair": "pair-6",
+    "equivalent": true,
+    "query": "Me interesa una comunidad que apoye a vecinos necesitados.",
+    "expected": {
+      "criteria": [],
+      "clarify": false,
+      "topic": "Ayuda social"
+    }
+  },
+  {
+    "id": "new-13",
+    "split": "adjustment",
+    "category": "sinonimos",
+    "pair": "pair-7",
+    "equivalent": true,
+    "query": "Me interesa una iglesia con actividades deportivas.",
+    "expected": {
+      "criteria": [],
+      "clarify": false,
+      "topic": "Actividades deportivas"
+    }
+  },
+  {
+    "id": "new-14",
+    "split": "adjustment",
+    "category": "sinonimos",
+    "pair": "pair-7",
+    "equivalent": true,
+    "query": "Me interesa una iglesia donde practicar deportes.",
+    "expected": {
+      "criteria": [],
+      "clarify": false,
+      "topic": "Actividades deportivas"
+    }
+  },
+  {
+    "id": "new-15",
+    "split": "adjustment",
+    "category": "sin_evidencia",
+    "pair": "pair-8",
+    "equivalent": false,
+    "query": "Me interesa una iglesia con clases de pilotaje de helicópteros.",
+    "expected": {
+      "criteria": [],
+      "clarify": false,
+      "topic": "NONE"
+    }
+  },
+  {
+    "id": "new-16",
+    "split": "adjustment",
+    "category": "sin_evidencia",
+    "pair": "pair-8",
+    "equivalent": false,
+    "query": "Me interesa una comunidad con fabricación de microprocesadores.",
+    "expected": {
+      "criteria": [],
+      "clarify": false,
+      "topic": "NONE"
+    }
+  },
+  {
+    "id": "new-17",
+    "split": "adjustment",
+    "category": "mixta",
+    "pair": "pair-9",
+    "equivalent": true,
+    "query": "Busco una iglesia en Santiago; me interesa voluntariado.",
+    "expected": {
+      "criteria": [
+        {
+          "field": "location.commune",
+          "value": "Santiago",
+          "polarity": "include"
+        }
+      ],
+      "clarify": false,
+      "topic": "Voluntariado"
+    }
+  },
+  {
+    "id": "new-18",
+    "split": "adjustment",
+    "category": "mixta",
+    "pair": "pair-9",
+    "equivalent": true,
+    "query": "Me interesa voluntariado; busco una iglesia en Santiago.",
+    "expected": {
+      "criteria": [
+        {
+          "field": "location.commune",
+          "value": "Santiago",
+          "polarity": "include"
+        }
+      ],
+      "clarify": false,
+      "topic": "Voluntariado"
+    }
+  },
+  {
+    "id": "new-19",
+    "split": "adjustment",
+    "category": "sinonimos_requisito",
+    "pair": "pair-10",
+    "equivalent": true,
+    "query": "Busco una iglesia con baño accesible.",
+    "expected": {
+      "criteria": [
+        {
+          "field": "location.accessibilityDetails.accessibleRestroom",
+          "value": "yes",
+          "polarity": "include"
+        }
+      ],
+      "clarify": false,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-20",
+    "split": "adjustment",
+    "category": "sinonimos_requisito",
+    "pair": "pair-10",
+    "equivalent": true,
+    "query": "Busco una iglesia con un sanitario adaptado.",
+    "expected": {
+      "criteria": [
+        {
+          "field": "location.accessibilityDetails.accessibleRestroom",
+          "value": "yes",
+          "polarity": "include"
+        }
+      ],
+      "clarify": false,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-21",
+    "split": "final",
+    "category": "alternativas",
+    "pair": "pair-11",
+    "equivalent": true,
+    "query": "Busco una iglesia en La Florida o Santiago con cursos.",
+    "expected": {
+      "criteria": [
+        {
+          "field": "location.commune",
+          "value": [
+            "La Florida",
+            "Santiago"
+          ],
+          "polarity": "include"
+        },
+        {
+          "field": "community.activities",
+          "value": "Cursos / institutos",
+          "polarity": "include"
+        }
+      ],
+      "clarify": false,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-22",
+    "split": "final",
+    "category": "alternativas",
+    "pair": "pair-11",
+    "equivalent": true,
+    "query": "Busco una iglesia con cursos en Santiago o La Florida.",
+    "expected": {
+      "criteria": [
+        {
+          "field": "location.commune",
+          "value": [
+            "La Florida",
+            "Santiago"
+          ],
+          "polarity": "include"
+        },
+        {
+          "field": "community.activities",
+          "value": "Cursos / institutos",
+          "polarity": "include"
+        }
+      ],
+      "clarify": false,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-23",
+    "split": "final",
+    "category": "negacion",
+    "pair": "pair-12",
+    "equivalent": true,
+    "query": "Busco una iglesia sin ascensor en Macul.",
+    "expected": {
+      "criteria": [
+        {
+          "field": "location.commune",
+          "value": "Macul",
+          "polarity": "include"
+        },
+        {
+          "field": "location.accessibilityDetails.elevator",
+          "value": "yes",
+          "polarity": "exclude"
+        }
+      ],
+      "clarify": false,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-24",
+    "split": "final",
+    "category": "negacion",
+    "pair": "pair-12",
+    "equivalent": true,
+    "query": "Busco una iglesia en Macul que no tenga ascensor.",
+    "expected": {
+      "criteria": [
+        {
+          "field": "location.commune",
+          "value": "Macul",
+          "polarity": "include"
+        },
+        {
+          "field": "location.accessibilityDetails.elevator",
+          "value": "yes",
+          "polarity": "exclude"
+        }
+      ],
+      "clarify": false,
+      "topic": null
+    }
+  },
+  {
+    "id": "new-25",
+    "split": "final",
+    "category": "sinonimos",
+    "pair": "pair-13",
+    "equivalent": true,
+    "query": "Me interesa una iglesia con formación bíblica.",
+    "expected": {
+      "criteria": [],
+      "clarify": false,
+      "topic": "Formación bíblica"
+    }
+  },
+  {
+    "id": "new-26",
+    "split": "final",
+    "category": "sinonimos",
+    "pair": "pair-13",
+    "equivalent": true,
+    "query": "Me interesa una comunidad que enseñe la Biblia.",
+    "expected": {
+      "criteria": [],
+      "clarify": false,
+      "topic": "Formación bíblica"
+    }
+  },
+  {
+    "id": "new-27",
+    "split": "final",
+    "category": "sin_evidencia",
+    "pair": "pair-14",
+    "equivalent": false,
+    "query": "Me interesa una comunidad con cirugía veterinaria.",
+    "expected": {
+      "criteria": [],
+      "clarify": false,
+      "topic": "NONE"
+    }
+  },
+  {
+    "id": "new-28",
+    "split": "final",
+    "category": "sin_evidencia",
+    "pair": "pair-14",
+    "equivalent": false,
+    "query": "Me interesa una iglesia con reparación de reactores nucleares.",
+    "expected": {
+      "criteria": [],
+      "clarify": false,
+      "topic": "NONE"
+    }
+  }
+]

@@ -1,0 +1,8 @@
+const assert=require('node:assert/strict'),{parse,merge,serialize}=require('./search-lab-ui/feedback.js'),{exportSchema}=require('./search-diagnostics.cjs');
+const row={schemaVersion:1,key:'ui-check',query:'Necesito una iglesia en Ñuñoa; me interesa ayudar',mode:'interest',kind:'result',rating:'useful',comment:'Ejemplo de prueba',updatedAt:new Date().toISOString(),displayGroup:'exploratory',group:'exploratory',provenance:{version:'v2'},intent:{requirements:{criteria:[],unresolved:[]},interests:[{text:'ayuda'}],needsClarification:false,review:{requirementsText:'corregido',interestText:'ayuda'},query:'original'},result:{churchId:'test',title:'Prueba',field:'description',fragment:'ayuda',score:0.4,validation:{status:'satisfied',requirements:[]},topicEvidence:{status:'insufficient'}}};
+assert.deepEqual(parse(serialize([row])),[row]);
+const checked=exportSchema.parse(JSON.parse(serialize([row]))).records[0];
+for(const k of ['query','displayGroup','provenance','result'])assert.deepEqual(checked[k],row[k]);assert.deepEqual(checked.intent.review,row.intent.review);
+const m=merge(new Map([[row.key,row]]),[{...row,comment:'No sobrescribir'}]);assert.equal(m.skipped,1);assert.equal(m.merged.get(row.key).comment,row.comment);
+assert.throws(()=>parse('invalid'));assert.throws(()=>parse(serialize([row,row])));assert.throws(()=>parse(serialize([{...row,query:''}])));assert.throws(()=>merge(new Map(Array.from({length:500},(_,i)=>[String(i),row])),[row]));
+console.log('8 comprobaciones: conservación completa, lector diagnóstico, correcciones, conflictos, JSON inválido, duplicados, consulta vacía y límite: OK');

@@ -26,6 +26,8 @@ const makeQueue=require('../controllers/church-make-queue.controller');
 const makeMemberQueue=require('../controllers/church-make-member-queue.controller');
 router.post('/church-make-messages/sync',auth,admin,makeQueue.sync);
 router.post('/church-outreach-invitations/:id/make-failed-members',auth,admin,makeMemberQueue.queueFailedMembers);
+router.get('/church-make-messages/final-attempt-candidates',auth,admin,makeQueue.finalAttemptCandidates);
+router.post('/church-make-messages/final-attempts',auth,admin,makeQueue.createFinalAttempts);
 router.get('/church-make-messages/preparable',auth,admin,makeQueue.preparable);
 router.post('/church-make-messages/:id/trash',auth,admin,makeQueue.trash);
 router.get('/church-make-messages',auth,admin,makeQueue.list);

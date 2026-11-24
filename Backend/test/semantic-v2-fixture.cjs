@@ -1,0 +1,6 @@
+const {prepareChurch}=require('../src/services/church-embedding-document.lab'),{hash,namespace}=require('../src/services/semantic/contracts');
+const identity={provider:'ollama',model:'embeddinggemma:latest',revision:'fixture-digest',dimensions:768,formatVersion:'embeddinggemma-retrieval-v1',documentVersion:'church-public-text-v1'},code={fixture:'v1'};
+const churches=[{_id:'111111111111111111111111',active:true,metadata:{dataStatus:'published',testData:true},identification:{name:'Ejemplo de apoyo',description:'Ayuda social para vecinos.'},location:{commune:'Ñuñoa'}},{_id:'222222222222222222222222',active:true,metadata:{dataStatus:'published',testData:true},identification:{name:'Ejemplo sin comuna',description:'Actividades deportivas.'}}];
+const items=churches.flatMap(prepareChurch).map(d=>({...d,inputHash:hash(require('../src/services/local-embeddings.lab').inputText(d,'document')),embedding:Array.from({length:768},(_,i)=>i===0?1:0)}));
+const sample={schema:'local-sample-v2',database:'koinonia_synthetic_test_v2_local',planHash:'a'.repeat(64),versions:code,model:{model:identity.model,digest:identity.revision,dimensions:768,formatVersion:identity.formatVersion},items};
+module.exports={identity,code,churches,sample};

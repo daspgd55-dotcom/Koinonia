@@ -1,0 +1,5 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),old=require('./fixtures/topic-evidence-baseline-v1.cjs').assessTopics,next=require('../src/services/search-topic-evidence.lab').assessTopics;
+const cases=[['Ayudar a familias necesitadas','Apoyo social',true],['Hacer deportes','Actividades deportivas',true],['Ayuda comunitaria gratuita','Ayuda social',false],['Apoyo social','Planeamos ofrecer ayuda social',false],['Actividad deportiva','No hay actividades deportivas',false],['Santa Cena','Eucaristía',false]];
+fs.writeFileSync('Backend/scripts/fixtures/topic-final-v3.json',JSON.stringify(cases,null,2));
+const rows=cases.map(([text,body,expected])=>{const input={intent:{interests:[{text}]},accepted:[{churchId:'x'}],held:[]},sources=[{churchId:'x',text:'Iglesia: X\nDescripción: '+body,source:{field:'identification.description'}}];return {text,body,expected,before:!!old(input,sources).accepted.length,after:!!next(input,sources).accepted.length};});
+fs.writeFileSync('outputs/search-diagnostics/topic-v2/final-fresh.json',JSON.stringify(rows,null,2));console.log(JSON.stringify(rows));for(const r of rows)assert.equal(r.after,r.expected);

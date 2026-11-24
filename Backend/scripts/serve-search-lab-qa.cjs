@@ -1,0 +1,5 @@
+// Servidor de QA aislado: no lee .env, archivos de corpus ni MongoDB; no llama Ollama.
+const {identity,churches,sample}=require('../test/semantic-v2-fixture.cjs'),{namespace}=require('../src/services/semantic/contracts'),{createSearch}=require('../src/services/semantic/search'),{createApp}=require('./serve-search-lab-v2.cjs');
+if(process.env.NODE_ENV==='production')throw Error('LOCAL_ONLY');
+const search=createSearch({config:{enabled:true,identity,timeoutMs:5000,concurrency:1},repository:{load:async()=>({namespace:namespace(identity),churches,items:sample.items,provenance:{systemVersion:'simulated-v2',planHash:sample.planHash}})},provider:{identity,embed:async()=>{await new Promise(r=>setTimeout(r,600));return {identity,vectors:[sample.items[0].embedding]};}}});let calls=0;
+createApp({port:4602,enabled:true,simulated:true,search:async(...args)=>{if(++calls===1)return {status:'unavailable',code:'BUSY'};return search(...args);}}).listen(4602,'127.0.0.1',()=>console.log('QA simulado: http://127.0.0.1:4602'));

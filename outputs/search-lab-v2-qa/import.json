@@ -1,0 +1,127 @@
+{
+  "schema": "koinonia-search-lab-feedback-v1",
+  "exportedAt": "2026-11-23T20:17:14.147Z",
+  "note": "Evaluaciones manuales; no constituyen verificación institucional.",
+  "records": [
+    {
+      "schemaVersion": 1,
+      "key": "qa-import-new-key",
+      "runId": "21eb8373-7f0f-4dac-abbc-b6026c2d0de6",
+      "query": "Necesito una iglesia en Ñuñoa; me interesa ayudar.",
+      "mode": "interest",
+      "kind": "result",
+      "group": "accepted",
+      "displayGroup": "accepted",
+      "sample": {
+        "mode": "v2",
+        "enabled": true,
+        "simulated": true,
+        "note": "Simulación local: textos y vectores de prueba; no usa MongoDB ni Ollama."
+      },
+      "provenance": {
+        "systemVersion": "simulated-v2",
+        "planHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "namespace": "semantic-v1:56ccba56194dc0b4a5ac7a1c2e74ca8135f87f69cf986049a259390c89da6a87",
+        "simulated": true
+      },
+      "checkedAt": "2026-11-23T20:15:53.719Z",
+      "intent": {
+        "version": "search-intent-v1",
+        "kind": "mixed",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": "Ñuñoa",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "ayuda social",
+            "purpose": "retrieval_only",
+            "provesCompliance": false
+          }
+        ],
+        "needsClarification": false,
+        "retrievalText": "Necesito una iglesia en Ñuñoa\nayuda social",
+        "query": "Necesito una iglesia en Ñuñoa; me interesa ayudar.",
+        "review": {
+          "requirementsText": "Necesito una iglesia en Ñuñoa",
+          "interestText": "ayuda social"
+        }
+      },
+      "result": {
+        "churchId": "111111111111111111111111",
+        "title": "Ejemplo de apoyo",
+        "field": "identification.description",
+        "fragment": "Iglesia: Ejemplo de apoyo · Ñuñoa\nSobre la iglesia: Ayuda social para vecinos.",
+        "score": 1,
+        "validation": {
+          "churchId": "111111111111111111111111",
+          "status": "satisfied",
+          "eligibleForResults": true,
+          "requirements": [
+            {
+              "field": "location.commune",
+              "value": "Ñuñoa",
+              "polarity": "include",
+              "status": "satisfied",
+              "reason": "explicit_single_value",
+              "evidence": {
+                "field": "location.commune",
+                "value": "Ñuñoa",
+                "updatedAt": null,
+                "churchVersion": null
+              }
+            }
+          ],
+          "unresolved": []
+        },
+        "topicEvidence": {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "ayuda social",
+              "terms": [
+                "apoyosocial"
+              ],
+              "matched": [
+                "apoyosocial"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "apoyo_social",
+                  "label": "apoyo social",
+                  "expression": "ayuda social"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "identification.description",
+                  "text": "Ayuda social para vecinos",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        }
+      },
+      "retrievalText": null,
+      "rating": "useful",
+      "comment": "QA: corrección de interés conservada.",
+      "updatedAt": "2026-11-23T20:16:02.925Z"
+    }
+  ]
+}

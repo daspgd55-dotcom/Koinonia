@@ -20,7 +20,7 @@ async function main(){
  app.use(require('helmet')({contentSecurityPolicy:{directives:{defaultSrc:["'self'"],scriptSrc:["'self'"],styleSrc:["'self'"],connectSrc:["'self'"],upgradeInsecureRequests:null}}}));
  app.use((req,res,next)=>{res.set('Cache-Control','no-store');if(req.headers.host!=='127.0.0.1:'+port||req.headers.origin&&req.headers.origin!==origin)return res.status(403).json({error:'Acceso exclusivo del laboratorio local.'});next();});
  app.use(express.json({limit:'16kb'}));
- for(const [route,file] of [['/','index.html'],['/lab.css','lab.css'],['/lab.js','lab.js']])app.get(route,(req,res)=>res.sendFile(path.join(__dirname,'search-lab-ui',file)));
+ for(const [route,file] of [['/','index.html'],['/lab.css','lab.css'],['/lab.js','lab.js'],['/feedback.js','feedback.js']])app.get(route,(req,res)=>res.sendFile(path.join(__dirname,'search-lab-ui',file)));
  app.get('/status',(req,res)=>res.json({sampleChurches:ids.length,sampleFragments:sample.items.length,model:sample.model.model,database,expanded}));
  app.post('/interpret',(req,res)=>{
   if(req.headers.origin!==origin||!req.is('application/json'))return res.status(403).json({error:'Usa la pantalla local.'});

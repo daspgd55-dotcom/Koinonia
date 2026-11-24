@@ -1,0 +1,1654 @@
+{
+  "createdAt": "2026-11-23T04:47:44.855Z",
+  "note": "Comparación offline sobre artefacto fijo; no mide ranking ni revisa vigencia de MongoDB. Ajuste usa solo intereses; conserva candidatos iguales. Final usa pasajes sintéticos reservados.",
+  "rows": [
+    {
+      "id": "new-11",
+      "query": "Me interesa una comunidad con ayuda social.",
+      "old": [
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "186c21a71a29a8fa20363ab9",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d"
+      ],
+      "next": [
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "186c21a71a29a8fa20363ab9",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d"
+      ],
+      "evidence": [
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una comunidad con ayuda social",
+              "terms": [
+                "apoyosocial"
+              ],
+              "matched": [
+                "apoyosocial"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "apoyo_social",
+                  "label": "apoyo social",
+                  "expression": "ayuda social"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Reuniones de Alabanza, Retiros, Voluntariado, Cursos / institutos, Eventos familiares, Bautismos, Campamentos, Evangelismo, Ayuda social, Actividades deportivas, Obras Audiovisuales",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    },
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una comunidad con ayuda social",
+              "terms": [
+                "apoyosocial"
+              ],
+              "matched": [
+                "apoyosocial"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "apoyo_social",
+                  "label": "apoyo social",
+                  "expression": "ayuda social"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Evangelismo, Voluntariado, Ayuda social",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una comunidad con ayuda social",
+              "terms": [
+                "apoyosocial"
+              ],
+              "matched": [
+                "apoyosocial"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "apoyo_social",
+                  "label": "apoyo social",
+                  "expression": "ayuda social"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.ministries",
+                  "text": "Ayuda comunitaria, Jóvenes",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda comunitaria"
+                    }
+                  ]
+                },
+                {
+                  "field": "community.activities",
+                  "text": "Ayuda social, Actividades deportivas, Campamentos",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    },
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una comunidad con ayuda social",
+              "terms": [
+                "apoyosocial"
+              ],
+              "matched": [
+                "apoyosocial"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "apoyo_social",
+                  "label": "apoyo social",
+                  "expression": "ayuda social"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.ministries",
+                  "text": "Ayuda comunitaria, Familias, Evangelismo",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda comunitaria"
+                    }
+                  ]
+                },
+                {
+                  "field": "community.activities",
+                  "text": "Voluntariado, Evangelismo, Eventos familiares, Ayuda social",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una comunidad con ayuda social",
+              "terms": [
+                "apoyosocial"
+              ],
+              "matched": [
+                "apoyosocial"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "apoyo_social",
+                  "label": "apoyo social",
+                  "expression": "ayuda social"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.ministries",
+                  "text": "Ayuda comunitaria",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda comunitaria"
+                    }
+                  ]
+                },
+                {
+                  "field": "community.activities",
+                  "text": "Voluntariado, Ayuda social",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una comunidad con ayuda social",
+              "terms": [
+                "apoyosocial"
+              ],
+              "matched": [
+                "apoyosocial"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "apoyo_social",
+                  "label": "apoyo social",
+                  "expression": "ayuda social"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Voluntariado, Ayuda social, Eventos familiares, Obras Audiovisuales, Confraternidades",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        }
+      ]
+    },
+    {
+      "id": "new-12",
+      "query": "Me interesa una comunidad que apoye a vecinos necesitados.",
+      "old": [],
+      "next": [
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "186c21a71a29a8fa20363ab9",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d"
+      ],
+      "evidence": [
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una comunidad que apoye a vecinos necesitados",
+              "terms": [
+                "apoyosocial"
+              ],
+              "matched": [
+                "apoyosocial"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "apoyo_social",
+                  "label": "apoyo social",
+                  "expression": "apoye a vecinos necesitados"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Reuniones de Alabanza, Retiros, Voluntariado, Cursos / institutos, Eventos familiares, Bautismos, Campamentos, Evangelismo, Ayuda social, Actividades deportivas, Obras Audiovisuales",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    },
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una comunidad que apoye a vecinos necesitados",
+              "terms": [
+                "apoyosocial"
+              ],
+              "matched": [
+                "apoyosocial"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "apoyo_social",
+                  "label": "apoyo social",
+                  "expression": "apoye a vecinos necesitados"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Evangelismo, Voluntariado, Ayuda social",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una comunidad que apoye a vecinos necesitados",
+              "terms": [
+                "apoyosocial"
+              ],
+              "matched": [
+                "apoyosocial"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "apoyo_social",
+                  "label": "apoyo social",
+                  "expression": "apoye a vecinos necesitados"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.ministries",
+                  "text": "Ayuda comunitaria, Jóvenes",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda comunitaria"
+                    }
+                  ]
+                },
+                {
+                  "field": "community.activities",
+                  "text": "Ayuda social, Actividades deportivas, Campamentos",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    },
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una comunidad que apoye a vecinos necesitados",
+              "terms": [
+                "apoyosocial"
+              ],
+              "matched": [
+                "apoyosocial"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "apoyo_social",
+                  "label": "apoyo social",
+                  "expression": "apoye a vecinos necesitados"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.ministries",
+                  "text": "Ayuda comunitaria, Familias, Evangelismo",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda comunitaria"
+                    }
+                  ]
+                },
+                {
+                  "field": "community.activities",
+                  "text": "Voluntariado, Evangelismo, Eventos familiares, Ayuda social",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una comunidad que apoye a vecinos necesitados",
+              "terms": [
+                "apoyosocial"
+              ],
+              "matched": [
+                "apoyosocial"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "apoyo_social",
+                  "label": "apoyo social",
+                  "expression": "apoye a vecinos necesitados"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.ministries",
+                  "text": "Ayuda comunitaria",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda comunitaria"
+                    }
+                  ]
+                },
+                {
+                  "field": "community.activities",
+                  "text": "Voluntariado, Ayuda social",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una comunidad que apoye a vecinos necesitados",
+              "terms": [
+                "apoyosocial"
+              ],
+              "matched": [
+                "apoyosocial"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "apoyo_social",
+                  "label": "apoyo social",
+                  "expression": "apoye a vecinos necesitados"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Voluntariado, Ayuda social, Eventos familiares, Obras Audiovisuales, Confraternidades",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        }
+      ]
+    },
+    {
+      "id": "new-13",
+      "query": "Me interesa una iglesia con actividades deportivas.",
+      "old": [
+        "155555f8b883bb7066754b67",
+        "6ac9b9225017eda79d91466c",
+        "54eaade8ff61c196a91f9f1e",
+        "186c21a71a29a8fa20363ab9",
+        "03218dbdd2818ed870a2ec54"
+      ],
+      "next": [
+        "155555f8b883bb7066754b67",
+        "6ac9b9225017eda79d91466c",
+        "54eaade8ff61c196a91f9f1e",
+        "186c21a71a29a8fa20363ab9",
+        "495446dcdd84fdaf0d4f4fa9",
+        "03218dbdd2818ed870a2ec54"
+      ],
+      "evidence": [
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una iglesia con actividades deportivas",
+              "terms": [
+                "actividaddeportiva"
+              ],
+              "matched": [
+                "actividaddeportiva"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "actividad_deportiva",
+                  "label": "actividad deportiva",
+                  "expression": "actividades deportivas"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.ministries",
+                  "text": "Deportes",
+                  "aliases": [
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "deportes"
+                    }
+                  ]
+                },
+                {
+                  "field": "community.activities",
+                  "text": "Actividades deportivas",
+                  "aliases": [
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una iglesia con actividades deportivas",
+              "terms": [
+                "actividaddeportiva"
+              ],
+              "matched": [
+                "actividaddeportiva"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "actividad_deportiva",
+                  "label": "actividad deportiva",
+                  "expression": "actividades deportivas"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Reuniones de Alabanza, Retiros, Voluntariado, Cursos / institutos, Eventos familiares, Bautismos, Campamentos, Evangelismo, Ayuda social, Actividades deportivas, Obras Audiovisuales",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    },
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una iglesia con actividades deportivas",
+              "terms": [
+                "actividaddeportiva"
+              ],
+              "matched": [
+                "actividaddeportiva"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "actividad_deportiva",
+                  "label": "actividad deportiva",
+                  "expression": "actividades deportivas"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Actividades deportivas, Retiros, Campamentos",
+                  "aliases": [
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una iglesia con actividades deportivas",
+              "terms": [
+                "actividaddeportiva"
+              ],
+              "matched": [
+                "actividaddeportiva"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "actividad_deportiva",
+                  "label": "actividad deportiva",
+                  "expression": "actividades deportivas"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Ayuda social, Actividades deportivas, Campamentos",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    },
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una iglesia con actividades deportivas",
+              "terms": [
+                "actividaddeportiva"
+              ],
+              "matched": [
+                "actividaddeportiva"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "actividad_deportiva",
+                  "label": "actividad deportiva",
+                  "expression": "actividades deportivas"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.ministries",
+                  "text": "Música / alabanza, Misiones, Deportes, Oración, Adultos mayores, Formación bíblica",
+                  "aliases": [
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "deportes"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una iglesia con actividades deportivas",
+              "terms": [
+                "actividaddeportiva"
+              ],
+              "matched": [
+                "actividaddeportiva"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "actividad_deportiva",
+                  "label": "actividad deportiva",
+                  "expression": "actividades deportivas"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.ministries",
+                  "text": "Deportes, Streaming, Adultos mayores, Familias, Música / alabanza",
+                  "aliases": [
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "deportes"
+                    }
+                  ]
+                },
+                {
+                  "field": "community.activities",
+                  "text": "Confraternidades, Reuniones de Alabanza, Obras Audiovisuales, Actividades deportivas",
+                  "aliases": [
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        }
+      ]
+    },
+    {
+      "id": "new-14",
+      "query": "Me interesa una iglesia donde practicar deportes.",
+      "old": [],
+      "next": [
+        "155555f8b883bb7066754b67",
+        "6ac9b9225017eda79d91466c",
+        "54eaade8ff61c196a91f9f1e",
+        "186c21a71a29a8fa20363ab9",
+        "495446dcdd84fdaf0d4f4fa9",
+        "03218dbdd2818ed870a2ec54"
+      ],
+      "evidence": [
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una iglesia donde practicar deportes",
+              "terms": [
+                "actividaddeportiva"
+              ],
+              "matched": [
+                "actividaddeportiva"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "actividad_deportiva",
+                  "label": "actividad deportiva",
+                  "expression": "practicar deportes"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.ministries",
+                  "text": "Deportes",
+                  "aliases": [
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "deportes"
+                    }
+                  ]
+                },
+                {
+                  "field": "community.activities",
+                  "text": "Actividades deportivas",
+                  "aliases": [
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una iglesia donde practicar deportes",
+              "terms": [
+                "actividaddeportiva"
+              ],
+              "matched": [
+                "actividaddeportiva"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "actividad_deportiva",
+                  "label": "actividad deportiva",
+                  "expression": "practicar deportes"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Reuniones de Alabanza, Retiros, Voluntariado, Cursos / institutos, Eventos familiares, Bautismos, Campamentos, Evangelismo, Ayuda social, Actividades deportivas, Obras Audiovisuales",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    },
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una iglesia donde practicar deportes",
+              "terms": [
+                "actividaddeportiva"
+              ],
+              "matched": [
+                "actividaddeportiva"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "actividad_deportiva",
+                  "label": "actividad deportiva",
+                  "expression": "practicar deportes"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Actividades deportivas, Retiros, Campamentos",
+                  "aliases": [
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una iglesia donde practicar deportes",
+              "terms": [
+                "actividaddeportiva"
+              ],
+              "matched": [
+                "actividaddeportiva"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "actividad_deportiva",
+                  "label": "actividad deportiva",
+                  "expression": "practicar deportes"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Ayuda social, Actividades deportivas, Campamentos",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    },
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una iglesia donde practicar deportes",
+              "terms": [
+                "actividaddeportiva"
+              ],
+              "matched": [
+                "actividaddeportiva"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "actividad_deportiva",
+                  "label": "actividad deportiva",
+                  "expression": "practicar deportes"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.ministries",
+                  "text": "Música / alabanza, Misiones, Deportes, Oración, Adultos mayores, Formación bíblica",
+                  "aliases": [
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "deportes"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "una iglesia donde practicar deportes",
+              "terms": [
+                "actividaddeportiva"
+              ],
+              "matched": [
+                "actividaddeportiva"
+              ],
+              "supported": true,
+              "aliases": [
+                {
+                  "concept": "actividad_deportiva",
+                  "label": "actividad deportiva",
+                  "expression": "practicar deportes"
+                }
+              ],
+              "sources": [
+                {
+                  "field": "community.ministries",
+                  "text": "Deportes, Streaming, Adultos mayores, Familias, Música / alabanza",
+                  "aliases": [
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "deportes"
+                    }
+                  ]
+                },
+                {
+                  "field": "community.activities",
+                  "text": "Confraternidades, Reuniones de Alabanza, Obras Audiovisuales, Actividades deportivas",
+                  "aliases": [
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        }
+      ]
+    },
+    {
+      "id": "new-15",
+      "query": "Me interesa una iglesia con clases de pilotaje de helicópteros.",
+      "old": [],
+      "next": [],
+      "evidence": []
+    },
+    {
+      "id": "new-16",
+      "query": "Me interesa una comunidad con fabricación de microprocesadores.",
+      "old": [],
+      "next": [],
+      "evidence": []
+    },
+    {
+      "id": "new-17",
+      "query": "Busco una iglesia en Santiago; me interesa voluntariado.",
+      "old": [
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "306c02d8ba5fde003056f434",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d"
+      ],
+      "next": [
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "306c02d8ba5fde003056f434",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d"
+      ],
+      "evidence": [
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "voluntariado",
+              "terms": [
+                "voluntariado"
+              ],
+              "matched": [
+                "voluntariado"
+              ],
+              "supported": true,
+              "aliases": [],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Reuniones de Alabanza, Retiros, Voluntariado, Cursos / institutos, Eventos familiares, Bautismos, Campamentos, Evangelismo, Ayuda social, Actividades deportivas, Obras Audiovisuales",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    },
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "voluntariado",
+              "terms": [
+                "voluntariado"
+              ],
+              "matched": [
+                "voluntariado"
+              ],
+              "supported": true,
+              "aliases": [],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Evangelismo, Voluntariado, Ayuda social",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "voluntariado",
+              "terms": [
+                "voluntariado"
+              ],
+              "matched": [
+                "voluntariado"
+              ],
+              "supported": true,
+              "aliases": [],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Voluntariado, Eventos familiares, Reuniones de Alabanza",
+                  "aliases": []
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "voluntariado",
+              "terms": [
+                "voluntariado"
+              ],
+              "matched": [
+                "voluntariado"
+              ],
+              "supported": true,
+              "aliases": [],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Voluntariado, Evangelismo, Eventos familiares, Ayuda social",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "voluntariado",
+              "terms": [
+                "voluntariado"
+              ],
+              "matched": [
+                "voluntariado"
+              ],
+              "supported": true,
+              "aliases": [],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Voluntariado, Ayuda social",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "voluntariado",
+              "terms": [
+                "voluntariado"
+              ],
+              "matched": [
+                "voluntariado"
+              ],
+              "supported": true,
+              "aliases": [],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Voluntariado, Ayuda social, Eventos familiares, Obras Audiovisuales, Confraternidades",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        }
+      ]
+    },
+    {
+      "id": "new-18",
+      "query": "Me interesa voluntariado; busco una iglesia en Santiago.",
+      "old": [
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "306c02d8ba5fde003056f434",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d"
+      ],
+      "next": [
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "306c02d8ba5fde003056f434",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d"
+      ],
+      "evidence": [
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "voluntariado",
+              "terms": [
+                "voluntariado"
+              ],
+              "matched": [
+                "voluntariado"
+              ],
+              "supported": true,
+              "aliases": [],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Reuniones de Alabanza, Retiros, Voluntariado, Cursos / institutos, Eventos familiares, Bautismos, Campamentos, Evangelismo, Ayuda social, Actividades deportivas, Obras Audiovisuales",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    },
+                    {
+                      "concept": "actividad_deportiva",
+                      "label": "actividad deportiva",
+                      "expression": "actividades deportivas"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "voluntariado",
+              "terms": [
+                "voluntariado"
+              ],
+              "matched": [
+                "voluntariado"
+              ],
+              "supported": true,
+              "aliases": [],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Evangelismo, Voluntariado, Ayuda social",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "voluntariado",
+              "terms": [
+                "voluntariado"
+              ],
+              "matched": [
+                "voluntariado"
+              ],
+              "supported": true,
+              "aliases": [],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Voluntariado, Eventos familiares, Reuniones de Alabanza",
+                  "aliases": []
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "voluntariado",
+              "terms": [
+                "voluntariado"
+              ],
+              "matched": [
+                "voluntariado"
+              ],
+              "supported": true,
+              "aliases": [],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Voluntariado, Evangelismo, Eventos familiares, Ayuda social",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "voluntariado",
+              "terms": [
+                "voluntariado"
+              ],
+              "matched": [
+                "voluntariado"
+              ],
+              "supported": true,
+              "aliases": [],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Voluntariado, Ayuda social",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        },
+        {
+          "status": "textual_support",
+          "checks": [
+            {
+              "interest": "voluntariado",
+              "terms": [
+                "voluntariado"
+              ],
+              "matched": [
+                "voluntariado"
+              ],
+              "supported": true,
+              "aliases": [],
+              "sources": [
+                {
+                  "field": "community.activities",
+                  "text": "Voluntariado, Ayuda social, Eventos familiares, Obras Audiovisuales, Confraternidades",
+                  "aliases": [
+                    {
+                      "concept": "apoyo_social",
+                      "label": "apoyo social",
+                      "expression": "ayuda social"
+                    }
+                  ]
+                }
+              ],
+              "reason": "single_passage_support"
+            }
+          ],
+          "method": "controlled-concepts-v2"
+        }
+      ]
+    }
+  ],
+  "final": [
+    {
+      "id": 1,
+      "interest": "Colaborar en ayuda comunitaria",
+      "body": "Ayuda social",
+      "expected": true,
+      "old": false,
+      "next": true,
+      "oldPass": false,
+      "pass": true
+    },
+    {
+      "id": 2,
+      "interest": "Me interesa practicar actividades deportivas",
+      "body": "Actividades deportivas",
+      "expected": true,
+      "old": false,
+      "next": false,
+      "oldPass": false,
+      "pass": false
+    },
+    {
+      "id": 3,
+      "interest": "Apoyar a personas necesitadas",
+      "body": "Ayuda social",
+      "expected": true,
+      "old": false,
+      "next": true,
+      "oldPass": false,
+      "pass": true
+    },
+    {
+      "id": 4,
+      "interest": "Ayuda social con asesoría jurídica",
+      "body": "Ayuda social",
+      "expected": false,
+      "old": false,
+      "next": false,
+      "oldPass": true,
+      "pass": true
+    },
+    {
+      "id": 5,
+      "interest": "Deportes acuáticos",
+      "body": "Actividades deportivas",
+      "expected": false,
+      "old": false,
+      "next": false,
+      "oldPass": true,
+      "pass": true
+    },
+    {
+      "id": 6,
+      "interest": "Practicar deportes",
+      "body": "No ofrecemos actividades deportivas.",
+      "expected": false,
+      "old": false,
+      "next": false,
+      "oldPass": true,
+      "pass": true
+    },
+    {
+      "id": 7,
+      "interest": "Ayuda social",
+      "body": "Antes ofrecíamos ayuda social.",
+      "expected": false,
+      "old": true,
+      "next": false,
+      "oldPass": false,
+      "pass": true
+    },
+    {
+      "id": 8,
+      "interest": "Sola Scriptura",
+      "body": "Santa Trinidad",
+      "expected": false,
+      "old": false,
+      "next": false,
+      "oldPass": true,
+      "pass": true
+    },
+    {
+      "id": 9,
+      "interest": "Cirugía veterinaria",
+      "body": "Ayuda social",
+      "expected": false,
+      "old": false,
+      "next": false,
+      "oldPass": true,
+      "pass": true
+    },
+    {
+      "id": 10,
+      "interest": "Ayuda social y deportes",
+      "body": "Ayuda social. Actividades deportivas.",
+      "expected": false,
+      "old": false,
+      "next": false,
+      "oldPass": true,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "finalCases": 10,
+    "baselineCorrect": 6,
+    "newCorrect": 9,
+    "improvements": 3,
+    "regressions": 0
+  }
+}

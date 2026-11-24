@@ -50,14 +50,13 @@ async function canPrepare(m){
  const row=await Invitation.findById(m.invitation);if(!await eligible(row,null,false))return false;
  return !await Message.exists({invitation:m.invitation,_id:{$ne:m._id},$or:[{state:{$in:['reserved','uncertain']}},{state:'accepted',resultAt:{$gte:m.createdAt}}]});
 }
-async function canPrepareMany(messages){
+async function canPrepareMany(messages,session=null){
  const candidates=messages.filter(m=>!m.trashedAt&&['pending','blocked','cancelled'].includes(m.state));if(!candidates.length)return new Map();
- const invitationIds=[...new Set(candidates.map(m=>String(m.invitation)))],rows=await Invitation.find({_id:{$in:invitationIds}}).lean(),rowById=new Map(rows.map(r=>[String(r._id),r]));
+ const invitationIds=[...new Set(candidates.map(m=>String(m.invitation)))],rows=await Invitation.find({_id:{$in:invitationIds}}).session(session).lean(),rowById=new Map(rows.map(r=>[String(r._id),r]));
  const churchIds=[...new Set(rows.map(r=>String(r.church)))],contactIds=[...new Set(rows.map(r=>r.contactKey))],emailPairs=rows.map(r=>({church:String(r.church),email:r.recipient.email}));
- const [churches,contacts,blocked,conflicts]=await Promise.all([
+ let churches,contacts,blocked,conflicts;if(session){churches=await Church.find({_id:{$in:churchIds}}).select('identification.name location active metadata mergedInto representatives representativeRoles updatedAt __v').session(session).lean();contacts=await require('../models/church-outreach-contact.model').find({_id:{$in:contactIds}}).select('_id noContact').session(session).lean();blocked=await mail.suppressedMany(emailPairs,session);conflicts=await Message.find({invitation:{$in:invitationIds},$or:[{state:{$in:['reserved','uncertain']}},{state:'accepted'}]}).select('invitation _id state resultAt createdAt').session(session).lean();}else [churches,contacts,blocked,conflicts]=await Promise.all([
   Church.find({_id:{$in:churchIds}}).select('identification.name location active metadata mergedInto representatives representativeRoles updatedAt __v').lean(),
-  require('../models/church-outreach-contact.model').find({_id:{$in:contactIds}}).select('_id noContact').lean(),
-  mail.suppressedMany(emailPairs),
+  require('../models/church-outreach-contact.model').find({_id:{$in:contactIds}}).select('_id noContact').lean(),mail.suppressedMany(emailPairs),
   Message.find({invitation:{$in:invitationIds},$or:[{state:{$in:['reserved','uncertain']}},{state:'accepted'}]}).select('invitation _id state resultAt createdAt').lean()
  ]);
  const churchById=new Map(churches.map(c=>[String(c._id),c])),contactById=new Map(contacts.map(c=>[c._id,c])),blockedMap=blocked,conflictByInvitation=new Map();

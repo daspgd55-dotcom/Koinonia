@@ -1,0 +1,44 @@
+[
+  {
+    "text": "Ayudar a familias necesitadas",
+    "body": "Apoyo social",
+    "expected": true,
+    "before": false,
+    "after": true
+  },
+  {
+    "text": "Hacer deportes",
+    "body": "Actividades deportivas",
+    "expected": true,
+    "before": false,
+    "after": true
+  },
+  {
+    "text": "Ayuda comunitaria gratuita",
+    "body": "Ayuda social",
+    "expected": false,
+    "before": false,
+    "after": false
+  },
+  {
+    "text": "Apoyo social",
+    "body": "Planeamos ofrecer ayuda social",
+    "expected": false,
+    "before": false,
+    "after": false
+  },
+  {
+    "text": "Actividad deportiva",
+    "body": "No hay actividades deportivas",
+    "expected": false,
+    "before": false,
+    "after": false
+  },
+  {
+    "text": "Santa Cena",
+    "body": "Eucaristía",
+    "expected": false,
+    "before": false,
+    "after": false
+  }
+]

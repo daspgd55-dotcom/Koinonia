@@ -1,0 +1,221 @@
+KOINONIA | TANDAS DE LECTURA
+Los ID remiten al inventario cronologico. Cada tanda conserva el orden por fecha. Las tandas largas se dividen en tramos de hasta 10 archivos para pedirlos en prompts separados. La tanda 9 agrupa material de apoyo; revisar su utilidad en la etapa de lectura. Las hojas de contactos se registran como evidencia, sin necesidad de leer datos personales para el informe.
+
+
+Tanda 1 - Requisitos, arquitectura y guias generales (4)
+
+Tramo 1.1 | Prompt: Lee el tramo 1.1 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+006 | 2026-10-08 | Fase_1_2_Analisis_y_Requisitos.md
+025 | 2026-10-20 | Backend/README.md
+027 | 2026-10-20 | output/pdf/koinonia-guia-aprendizaje-fases-0-13.pdf
+035 | 2026-10-21 | Frontend/README.md
+
+Tanda 2 - Experiencia de usuario, diseno y pruebas de interfaz (14)
+
+Tramo 2.1 | Prompt: Lee el tramo 2.1 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+007 | 2026-10-08 | docs/diseno/catalogo-ficha-y-filtros.md
+008 | 2026-10-08 | docs/diseno/referencia-visual.md
+014 | 2026-10-13 | Frontend/REVISION-INTERFACES.md
+015 | 2026-10-14 | Frontend/COMPARISON.md
+016 | 2026-10-14 | Frontend/MOTION.md
+043 | 2026-10-22 | Frontend/LOADING.md
+044 | 2026-10-22 | Frontend/test/discovery-layout.md
+048 | 2026-10-23 | Frontend/test/admin-form-refinement.md
+049 | 2026-10-23 | Frontend/test/admin-panels.md
+051 | 2026-10-23 | Frontend/test/home-layout.md
+
+Tramo 2.2 | Prompt: Lee el tramo 2.2 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+052 | 2026-10-23 | Frontend/test/personal-pages.md
+053 | 2026-10-23 | Frontend/test/profile-layout.md
+054 | 2026-10-23 | Frontend/test/public-profiles.md
+057 | 2026-10-24 | Backend/docs/testing-ui.md
+
+Tanda 3 - Comunidades, representantes y manuales (21)
+
+Tramo 3.1 | Prompt: Lee el tramo 3.1 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+013 | 2026-10-13 | Backend/docs/saved-communities.md
+017 | 2026-10-14 | Frontend/REPRESENTATIVE_HELP.md
+018 | 2026-10-15 | Backend/docs/community-improvements.md
+026 | 2026-10-20 | Backend/docs/address-location.md
+032 | 2026-10-21 | Backend/docs/church-following.md
+040 | 2026-10-22 | Backend/docs/community-management.md
+055 | 2026-10-24 | Backend/docs/church-public-sections.md
+056 | 2026-10-24 | Backend/docs/representative-subroles.md
+083 | 2026-11-10 | Backend/docs/church-organizations-design.md
+084 | 2026-11-10 | Backend/docs/representative-usability.md
+
+Tramo 3.2 | Prompt: Lee el tramo 3.2 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+085 | 2026-11-10 | Frontend/public/manuales/README.md
+086 | 2026-11-10 | Frontend/public/manuales/koinonia-manual-representante-administrador.pdf
+087 | 2026-11-10 | Frontend/public/manuales/koinonia-manual-representante-bienvenida.pdf
+088 | 2026-11-10 | Frontend/public/manuales/koinonia-manual-representante-editor.pdf
+089 | 2026-11-10 | Frontend/public/manuales/koinonia-manual-representante-moderador.pdf
+090 | 2026-11-10 | output/pdf/koinonia-manual-representante-administrador.pdf
+091 | 2026-11-10 | output/pdf/koinonia-manual-representante-bienvenida.pdf
+092 | 2026-11-10 | output/pdf/koinonia-manual-representante-editor.pdf
+093 | 2026-11-10 | output/pdf/koinonia-manual-representante-moderador.pdf
+112 | 2026-11-12 | Backend/docs/representative-welcome.md
+
+Tramo 3.3 | Prompt: Lee el tramo 3.3 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+123 | 2026-11-16 | Backend/docs/linked-communities.md
+
+Tanda 4 - Eventos, funciones personales y recomendaciones (12)
+
+Tramo 4.1 | Prompt: Lee el tramo 4.1 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+012 | 2026-10-13 | Backend/docs/experiences.md
+019 | 2026-10-16 | Backend/docs/event-collaboration.md
+023 | 2026-10-19 | Backend/docs/onboarding-profile.md
+041 | 2026-10-22 | Backend/docs/friends-and-messages.md
+045 | 2026-10-23 | Backend/docs/event-recommendations.md
+046 | 2026-10-23 | Backend/docs/first-visits.md
+047 | 2026-10-23 | Backend/docs/personal-home.md
+050 | 2026-10-23 | Frontend/test/event-refinement.md
+058 | 2026-11-02 | Backend/docs/account-media.md
+111 | 2026-11-12 | Backend/docs/recommender-contract.md
+
+Tramo 4.2 | Prompt: Lee el tramo 4.2 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+122 | 2026-11-16 | Backend/docs/events.md
+124 | 2026-11-16 | Backend/docs/optimization-recommendations-polling.md
+
+Tanda 5 - Seguridad, rendimiento y despliegue (11)
+
+Tramo 5.1 | Prompt: Lee el tramo 5.1 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+011 | 2026-10-10 | Backend/docs/pilot-deployment.md
+028 | 2026-10-21 | Backend/docs/abuse-observation.md
+029 | 2026-10-21 | Backend/docs/account-security.md
+030 | 2026-10-21 | Backend/docs/adaptive-captcha.md
+031 | 2026-10-21 | Backend/docs/admin-mfa.md
+033 | 2026-10-21 | Backend/docs/security-maintenance.md
+034 | 2026-10-21 | Backend/docs/security-review.md
+036 | 2026-10-21 | output/documents/koinonia-resumen-seguridad.docx
+037 | 2026-10-21 | output/pdf/koinonia-resumen-seguridad.pdf
+042 | 2026-10-22 | Backend/docs/performance.md
+
+Tramo 5.2 | Prompt: Lee el tramo 5.2 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+145 | 2026-11-22 | Backend/docs/frontend-maintenance.md
+
+Tanda 6 - Datos, migraciones y escenarios de prueba (16)
+
+Tramo 6.1 | Prompt: Lee el tramo 6.1 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+001 | 2026-10-08 | Backend/data/google-maps-2026-05-18/RESUMEN.md
+002 | 2026-10-08 | Backend/data/google-maps-2026-09-30-201546/RESUMEN.md
+003 | 2026-10-08 | Backend/data/google-maps-2026-09-30/RESUMEN.md
+004 | 2026-10-08 | Backend/data/review-2026-09-30/RESUMEN.md
+005 | 2026-10-08 | Backend/docs/dataset-import.md
+020 | 2026-10-18 | outputs/pilot-migration/LEEME.md
+021 | 2026-10-18 | outputs/synthetic-enrichment-2026-10-16-v1/LEEME.md
+022 | 2026-10-18 | outputs/synthetic-enrichment-2026-10-16-v2/LEEME.md
+024 | 2026-10-19 | outputs/test-events/LEEME.md
+038 | 2026-10-21 | outputs/test-events-multichurch-2026-10-21-v1/LEEME.md
+
+Tramo 6.2 | Prompt: Lee el tramo 6.2 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+039 | 2026-10-21 | outputs/test-events-multichurch-2026-10-21-v1/LISTADO.md
+060 | 2026-11-02 | outputs/importacion-2026-11-02-v2/LEEME.txt
+062 | 2026-11-02 | outputs/importacion-2026-11-02-v3/LEEME.txt
+063 | 2026-11-02 | outputs/importacion-2026-11-02/LEEME.txt
+077 | 2026-11-06 | outputs/importacion-comunas-2026-11-05/LEEME.txt
+121 | 2026-11-13 | outputs/importacion-comunas-2026-11-13/LEEME.txt
+
+Tanda 7 - Inscripcion, invitaciones y correo (18)
+
+Tramo 7.1 | Prompt: Lee el tramo 7.1 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+065 | 2026-11-03 | Backend/docs/church-outreach-admin.md
+066 | 2026-11-03 | Backend/docs/church-outreach-development.md
+067 | 2026-11-03 | Backend/docs/church-outreach-invitations.md
+068 | 2026-11-03 | Backend/docs/church-outreach-mail.md
+069 | 2026-11-03 | Backend/docs/church-outreach-member-acceptance.md
+070 | 2026-11-03 | Backend/docs/church-outreach-pilot.md
+071 | 2026-11-03 | Backend/docs/church-outreach-private-access.md
+072 | 2026-11-03 | Backend/docs/church-outreach-verification.md
+073 | 2026-11-03 | Backend/docs/mail-observability.md
+074 | 2026-11-03 | Backend/docs/mail-queue.md
+
+Tramo 7.2 | Prompt: Lee el tramo 7.2 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+075 | 2026-11-03 | outputs/invitaciones-verificacion/backend-outreach.txt
+076 | 2026-11-06 | Backend/docs/church-outreach-response-ui.md
+079 | 2026-11-08 | Backend/docs/church-contact-import.md
+080 | 2026-11-09 | Backend/docs/church-campaign.md
+081 | 2026-11-09 | Backend/docs/church-make-queue.md
+082 | 2026-11-09 | outputs/make-outreach/LEEME.md
+113 | 2026-11-12 | Backend/src/emails/church-outreach/README.md
+142 | 2026-11-22 | Backend/docs/church-registration.md
+
+Tanda 8 - Busqueda inteligente: contratos, laboratorios y evaluaciones (32)
+
+Tramo 8.1 | Prompt: Lee el tramo 8.1 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+125 | 2026-11-18 | outputs/church-embeddings-local/expanded-evaluation-2026-11-18T15-53-26-932Z.md
+126 | 2026-11-18 | outputs/church-embeddings-local/free-intent-review-2026-11-18T05-52-12-466Z.md
+127 | 2026-11-18 | outputs/church-embeddings-local/intent-cases-2026-11-18T05-47-45-824Z.md
+128 | 2026-11-18 | outputs/church-embeddings-local/intent-cases-2026-11-18T05-48-28-561Z.md
+129 | 2026-11-18 | outputs/church-embeddings-local/intent-cases-2026-11-18T05-52-47-087Z.md
+130 | 2026-11-18 | outputs/church-embeddings-local/query-review-2026-11-18T05-28-45-499Z.md
+131 | 2026-11-18 | outputs/church-embeddings-local/requirements-review-2026-11-18T05-37-36-259Z.md
+132 | 2026-11-18 | outputs/church-embeddings-local/requirements-review-2026-11-18T05-40-49-307Z.md
+133 | 2026-11-18 | outputs/search-diagnostics/lfm-shadow/comparison-2026-11-18T20-58-43-797Z.md
+134 | 2026-11-18 | outputs/search-diagnostics/qwen-shadow/comparison-2026-11-18T20-11-14-164Z.md
+
+Tramo 8.2 | Prompt: Lee el tramo 8.2 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+135 | 2026-11-18 | outputs/search-diagnostics/qwen-shadow/comparison-2026-11-18T20-12-53-867Z.md
+136 | 2026-11-18 | outputs/search-diagnostics/runs/replay-2026-11-18T16-55-34-410Z.md
+137 | 2026-11-18 | outputs/search-diagnostics/runs/replay-2026-11-18T16-55-37-730Z.md
+138 | 2026-11-18 | outputs/search-diagnostics/runs/replay-2026-11-18T16-55-55-949Z.md
+139 | 2026-11-18 | outputs/search-diagnostics/runs/replay-2026-11-18T16-56-33-479Z.md
+140 | 2026-11-19 | outputs/search-diagnostics/lfm-clauses/clauses-2026-11-19T05-01-40-729Z.md
+141 | 2026-11-22 | Backend/docs/church-embeddings-preparation.md
+143 | 2026-11-22 | Backend/docs/embeddings-local-lab.md
+144 | 2026-11-22 | Backend/docs/expanded-search-evaluation.md
+146 | 2026-11-22 | Backend/docs/hybrid-flow-evaluation.md
+
+Tramo 8.3 | Prompt: Lee el tramo 8.3 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+147 | 2026-11-22 | Backend/docs/lfm-clause-classification.md
+148 | 2026-11-22 | Backend/docs/lfm-shadow-comparison.md
+149 | 2026-11-22 | Backend/docs/qwen-shadow-comparison.md
+150 | 2026-11-22 | Backend/docs/search-diagnostics.md
+151 | 2026-11-22 | Backend/docs/search-intent-evaluation.md
+152 | 2026-11-22 | Backend/docs/search-lab-ui.md
+153 | 2026-11-22 | Backend/docs/search-requirements-lab.md
+154 | 2026-11-22 | Backend/docs/semantic-local-lab.md
+155 | 2026-11-22 | Backend/docs/vector-search-lab.md
+156 | 2026-11-22 | outputs/church-embeddings-local/expanded-review.md
+
+Tramo 8.4 | Prompt: Lee el tramo 8.4 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+157 | 2026-11-22 | outputs/church-embeddings-local/sample-review.md
+158 | 2026-11-22 | outputs/search-diagnostics/6095e40ec3da/analysis.md
+
+Tanda 9 - Anexos y artefactos de referencia (30)
+
+Tramo 9.1 | Prompt: Lee el tramo 9.1 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+009 | 2026-10-08 | outputs/koinonia-dashboard-20260820/Koinonia_Dashboard_Dinamico.xlsx
+010 | 2026-10-08 | tmp/pdfs/informe-actual.txt
+059 | 2026-11-02 | outputs/contactos-pilot-2026-11-02/contactos-completos-koinonia-pilot.xlsx
+061 | 2026-11-02 | outputs/importacion-2026-11-02-v2/contactos-iglesias.xlsx
+064 | 2026-11-02 | outputs/importacion-2026-11-02/contactos-iglesias.xlsx
+078 | 2026-11-06 | outputs/importacion-comunas-2026-11-05/contactos-iglesias.xlsx
+094 | 2026-11-11 | outputs/correos-invitaciones/activated.html
+095 | 2026-11-11 | outputs/correos-invitaciones/activated.txt
+096 | 2026-11-11 | outputs/correos-invitaciones/approved.html
+097 | 2026-11-11 | outputs/correos-invitaciones/approved.txt
+
+Tramo 9.2 | Prompt: Lee el tramo 9.2 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+098 | 2026-11-11 | outputs/correos-invitaciones/clarification.html
+099 | 2026-11-11 | outputs/correos-invitaciones/clarification.txt
+100 | 2026-11-11 | outputs/correos-invitaciones/member-editor.html
+101 | 2026-11-11 | outputs/correos-invitaciones/member-moderator.html
+102 | 2026-11-11 | outputs/correos-invitaciones/member-reminder.html
+103 | 2026-11-11 | outputs/correos-invitaciones/member-reminder.txt
+104 | 2026-11-11 | outputs/correos-invitaciones/member-welcome.html
+105 | 2026-11-11 | outputs/correos-invitaciones/member.html
+106 | 2026-11-11 | outputs/correos-invitaciones/member.txt
+107 | 2026-11-11 | outputs/correos-invitaciones/received.html
+
+Tramo 9.3 | Prompt: Lee el tramo 9.3 del inventario documental de Koinonia y registra los avances y su evidencia para el informe.
+108 | 2026-11-11 | outputs/correos-invitaciones/received.txt
+109 | 2026-11-11 | outputs/correos-invitaciones/rejected.html
+110 | 2026-11-11 | outputs/correos-invitaciones/rejected.txt
+114 | 2026-11-12 | outputs/correos-invitaciones/index.html
+115 | 2026-11-12 | outputs/correos-invitaciones/initial.html
+116 | 2026-11-12 | outputs/correos-invitaciones/initial.txt
+117 | 2026-11-12 | outputs/correos-invitaciones/institutional-reminder.html
+118 | 2026-11-12 | outputs/correos-invitaciones/institutional-reminder.txt
+119 | 2026-11-12 | outputs/correos-invitaciones/renewal.html
+120 | 2026-11-12 | outputs/correos-invitaciones/renewal.txt

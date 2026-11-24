@@ -1,4 +1,5 @@
 const {z,id,parse}=require('../validation/schemas'),svc=require('../services/church-make-queue.service'),Message=require('../models/church-make-message.model'),{quota,hash}=require('../services/account-security.service');
+const finalAttempt=require('../services/church-make-final-attempt.service');
 exports.list=async(req,res)=>{
  const q=parse(z.object({trash:z.enum(['true','false']).default('false'),page:z.coerce.number().int().min(1).default(1),kind:z.enum(['initial','renewal','member']).optional()}),req.query),filter={trashedAt:q.trash==='true'?{$ne:null}:null,...(q.kind?{kind:q.kind}:{}),invitation:{$nin:await require('../models/church-outreach-invitation.model').find({trashedAt:{$ne:null}}).distinct('_id')}};
  const [data,total]=await Promise.all([Message.find(filter).select('trashedAt invitation member kind state createdAt expiresAt reservedUntil resultAt reason providerId').populate({path:'invitation',select:'recipient.email church',populate:{path:'church',select:'identification.name'}}).populate({path:'member',select:'email subrole'}).sort({createdAt:-1,_id:-1}).skip((q.page-1)*20).limit(20).lean(),Message.countDocuments(filter)]);
@@ -13,6 +14,8 @@ exports.preparable=async(req,res)=>{
  for(const m of rows)if(!seen.has(String(m.invitation))&&eligible.get(String(m._id))){ids.push(m._id);seen.add(String(m.invitation));}
  res.set('Cache-Control','no-store').json({ids});
 };
+exports.finalAttemptCandidates=async(req,res)=>{res.set('Cache-Control','no-store').json(await finalAttempt.candidates());};
+exports.createFinalAttempts=async(req,res)=>{const {ids}=parse(z.strictObject({ids:z.array(id).min(1).max(500).refine(v=>new Set(v.map(String)).size===v.length)}),req.body);res.set('Cache-Control','no-store').json(await finalAttempt.create(ids));};
 exports.trash=async(req,res)=>{
  const {restore}=parse(z.strictObject({restore:z.boolean().default(false)}),req.body),messageId=parse(id,req.params.id),{HttpError}=require('../utils/errors');
  await Message.db.transaction(async session=>{const m=await Message.findById(messageId).session(session);if(!m)throw new HttpError(404,'NOT_FOUND','Mensaje no encontrado');

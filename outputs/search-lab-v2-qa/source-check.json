@@ -1,0 +1,8 @@
+{
+  "database": "koinonia_synthetic_test_v2_local",
+  "selected": 100,
+  "found": 100,
+  "previewDocuments": 1092,
+  "stillMatching": 1092,
+  "mode": "read-only-preview-no-embeddings"
+}

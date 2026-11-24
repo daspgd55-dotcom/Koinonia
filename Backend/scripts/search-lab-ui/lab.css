@@ -3,3 +3,5 @@
 select{font:inherit;color:inherit;background:white;border:1px solid #91adaa;border-radius:9px;padding:10px;max-width:100%;width:100%}.card h5{font-size:15px;margin:20px 0 8px}
 
 fieldset{border:1px solid var(--border);border-radius:10px;padding:14px;margin:20px 0;min-width:0}legend{font-weight:650;padding:0 6px}fieldset label{font-size:14px;margin:12px 0 6px}.example-query{display:block;text-align:left;width:100%;margin:8px 0}.panel>button{margin:4px 8px 4px 0}
+
+input[type=file]{font:inherit;max-width:100%;margin-bottom:12px}.panel,.columns>section,main{min-width:0}p,li,blockquote,summary{overflow-wrap:anywhere}#import-feedback{display:block}button:disabled{cursor:not-allowed}#review-plan{border-left:3px solid var(--teal);padding-left:16px;margin:20px 0}#review[aria-busy=true]{opacity:.8}@media(max-width:650px){.panel>button{width:100%;margin:6px 0}header{gap:12px;flex-wrap:wrap}}

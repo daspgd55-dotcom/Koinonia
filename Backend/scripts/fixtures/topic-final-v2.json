@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "interest": "Colaborar en ayuda comunitaria",
+    "body": "Ayuda social",
+    "expected": true
+  },
+  {
+    "id": 2,
+    "interest": "Me interesa practicar actividades deportivas",
+    "body": "Actividades deportivas",
+    "expected": true
+  },
+  {
+    "id": 3,
+    "interest": "Apoyar a personas necesitadas",
+    "body": "Ayuda social",
+    "expected": true
+  },
+  {
+    "id": 4,
+    "interest": "Ayuda social con asesoría jurídica",
+    "body": "Ayuda social",
+    "expected": false
+  },
+  {
+    "id": 5,
+    "interest": "Deportes acuáticos",
+    "body": "Actividades deportivas",
+    "expected": false
+  },
+  {
+    "id": 6,
+    "interest": "Practicar deportes",
+    "body": "No ofrecemos actividades deportivas.",
+    "expected": false
+  },
+  {
+    "id": 7,
+    "interest": "Ayuda social",
+    "body": "Antes ofrecíamos ayuda social.",
+    "expected": false
+  },
+  {
+    "id": 8,
+    "interest": "Sola Scriptura",
+    "body": "Santa Trinidad",
+    "expected": false
+  },
+  {
+    "id": 9,
+    "interest": "Cirugía veterinaria",
+    "body": "Ayuda social",
+    "expected": false
+  },
+  {
+    "id": 10,
+    "interest": "Ayuda social y deportes",
+    "body": "Ayuda social. Actividades deportivas.",
+    "expected": false
+  }
+]

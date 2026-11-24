@@ -1,0 +1,177 @@
+KOINONIA | INVENTARIO DOCUMENTAL
+Fechas de referencia en orden ascendente. Para reportes con sello UTC se usa la fecha del nombre; para archivos versionados, la fecha de autor del ultimo cambio segun Git; para los demas, la modificacion local. Primera fecha Git = primer cambio visible para esa ruta, no fecha de creacion original. Se conservan las variantes y copias posibles.
+
+ID | Fecha de referencia | Fuente | Primera fecha Git | Modificacion local | Tanda | Ruta relativa
+001 | 2026-10-08 | Git | 2026-10-08 | 2026-09-26 | 6 | Backend/data/google-maps-2026-05-18/RESUMEN.md
+002 | 2026-10-08 | Git | 2026-10-08 | 2026-09-30 | 6 | Backend/data/google-maps-2026-09-30-201546/RESUMEN.md
+003 | 2026-10-08 | Git | 2026-10-08 | 2026-09-30 | 6 | Backend/data/google-maps-2026-09-30/RESUMEN.md
+004 | 2026-10-08 | Git | 2026-10-08 | 2026-09-30 | 6 | Backend/data/review-2026-09-30/RESUMEN.md
+005 | 2026-10-08 | Git | 2026-10-08 | 2026-09-30 | 6 | Backend/docs/dataset-import.md
+006 | 2026-10-08 | Git | 2026-10-08 | 2026-08-14 | 1 | Fase_1_2_Analisis_y_Requisitos.md
+007 | 2026-10-08 | Git | 2026-10-08 | 2026-10-03 | 2 | docs/diseno/catalogo-ficha-y-filtros.md
+008 | 2026-10-08 | Git | 2026-10-08 | 2026-10-02 | 2 | docs/diseno/referencia-visual.md
+009 | 2026-10-08 | Git | 2026-10-08 | 2026-08-20 | 9 | outputs/koinonia-dashboard-20260820/Koinonia_Dashboard_Dinamico.xlsx
+010 | 2026-10-08 | Git | 2026-10-08 | 2026-10-02 | 9 | tmp/pdfs/informe-actual.txt
+011 | 2026-10-10 | Git | 2026-10-08 | 2026-10-10 | 5 | Backend/docs/pilot-deployment.md
+012 | 2026-10-13 | Git | 2026-10-13 | 2026-10-13 | 4 | Backend/docs/experiences.md
+013 | 2026-10-13 | Git | 2026-10-13 | 2026-10-13 | 3 | Backend/docs/saved-communities.md
+014 | 2026-10-13 | Git | 2026-10-13 | 2026-10-13 | 2 | Frontend/REVISION-INTERFACES.md
+015 | 2026-10-14 | Git | 2026-10-14 | 2026-10-14 | 2 | Frontend/COMPARISON.md
+016 | 2026-10-14 | Git | 2026-10-14 | 2026-10-14 | 2 | Frontend/MOTION.md
+017 | 2026-10-14 | Git | 2026-10-14 | 2026-10-14 | 3 | Frontend/REPRESENTATIVE_HELP.md
+018 | 2026-10-15 | Git | 2026-10-15 | 2026-10-15 | 3 | Backend/docs/community-improvements.md
+019 | 2026-10-16 | Git | 2026-10-16 | 2026-10-16 | 4 | Backend/docs/event-collaboration.md
+020 | 2026-10-18 | Git | 2026-10-18 | 2026-10-18 | 6 | outputs/pilot-migration/LEEME.md
+021 | 2026-10-18 | Git | 2026-10-18 | 2026-10-16 | 6 | outputs/synthetic-enrichment-2026-10-16-v1/LEEME.md
+022 | 2026-10-18 | Git | 2026-10-18 | 2026-10-17 | 6 | outputs/synthetic-enrichment-2026-10-16-v2/LEEME.md
+023 | 2026-10-19 | Git | 2026-10-08 | 2026-10-19 | 4 | Backend/docs/onboarding-profile.md
+024 | 2026-10-19 | Git | 2026-10-19 | 2026-10-18 | 6 | outputs/test-events/LEEME.md
+025 | 2026-10-20 | Git | 2026-10-08 | 2026-10-20 | 1 | Backend/README.md
+026 | 2026-10-20 | Git | 2026-10-19 | 2026-10-20 | 3 | Backend/docs/address-location.md
+027 | 2026-10-20 | Git | 2026-10-19 | 2026-10-20 | 1 | output/pdf/koinonia-guia-aprendizaje-fases-0-13.pdf
+028 | 2026-10-21 | Git | 2026-10-21 | 2026-10-20 | 5 | Backend/docs/abuse-observation.md
+029 | 2026-10-21 | Git | 2026-10-19 | 2026-10-20 | 5 | Backend/docs/account-security.md
+030 | 2026-10-21 | Git | 2026-10-21 | 2026-10-20 | 5 | Backend/docs/adaptive-captcha.md
+031 | 2026-10-21 | Git | 2026-10-21 | 2026-10-20 | 5 | Backend/docs/admin-mfa.md
+032 | 2026-10-21 | Git | 2026-10-21 | 2026-10-21 | 3 | Backend/docs/church-following.md
+033 | 2026-10-21 | Git | 2026-10-21 | 2026-10-20 | 5 | Backend/docs/security-maintenance.md
+034 | 2026-10-21 | Git | 2026-10-21 | 2026-10-20 | 5 | Backend/docs/security-review.md
+035 | 2026-10-21 | Git | 2026-10-08 | 2026-10-20 | 1 | Frontend/README.md
+036 | 2026-10-21 | Git | 2026-10-21 | 2026-10-21 | 5 | output/documents/koinonia-resumen-seguridad.docx
+037 | 2026-10-21 | Git | 2026-10-21 | 2026-10-21 | 5 | output/pdf/koinonia-resumen-seguridad.pdf
+038 | 2026-10-21 | Git | 2026-10-21 | 2026-10-21 | 6 | outputs/test-events-multichurch-2026-10-21-v1/LEEME.md
+039 | 2026-10-21 | Git | 2026-10-21 | 2026-10-21 | 6 | outputs/test-events-multichurch-2026-10-21-v1/LISTADO.md
+040 | 2026-10-22 | Git | 2026-10-08 | 2026-10-22 | 3 | Backend/docs/community-management.md
+041 | 2026-10-22 | Git | 2026-10-21 | 2026-10-22 | 4 | Backend/docs/friends-and-messages.md
+042 | 2026-10-22 | Git | 2026-10-22 | 2026-10-22 | 5 | Backend/docs/performance.md
+043 | 2026-10-22 | Git | 2026-10-22 | 2026-10-22 | 2 | Frontend/LOADING.md
+044 | 2026-10-22 | Git | 2026-10-22 | 2026-10-22 | 2 | Frontend/test/discovery-layout.md
+045 | 2026-10-23 | Git | 2026-10-21 | 2026-10-23 | 4 | Backend/docs/event-recommendations.md
+046 | 2026-10-23 | Git | 2026-10-14 | 2026-10-23 | 4 | Backend/docs/first-visits.md
+047 | 2026-10-23 | Git | 2026-10-23 | 2026-10-23 | 4 | Backend/docs/personal-home.md
+048 | 2026-10-23 | Git | 2026-10-23 | 2026-10-23 | 2 | Frontend/test/admin-form-refinement.md
+049 | 2026-10-23 | Git | 2026-10-23 | 2026-10-23 | 2 | Frontend/test/admin-panels.md
+050 | 2026-10-23 | Git | 2026-10-23 | 2026-10-23 | 4 | Frontend/test/event-refinement.md
+051 | 2026-10-23 | Git | 2026-10-23 | 2026-10-22 | 2 | Frontend/test/home-layout.md
+052 | 2026-10-23 | Git | 2026-10-23 | 2026-10-23 | 2 | Frontend/test/personal-pages.md
+053 | 2026-10-23 | Git | 2026-10-23 | 2026-10-22 | 2 | Frontend/test/profile-layout.md
+054 | 2026-10-23 | Git | 2026-10-23 | 2026-10-22 | 2 | Frontend/test/public-profiles.md
+055 | 2026-10-24 | Git | 2026-10-24 | 2026-10-24 | 3 | Backend/docs/church-public-sections.md
+056 | 2026-10-24 | Git | 2026-10-24 | 2026-10-24 | 3 | Backend/docs/representative-subroles.md
+057 | 2026-10-24 | Git | 2026-10-08 | 2026-10-24 | 2 | Backend/docs/testing-ui.md
+058 | 2026-11-02 | Git | 2026-10-10 | 2026-10-31 | 4 | Backend/docs/account-media.md
+059 | 2026-11-02 | Git | 2026-11-02 | 2026-11-02 | 9 | outputs/contactos-pilot-2026-11-02/contactos-completos-koinonia-pilot.xlsx
+060 | 2026-11-02 | Git | 2026-11-02 | 2026-11-02 | 6 | outputs/importacion-2026-11-02-v2/LEEME.txt
+061 | 2026-11-02 | Git | 2026-11-02 | 2026-11-02 | 9 | outputs/importacion-2026-11-02-v2/contactos-iglesias.xlsx
+062 | 2026-11-02 | Git | 2026-11-02 | 2026-11-02 | 6 | outputs/importacion-2026-11-02-v3/LEEME.txt
+063 | 2026-11-02 | Git | 2026-11-02 | 2026-11-02 | 6 | outputs/importacion-2026-11-02/LEEME.txt
+064 | 2026-11-02 | Git | 2026-11-02 | 2026-11-02 | 9 | outputs/importacion-2026-11-02/contactos-iglesias.xlsx
+065 | 2026-11-03 | Git | 2026-11-03 | 2026-11-03 | 7 | Backend/docs/church-outreach-admin.md
+066 | 2026-11-03 | Git | 2026-11-03 | 2026-11-03 | 7 | Backend/docs/church-outreach-development.md
+067 | 2026-11-03 | Git | 2026-11-03 | 2026-11-03 | 7 | Backend/docs/church-outreach-invitations.md
+068 | 2026-11-03 | Git | 2026-11-03 | 2026-11-03 | 7 | Backend/docs/church-outreach-mail.md
+069 | 2026-11-03 | Git | 2026-11-03 | 2026-11-03 | 7 | Backend/docs/church-outreach-member-acceptance.md
+070 | 2026-11-03 | Git | 2026-11-03 | 2026-11-03 | 7 | Backend/docs/church-outreach-pilot.md
+071 | 2026-11-03 | Git | 2026-11-03 | 2026-11-03 | 7 | Backend/docs/church-outreach-private-access.md
+072 | 2026-11-03 | Git | 2026-11-03 | 2026-11-03 | 7 | Backend/docs/church-outreach-verification.md
+073 | 2026-11-03 | Git | 2026-10-21 | 2026-11-03 | 7 | Backend/docs/mail-observability.md
+074 | 2026-11-03 | Git | 2026-10-21 | 2026-11-03 | 7 | Backend/docs/mail-queue.md
+075 | 2026-11-03 | Git | 2026-11-03 | 2026-11-03 | 7 | outputs/invitaciones-verificacion/backend-outreach.txt
+076 | 2026-11-06 | Git | 2026-11-03 | 2026-11-05 | 7 | Backend/docs/church-outreach-response-ui.md
+077 | 2026-11-06 | Git | 2026-11-06 | 2026-11-05 | 6 | outputs/importacion-comunas-2026-11-05/LEEME.txt
+078 | 2026-11-06 | Git | 2026-11-06 | 2026-11-05 | 9 | outputs/importacion-comunas-2026-11-05/contactos-iglesias.xlsx
+079 | 2026-11-08 | Git | 2026-11-06 | 2026-11-08 | 7 | Backend/docs/church-contact-import.md
+080 | 2026-11-09 | Git | 2026-11-09 | 2026-11-09 | 7 | Backend/docs/church-campaign.md
+081 | 2026-11-09 | Git | 2026-11-09 | 2026-11-09 | 7 | Backend/docs/church-make-queue.md
+082 | 2026-11-09 | Git | 2026-11-09 | 2026-11-09 | 7 | outputs/make-outreach/LEEME.md
+083 | 2026-11-10 | Git | 2026-11-10 | 2026-11-10 | 3 | Backend/docs/church-organizations-design.md
+084 | 2026-11-10 | Git | 2026-11-10 | 2026-11-10 | 3 | Backend/docs/representative-usability.md
+085 | 2026-11-10 | Git | 2026-11-10 | 2026-11-10 | 3 | Frontend/public/manuales/README.md
+086 | 2026-11-10 | Git | 2026-11-10 | 2026-11-10 | 3 | Frontend/public/manuales/koinonia-manual-representante-administrador.pdf
+087 | 2026-11-10 | Git | 2026-11-10 | 2026-11-10 | 3 | Frontend/public/manuales/koinonia-manual-representante-bienvenida.pdf
+088 | 2026-11-10 | Git | 2026-11-10 | 2026-11-10 | 3 | Frontend/public/manuales/koinonia-manual-representante-editor.pdf
+089 | 2026-11-10 | Git | 2026-11-10 | 2026-11-10 | 3 | Frontend/public/manuales/koinonia-manual-representante-moderador.pdf
+090 | 2026-11-10 | Git | 2026-11-10 | 2026-11-10 | 3 | output/pdf/koinonia-manual-representante-administrador.pdf
+091 | 2026-11-10 | Git | 2026-11-10 | 2026-11-10 | 3 | output/pdf/koinonia-manual-representante-bienvenida.pdf
+092 | 2026-11-10 | Git | 2026-11-10 | 2026-11-10 | 3 | output/pdf/koinonia-manual-representante-editor.pdf
+093 | 2026-11-10 | Git | 2026-11-10 | 2026-11-10 | 3 | output/pdf/koinonia-manual-representante-moderador.pdf
+094 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/activated.html
+095 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/activated.txt
+096 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/approved.html
+097 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/approved.txt
+098 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/clarification.html
+099 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/clarification.txt
+100 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/member-editor.html
+101 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/member-moderator.html
+102 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/member-reminder.html
+103 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/member-reminder.txt
+104 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/member-welcome.html
+105 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/member.html
+106 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/member.txt
+107 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/received.html
+108 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/received.txt
+109 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/rejected.html
+110 | 2026-11-11 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/rejected.txt
+111 | 2026-11-12 | Git | 2026-10-08 | 2026-11-12 | 4 | Backend/docs/recommender-contract.md
+112 | 2026-11-12 | Git | 2026-11-12 | 2026-11-12 | 3 | Backend/docs/representative-welcome.md
+113 | 2026-11-12 | Git | 2026-11-06 | 2026-11-12 | 7 | Backend/src/emails/church-outreach/README.md
+114 | 2026-11-12 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/index.html
+115 | 2026-11-12 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/initial.html
+116 | 2026-11-12 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/initial.txt
+117 | 2026-11-12 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/institutional-reminder.html
+118 | 2026-11-12 | Git | 2026-11-06 | 2026-11-12 | 9 | outputs/correos-invitaciones/institutional-reminder.txt
+119 | 2026-11-12 | Git | 2026-11-12 | 2026-11-12 | 9 | outputs/correos-invitaciones/renewal.html
+120 | 2026-11-12 | Git | 2026-11-12 | 2026-11-12 | 9 | outputs/correos-invitaciones/renewal.txt
+121 | 2026-11-13 | Git | 2026-11-13 | 2026-11-13 | 6 | outputs/importacion-comunas-2026-11-13/LEEME.txt
+122 | 2026-11-16 | Git | 2026-10-15 | 2026-11-16 | 4 | Backend/docs/events.md
+123 | 2026-11-16 | Git | 2026-10-15 | 2026-11-16 | 3 | Backend/docs/linked-communities.md
+124 | 2026-11-16 | Git | 2026-11-16 | 2026-11-16 | 4 | Backend/docs/optimization-recommendations-polling.md
+125 | 2026-11-18 | nombre UTC | 2026-11-22 | 2026-11-18 | 8 | outputs/church-embeddings-local/expanded-evaluation-2026-11-18T15-53-26-932Z.md
+126 | 2026-11-18 | nombre UTC | 2026-11-22 | 2026-11-18 | 8 | outputs/church-embeddings-local/free-intent-review-2026-11-18T05-52-12-466Z.md
+127 | 2026-11-18 | nombre UTC | 2026-11-22 | 2026-11-18 | 8 | outputs/church-embeddings-local/intent-cases-2026-11-18T05-47-45-824Z.md
+128 | 2026-11-18 | nombre UTC | 2026-11-22 | 2026-11-18 | 8 | outputs/church-embeddings-local/intent-cases-2026-11-18T05-48-28-561Z.md
+129 | 2026-11-18 | nombre UTC | 2026-11-22 | 2026-11-18 | 8 | outputs/church-embeddings-local/intent-cases-2026-11-18T05-52-47-087Z.md
+130 | 2026-11-18 | nombre UTC | 2026-11-22 | 2026-11-18 | 8 | outputs/church-embeddings-local/query-review-2026-11-18T05-28-45-499Z.md
+131 | 2026-11-18 | nombre UTC | 2026-11-22 | 2026-11-18 | 8 | outputs/church-embeddings-local/requirements-review-2026-11-18T05-37-36-259Z.md
+132 | 2026-11-18 | nombre UTC | 2026-11-22 | 2026-11-18 | 8 | outputs/church-embeddings-local/requirements-review-2026-11-18T05-40-49-307Z.md
+133 | 2026-11-18 | nombre UTC | 2026-11-22 | 2026-11-18 | 8 | outputs/search-diagnostics/lfm-shadow/comparison-2026-11-18T20-58-43-797Z.md
+134 | 2026-11-18 | nombre UTC | 2026-11-22 | 2026-11-18 | 8 | outputs/search-diagnostics/qwen-shadow/comparison-2026-11-18T20-11-14-164Z.md
+135 | 2026-11-18 | nombre UTC | 2026-11-22 | 2026-11-18 | 8 | outputs/search-diagnostics/qwen-shadow/comparison-2026-11-18T20-12-53-867Z.md
+136 | 2026-11-18 | nombre UTC | 2026-11-22 | 2026-11-18 | 8 | outputs/search-diagnostics/runs/replay-2026-11-18T16-55-34-410Z.md
+137 | 2026-11-18 | nombre UTC | 2026-11-22 | 2026-11-18 | 8 | outputs/search-diagnostics/runs/replay-2026-11-18T16-55-37-730Z.md
+138 | 2026-11-18 | nombre UTC | 2026-11-22 | 2026-11-18 | 8 | outputs/search-diagnostics/runs/replay-2026-11-18T16-55-55-949Z.md
+139 | 2026-11-18 | nombre UTC | 2026-11-22 | 2026-11-18 | 8 | outputs/search-diagnostics/runs/replay-2026-11-18T16-56-33-479Z.md
+140 | 2026-11-19 | nombre UTC | 2026-11-22 | 2026-11-19 | 8 | outputs/search-diagnostics/lfm-clauses/clauses-2026-11-19T05-01-40-729Z.md
+141 | 2026-11-22 | Git | 2026-11-22 | 2026-11-18 | 8 | Backend/docs/church-embeddings-preparation.md
+142 | 2026-11-22 | Git | 2026-11-02 | 2026-11-22 | 7 | Backend/docs/church-registration.md
+143 | 2026-11-22 | Git | 2026-11-22 | 2026-11-17 | 8 | Backend/docs/embeddings-local-lab.md
+144 | 2026-11-22 | Git | 2026-11-22 | 2026-11-18 | 8 | Backend/docs/expanded-search-evaluation.md
+145 | 2026-11-22 | Git | 2026-11-16 | 2026-11-16 | 5 | Backend/docs/frontend-maintenance.md
+146 | 2026-11-22 | Git | 2026-11-22 | 2026-11-19 | 8 | Backend/docs/hybrid-flow-evaluation.md
+147 | 2026-11-22 | Git | 2026-11-22 | 2026-11-19 | 8 | Backend/docs/lfm-clause-classification.md
+148 | 2026-11-22 | Git | 2026-11-22 | 2026-11-18 | 8 | Backend/docs/lfm-shadow-comparison.md
+149 | 2026-11-22 | Git | 2026-11-22 | 2026-11-18 | 8 | Backend/docs/qwen-shadow-comparison.md
+150 | 2026-11-22 | Git | 2026-11-22 | 2026-11-18 | 8 | Backend/docs/search-diagnostics.md
+151 | 2026-11-22 | Git | 2026-11-22 | 2026-11-18 | 8 | Backend/docs/search-intent-evaluation.md
+152 | 2026-11-22 | Git | 2026-11-22 | 2026-11-19 | 8 | Backend/docs/search-lab-ui.md
+153 | 2026-11-22 | Git | 2026-11-22 | 2026-11-18 | 8 | Backend/docs/search-requirements-lab.md
+154 | 2026-11-22 | Git | 2026-11-22 | 2026-11-17 | 8 | Backend/docs/semantic-local-lab.md
+155 | 2026-11-22 | Git | 2026-11-22 | 2026-11-17 | 8 | Backend/docs/vector-search-lab.md
+156 | 2026-11-22 | Git | 2026-11-22 | 2026-11-18 | 8 | outputs/church-embeddings-local/expanded-review.md
+157 | 2026-11-22 | Git | 2026-11-22 | 2026-11-18 | 8 | outputs/church-embeddings-local/sample-review.md
+158 | 2026-11-22 | Git | 2026-11-22 | 2026-11-18 | 8 | outputs/search-diagnostics/6095e40ec3da/analysis.md
+
+Fuera de lectura: puntos de entrada HTML, arneses y manifiestos de dependencias.
+Backend/SR/requirements.lock.txt
+Backend/SR/requirements.txt
+Backend/public/testing/index.html
+Backend/scripts/etl/requirements.txt
+Backend/scripts/search-lab-ui/index.html
+Frontend/dist/index.html
+Frontend/index.html
+tmp/invitation-ui/index.html
+tmp/login-check/index.html
+tmp/pdfs/administrador/harness.html
+tmp/pdfs/editor/harness.html
+tmp/recovery-check/index.html
+tmp/renewal-ui/index.html

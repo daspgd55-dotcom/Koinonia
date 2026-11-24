@@ -1,0 +1,1724 @@
+{
+  "createdAt": "2026-11-23T04:43:18.209Z",
+  "suiteHash": "b144d72d6a98d1aa10853e1438476662549e26946e769d4aa26e9666eec729be",
+  "snapshotHash": "7fbf68b8023daf8a763f01c959c40ec42a9f2298867b8c9e26dbf2d10c0d73eb",
+  "readCount": 20,
+  "validFragments": 45,
+  "rows": [
+    {
+      "id": "new-01",
+      "split": "adjustment",
+      "category": "ubicacion",
+      "query": "Busco una iglesia en La Reina con conferencias.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia en La Reina con conferencias.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": "La Reina",
+              "polarity": "include"
+            },
+            {
+              "field": "community.activities",
+              "value": "Conferencias",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia en La Reina con conferencias.",
+            "start": 0,
+            "end": 47,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.commune",
+                "value": "La Reina",
+                "polarity": "include"
+              },
+              {
+                "field": "community.activities",
+                "value": "Conferencias",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia en La Reina con conferencias."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 79
+    },
+    {
+      "id": "new-02",
+      "split": "adjustment",
+      "category": "ubicacion",
+      "query": "Busco una iglesia con conferencias en La Reina.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia con conferencias en La Reina.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "community.activities",
+              "value": "Conferencias",
+              "polarity": "include"
+            },
+            {
+              "field": "location.commune",
+              "value": "La Reina",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia con conferencias en La Reina.",
+            "start": 0,
+            "end": 47,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "community.activities",
+                "value": "Conferencias",
+                "polarity": "include"
+              },
+              {
+                "field": "location.commune",
+                "value": "La Reina",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia con conferencias en La Reina."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 3
+    },
+    {
+      "id": "new-03",
+      "split": "adjustment",
+      "category": "alternativas",
+      "query": "Necesito una iglesia en Renca o Quilicura con voluntariado.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Necesito una iglesia en Renca o Quilicura con voluntariado.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": [
+                "Renca",
+                "Quilicura"
+              ],
+              "polarity": "include"
+            },
+            {
+              "field": "community.activities",
+              "value": "Voluntariado",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Necesito una iglesia en Renca o Quilicura con voluntariado.",
+            "start": 0,
+            "end": 59,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.commune",
+                "value": [
+                  "Renca",
+                  "Quilicura"
+                ],
+                "polarity": "include"
+              },
+              {
+                "field": "community.activities",
+                "value": "Voluntariado",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Necesito una iglesia en Renca o Quilicura con voluntariado."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 4
+    },
+    {
+      "id": "new-04",
+      "split": "adjustment",
+      "category": "alternativas",
+      "query": "Necesito una iglesia con voluntariado en Quilicura o Renca.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Necesito una iglesia con voluntariado en Quilicura o Renca.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "community.activities",
+              "value": "Voluntariado",
+              "polarity": "include"
+            },
+            {
+              "field": "location.commune",
+              "value": [
+                "Quilicura",
+                "Renca"
+              ],
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Necesito una iglesia con voluntariado en Quilicura o Renca.",
+            "start": 0,
+            "end": 59,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "community.activities",
+                "value": "Voluntariado",
+                "polarity": "include"
+              },
+              {
+                "field": "location.commune",
+                "value": [
+                  "Quilicura",
+                  "Renca"
+                ],
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Necesito una iglesia con voluntariado en Quilicura o Renca."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 3
+    },
+    {
+      "id": "new-05",
+      "split": "adjustment",
+      "category": "negacion",
+      "query": "Busco una iglesia en Santiago sin retiros.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia en Santiago sin retiros.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": "Santiago",
+              "polarity": "include"
+            },
+            {
+              "field": "community.activities",
+              "value": "Retiros",
+              "polarity": "exclude"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia en Santiago sin retiros.",
+            "start": 0,
+            "end": 42,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.commune",
+                "value": "Santiago",
+                "polarity": "include"
+              },
+              {
+                "field": "community.activities",
+                "value": "Retiros",
+                "polarity": "exclude"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia en Santiago sin retiros."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 2
+    },
+    {
+      "id": "new-06",
+      "split": "adjustment",
+      "category": "negacion",
+      "query": "Busco una iglesia sin retiros en Santiago.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia sin retiros en Santiago.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "community.activities",
+              "value": "Retiros",
+              "polarity": "exclude"
+            },
+            {
+              "field": "location.commune",
+              "value": "Santiago",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia sin retiros en Santiago.",
+            "start": 0,
+            "end": 42,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "community.activities",
+                "value": "Retiros",
+                "polarity": "exclude"
+              },
+              {
+                "field": "location.commune",
+                "value": "Santiago",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia sin retiros en Santiago."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 3
+    },
+    {
+      "id": "new-07",
+      "split": "adjustment",
+      "category": "contradiccion",
+      "query": "Busco una iglesia con rampa sin rampa.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia con rampa sin rampa.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": [
+            "Busco una iglesia con rampa sin rampa."
+          ]
+        },
+        "interests": [],
+        "evidence": [],
+        "needsClarification": true,
+        "kind": "unresolved",
+        "retrievalText": "Busco una iglesia con rampa sin rampa."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "blocked",
+      "ms": 3
+    },
+    {
+      "id": "new-08",
+      "split": "adjustment",
+      "category": "contradiccion",
+      "query": "Necesito una iglesia sin rampa con rampa.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Necesito una iglesia sin rampa con rampa.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": [
+            "Necesito una iglesia sin rampa con rampa."
+          ]
+        },
+        "interests": [],
+        "evidence": [],
+        "needsClarification": true,
+        "kind": "unresolved",
+        "retrievalText": "Necesito una iglesia sin rampa con rampa."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "blocked",
+      "ms": 1
+    },
+    {
+      "id": "new-09",
+      "split": "adjustment",
+      "category": "desconocido",
+      "query": "Necesito una iglesia con guardería nocturna.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Necesito una iglesia con guardería nocturna.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": [
+            "Necesito una iglesia con guardería nocturna."
+          ]
+        },
+        "interests": [],
+        "evidence": [],
+        "needsClarification": true,
+        "kind": "unresolved",
+        "retrievalText": "Necesito una iglesia con guardería nocturna."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "blocked",
+      "ms": 1
+    },
+    {
+      "id": "new-10",
+      "split": "adjustment",
+      "category": "desconocido",
+      "query": "Busco una iglesia con estacionamiento subterráneo.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia con estacionamiento subterráneo.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": [
+            "Busco una iglesia con estacionamiento subterráneo."
+          ]
+        },
+        "interests": [],
+        "evidence": [],
+        "needsClarification": true,
+        "kind": "unresolved",
+        "retrievalText": "Busco una iglesia con estacionamiento subterráneo."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "blocked",
+      "ms": 1
+    },
+    {
+      "id": "new-11",
+      "split": "adjustment",
+      "category": "sinonimos",
+      "query": "Me interesa una comunidad con ayuda social.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una comunidad con ayuda social.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una comunidad con ayuda social",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 43,
+              "text": "Me interesa una comunidad con ayuda social."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una comunidad con ayuda social.",
+            "start": 0,
+            "end": 43,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una comunidad con ayuda social."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 2
+    },
+    {
+      "id": "new-12",
+      "split": "adjustment",
+      "category": "sinonimos",
+      "query": "Me interesa una comunidad que apoye a vecinos necesitados.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una comunidad que apoye a vecinos necesitados.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una comunidad que apoye a vecinos necesitados",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 58,
+              "text": "Me interesa una comunidad que apoye a vecinos necesitados."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una comunidad que apoye a vecinos necesitados.",
+            "start": 0,
+            "end": 58,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una comunidad que apoye a vecinos necesitados."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 1
+    },
+    {
+      "id": "new-13",
+      "split": "adjustment",
+      "category": "sinonimos",
+      "query": "Me interesa una iglesia con actividades deportivas.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una iglesia con actividades deportivas.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una iglesia con actividades deportivas",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 51,
+              "text": "Me interesa una iglesia con actividades deportivas."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una iglesia con actividades deportivas.",
+            "start": 0,
+            "end": 51,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una iglesia con actividades deportivas."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 1
+    },
+    {
+      "id": "new-14",
+      "split": "adjustment",
+      "category": "sinonimos",
+      "query": "Me interesa una iglesia donde practicar deportes.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una iglesia donde practicar deportes.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una iglesia donde practicar deportes",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 49,
+              "text": "Me interesa una iglesia donde practicar deportes."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una iglesia donde practicar deportes.",
+            "start": 0,
+            "end": 49,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una iglesia donde practicar deportes."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 1
+    },
+    {
+      "id": "new-15",
+      "split": "adjustment",
+      "category": "sin_evidencia",
+      "query": "Me interesa una iglesia con clases de pilotaje de helicópteros.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una iglesia con clases de pilotaje de helicópteros.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una iglesia con clases de pilotaje de helicópteros",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 63,
+              "text": "Me interesa una iglesia con clases de pilotaje de helicópteros."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una iglesia con clases de pilotaje de helicópteros.",
+            "start": 0,
+            "end": 63,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una iglesia con clases de pilotaje de helicópteros."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 1
+    },
+    {
+      "id": "new-16",
+      "split": "adjustment",
+      "category": "sin_evidencia",
+      "query": "Me interesa una comunidad con fabricación de microprocesadores.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una comunidad con fabricación de microprocesadores.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una comunidad con fabricación de microprocesadores",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 63,
+              "text": "Me interesa una comunidad con fabricación de microprocesadores."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una comunidad con fabricación de microprocesadores.",
+            "start": 0,
+            "end": 63,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una comunidad con fabricación de microprocesadores."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 0
+    },
+    {
+      "id": "new-17",
+      "split": "adjustment",
+      "category": "mixta",
+      "query": "Busco una iglesia en Santiago; me interesa voluntariado.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia en Santiago; me interesa voluntariado.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": "Santiago",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "voluntariado",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 31,
+              "end": 56,
+              "text": "me interesa voluntariado."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Busco una iglesia en Santiago",
+            "start": 0,
+            "end": 29,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.commune",
+                "value": "Santiago",
+                "polarity": "include"
+              }
+            ]
+          },
+          {
+            "text": "me interesa voluntariado.",
+            "start": 31,
+            "end": 56,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "mixed",
+        "retrievalText": "Busco una iglesia en Santiago; me interesa voluntariado."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "155555f8b883bb7066754b67",
+        "28f6ea99cc25a2cd1462203d",
+        "e6d7e42e79ea95ae9e831496"
+      ],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 3
+    },
+    {
+      "id": "new-18",
+      "split": "adjustment",
+      "category": "mixta",
+      "query": "Me interesa voluntariado; busco una iglesia en Santiago.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa voluntariado; busco una iglesia en Santiago.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": "Santiago",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "voluntariado",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 24,
+              "text": "Me interesa voluntariado"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa voluntariado",
+            "start": 0,
+            "end": 24,
+            "kind": "interest"
+          },
+          {
+            "text": "busco una iglesia en Santiago.",
+            "start": 26,
+            "end": 56,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.commune",
+                "value": "Santiago",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "mixed",
+        "retrievalText": "Me interesa voluntariado; busco una iglesia en Santiago."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "155555f8b883bb7066754b67",
+        "28f6ea99cc25a2cd1462203d",
+        "e6d7e42e79ea95ae9e831496"
+      ],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 1
+    },
+    {
+      "id": "new-19",
+      "split": "adjustment",
+      "category": "sinonimos_requisito",
+      "query": "Busco una iglesia con baño accesible.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia con baño accesible.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.accessibilityDetails.accessibleRestroom",
+              "value": "yes",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia con baño accesible.",
+            "start": 0,
+            "end": 37,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.accessibilityDetails.accessibleRestroom",
+                "value": "yes",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia con baño accesible."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 1
+    },
+    {
+      "id": "new-20",
+      "split": "adjustment",
+      "category": "sinonimos_requisito",
+      "query": "Busco una iglesia con un sanitario adaptado.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia con un sanitario adaptado.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": [
+            "Busco una iglesia con un sanitario adaptado."
+          ]
+        },
+        "interests": [],
+        "evidence": [],
+        "needsClarification": true,
+        "kind": "unresolved",
+        "retrievalText": "Busco una iglesia con un sanitario adaptado."
+      },
+      "interpretationPass": false,
+      "expectedEligible": [],
+      "retrieval": "blocked",
+      "ms": 1
+    },
+    {
+      "id": "new-21",
+      "split": "final",
+      "category": "alternativas",
+      "query": "Busco una iglesia en La Florida o Santiago con cursos.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia en La Florida o Santiago con cursos.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": [
+                "La Florida",
+                "Santiago"
+              ],
+              "polarity": "include"
+            },
+            {
+              "field": "community.activities",
+              "value": "Cursos / institutos",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia en La Florida o Santiago con cursos.",
+            "start": 0,
+            "end": 54,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.commune",
+                "value": [
+                  "La Florida",
+                  "Santiago"
+                ],
+                "polarity": "include"
+              },
+              {
+                "field": "community.activities",
+                "value": "Cursos / institutos",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia en La Florida o Santiago con cursos."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "00e256bfdb4df05e5765c871",
+        "02defa0c5de6a6057b2bbabe",
+        "6ac9b9225017eda79d91466c",
+        "e6d7e42e79ea95ae9e831496"
+      ],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 2
+    },
+    {
+      "id": "new-22",
+      "split": "final",
+      "category": "alternativas",
+      "query": "Busco una iglesia con cursos en Santiago o La Florida.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia con cursos en Santiago o La Florida.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "community.activities",
+              "value": "Cursos / institutos",
+              "polarity": "include"
+            },
+            {
+              "field": "location.commune",
+              "value": [
+                "Santiago",
+                "La Florida"
+              ],
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia con cursos en Santiago o La Florida.",
+            "start": 0,
+            "end": 54,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "community.activities",
+                "value": "Cursos / institutos",
+                "polarity": "include"
+              },
+              {
+                "field": "location.commune",
+                "value": [
+                  "Santiago",
+                  "La Florida"
+                ],
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia con cursos en Santiago o La Florida."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "00e256bfdb4df05e5765c871",
+        "02defa0c5de6a6057b2bbabe",
+        "6ac9b9225017eda79d91466c",
+        "e6d7e42e79ea95ae9e831496"
+      ],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 2
+    },
+    {
+      "id": "new-23",
+      "split": "final",
+      "category": "negacion",
+      "query": "Busco una iglesia sin ascensor en Macul.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia sin ascensor en Macul.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.accessibilityDetails.elevator",
+              "value": "yes",
+              "polarity": "exclude"
+            },
+            {
+              "field": "location.commune",
+              "value": "Macul",
+              "polarity": "include"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia sin ascensor en Macul.",
+            "start": 0,
+            "end": 40,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.accessibilityDetails.elevator",
+                "value": "yes",
+                "polarity": "exclude"
+              },
+              {
+                "field": "location.commune",
+                "value": "Macul",
+                "polarity": "include"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia sin ascensor en Macul."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 1
+    },
+    {
+      "id": "new-24",
+      "split": "final",
+      "category": "negacion",
+      "query": "Busco una iglesia en Macul que no tenga ascensor.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Busco una iglesia en Macul que no tenga ascensor.",
+        "requirements": {
+          "criteria": [
+            {
+              "field": "location.commune",
+              "value": "Macul",
+              "polarity": "include"
+            },
+            {
+              "field": "location.accessibilityDetails.elevator",
+              "value": "yes",
+              "polarity": "exclude"
+            }
+          ],
+          "unresolved": []
+        },
+        "interests": [],
+        "evidence": [
+          {
+            "text": "Busco una iglesia en Macul que no tenga ascensor.",
+            "start": 0,
+            "end": 49,
+            "kind": "requirement",
+            "criteria": [
+              {
+                "field": "location.commune",
+                "value": "Macul",
+                "polarity": "include"
+              },
+              {
+                "field": "location.accessibilityDetails.elevator",
+                "value": "yes",
+                "polarity": "exclude"
+              }
+            ]
+          }
+        ],
+        "needsClarification": false,
+        "kind": "required",
+        "retrievalText": "Busco una iglesia en Macul que no tenga ascensor."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 1
+    },
+    {
+      "id": "new-25",
+      "split": "final",
+      "category": "sinonimos",
+      "query": "Me interesa una iglesia con formación bíblica.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una iglesia con formación bíblica.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una iglesia con formación bíblica",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 46,
+              "text": "Me interesa una iglesia con formación bíblica."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una iglesia con formación bíblica.",
+            "start": 0,
+            "end": 46,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una iglesia con formación bíblica."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 0
+    },
+    {
+      "id": "new-26",
+      "split": "final",
+      "category": "sinonimos",
+      "query": "Me interesa una comunidad que enseñe la Biblia.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una comunidad que enseñe la Biblia.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una comunidad que enseñe la Biblia",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 47,
+              "text": "Me interesa una comunidad que enseñe la Biblia."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una comunidad que enseñe la Biblia.",
+            "start": 0,
+            "end": 47,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una comunidad que enseñe la Biblia."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 0
+    },
+    {
+      "id": "new-27",
+      "split": "final",
+      "category": "sin_evidencia",
+      "query": "Me interesa una comunidad con cirugía veterinaria.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una comunidad con cirugía veterinaria.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una comunidad con cirugía veterinaria",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 50,
+              "text": "Me interesa una comunidad con cirugía veterinaria."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una comunidad con cirugía veterinaria.",
+            "start": 0,
+            "end": 50,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una comunidad con cirugía veterinaria."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 1
+    },
+    {
+      "id": "new-28",
+      "split": "final",
+      "category": "sin_evidencia",
+      "query": "Me interesa una iglesia con reparación de reactores nucleares.",
+      "intent": {
+        "version": "free-search-intent-v1",
+        "query": "Me interesa una iglesia con reparación de reactores nucleares.",
+        "requirements": {
+          "criteria": [],
+          "unresolved": []
+        },
+        "interests": [
+          {
+            "text": "una iglesia con reparación de reactores nucleares",
+            "purpose": "retrieval_only",
+            "provesCompliance": false,
+            "source": {
+              "start": 0,
+              "end": 62,
+              "text": "Me interesa una iglesia con reparación de reactores nucleares."
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "text": "Me interesa una iglesia con reparación de reactores nucleares.",
+            "start": 0,
+            "end": 62,
+            "kind": "interest"
+          }
+        ],
+        "needsClarification": false,
+        "kind": "descriptive",
+        "retrievalText": "Me interesa una iglesia con reparación de reactores nucleares."
+      },
+      "interpretationPass": true,
+      "expectedEligible": [
+        "0082f785ddcba9887af730be",
+        "0095bb2897ed6a7ed6655c50",
+        "00b5fc37b835eedfb5eb2916",
+        "00cdd861c45a77a672bba28d",
+        "00e256bfdb4df05e5765c871",
+        "01c14fb15d8b9735dc988189",
+        "02defa0c5de6a6057b2bbabe",
+        "03218dbdd2818ed870a2ec54",
+        "1298af8033c6eb4a402bf5a3",
+        "155555f8b883bb7066754b67",
+        "186c21a71a29a8fa20363ab9",
+        "28f6ea99cc25a2cd1462203d",
+        "306c02d8ba5fde003056f434",
+        "495446dcdd84fdaf0d4f4fa9",
+        "54eaade8ff61c196a91f9f1e",
+        "6929f24fbc5d1ab14dacaf7d",
+        "6ac9b9225017eda79d91466c",
+        "bdf3e30b6d86b7deb95138e2",
+        "e6d7e42e79ea95ae9e831496",
+        "fac395e6fb5d97b60d812249"
+      ],
+      "retrieval": "MODEL_UNAVAILABLE_OR_CHANGED",
+      "ms": 0
+    }
+  ],
+  "limits": {
+    "totalMs": 480000,
+    "requestMs": 180000
+  },
+  "versions": {
+    "free-search-intent.lab.js": "dbbff69b2475738a9fa16ffcaaa5316db60e290853306588d0f6916cc1acc4ab",
+    "requirement-interpretation.lab.js": "7e0d98e3916ec289c0a925f8c24e348ab3bd36ce5bb17439dbb65d9a168053f7",
+    "search-requirements.lab.js": "9ff262c4a877f7655d6c3564758d1195cd4c96a54db94ba83af1ca17a003555a",
+    "search-intent.lab.js": "bb86af992d09a906c876a5475db2cd308f8365ca9b577eabe86a4f7cadfbffc6",
+    "search-topic-evidence.lab.js": "35538d6744cc08b6d87695b3ae8682fd037f4923202691c4d0745aae9f9d7f72"
+  },
+  "pairs": [
+    {
+      "pair": "pair-1",
+      "ids": [
+        "new-01",
+        "new-02"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-2",
+      "ids": [
+        "new-03",
+        "new-04"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-3",
+      "ids": [
+        "new-05",
+        "new-06"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-4",
+      "ids": [
+        "new-07",
+        "new-08"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-6",
+      "ids": [
+        "new-11",
+        "new-12"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-7",
+      "ids": [
+        "new-13",
+        "new-14"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-9",
+      "ids": [
+        "new-17",
+        "new-18"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-10",
+      "ids": [
+        "new-19",
+        "new-20"
+      ],
+      "sameInterpretation": false,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-11",
+      "ids": [
+        "new-21",
+        "new-22"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-12",
+      "ids": [
+        "new-23",
+        "new-24"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    },
+    {
+      "pair": "pair-13",
+      "ids": [
+        "new-25",
+        "new-26"
+      ],
+      "sameInterpretation": true,
+      "note": "La equivalencia temática se evalúa aparte; no exige el mismo ranking."
+    }
+  ],
+  "summary": [
+    {
+      "split": "adjustment",
+      "total": 20,
+      "interpretation": 19,
+      "executed": 0,
+      "filterFailures": 0,
+      "hit3": 0,
+      "topicCases": 0,
+      "abstentionFailures": 0
+    },
+    {
+      "split": "final",
+      "total": 8,
+      "interpretation": 8,
+      "executed": 0,
+      "filterFailures": 0,
+      "hit3": 0,
+      "topicCases": 0,
+      "abstentionFailures": 0
+    }
+  ],
+  "elapsedMs": 1345
+}
