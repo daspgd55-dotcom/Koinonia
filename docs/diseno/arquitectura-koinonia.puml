@@ -1,0 +1,64 @@
+@startuml
+title Arquitectura general de Koinonía
+top to bottom direction
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontSize 11
+skinparam nodesep 14
+skinparam ranksep 20
+scale max 680 width
+
+actor "Usuario" as Usuario
+
+package "Clientes" {
+  component "Aplicación web\nReact" as Web
+}
+
+package "Servicios externos" {
+  component "Mapas" as Mapas
+  component "Validación de direcciones\nImágenes y correo" as Servicios
+  Mapas -[hidden]down-> Servicios
+}
+
+package "Backend / API" {
+  component "API REST\nNode.js / Express" as API
+  component "Comunidades" as Comunidades
+  component "Usuarios y\npermisos" as Permisos
+  component "Fuentes e\ninteracciones" as Fuentes
+  component "Búsqueda y\nfiltros" as Busqueda
+
+  API -down-> Comunidades
+  API -down-> Permisos
+  API -down-> Fuentes
+  API -down-> Busqueda
+  Comunidades -[hidden]right-> Permisos
+  Permisos -[hidden]right-> Fuentes
+  Fuentes -[hidden]right-> Busqueda
+}
+
+package "Sistema de recomendación" {
+  component "Recomendación por criterios\nRestricciones y ranking" as Criterios
+  component "Recomendación semántica" as Semantico
+  Criterios -[hidden]right-> Semantico
+  component "Modelo de lenguaje\n(LLM)" as LLM
+  component "Embeddings y\nrecuperación documental" as Recuperacion
+  Semantico -down-> LLM
+  Semantico -down-> Recuperacion
+  LLM -[hidden]right-> Recuperacion
+}
+
+package "Datos" {
+  database "MongoDB" as Mongo
+  database "Índice documental" as Indice
+  Mongo -[hidden]right-> Indice
+}
+
+Usuario -down-> Web
+Web -right-> Mapas
+Web -down-> API
+API ..> Servicios
+Fuentes -down-> Mongo
+Busqueda ..> Criterios
+Busqueda ..> Semantico
+Recuperacion -down-> Indice
+@enduml

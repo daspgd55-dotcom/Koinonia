@@ -219,3 +219,17 @@ Tramo 9.3 | Prompt: Lee el tramo 9.3 del inventario documental de Koinonia y reg
 118 | 2026-11-12 | outputs/correos-invitaciones/institutional-reminder.txt
 119 | 2026-11-12 | outputs/correos-invitaciones/renewal.html
 120 | 2026-11-12 | outputs/correos-invitaciones/renewal.txt
+
+Tanda 10 - Continuacion del laboratorio de busqueda (23-24 de noviembre de 2026)
+
+Fecha de modificacion local | Ruta
+2026-11-23 01:46 | Backend/docs/hybrid-benchmark-v1.md
+2026-11-23 01:48 | Backend/docs/topic-equivalence-v2.md
+2026-11-23 07:55 | Backend/docs/search-lab-ui-review.md
+2026-11-23 14:16 | Backend/docs/search-sample-v2.md
+2026-11-23 14:16 | outputs/search-sample-v2/preview.md
+2026-11-23 14:20 | Backend/docs/semantic-provider-architecture.md
+2026-11-23 17:19 | Backend/docs/search-lab-v2-integration.md
+
+Evidencia asociada: outputs/search-diagnostics/benchmark-v1/, outputs/search-diagnostics/topic-v2/ y outputs/search-lab-v2-qa/.
+Los documentos se incorporaron a Git el 24 de noviembre (7e05de4).
