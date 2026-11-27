@@ -25,7 +25,7 @@ export default function EventsAdmin({token,church,onSelect}){
  },[token,church._id,referenceRefresh]);
 
  useEffect(()=>{if(draft)title.current?.focus();},[!!draft]);
- function report(e){setError(e.message+(e.details?.length?' · '+e.details.map(d=>typeof d==='string'?d:d.path+': '+d.message).join(' · '):''));if(e.code==='STALE_VERSION')setConflict(true);}
+ function report(e){if(e.details?.length)console.error('Detalles técnicos de validación:',e.code||e.status,e.details);setError(e.message);if(e.code==='STALE_VERSION')setConflict(true);}
  function adopt(e){setSelected(e);setDraft(editEvent(e));setDirty(false);setConflict(false);setFile(null);setReason('');setCancel(false);}
  function change(key,value){setDraft(d=>({...d,[key]:value}));setDirty(true);setMessage('');}
  function leave(fn){if(busy)return;if(unsaved&&!window.confirm('Hay cambios sin guardar. ¿Descartarlos?'))return;setDirty(false);setFile(null);setReason('');setError('');setMessage('');setPreview(false);fn();}

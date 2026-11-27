@@ -26,7 +26,7 @@ export default function LinkedCommunities({token,church,onBack,onEvents,initialC
  useEffect(()=>{if(!initialCommunityId||initialOpened.current)return;initialOpened.current=true;open({_id:initialCommunityId});},[initialCommunityId]);
  useUnsavedChanges(unsaved);
  useEffect(()=>{if(draft)heading.current?.focus();},[!!draft]);
- function report(e){setError(e.message+(e.details?.length?' · '+e.details.map(d=>d.path+': '+d.message).join(' · '):''));if(e.code==='STALE_VERSION')setConflict(true);}
+ function report(e){if(e.details?.length)console.error('Detalles técnicos de validación:',e.code||e.status,e.details);setError(e.message);if(e.code==='STALE_VERSION')setConflict(true);}
  function adopt(c){setSelected(c);setDraft(editable(c));setDirty(false);setFile(null);setConflict(false);}
  function change(k,v){setDraft(d=>({...d,[k]:v}));setDirty(true);setMessage('');}
  function leave(fn){if(busy)return;if(unsaved&&!window.confirm('Hay cambios sin guardar. ¿Descartarlos?'))return;setDirty(false);setFile(null);setError('');setMessage('');setPreview(false);fn();}

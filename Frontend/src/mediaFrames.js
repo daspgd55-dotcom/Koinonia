@@ -2,4 +2,4 @@ export const frames={landscape:{label:'Horizontal · 3:2',ratio:1.5},wide:{label
 export const defaultFrame=category=>category==='representatives'?'circle':category==='logo'?'square':category==='banner'?'wide':'landscape';
 export const frameStyle=m=>({aspectRatio:frames[m.frame||defaultFrame(m.category)]?.ratio||1.5,borderRadius:(m.frame||defaultFrame(m.category))==='circle'?'50%':'12px'});
 
-export const allowedFrames=category=>Object.keys(frames);
+export const allowedFrames=category=>category==='representatives'?['circle','square']:category==='banner'?['wide','landscape']:Object.keys(frames);
