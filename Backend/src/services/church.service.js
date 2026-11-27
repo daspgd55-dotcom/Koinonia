@@ -72,8 +72,9 @@ function filters(q, concepts=false) {
       for(const key of q.supports)filter['location.accessibilityDetails.'+key]={$in:['yes','partial']};
     }
   }
-  if(concepts && q.q?.trim()){
-    const clauses=[...new Set(q.q.trim().split(/[\s,;"“”]+/).filter(Boolean))].map(word=>{
+  if(q.q)filter['identification.name']=new RegExp(concepts?searchPattern(q.q):escape(q.q),'i');
+  if(concepts && q.keywords?.length){
+    const clauses=q.keywords.map(word=>{
       const match=new RegExp(searchPattern(word),'i');
       const alternatives=conceptFields.map(path=>({[path]:match}));
       for(const path of ['community.musicalStyles','community.culturalStyle','doctrine.soteriology','doctrine.eschatology','contact.email','contact.phone'])
@@ -82,8 +83,8 @@ function filters(q, concepts=false) {
         {'location.accessibilityDetails.additionalSupport':match,$or:[{'privateFields.accessibilityDetails':false},{'privateFields.accessibilityDetails':{$exists:false},'privateFields.accessibilityLevel':{$ne:true}}]});
       return {$or:alternatives};
     });
-    if(clauses.length)filter.$and=q.conceptMode==='any'?[{$or:clauses}]:clauses;else filter['identification.name']=exact(q.q);
-  }else if (q.q) filter['identification.name'] = new RegExp(escape(q.q), 'i');
+    filter.$and=q.conceptMode==='any'?[{$or:clauses}]:clauses;
+  }
   return filter;
 }
 
