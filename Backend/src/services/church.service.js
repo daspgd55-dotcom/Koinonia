@@ -51,13 +51,39 @@ function checkVersion(req, church) {
   if (Number(match[1]) !== church.metadata.version) throw new HttpError(409, 'STALE_VERSION', 'La ficha cambió en otra sesión. Recarga antes de guardar.');
 }
 
+const searchVowels = {a:'[aá]', e:'[eé]', i:'[ií]', o:'[oó]', u:'[uúü]'};
+function searchPattern(value){
+  const normalized=value.normalize('NFC').toLowerCase().replace(/[áéíóúü]/g, ch=>ch.normalize('NFD')[0]);
+  return Array.from(normalized,ch=>searchVowels[ch] ? searchVowels[ch]+'[\u0301\u0308]?' : escape(ch)).join('');
+}
+const conceptFields=['community.description','identification.distinctiveFeatures','location.address','christianIdentity.associatedTradition','christianIdentity.network','doctrine.officialStatement','meetingTypes','meetings.audience','meetings.modality','meetings.frequencyNotes','community.memberRange','leadership.mainLeader.name','leadership.mainLeader.role','leadership.otherLeaders.name','leadership.otherLeaders.role','firstVisit.instructions','firstVisit.welcomeProcess','media.title','contact.officeHours','identification.name','identification.abbreviation','identification.description','location.commune','location.city','location.region','christianIdentity.denomination','christianIdentity.branch','christianIdentity.languages','doctrine.characteristics','community.activities','community.ministries','community.targetGroups','meetings.type','meetings.schedule.day'];
+
 //funcion para filtrar iglesias según parámetros de búsqueda
-function filters(q) {
+function filters(q, concepts=false) {
   const filter = { ...visible };
   const fields = { commune: 'location.commune', denomination: 'christianIdentity.denomination', branch: 'christianIdentity.branch',
     doctrine: 'doctrine.characteristics', activity: 'community.activities', language: 'christianIdentity.languages', day: 'meetings.schedule.day' };
-  for (const [key, path] of Object.entries(fields)) if (q[key]) filter[path] = exact(q[key]);
-  if (q.q) filter['identification.name'] = new RegExp(escape(q.q), 'i');
+  for (const [key, path] of Object.entries(fields)) if (q[key]) filter[path] = concepts ? new RegExp('^'+searchPattern(q[key])+'$', 'i') : exact(q[key]);
+  if(concepts){
+    for(const key of ['activities','ministries'])if(q[key])filter['community.'+key]={$all:q[key].map(tag=>new RegExp('^'+searchPattern(tag)+'$','i'))};
+    if(q.images)filter.media={$elemMatch:{type:'image',url:/^https?:\/\//i}};
+    if(q.supports){
+      filter.$or=[{'privateFields.accessibilityDetails':false},{'privateFields.accessibilityDetails':{$exists:false},'privateFields.accessibilityLevel':{$ne:true}}];
+      for(const key of q.supports)filter['location.accessibilityDetails.'+key]={$in:['yes','partial']};
+    }
+  }
+  if(concepts && q.q?.trim()){
+    const clauses=[...new Set(q.q.trim().split(/[\s,;"“”]+/).filter(Boolean))].map(word=>{
+      const match=new RegExp(searchPattern(word),'i');
+      const alternatives=conceptFields.map(path=>({[path]:match}));
+      for(const path of ['community.musicalStyles','community.culturalStyle','doctrine.soteriology','doctrine.eschatology','contact.email','contact.phone'])
+        alternatives.push({[path]:match,['privateFields.'+path.split('.')[1]]:{$ne:true}});
+      alternatives.push({'location.accessNotes':match,'privateFields.accessibilityLevel':{$ne:true}},
+        {'location.accessibilityDetails.additionalSupport':match,$or:[{'privateFields.accessibilityDetails':false},{'privateFields.accessibilityDetails':{$exists:false},'privateFields.accessibilityLevel':{$ne:true}}]});
+      return {$or:alternatives};
+    });
+    if(clauses.length)filter.$and=q.conceptMode==='any'?[{$or:clauses}]:clauses;else filter['identification.name']=exact(q.q);
+  }else if (q.q) filter['identification.name'] = new RegExp(escape(q.q), 'i');
   return filter;
 }
 
@@ -65,7 +91,7 @@ function filters(q) {
 const cardProjection={'identification.name':1,'location.address':1,'location.commune':1,'location.coordinates':1,'christianIdentity.denomination':1,'community.activities':1,'meetings.type':1,'meetings.schedule':1,media:1,'metadata.dataStatus':1,'metadata.testData':1,distanceMeters:1};
 function cardChurch(c){const images=(c.media||[]).filter(m=>m.type==='image'&&/^https?:\/\//i.test(m.url||'')),photo=images.find(m=>m.section==='recommendation')||images.find(m=>!m.section&&['banner','logo'].includes(m.category))||images.find(m=>!m.section&&(!m.category||m.category==='facilities')),meeting=(c.meetings||[]).flatMap(m=>(m.schedule||[]).map(t=>({...t,type:m.type}))).find(t=>t.day&&t.startTime);return {_id:c._id,identification:{name:c.identification?.name},location:c.location,christianIdentity:{denomination:c.christianIdentity?.denomination},community:{activities:(c.community?.activities||[]).slice(0,2)},media:photo?[photo]:[],meetings:meeting?[{type:meeting.type,schedule:[{day:meeting.day,startTime:meeting.startTime}]}]:[],metadata:{dataStatus:c.metadata?.dataStatus,testData:c.metadata?.testData},...(c.distanceMeters!==undefined?{distanceMeters:c.distanceMeters}:{})};}
 async function search(q, excluded = [], cap) {
-  const filter = {...filters(q),...discoveryExclusions};
+  const filter = {...filters(q,true),...discoveryExclusions};
   if (excluded.length) filter._id = { $nin: excluded };
   const limit = cap || q.limit || 20, page = q.page || 1;
   let rows, total;

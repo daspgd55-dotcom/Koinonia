@@ -44,7 +44,9 @@ const church = z.strictObject({
 });
 const queryNumber = (min, max, fallback) => z.preprocess(v => typeof v === 'string' && v.trim() !== '' ? Number(v) : v,
   z.number().min(min).max(max).optional().default(fallback));
+const selectedTags = item => z.preprocess(v=>typeof v==="string"?[v]:v,z.array(item).min(1).max(30)).optional();
 const search = z.strictObject({
+  conceptMode:z.enum(["all","any"]).optional(), activities:selectedTags(text), ministries:selectedTags(text), supports:selectedTags(z.enum(['ramp','accessibleRestroom','elevator','signLanguage','airConditioning','kitchen'])), images:z.literal('yes').optional(),
   view: z.enum(['full','card']).default('full'),
   sort: z.enum(['name','distance']).optional(),
   q: text.optional(), commune: text.optional(), denomination: text.optional(), branch: text.optional(),
